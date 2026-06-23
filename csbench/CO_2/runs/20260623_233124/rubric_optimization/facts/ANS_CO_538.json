@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-06-23T16:11:24.577706",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_2/ANS_CO_538.jpg",
+  "image_sha256": "7b5658baa1bb9ab0a31c749e6e29de9e5c6427d181c5d818fe02ce0c1d4a6c25",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_2/ANS_CO_538.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "gpu:0",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 18,
+    "accepted_token_count": 18,
+    "mean_confidence": 0.857429,
+    "min_confidence": 0.5,
+    "joined_text": "2. （20分）\n(1)中断处理优光级 A>D>C > E> B\n中断屏蔽字：A1、111\nB 0 1 0 0 0\nC 0 1 1 0 1\n17 0 1 1 11\n胶样序\n(2)\n01001\nD\n01111\nC\n01101\n0/000\nB\nA\n1111\n用广程",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.044161,
+      "very_dark_pixel_ratio": 0.030574,
+      "lower_region_dark_pixel_ratio": 0.039218,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)中断处理优先级 A>D>C>E>B.\n中断屏蔽字：\nA 1 1 1 1 1\nB 0 1 0 0 0\nC 0 1 1 0 1\nD 0 1 1 1 1\nE 0 1 0 0 1\n(2)如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_538",
+    "question_id": "CO_2",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "用户程序→A→D→C→E→B",
+  "diagram_facts": {
+    "step_7": "可见用户程序起始，依次通过A、D、C、E、B级中断处理的连续路径，线段连接各中断级；完整可见路径：用户程序→A→D→C→E→B"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's drawn diagram for the CPU execution and interrupt processing sequence, capturing the exact nodes, labels, lines, arrows, and the overall order or direction of the relations exactly as drawn."
+    }
+  ],
+  "facts": {
+    "step_1": "A>D>C>E>B.",
+    "step_2": "1 1 1 1 1",
+    "step_3": "0 1 0 0 0",
+    "step_4": "0 1 1 0 1",
+    "step_5": "0 1 1 1 1",
+    "step_6": "0 1 0 0 1",
+    "step_7": "可见用户程序起始，依次通过A、D、C、E、B级中断处理的连续路径，线段连接各中断级；完整可见路径：用户程序→A→D→C→E→B"
+  }
+}

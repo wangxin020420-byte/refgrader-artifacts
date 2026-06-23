@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-06-23T16:35:13.923288",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_2/ANS_CO_540.jpg",
+  "image_sha256": "03ad011db72b13f5b3622ee8c13ede6dc9d74f1c21692c12d76cd4120813eabb",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_2/ANS_CO_540.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "gpu:0",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 19,
+    "accepted_token_count": 18,
+    "mean_confidence": 0.973981,
+    "min_confidence": 0.5,
+    "joined_text": "2. （20分）\n解：“1根据题中所给信息可得处理优先级为A>D>C>E>B。\n各中断源的屏蔽字为：\nA:00000\n服务程序\nB:10111\n↑\nC:10010\nE\nD:10000\nD\nE:10110\nC\nB\n(2). 如图：\nA\n→t\n用户程序",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.072839,
+      "very_dark_pixel_ratio": 0.052848,
+      "lower_region_dark_pixel_ratio": 0.064369,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解：根据题中所给信息可得处理优先级为A>D>C>E>B。\n各中断源的屏蔽字为：\nA:00000\nB:10111\nC:10010\nD:10000\nE:10110\n(2)如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_540",
+    "question_id": "CO_2",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "用户程序→A→C→D→E→B",
+  "diagram_facts": {},
+  "diagram_checklist": [
+    {
+      "id": "step_7",
+      "instruction": "Extract the concrete content of the CPU execution and interrupt-handling timing/sequence diagram that the student drew. Record the named program segments, interrupt labels, time-axis position, vertical/horizontal arrows and their direction, nested/preempted call relationships, the order in which segments and interrupts appear along the time axis, return arrows, and any textual annotations. Preserve the relative ordering, nesting structure, and direction of all arrows and labels exactly as drawn."
+    }
+  ],
+  "facts": {
+    "step_1": "A>D>C>E>B",
+    "step_2": "00000",
+    "step_3": "10111",
+    "step_4": "10010",
+    "step_5": "10000",
+    "step_6": "10110",
+    "step_7": "需要查看图像"
+  }
+}
