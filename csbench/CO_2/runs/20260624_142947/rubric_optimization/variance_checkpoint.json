@@ -1,0 +1,1742 @@
+[
+  {
+    "file": "ANS_CO_532.jpg",
+    "facts": "{\"step_1\": \"A>D>C>E>B\", \"step_2\": \"1 1 1 11\", \"step_3\": \"0 1 0 00\", \"step_4\": \"0 1 10 1\", \"step_5\": \"0 1 11 1\", \"step_6\": \"0 1 00 1\", \"step_7\": \"图中未明确显示\"}",
+    "extraction_evidence": {
+      "schema_version": 1,
+      "created_at": "2026-06-23T14:52:28.089765",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_2/ANS_CO_532.jpg",
+      "image_sha256": "f670d051a75af0f33bb527b4655f8bb52f92351a71e0ffd76c75a59cdb582e91",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_2/ANS_CO_532.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "gpu:0",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 23,
+        "accepted_token_count": 23,
+        "mean_confidence": 0.916995,
+        "min_confidence": 0.5,
+        "joined_text": "服务程序\n2.(20分)\n解：1\n中断屏散字\n(2)\n中断源\nA 1B C D E\nE\nA\nD\nB\n0 1 0 00\nC\n4\n01101\nC\nB\nD\n0 1 111\nA\nE\n01001用户\n中断处理优先级：A>D>C>E>B",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.044305,
+          "very_dark_pixel_ratio": 0.029,
+          "lower_region_dark_pixel_ratio": 0.039404,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "解.（1） 中断屏蔽字 中断源 \nA B C D E \nA 1 1 1 11 \nB 0 1 0 00 \nC 0 1 10 1 \nD 0 1 11 1 \nE 0 1 00 1 中断处理优先级: A>D>C>E>B\n(2)如图所示",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_532",
+        "question_id": "CO_2",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": null,
+      "diagram_facts": {
+        "step_7": "图中未明确显示"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_7",
+          "instruction": "Extract the concrete CPU execution program and interrupt processing sequence diagram drawn by the student. Preserve all arrows, relations, blocks, order, and direction exactly as drawn."
+        }
+      ],
+      "facts": {
+        "step_1": "A>D>C>E>B",
+        "step_2": "1 1 1 11",
+        "step_3": "0 1 0 00",
+        "step_4": "0 1 10 1",
+        "step_5": "0 1 11 1",
+        "step_6": "0 1 00 1",
+        "step_7": "图中未明确显示"
+      }
+    },
+    "scores": [
+      4.0,
+      4.0,
+      2.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B",
+            "expected_condition": "A → D → C → E → B",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted sequence A>D>C>E>B exactly matches the standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "1 1 1 11",
+            "expected_condition": "A：01111 (0FH)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted mask word '1 1 1 11' corresponds to 1111, which correctly matches the last four bits of A's standard mask word. Missing the leading zero is treated as a minor truncation under lenient grading, thus awarded full credit."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 0 00",
+            "expected_condition": "B：00000 (00H)",
+            "dependency_status": "not_applicable",
+            "reason": "The student wrote '0 1 0 00' (01000), which is incorrect and actually corresponds to the standard mask word for E, not B."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 10 1",
+            "expected_condition": "C：01001 (09H)",
+            "dependency_status": "not_applicable",
+            "reason": "The student wrote '0 1 10 1' (01101), which is incorrect and actually corresponds to the standard mask word for D, not C."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 11 1",
+            "expected_condition": "D：01101 (0DH)",
+            "dependency_status": "not_applicable",
+            "reason": "The student wrote '0 1 11 1' (01111), which is incorrect and actually corresponds to the standard mask word for A, not D."
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 00 1",
+            "expected_condition": "E：01000 (08H)",
+            "dependency_status": "not_applicable",
+            "reason": "The student wrote '0 1 00 1' (01001), which is incorrect and actually corresponds to the standard mask word for C, not E."
+          },
+          {
+            "id": "step_7",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "图中未明确显示",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图",
+            "dependency_status": "not_applicable",
+            "reason": "The extraction indicates that the diagram is not explicitly shown or provided by the student."
+          }
+        ],
+        "total_score": 4.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B",
+            "expected_condition": "A → D → C → E → B",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted sequence correctly matches the standard interrupt processing priority order."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "1 1 1 11",
+            "expected_condition": "A：01111 (0FH)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted sequence of 1s matches the core value of the A-level interrupt mask word (1111), ignoring the unessential formatting or missing leading 0."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 0 00",
+            "expected_condition": "B：00000 (00H)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted value (01000) contradicts the correct B-level mask word (00000)."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 10 1",
+            "expected_condition": "C：01001 (09H)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted value (01101) contradicts the correct C-level mask word (01001)."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 11 1",
+            "expected_condition": "D：01101 (0DH)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted value (01111) contradicts the correct D-level mask word (01101)."
+          },
+          {
+            "id": "step_6",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 00 1",
+            "expected_condition": "E：01000 (08H)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted value (01001) contradicts the correct E-level mask word (01000)."
+          },
+          {
+            "id": "step_7",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "图中未明确显示",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图",
+            "dependency_status": "not_applicable",
+            "reason": "The student did not provide the required diagram."
+          }
+        ],
+        "total_score": 4.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B",
+            "expected_condition": "写出正确的中断处理优先级排列顺序 A → D → C → E → B",
+            "dependency_status": "not_applicable",
+            "reason": "顺序完全正确，仅用 > 代替 →，属格式差异，不影响正确性。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "1 1 1 11",
+            "expected_condition": "A级中断屏蔽字 A：01111 (0FH)",
+            "dependency_status": "failed",
+            "reason": "学生答案为 11111（五位全1），标准答案首位应为 0（自身不屏蔽），数值错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 0 00",
+            "expected_condition": "B级中断屏蔽字 B：00000 (00H)",
+            "dependency_status": "failed",
+            "reason": "学生答案 01000，标准答案为 00000，第2位错误。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 10 1",
+            "expected_condition": "C级中断屏蔽字 C：01001 (09H)",
+            "dependency_status": "failed",
+            "reason": "学生答案 01101，标准答案为 01001，第3位错误。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 11 1",
+            "expected_condition": "D级中断屏蔽字 D：01101 (0DH)",
+            "dependency_status": "failed",
+            "reason": "学生答案 01111，标准答案为 01101，第4位错误。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 00 1",
+            "expected_condition": "E级中断屏蔽字 E：01000 (08H)",
+            "dependency_status": "failed",
+            "reason": "学生答案 01001，标准答案为 01000，第5位错误。"
+          },
+          {
+            "id": "step_7",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "图中未明确显示",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图",
+            "dependency_status": "failed",
+            "reason": "提取信息显示图中未明确显示，无法判定有作答。"
+          }
+        ],
+        "total_score": 2.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_6": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_7": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_5": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_6": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_7": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.888888888888889,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.0,
+      "step_7": 0.0
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.126984126984127
+  },
+  {
+    "file": "ANS_CO_535.jpg",
+    "facts": "{\"step_1\": \"A>D>C>E>B\", \"step_2\": \"A 1 1 1 1\", \"step_3\": \"B 0 1 0 0 0\", \"step_4\": \"C 0 1 1 0 1\", \"step_5\": \"D 0 1 1 1 1\", \"step_6\": \"E 0 1 0 0 1\", \"step_7\": \"可见时间轴（t）上的阶梯式执行路径，节点包括用户程序、A、C、B、D、E，通过连续的阶梯段连接，方向沿时间轴正向；完整可见路径：用户程序→A→C→B→D→E\"}",
+    "extraction_evidence": {
+      "schema_version": 1,
+      "created_at": "2026-06-23T15:25:01.598027",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_2/ANS_CO_535.jpg",
+      "image_sha256": "7a59c7cb1285d909e95af803087cc4d11e8b8f5b54139ff147b5c6661b8cc744",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_2/ANS_CO_535.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "gpu:0",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 17,
+        "accepted_token_count": 16,
+        "mean_confidence": 0.910379,
+        "min_confidence": 0.5,
+        "joined_text": "2. （20分）\n(2)\nCD A > D > C7E7B\nE\nAB CDE\nD\nB01000\nC\nC01101\nB\nD 01 111\nA\nE 01001\nt\nAUB\nDED",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.040783,
+          "very_dark_pixel_ratio": 0.026449,
+          "lower_region_dark_pixel_ratio": 0.039079,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "A>D>C>E>B \nA A B C D E\nA 1 1 1 1\nB 0 1 0 0 0\nC 0 1 1 0 1\nD 0 1 1 1 1\nE 0 1 0 0 1 \n(2)如图所示",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_535",
+        "question_id": "CO_2",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "用户程序→A→C→B→D→E",
+      "diagram_facts": {
+        "step_7": "可见时间轴（t）上的阶梯式执行路径，节点包括用户程序、A、C、B、D、E，通过连续的阶梯段连接，方向沿时间轴正向；完整可见路径：用户程序→A→C→B→D→E"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_7",
+          "instruction": "Extract the student's concrete handwritten diagram depicting the CPU execution and interrupt processing order. Describe the drawn nodes, timeline, labels, and the directional arrows or relations between them exactly as written."
+        }
+      ],
+      "facts": {
+        "step_1": "A>D>C>E>B",
+        "step_2": "A 1 1 1 1",
+        "step_3": "B 0 1 0 0 0",
+        "step_4": "C 0 1 1 0 1",
+        "step_5": "D 0 1 1 1 1",
+        "step_6": "E 0 1 0 0 1",
+        "step_7": "可见时间轴（t）上的阶梯式执行路径，节点包括用户程序、A、C、B、D、E，通过连续的阶梯段连接，方向沿时间轴正向；完整可见路径：用户程序→A→C→B→D→E"
+      }
+    },
+    "scores": [
+      6.0,
+      5.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B",
+            "expected_condition": "正确的中断处理优先级排列顺序 A → D → C → E → B",
+            "dependency_status": "not_applicable",
+            "reason": "学生写出的优先级顺序 A>D>C>E>B 与标准答案 A→D→C→E→B 完全一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A 1 1 1 1",
+            "expected_condition": "A级中断屏蔽字 A：01111 (0FH)",
+            "dependency_status": "not_applicable",
+            "reason": "学生写出 A 对应的四个屏蔽位为 1111，即对 B、C、D、E 全部屏蔽，自身位为0（隐含），组合为 01111，与标准答案一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "B 0 1 0 0 0",
+            "expected_condition": "B级中断屏蔽字 B：00000 (00H)",
+            "dependency_status": "not_applicable",
+            "reason": "学生写出 B 的屏蔽字为 01000，标准答案为 00000。第二位应为0（B不屏蔽C，因为C优先级高于B），学生该位错误，导致屏蔽字数值错误。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "C 0 1 1 0 1",
+            "expected_condition": "C级中断屏蔽字 C：01001 (09H)",
+            "dependency_status": "not_applicable",
+            "reason": "学生写出 C 的屏蔽字为 01101，标准答案为 01001。C不应屏蔽D（D优先级高于C），学生第三位为1错误，数值不一致。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "D 0 1 1 1 1",
+            "expected_condition": "D级中断屏蔽字 D：01101 (0DH)",
+            "dependency_status": "not_applicable",
+            "reason": "学生写出 D 的屏蔽字为 01111，标准答案为 01101。D不应屏蔽自身（第四位应为0），学生该位为1，数值不一致。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "E 0 1 0 0 1",
+            "expected_condition": "E级中断屏蔽字 E：01000 (08H)",
+            "dependency_status": "not_applicable",
+            "reason": "学生写出 E 的屏蔽字为 01001，标准答案为 01000。最后一位 E 自身位应为0，学生为1，数值不一致。"
+          },
+          {
+            "id": "step_7",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "可见时间轴上的阶梯式执行路径，节点包括用户程序、A、C、B、D、E，通过连续的阶梯段连接，方向沿时间轴正向；完整可见路径：用户程序→A→C→B→D→E",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图（标准阶梯图，执行路径应符合优先级和屏蔽关系）",
+            "dependency_status": "failed",
+            "reason": "学生画出了阶梯式时间轴执行图的正确结构形式，节点完整且标注了路径方向，具备图表基本要素。但执行路径用户程序→A→C→B→D→E 与优先级顺序 A→D→C→E→B 不一致，且由于B/C/D/E屏蔽字错误，推导出的执行顺序也错误。给予部分分。"
+          }
+        ],
+        "total_score": 6.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B",
+            "expected_condition": "中断处理优先级排列顺序为 A → D → C → E → B",
+            "dependency_status": "not_applicable",
+            "reason": "学生给出的优先级排列 A>D>C>E>B 与标准答案完全一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "A 1 1 1 1",
+            "expected_condition": "A级中断屏蔽字为 01111 (0FH)",
+            "dependency_status": "not_applicable",
+            "reason": "学生写了 A 1 1 1 1，虽然漏写了首位的0（可能是默认或简写），但后四位均正确，属于轻微的格式遗漏。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "B 0 1 0 0 0",
+            "expected_condition": "B级中断屏蔽字为 00000 (00H)",
+            "dependency_status": "not_applicable",
+            "reason": "学生给出的屏蔽字 01000 与标准答案 00000 完全不符，屏蔽状态错误。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "C 0 1 1 0 1",
+            "expected_condition": "C级中断屏蔽字为 01001 (09H)",
+            "dependency_status": "not_applicable",
+            "reason": "学生给出的屏蔽字 01101 与标准答案 01001 存在位级冲突，概念错误。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "D 0 1 1 1 1",
+            "expected_condition": "D级中断屏蔽字为 01101 (0DH)",
+            "dependency_status": "not_applicable",
+            "reason": "学生给出的屏蔽字 01111 与标准答案 01101 不一致，屏蔽状态设定错误。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "E 0 1 0 0 1",
+            "expected_condition": "E级中断屏蔽字为 01000 (08H)",
+            "dependency_status": "not_applicable",
+            "reason": "学生给出的屏蔽字 01001 与标准答案 01000 存在数值和屏蔽位冲突。"
+          },
+          {
+            "id": "step_7",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "可见时间轴（t）上的阶梯式执行路径，节点包括用户程序、A、C、B、D、E，通过连续的阶梯段连接，方向沿时间轴正向；完整可见路径：用户程序→A→C→B→D→E",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图",
+            "dependency_status": "failed",
+            "reason": "学生画出了带有时间轴的阶梯式执行路径，并标明了主要节点及路径流向，但由于前序屏蔽字计算大多错误，该执行路径图必然与标准响应流程不符。给予部分步骤分。"
+          }
+        ],
+        "total_score": 5.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        1.5
+      ],
+      "step_3": [
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        0.0,
+        0.0
+      ],
+      "step_6": [
+        0.0,
+        0.0
+      ],
+      "step_7": [
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "FORMAT_MINOR"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_5": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_6": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_7": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0625,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.0,
+      "step_7": 0.0
+    },
+    "max_item_variance": 0.0625,
+    "avg_item_variance": 0.008928571428571428
+  },
+  {
+    "file": "ANS_CO_537.jpg",
+    "facts": "{\"step_1\": \"A>D>C>E>B\", \"step_2\": \"未书写\", \"step_3\": \"未书写\", \"step_4\": \"未书写\", \"step_5\": \"未书写\", \"step_6\": \"未书写\", \"step_7\": \"用户程序→A→C→D→E→C\"}",
+    "extraction_evidence": {
+      "schema_version": 1,
+      "created_at": "2026-06-23T16:05:04.620660",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_2/ANS_CO_537.jpg",
+      "image_sha256": "acfea7242fd67650751b16923aff54c742b806e4f9755acf5cc3519f387711c9",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_2/ANS_CO_537.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "gpu:0",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 23,
+        "accepted_token_count": 23,
+        "mean_confidence": 0.915905,
+        "min_confidence": 0.5,
+        "joined_text": "2. （20分）\n(1. A>D>C>E>B\nA B C 17 E\nA\nD\n服务租序\n0\n0 0 0\nB\n0\n(2).\nC\n0\n7\n0\nD\nE 0 01\nC\nB\nA\n用序\n继续C\n七",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.043256,
+          "very_dark_pixel_ratio": 0.0278,
+          "lower_region_dark_pixel_ratio": 0.041637,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "(1)A>D>C>E>B\n中断屏蔽字如表所示\n(2)如图所示",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_537",
+        "question_id": "CO_2",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "用户程序→A→C→D→E→C",
+      "diagram_facts": {
+        "step_7": "用户程序→A→C→D→E→C"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_7",
+          "instruction": "Extract the relations, nodes, and connections from the student's drawn diagram showing the CPU execution and interrupt processing sequence. Preserve any arrows, labels, blocks, and temporal direction exactly as drawn."
+        }
+      ],
+      "facts": {
+        "step_1": "A>D>C>E>B",
+        "step_2": "未书写",
+        "step_3": "未书写",
+        "step_4": "未书写",
+        "step_5": "未书写",
+        "step_6": "未书写",
+        "step_7": "用户程序→A→C→D→E→C"
+      }
+    },
+    "scores": [
+      4.0,
+      4.0,
+      4.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B",
+            "expected_condition": "正确的中断处理优先级排列顺序：A → D → C → E → B",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的顺序 A>D>C>E>B 与标准答案 A→D→C→E→B 在顺序上完全一致，仅符号表示不同，属于等价表达。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "写出A级中断屏蔽字：A：01111 (0FH)",
+            "dependency_status": "failed",
+            "reason": "学生未书写A级中断屏蔽字，无任何相关内容。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "写出B级中断屏蔽字：B：00000 (00H)",
+            "dependency_status": "failed",
+            "reason": "学生未书写B级中断屏蔽字，无任何相关内容。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "写出C级中断屏蔽字：C：01001 (09H)",
+            "dependency_status": "failed",
+            "reason": "学生未书写C级中断屏蔽字，无任何相关内容。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "写出D级中断屏蔽字：D：01101 (0DH)",
+            "dependency_status": "failed",
+            "reason": "学生未书写D级中断屏蔽字，无任何相关内容。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "写出E级中断屏蔽字：E：01000 (08H)",
+            "dependency_status": "failed",
+            "reason": "学生未书写E级中断屏蔽字，无任何相关内容。"
+          },
+          {
+            "id": "step_7",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "用户程序→A→C→D→E→C",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图（8分，需展示嵌套中断处理与返回的完整轨迹）",
+            "dependency_status": "insufficient",
+            "reason": "学生仅写出一个线性的执行序列字符串，未画出完整的中断处理顺序图。缺少中断嵌套关系的图形展示、各中断服务程序的返回点、时间轴等关键要素。线性序列也难以完整表达嵌套中断的复杂执行轨迹。给予少量分数以体现其尝试描述执行顺序的努力。"
+          }
+        ],
+        "total_score": 4.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B",
+            "expected_condition": "写出正确的中断处理优先级排列顺序：A → D → C → E → B",
+            "dependency_status": "not_applicable",
+            "reason": "学生给出的中断处理优先级排列顺序与标准答案完全一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "写出A级中断屏蔽字：A：01111 (0FH)",
+            "dependency_status": "not_applicable",
+            "reason": "提取的信息显示学生未书写该部分内容。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "写出B级中断屏蔽字：B：00000 (00H)",
+            "dependency_status": "not_applicable",
+            "reason": "提取的信息显示学生未书写该部分内容。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "写出C级中断屏蔽字：C：01001 (09H)",
+            "dependency_status": "not_applicable",
+            "reason": "提取的信息显示学生未书写该部分内容。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "写出D级中断屏蔽字：D：01101 (0DH)",
+            "dependency_status": "not_applicable",
+            "reason": "提取的信息显示学生未书写该部分内容。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "写出E级中断屏蔽字：E：01000 (08H)",
+            "dependency_status": "not_applicable",
+            "reason": "提取的信息显示学生未书写该部分内容。"
+          },
+          {
+            "id": "step_7",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "用户程序→A→C→D→E→C",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图",
+            "dependency_status": "satisfied",
+            "reason": "学生正确写出了部分初始的CPU执行和中断嵌套顺序轨迹，但未画出完整的处理与返回过程图，属于部分正确，给予部分分数。"
+          }
+        ],
+        "total_score": 4.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B",
+            "expected_condition": "A → D → C → E → B",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact correctly lists the interrupt handling priority order A>D>C>E>B, which completely matches the standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "A：01111 (0FH)",
+            "dependency_status": "failed",
+            "reason": "The student did not provide the A-level interrupt mask word."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "B：00000 (00H)",
+            "dependency_status": "failed",
+            "reason": "The student did not provide the B-level interrupt mask word."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "C：01001 (09H)",
+            "dependency_status": "failed",
+            "reason": "The student did not provide the C-level interrupt mask word."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "D：01101 (0DH)",
+            "dependency_status": "failed",
+            "reason": "The student did not provide the D-level interrupt mask word."
+          },
+          {
+            "id": "step_6",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "expected_condition": "E：01000 (08H)",
+            "dependency_status": "failed",
+            "reason": "The student did not provide the E-level interrupt mask word."
+          },
+          {
+            "id": "step_7",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "用户程序→A→C→D→E→C",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图",
+            "dependency_status": "insufficient",
+            "reason": "The student provided a linear sequence rather than a full execution and interrupt handling diagram. While it captures a partial execution trace, it lacks the complete branching, nesting, and return paths expected in the standard diagram."
+          }
+        ],
+        "total_score": 4.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_6": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_7": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_3": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_4": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_5": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_6": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_7": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.0,
+      "step_7": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_538.jpg",
+    "facts": "{\"step_1\": \"A>D>C>E>B.\", \"step_2\": \"1 1 1 1 1\", \"step_3\": \"0 1 0 0 0\", \"step_4\": \"0 1 1 0 1\", \"step_5\": \"0 1 1 1 1\", \"step_6\": \"0 1 0 0 1\", \"step_7\": \"可见用户程序起始，依次通过A、D、C、E、B级中断处理的连续路径，线段连接各中断级；完整可见路径：用户程序→A→D→C→E→B\"}",
+    "extraction_evidence": {
+      "schema_version": 1,
+      "created_at": "2026-06-23T16:11:24.577706",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_2/ANS_CO_538.jpg",
+      "image_sha256": "7b5658baa1bb9ab0a31c749e6e29de9e5c6427d181c5d818fe02ce0c1d4a6c25",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_2/ANS_CO_538.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "gpu:0",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 18,
+        "accepted_token_count": 18,
+        "mean_confidence": 0.857429,
+        "min_confidence": 0.5,
+        "joined_text": "2. （20分）\n(1)中断处理优光级 A>D>C > E> B\n中断屏蔽字：A1、111\nB 0 1 0 0 0\nC 0 1 1 0 1\n17 0 1 1 11\n胶样序\n(2)\n01001\nD\n01111\nC\n01101\n0/000\nB\nA\n1111\n用广程",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.044161,
+          "very_dark_pixel_ratio": 0.030574,
+          "lower_region_dark_pixel_ratio": 0.039218,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "(1)中断处理优先级 A>D>C>E>B.\n中断屏蔽字：\nA 1 1 1 1 1\nB 0 1 0 0 0\nC 0 1 1 0 1\nD 0 1 1 1 1\nE 0 1 0 0 1\n(2)如图所示",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_538",
+        "question_id": "CO_2",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "用户程序→A→D→C→E→B",
+      "diagram_facts": {
+        "step_7": "可见用户程序起始，依次通过A、D、C、E、B级中断处理的连续路径，线段连接各中断级；完整可见路径：用户程序→A→D→C→E→B"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_7",
+          "instruction": "Extract the student's drawn diagram for the CPU execution and interrupt processing sequence, capturing the exact nodes, labels, lines, arrows, and the overall order or direction of the relations exactly as drawn."
+        }
+      ],
+      "facts": {
+        "step_1": "A>D>C>E>B.",
+        "step_2": "1 1 1 1 1",
+        "step_3": "0 1 0 0 0",
+        "step_4": "0 1 1 0 1",
+        "step_5": "0 1 1 1 1",
+        "step_6": "0 1 0 0 1",
+        "step_7": "可见用户程序起始，依次通过A、D、C、E、B级中断处理的连续路径，线段连接各中断级；完整可见路径：用户程序→A→D→C→E→B"
+      }
+    },
+    "scores": [
+      6.0,
+      7.0,
+      7.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B.",
+            "expected_condition": "中断处理优先级顺序 A → D → C → E → B",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的处理优先级顺序与标准答案完全一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "1 1 1 1 1",
+            "expected_condition": "A级中断屏蔽字：01111 (0FH)",
+            "dependency_status": "failed",
+            "reason": "A级为最高处理优先级，应屏蔽B/C/D/E但不屏蔽自身；学生写11111，自身位错误且与优先级设定矛盾。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 0 0 0",
+            "expected_condition": "B级中断屏蔽字：00000 (00H)",
+            "dependency_status": "failed",
+            "reason": "B级为最低优先级，不应屏蔽任何中断，标准为00000；学生写01000，数值与概念均错误。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 1 0 1",
+            "expected_condition": "C级中断屏蔽字：01001 (09H)",
+            "dependency_status": "failed",
+            "reason": "C级屏蔽字应为01001（屏蔽B和E），学生写01101，与优先级关系不符。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 1 1 1",
+            "expected_condition": "D级中断屏蔽字：01101 (0DH)",
+            "dependency_status": "failed",
+            "reason": "D级屏蔽字应为01101（屏蔽B、C、E），学生写01111，自身位或对应位错误。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 0 0 1",
+            "expected_condition": "E级中断屏蔽字：01000 (08H)",
+            "dependency_status": "failed",
+            "reason": "E级屏蔽字应为01000（仅屏蔽B），学生写01001，多屏蔽一位E或对应位错误。"
+          },
+          {
+            "id": "step_7",
+            "score_given": 4.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "可见用户程序起始，依次通过A、D、C、E、B级中断处理的连续路径，线段连接各中断级；完整可见路径：用户程序→A→D→C→E→B",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图（含用户程序、嵌套中断响应与返回路径）",
+            "dependency_status": "insufficient",
+            "reason": "提取文字仅描述了A→D→C→E→B的连续路径与起点用户程序，核心顺序正确，但缺少中断响应/返回的完整时间轴及嵌套结构细节，无法判定整图为完全正确。"
+          }
+        ],
+        "total_score": 6.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B.",
+            "expected_condition": "写出正确的中断处理优先级排列顺序：A → D → C → E → B",
+            "dependency_status": "not_applicable",
+            "reason": "学生给出的优先级排列A>D>C>E>B与标准答案完全一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "1 1 1 1 1",
+            "expected_condition": "A级中断屏蔽字：01111 (0FH)",
+            "dependency_status": "failed",
+            "reason": "学生写11111，标准答案为01111。自屏蔽位（第一bit）应为0表示不屏蔽自身，学生全部置1，概念性错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 0 0 0",
+            "expected_condition": "B级中断屏蔽字：00000 (00H)",
+            "dependency_status": "failed",
+            "reason": "学生写01000，标准答案为00000。B级为最低优先级，不应屏蔽任何中断，屏蔽字全0才正确。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 1 0 1",
+            "expected_condition": "C级中断屏蔽字：01001 (09H)",
+            "dependency_status": "failed",
+            "reason": "学生写01101，标准答案为01001。C级屏蔽字对应屏蔽比自己低优先级的E和B，学生第3位（D级位）和第5位（B级位）写反，数值不符。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 1 1 1",
+            "expected_condition": "D级中断屏蔽字：01101 (0DH)",
+            "dependency_status": "failed",
+            "reason": "学生写01111，标准答案为01101。D级应屏蔽C、E、B，但不应屏蔽自身（第3位应为0），学生将E级位多置1，数值错误。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 0 0 1",
+            "expected_condition": "E级中断屏蔽字：01000 (08H)",
+            "dependency_status": "failed",
+            "reason": "学生写01001，标准答案为01000。E级仅屏蔽B级（第5位），不应屏蔽自身（第5位对应B应为1），但学生第5位写1同时意味着多屏蔽了一位，数值与标准答案01000不符。"
+          },
+          {
+            "id": "step_7",
+            "score_given": 5.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "可见用户程序起始，依次通过A、D、C、E、B级中断处理的连续路径，线段连接各中断级；完整可见路径：用户程序→A→D→C→E→B",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图",
+            "dependency_status": "insufficient",
+            "reason": "图中展示的执行路径顺序A→D→C→E→B与优先级排列一致，路径方向正确。但学生屏蔽字全部错误，意味着实际中断嵌套行为可能不正确，且提取的描述过于简略，无法确认完整的时间线嵌套细节。给予部分分数。"
+          }
+        ],
+        "total_score": 7.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B.",
+            "expected_condition": "写出正确的中断处理优先级排列顺序 A → D → C → E → B",
+            "dependency_status": "satisfied",
+            "reason": "优先级顺序与标准答案完全一致，正确写出 A>D>C>E>B。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "1 1 1 1 1",
+            "expected_condition": "A级中断屏蔽字为 01111 (0FH)，自屏蔽位应为0",
+            "dependency_status": "failed",
+            "reason": "学生给出11111，自屏蔽位为1（错误地屏蔽自身），且与标准01111不一致，属概念性错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 0 0 0",
+            "expected_condition": "B级中断屏蔽字为 00000 (00H)，最低优先级应允许所有中断",
+            "dependency_status": "failed",
+            "reason": "学生给出01000，与标准00000不一致，且作为最低优先级屏蔽某级属概念错误。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 1 0 1",
+            "expected_condition": "C级中断屏蔽字为 01001 (09H)",
+            "dependency_status": "failed",
+            "reason": "学生给出01101，与标准01001不一致，屏蔽关系错误。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 1 1 1",
+            "expected_condition": "D级中断屏蔽字为 01101 (0DH)，自屏蔽位应为0",
+            "dependency_status": "failed",
+            "reason": "学生给出01111，D的自屏蔽位为1（自身被屏蔽），与标准01101不一致。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "0 1 0 0 1",
+            "expected_condition": "E级中断屏蔽字为 01000 (08H)，自屏蔽位应为0",
+            "dependency_status": "failed",
+            "reason": "学生给出01001，E的自屏蔽位为1（自身被屏蔽），与标准01000不一致。"
+          },
+          {
+            "id": "step_7",
+            "score_given": 5.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "可见用户程序起始，依次通过A、D、C、E、B级中断处理的连续路径，线段连接各中断级；完整可见路径：用户程序→A→D→C→E→B",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图，应体现优先级嵌套关系",
+            "dependency_status": "insufficient",
+            "reason": "图中正确反映了优先级顺序 用户程序→A→D→C→E→B，主线顺序正确，但描述仅给出连续路径，缺少完整的多中断时间轴/嵌套返回结构，给部分分。"
+          }
+        ],
+        "total_score": 7.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_6": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_7": [
+        4.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_5": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_6": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_7": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.0,
+      "step_7": 0.22222222222222224
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.03174603174603175
+  },
+  {
+    "file": "ANS_CO_540.jpg",
+    "facts": "{\"step_1\": \"A>D>C>E>B\", \"step_2\": \"00000\", \"step_3\": \"10111\", \"step_4\": \"10010\", \"step_5\": \"10000\", \"step_6\": \"10110\", \"step_7\": \"需要查看图像\"}",
+    "extraction_evidence": {
+      "schema_version": 1,
+      "created_at": "2026-06-23T16:35:13.923288",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_2/ANS_CO_540.jpg",
+      "image_sha256": "03ad011db72b13f5b3622ee8c13ede6dc9d74f1c21692c12d76cd4120813eabb",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_2/ANS_CO_540.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "gpu:0",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 19,
+        "accepted_token_count": 18,
+        "mean_confidence": 0.973981,
+        "min_confidence": 0.5,
+        "joined_text": "2. （20分）\n解：“1根据题中所给信息可得处理优先级为A>D>C>E>B。\n各中断源的屏蔽字为：\nA:00000\n服务程序\nB:10111\n↑\nC:10010\nE\nD:10000\nD\nE:10110\nC\nB\n(2). 如图：\nA\n→t\n用户程序",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.072839,
+          "very_dark_pixel_ratio": 0.052848,
+          "lower_region_dark_pixel_ratio": 0.064369,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "解：根据题中所给信息可得处理优先级为A>D>C>E>B。\n各中断源的屏蔽字为：\nA:00000\nB:10111\nC:10010\nD:10000\nE:10110\n(2)如图所示",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_540",
+        "question_id": "CO_2",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "用户程序→A→C→D→E→B",
+      "diagram_facts": {},
+      "diagram_checklist": [
+        {
+          "id": "step_7",
+          "instruction": "Extract the concrete content of the CPU execution and interrupt-handling timing/sequence diagram that the student drew. Record the named program segments, interrupt labels, time-axis position, vertical/horizontal arrows and their direction, nested/preempted call relationships, the order in which segments and interrupts appear along the time axis, return arrows, and any textual annotations. Preserve the relative ordering, nesting structure, and direction of all arrows and labels exactly as drawn."
+        }
+      ],
+      "facts": {
+        "step_1": "A>D>C>E>B",
+        "step_2": "00000",
+        "step_3": "10111",
+        "step_4": "10010",
+        "step_5": "10000",
+        "step_6": "10110",
+        "step_7": "需要查看图像"
+      }
+    },
+    "scores": [
+      2.0,
+      2.0,
+      2.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B",
+            "expected_condition": "中断处理优先级排列顺序为 A → D → C → E → B",
+            "dependency_status": "not_applicable",
+            "reason": "学生给出的顺序与标准顺序一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "00000",
+            "expected_condition": "A级中断屏蔽字为 01111",
+            "dependency_status": "failed",
+            "reason": "学生给出的屏蔽字与标准答案不一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10111",
+            "expected_condition": "B级中断屏蔽字为 00000",
+            "dependency_status": "failed",
+            "reason": "学生给出的屏蔽字与标准答案不一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10010",
+            "expected_condition": "C级中断屏蔽字为 01001",
+            "dependency_status": "failed",
+            "reason": "学生给出的屏蔽字与标准答案不一致。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10000",
+            "expected_condition": "D级中断屏蔽字为 01101",
+            "dependency_status": "failed",
+            "reason": "学生给出的屏蔽字与标准答案不一致。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10110",
+            "expected_condition": "E级中断屏蔽字为 01000",
+            "dependency_status": "failed",
+            "reason": "学生给出的屏蔽字与标准答案不一致。"
+          },
+          {
+            "id": "step_7",
+            "score_given": 0,
+            "error_category": "INSUFFICIENT_INFO",
+            "evidence_text": "需要查看图像",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图",
+            "dependency_status": "insufficient",
+            "reason": "仅有“需要查看图像”，未提供可判分的图或具体内容。"
+          }
+        ],
+        "total_score": 2.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B",
+            "expected_condition": "A → D → C → E → B",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted priority order matches the standard answer exactly."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "00000",
+            "expected_condition": "A：01111 (0FH)",
+            "dependency_status": "failed",
+            "reason": "The extracted mask word for A is 00000, which contradicts the correct answer 01111."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10111",
+            "expected_condition": "B：00000 (00H)",
+            "dependency_status": "failed",
+            "reason": "The extracted mask word for B is 10111, which contradicts the correct answer 00000."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10010",
+            "expected_condition": "C：01001 (09H)",
+            "dependency_status": "failed",
+            "reason": "The extracted mask word for C is 10010, which contradicts the correct answer 01001."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10000",
+            "expected_condition": "D：01101 (0DH)",
+            "dependency_status": "failed",
+            "reason": "The extracted mask word for D is 10000, which contradicts the correct answer 01101."
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10110",
+            "expected_condition": "E：01000 (08H)",
+            "dependency_status": "failed",
+            "reason": "The extracted mask word for E is 10110, which contradicts the correct answer 01000."
+          },
+          {
+            "id": "step_7",
+            "score_given": 0,
+            "error_category": "INSUFFICIENT_INFO",
+            "evidence_text": "需要查看图像",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图",
+            "dependency_status": "insufficient",
+            "reason": "The extracted fact only states a need to view the image and provides no extractable content for the diagram."
+          }
+        ],
+        "total_score": 2.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A>D>C>E>B",
+            "expected_condition": "正确的中断处理优先级排列顺序：A → D → C → E → B",
+            "dependency_status": "satisfied",
+            "reason": "学生写的 A>D>C>E>B 与标准答案 A→D→C→E→B 完全一致，仅符号形式不同（> vs →），完全正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "00000",
+            "expected_condition": "A级中断屏蔽字：01111 (0FH)",
+            "dependency_status": "failed",
+            "reason": "A级为最高优先级，应屏蔽所有低优先级中断，标准屏蔽字为 01111。学生写 00000 表示不屏蔽任何中断，与A最高优先级的概念矛盾，属于核心结论错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10111",
+            "expected_condition": "B级中断屏蔽字：00000 (00H)",
+            "dependency_status": "failed",
+            "reason": "B级为最低优先级，不应屏蔽任何中断，标准屏蔽字为 00000。学生写 10111 表示B几乎屏蔽所有中断，与B最低优先级的概念完全矛盾。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10010",
+            "expected_condition": "C级中断屏蔽字：01001 (09H)",
+            "dependency_status": "failed",
+            "reason": "C级屏蔽字标准为 01001（屏蔽B和E），学生写 10010 与正确值不符，且各位均不匹配，屏蔽关系概念性错误。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10000",
+            "expected_condition": "D级中断屏蔽字：01101 (0DH)",
+            "dependency_status": "failed",
+            "reason": "D级屏蔽字标准为 01101（屏蔽B、C、E），学生写 10000 仅屏蔽一个位，与D第二优先级应屏蔽多个低优先级中断的概念矛盾。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "10110",
+            "expected_condition": "E级中断屏蔽字：01000 (08H)",
+            "dependency_status": "failed",
+            "reason": "E级屏蔽字标准为 01000（仅屏蔽B），学生写 10110 与正确值不符，屏蔽位关系错误。"
+          },
+          {
+            "id": "step_7",
+            "score_given": 0,
+            "error_category": "INSUFFICIENT_INFO",
+            "evidence_text": "需要查看图像",
+            "expected_condition": "画出正确的CPU执行程序和处理中断顺序图",
+            "dependency_status": "insufficient",
+            "reason": "提取事实仅为'需要查看图像'，未提供任何图示内容或关系信息，无法判断学生是否画出了正确的执行和中断处理顺序图。"
+          }
+        ],
+        "total_score": 2.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_6": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_7": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_5": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_6": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_7": [
+        "INSUFFICIENT_INFO",
+        "INSUFFICIENT_INFO",
+        "INSUFFICIENT_INFO"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.0,
+      "step_7": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]
