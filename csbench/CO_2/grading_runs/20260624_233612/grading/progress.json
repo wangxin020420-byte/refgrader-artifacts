@@ -1,0 +1,109 @@
+{
+  "experiment": {
+    "run_id": "20260624_233612",
+    "mode": "FULL",
+    "pid": 875248,
+    "status": "completed",
+    "started_at": "2026-06-24T23:36:13.871263",
+    "last_updated": "2026-06-25T11:02:38.730097",
+    "model_provider": "glm5",
+    "vlm_model": "glm-4.6v",
+    "text_model": "glm-5.1",
+    "max_workers_outer": 2,
+    "cli_args": {
+      "mode": "FULL",
+      "questions": [
+        "CO_2"
+      ],
+      "force_rerun": true,
+      "img_limit": null,
+      "sample_size": 5,
+      "results_dir": "${REFGRADER_ROOT}/results_runs/csbench_co2_full",
+      "rubric_dir": "${REFGRADER_ROOT}/data/csbench/rubrics/optimized",
+      "initial_rubric_dir": "${REFGRADER_ROOT}/data/csbench/rubrics/initial",
+      "allow_initial_rubric": false,
+      "extraction_backend": "csbench_hybrid",
+      "ocr_cache_dir": "${REFGRADER_ROOT}/ocr_cache/csbench",
+      "database_path": "${REFGRADER_ROOT}/data/csbench/exam_database.json",
+      "teacher_db": "${REFGRADER_ROOT}/data/csbench/teacher_scores.json",
+      "answer_metadata": "${REFGRADER_ROOT}/data/csbench/answer_metadata.jsonl",
+      "answer_split": "test"
+    }
+  },
+  "questions": {
+    "CO_2": {
+      "total_students": 84,
+      "completed": 62,
+      "failed": 22,
+      "remaining": 0,
+      "started_at": "2026-06-24T23:45:32.116486",
+      "last_student_at": "2026-06-25T11:02:38.456328",
+      "eta_seconds": 0,
+      "avg_seconds_per_student": 1181.0,
+      "route_distribution": {
+        "BND": 52,
+        "POS": 6,
+        "NEG": 4
+      },
+      "current_errors": [
+        {
+          "student_id": "ANS_CO_641",
+          "error": "GLM-5.1 OCR fact mapping failed after 4 attempts",
+          "at": "2026-06-25T11:01:39.757806"
+        },
+        {
+          "student_id": "ANS_CO_630",
+          "error": "all semantic grading probes failed or returned unparsable scores",
+          "at": "2026-06-25T11:02:06.071808"
+        },
+        {
+          "student_id": "ANS_CO_642",
+          "error": "GLM-5.1 OCR fact mapping failed after 4 attempts",
+          "at": "2026-06-25T11:02:38.456337"
+        }
+      ],
+      "recent_completions": [
+        {
+          "student_id": "ANS_CO_609",
+          "route": "POS",
+          "final_score": 20.0,
+          "teacher_score": 20.0,
+          "completed_at": "2026-06-25T10:02:10.112924",
+          "duration_seconds": 820.6
+        },
+        {
+          "student_id": "ANS_CO_613",
+          "route": "BND",
+          "final_score": 0,
+          "teacher_score": 0.0,
+          "completed_at": "2026-06-25T10:04:27.246702",
+          "duration_seconds": 137.1
+        },
+        {
+          "student_id": "ANS_CO_615",
+          "route": "POS",
+          "final_score": 6.5,
+          "teacher_score": 18.0,
+          "completed_at": "2026-06-25T10:15:58.388409",
+          "duration_seconds": 480.9
+        },
+        {
+          "student_id": "ANS_CO_617",
+          "route": "BND",
+          "final_score": 2.5,
+          "teacher_score": 15.0,
+          "completed_at": "2026-06-25T10:29:00.393471",
+          "duration_seconds": 782.0
+        },
+        {
+          "student_id": "ANS_CO_623",
+          "route": "BND",
+          "final_score": 3.2,
+          "teacher_score": 15.0,
+          "completed_at": "2026-06-25T10:43:00.782881",
+          "duration_seconds": 781.9
+        }
+      ]
+    }
+  }
+}
