@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "source": "scripts/calibrate_a3wa.py",
+  "database_path": "data\\csbench\\exam_database.json",
+  "teacher_db": "data\\csbench\\teacher_scores.json",
+  "files": [
+    "results_runs\\csbench_co1_co2_validation_20260711_193026\\CO_1_grading_checkpoint.json",
+    "results_runs\\csbench_co1_co2_validation_20260711_193026\\CO_2_grading_checkpoint.json"
+  ],
+  "selection_objective": "cost_sensitive_validation_calibration",
+  "loss_params": {
+    "lambda1": 3.0,
+    "lambda2": 1.0,
+    "mu1": 2.0,
+    "mu2": 5.0,
+    "m": 0.2
+  },
+  "risk_weights": {
+    "extract": 0.35000000000000003,
+    "score": 0.30000000000000004,
+    "semantic": 0.20000000000000004,
+    "blank": 0.15000000000000002,
+    "overcredit": 0.0
+  },
+  "thresholds": {
+    "alpha": 0.8,
+    "beta": 0.142857
+  },
+  "validation_summary": {
+    "n": 23,
+    "objective": 2.766667,
+    "metrics": {
+      "n": 23,
+      "mae": 2.204348,
+      "rmse": 2.797126,
+      "tar2": 0.608696,
+      "bias": -1.534783,
+      "over2": 1,
+      "under2": 8
+    },
+    "baseline_metrics": {
+      "n": 23,
+      "mae": 2.073913,
+      "rmse": 2.731061,
+      "tar2": 0.652174,
+      "bias": -1.404348,
+      "over2": 1,
+      "under2": 7
+    },
+    "route_counts": {
+      "BND": 18,
+      "POS": 5
+    },
+    "bnd_ratio": 0.782609,
+    "pos_mae": 1.2,
+    "bnd_mae": 2.483333,
+    "bnd_gain": -0.166667
+  },
+  "score_calibration": {
+    "version": 1,
+    "enabled": true,
+    "method": "validation_residual_additive",
+    "score_band": "low:<35%, mid:<70%, high:>=70%",
+    "min_cell_count": 5,
+    "shrinkage_k": 8.0,
+    "max_correction_ratio": 0.12,
+    "max_correction_points": 2.0,
+    "table": {
+      "question_route_band": {
+        "CO_1|BND|high": {
+          "n": 5,
+          "mean_residual": -0.04,
+          "correction": -0.015385
+        },
+        "CO_1|BND|low": {
+          "n": 5,
+          "mean_residual": 1.8,
+          "correction": 0.6
+        }
+      },
+      "question_route": {
+        "CO_1|BND": {
+          "n": 12,
+          "mean_residual": 1.091667,
+          "correction": 0.6
+        },
+        "CO_2|BND": {
+          "n": 6,
+          "mean_residual": 3.366667,
+          "correction": 1.442857
+        }
+      },
+      "question": {
+        "CO_1": {
+          "n": 13,
+          "mean_residual": 1.007692,
+          "correction": 0.6
+        },
+        "CO_2": {
+          "n": 10,
+          "mean_residual": 2.22,
+          "correction": 1.233333
+        }
+      },
+      "route": {
+        "BND": {
+          "n": 18,
+          "mean_residual": 1.85,
+          "correction": 1.2
+        },
+        "POS": {
+          "n": 5,
+          "mean_residual": 0.4,
+          "correction": 0.153846
+        }
+      },
+      "global": {
+        "*": {
+          "n": 23,
+          "mean_residual": 1.534783,
+          "correction": 1.13871
+        }
+      }
+    }
+  }
+}
