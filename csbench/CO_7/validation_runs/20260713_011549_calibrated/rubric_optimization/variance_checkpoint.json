@@ -1,0 +1,817 @@
+[
+  {
+    "file": "ANS_CO_471.jpg",
+    "facts": "{\"step_1\": \"程序P在M1上的时钟周期数为10×10^4×2 = 2×10⁵，则运行时间为2×10⁵/4×10⁹ S = 50μS.\", \"step_2\": \"程序P在M2上的时钟周期数为10×10^4×1 = 1×10⁵，则运行时间为1×10⁵/6×10⁹ S = 100/6 μS.\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-13T05:35:01.177939",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_7/ANS_CO_471.jpg",
+      "image_sha256": "0284c5252dd219875e3dd6f493e6ea3e7d954734f5d71a44885b444adb141467",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "程序P在M1上的时钟周期数为10×10^4×2 = 2×10⁵\n则运行时间为2×10⁵/4×10⁹ S = 50μS.\n程序P在M2上的时钟周期数为10×10^4×1 = 1×10⁵\n则运行时间为1×10⁵/6×10⁹ S = 100/6 μS.",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_471",
+        "question_id": "CO_7",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "程序P在M1上的时钟周期数为10×10^4×2 = 2×10⁵，则运行时间为2×10⁵/4×10⁹ S = 50μS.",
+        "step_2": "程序P在M2上的时钟周期数为10×10^4×1 = 1×10⁵，则运行时间为1×10⁵/6×10⁹ S = 100/6 μS."
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "程序P在M1上的时钟周期数为10×10^4×2 = 2×10⁵，则运行时间为2×10⁵/4×10⁹ S = 50μS.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M1的运行时间，周期数为2×10^5，时间为50μs。",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly calculates the clock cycles for M1 (2×10⁵) and accurately computes the execution time as 50μS, fully matching the canonical answer with valid process evidence."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "程序P在M2上的时钟周期数为10×10^4×1 = 1×10⁵，则运行时间为1×10⁵/6×10⁹ S = 100/6 μS.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M2的运行时间，周期数为1×10^5，时间约为16.7μs。",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly calculates the clock cycles for M2 (1×10⁵) and the resulting execution time (100/6 μS is mathematically equivalent to ~16.67μs). The calculation is correct and is supported by valid process evidence."
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "程序P在M1上的时钟周期数为10×10^4×2 = 2×10⁵，则运行时间为2×10⁵/4×10⁹ S = 50μS.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "M1总周期数 = 10^5 × 2 = 2.0×10^5，时间 T_M1 = (2.0×10^5) / (4×10^9) = 50 μs",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly computes cycle count (2×10^5) and execution time (50μs). Formula and substitution both present. Final answer matches canonical. The 'S'/'μS' vs 's'/'μs' casing is a trivial notation difference that does not affect correctness."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "程序P在M2上的时钟周期数为10×10^4×1 = 1×10⁵，则运行时间为1×10⁵/6×10⁹ S = 100/6 μS.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "M2总周期数 = 10^5 × 1 = 1.0×10^5，时间 T_M2 = (1.0×10^5) / (6×10^9) ≈ 16.7 μs",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly computes cycle count (1×10^5) and execution time as 100/6 μS ≈ 16.67 μs, which matches the canonical 16.7 μs. Leaving the result as an unsimplified fraction is acceptable under the lenient policy since the value is exactly correct."
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "程序P在M1上的时钟周期数为10×10^4×2 = 2×10⁵，则运行时间为2×10⁵/4×10⁹ S = 50μS.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M1的运行时间",
+            "dependency_status": "satisfied",
+            "reason": "学生正确计算出总周期数（2×10^5）并将其除以时钟频率（4×10^9 Hz），得出正确的时间 50 μs。核心计算与结果均正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "程序P在M2上的时钟周期数为10×10^4×1 = 1×10⁵，则运行时间为1×10⁵/6×10⁹ S = 100/6 μS.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M2的运行时间",
+            "dependency_status": "satisfied",
+            "reason": "学生正确计算出总周期数（1×10^5）并将其除以时钟频率（6×10^9 Hz），得出正确的时间结果（100/6 μs 约等于 16.67 μs），计算过程与结果均无误。"
+          }
+        ],
+        "total_score": 10.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_474.jpg",
+    "facts": "{\"step_1\": \"M₁: 10⁵/(4×10⁹) ×2 =5×10⁻⁵s\", \"step_2\": \"M₂: 10⁵/(6×10⁹) ×1 ≈1.67×10⁻⁵s\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-13T05:36:44.379205",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_7/ANS_CO_474.jpg",
+      "image_sha256": "563a5cb2a63e5fec872a7ed4098a83e311d08f93593cabbba0e3097a39a387ac",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解: M₁: 10⁵/(4×10⁹) ×2 =5×10⁻⁵s  M₂: 10⁵/(6×10⁹) ×1 ≈1.67×10⁻⁵s",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_474",
+        "question_id": "CO_7",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "M₁: 10⁵/(4×10⁹) ×2 =5×10⁻⁵s",
+        "step_2": "M₂: 10⁵/(6×10⁹) ×1 ≈1.67×10⁻⁵s"
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M₁: 10⁵/(4×10⁹) ×2 =5×10⁻⁵s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly calculate the running time of M1",
+            "dependency_status": "not_applicable",
+            "reason": "The student provides the correct computation trace and the final numerical answer for M1's running time, perfectly matching the canonical result."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M₂: 10⁵/(6×10⁹) ×1 ≈1.67×10⁻⁵s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly calculate the running time of M2",
+            "dependency_status": "not_applicable",
+            "reason": "The student provides the correct computation trace and the final numerical answer for M2's running time, perfectly matching the canonical result."
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M₁: 10⁵/(4×10⁹) ×2 =5×10⁻⁵s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M1的运行时间，期望 T_M1 = 5.0×10⁻⁵ s",
+            "dependency_status": "satisfied",
+            "reason": "学生展示了计算过程（周期数=10⁵×2，除以主频4×10⁹），并得到正确结果5×10⁻⁵s，与标准答案一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M₂: 10⁵/(6×10⁹) ×1 ≈1.67×10⁻⁵s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M2的运行时间，期望 T_M2 ≈ 1.67×10⁻⁵ s",
+            "dependency_status": "satisfied",
+            "reason": "学生展示了计算过程（周期数=10⁵×1，除以主频6×10⁹），并得到正确结果≈1.67×10⁻⁵s，与标准答案一致。"
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M₁: 10⁵/(4×10⁹) ×2 =5×10⁻⁵s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M1的运行时间，标准答案 T_M1 = 5.0×10⁻⁵ s",
+            "dependency_status": "satisfied",
+            "reason": "学生给出了完整的计算公式 (10⁵/(4×10⁹)×2)，代入CPI=2、主频4GHz、指令数10⁵，最终结果5×10⁻⁵s与标准答案完全一致，且含计算过程，满足满分要求。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M₂: 10⁵/(6×10⁹) ×1 ≈1.67×10⁻⁵s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M2的运行时间，标准答案 T_M2 ≈ 1.67×10⁻⁵ s",
+            "dependency_status": "satisfied",
+            "reason": "学生给出了完整计算公式 (10⁵/(6×10⁹)×1)，代入CPI=1、主频6GHz、指令数10⁵，最终结果≈1.67×10⁻⁵s与标准答案完全一致，且含计算过程，满足满分要求。"
+          }
+        ],
+        "total_score": 10.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_495.jpg",
+    "facts": "{\"step_1\": \"t₁ = CPI₁× 10⁵× 1/f₁ = 2 × 10⁵× 1/(4 × 10⁹) = 50ns\", \"step_2\": \"t₂ = CPI₂× 10⁵× 1/f₂ = 1 × 10⁵× 1/(6 × 10⁹) ≈16.67us.\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-13T05:38:16.412509",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_7/ANS_CO_495.jpg",
+      "image_sha256": "190568297bcd60d92c707423e70f8c19a9103f6402da9709b1a72585fc482f5b",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "程序P在M1上运行时间：\nt₁ = CPI₁× 10⁵× 1/f₁ = 2 × 10⁵× 1/(4 × 10⁹) = 50ns\n程序P在M2上运行时间：\nt₂ = CPI₂× 10⁵× 1/f₂ = 1 × 10⁵× 1/(6 × 10⁹) ≈16.67us.",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_495",
+        "question_id": "CO_7",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "t₁ = CPI₁× 10⁵× 1/f₁ = 2 × 10⁵× 1/(4 × 10⁹) = 50ns",
+        "step_2": "t₂ = CPI₂× 10⁵× 1/f₂ = 1 × 10⁵× 1/(6 × 10⁹) ≈16.67us."
+      }
+    },
+    "scores": [
+      8.5,
+      7.5,
+      8.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "t₁ = CPI₁× 10⁵× 1/f₁ = 2 × 10⁵× 1/(4 × 10⁹) = 50ns",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "M1运行时间正确，应为 (2×10⁵)/(4×10⁹) = 5×10⁻⁵ s = 50 μs",
+            "dependency_status": "satisfied",
+            "reason": "计算公式与代入过程完全正确，数值 2×10⁵/(4×10⁹)=5×10⁻⁵ s 也正确。但最终单位标注错误：应为 50 μs，学生写为 50ns，单位相差 1000 倍。核心算式正确，仅单位标签错误，按宽松政策判为 FORMAT_MINOR。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "t₂ = CPI₂× 10⁵× 1/f₂ = 1 × 10⁵× 1/(6 × 10⁹) ≈16.67us",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "M2运行时间 ≈ 1.67×10⁻⁵ s = 16.7 μs",
+            "dependency_status": "satisfied",
+            "reason": "公式正确、代入正确、最终数值 16.67 μs 与标准答案 16.7 μs 一致（仅四舍五入位数差异），单位也正确。完全满足要求。"
+          }
+        ],
+        "total_score": 8.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "t₁ = CPI₁× 10⁵× 1/f₁ = 2 × 10⁵× 1/(4 × 10⁹) = 50ns",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M1的运行时间：T_M1 = (2.0×10^5) / (4×10^9) = 50 μs",
+            "dependency_status": "not_applicable",
+            "reason": "学生使用了正确的公式和代入数据，得出了正确的数值50，但单位标注错误（写成了ns而不是μs），导致最终结论因量纲/单位不匹配而不正确。因为计算过程完整且思路连贯，给予部分分数。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "t₂ = CPI₂× 10⁵× 1/f₂ = 1 × 10⁵× 1/(6 × 10⁹) ≈16.67us.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M2的运行时间：T_M2 = (1.0×10^5) / (6×10^9) ≈ 16.7 μs",
+            "dependency_status": "not_applicable",
+            "reason": "学生使用了正确的公式，代入正确，并且计算出了正确的结果及单位（16.67μs），与标准答案（16.7μs）匹配，给满分。"
+          }
+        ],
+        "total_score": 7.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "t₁ = CPI₁× 10⁵× 1/f₁ = 2 × 10⁵× 1/(4 × 10⁹) = 50ns",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly calculate the execution time of M1 (T_M1 = 50 μs).",
+            "dependency_status": "satisfied",
+            "reason": "The student uses the correct formula and performs the correct calculation setup (2e5 / 4e9), but concludes with the wrong unit 'ns' instead of 'μs', resulting in a 1000x magnitude error in the final answer. Partial credit is awarded for the correct method."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "t₂ = CPI₂× 10⁵× 1/f₂ = 1 × 10⁵× 1/(6 × 10⁹) ≈16.67us.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly calculate the execution time of M2 (T_M2 ≈ 16.7 μs).",
+            "dependency_status": "satisfied",
+            "reason": "The student applies the correct formula and successfully computes the execution time with the correct unit (16.67 μs)."
+          }
+        ],
+        "total_score": 8.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.5,
+        2.5,
+        3.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.16666666666666666,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.16666666666666666,
+    "avg_item_variance": 0.08333333333333333
+  },
+  {
+    "file": "ANS_CO_497.jpg",
+    "facts": "{\"step_1\": \"公式: Te= (CPI×IC)/F；计算与数值: 程序P在M1上的运行时间Te1= (2×1×10⁶)/(4×10⁹)=5×10⁻⁴s\", \"step_2\": \"公式: Te= (CPI×IC)/F；计算与数值: 程序P在M2上的运行时间Te2= (1×1×10⁶)/(6×10⁹)=1.667×10⁻⁴s\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-13T05:41:04.703975",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_7/ANS_CO_497.jpg",
+      "image_sha256": "bdebb4a81e9599fc8e5ea31485a00386ee844a348c9f351e5d174e769f101b87",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：F1=4GHz=4×10^-9Hz  F2=6GHz=6×10^-9Hz\nIC=10×10⁵=1×10⁶\nCPI1=2  CPI2=1\nTe=m×T\nT=1/F      \nCPI=m/IC\n⇒ Te= (CPI×IC)/F\n程序P在M1上的运行时间Te1= (2×1×10⁶)/(4×10⁹)=5×10⁻⁴s\n程序P在M2上的运行时间Te2= (1×1×10⁶)/(6×10⁹)=1.667×10⁻⁴s",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_497",
+        "question_id": "CO_7",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "公式: Te= (CPI×IC)/F；计算与数值: 程序P在M1上的运行时间Te1= (2×1×10⁶)/(4×10⁹)=5×10⁻⁴s",
+        "step_2": "公式: Te= (CPI×IC)/F；计算与数值: 程序P在M2上的运行时间Te2= (1×1×10⁶)/(6×10⁹)=1.667×10⁻⁴s"
+      }
+    },
+    "scores": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "公式: Te= (CPI×IC)/F；计算与数值: 程序P在M1上的运行时间Te1= (2×1×10⁶)/(4×10⁹)=5×10⁻⁴s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "M1总周期数 = 10^5 × 2 = 2.0×10^5，时间 T_M1 = (2.0×10^5) / (4×10^9) = 5.0×10^-5 s = 50 μs。",
+            "dependency_status": "insufficient",
+            "reason": "公式形式正确(CPI×IC/F)，方法结构正确，但IC取值错误(用了10⁶而非10⁵)，导致最终数值5×10⁻⁴s比标准值5×10⁻⁵s大10倍。方法连贯但数值结论错误，按上游输入错误传播处理，给半分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "公式: Te= (CPI×IC)/F；计算与数值: 程序P在M2上的运行时间Te2= (1×1×10⁶)/(6×10⁹)=1.667×10⁻⁴s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "M2总周期数 = 10^5 × 1 = 1.0×10^5，时间 T_M2 = (1.0×10^5) / (6×10^9) ≈ 1.67×10^-5 s = 16.7 μs。",
+            "dependency_status": "insufficient",
+            "reason": "公式形式正确，方法结构正确，但IC取值错误(用了10⁶而非10⁵)，导致最终数值1.667×10⁻⁴s比标准值1.67×10⁻⁵s大10倍。方法连贯但数值结论错误，按上游输入错误传播处理，给半分。"
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "公式: Te= (CPI×IC)/F；计算与数值: 程序P在M1上的运行时间Te1= (2×1×10⁶)/(4×10⁹)=5×10⁻⁴s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M1的运行时间，标准答案 T_M1 = (2.0×10^5)/(4×10^9) = 5.0×10^-5 s = 50 μs（IC = 10^5）",
+            "dependency_status": "insufficient",
+            "reason": "公式 Te=(CPI×IC)/F 与计算框架正确，但学生代入 IC=1×10⁶（标准为 1×10⁵），导致周期数与最终结果均相差 10 倍（5×10⁻⁴s vs 5×10⁻⁵s）。方法正确但输入参数错误，按方法给部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "公式: Te= (CPI×IC)/F；计算与数值: 程序P在M2上的运行时间Te2= (1×1×10⁶)/(6×10⁹)=1.667×10⁻⁴s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M2的运行时间，标准答案 T_M2 = (1.0×10^5)/(6×10^9) ≈ 1.67×10^-5 s = 16.7 μs（IC = 10^5）",
+            "dependency_status": "insufficient",
+            "reason": "公式与方法正确，且 1.667×10⁻⁴s 与代入 IC=10⁶ 后的算术结果一致；但 IC 仍比标准大 10 倍，使最终结果偏离 10 倍。方法可取，结果错误，给部分分。"
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "公式: Te= (CPI×IC)/F；计算与数值: 程序P在M1上的运行时间Te1= (2×1×10⁶)/(4×10⁹)=5×10⁻⁴s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M1的运行时间，标准答案: T_M1 = (2.0×10^5) / (4×10^9) = 5.0×10^-5 s = 50 μs",
+            "dependency_status": "failed",
+            "reason": "公式 Te=(CPI×IC)/F 正确，CPI=2 和 F=4×10⁹ 与标准一致，计算过程自洽。但学生使用 IC=1×10⁶，而标准答案 IC=10^5，导致最终结果 5×10⁻⁴ s 比标准值 5×10⁻⁵ s 大10倍，数值不正确。方法正确但最终数值错误，给予部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "公式: Te= (CPI×IC)/F；计算与数值: 程序P在M2上的运行时间Te2= (1×1×10⁶)/(6×10⁹)=1.667×10⁻⁴s",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M2的运行时间，标准答案: T_M2 = (1.0×10^5) / (6×10^9) ≈ 1.67×10^-5 s = 16.7 μs",
+            "dependency_status": "failed",
+            "reason": "公式正确，CPI=1 和 F=6×10⁹ 与标准一致，计算过程自洽。同样因 IC=1×10⁶ 与标准 IC=10^5 差10倍，导致最终结果 1.667×10⁻⁴ s 比标准 1.67×10⁻⁵ s 大10倍。方法正确但最终数值错误，给予部分分。"
+          }
+        ],
+        "total_score": 5.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.5,
+        2.5,
+        2.5
+      ],
+      "step_2": [
+        2.5,
+        2.5,
+        2.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_500.jpg",
+    "facts": "{\"step_1\": \"M1所需的指令周期数为 CPI M1 × 10×10⁴ = 2×10⁵\\nt M1 = (2×10⁵)/(4GHz) = 50μs\", \"step_2\": \"M2所需的指令周期数为 CPI M2 × 10×10⁴ = 1×10⁵\\nt M2 = (1×10⁵)/(6GHz) ≈ 16.67μs\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-13T05:44:00.156448",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_7/ANS_CO_500.jpg",
+      "image_sha256": "ce4a15f9a9952b35e98569df272275c41c70acc77cee518a6449a2a93418f80b",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "M1所需的指令周期数为\nCPI M1 × 10×10⁴ = 2×10⁵\nM2所需的指令周期数为\nCPI M2 × 10×10⁴ = 1×10⁵\nt M1 = (2×10⁵)/(4GHz) = 50μs\nt M2 = (1×10⁵)/(6GHz) ≈ 16.67μs",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_500",
+        "question_id": "CO_7",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "M1所需的指令周期数为 CPI M1 × 10×10⁴ = 2×10⁵\nt M1 = (2×10⁵)/(4GHz) = 50μs",
+        "step_2": "M2所需的指令周期数为 CPI M2 × 10×10⁴ = 1×10⁵\nt M2 = (1×10⁵)/(6GHz) ≈ 16.67μs"
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M1所需的指令周期数为 CPI M1 × 10×10⁴ = 2×10⁵\nt M1 = (2×10⁵)/(4GHz) = 50μs",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M1的运行时间：总周期数 = 10^5 × 2 = 2.0×10^5，时间 T_M1 = (2.0×10^5) / (4×10^9) = 50 μs",
+            "dependency_status": "satisfied",
+            "reason": "学生正确计算了M1的总周期数（2×10⁵）和运行时间（50μs），公式与最终答案均与标准答案一致，过程证据完整。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M2所需的指令周期数为 CPI M2 × 10×10⁴ = 1×10⁵\nt M2 = (1×10⁵)/(6GHz) ≈ 16.67μs",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M2的运行时间：总周期数 = 10^5 × 1 = 1.0×10^5，时间 T_M2 = (1.0×10^5) / (6×10^9) ≈ 16.7 μs",
+            "dependency_status": "satisfied",
+            "reason": "学生正确计算了M2的总周期数（1×10⁵）和运行时间（≈16.67μs），与标准答案16.7μs仅有舍入精度差异，公式与过程证据完整。"
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M1所需的指令周期数为 CPI M1 × 10×10⁴ = 2×10⁵\nt M1 = (2×10⁵)/(4GHz) = 50μs",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算M1总周期数=2×10^5，运行时间T_M1=50μs",
+            "dependency_status": "satisfied",
+            "reason": "学生正确得到M1周期数2×10^5（10×10⁴=10^5条指令×CPI=2），并用公式T=周期数/频率=(2×10^5)/4GHz=50μs，与标准答案完全一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M2所需的指令周期数为 CPI M2 × 10×10⁴ = 1×10⁵\nt M2 = (1×10⁵)/(6GHz) ≈ 16.67μs",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算M2总周期数=1×10^5，运行时间T_M2≈16.7μs",
+            "dependency_status": "satisfied",
+            "reason": "学生正确得到M2周期数1×10^5，并用公式T=周期数/频率=(1×10^5)/6GHz≈16.67μs，与标准答案16.7μs在容差范围内一致。"
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M1所需的指令周期数为 CPI M1 × 10×10⁴ = 2×10⁵\nt M1 = (2×10⁵)/(4GHz) = 50μs",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M1的运行时间",
+            "dependency_status": "satisfied",
+            "reason": "学生明确计算出了M1的指令周期数(2×10⁵)并代入正确的时钟频率(4GHz)得出正确运行时间(50μs)，公式及结果均正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "M2所需的指令周期数为 CPI M2 × 10×10⁴ = 1×10⁵\nt M2 = (1×10⁵)/(6GHz) ≈ 16.67μs",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算出M2的运行时间",
+            "dependency_status": "satisfied",
+            "reason": "学生明确计算出了M2的指令周期数(1×10⁵)并代入正确的时钟频率(6GHz)得出正确运行时间(≈16.67μs)，公式及结果均正确。"
+          }
+        ],
+        "total_score": 10.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

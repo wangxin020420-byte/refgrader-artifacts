@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "source": "scripts/calibrate_a3wa.py",
+  "database_path": "${REFGRADER_ROOT}/data/csbench/exam_database.json",
+  "teacher_db": "${REFGRADER_ROOT}/data/csbench/teacher_scores.json",
+  "files": [
+    "${REFGRADER_ROOT}/results_runs/csbench_co1_co2_co3_co4_co5_co6_co7_validation/CO_1_grading_checkpoint.json",
+    "${REFGRADER_ROOT}/results_runs/csbench_co1_co2_co3_co4_co5_co6_co7_validation/CO_2_grading_checkpoint.json",
+    "${REFGRADER_ROOT}/results_runs/csbench_co1_co2_co3_co4_co5_co6_co7_validation/CO_3_grading_checkpoint.json",
+    "${REFGRADER_ROOT}/results_runs/csbench_co1_co2_co3_co4_co5_co6_co7_validation/CO_4_grading_checkpoint.json",
+    "${REFGRADER_ROOT}/results_runs/csbench_co1_co2_co3_co4_co5_co6_co7_validation/CO_5_grading_checkpoint.json",
+    "${REFGRADER_ROOT}/results_runs/csbench_co1_co2_co3_co4_co5_co6_co7_validation/CO_6_grading_checkpoint.json",
+    "${REFGRADER_ROOT}/results_runs/csbench_co1_co2_co3_co4_co5_co6_co7_validation/CO_7_grading_checkpoint.json"
+  ],
+  "selection_objective": "cost_sensitive_validation_calibration",
+  "loss_params": {
+    "lambda1": 3.0,
+    "lambda2": 1.0,
+    "mu1": 2.0,
+    "mu2": 5.0,
+    "m": 0.2
+  },
+  "risk_weights": {
+    "extract": 0.35000000000000003,
+    "score": 0.30000000000000004,
+    "semantic": 0.20000000000000004,
+    "blank": 0.15000000000000002,
+    "overcredit": 0.0
+  },
+  "thresholds": {
+    "alpha": 0.8,
+    "beta": 0.142857
+  },
+  "validation_summary": {
+    "n": 65,
+    "objective": 1.881538,
+    "metrics": {
+      "n": 65,
+      "mae": 1.812308,
+      "rmse": 2.675688,
+      "tar2": 0.692308,
+      "bias": -1.164615,
+      "over2": 4,
+      "under2": 16
+    },
+    "baseline_metrics": {
+      "n": 65,
+      "mae": 1.861538,
+      "rmse": 2.744673,
+      "tar2": 0.676923,
+      "bias": -1.166154,
+      "over2": 4,
+      "under2": 17
+    },
+    "route_counts": {
+      "POS": 15,
+      "BND": 48,
+      "NEG": 2
+    },
+    "bnd_ratio": 0.738462,
+    "pos_mae": 0.8,
+    "bnd_mae": 2.175,
+    "bnd_gain": 0.066667
+  },
+  "score_calibration": {
+    "version": 1,
+    "enabled": true,
+    "method": "validation_residual_additive",
+    "score_band": "low:<35%, mid:<70%, high:>=70%",
+    "min_cell_count": 5,
+    "shrinkage_k": 8.0,
+    "max_correction_ratio": 0.12,
+    "max_correction_points": 2.0,
+    "table": {
+      "question_route_band": {},
+      "question_route": {
+        "CO_1|BND": {
+          "n": 7,
+          "mean_residual": 0.842857,
+          "correction": 0.393333
+        },
+        "CO_2|BND": {
+          "n": 7,
+          "mean_residual": 3.571429,
+          "correction": 1.666667
+        },
+        "CO_3|BND": {
+          "n": 10,
+          "mean_residual": 1.83,
+          "correction": 1.016667
+        },
+        "CO_4|BND": {
+          "n": 7,
+          "mean_residual": -0.142857,
+          "correction": -0.066667
+        },
+        "CO_5|BND": {
+          "n": 8,
+          "mean_residual": 2.4,
+          "correction": 1.2
+        },
+        "CO_6|BND": {
+          "n": 6,
+          "mean_residual": 1.033333,
+          "correction": 0.442857
+        }
+      },
+      "question": {
+        "CO_1": {
+          "n": 13,
+          "mean_residual": 0.330769,
+          "correction": 0.204762
+        },
+        "CO_2": {
+          "n": 10,
+          "mean_residual": 2.68,
+          "correction": 1.488889
+        },
+        "CO_3": {
+          "n": 10,
+          "mean_residual": 1.83,
+          "correction": 1.016667
+        },
+        "CO_4": {
+          "n": 9,
+          "mean_residual": -0.188889,
+          "correction": -0.1
+        },
+        "CO_5": {
+          "n": 11,
+          "mean_residual": 1.972727,
+          "correction": 1.142105
+        },
+        "CO_6": {
+          "n": 6,
+          "mean_residual": 1.033333,
+          "correction": 0.442857
+        },
+        "CO_7": {
+          "n": 6,
+          "mean_residual": 0.016667,
+          "correction": 0.007143
+        }
+      },
+      "route": {
+        "POS": {
+          "n": 15,
+          "mean_residual": 0.04,
+          "correction": 0.026087
+        },
+        "BND": {
+          "n": 48,
+          "mean_residual": 1.535417,
+          "correction": 1.316071
+        }
+      },
+      "global": {
+        "*": {
+          "n": 65,
+          "mean_residual": 1.164615,
+          "correction": 1.036986
+        }
+      }
+    }
+  }
+}
