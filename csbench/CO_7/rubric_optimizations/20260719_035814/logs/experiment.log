@@ -1,0 +1,1105 @@
+2026-07-18 23:12:18 | INFO     | ==================================================
+2026-07-18 23:12:18 | INFO     | 📂 正在加载试卷数据库...
+2026-07-18 23:12:18 | INFO     |    运行模式: VARIANCE_OPT
+2026-07-18 23:12:18 | INFO     |    题目范围: ['CO_1', 'CO_2', 'CO_3', 'CO_4', 'CO_5', 'CO_6', 'CO_7']
+2026-07-18 23:12:18 | INFO     |    文本模型: glm5 -> glm-5.1
+2026-07-18 23:12:18 | INFO     |    提取后端: csbench_hybrid
+2026-07-18 23:12:18 | INFO     |    题库文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\exam_database.json
+2026-07-18 23:12:18 | INFO     |    教师分文件: ./database/teacher_scores.json
+2026-07-18 23:12:18 | INFO     |    答案元数据: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\answer_metadata.jsonl
+2026-07-18 23:12:18 | INFO     |    并发数:   2
+2026-07-18 23:12:18 | INFO     |    结果目录: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_co1_co2_co3_co4_co5_co6_co7_rubric_opt
+2026-07-18 23:12:18 | INFO     |    Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\optimized
+2026-07-18 23:12:18 | INFO     |    初始Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\initial
+2026-07-18 23:12:18 | INFO     |    允许回退初始Rubric: False
+2026-07-18 23:12:18 | INFO     |    进度文件: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_co1_co2_co3_co4_co5_co6_co7_rubric_opt\progress.json
+2026-07-18 23:12:18 | INFO     |    日志文件: logs\experiment_20260718_231218.log
+2026-07-18 23:12:18 | INFO     | 🔬 当前处于【方差优化模式】(VARIANCE OPT MODE)
+2026-07-18 23:12:18 | INFO     |    系统将生成标准，进行小样本测试，修正并保存最终标准。
+2026-07-18 23:12:18 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_1
+============================================================
+2026-07-18 23:12:18 | INFO     | force-rerun enabled; restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-18 23:12:18 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_1_rubric_standard.json
+2026-07-18 23:12:18 | INFO     | force-rerun enabled; ignore old variance checkpoint for this question.
+2026-07-18 23:12:18 | INFO     | [data isolation] variance optimization is restricted to 13 calibration answers.
+2026-07-18 23:12:18 | INFO     | 
+👉 正在处理新样本: ANS_CO_109.png
+2026-07-18 23:12:32 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-18 23:12:34 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-18 23:12:34 | INFO     | [metadata] loaded 3326 answer records from D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\answer_metadata.jsonl
+2026-07-18 23:12:47 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-18 23:12:49 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:13:07 | INFO     |       ✅ [裁判亮分] 总得分: 0.0
+2026-07-18 23:13:07 | INFO     |          - [条款 step_1_address] 得分: 0 | 理由: 学生解析的地址字段为011110₂=1EH，而标准答案为110111₂=37H，二进制位不同导致数值错误（30 vs 55），属于核心数值错误。
+2026-07-18 23:13:07 | INFO     |          - [条款 step_1_effective_address] 得分: 0 | 理由: 学生得到的有效地址为4D，标准答案为34H，数值不匹配，属于数值错误。且上游地址解析已错，无法判为传播错误可保留方法分，因为学生未展示间接寻址的正确计算过程。
+2026-07-18 23:13:07 | INFO     |          - [条款 step_1_final] 得分: 0.0 | 理由: 最终操作数内容为1E，标准答案为37H，核心结论错误。full_credit_trigger项未正确触发，父项不授予满分。
+2026-07-18 23:13:07 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:13:09 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:13:39 | INFO     |       ✅ [裁判亮分] 总得分: 0.0
+2026-07-18 23:13:39 | INFO     |          - [条款 step_1_address] 得分: 0 | 理由: The student incorrectly extracted the address field as 011110₂ (which equals 1EH) instead of the correct value 110111₂ (37H).
+2026-07-18 23:13:39 | INFO     |          - [条款 step_1_effective_address] 得分: 0 | 理由: The student provided 4D as the effective address instead of the correct value 34H.
+2026-07-18 23:13:39 | INFO     |          - [条款 step_1_final] 得分: 0.0 | 理由: The student provided 1E as the final operand content instead of the correct value 37H.
+2026-07-18 23:13:39 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:13:41 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:13:56 | INFO     |       ✅ [裁判亮分] 总得分: 0.0
+2026-07-18 23:13:56 | INFO     |          - [条款 step_1_address] 得分: 0 | 理由: 学生解析的地址字段为011110₂=1EH，而标准答案为110111₂=37H，比特序列不同导致数值完全不同，属于解析错误。
+2026-07-18 23:13:56 | INFO     |          - [条款 step_1_effective_address] 得分: 0 | 理由: 学生给出的有效地址为4D，而标准答案为34H，数值不匹配。由于地址字段解析已错，后续间接寻址结果也随之错误。
+2026-07-18 23:13:56 | INFO     |          - [条款 step_1_final] 得分: 0.0 | 理由: 学生给出最终操作数内容为1E，而标准答案为37H，核心结论数值错误。full_credit_trigger为true但答案不正确，不授予任何分数。
+2026-07-18 23:13:56 | INFO     | 💾 样本 ANS_CO_109.png 进度已保存。
+2026-07-18 23:13:56 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-18 23:14:11 | INFO     | 
+👉 正在处理新样本: ANS_CO_11.jpg
+2026-07-18 23:14:29 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-18 23:14:31 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-18 23:14:41 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-18 23:14:43 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:14:58 | INFO     |       ✅ [裁判亮分] 总得分: 5.0
+2026-07-18 23:14:58 | INFO     |          - [条款 step_1_address] 得分: 2.0 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:14:58 | INFO     |          - [条款 step_1_effective_address] 得分: 1.5 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:14:58 | INFO     |          - [条款 step_1_final] 得分: 1.5 | 理由: 学生给出的最终操作数内容37H与标准答案完全一致。此为核心项且full_credit_trigger=true，最终答案正确，系统将授予完整父项分数。
+2026-07-18 23:14:58 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:15:00 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:15:11 | INFO     |       ✅ [裁判亮分] 总得分: 5.0
+2026-07-18 23:15:11 | INFO     |          - [条款 step_1_address] 得分: 2.0 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:15:11 | INFO     |          - [条款 step_1_effective_address] 得分: 1.5 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:15:11 | INFO     |          - [条款 step_1_final] 得分: 1.5 | 理由: 学生最终操作数内容37H与标准答案精确匹配，该item为full_credit_trigger，标记为MATCH后系统将授予完整parent分值。
+2026-07-18 23:15:11 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:15:13 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:15:28 | INFO     |       ✅ [裁判亮分] 总得分: 5.0
+2026-07-18 23:15:28 | INFO     |          - [条款 step_1_address] 得分: 2.0 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:15:28 | INFO     |          - [条款 step_1_effective_address] 得分: 1.5 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:15:28 | INFO     |          - [条款 step_1_final] 得分: 1.5 | 理由: 最终操作数内容37H与标准答案精确匹配，full_credit_trigger正确触发，系统将授予完整父级分数。
+2026-07-18 23:15:28 | INFO     | 💾 样本 ANS_CO_11.jpg 进度已保存。
+2026-07-18 23:15:28 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-18 23:15:43 | INFO     | 
+👉 正在处理新样本: ANS_CO_119.png
+2026-07-18 23:16:02 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-18 23:16:04 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-18 23:16:19 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-18 23:16:21 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:16:48 | INFO     |       ✅ [裁判亮分] 总得分: 3.5
+2026-07-18 23:16:48 | INFO     |          - [条款 step_1_address] 得分: 2.0 | 理由: The extracted fact '110111' correctly matches the expected binary address 110111₂.
+2026-07-18 23:16:48 | INFO     |          - [条款 step_1_effective_address] 得分: 1.5 | 理由: The extracted fact '34' matches the expected effective address 34H.
+2026-07-18 23:16:48 | INFO     |          - [条款 step_1_final] 得分: 0.0 | 理由: The extracted final answer '36' does not match the correct operand content '37H', resulting in a numeric contradiction.
+2026-07-18 23:16:48 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:16:50 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:17:04 | INFO     |       ✅ [裁判亮分] 总得分: 3.5
+2026-07-18 23:17:04 | INFO     |          - [条款 step_1_address] 得分: 2.0 | 理由: Extracted value 110111 exactly matches the standard binary address field 110111.
+2026-07-18 23:17:04 | INFO     |          - [条款 step_1_effective_address] 得分: 1.5 | 理由: Extracted value 34 matches the standard effective address 34H, ignoring the implicit base notation as a minor formatting detail.
+2026-07-18 23:17:04 | INFO     |          - [条款 step_1_final] 得分: 0.0 | 理由: Extracted final operand is 36, which is numerically incorrect as the standard answer requires 37H.
+2026-07-18 23:17:04 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:17:06 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:17:25 | INFO     |       ✅ [裁判亮分] 总得分: 3.5
+2026-07-18 23:17:25 | INFO     |          - [条款 step_1_address] 得分: 2.0 | 理由: The student provided '110111', which exactly matches the expected binary address field.
+2026-07-18 23:17:25 | INFO     |          - [条款 step_1_effective_address] 得分: 1.5 | 理由: The student provided '34', which matches the expected effective address of 34H.
+2026-07-18 23:17:25 | INFO     |          - [条款 step_1_final] 得分: 0.0 | 理由: The student's final answer '36' is a numerically incorrect result, failing the core condition.
+2026-07-18 23:17:25 | INFO     | 💾 样本 ANS_CO_119.png 进度已保存。
+2026-07-18 23:17:25 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-18 23:17:40 | INFO     | 
+👉 正在处理新样本: ANS_CO_120.png
+2026-07-18 23:17:55 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-18 23:17:57 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-18 23:18:26 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-18 23:18:28 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:18:46 | INFO     |       ✅ [裁判亮分] 总得分: 0.0
+2026-07-18 23:18:46 | INFO     |          - [条款 step_1_address] 得分: 0 | 理由: 提取的学生事实显示未书写该步骤。
+2026-07-18 23:18:46 | INFO     |          - [条款 step_1_effective_address] 得分: 0 | 理由: 提取的学生事实显示未书写该步骤。
+2026-07-18 23:18:46 | INFO     |          - [条款 step_1_final] 得分: 0.0 | 理由: 最终操作数错误，标准答案为37H，学生填写了35H。
+2026-07-18 23:18:46 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:18:48 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:19:05 | INFO     |       ✅ [裁判亮分] 总得分: 0.0
+2026-07-18 23:19:05 | INFO     |          - [条款 step_1_address] 得分: 0 | 理由: The extracted fact is marked as unwritten, satisfying no criteria for this intermediate step.
+2026-07-18 23:19:05 | INFO     |          - [条款 step_1_effective_address] 得分: 0 | 理由: The extracted fact is marked as unwritten, providing no evidence for this intermediate step.
+2026-07-18 23:19:05 | INFO     |          - [条款 step_1_final] 得分: 0.0 | 理由: The extracted final answer '35H' is numerically incorrect compared to the standard answer '37H'.
+2026-07-18 23:19:05 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:19:07 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:19:20 | INFO     |       ✅ [裁判亮分] 总得分: 0.0
+2026-07-18 23:19:20 | INFO     |          - [条款 step_1_address] 得分: 0 | 理由: 学生未书写该步骤，无地址字段解析结果可判定，按 BLANK 处理。
+2026-07-18 23:19:20 | INFO     |          - [条款 step_1_effective_address] 得分: 0 | 理由: 学生未书写有效地址相关内容，无过程证据，按 BLANK 处理。
+2026-07-18 23:19:20 | INFO     |          - [条款 step_1_final] 得分: 0.0 | 理由: 学生给出 35H，与标准答案 37H（0x35≠0x37）数值不一致，full_credit_trigger 不满足，且无任何 support 子项可补救，最终答案错误按 SEMANTIC_FATAL 记 0 分。
+2026-07-18 23:19:20 | INFO     | 💾 样本 ANS_CO_120.png 进度已保存。
+2026-07-18 23:19:20 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-18 23:19:35 | INFO     | 
+👉 正在处理新样本: ANS_CO_14.jpg
+2026-07-18 23:19:54 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-18 23:19:56 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-18 23:20:29 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-18 23:20:31 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:20:48 | INFO     |       ✅ [裁判亮分] 总得分: 5.0
+2026-07-18 23:20:48 | INFO     |          - [条款 step_1_address] 得分: 2.0 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:20:48 | INFO     |          - [条款 step_1_effective_address] 得分: 1.5 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:20:48 | INFO     |          - [条款 step_1_final] 得分: 1.5 | 理由: The student correctly determined the final operand content as 37H, which triggers full credit for the parent item.
+2026-07-18 23:20:48 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:20:50 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:21:06 | INFO     |       ✅ [裁判亮分] 总得分: 5.0
+2026-07-18 23:21:06 | INFO     |          - [条款 step_1_address] 得分: 2.0 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:21:06 | INFO     |          - [条款 step_1_effective_address] 得分: 1.5 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:21:06 | INFO     |          - [条款 step_1_final] 得分: 1.5 | 理由: Student states the final operand content is 37H, exactly matching the standard answer. This is the full_credit_trigger item under final_sufficient_partial_credit; a correct final answer grants the complete parent score of 5.0.
+2026-07-18 23:21:06 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:21:08 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:21:33 | INFO     |       ✅ [裁判亮分] 总得分: 5.0
+2026-07-18 23:21:33 | INFO     |          - [条款 step_1_address] 得分: 2.0 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:21:33 | INFO     |          - [条款 step_1_effective_address] 得分: 1.5 | 理由: 最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。
+2026-07-18 23:21:33 | INFO     |          - [条款 step_1_final] 得分: 1.5 | 理由: 学生明确写出了最终操作数内容37H，与标准答案完全一致。此为full_credit_trigger项，最终答案正确，系统将授予完整的父级分数。
+2026-07-18 23:21:33 | INFO     | 💾 样本 ANS_CO_14.jpg 进度已保存。
+2026-07-18 23:21:33 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-18 23:21:48 | INFO     | 
+📊 采样完成。平均方差: 0.0000
+2026-07-18 23:21:48 | INFO     | Item-level variance: avg=0.0000, max=0.0000
+2026-07-18 23:21:48 | INFO     | ✅ 标准足够稳定且粒度精细，无需进一步修正。
+2026-07-18 23:21:48 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_1_optimization.json
+2026-07-18 23:21:48 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_2
+============================================================
+2026-07-18 23:21:48 | INFO     | force-rerun enabled; restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-18 23:21:48 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_2_rubric_standard.json
+2026-07-18 23:21:48 | INFO     | force-rerun enabled; ignore old variance checkpoint for this question.
+2026-07-18 23:21:48 | INFO     | [data isolation] variance optimization is restricted to 10 calibration answers.
+2026-07-18 23:21:48 | INFO     | 
+👉 正在处理新样本: ANS_CO_532.jpg
+2026-07-18 23:22:15 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-18 23:22:17 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-18 23:24:06 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-18 23:24:08 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:25:18 | INFO     |       ✅ [裁判亮分] 总得分: 17.0
+2026-07-18 23:25:18 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: Student wrote A>D>C>E>B, which matches the canonical order A→D→C→E→B; the '>' notation is equivalent to '→' arrows.
+2026-07-18 23:25:18 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: Irregular spacing '1 1 1 11' normalizes to '11111', matching the standard A: 11111.
+2026-07-18 23:25:18 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: Irregular spacing '0 1 0 00' normalizes to '01000', matching the standard B: 01000.
+2026-07-18 23:25:18 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: Irregular spacing '0 1 10 1' normalizes to '01101', matching the standard C: 01101.
+2026-07-18 23:25:18 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: Irregular spacing '0 1 11 1' normalizes to '01111', matching the standard D: 01111.
+2026-07-18 23:25:18 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: Irregular spacing '0 1 00 1' normalizes to '01001', matching the standard E: 01001.
+2026-07-18 23:25:18 | INFO     |          - [条款 step_7] 得分: 5.0 | 理由: Student provides the correct staircase (阶梯) execution order 用户程序→A→D→C→E→B, which matches the correct processing sequence. However, this is a text description rather than the full diagram; the complete 8-point diagram requires showing interrupt trigger points, nesting/return paths, and processing segments. Partial credit for correct sequence and conceptual understanding.
+2026-07-18 23:25:18 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:25:20 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:25:48 | INFO     |       ✅ [裁判亮分] 总得分: 15.0
+2026-07-18 23:25:48 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: Student's sequence A>D>C>E>B exactly matches the standard A→D→C→E→B; separator difference is non-substantive.
+2026-07-18 23:25:48 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: Normalized bits '11111' match the standard A：11111; spacing ignored.
+2026-07-18 23:25:48 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: Normalized bits '01000' match the standard B：01000.
+2026-07-18 23:25:48 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: Normalized bits '01101' match the standard C：01101.
+2026-07-18 23:25:48 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: Normalized bits '01111' match the standard D：01111.
+2026-07-18 23:25:48 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: Normalized bits '01001' match the standard E：01001.
+2026-07-18 23:25:48 | INFO     |          - [条款 step_7] 得分: 3.0 | 理由: Student correctly stated the overall ladder ordering (用户程序→A→D→C→E→B), demonstrating understanding of the nesting sequence, but did not actually draw the full CPU execution/interrupt timing diagram with return paths and nesting details. Partial credit for the correct ordering component only.
+2026-07-18 23:25:48 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:25:50 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:26:24 | INFO     |       ✅ [裁判亮分] 总得分: 14.0
+2026-07-18 23:26:24 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生给出的优先级顺序 A>D>C>E>B 与标准答案完全一致，仅分隔符(> vs →)和空格差异，属于格式细节，不影响语义。
+2026-07-18 23:26:24 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 去除提取产生的空格后，'1 1 1 11' 对应 '11111'，与A级屏蔽字标准答案一致。
+2026-07-18 23:26:24 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 去除空格后 '0 1 0 00' 对应 '01000'，与B级屏蔽字标准答案一致。
+2026-07-18 23:26:24 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: 去除空格后 '0 1 10 1' 对应 '01101'，与C级屏蔽字标准答案一致。
+2026-07-18 23:26:24 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: 去除空格后 '0 1 11 1' 对应 '01111'，与D级屏蔽字标准答案一致。
+2026-07-18 23:26:24 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: 去除空格后 '0 1 00 1' 对应 '01001'，与E级屏蔽字标准答案一致。
+2026-07-18 23:26:24 | INFO     |          - [条款 step_7] 得分: 4.0 | 理由: 学生写出了正确的中断处理序列用户程序→A→D→C→E→B并提及'阶梯顺序'，说明理解了嵌套结构的关键特征；但题目要求画出完整的中断处理顺序图，提取中仅有文字化顺序而非完整图形，无法验证完整阶梯/嵌套结构。给予一半分数。
+2026-07-18 23:26:24 | INFO     | 💾 样本 ANS_CO_532.jpg 进度已保存。
+2026-07-18 23:26:24 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-18 23:26:39 | INFO     | 
+👉 正在处理新样本: ANS_CO_535.jpg
+2026-07-18 23:27:12 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-18 23:27:14 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-18 23:31:46 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-18 23:31:48 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:33:36 | INFO     |       ✅ [裁判亮分] 总得分: 19.0
+2026-07-18 23:33:36 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生给出的优先级顺序 A>D>C>E>B 与标准答案 A → D → C → E → B 在语义和元素上完全一致，符合评分要求。
+2026-07-18 23:33:36 | INFO     |          - [条款 step_2] 得分: 1.0 | 理由: 学生写出了全1的形式意图屏蔽所有中断，但仅写了4个1（1111），标准答案应为5位（11111），存在位数遗漏的瑕疵，给予一半分数。
+2026-07-18 23:33:36 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 学生给出的屏蔽字 0 1 0 0 0 与标准答案 01000 完全匹配。
+2026-07-18 23:33:36 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: 学生给出的屏蔽字 0 1 1 0 1 与标准答案 01101 完全匹配。
+2026-07-18 23:33:36 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: 学生给出的屏蔽字 0 1 1 1 1 与标准答案 01111 完全匹配。
+2026-07-18 23:33:36 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: 学生给出的屏蔽字 0 1 0 0 1 与标准答案 01001 完全匹配。
+2026-07-18 23:33:36 | INFO     |          - [条款 step_7] 得分: 8.0 | 理由: 学生提取的图表特征明确包含了阶梯状折线、CPU执行轨迹以及具体的中断嵌套和返回顺序路径，完全契合考察目标，图表信息正确。
+2026-07-18 23:33:36 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:33:38 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:35:02 | INFO     |       ✅ [裁判亮分] 总得分: 19.0
+2026-07-18 23:35:02 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: The extracted priority sequence A>D>C>E>B exactly matches the standard answer A → D → C → E → B, with only non-substantive differences in the separator used.
+2026-07-18 23:35:02 | INFO     |          - [条款 step_2] 得分: 1.0 | 理由: The student provides a structurally similar mask word consisting of all 1s, but only provides 4 bits instead of the required 5 bits.
+2026-07-18 23:35:02 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: The extracted bit vector 0 1 0 0 0 exactly matches the standard answer B: 01000.
+2026-07-18 23:35:02 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: The extracted bit vector 0 1 1 0 1 exactly matches the standard answer C: 01101.
+2026-07-18 23:35:02 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: The extracted bit vector 0 1 1 1 1 exactly matches the standard answer D: 01111.
+2026-07-18 23:35:02 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: The extracted bit vector 0 1 0 0 1 exactly matches the standard answer E: 01001.
+2026-07-18 23:35:02 | INFO     |          - [条款 step_7] 得分: 8.0 | 理由: The extracted evidence explicitly shows the student drew the required stepped polyline tracking interrupt levels over time, complete with the correct CPU execution path.
+2026-07-18 23:35:02 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:35:04 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:35:39 | INFO     |       ✅ [裁判亮分] 总得分: 15.0
+2026-07-18 23:35:39 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生使用 > 代替 →，仅是符号格式差异，序列 A,D,C,E,B 与标准答案完全一致。
+2026-07-18 23:35:39 | INFO     |          - [条款 step_2] 得分: 1.0 | 理由: 学生写出4个1，与标准5个1相比缺少1位，结构不完整，但已给出的4位与对应位置一致，给予半分。
+2026-07-18 23:35:39 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 学生答案 01000 与标准答案完全一致。
+2026-07-18 23:35:39 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: 学生答案 01101 与标准答案完全一致。
+2026-07-18 23:35:39 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: 学生答案 01111 与标准答案完全一致。
+2026-07-18 23:35:39 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: 学生答案 01001 与标准答案完全一致。
+2026-07-18 23:35:39 | INFO     |          - [条款 step_7] 得分: 4.0 | 理由: 学生以文字描述了执行路径与阶梯折线特征，给出了完整的执行顺序用户程序→A→C→B→D→E，体现了关键的顺序关系；但题目要求画图，文字描述无法替代图像，且无法与标准参考图像直接比对，给予部分分。
+2026-07-18 23:35:39 | INFO     | 💾 样本 ANS_CO_535.jpg 进度已保存。
+2026-07-18 23:35:39 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-18 23:35:54 | INFO     | 
+👉 正在处理新样本: ANS_CO_537.jpg
+2026-07-18 23:36:27 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-18 23:36:29 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-18 23:38:31 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-18 23:38:33 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-18 23:59:05 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-18 23:59:05 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生给出的优先级顺序 A>D>C>E>B 与标准答案完全一致，仅分隔符为 > 而非 →，属等价表达，判满分。
+2026-07-18 23:59:05 | INFO     |          - [条款 step_2] 得分: 1.0 | 理由: 学生答案 01111 与标准答案 11111 仅自屏蔽位（第1位）不同，其余4位正确；属常见错误（漏写自身屏蔽位），按部分正确给一半分。
+2026-07-18 23:59:05 | INFO     |          - [条款 step_3] 得分: 1.0 | 理由: 学生答案 00000 与标准答案 01000 仅自身屏蔽位（第2位）不同，其余4位正确；自屏蔽位缺失，给一半分。
+2026-07-18 23:59:05 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: 学生答案 01001 与标准答案 01101 仅自身屏蔽位（第3位）不同，其余4位正确，给一半分。
+2026-07-18 23:59:05 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: 学生答案 01100 与标准答案 01111 有2位不符（自屏蔽位及E位），结构上不正确，按概念性错误0分。
+2026-07-18 23:59:05 | INFO     |          - [条款 step_6] 得分: 0.0 | 理由: 学生答案 00100 与标准答案 01001 有3位不符，屏蔽字语义错误，判0分。
+2026-07-18 23:59:05 | INFO     |          - [条款 step_7] 得分: 5.0 | 理由: 学生描述了图形结构（阶梯状折线、纵轴中断级别、横轴时间）并给出了响应序列，与典型教材此题的标准响应模式基本吻合；但其屏蔽字存在错误，无法确认该图完全由其屏蔽关系推出。鉴于结构描述合理且优先级方向正确，按部分正确给5/8分。
+2026-07-18 23:59:05 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-18 23:59:07 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:14:08 | INFO     |       ✅ [裁判亮分] 总得分: 5.0
+2026-07-19 00:14:08 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生给出的优先级顺序与标准答案完全一致（箭头形式与'>'等价）。
+2026-07-19 00:14:08 | INFO     |          - [条款 step_2] 得分: 0.0 | 理由: 学生答案 01111 与标准 11111 在第一位（A 自身位）不一致，属于屏蔽字的核心语义错误。
+2026-07-19 00:14:08 | INFO     |          - [条款 step_3] 得分: 0.0 | 理由: 学生答案 00000 与标准 01000 不一致，第二位应为 1，属屏蔽字内容错误。
+2026-07-19 00:14:08 | INFO     |          - [条款 step_4] 得分: 0.0 | 理由: 学生答案 01001 与标准 01101 在第 3、4 位均不一致，屏蔽关系错误。
+2026-07-19 00:14:08 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: 学生答案 01100 与标准 01111 在第 4、5 位不一致，屏蔽关系错误。
+2026-07-19 00:14:08 | INFO     |          - [条款 step_6] 得分: 0.0 | 理由: 学生答案 00100 与标准 01001 在第 2、3、5 位均不一致，屏蔽关系错误。
+2026-07-19 00:14:08 | INFO     |          - [条款 step_7] 得分: 3.0 | 理由: 学生给出了嵌套返回结构（D→C→D、E→C）并标注了坐标轴，体现了对多重中断嵌套执行过程的基本理解；但所列执行序列缺失了 B 级中断（标准图通常包含 B），且无法与标准图逐边比对，故给予部分分。
+2026-07-19 00:14:08 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 00:14:10 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:25:02 | INFO     |       ✅ [裁判亮分] 总得分: 6.0
+2026-07-19 00:25:02 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生给出的优先级顺序 A>D>C>E>B 与标准答案完全一致，仅分隔符（> 与 →）不同，属等价形式。
+2026-07-19 00:25:02 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 学生写出 01111，标准为 11111，最高优先级中断 A 的屏蔽字应为全 1（屏蔽自身及其他所有中断），首位 0 造成语义错误，不属细节问题。
+2026-07-19 00:25:02 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 学生写出 00000，标准为 01000，位向量值不匹配，属核心数值错误。
+2026-07-19 00:25:02 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 学生写出 01001，标准为 01101，位向量差异较多，与 C 级屏蔽关系不一致。
+2026-07-19 00:25:02 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 学生写出 01100，标准为 01111，位向量不匹配，反映屏蔽关系错误。
+2026-07-19 00:25:02 | INFO     |          - [条款 step_6] 得分: 0 | 理由: 学生写出 00100，标准为 01001，位向量不匹配，属核心数值错误。
+2026-07-19 00:25:02 | INFO     |          - [条款 step_7] 得分: 4.0 | 理由: 学生给出了文字化的轨迹序列及图形结构描述（阶梯状折线、坐标轴含义），具备部分图示语义；但由于标准答案为图片且无法逐节点比对，且上游屏蔽字错误可能导致整体执行顺序不可靠，给予部分分。
+2026-07-19 00:25:02 | INFO     | 💾 样本 ANS_CO_537.jpg 进度已保存。
+2026-07-19 00:25:02 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 00:25:17 | INFO     | 
+👉 正在处理新样本: ANS_CO_538.jpg
+2026-07-19 00:25:46 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 00:25:48 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 00:27:43 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 00:27:45 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:28:32 | INFO     |       ✅ [裁判亮分] 总得分: 19.0
+2026-07-19 00:28:32 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生给出的优先级顺序 A>D>C>E>B 与标准答案 A→D→C→E→B 完全一致，仅连接符差异，属于格式等价。
+2026-07-19 00:28:32 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生答案 1 1 1 1 1 与标准 11111 仅空格差异，等价。
+2026-07-19 00:28:32 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 学生答案 0 1 0 0 0 与标准 01000 完全一致。
+2026-07-19 00:28:32 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: 学生答案 0 1 1 0 1 与标准 01101 完全一致。
+2026-07-19 00:28:32 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: 学生答案 0 1 1 1 1 与标准 01111 完全一致。
+2026-07-19 00:28:32 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: 学生答案 0 1 0 0 1 与标准 01001 完全一致。
+2026-07-19 00:28:32 | INFO     |          - [条款 step_7] 得分: 7.0 | 理由: 学生提供了阶梯状折线图的具体结构描述，路径节点完整（用户程序→A→C→D→E→B→用户程序），并标注了各级屏蔽字（A、C、D、E 均与前面步骤一致）。主要结构正确；但 B 级屏蔽字在图中标注为 0/000 表意不清，且无法直接核验图形的横/纵时间轴与阶梯精度，按宽松评分给大部分分。
+2026-07-19 00:28:32 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 00:28:34 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:35:29 | INFO     |       ✅ [裁判亮分] 总得分: 20.0
+2026-07-19 00:35:29 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生给出的顺序 A>D>C>E>B 与标准答案 A → D → C → E → B 完全一致，仅分隔符不同（> vs →），属于格式等价。
+2026-07-19 00:35:29 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生给出 1 1 1 1 1，空格分隔与无分隔 11111 等价，完全正确。
+2026-07-19 00:35:29 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 学生给出 0 1 0 0 0，与标准答案 01000 完全一致。
+2026-07-19 00:35:29 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: 学生给出 0 1 1 0 1，与标准答案 01101 完全一致。
+2026-07-19 00:35:29 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: 学生给出 0 1 1 1 1，与标准答案 01111 完全一致。
+2026-07-19 00:35:29 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: 学生给出 0 1 0 0 1，与标准答案 01001 完全一致。
+2026-07-19 00:35:29 | INFO     |          - [条款 step_7] 得分: 8.0 | 理由: 学生绘制了阶梯状折线图，标注了各级屏蔽字（A=11111, C=01101, D=01111, E=01001, B=01000），与前面各步答案一致；给出了完整路径 用户程序→A→C→D→E→B→用户程序，路径结构正确。B(0/000) 仅为 01000 的分隔书写方式，属格式细微差异，不影响正确性。图的结构、标注与路径均满足要求。
+2026-07-19 00:35:29 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 00:35:31 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:36:34 | INFO     |       ✅ [裁判亮分] 总得分: 18.0
+2026-07-19 00:36:34 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生给出的优先级顺序与标准答案 A>D>C>E>B 完全一致，仅用 > 替代 →，属于格式无关的核心匹配。
+2026-07-19 00:36:34 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生写出的 1 1 1 1 1 与标准 11111 仅以空格分隔，位向量完全一致。
+2026-07-19 00:36:34 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 学生给出的 0 1 0 0 0 与标准 01000 在位向量上完全一致，仅空格格式不同。
+2026-07-19 00:36:34 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: 学生给出的 0 1 1 0 1 与标准 01101 完全一致。
+2026-07-19 00:36:34 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: 学生给出的 0 1 1 1 1 与标准 01111 完全一致。
+2026-07-19 00:36:34 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: 学生给出的 0 1 0 0 1 与标准 01001 完全一致。
+2026-07-19 00:36:34 | INFO     |          - [条款 step_7] 得分: 6.0 | 理由: 学生提供了阶梯状折线图，各级中断屏蔽字均标注且与step_2-step_6一致，路径起止于用户程序构成完整闭环，结构上满足核心要求。但无标准参考图直接对比时无法逐一验证每一返回/嵌套边沿的精确时序，故按additive_split给予6/8的部分分。
+2026-07-19 00:36:34 | INFO     | 💾 样本 ANS_CO_538.jpg 进度已保存。
+2026-07-19 00:36:34 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 00:36:49 | INFO     | 
+👉 正在处理新样本: ANS_CO_540.jpg
+2026-07-19 00:37:15 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 00:37:17 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 00:38:34 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 00:38:36 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:39:53 | INFO     |       ✅ [裁判亮分] 总得分: 2.0
+2026-07-19 00:39:53 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: The ordering A>D>C>E>B is identical to the standard A→D→C→E→B; only notation differs ( '>' vs '→' ), which is a non-substantive format variation.
+2026-07-19 00:39:53 | INFO     |          - [条款 step_2] 得分: 0 | 理由: Student wrote 00000 for A's mask word; standard is 11111. As the highest priority, A should mask all lower levels, so all bits should be 1. This is a core conceptual error.
+2026-07-19 00:39:53 | INFO     |          - [条款 step_3] 得分: 0 | 理由: Student wrote 10111 for B's mask word; standard is 01000. B is the lowest processing priority and should only mask itself. Completely wrong bit pattern indicating fundamental misunderstanding.
+2026-07-19 00:39:53 | INFO     |          - [条款 step_4] 得分: 0 | 理由: Student wrote 10010 for C's mask word; standard is 01101. The bit pattern does not match any plausible interpretation of C's masking relationship.
+2026-07-19 00:39:53 | INFO     |          - [条款 step_5] 得分: 0 | 理由: Student wrote 10000 for D's mask word; standard is 01111. D is second-highest priority and should mask all except A, but only 1 bit is set. Core conceptual error.
+2026-07-19 00:39:53 | INFO     |          - [条款 step_6] 得分: 0 | 理由: Student wrote 10110 for E's mask word; standard is 01001. Completely different bit pattern; does not reflect correct masking relationships.
+2026-07-19 00:39:53 | INFO     |          - [条款 step_7] 得分: 0 | 理由: The execution sequence is derived from the mask words, which are all incorrect. Additionally, the student presents a simple linear chain rather than showing interrupt nesting and return paths. The order A→C→D→E→B contradicts the correct processing priority A>D>C>E>B (C and D are swapped). No partial credit as the core execution logic is fundamentally wrong.
+2026-07-19 00:39:53 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 00:39:55 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:41:05 | INFO     |       ✅ [裁判亮分] 总得分: 4.0
+2026-07-19 00:41:05 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: Student's sequence A>D>C>E>B exactly matches the canonical order A → D → C → E → B; arrow notation difference is purely formatting.
+2026-07-19 00:41:05 | INFO     |          - [条款 step_2] 得分: 0 | 理由: Student wrote 00000; standard is 11111. A is the highest-priority interrupt and should mask all levels; all-zero mask is conceptually inverted and contradicts the priority order correctly stated in step 1.
+2026-07-19 00:41:05 | INFO     |          - [条款 step_3] 得分: 0 | 理由: Student wrote 10111; standard is 01000. B is the lowest-priority interrupt; its mask should only mask itself. 10111 masks nearly all levels, a fundamental conceptual error.
+2026-07-19 00:41:05 | INFO     |          - [条款 step_4] 得分: 0 | 理由: Student wrote 10010; standard is 01101. Bit pattern is almost entirely inverted, indicating wrong understanding of which interrupts C should mask.
+2026-07-19 00:41:05 | INFO     |          - [条款 step_5] 得分: 0 | 理由: Student wrote 10000; standard is 01111. D is second-highest priority and should mask B, C, D, E but not A. 10000 only masks A, a conceptual inversion.
+2026-07-19 00:41:05 | INFO     |          - [条款 step_6] 得分: 0 | 理由: Student wrote 10110; standard is 01001. Bit pattern does not match at most positions; E should mask only B and E, but student masks A, C, D, E instead.
+2026-07-19 00:41:05 | INFO     |          - [条款 step_7] 得分: 2.0 | 理由: The standard answer is an image diagram requiring nested interrupt flow with returns. The student provided only a simplified linear sequence without showing interrupt nesting, returns, or the full bidirectional execution structure. Additionally, since all five mask words are wrong, the execution ordering derived from them is unreliable. Partial credit for showing the concept of an execution sequence starting from the user program.
+2026-07-19 00:41:05 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 00:41:07 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:42:04 | INFO     |       ✅ [裁判亮分] 总得分: 4.0
+2026-07-19 00:42:04 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生给出 A>D>C>E>B，与标准答案 A→D→C→E→B 完全一致，仅用 > 代替 → 属于格式等价，正确。
+2026-07-19 00:42:04 | INFO     |          - [条款 step_2] 得分: 0 | 理由: A级为最高处理优先级，应屏蔽所有中断（11111），学生给出 00000，概念完全相反，属于核心概念错误。
+2026-07-19 00:42:04 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 标准答案为 01000，学生给出 10111，恰好为标准答案按位取反，屏蔽逻辑完全颠倒。
+2026-07-19 00:42:04 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 标准答案为 01101，学生给出 10010，为标准答案按位取反，屏蔽逻辑错误。
+2026-07-19 00:42:04 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 标准答案为 01111，学生给出 10000，为标准答案按位取反，屏蔽逻辑错误。
+2026-07-19 00:42:04 | INFO     |          - [条款 step_6] 得分: 0 | 理由: 标准答案为 01001，学生给出 10110，为标准答案按位取反，屏蔽逻辑错误。
+2026-07-19 00:42:04 | INFO     |          - [条款 step_7] 得分: 2.0 | 理由: 学生仅给出线性序列而非标准嵌套抢占图，且其屏蔽字全部取反导致推导依据错误，序列内容也难以与正确答案对应。但学生确实给出了执行顺序的尝试性回答，给予少量部分分。
+2026-07-19 00:42:04 | INFO     | 💾 样本 ANS_CO_540.jpg 进度已保存。
+2026-07-19 00:42:04 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 00:42:19 | INFO     | 
+📊 采样完成。平均方差: 2.2667
+2026-07-19 00:42:19 | INFO     | Item-level variance: avg=0.2032, max=3.5556
+2026-07-19 00:42:19 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-19 00:42:19 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-19 00:42:19 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_7", "parent_points": 8.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-19 00:44:17 | INFO     | 🎉 修正后的最终标准已通过总分与语义契约校验。
+2026-07-19 00:44:17 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_2_optimization.json
+2026-07-19 00:44:17 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_3
+============================================================
+2026-07-19 00:44:17 | INFO     | force-rerun enabled; restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-19 00:44:17 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_3_rubric_standard.json
+2026-07-19 00:44:17 | INFO     | force-rerun enabled; ignore old variance checkpoint for this question.
+2026-07-19 00:44:17 | INFO     | [data isolation] variance optimization is restricted to 10 calibration answers.
+2026-07-19 00:44:17 | INFO     | 
+👉 正在处理新样本: ANS_CO_140.jpg
+2026-07-19 00:44:41 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 00:44:43 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 00:45:57 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 00:45:59 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:49:56 | INFO     |       ✅ [裁判亮分] 总得分: 2.5
+2026-07-19 00:49:56 | INFO     |          - [条款 step_1] 得分: 0 | 理由: The student used an incorrect value for y (unsigned/positive instead of negative), yielding an incorrect calculation result (01000110 instead of 10001110 / 8EH) and drew a wrong conceptual conclusion regarding the overflow condition (stating 'No overflow' when it actually overflows).
+2026-07-19 00:49:56 | INFO     |          - [条款 step_2] 得分: 2.5 | 理由: Despite intermediate typos (e.g., 1101010 instead of 11010101) and an extra fractional bit carried from division, the student's final binary result's integer part (10110111) correctly matches the standard answer (B7H). However, the required overflow judgment is entirely missing, warranting partial credit for the incomplete item.
+2026-07-19 00:49:56 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 00:49:58 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:53:45 | INFO     |       ✅ [裁判亮分] 总得分: 4.0
+2026-07-19 00:53:45 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: The student correctly sets up the expression X-2y = 00110110 - 01010100 - 01010100, demonstrating the correct method. However, the binary result is malformed/incorrect (1000110 instead of 10001110) and the overflow conclusion is definitively wrong (claims no overflow when the standard indicates an overflow). Partial credit is awarded for the valid setup and substitution.
+2026-07-19 00:53:45 | INFO     |          - [条款 step_2] 得分: 1.5 | 理由: The student correctly computes (X÷4)=00001101.1 and sets up the addition. However, the value used for 2Z is incorrect (1101010 instead of 10101010), which propagates to an incorrect final sum. Additionally, the overflow judgment is missing entirely. Partial credit is awarded for the correct division step and setup.
+2026-07-19 00:53:45 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 00:53:47 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:55:14 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 00:55:14 | INFO     |          - [条款 step_1] 得分: 0 | 理由: The student concluded 'no overflow' (无溢出), which is a wrong conceptual conclusion that directly contradicts the standard answer (an overflow occurs). Additionally, the subtraction result drops a bit, yielding an incorrect binary value. A wrong final conclusion on a core requirement constitutes a semantic failure.
+2026-07-19 00:55:14 | INFO     |          - [条款 step_2] 得分: 0 | 理由: The student used an incorrect method for division (yielding a floating-point-like result 00001101.1 instead of an arithmetic right shift yielding 00001101), calculated an incorrect intermediate value for 2z (6AH instead of AAH), made arithmetic errors in the addition, and completely omitted the required overflow judgment.
+2026-07-19 00:55:14 | INFO     | 💾 样本 ANS_CO_140.jpg 进度已保存。
+2026-07-19 00:55:14 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 00:55:29 | INFO     | 
+👉 正在处理新样本: ANS_CO_154.jpg
+2026-07-19 00:55:53 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 00:55:55 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 00:56:12 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 00:56:14 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:57:14 | INFO     |       ✅ [裁判亮分] 总得分: 7.5
+2026-07-19 00:57:14 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: 学生正确计算了补码的十六进制/二进制结果 (8EH / 1000 1110)，但错误地得出不溢出的结论 (OF=0)，而标准答案指出结果超出了表示范围并发生溢出。给予部分分。
+2026-07-19 00:57:14 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: 学生正确计算了补码的最终结果 (B7H / 10110111)，并且正确地得出了不溢出的结论 (OF=0)。
+2026-07-19 00:57:14 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 00:57:16 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:57:47 | INFO     |       ✅ [裁判亮分] 总得分: 7.5
+2026-07-19 00:57:47 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: 最终计算结果的补码8EH正确，但溢出判断错误（学生认为OF=0不溢出，而标准答案为发生溢出），因此给部分分。
+2026-07-19 00:57:47 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: 最终计算结果的补码B7H正确，且溢出判断OF=0（结果未溢出）也完全正确，符合标准答案。
+2026-07-19 00:57:47 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 00:57:49 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 00:59:03 | INFO     |       ✅ [裁判亮分] 总得分: 7.5
+2026-07-19 00:59:03 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: 学生计算出的补码结果 8EH 与标准答案一致，数值部分正确。但溢出判断错误：标准答案指出 x-2y=142 超出8位有符号数表示范围（-128~127），应发生溢出（OF=1），而学生写了 OF=0、结果不溢出。补码计算正确但溢出判断这一核心结论错误，属于部分正确。
+2026-07-19 00:59:03 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: 学生给出的补码结果 B7H = 10110111 与标准答案完全一致，溢出判断 OF=0（无溢出）也正确。-73 在8位有符号数表示范围内（-128~127），确实不溢出。学生在表达式 [(X÷4)+2Z]补 中展示了运算关系和最终结论，满足该评分项要求。
+2026-07-19 00:59:03 | INFO     | 💾 样本 ANS_CO_154.jpg 进度已保存。
+2026-07-19 00:59:03 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 00:59:18 | INFO     | 
+👉 正在处理新样本: ANS_CO_173.jpg
+2026-07-19 00:59:41 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 00:59:43 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 00:59:52 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 00:59:54 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:01:41 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 01:01:41 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 学生对补码与原码的转换存在根本性的概念错误，将正数的补码36H误认为负数并求其原码为-74，y同理被错误处理为-44。基于此错误前提得出的计算结果0E H与标准答案8E H完全不符，且未进行要求的溢出判断。
+2026-07-19 01:01:41 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 学生错误地将 x÷4 赋值为14（实为误用上一问的 x-2y 结果），且完全没有执行除以4的算术操作，导致初始值错误。最终计算结果 B8H 与标准答案 B7H 不符，同时未进行任何溢出判断，核心要求未满足。
+2026-07-19 01:01:41 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 01:01:43 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:06:47 | INFO     |       ✅ [裁判亮分] 总得分: 2.0
+2026-07-19 01:06:47 | INFO     |          - [条款 step_1] 得分: 1.0 | 理由: The student sets up the x - 2y equation and computes a final answer based on their (flawed) initial values, showing the calculation method. However, the final answer (0EH) is incorrect, and the required overflow judgment is completely missing. Awarded partial credit for the method setup.
+2026-07-19 01:06:47 | INFO     |          - [条款 step_2] 得分: 1.0 | 理由: The student provides the binary addition trace for (x÷4) + 2z by adding z's complement twice, demonstrating the correct algorithmic process. However, the final result (10111000) is incorrect due to an upstream error, and the overflow judgment is missing. Awarded partial credit for the valid process trace.
+2026-07-19 01:06:47 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 01:06:49 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:10:32 | INFO     |       ✅ [裁判亮分] 总得分: 2
+2026-07-19 01:10:32 | INFO     |          - [条款 step_1] 得分: 0 | 理由: The student fundamentally misunderstood two's complement to original code conversion (treating positive 36H as negative, calculating wrong original codes), leading to incorrect values for x and y. The decimal computation is based on these wrong values, resulting in a wrong final answer, and the overflow judgment is missing.
+2026-07-19 01:10:32 | INFO     |          - [条款 step_2] 得分: 2 | 理由: The student correctly set up 2z as z+z and performed the binary addition accurately. However, they used the wrong value for x÷4 (14 instead of 13, likely propagated from step 1) resulting in B8H instead of B7H, and the required overflow judgment is missing.
+2026-07-19 01:10:32 | INFO     | 💾 样本 ANS_CO_173.jpg 进度已保存。
+2026-07-19 01:10:32 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 01:10:47 | INFO     | 
+👉 正在处理新样本: ANS_CO_174.jpg
+2026-07-19 01:11:12 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 01:11:14 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 01:11:23 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 01:11:25 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:12:53 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-19 01:12:53 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: The student correctly performed the two's complement arithmetic for X - 2Y by adding X to [-2Y]补, arriving at the exact expected binary/hex result (10001110 / 8EH) and correctly identifying that an overflow occurred (OF=1).
+2026-07-19 01:12:53 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The student correctly performed the right/left shifts and the binary addition (00001101 + 10101010 = 10110111), correctly concluding OF=0. The final hex value was written as 'B3H' instead of 'B7H' (matching their correct binary 10110111), which is evaluated as a non-substantive transcription typo under the lenient grading policy.
+2026-07-19 01:12:53 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 01:12:55 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:13:54 | INFO     |       ✅ [裁判亮分] 总得分: 9.0
+2026-07-19 01:13:54 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: 学生正确给出 [-2Y]补=01011000，并通过 [X]补+[-2Y]补 得到 10001110=8EH，与标准答案 36H-A8H=8EH 一致；OF=1 表示发生溢出，与标准答案结论一致。补码运算及溢出判断均正确，给予满分。
+2026-07-19 01:13:54 | INFO     |          - [条款 step_2] 得分: 4.0 | 理由: 中间值 x÷4=00001101(0DH) 与 2Z=10101010(AAH) 均正确；二进制求和 10110111 与标准答案 B7H 一致；OF=0 无溢出判断正确。但学生将二进制结果 10110111 误标为 B3H（应为 B7H），属十六进制标注错误，按宽松评分扣少量分，给予 4.0 分。
+2026-07-19 01:13:54 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 01:13:56 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:15:33 | INFO     |       ✅ [裁判亮分] 总得分: 9
+2026-07-19 01:15:33 | INFO     |          - [条款 step_1] 得分: 5 | 理由: Student correctly computed [2Y]补=10101000 and [-2Y]补=01011000, then correctly performed x+(-2Y)=00110110+01011000=10001110=8EH, and correctly identified OF=1 (overflow). All values match the standard answer (8EH, overflow occurred).
+2026-07-19 01:15:33 | INFO     |          - [条款 step_2] 得分: 4 | 理由: The binary computation is fully correct: x÷4=00001101 (13), 2Z=10101010 (-86), sum=10110111 which equals B7H, and OF=0 is correctly identified. However the hex conversion is wrong: 10110111 = B7H, not B3H. The student wrote the correct binary but mislabeled the hex, losing 1 point on the final stated answer.
+2026-07-19 01:15:33 | INFO     | 💾 样本 ANS_CO_174.jpg 进度已保存。
+2026-07-19 01:15:33 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 01:15:48 | INFO     | 
+👉 正在处理新样本: ANS_CO_186.jpg
+2026-07-19 01:16:09 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 01:16:11 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 01:16:42 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 01:16:44 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:20:21 | INFO     |       ✅ [裁判亮分] 总得分: 7.5
+2026-07-19 01:20:21 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: The student successfully computes the final two's complement result as 8E (matching the canonical 8EH). However, the student incorrectly concludes that no overflow occurred (未溢出), missing the correct overflow judgment.
+2026-07-19 01:20:21 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The student computes the final hexadecimal result as B7 and correctly judges that no overflow occurs (未溢出), matching the canonical answer perfectly despite minor textual slips regarding shift direction.
+2026-07-19 01:20:21 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 01:20:23 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:21:28 | INFO     |       ✅ [裁判亮分] 总得分: 7.5
+2026-07-19 01:21:28 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: The student obtained the correct final hex value (8E), but the intermediate binary computation trace contains significant errors and bit-length mismatches. More importantly, the student incorrectly concluded '未溢出' (no overflow) when the operation results in 142, which exceeds the 8-bit signed integer range and thus causes an overflow. Partial credit is awarded for the correct hex result.
+2026-07-19 01:21:28 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The student correctly calculated the final hex result (B7) and accurately determined that there is no overflow ('未溢出'). Although there are minor typographical errors in the binary intermediate steps (such as writing 'left shift' instead of 'right shift' but still performing right shift, and having extraneous bits in the addition operands), the final core values and conclusions align perfectly with the canonical answer. Under lenient grading, this is awarded full marks.
+2026-07-19 01:21:28 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 01:21:30 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:23:12 | INFO     |       ✅ [裁判亮分] 总得分: 7.0
+2026-07-19 01:23:12 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: 学生正确算出了最终结果的十六进制形式 (8E)，但得出了“未溢出”的错误结论。由于该结果超出8位带符号数表示范围，实际上发生溢出。结论部分错误，给予部分分。
+2026-07-19 01:23:12 | INFO     |          - [条款 step_2] 得分: 4.5 | 理由: 学生正确算出了十六进制结果 (B7) 并得出了正确的“未溢出”结论。但在过程描述中存在概念性笔误，将除以4（右移）错写成了“左移2位”，尽管写出的数值是正确的右移结果。依据宽松评分标准，主要结果与结论正确，仅扣减少量过程分数。
+2026-07-19 01:23:12 | INFO     | 💾 样本 ANS_CO_186.jpg 进度已保存。
+2026-07-19 01:23:12 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 01:23:27 | INFO     | 
+📊 采样完成。平均方差: 0.7778
+2026-07-19 01:23:27 | INFO     | Item-level variance: avg=0.3611, max=1.3889
+2026-07-19 01:23:27 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-19 01:23:27 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-19 01:23:27 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_2", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-19 01:29:49 | INFO     | 🎉 修正后的最终标准已通过总分与语义契约校验。
+2026-07-19 01:29:49 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_3_optimization.json
+2026-07-19 01:29:49 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_4
+============================================================
+2026-07-19 01:29:49 | INFO     | force-rerun enabled; restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-19 01:29:49 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_4_rubric_standard.json
+2026-07-19 01:29:49 | INFO     | force-rerun enabled; ignore old variance checkpoint for this question.
+2026-07-19 01:29:49 | INFO     | [data isolation] variance optimization is restricted to 9 calibration answers.
+2026-07-19 01:29:49 | INFO     | 
+👉 正在处理新样本: ANS_CO_647.jpg
+2026-07-19 01:30:24 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 01:30:26 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 01:31:43 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 01:31:45 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:35:05 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-19 01:35:05 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 正确写出 8MB=2^23B；'共2³位' 明显为 23位 的笔误，配合后续步骤可得物理地址=23位，按lenient政策给满分。
+2026-07-19 01:35:05 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 2KB=2^11B，块内偏移11位，完全正确。
+2026-07-19 01:35:05 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 32块/2路=16组=2^4，组号4位，正确。
+2026-07-19 01:35:05 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: 标记(8)与组号(4)正确，但块内偏移写成12位，与step_2自相矛盾且总数变为24位，部分扣分。
+2026-07-19 01:35:05 | INFO     |          - [条款 step_5] 得分: 1.0 | 理由: 组号4位正确；将组内块号1位误写为'块内地址'，并完全缺失11位块内偏移，结构不完整。
+2026-07-19 01:35:05 | INFO     |          - [条款 step_6] 得分: 1.0 | 理由: tag字段提取正确(01011010)给出部分过程分；但未做组号匹配判断，且结论'命中Cache块2'与标准(未命中)相反，最终结论错误。
+2026-07-19 01:35:05 | INFO     |          - [条款 step_7] 得分: 1.0 | 理由: tag字段提取正确(11111110)；但结论'命中Cache块3'与标准(命中块1)不一致，且缺少组号匹配与比较过程，仅给过程部分分。
+2026-07-19 01:35:05 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 01:35:07 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:38:00 | INFO     |       ✅ [裁判亮分] 总得分: 13.0
+2026-07-19 01:38:00 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生明确写出8MB=2^23B，物理地址位数结论正确；'2³位'判定为'23位'的提取/OCR变形，按宽松政策视为MATCH。
+2026-07-19 01:38:00 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 块大小2KB=2^11B与块内偏移11位均正确。
+2026-07-19 01:38:00 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 32块/2路=16组=2^4，组号4位，推导与结论均正确。
+2026-07-19 01:38:00 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: 标记8位与组号4位正确，但块内地址写成12位（应为11位），导致总位数为24≠23，属部分正确。
+2026-07-19 01:38:00 | INFO     |          - [条款 step_5] 得分: 1.0 | 理由: 组号4位正确，但将组内块号1位误标为块内地址1位，且缺失11位块内偏移字段，结构不完整。
+2026-07-19 01:38:00 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: tag提取(01011010B)正确，但结论应为'未命中'，学生误判为'命中Cache块2'，块2不在组0中，结论错误，给部分分。
+2026-07-19 01:38:00 | INFO     |          - [条款 step_7] 得分: 3.0 | 理由: tag(11111110B)正确且命中判断正确，但命中块号应为块1，学生误写为块3，属部分正确。
+2026-07-19 01:38:00 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 01:38:02 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:43:12 | INFO     |       ✅ [裁判亮分] 总得分: 11.0
+2026-07-19 01:43:12 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生明确写出8MB=2^23B，并指出地址共23位（提取中的'2³位'明显是'23位'的排版/OCR上标瑕疵），完全符合标准答案。
+2026-07-19 01:43:12 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生正确计算出2KB对应11位块内地址，与标准答案完全一致。
+2026-07-19 01:43:12 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 学生通过32/2=16=2^4推导出Cache组号有4位，逻辑正确且符合标准答案。
+2026-07-19 01:43:12 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: 标记位(8位)和组号位(4位)计算正确，但块内地址写为12位，与step_2中正确的11位相矛盾，导致地址总长度错误。给一半步骤分。
+2026-07-19 01:43:12 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: 学生混淆了组内块号(1位)与块内地址(11位)，不仅缺失了11位的块内偏移，还错误标记了字段名称，Cache地址结构概念严重错误。
+2026-07-19 01:43:12 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: 学生正确提取了地址标记位(01011010)，但得出了完全相反的结论（答命中，应为未命中），且未给出正确的判断理由，给部分过程分。
+2026-07-19 01:43:12 | INFO     |          - [条款 step_7] 得分: 2.0 | 理由: 学生正确提取了地址标记位(11111110)并准确判断出命中，但定位到了错误的Cache块号（答块3，应为块1），给部分过程分。
+2026-07-19 01:43:12 | INFO     | 💾 样本 ANS_CO_647.jpg 进度已保存。
+2026-07-19 01:43:12 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 01:43:27 | INFO     | 
+👉 正在处理新样本: ANS_CO_687.jpg
+2026-07-19 01:43:57 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 01:43:59 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 01:44:44 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 01:44:46 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:46:09 | INFO     |       ✅ [裁判亮分] 总得分: 6.0
+2026-07-19 01:46:09 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生明确写出 8M=2^23 并在计算中使用 23 作为总位数，等价于指出物理地址为 23 位；虽然将其用于字块标记推导，但 23 位总地址的事实可识别，按宽松评分给满分。
+2026-07-19 01:46:09 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生明确指出字块内地址为 2^11 即 11 位，与标准答案完全一致。
+2026-07-19 01:46:09 | INFO     |          - [条款 step_3] 得分: 0.0 | 理由: 学生的计算公式 8M÷2K÷2 计算的是主存每组对应的块数，而非 Cache 组数，得出 11 位组地址，与正确的 4 位组地址矛盾，属于核心概念错误。
+2026-07-19 01:46:09 | INFO     |          - [条款 step_4] 得分: 0.0 | 理由: 学生给出的格式为「标记 1 位 | 组地址 11 位 | 块内偏移 11 位」，与标准格式 (8|4|11) 严重不符，属于结构性错误。
+2026-07-19 01:46:09 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: 学生未书写 Cache 地址格式，无任何相关内容。
+2026-07-19 01:46:09 | INFO     |          - [条款 step_6] 得分: 1.0 | 理由: 学生最终结论「未命中」正确，且二进制转换正确，但其推导基于错误的地址格式（tag=1, 组=11），缺乏与标准推理一致的对照过程，仅给予结论分。
+2026-07-19 01:46:09 | INFO     |          - [条款 step_7] 得分: 1.0 | 理由: 学生最终结论「命中」正确，但十六进制存在笔误（7FD057 与 7F0057 不一致），且 tag 推导与其错误地址格式不自洽，缺乏完整的标准对照过程，仅给予结论分。
+2026-07-19 01:46:09 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 01:46:11 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:47:58 | INFO     |       ✅ [裁判亮分] 总得分: 4.0
+2026-07-19 01:47:58 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生提取了主存容量8M=2^23，推导出了物理地址位数为23位，满足评分标准要求。
+2026-07-19 01:47:58 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生正确给出了块内偏移地址的位数为11位，与标准答案一致。
+2026-07-19 01:47:58 | INFO     |          - [条款 step_3] 得分: 0.0 | 理由: 学生错误地使用主存容量除以块大小再除以路数来计算Cache组地址位数，得到了11位的错误结论。概念和方法均发生严重错误，不符合组相联映射中Cache组地址位数的计算规则。
+2026-07-19 01:47:58 | INFO     |          - [条款 step_4] 得分: 0.0 | 理由: 由于上一步推导错误，导致此处主存地址格式（1 | 11 | 11）完全错误，不符合标准格式要求。
+2026-07-19 01:47:58 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: 提取信息显示学生未书写该部分内容。
+2026-07-19 01:47:58 | INFO     |          - [条款 step_6] 得分: 0.0 | 理由: 虽然十六进制转二进制正确且最终结论侥幸为“未命中”，但对照过程使用了前面完全错误的地址格式（1位Tag，11位组地址），缺乏正确的推理逻辑和理由，无法给予过程分。
+2026-07-19 01:47:58 | INFO     |          - [条款 step_7] 得分: 0.0 | 理由: 学生在该步推导中凭空给出了“块标记为1111 1110”，与其自身前文得出的1位Tag结论自相矛盾，逻辑链条断裂，属于严重的语义与逻辑错误。
+2026-07-19 01:47:58 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 01:48:00 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:51:15 | INFO     |       ✅ [裁判亮分] 总得分: 8.0
+2026-07-19 01:51:15 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生明确写出8M=2^23，由此可推导出物理地址为23位，符合满分要求。
+2026-07-19 01:51:15 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生准确计算出块内地址（偏移）为11位，与标准答案一致。
+2026-07-19 01:51:15 | INFO     |          - [条款 step_3] 得分: 0.0 | 理由: 学生计算出的组地址位数为11位，标准答案应为4位。计算公式概念错误。
+2026-07-19 01:51:15 | INFO     |          - [条款 step_4] 得分: 0.0 | 理由: 受前序步骤错误推导影响，主存地址格式填写为 1-11-11（实际应为 8-4-11）。核心结构错误。
+2026-07-19 01:51:15 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: 学生未书写关于Cache地址格式的任何内容。
+2026-07-19 01:51:15 | INFO     |          - [条款 step_6] 得分: 1.0 | 理由: 学生正确进行了地址的二进制转换，并得出了正确的最终结论（未命中），但缺乏对组号和标记位的对比说明理由，故给予部分分数。
+2026-07-19 01:51:15 | INFO     |          - [条款 step_7] 得分: 3.0 | 理由: 学生正确进行了地址转换，成功提取了正确的字块标记（1111 1110）并得出了命中结论，但未完整说明组号定位及Cache块匹配的全过程，予以较高比例部分分数。
+2026-07-19 01:51:15 | INFO     | 💾 样本 ANS_CO_687.jpg 进度已保存。
+2026-07-19 01:51:15 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 01:51:30 | INFO     | 
+👉 正在处理新样本: ANS_CO_693.jpg
+2026-07-19 01:52:12 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 01:52:14 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 01:52:38 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 01:52:40 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 01:55:10 | INFO     |       ✅ [裁判亮分] 总得分: 11.5
+2026-07-19 01:55:10 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生明确写出主存容量 8MB = 2^23，可直接对应物理地址 23 位，符合评分要求。
+2026-07-19 01:55:10 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生写出 2kB = 2^11，对应块内偏移 11 位，数值正确；虽然措辞写为“每组”，但与标准块大小一致，按 lenient 视为 MATCH。
+2026-07-19 01:55:10 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 学生明确推导 32/2=16 组 = 2^4 组，对应组号 4 位，与标准一致。
+2026-07-19 01:55:10 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: 学生提到了 4 位组号字段，但未给出完整的主存地址格式 8|4|11，且“可存块标记放在内容”表述含糊，无法确认字块标记 8 位。给予部分分。
+2026-07-19 01:55:10 | INFO     |          - [条款 step_5] 得分: 0.5 | 理由: 学生写出了 4 位组号，但将块标记写成 7 位（应为 8 位），且未给出 Cache 地址应有的组内块号 1 位与偏移 11 位格式，属部分正确。
+2026-07-19 01:55:10 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: 结论“不能在 cache 中访问”即未命中，与标准结论一致，且给出了二进制展开；但缺少关键理由说明（组号字段与存放块编号不匹配），按 role_weighted 仅给结论分。
+2026-07-19 01:55:10 | INFO     |          - [条款 step_7] 得分: 2.0 | 理由: 结论“能在 cache 中访问”即命中，与标准一致；但二进制展开末字节有误（应为 0101 0111），且缺少命中理由与具体命中块号说明，按 lenient 给结论分。
+2026-07-19 01:55:10 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 01:55:12 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 02:21:33 | INFO     |       ✅ [裁判亮分] 总得分: 12.0
+2026-07-19 02:21:33 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: The student correctly identifies the main memory capacity as 8MB = 2^23, satisfying the parameter requirement for the 23-bit physical address.
+2026-07-19 02:21:33 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: The student correctly identifies the block size as 2KB = 2^11, which correctly implies the 11-bit block offset.
+2026-07-19 02:21:33 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: The student correctly calculates the number of groups (16 = 2^4), which justifies the 4-bit cache group number.
+2026-07-19 02:21:33 | INFO     |          - [条款 step_4] 得分: 0.0 | 理由: The student's calculation (23 ≡ 3(mod4)) and division of the main memory address format are incorrect and fail to present the proper 8-bit Tag, 4-bit Group, and 11-bit Offset structure.
+2026-07-19 02:21:33 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: The student incorrectly presents the Cache address format. The correct format requires a 4-bit Group, 1-bit Block-in-set, and 11-bit Offset, but the student provides a structurally incorrect format with a 7-bit block tag.
+2026-07-19 02:21:33 | INFO     |          - [条款 step_6] 得分: 3.0 | 理由: The student correctly converts the hex address to binary and reaches the correct final conclusion (miss). However, they omit the explicit tag comparison reasoning, so partial credit is awarded for the setup and correct conclusion.
+2026-07-19 02:21:33 | INFO     |          - [条款 step_7] 得分: 3.0 | 理由: The student correctly converts the hex address to binary and accurately concludes that it hits in the cache. Missing the explicit tag matching process restricts this to partial credit.
+2026-07-19 02:21:33 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 02:21:35 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 02:32:55 | INFO     |       ✅ [裁判亮分] 总得分: 8.0
+2026-07-19 02:32:55 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生正确指出主存大小 8MB 等于 2^23，并隐含物理地址为 23 位。
+2026-07-19 02:32:55 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生明确写出 2kB = 2^11，正确提供了块内偏移所需的位数 11 位。
+2026-07-19 02:32:55 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 学生正确计算出 Cache 共 16 组，即 2^4，得出组号占 4 位。
+2026-07-19 02:32:55 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 学生给出的推导逻辑混乱且存在错误（如 23≡3(mod4) 的无关或错误计算），未能得出正确的主存地址格式（8 | 4 | 11）。
+2026-07-19 02:32:55 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 学生未写出正确的 Cache 地址格式，错将块内偏移和组内块号混淆为 7 位块标记，概念错误。
+2026-07-19 02:32:55 | INFO     |          - [条款 step_6] 得分: 1.0 | 理由: 学生正确将十六进制地址转换为二进制，且“不能在cache中访问”的最终结论正确（未命中），但完全缺少对未命中原因的推导过程。根据评分规则，无过程支撑仅有结论最高得 20% 分数。
+2026-07-19 02:32:55 | INFO     |          - [条款 step_7] 得分: 1.0 | 理由: 学生正确进行了地址的进制转换，且“能在cache中访问”的最终结论正确（命中），但同样缺少命中判断的具体推导与理由。根据评分规则给予部分分。
+2026-07-19 02:32:55 | INFO     | 💾 样本 ANS_CO_693.jpg 进度已保存。
+2026-07-19 02:32:55 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 02:33:10 | INFO     | 
+👉 正在处理新样本: ANS_CO_696.jpg
+2026-07-19 02:33:40 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 02:33:42 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 02:34:00 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 02:34:02 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 02:37:09 | INFO     |       ✅ [裁判亮分] 总得分: 20.0
+2026-07-19 02:37:09 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生明确算出并指出主存容量8MB对应23位物理地址，与标准答案完全一致。
+2026-07-19 02:37:09 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生通过2KB正确推导出块内地址占11位，推理与结果均正确。
+2026-07-19 02:37:09 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 学生通过总块数除以2路组相联，正确得出16组，占用4位。
+2026-07-19 02:37:09 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: 学生准确列出了主存地址的三段格式及其对应的位数，与标准答案格式一致。
+2026-07-19 02:37:09 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: 学生准确列出了Cache地址的三段格式及位数（组内块号在此记为标记），结果正确。
+2026-07-19 02:37:09 | INFO     |          - [条款 step_6] 得分: 5.0 | 理由: 学生正确分离了块内地址(11位)和组号(0000)，提取出字块标记(1011010，等同于标准答案的01011010)，并得出了正确的“未命中”结论，过程完整。
+2026-07-19 02:37:09 | INFO     |          - [条款 step_7] 得分: 5.0 | 理由: 学生正确计算了该地址的组号(0000)与Tag(11111110)，正确比对了组内块并得出了“命中”的正确结论，过程完整。
+2026-07-19 02:37:09 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 02:37:11 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 02:38:10 | INFO     |       ✅ [裁判亮分] 总得分: 20.0
+2026-07-19 02:38:10 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生明确写出主存8MB=2²³B，物理地址23位，与标准答案一致。
+2026-07-19 02:38:10 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生明确给出块大小2KB=2¹¹，块内偏移11位，与标准答案一致。
+2026-07-19 02:38:10 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 学生正确计算2路组相联下Cache有16组，组号4位，推理与结论均正确。
+2026-07-19 02:38:10 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: 学生给出的主存地址格式（8位+4位+11位）与标准答案完全一致。
+2026-07-19 02:38:10 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: 学生给出的Cache地址格式（4位组号+1位组内块号+11位块内地址）正确。
+2026-07-19 02:38:10 | INFO     |          - [条款 step_6] 得分: 5.0 | 理由: 学生正确提取块内地址、组号(0000→组0)、识别组内块0和块1、计算字块标记并得出未命中结论，过程链完整、结论正确。标记位书写略不规范但不影响语义。
+2026-07-19 02:38:10 | INFO     |          - [条款 step_7] 得分: 5.0 | 理由: 学生正确提取组号(0000→组0)、识别块0和块1、计算标记位并与块1的标记匹配，得出命中块1的结论，与标准答案一致。
+2026-07-19 02:38:10 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 02:38:12 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 02:39:59 | INFO     |       ✅ [裁判亮分] 总得分: 20.0
+2026-07-19 02:39:59 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: Student correctly converts 8MB to 2^23 B and concludes 23-bit physical address, matching the standard answer exactly.
+2026-07-19 02:39:59 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: Student correctly identifies block size 2KB = 2^11 and derives 11-bit block offset.
+2026-07-19 02:39:59 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: Student correctly computes 2^5/2 = 2^4 = 16 groups, requiring 4-bit Cache group number.
+2026-07-19 02:39:59 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: Main memory address format is correct: Tag 8 bits | Group 4 bits | Offset 11 bits, matching standard exactly.
+2026-07-19 02:39:59 | INFO     |          - [条款 step_5] 得分: 2.0 | 理由: Cache address format has correct bit widths (4, 1, 11). Student labels the 1-bit field as '标记' rather than '组内块号', but the structure and bit allocation are correct; under lenient grading this is a minor terminology difference, not a semantic error.
+2026-07-19 02:39:59 | INFO     |          - [条款 step_6] 得分: 5.0 | 理由: Student correctly extracts block offset (11 bits), group number (0000 → Cache group 0 with blocks 0 and 1), and tag bits (1011010 = 01011010, leading zero omitted — non-substantive). Conclusion '未命中' is correct. All key process steps and final conclusion match the standard answer.
+2026-07-19 02:39:59 | INFO     |          - [条款 step_7] 得分: 5.0 | 理由: Student correctly extracts offset (11 bits), group number (0000 → group 0 with blocks 0 and 1), tag (11111110), identifies it corresponds to block 1, and concludes hit. All steps and final conclusion match the standard answer exactly.
+2026-07-19 02:39:59 | INFO     | 💾 样本 ANS_CO_696.jpg 进度已保存。
+2026-07-19 02:39:59 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 02:40:14 | INFO     | 
+👉 正在处理新样本: ANS_CO_701.png
+2026-07-19 02:40:44 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 02:40:46 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 02:41:09 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 02:41:11 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 02:42:04 | INFO     |       ✅ [裁判亮分] 总得分: 3.0
+2026-07-19 02:42:04 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: The student explicitly states the main memory has 23 bits, which correctly identifies the total number of physical address bits.
+2026-07-19 02:42:04 | INFO     |          - [条款 step_2] 得分: 1.0 | 理由: The student correctly calculates 11 bits from the 2KB block size but imprecisely labels it as 'cache has 11 bits in total' rather than explicitly identifying it as the block offset.
+2026-07-19 02:42:04 | INFO     |          - [条款 step_3] 得分: 0 | 理由: The student did not provide an answer for the cache set index bits.
+2026-07-19 02:42:04 | INFO     |          - [条款 step_4] 得分: 0 | 理由: The student only wrote the label '主存：' without providing any address format.
+2026-07-19 02:42:04 | INFO     |          - [条款 step_5] 得分: 0 | 理由: The student did not provide an answer for the cache address format.
+2026-07-19 02:42:04 | INFO     |          - [条款 step_6] 得分: 0.0 | 理由: The student did not provide an answer for whether the address 2D07FFH hits.
+2026-07-19 02:42:04 | INFO     |          - [条款 step_7] 得分: 0.0 | 理由: The student did not provide an answer for whether the address 7F0057H hits.
+2026-07-19 02:42:04 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 02:42:06 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 02:43:10 | INFO     |       ✅ [裁判亮分] 总得分: 3.0
+2026-07-19 02:43:10 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生明确写出'主存共23位'，物理地址总位数正确。中间转换式虽疑似OCR误识（'1.2×10²³'很可能为'2^23'之误），但最终结论23位正确，符合lenient评分下忽略中间展开细节的原则。
+2026-07-19 02:43:10 | INFO     |          - [条款 step_2] 得分: 1.0 | 理由: 由2KB正确推导出11位数值，但学生将其标注为'cache共11位'，而非'块内偏移11位'。这一标注存在语义混淆（cache地址总位数并非11位），数值正确但归属概念有误，给予一半分数。
+2026-07-19 02:43:10 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 学生未书写任何关于Cache组号位数的内容。
+2026-07-19 02:43:10 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 学生仅写了标题'主存：'，未提供任何地址格式内容（各字段位数均缺失）。
+2026-07-19 02:43:10 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 学生未书写任何关于Cache地址格式的内容。
+2026-07-19 02:43:10 | INFO     |          - [条款 step_6] 得分: 0.0 | 理由: 学生未书写任何关于2D07FFH命中判断的内容。
+2026-07-19 02:43:10 | INFO     |          - [条款 step_7] 得分: 0.0 | 理由: 学生未书写任何关于7F0057H命中判断的内容。
+2026-07-19 02:43:10 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 02:43:12 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 02:43:48 | INFO     |       ✅ [裁判亮分] 总得分: 4.0
+2026-07-19 02:43:48 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生正确得出物理地址共23位。虽然中间转换式 '1.2×10²³B' 疑为 OCR 对 '2^23 B' 的误识，但结论 '主存共23位' 完全正确，且存在计算尝试痕迹，符合宽松评分。
+2026-07-19 02:43:48 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生正确得出块内偏移为11位。转换式 '2×10¹¹B' 疑为 OCR 对 '2^11 B' 的误识，结论 '共11位' 数值正确。
+2026-07-19 02:43:48 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 学生未书写Cache组号位数的任何内容。
+2026-07-19 02:43:48 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 学生仅写了标签'主存：'，未填写任何地址格式内容。
+2026-07-19 02:43:48 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 学生未书写Cache地址格式的任何内容。
+2026-07-19 02:43:48 | INFO     |          - [条款 step_6] 得分: 0.0 | 理由: 学生未书写关于2D07FFH命中判断的任何内容。
+2026-07-19 02:43:48 | INFO     |          - [条款 step_7] 得分: 0.0 | 理由: 学生未书写关于7F0057H命中判断的任何内容。
+2026-07-19 02:43:48 | INFO     | 💾 样本 ANS_CO_701.png 进度已保存。
+2026-07-19 02:43:48 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 02:44:03 | INFO     | 
+📊 采样完成。平均方差: 1.5222
+2026-07-19 02:44:03 | INFO     | Item-level variance: avg=0.1349, max=1.5556
+2026-07-19 02:44:03 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-19 02:44:03 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-19 02:44:03 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_6", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 3, "weighting_policy": "role_constrained"}, {"parent_id": "step_7", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 3, "weighting_policy": "role_constrained"}]
+2026-07-19 02:51:11 | INFO     | 🎉 修正后的最终标准已通过总分与语义契约校验。
+2026-07-19 02:51:11 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_4_optimization.json
+2026-07-19 02:51:11 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_5
+============================================================
+2026-07-19 02:51:11 | INFO     | force-rerun enabled; restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-19 02:51:11 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_5_rubric_standard.json
+2026-07-19 02:51:11 | INFO     | force-rerun enabled; ignore old variance checkpoint for this question.
+2026-07-19 02:51:11 | INFO     | [data isolation] variance optimization is restricted to 11 calibration answers.
+2026-07-19 02:51:11 | INFO     | 
+👉 正在处理新样本: ANS_CO_268.jpg
+2026-07-19 02:51:25 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 02:51:27 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 02:51:44 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 02:51:46 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 02:57:43 | INFO     |       ✅ [裁判亮分] 总得分: 2
+2026-07-19 02:57:43 | INFO     |          - [条款 step_1] 得分: 2 | 理由: 学生应用了正确的结构方法（总操作码−已用=剩余，剩余×扩展因子=下一级名额），但主操作码字段宽度用错（2^6=64而非2^4=16），导致剩余操作码52（应4）和一地址总名额3328（应256）均错误。方法结构部分正确，基础参数错误，给予部分分。
+2026-07-19 02:57:43 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 学生仅给出了含变量m的代数式，未得出任何具体数字结果。标准答案要求给出255条这一明确数值结论，学生未书写该最终答案。
+2026-07-19 02:57:43 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 学生的公式52×2^6−254=3074与标准方法(256−254)×2^6=128完全不同：学生先做乘法再减已用数（错误结构），且基础参数2^6=64也错误，最终结果3074远偏离正确答案128。方法与结论均有根本性错误。
+2026-07-19 02:57:43 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 02:57:45 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 02:58:22 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 02:58:22 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 学生将主操作码总位宽误用为 2^6=64（应为 2^4=16），导致 2^6-12=52 及 52×2^6=3328 全部建立在错误的操作码字段宽度上，属于核心概念错误（混淆地址字段与操作码字段），并非单纯的算术细节缺失。
+2026-07-19 02:58:22 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 学生只写出含变量 m 的代数式 (3328-m)×2^6 - n =，未求解出第一问的最终数字结论，且其上游表达式已因操作码位宽错误而失效。核心结果缺失，记为 BLANK。
+2026-07-19 02:58:22 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 学生沿用了错误的主操作码基数（2^6），并以 52×2^6-254=3074 作为零地址指令数，正确方法应为 (256-254)×2^6=128。方法与结论均与标准答案矛盾，属 SEMANTIC_FATAL。
+2026-07-19 02:58:22 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 02:58:24 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 02:59:20 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 02:59:20 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 学生用 2^6 作为主操作码空间（64−12=52），但主操作码应为 4 位即 2^4=16。这是对操作码字段位宽的概念性错误，导致后续一地址总名额 3328−m 与标准 256 完全不一致，属核心方法错误。
+2026-07-19 02:59:20 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 第一问需要具体的最终数字结果（255），学生仅写出含 m 的代数式且建立在错误前提上，未给出可判定的最终数值结论，按空白处理。
+2026-07-19 02:59:20 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 学生继续沿用了主操作码位宽错误（2^6−12=52），并在 3328−254=3074 处给出零地址名额结论，与标准 128 条不兼容。254 的引用仅是题目已知量，整体计算方法仍属概念性错误。
+2026-07-19 02:59:20 | INFO     | 💾 样本 ANS_CO_268.jpg 进度已保存。
+2026-07-19 02:59:20 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 02:59:35 | INFO     | 
+👉 正在处理新样本: ANS_CO_285.jpg
+2026-07-19 02:59:49 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 02:59:51 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:01:03 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:01:05 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:02:28 | INFO     |       ✅ [裁判亮分] 总得分: 12.5
+2026-07-19 03:02:28 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: 学生通过二进制前缀分析和计数公式展示了操作码扩展的理解，但未明确计算出主操作码总数(16)、剩余条数(4)、一地址总名额(256)等标准答案要求的关键中间值。计数公式存在书写遗漏(可能缺少2^1项)，展示了有效的过程痕迹但未命中标准计算路径。给予部分分。
+2026-07-19 03:02:28 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: 学生给出的最终结果255条与标准答案完全一致，答案正确。
+2026-07-19 03:02:28 | INFO     |          - [条款 step_3] 得分: 5.0 | 理由: 学生给出了正确的公式2×2^6=2^7=128，且最终结果128与标准答案一致。虽然未明确写出'254条已用'和'256-254=2'的中间推导，但在宽松评分政策下，正确的最终答案配合有效的计算公式痕迹，判定为MATCH。
+2026-07-19 03:02:28 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:02:30 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:05:20 | INFO     |       ✅ [裁判亮分] 总得分: 12.5
+2026-07-19 03:05:20 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: The student attempts to expand the opcode address space using powers of 2, but the formula does not match the standard calculation for the total quota and mathematically evaluates to 253 instead of 255.
+2026-07-19 03:05:20 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The student's final numerical answer perfectly matches the expected maximum count of 255.
+2026-07-19 03:05:20 | INFO     |          - [条款 step_3] 得分: 5.0 | 理由: The student provides the exact formula mapping (2×2^6) and correctly computes the final result of 128 for the second question.
+2026-07-19 03:05:20 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:05:22 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:05:55 | INFO     |       ✅ [裁判亮分] 总得分: 10
+2026-07-19 03:05:55 | INFO     |          - [条款 step_1] 得分: 0 | 理由: The student calculates the total slots for 1-address instructions as 2^7+2^6+...+1=253 using an incorrect method instead of the correct 4×2^6=256.
+2026-07-19 03:05:55 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The student correctly provides the final answer for the first question as 255.
+2026-07-19 03:05:55 | INFO     |          - [条款 step_3] 得分: 5.0 | 理由: The student correctly uses the formula 2×2^6 to arrive at the correct final answer of 128 for the zero-address instructions.
+2026-07-19 03:05:55 | INFO     | 💾 样本 ANS_CO_285.jpg 进度已保存。
+2026-07-19 03:05:55 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:06:10 | INFO     | 
+👉 正在处理新样本: ANS_CO_289.jpg
+2026-07-19 03:06:31 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:06:33 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:06:48 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:06:50 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:07:13 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 03:07:13 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 学生用 2^6×16 而非 2^6×(16-12)=256，方法概念错误（未识别扩展操作码需扣除已用 12 条主操作码），属核心方法错误。
+2026-07-19 03:07:13 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 最终数值 487 与标准答案 255 不符，且出现非整数 487.5 反映方法错误，strict_atomic 下错误结论不得分。
+2026-07-19 03:07:13 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 公式 (1024-2²×12)-2×254 与标准方法 (256-254)×2^6 完全不一致，且结果 468 与标准 128 矛盾，属方法与结论双重错误。
+2026-07-19 03:07:13 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:07:15 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:07:49 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 03:07:49 | INFO     |          - [条款 step_1] 得分: 0 | 理由: The student uses an entirely incorrect method for calculating the main opcodes and total slots (2^6 * 16 = 1024 instead of (16-12)*2^6 = 256). This is a conceptual error.
+2026-07-19 03:07:49 | INFO     |          - [条款 step_2] 得分: 0 | 理由: The final numeric result of 487 is completely incorrect and derived from a fundamentally flawed method.
+2026-07-19 03:07:49 | INFO     |          - [条款 step_3] 得分: 0 | 理由: The formula used to calculate zero-address instructions is conceptually flawed (subtracting 2*254 from an incorrect base) and the final answer 468 is incorrect.
+2026-07-19 03:07:49 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:07:51 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:08:31 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 03:08:31 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 学生方法概念性错误：未正确识别剩余主操作码 (16-12=4)，而是把整个 16 当作可用主操作码乘以 2^6 得到 1024，再以 2^2×12 减去 48，最后除以 2 得 487.5。这与扩展操作码的标准方法 (4×2^6=256) 不符，属于方法性错误而非算术细节缺失。
+2026-07-19 03:08:31 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 最终答案 487 与标准答案 255 不一致，且基于错误的上游方法 (487.5)。数值与结论均错误，无法给予部分分。
+2026-07-19 03:08:31 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 学生公式建立在错误的总量 1024 上，并用 2×254 的方式扣除一地址指令，得到 468，与标准方法 (2×2^6=128) 在结构和数量上均不一致。虽然引用了 254 这一参数，但整体映射关系错误，属方法性错误。
+2026-07-19 03:08:31 | INFO     | 💾 样本 ANS_CO_289.jpg 进度已保存。
+2026-07-19 03:08:31 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:08:46 | INFO     | 
+👉 正在处理新样本: ANS_CO_301.jpg
+2026-07-19 03:09:07 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:09:09 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:09:35 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:09:37 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:09:56 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 03:09:56 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 学生的计算逻辑和概念完全错误，未正确计算操作码扩展及一地址总名额。
+2026-07-19 03:09:56 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 学生未得出正确的第一问最终结果，且计算式存在概念错误。
+2026-07-19 03:09:56 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 学生未能得出正确的零地址指令最多条数，公式逻辑与标准答案完全无关。
+2026-07-19 03:09:56 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:09:58 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:10:16 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 03:10:16 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 学生错误地把地址数量当作乘子（12×6、6×16），这是对操作码扩展机制的概念性误解。主操作码空间应为 16（2^4），剩余码为 4，一地址名额应为 4×64=256；学生得到 24，方法与数值均错，属于核心方法错误。
+2026-07-19 03:10:16 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 最终结果应为 255，学生在错误前提（24）的基础上再做除法得到 4，既不是正确数值，方法也错误，结论错误。
+2026-07-19 03:10:16 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 标准方法应是剩余一地址码数 2 乘以 2^6=128，学生给出的 254×6=1524 在方法（用已用一地址条数乘以地址位数）和数值上均与正确公式不符，属核心方法错误。
+2026-07-19 03:10:16 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:10:18 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:11:10 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 03:11:10 | INFO     |          - [条款 step_1] 得分: 0 | 理由: The student uses a wrong method to calculate 1-address slots (multiplying remaining opcodes by the address field length 6, instead of expanding the opcode into the address field, 2^6). This conceptual misunderstanding leads to a completely wrong result (24 instead of 256).
+2026-07-19 03:11:10 | INFO     |          - [条款 step_2] 得分: 0 | 理由: The final answer (4) is conceptually wrong and derived from a fundamentally flawed upstream calculation, showing no understanding of the correct opcode expansion limit.
+2026-07-19 03:11:10 | INFO     |          - [条款 step_3] 得分: 0 | 理由: The student multiplies the number of instructions by the address bits (254×6=1524) instead of correctly using the remaining opcodes multiplied by 2^6, demonstrating a semantic failure in the expansion mechanism.
+2026-07-19 03:11:10 | INFO     | 💾 样本 ANS_CO_301.jpg 进度已保存。
+2026-07-19 03:11:10 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:11:25 | INFO     | 
+👉 正在处理新样本: ANS_CO_302.jpg
+2026-07-19 03:11:45 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:11:47 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:12:51 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:12:53 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:13:27 | INFO     |       ✅ [裁判亮分] 总得分: 15.0
+2026-07-19 03:13:27 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: The student explicitly shows the correct intermediate components: 2^4=16, 16-12=4, and 2^6=64. The expression 64×4-1=255 correctly evaluates 64×4 as 256 before applying the -1 expansion adjustment for the next step.
+2026-07-19 03:13:27 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The student's final result for the first question matches the standard answer exactly (255).
+2026-07-19 03:13:27 | INFO     |          - [条款 step_3] 得分: 5.0 | 理由: The student correctly calculates the remaining slots (256-254=2) and multiplies by 2^6 to get 128, matching the standard formula and final answer.
+2026-07-19 03:13:27 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:13:29 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:13:49 | INFO     |       ✅ [裁判亮分] 总得分: 15
+2026-07-19 03:13:49 | INFO     |          - [条款 step_1] 得分: 5 | 理由: 学生给出了 2^4=16、16-12=4 以及 64×4 的乘积关系（=256，虽与-1连写为255），核心参数与名额公式 4×2^6 完整体现，按宽松评分判 MATCH。
+2026-07-19 03:13:49 | INFO     |          - [条款 step_2] 得分: 5 | 理由: 第一问最终结论与标准答案完全一致：最多255条。
+2026-07-19 03:13:49 | INFO     |          - [条款 step_3] 得分: 5 | 理由: 学生明确写出 256-254=2、2×2^6=128 及最终结论128条，方法与结果与标准答案一致。
+2026-07-19 03:13:49 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:13:51 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:14:29 | INFO     |       ✅ [裁判亮分] 总得分: 15.0
+2026-07-19 03:14:29 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: 学生明确写出 2^4=16、16-12=4、2^6=64，并通过 64×4 隐含得出一地址总名额 256（虽直接写成 64×4-1=255，但中间值和公式均正确呈现）。关键中间结果和计算关系齐全，符合理科容忍政策。
+2026-07-19 03:14:29 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: 学生明确给出第一问最终结果：一地址指令最多255条，与标准答案一致。
+2026-07-19 03:14:29 | INFO     |          - [条款 step_3] 得分: 5.0 | 理由: 学生写出 256-254=2（以 64×4-254 形式）和 2^6×2=128，方法公式和最终数值均与标准答案一致，结论正确。
+2026-07-19 03:14:29 | INFO     | 💾 样本 ANS_CO_302.jpg 进度已保存。
+2026-07-19 03:14:29 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:14:44 | INFO     | 
+📊 采样完成。平均方差: 0.4556
+2026-07-19 03:14:44 | INFO     | Item-level variance: avg=0.1519, max=1.3889
+2026-07-19 03:14:44 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-19 03:14:44 | INFO     | 🔧 [规则修正] 正在基于 2 份精选样本优化规则...
+2026-07-19 03:14:44 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-19 03:16:17 | INFO     | 🎉 修正后的最终标准已通过总分与语义契约校验。
+2026-07-19 03:16:17 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_5_optimization.json
+2026-07-19 03:16:17 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_6
+============================================================
+2026-07-19 03:16:17 | INFO     | force-rerun enabled; restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-19 03:16:17 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_6_rubric_standard.json
+2026-07-19 03:16:17 | INFO     | force-rerun enabled; ignore old variance checkpoint for this question.
+2026-07-19 03:16:17 | INFO     | [data isolation] variance optimization is restricted to 6 calibration answers.
+2026-07-19 03:16:17 | INFO     | 
+👉 正在处理新样本: ANS_CO_382.png
+2026-07-19 03:16:42 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:16:44 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:16:58 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:17:00 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:17:38 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 03:17:38 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 未书写，无任何计算过程或结果。
+2026-07-19 03:17:38 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 未书写，无相关计算或结果。
+2026-07-19 03:17:38 | INFO     |          - [条款 step_3] 得分: 0 | 理由: BCF学生答6位（标准3位），BAF学生答3位（标准9位），两个核心数值均错误，不符合对数换算关系，属概念错误。
+2026-07-19 03:17:38 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 学生给出9位，标准168位，数值与组成关系均不匹配。
+2026-07-19 03:17:38 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 学生答48位，标准86016位，数量级和数值均不匹配。
+2026-07-19 03:17:38 | INFO     |          - [条款 step_6] 得分: 0 | 理由: 学生答48字节，标准10752字节；即便按其上游48位折算应为6字节，数值与单位换算均不一致。
+2026-07-19 03:17:38 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:17:40 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:18:18 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 03:18:18 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 学生未书写任何内容，无法评分。
+2026-07-19 03:18:18 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 学生未书写任何内容，无法评分。
+2026-07-19 03:18:18 | INFO     |          - [条款 step_3] 得分: 0 | 理由: BCF的值6位错误（正确应为3位），BAF的值3位也错误（正确应为9位）。两个核心数值均不正确，且可能混淆了两个字段，属于数值性根本错误。
+2026-07-19 03:18:18 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 学生给出微指令总长度为9位，正确值应为168位，数值严重错误。
+2026-07-19 03:18:18 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 学生给出控制存储器总容量为48位，正确值应为86016位，数值严重错误。
+2026-07-19 03:18:18 | INFO     |          - [条款 step_6] 得分: 0 | 理由: 学生给出控制存储器总容量为48字节，正确值应为10752字节，数值严重错误。
+2026-07-19 03:18:18 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:18:20 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:18:40 | INFO     |       ✅ [裁判亮分] 总得分: 0
+2026-07-19 03:18:40 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 学生未书写，无法评分。
+2026-07-19 03:18:40 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 学生未书写，无法评分。
+2026-07-19 03:18:40 | INFO     |          - [条款 step_3] 得分: 0 | 理由: BCF给出6位、BAF给出3位，与标准答案3位、9位均不符，且未体现log2计算依据，属核心数值错误。
+2026-07-19 03:18:40 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 学生给出的总长度9位与标准168位严重不符，9位实际仅是BAF字段宽度，属于结论错误。
+2026-07-19 03:18:40 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 学生给出48位与标准86016位完全不符，属于结论性错误。
+2026-07-19 03:18:40 | INFO     |          - [条款 step_6] 得分: 0 | 理由: 学生给出48字节与标准10752字节完全不符；即使按学生前一步48位换算也应为6字节，存在数值/单位不一致错误。
+2026-07-19 03:18:40 | INFO     | 💾 样本 ANS_CO_382.png 进度已保存。
+2026-07-19 03:18:40 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:18:55 | INFO     | 
+👉 正在处理新样本: ANS_CO_383.png
+2026-07-19 03:19:20 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:19:22 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:19:33 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:19:35 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:20:47 | INFO     |       ✅ [裁判亮分] 总得分: 7.0
+2026-07-19 03:20:47 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生正确识别出互斥组需要求和计算位数的方法，但每组所需位数计算错误，导致总数计算错误（13位而非16位），给予部分过程分。
+2026-07-19 03:20:47 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生正确算出了非互斥信号的位数为140位，但计算控制字段总长时遗漏了互斥组的位数（16位），给予一半分数。
+2026-07-19 03:20:47 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 学生正确推导出BAF=9位，但BCF位数错误（13位，应为3位），正确一半，给予一半分数。
+2026-07-19 03:20:47 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: 学生正确使用了控制字段、BCF和BAF相加的公式结构来计算总长度，但由于带入的上游数据错误导致结果错误，依据容错规则保留部分过程分。
+2026-07-19 03:20:47 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: 学生完全误解了存储器总容量的计算方法，未使用“微指令条数 × 微指令长度”的结构，而是直接复制了上一问的寻址位宽，属于概念和方法错误。
+2026-07-19 03:20:47 | INFO     |          - [条款 step_6] 得分: 0.0 | 理由: “2字节”的答案在量级上完全脱离了实际控制存储器容量，缺乏正确的除法转换关系，属于结论性错误。
+2026-07-19 03:20:47 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:20:49 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:22:34 | INFO     |       ✅ [裁判亮分] 总得分: 7.0
+2026-07-19 03:22:34 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: Method correct (summing bits per group), and group 1 value matches (4 bits), but groups 2-4 values are wrong (3,4,2 vs 4,5,3), yielding 13 instead of 16.
+2026-07-19 03:22:34 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: Correctly identified 40 mutually-exclusive signals and 140 non-exclusive signals. However, failed to add the encoded group bits (16) to the control field, giving 140 instead of 156.
+2026-07-19 03:22:34 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: BAF correctly computed as 9 bits (2^9=512 addressable microinstructions). BCF is wrong: student wrote 13 bits instead of 3 bits, likely confusing it with the step-1 sum.
+2026-07-19 03:22:34 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: Formula structure is correct (control field + BCF + BAF), and BAF=9 is right. However, two of three component values are propagated upstream errors (140 instead of 156; 13 instead of 3), yielding 162 instead of 168.
+2026-07-19 03:22:34 | INFO     |          - [条款 step_5] 得分: 0 | 理由: Student did not multiply the number of microinstructions (512) by the microinstruction width. Writing '2^9,9位' confuses the address-bit width with total storage capacity, a fundamental conceptual error.
+2026-07-19 03:22:34 | INFO     |          - [条款 step_6] 得分: 0 | 理由: '2字节' is completely unrelated to the correct result of 10752 bytes; this is a fundamental numeric/conceptual contradiction.
+2026-07-19 03:22:34 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:22:36 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:23:37 | INFO     |       ✅ [裁判亮分] 总得分: 5
+2026-07-19 03:23:37 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 各组所需位数(4,3,4,2)与标准答案(4,4,5,3)不符，总和13≠16，属核心计算错误。
+2026-07-19 03:23:37 | INFO     |          - [条款 step_2] 得分: 2 | 理由: 非互斥信号数140正确；但控制字段总长140位遗漏了互斥组编码16位，应为156位，部分正确。
+2026-07-19 03:23:37 | INFO     |          - [条款 step_3] 得分: 2 | 理由: BAF=9位正确；BCF=13位错误（标准为3位），疑将互斥组编码位数误作BCF，部分正确。
+2026-07-19 03:23:37 | INFO     |          - [条款 step_4] 得分: 1 | 理由: 公式结构(控制字段+BCF+BAF)正确，但代入的上游值均有误，结果162≠168，按上游误差传播给部分分。
+2026-07-19 03:23:37 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 所写表达式与控制存储器容量计算公式完全不符，概念性错误，将寻址范围与容量混淆。
+2026-07-19 03:23:37 | INFO     |          - [条款 step_6] 得分: 0 | 理由: 结果2字节与标准答案10752字节完全不符，数量级严重错误。
+2026-07-19 03:23:37 | INFO     | 💾 样本 ANS_CO_383.png 进度已保存。
+2026-07-19 03:23:37 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:23:52 | INFO     | 
+👉 正在处理新样本: ANS_CO_414.png
+2026-07-19 03:24:15 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:24:17 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:24:43 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:24:45 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:25:17 | INFO     |       ✅ [裁判亮分] 总得分: 2.0
+2026-07-19 03:25:17 | INFO     |          - [条款 step_1] 得分: 0 | 理由: Student explicitly left this blank; no evidence of any calculation for the four mutual-exclusion groups.
+2026-07-19 03:25:17 | INFO     |          - [条款 step_2] 得分: 0 | 理由: Student's control field of 8 bits contradicts the correct value of 156 bits and shows a fundamental misunderstanding; no sub-component is salvageable.
+2026-07-19 03:25:17 | INFO     |          - [条款 step_3] 得分: 2 | 理由: BAF 9 bits is exactly correct (log2(512)=9). BCF 19 bits is wrong (should be 3 bits for 8 conditions). With additive split policy, half credit for the correct BAF sub-result.
+2026-07-19 03:25:17 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 38 is far from the correct 168 bits; the total-length formula and value are both absent and the stated result is numerically wrong.
+2026-07-19 03:25:17 | INFO     |          - [条款 step_5] 得分: 0 | 理由: The extracted value '9 bits' does not correspond to the required capacity-in-bits computation (86016 bits); it is a mismatched quantity with no valid formula trace.
+2026-07-19 03:25:17 | INFO     |          - [条款 step_6] 得分: 0 | 理由: 128 bytes is fundamentally inconsistent with the correct answer of 10752 bytes; the value reflects a wrong upstream computation path.
+2026-07-19 03:25:17 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:25:19 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:25:50 | INFO     |       ✅ [裁判亮分] 总得分: 2.0
+2026-07-19 03:25:50 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 学生未书写任何内容，无法评分。
+2026-07-19 03:25:50 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 学生给出控制字段为8位，与标准答案156位存在根本性数值矛盾，且未体现非互斥信号的计算过程。
+2026-07-19 03:25:50 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: BAF=9位正确；BCF=19位错误（标准3位，因8种条件转移需⌈log₂8⌉=3位）。该题为正交可加评分，BAF部分正确获得一半分数。
+2026-07-19 03:25:50 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 总长度38位与标准168位严重不符，且上游各值均已错误，不存在正确的计算过程。
+2026-07-19 03:25:50 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 学生填写"9位"与控制存储器总容量（位）的计算要求完全无关，数量级和含义均不匹配。
+2026-07-19 03:25:50 | INFO     |          - [条款 step_6] 得分: 0 | 理由: 128字节与标准答案10752字节相差近两个数量级，数值根本性错误。
+2026-07-19 03:25:50 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:25:52 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:26:32 | INFO     |       ✅ [裁判亮分] 总得分: 2
+2026-07-19 03:26:32 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 学生未书写任何内容，无计算过程或结果。
+2026-07-19 03:26:32 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 学生写控制字段为8位，标准答案为156位，数值完全矛盾，属于核心计算错误。
+2026-07-19 03:26:32 | INFO     |          - [条款 step_3] 得分: 2 | 理由: BAF=9位正确，得2分；BCF应为3位（log2(8)=3），学生写19位，明显错误，扣2分。两部分各占2分，正确一项得一半分。
+2026-07-19 03:26:32 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 学生给出总长度38位，标准为168位，数值严重不符，结论性错误。
+2026-07-19 03:26:32 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 学生给出9位，标准答案为86016位，数值与所求数量级完全不匹配，属于核心计算错误。
+2026-07-19 03:26:32 | INFO     |          - [条款 step_6] 得分: 0 | 理由: 学生给出128字节，标准答案为10752字节，数值完全错误。
+2026-07-19 03:26:32 | INFO     | 💾 样本 ANS_CO_414.png 进度已保存。
+2026-07-19 03:26:32 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:26:47 | INFO     | 
+👉 正在处理新样本: ANS_CO_419.png
+2026-07-19 03:27:09 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:27:11 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:27:28 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:27:30 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:28:59 | INFO     |       ✅ [裁判亮分] 总得分: 6
+2026-07-19 03:28:59 | INFO     |          - [条款 step_1] 得分: 4 | 理由: 学生正确识别了四个互斥组的位数4,4,5,3，且正确解释了全零表示无控制信号的编码约定，与标准答案一致。
+2026-07-19 03:28:59 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 学生虽然提到非互斥信号用1位存储，但完全没有计算非互斥信号的数量（应为180-(12+8+16+4)=140条），控制字段仅取互斥组的4+4+5+3=17（算术也错误，应为16），遗漏了140位非互斥信号，方法与结论均严重错误。
+2026-07-19 03:28:59 | INFO     |          - [条款 step_3] 得分: 2 | 理由: BAF=9位正确（512=2^9）；但BCF=4位错误，标准答案为3位（8种条件转移需3位，顺序执行不单独占用BCF编码位）。正交加法评分，BAF部分得2分，BCF部分0分。
+2026-07-19 03:28:59 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 公式结构（控制字段+BCF+BAF）正确，但代入值全部错误（17应为156，4应为3），最终结果30位与标准168位严重不符，属上游错误传播导致的结论错误。
+2026-07-19 03:28:59 | INFO     |          - [条款 step_5] 得分: 0 | 理由: 乘法结构（微指令条数×微指令长度）正确，但微指令长度使用了错误的4B（约30位取整），而非正确的168位，结果16k位与标准86016位严重不符。
+2026-07-19 03:28:59 | INFO     |          - [条款 step_6] 得分: 0 | 理由: 基于错误的微指令长度4B计算，得到2048B而非正确的10752字节，数值严重错误。
+2026-07-19 03:28:59 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:29:01 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:29:54 | INFO     |       ✅ [裁判亮分] 总得分: 6
+2026-07-19 03:29:54 | INFO     |          - [条款 step_1] 得分: 4 | 理由: The student accurately provides the exact required bits (4, 4, 5, 3) for the four mutually exclusive groups, which fully matches the standard answer.
+2026-07-19 03:29:54 | INFO     |          - [条款 step_2] 得分: 0 | 理由: The student applies an incorrect concept for non-mutually exclusive signals (assuming 1 bit each instead of direct mapping) and fails to calculate the 140 non-exclusive bits, yielding a completely incorrect total control field length.
+2026-07-19 03:29:54 | INFO     |          - [条款 step_3] 得分: 2 | 理由: The student correctly derives the BAF bits as 9, but incorrectly calculates the BCF bits as 4 instead of 3. Half credit is awarded for the correct portion.
+2026-07-19 03:29:54 | INFO     |          - [条款 step_4] 得分: 0 | 理由: The calculated total length uses the wrong intermediate values (17 instead of 156, and 4 instead of 3), resulting in an incorrect total length.
+2026-07-19 03:29:54 | INFO     |          - [条款 step_5] 得分: 0 | 理由: The total capacity in bits is based on incorrect assumptions (using 4B) and results in a wrong value instead of 86016 bits.
+2026-07-19 03:29:54 | INFO     |          - [条款 step_6] 得分: 0 | 理由: The final total capacity in bytes is incorrect (2kB instead of 10752 bytes).
+2026-07-19 03:29:54 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:29:56 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:35:55 | INFO     |       ✅ [裁判亮分] 总得分: 8
+2026-07-19 03:35:55 | INFO     |          - [条款 step_1] 得分: 3 | 理由: All four individual group sizes (4,4,5,3) are correctly identified, but the student writes the sum as 4+4+5+3=17 instead of 16—a simple arithmetic error. Award most credit for correct identification; deduct 1 point for the wrong sum.
+2026-07-19 03:35:55 | INFO     |          - [条款 step_2] 得分: 0 | 理由: The student acknowledges non-exclusive signals conceptually but never computes their count (should be 140). The control field total (17) only counts exclusive group bits and entirely omits the 140 non-exclusive signal bits. This is a fundamental methodological omission, not a minor detail.
+2026-07-19 03:35:55 | INFO     |          - [条款 step_3] 得分: 2 | 理由: BAF=9 bits is correct (512=2^9). BCF=4 is wrong; standard requires 3 bits for 8 condition types. Half credit for one correct sub-result.
+2026-07-19 03:35:55 | INFO     |          - [条款 step_4] 得分: 1 | 理由: The formula structure (control_field + BCF + BAF = total_length) is correctly applied, but uses propagated wrong upstream values (17, 4 instead of 156, 3), yielding 30 instead of 168. Method credit preserved for correct additive structure.
+2026-07-19 03:35:55 | INFO     |          - [条款 step_5] 得分: 1 | 理由: The formula structure (number_of_instructions × width = capacity) is present, and the unit conversion 2kB=16k bits is arithmetically correct. However, the instruction width (4B=32 bits) is wrong—it should be 168 bits (or at least the student's own 30 bits). Result is far from the standard 86016 bits.
+2026-07-19 03:35:55 | INFO     |          - [条款 step_6] 得分: 1 | 理由: The student correctly expresses the capacity in byte units from their (wrong) bit-level computation. The conversion concept is present, but the final value (2048B) is wrong due to propagated upstream errors. Should be 10752 bytes.
+2026-07-19 03:35:55 | INFO     | 💾 样本 ANS_CO_419.png 进度已保存。
+2026-07-19 03:35:55 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:36:10 | INFO     | 
+👉 正在处理新样本: ANS_CO_424.png
+2026-07-19 03:36:34 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:36:36 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:36:53 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:36:55 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:38:08 | INFO     |       ✅ [裁判亮分] 总得分: 13.0
+2026-07-19 03:38:08 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: Student correctly computed the bit-widths for all four mutually exclusive groups: 4, 4, 5, 3, matching the standard answer exactly.
+2026-07-19 03:38:08 | INFO     |          - [条款 step_2] 得分: 1.0 | 理由: Student computed the mutually exclusive groups' total (16 bits) but explicitly stated they did not write the non-exclusive signal calculation (140 bits) or the total control field (156 bits). The control field they reported (16) is only the mutually exclusive portion, not the full 156. Partial credit for recognizing the control field includes the mutually exclusive groups' bits.
+2026-07-19 03:38:08 | INFO     |          - [条款 step_3] 得分: 4.0 | 理由: Student correctly derived BCF = 3 bits from 2^3 = 8 conditions and BAF = 9 bits from 2^9 = 512 microinstructions, fully matching the standard answer.
+2026-07-19 03:38:08 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: The student's implied formula structure (control field + BCF + BAF) is correct, but uses the wrong upstream control field value (16 instead of 156), yielding 28 instead of 168. The formula relation is correctly applied to a wrong upstream value, so partial credit is preserved per propagated-error policy.
+2026-07-19 03:38:08 | INFO     |          - [条款 step_5] 得分: 1.5 | 理由: Formula structure (number of microinstructions × bits per instruction) is correct, and 2^9 = 512 is correct. However, the wrong upstream value 28 propagates, yielding 14336 instead of 86016. Partial credit for correct capacity formula and correct instruction count.
+2026-07-19 03:38:08 | INFO     |          - [条款 step_6] 得分: 1.5 | 理由: The byte conversion formula (bits / 8 = bytes) is correctly applied to the student's wrong upstream bit capacity (14336 instead of 86016), yielding 1792 instead of 10752. Partial credit for correct conversion relation and arithmetic given the propagated upstream error.
+2026-07-19 03:38:08 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:38:10 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:39:18 | INFO     |       ✅ [裁判亮分] 总得分: 14.0
+2026-07-19 03:39:18 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: Student correctly computed each mutually-exclusive group's bit width: 12→4, 8→4, 16→5, 4→3, matching the standard answer exactly.
+2026-07-19 03:39:18 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: Student correctly identified the mutually-exclusive encoding portion (16 bits) but explicitly states the non-exclusive signal calculation was not written, missing 140 non-exclusive signals and the 156-bit total. Approximately half the required work is present.
+2026-07-19 03:39:18 | INFO     |          - [条款 step_3] 得分: 4.0 | 理由: Student correctly derived BCF=3 bits from 2³ conditions and BAF=9 bits from 2⁹ addressable microinstructions, fully matching the standard answer.
+2026-07-19 03:39:18 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: The method (control field + BCF + BAF) is structurally correct: 16+3+9=28. However, the value is wrong (28 vs 168) due to propagated upstream error from step_2 where the 140 non-exclusive signal bits were omitted. Correct formula with wrong input earns partial process credit.
+2026-07-19 03:39:18 | INFO     |          - [条款 step_5] 得分: 1.5 | 理由: The capacity formula (#microinstructions × bit-width) is correctly applied as 2⁹ × 28, but the result (14336) is wrong due to propagated upstream error (28 instead of 168). Correct method with propagated error earns partial process credit.
+2026-07-19 03:39:18 | INFO     |          - [条款 step_6] 得分: 1.5 | 理由: The byte conversion formula (total bits / 8) is correctly applied as 2⁹×28/2³, but the result (1792) is wrong due to propagated upstream error. Correct method with propagated error earns partial process credit.
+2026-07-19 03:39:18 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:39:20 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:40:30 | INFO     |       ✅ [裁判亮分] 总得分: 13.0
+2026-07-19 03:40:30 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: Student correctly maps each mutually-exclusive group to its bit count (12→4, 8→4, 16→5, 4→3), matching the standard answer exactly.
+2026-07-19 03:40:30 | INFO     |          - [条款 step_2] 得分: 1.0 | 理由: Student computed only the mutually-exclusive groups' 16 bits but explicitly stated the non-exclusive signal count (140) and total control field (156) were not written. Partial credit for the exclusive-group sub-calculation.
+2026-07-19 03:40:30 | INFO     |          - [条款 step_3] 得分: 4.0 | 理由: Student correctly derives BCF=3 bits for 2³ condition branches and BAF=9 bits for 2⁹ addressable microinstructions, matching the standard answer.
+2026-07-19 03:40:30 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: The total-length relation (control field + BCF + BAF) is implicitly applied: 16+3+9=28. However, the result 28 is wrong due to the upstream missing non-exclusive-signal bits (156 vs 16). Correct formula structure with propagated upstream error receives partial process credit.
+2026-07-19 03:40:30 | INFO     |          - [条款 step_5] 得分: 1.5 | 理由: The capacity formula (microinstruction count × bits per instruction) is explicitly correct in structure: 2⁹×28. Arithmetic (512×28=14336) is internally consistent. Wrong final value due to propagated upstream error from the wrong instruction length (28 vs 168). Partial credit for correct formula application.
+2026-07-19 03:40:30 | INFO     |          - [条款 step_6] 得分: 1.5 | 理由: The byte conversion formula (bits ÷ 8) is explicitly shown and correctly applied: 14336÷8=1792. The division-by-8 relation is correct. Wrong final value due to propagated upstream error from wrong instruction length. Partial credit for correct conversion method.
+2026-07-19 03:40:30 | INFO     | 💾 样本 ANS_CO_424.png 进度已保存。
+2026-07-19 03:40:30 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:40:45 | INFO     | 
+📊 采样完成。平均方差: 0.4000
+2026-07-19 03:40:45 | INFO     | Item-level variance: avg=0.0667, max=0.8889
+2026-07-19 03:40:45 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-19 03:40:45 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-19 03:40:45 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_2", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_3", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-19 03:44:07 | INFO     | 🎉 修正后的最终标准已通过总分与语义契约校验。
+2026-07-19 03:44:07 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_6_optimization.json
+2026-07-19 03:44:07 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_7
+============================================================
+2026-07-19 03:44:07 | INFO     | force-rerun enabled; restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-19 03:44:07 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_7_rubric_standard.json
+2026-07-19 03:44:07 | INFO     | force-rerun enabled; ignore old variance checkpoint for this question.
+2026-07-19 03:44:07 | INFO     | [data isolation] variance optimization is restricted to 6 calibration answers.
+2026-07-19 03:44:07 | INFO     | 
+👉 正在处理新样本: ANS_CO_471.jpg
+2026-07-19 03:44:20 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:44:22 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:44:38 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:44:40 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:45:01 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-19 03:45:01 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: The student explicitly calculates M1's total clock cycles (2×10⁵) and correctly divides by the clock rate to find the execution time (50μs), which exactly matches the canonical answer.
+2026-07-19 03:45:01 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The student explicitly calculates M2's total clock cycles (1×10⁵) and correctly divides by the clock rate, yielding 100/6 μS, which is the exact fractional equivalent of the standard answer's 16.7 μs.
+2026-07-19 03:45:01 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:45:03 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:45:18 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-19 03:45:18 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: Student correctly calculates the total clock cycles for M1 (2×10⁵) and properly applies the formula for execution time using the given clock rate, obtaining the exact correct answer of 50μs.
+2026-07-19 03:45:18 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: Student correctly calculates the total clock cycles for M2 (1×10⁵) and properly computes the execution time as 100/6 μs, which is mathematically equivalent to the standard answer of 16.7 μs.
+2026-07-19 03:45:18 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:45:20 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:45:31 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-19 03:45:31 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: 学生正确计算M1总周期数2×10⁵，并得出运行时间50μs，与标准答案完全一致。
+2026-07-19 03:45:31 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: 学生正确计算M2总周期数1×10⁵，得出100/6 μs≈16.67μs，与标准答案16.7μs等价。
+2026-07-19 03:45:31 | INFO     | 💾 样本 ANS_CO_471.jpg 进度已保存。
+2026-07-19 03:45:31 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:45:46 | INFO     | 
+👉 正在处理新样本: ANS_CO_474.jpg
+2026-07-19 03:45:58 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:46:00 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:46:12 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:46:14 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:46:33 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-19 03:46:33 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: The extracted fact explicitly shows the correct calculation trace for M1, using the correct formula and yielding the exact correct final value.
+2026-07-19 03:46:33 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The extracted fact explicitly shows the correct calculation trace for M2, using the correct formula and yielding the approximate correct final value.
+2026-07-19 03:46:33 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:46:35 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:46:53 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-19 03:46:53 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: The student provides the correct calculation trace combining instruction count, cycle time, and clock rate, which yields the exact correct execution time.
+2026-07-19 03:46:53 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The student provides the correct calculation trace combining instruction count, cycle time, and clock rate, yielding the correct approximate execution time.
+2026-07-19 03:46:53 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:46:55 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:47:08 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-19 03:47:08 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: Student provides the full computation trace (instruction count 10^5, CPI ×2, divided by clock rate 4×10^9) and arrives at the correct final value 5×10⁻⁵s, matching the canonical answer exactly.
+2026-07-19 03:47:08 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: Student provides the full computation trace (instruction count 10^5, CPI ×1, divided by clock rate 6×10^9) and arrives at the correct approximate value ≈1.67×10⁻⁵s, matching the canonical answer.
+2026-07-19 03:47:08 | INFO     | 💾 样本 ANS_CO_474.jpg 进度已保存。
+2026-07-19 03:47:08 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:47:23 | INFO     | 
+👉 正在处理新样本: ANS_CO_495.jpg
+2026-07-19 03:47:43 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:47:45 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:48:00 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:48:02 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:48:41 | INFO     |       ✅ [裁判亮分] 总得分: 7.5
+2026-07-19 03:48:41 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: The formula, substitution, and numerical magnitude are correct, but the final unit is incorrect (50ns instead of 50μs), representing a dimensional conversion error.
+2026-07-19 03:48:41 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The formula, substitution, and final result with the correct unit strictly match the standard answer.
+2026-07-19 03:48:41 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:48:43 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:49:28 | INFO     |       ✅ [裁判亮分] 总得分: 7.5
+2026-07-19 03:49:28 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: The formula and substitution values are explicitly correct, showing a valid computation trace. However, the final unit is written as 'ns' instead of 'μs', resulting in a dimensional mismatch in the final result. Given the strong process evidence, partial credit is awarded.
+2026-07-19 03:49:28 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The student explicitly writes the correct formula, correctly substitutes the values, and arrives at the correct final answer with the proper unit (16.67 μs). Full process and result credit awarded.
+2026-07-19 03:49:28 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:49:30 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:50:23 | INFO     |       ✅ [裁判亮分] 总得分: 8.0
+2026-07-19 03:50:23 | INFO     |          - [条款 step_1] 得分: 3.0 | 理由: The formula, cycle count, and arithmetic calculation yield 5×10⁻⁵ s, which equals 50 μs. However, the student mislabels the final unit as 'ns' (nanoseconds) instead of 'μs' (microseconds), resulting in a dimensional meaning error by a factor of 1000.
+2026-07-19 03:50:23 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The formula, calculation, and final value with correct units (16.67 us) perfectly match the standard answer.
+2026-07-19 03:50:23 | INFO     | 💾 样本 ANS_CO_495.jpg 进度已保存。
+2026-07-19 03:50:23 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:50:38 | INFO     | 
+👉 正在处理新样本: ANS_CO_497.jpg
+2026-07-19 03:50:52 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:50:54 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:51:21 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:51:23 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:51:57 | INFO     |       ✅ [裁判亮分] 总得分: 5.0
+2026-07-19 03:51:57 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: 学生正确推导了公式 Te = (CPI×IC)/F 并正确使用 F=4×10^9 和 CPI=2，但 IC 误读为 1×10^6（应为 10^5），导致最终数值偏大 10 倍（5×10^-4 vs 5×10^-5）。方法正确但最终结果错误，属于传播性输入错误，按宽松评分给予部分分。
+2026-07-19 03:51:57 | INFO     |          - [条款 step_2] 得分: 2.5 | 理由: 学生正确推导了公式 Te = (CPI×IC)/F 并正确代入 F=6×10^9 和 CPI=1，但 IC 同样误读为 1×10^6（应为 10^5），导致最终结果 1.667×10^-4 比正确值 1.67×10^-5 偏大 10 倍。方法正确但数值因传播性错误而错，按宽松评分给予部分分。
+2026-07-19 03:51:57 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:51:59 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:52:58 | INFO     |       ✅ [裁判亮分] 总得分: 0.0
+2026-07-19 03:52:58 | INFO     |          - [条款 step_1] 得分: 0.0 | 理由: The student explicitly calculated the final time as 5×10⁻⁴s, which is numerically incorrect and contradicts the standard answer (5.0×10⁻⁵s). The student used an incorrect instruction count (IC=1×10⁶ instead of 10⁵) and also wrote a conceptual unit error (4GHz=4×10⁻⁹Hz).
+2026-07-19 03:52:58 | INFO     |          - [条款 step_2] 得分: 0.0 | 理由: The student explicitly calculated the final time as 1.667×10⁻⁴s, which is numerically incorrect and contradicts the standard answer (1.67×10⁻⁵s). This wrong numeric conclusion is propagated from the incorrect instruction count (IC=1×10⁶).
+2026-07-19 03:52:58 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:53:00 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:53:49 | INFO     |       ✅ [裁判亮分] 总得分: 5.0
+2026-07-19 03:53:49 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: The student uses the correct formula and correctly applies the methodology, but calculates the final time using an incorrect Instruction Count (IC=1×10^6 instead of the expected 1×10^5). Since the final numeric result is wrong due to this upstream parameter error, partial credit is awarded for the valid method.
+2026-07-19 03:53:49 | INFO     |          - [条款 step_2] 得分: 2.5 | 理由: The student uses the correct formula and correctly applies the methodology, but calculates the final time using an incorrect Instruction Count (IC=1×10^6 instead of the expected 1×10^5). Since the final numeric result is wrong due to this upstream parameter error, partial credit is awarded for the valid method.
+2026-07-19 03:53:49 | INFO     | 💾 样本 ANS_CO_497.jpg 进度已保存。
+2026-07-19 03:53:49 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:54:04 | INFO     | 
+👉 正在处理新样本: ANS_CO_500.jpg
+2026-07-19 03:54:18 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-07-19 03:54:20 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-07-19 03:54:26 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-07-19 03:54:28 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:54:41 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-19 03:54:41 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: The student correctly calculates the total instruction cycles for M1 as 2x10^5 and applies the correct formula to find the execution time of 50μs, fully matching the standard answer.
+2026-07-19 03:54:41 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The student correctly calculates the total instruction cycles for M2 as 1x10^5 and applies the correct formula to find the execution time of 16.67μs, fully matching the standard answer.
+2026-07-19 03:54:41 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:54:43 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:54:54 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-19 03:54:54 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: The student correctly calculates the total cycles as 2×10^5 and computes the time as 50μs, fully matching the required output and showing valid process steps.
+2026-07-19 03:54:54 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: The student correctly calculates the total cycles as 1×10^5 and computes the time as 16.67μs, fully matching the required output and showing valid process steps.
+2026-07-19 03:54:54 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-07-19 03:54:56 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-07-19 03:55:04 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-07-19 03:55:04 | INFO     |          - [条款 step_1] 得分: 5.0 | 理由: 周期数(2×10^5)、公式(T=cycles/frequency)和最终结果(50μs)均与标准答案一致，单位正确。
+2026-07-19 03:55:04 | INFO     |          - [条款 step_2] 得分: 5.0 | 理由: 周期数(1×10^5)、公式与最终结果(16.67μs)与标准答案一致，四舍五入差异属于合理精度，不影响正确性。
+2026-07-19 03:55:04 | INFO     | 💾 样本 ANS_CO_500.jpg 进度已保存。
+2026-07-19 03:55:04 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-07-19 03:55:19 | INFO     | 
+📊 采样完成。平均方差: 1.1222
+2026-07-19 03:55:19 | INFO     | Item-level variance: avg=0.2833, max=1.3889
+2026-07-19 03:55:19 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-19 03:55:19 | INFO     | 🔧 [规则修正] 正在基于 2 份精选样本优化规则...
+2026-07-19 03:55:19 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "role_constrained"}, {"parent_id": "step_2", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "role_constrained"}]
+2026-07-19 03:58:13 | INFO     | 🎉 修正后的最终标准已通过总分与语义契约校验。
+2026-07-19 03:58:13 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_7_optimization.json
+2026-07-19 03:58:13 | INFO     | 
+🏆 任务完成！
