@@ -1,0 +1,1032 @@
+[
+  {
+    "file": "ANS_CO_140.jpg",
+    "facts": "{\"step_1\": \"X-2y=00110110\\n  -01010100\\n  -01010100\\n1000110\\n无溢出\", \"step_2\": \"(X÷4)+2Z\\n100/00110110,得\\n(X÷4)=00001101.1\\n(X÷4)+2Z= 00001101.1\\n  +1101010\\n  +1101010\\n10110111.1\\n溢出判断：未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-20T00:31:27.285062",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_140.jpg",
+      "image_sha256": "57226a5708fd8e017e0fc1035695f1d7bdce30e031fd6fb20aef1ec15b48d61b",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_3/ANS_CO_140.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 19,
+        "accepted_token_count": 19,
+        "mean_confidence": 0.97486,
+        "min_confidence": 0.5,
+        "joined_text": "1.(10分)解：补]=36H=00110110\n[y补=54H=01010100\n[区]=05H=11010101\nx-2y=00110110\nx=zy=00110110\n-01010100\n-01010100\n+3\n-01010100\n无溢出\n100010\n(x÷4)+28\n(x÷4)+2Z=00001101.1\n100/00110110，得\n+11010101\n+11010101\n(x÷4)=00001101.1\n+3\n10110111.1",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.047857,
+          "very_dark_pixel_ratio": 0.03058,
+          "lower_region_dark_pixel_ratio": 0.045159,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "解：[X补]=36H=00110110\n[Y补]=54H=01010100\n[Z补]=D5H=11010101\nX-2y=00110110\n  -01010100\n  -01010100\n1000110 无溢出\n(X÷4)+2Z\n100/00110110,得\n(X÷4)=00001101.1\n(X÷4)+2Z= 00001101.1\n  +1101010\n  +1101010\n10110111.1",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_140",
+        "question_id": "CO_3",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "table_parser_used": true,
+      "table_facts": {
+        "step_1": {
+          "substitution_relations": "[x补] = 36H = 00110110; [y补] = 54H = 01010100",
+          "computation_trace": "x - 2y = 00110110 - 01010100 - 01010100（将2y拆为y+y逐次相减）。二进制减法列式：00110110 上方对齐 -01010100（第一次减y），再 -01010100（第二次减y），过程中出现借位标记+3。最终二进制结果写作：100010。",
+          "final_result": "100010（未标注H后缀，未标注前导零补齐至8位）",
+          "overflow_judgment": "无溢出"
+        },
+        "step_2": {
+          "substitution_relations": "[z补] = D5H = 11010101（OCR识别为[区]=05H=11010101，据题意应为[z补]=D5H=11010101）",
+          "computation_trace": "(x÷4)+2z：(1) 先算 x÷4，列式 100/00110110（即00110110右移2位/除以100B），得 (x÷4) = 00001101.1。(2) 再算 +2z，拆为 +11010101 再 +11010101（z+z），列式对齐：00001101.1 上方依次 +11010101、+11010101，过程中出现标记 +3。",
+          "final_result": "10110111.1",
+          "overflow_judgment": "未发现学生对该表达式结果的显式溢出判断（无OF/CF标记，无\"溢出/无溢出\"文字）。"
+        }
+      },
+      "table_checklist": [
+        {
+          "id": "step_1",
+          "instruction": "Extract the student's handwritten computation trace, substitution relations, and final result for calculating x - 2y in two's complement. Preserve all hexadecimal values or binary strings exactly as written, including any suffixes (such as 'H'), prefixes, leading zeros, and separators. Additionally, extract the student's explicit judgment on whether an overflow occurred (e.g., specific flag values like OF/CF, or written conclusions)."
+        },
+        {
+          "id": "step_2",
+          "instruction": "Extract the student's handwritten computation trace, substitution relations, and final result for calculating (x ÷ 4) + 2z in two's complement. Preserve all hexadecimal values or binary strings exactly as written, including any suffixes (such as 'H'), prefixes, leading zeros, and separators. Additionally, extract the student's explicit judgment on whether an overflow occurred (e.g., specific flag values like OF/CF, or written conclusions)."
+        }
+      ],
+      "table_view": {
+        "rows": [
+          {
+            "row": 1,
+            "y_center": 46.5,
+            "cells_left_to_right": [
+              {
+                "text": "1.(10分)解：补]=36H=00110110",
+                "x_center": 249.0,
+                "confidence": 0.9059340953826904
+              }
+            ]
+          },
+          {
+            "row": 2,
+            "y_center": 107.5,
+            "cells_left_to_right": [
+              {
+                "text": "[y补=54H=01010100",
+                "x_center": 325.0,
+                "confidence": 0.9324188232421875
+              }
+            ]
+          },
+          {
+            "row": 3,
+            "y_center": 170.0,
+            "cells_left_to_right": [
+              {
+                "text": "[区]=05H=11010101",
+                "x_center": 329.0,
+                "confidence": 0.9649078845977783
+              }
+            ]
+          },
+          {
+            "row": 4,
+            "y_center": 285.8,
+            "cells_left_to_right": [
+              {
+                "text": "x=zy=00110110",
+                "x_center": 166.5,
+                "confidence": 0.9508717060089111
+              },
+              {
+                "text": "-01010100",
+                "x_center": 210.0,
+                "confidence": 0.9766018986701965
+              },
+              {
+                "text": "x-2y=00110110",
+                "x_center": 460.0,
+                "confidence": 0.9944451451301575
+              },
+              {
+                "text": "-01010100",
+                "x_center": 483.5,
+                "confidence": 0.9906985759735107
+              },
+              {
+                "text": "+3",
+                "x_center": 665.0,
+                "confidence": 0.9990401268005371
+              }
+            ]
+          },
+          {
+            "row": 5,
+            "y_center": 361.0,
+            "cells_left_to_right": [
+              {
+                "text": "-01010100",
+                "x_center": 483.0,
+                "confidence": 0.9995161890983582
+              },
+              {
+                "text": "100010",
+                "x_center": 486.5,
+                "confidence": 0.9992637634277344
+              },
+              {
+                "text": "无溢出",
+                "x_center": 646.5,
+                "confidence": 0.9986312389373779
+              }
+            ]
+          },
+          {
+            "row": 6,
+            "y_center": 462.25,
+            "cells_left_to_right": [
+              {
+                "text": "(x÷4)+28",
+                "x_center": 92.0,
+                "confidence": 0.9107457399368286
+              },
+              {
+                "text": "(x÷4)+2Z=00001101.1",
+                "x_center": 636.5,
+                "confidence": 0.9706580638885498
+              }
+            ]
+          },
+          {
+            "row": 7,
+            "y_center": 522.75,
+            "cells_left_to_right": [
+              {
+                "text": "100/00110110，得",
+                "x_center": 164.5,
+                "confidence": 0.9662504196166992
+              },
+              {
+                "text": "+11010101",
+                "x_center": 707.0,
+                "confidence": 0.9959020614624023
+              }
+            ]
+          },
+          {
+            "row": 8,
+            "y_center": 589.5,
+            "cells_left_to_right": [
+              {
+                "text": "(x÷4)=00001101.1",
+                "x_center": 238.5,
+                "confidence": 0.9970120191574097
+              },
+              {
+                "text": "+3",
+                "x_center": 581.0,
+                "confidence": 0.9803690910339355
+              },
+              {
+                "text": "+11010101",
+                "x_center": 706.5,
+                "confidence": 0.9972362518310547
+              }
+            ]
+          },
+          {
+            "row": 9,
+            "y_center": 649.5,
+            "cells_left_to_right": [
+              {
+                "text": "10110111.1",
+                "x_center": 709.5,
+                "confidence": 0.9918395280838013
+              }
+            ]
+          }
+        ],
+        "unpositioned_tokens": [],
+        "plain_text": "Row 1: x=249.0: 1.(10分)解：补]=36H=00110110\nRow 2: x=325.0: [y补=54H=01010100\nRow 3: x=329.0: [区]=05H=11010101\nRow 4: x=166.5: x=zy=00110110 | x=210.0: -01010100 | x=460.0: x-2y=00110110 | x=483.5: -01010100 | x=665.0: +3\nRow 5: x=483.0: -01010100 | x=486.5: 100010 | x=646.5: 无溢出\nRow 6: x=92.0: (x÷4)+28 | x=636.5: (x÷4)+2Z=00001101.1\nRow 7: x=164.5: 100/00110110，得 | x=707.0: +11010101\nRow 8: x=238.5: (x÷4)=00001101.1 | x=581.0: +3 | x=706.5: +11010101\nRow 9: x=709.5: 10110111.1"
+      },
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2"
+      ],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {
+        "step_1": "[x补]=36H=00110110\n[y补]=54H=01010100\n[z补]=D5H=11010101\nx-2y=00110110 - 01010100 - 01010100\n10000110 无溢出",
+        "step_2": "(x÷4)+2z\n100/00110110，得\n(x÷4)=00001101.1\n(x÷4)+2z = 00001101.1\n+ 11010101\n+ 1101010\n10110111.1"
+      },
+      "facts": {
+        "step_1": "X-2y=00110110\n  -01010100\n  -01010100\n1000110\n无溢出",
+        "step_2": "(X÷4)+2Z\n100/00110110,得\n(X÷4)=00001101.1\n(X÷4)+2Z= 00001101.1\n  +1101010\n  +1101010\n10110111.1\n溢出判断：未书写"
+      }
+    },
+    "scores": [
+      5.0,
+      5.0,
+      4.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X-2y=00110110\n  -01010100\n  -01010100\n1000110\n无溢出",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码及判断溢出",
+            "dependency_status": "failed",
+            "reason": "The calculation trace properly executes subtracting 54H twice (equivalent to subtracting A8H) from 36H. Although the final binary is missing a bit (likely an OCR or formatting artifact of 10001110 / 8EH), the core overflow judgment '无溢出' (no overflow) is definitively incorrect, as the result exceeds the 8-bit signed range. Partial credit is awarded for the calculation method."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(X÷4)+2Z= 00001101.1\n  +1101010\n  +1101010\n10110111.1\n溢出判断：未书写",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x ÷ 4) + 2z 的补码及判断溢出",
+            "dependency_status": "failed",
+            "reason": "The computation perfectly evaluates (x÷4)+2z to 10110111.1, matching the canonical B7H. However, the required overflow judgment is explicitly missing ('未书写'). Partial credit is granted for the correct calculation and final result."
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X-2y=00110110\n  -01010100\n  -01010100\n1000110\n无溢出",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly calculate the 8-bit two's complement result for x-2y (8EH) and correctly judge that overflow occurs.",
+            "dependency_status": "partial",
+            "reason": "The student's binary computation yields the correct lower bits (matching 8EH = 10001110). However, the student explicitly concludes '无溢出' (no overflow), which is a conceptual error since the true decimal value (142) exceeds the 8-bit signed range. Awarding partial credit for the calculation trace."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(X÷4)+2Z\n100/00110110,得\n(X÷4)=00001101.1\n(X÷4)+2Z= 00001101.1\n  +1101010\n  +1101010\n10110111.1\n溢出判断：未书写",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly calculate the 8-bit two's complement result for (x÷4)+2z (B7H) and correctly judge that no overflow occurs.",
+            "dependency_status": "partial",
+            "reason": "The student computes the correct binary result (10110111.1), where the integer part matches the standard answer (B7H). However, the required overflow judgment is entirely missing ('未书写'). Partial credit is awarded for the correct calculation."
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X-2y=00110110\n  -01010100\n  -01010100\n1000110\n无溢出",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码及判断溢出",
+            "dependency_status": "failed",
+            "reason": "The student correctly sets up the subtraction to compute x - 2y and nearly reaches the correct wrapped 8-bit value (10001110), though it is malformed as 1000110. However, the student concludes 'No overflow', which is conceptually incorrect as the operation mathematically yields 142, exceeding the 8-bit signed integer range and causing an overflow."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(X÷4)+2Z\n100/00110110,得\n(X÷4)=00001101.1\n(X÷4)+2Z= 00001101.1\n  +1101010\n  +1101010\n10110111.1\n溢出判断：未书写",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x ÷ 4) + 2z 的补码及判断溢出",
+            "dependency_status": "failed",
+            "reason": "The student correctly computed x/4 as 13.5 and somehow arrived at the correct final binary/hex value (10110111 or B7H), despite having an inconsistent binary addition trace for 2z. However, the student entirely failed to write the overflow judgment, which is explicitly required by the prompt."
+          }
+        ],
+        "total_score": 4.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.5,
+        2.5,
+        2.0
+      ],
+      "step_2": [
+        2.5,
+        2.5,
+        2.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555556,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.02777777777777778
+  },
+  {
+    "file": "ANS_CO_154.jpg",
+    "facts": "{\"step_1\": \"[X]补=36H=0011 0110  [X]原=0011 0110\\n[Y]补=54H=0101 0100  [Y]原=0101 0100\\n[X-2Y]原=[X]原+[ -2Y]原= 1111 0010\\n∴[X-2Y]补=1000 1110=8EH, OF=0\", \"step_2\": \"[Z]补=D5H=1101 0101  [Z]原=10101011\\n[(X÷4)+2Z]补=10110111=B7H OF=0\\n结果均不溢出\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-20T00:38:46.515783",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_154.jpg",
+      "image_sha256": "4ee142fa61ddcd6bec0dc945ff91727b67f7a169d0e20d61a04c00128fb50d61",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "[X]补=36H=0011 0110  [X]原=0011 0110\n[Y]补=54H=0101 0100  [Y]原=0101 0100\n[Z]补=D5H=1101 0101  [Z]原=10101011\n[X-2Y]原=[X]原+[ -2Y]原= 1111 0010\n∴[X-2Y]补=1000 1110=8EH, OF=0  [(X÷4)+2Z]补=10110111=B7H OF=0\n结果均不溢出",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_154",
+        "question_id": "CO_3",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "[X]补=36H=0011 0110  [X]原=0011 0110\n[Y]补=54H=0101 0100  [Y]原=0101 0100\n[X-2Y]原=[X]原+[ -2Y]原= 1111 0010\n∴[X-2Y]补=1000 1110=8EH, OF=0",
+        "step_2": "[Z]补=D5H=1101 0101  [Z]原=10101011\n[(X÷4)+2Z]补=10110111=B7H OF=0\n结果均不溢出"
+      }
+    },
+    "scores": [
+      5,
+      7.5,
+      8
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "[X-2Y]原=[X]原+[ -2Y]原= 1111 0010\n∴[X-2Y]补=1000 1110=8EH, OF=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码及判断溢出",
+            "dependency_status": "failed",
+            "reason": "学生虽然得出了 8EH 的补码结果，但使用的原码直接相加的方法在概念上是错误的。同时，学生误判溢出为 OF=0，而标准答案指出 x-2y 的真实十进制结果超出 8 位表示范围，应发生溢出（OF=1）。方法与核心结论均存在根本性错误。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "[(X÷4)+2Z]补=10110111=B7H OF=0\n结果均不溢出",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x ÷ 4) + 2z 的补码及判断溢出",
+            "dependency_status": "satisfied",
+            "reason": "学生正确计算出了表达式的补码结果 B7H，且准确判断出未发生溢出（OF=0），与标准答案完全吻合。"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "∴[X-2Y]补=1000 1110=8EH, OF=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码及判断溢出",
+            "dependency_status": "failed",
+            "reason": "学生正确计算出 x-2y 的补码结果为 8EH，但溢出判断错误（得出 OF=0 且注明不溢出）。实际十进制运算结果 142 超出 8 位带符号数表示范围，应发生溢出。由于结果数值对但核心判断错误，给予部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "[(X÷4)+2Z]补=10110111=B7H OF=0\n结果均不溢出",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x ÷ 4) + 2z 的补码及判断溢出",
+            "dependency_status": "satisfied",
+            "reason": "学生正确计算出 (x÷4)+2z 的补码为 B7H，并准确判断出未发生溢出（OF=0），与标准答案完全一致。"
+          }
+        ],
+        "total_score": 7.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "[X-2Y]原=[X]原+[ -2Y]原= 1111 0010\n∴[X-2Y]补=1000 1110=8EH, OF=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码（8EH）并正确判断溢出（应发生溢出 OF=1）",
+            "dependency_status": "failed",
+            "reason": "学生最终补码结果 8EH 与标准答案一致，但溢出判断错误：标准答案表明十进制结果为 142 超出 8 位有符号数范围，应发生溢出，而学生写 OF=0。结果值正确给部分分，溢出判断错误扣分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "[Z]补=D5H=1101 0101  [Z]原=10101011\n[(X÷4)+2Z]补=10110111=B7H OF=0\n结果均不溢出",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x ÷ 4) + 2z 的补码（B7H）并判断溢出（不溢出）",
+            "dependency_status": "satisfied",
+            "reason": "[Z]补=D5H 及 [Z]原=10101011 转换正确；最终结果 B7H 与标准答案完全一致；OF=0 判断正确（十进制 -73 在 8 位表示范围内，无溢出）。完全正确。"
+          }
+        ],
+        "total_score": 8
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        2.5,
+        3.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 1.7222222222222223,
+      "step_2": 0.0
+    },
+    "max_item_variance": 1.7222222222222223,
+    "avg_item_variance": 0.8611111111111112
+  },
+  {
+    "file": "ANS_CO_173.jpg",
+    "facts": "{\"step_1\": {\"computation\": \"x-2y=-74-2×(-44)=14=0E H=00001110，(x-2y)补=0E H\", \"result\": \"0E H, 00001110\", \"overflow_carry_judgment\": \"未书写\"}, \"step_2\": {\"computation\": \"(2)x÷4=14\\n[x÷4]补=00001110\\n[x÷4]补-[z]补= 10111000\\n00001110\\n+11010101\\n11100011\\n+11010101\\n10111000\\n∴[(x÷4)+2z]补=10111000\", \"result\": \"10111000\", \"overflow_judgment\": \"未书写\"}}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-20T00:42:27.164632",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_173.jpg",
+      "image_sha256": "ed213c5180cbe5bf238d997f7b5b62a55bfb58d3c93a0d4fbb101d8f82211e54",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：(x)补=36H=00110110，[x]原=11001010=-74\n(y)补=54H=01010100，[y]原=10101100=-44\n[z]补=D5H=11010101.[z]原=\n(1)x-2y=-74-2×(-44)=14=0E H=00001110，\n(x-2y)补=0E H\n(2)x÷4=14\n[x÷4]补=00001110\n[x÷4]补-[z]补= 10111000\n00001110\n+11010101\n11100011\n+11010101\n10111000\n∴[(x÷4)+2z]补=10111000",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_173",
+        "question_id": "CO_3",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": {
+          "computation": "x-2y=-74-2×(-44)=14=0E H=00001110，(x-2y)补=0E H",
+          "result": "0E H, 00001110",
+          "overflow_carry_judgment": "未书写"
+        },
+        "step_2": {
+          "computation": "(2)x÷4=14\n[x÷4]补=00001110\n[x÷4]补-[z]补= 10111000\n00001110\n+11010101\n11100011\n+11010101\n10111000\n∴[(x÷4)+2z]补=10111000",
+          "result": "10111000",
+          "overflow_judgment": "未书写"
+        }
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "x-2y=-74-2×(-44)=14=0E H=00001110，(x-2y)补=0E H",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct two's complement calculation of x - 2y (expecting 8EH) and correct overflow judgment (expecting overflow).",
+            "dependency_status": "failed",
+            "reason": "The student calculated the wrong result (0EH instead of 8EH) based on incorrect initial values, and completely missed the required overflow judgment. This results in a wrong conclusion and a core semantic failure."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(2)x÷4=14\n[x÷4]补=00001110\n[x÷4]补-[z]补= 10111000\n00001110\n+11010101\n11100011\n+11010101\n10111000\n∴[(x÷4)+2z]补=10111000",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct two's complement calculation of (x ÷ 4) + 2z (expecting B7H) and correct overflow judgment (expecting no overflow).",
+            "dependency_status": "failed",
+            "reason": "The student computed the wrong final result (B8H instead of B7H) due to an incorrect arithmetic shift/division (using 14 instead of 13) and an erroneous sign in the written formula trace. Additionally, the required overflow judgment was not written."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "x-2y=-74-2×(-44)=14=0E H=00001110，(x-2y)补=0E H",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码及判断溢出",
+            "dependency_status": "not_applicable",
+            "reason": "The student uses incorrect initial values for x and y (x=-74, y=-44), leading to a wrong computation and result (0E H instead of 8E H). Additionally, the overflow judgment is missing."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(2)x÷4=14\n[x÷4]补=00001110\n[x÷4]补-[z]补= 10111000\n00001110\n+11010101\n11100011\n+11010101\n10111000\n∴[(x÷4)+2z]补=10111000",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x ÷ 4) + 2z 的补码及判断溢出",
+            "dependency_status": "not_applicable",
+            "reason": "The student computes using incorrect premises and relationships, resulting in a wrong final two's complement result (10111000 instead of 10110111). The overflow judgment is also missing."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "x-2y=-74-2×(-44)=14=0E H=00001110，(x-2y)补=0E H",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码及判断溢出",
+            "dependency_status": "failed",
+            "reason": "Student incorrectly evaluated x as -74 and y as -44 instead of 54 and -88, yielding a wrong final two's complement result (0E H instead of 8E H). The required overflow judgment is also completely missing."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(2)x÷4=14\n[x÷4]补=00001110\n... ∴[(x÷4)+2z]补=10111000",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x ÷ 4) + 2z 的补码及判断溢出",
+            "dependency_status": "failed",
+            "reason": "Based on propagated incorrect value for x/4 (14 instead of 13) and errors in z, the student arrives at a completely incorrect final two's complement (10111000 instead of 10110111). The required overflow judgment is also missing."
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_174.jpg",
+    "facts": "{\"step_1\": \"[2Y]补=10101000\\n[-2Y]补=01011000\\n∴X-2Y:\\n  00110110\\n+ 01011000\\n  10001110\\n即8EH OF=1\", \"step_2\": \"对（x÷4）+2z:\\n4:2²\\n∴x÷4为00001101\\n2Z为10101010\\nx÷4+2Z计为\\n  00001101\\n+10101010\\n  10110111\\n即B3H OF=0\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-20T00:46:32.237256",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_174.jpg",
+      "image_sha256": "5b7fd3118042d3026d9fe91051c2b45185a5ad042826dc7ce3f3e1edff0ea7da",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "X=00110110 X原=00110110\nY=01010100 Y原=01010100\nZ=11010101 Z原=10101011\n[2Y]补=10101000\n[-2Y]补=01011000\n∴X-2Y:\n  00110110\n+ 01011000\n  10001110\n即8EH OF=1\n对（x÷4）+2z:\n4:2²\n∴x÷4为00001101\n2Z为10101010\nx÷4+2Z计为\n  00001101\n+10101010\n  10110111\n即B3H OF=0",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_174",
+        "question_id": "CO_3",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "[2Y]补=10101000\n[-2Y]补=01011000\n∴X-2Y:\n  00110110\n+ 01011000\n  10001110\n即8EH OF=1",
+        "step_2": "对（x÷4）+2z:\n4:2²\n∴x÷4为00001101\n2Z为10101010\nx÷4+2Z计为\n  00001101\n+10101010\n  10110111\n即B3H OF=0"
+      }
+    },
+    "scores": [
+      8.0,
+      10,
+      10
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "[2Y]补=10101000\n[-2Y]补=01011000\n∴X-2Y:\n  00110110\n+ 01011000\n  10001110\n即8EH OF=1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码及判断溢出",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly computes the sum as 8EH and accurately determines the overflow flag OF=1."
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "x÷4为00001101\n2Z为10101010\nx÷4+2Z计为\n  00001101\n+10101010\n  10110111\n即B3H OF=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x ÷ 4) + 2z 的补码及判断溢出",
+            "dependency_status": "insufficient",
+            "reason": "Student correctly computes the binary addition (10110111) and correctly identifies OF=0, but makes a hex conversion error by writing B3H instead of B7H."
+          }
+        ],
+        "total_score": 8.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "[2Y]补=10101000\n[-2Y]补=01011000\n∴X-2Y:\n  00110110\n+ 01011000\n  10001110\n即8EH OF=1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码结果(8EH)并判断溢出(发生溢出)",
+            "dependency_status": "satisfied",
+            "reason": "学生正确计算了[2Y]补=A8H及[-2Y]补=58H，通过补码加法00110110+01011000=10001110得到8EH，与标准答案一致。两个正数相加得到负数结果，正确判断OF=1即发生溢出。计算过程完整，结果正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "对（x÷4）+2z:\n4:2²\n∴x÷4为00001101\n2Z为10101010\nx÷4+2Z计为\n  00001101\n+10101010\n  10110111\n即B7H OF=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x÷4)+2z 的补码结果(B7H)并判断溢出(无溢出)",
+            "dependency_status": "satisfied",
+            "reason": "学生正确将x右移2位得到x÷4=0DH=00001101，正确给出2Z=AAH=10101010，补码加法00001101+10101010=10110111=B7H与标准答案一致。正数加负数得负数，正确判断OF=0即无溢出。计算过程完整，结果正确。"
+          }
+        ],
+        "total_score": 10
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "[2Y]补=10101000\n[-2Y]补=01011000\n∴X-2Y:\n  00110110\n+ 01011000\n  10001110\n即8EH OF=1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码及判断溢出",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly computed [-2Y]补 = 58H by negating A8H, performed X + [-2Y]补 = 36H + 58H = 8EH, and correctly determined OF=1 (two positive operands sum to negative result, signed overflow). Final answer 8EH matches standard answer; overflow conclusion correct."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "4:2²\n∴x÷4为00001101\n2Z为10101010\nx÷4+2Z计为\n  00001101\n+10101010\n  10110111\n即B3H OF=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x ÷ 4) + 2z 的补码及判断溢出",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly computed x÷4 = 0DH (arithmetic right shift by 2) and 2Z = AAH, then 0DH + AAH = B7H with binary result 10110111. The hex value 'B3H' appears to be a transcription/recognition error for B7H since the binary addition shown (10110111) is correct and matches standard answer B7H. Under lenient grading, the binary computation trace is correct, OF=0 conclusion is correct (operands have different signs, no overflow possible). Awarding full marks."
+          }
+        ],
+        "total_score": 10
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        3.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.888888888888889
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.4444444444444445
+  },
+  {
+    "file": "ANS_CO_186.jpg",
+    "facts": "{\"step_1\": \"X=000110110 y=001010100 Z=111010101 采用双符号位\\n∴ X-2y = (X)补 + (-2y)补\\n∵2y 相当于将y左移一位 2y=010101000 ∴2y发生溢出\\n∴X-2y= x-y -y = (x)补 +(-y)补 +(-y)补 = 000110110 + 110101100 + 110101100\\n= 110001110 = 8E 未溢出.\", \"step_2\": \"∴(X÷4)+2Z ∵X÷4相当于X左移2位. ∴X÷4= 000001101\\n∵2Z = 110101010\\n∴(X÷4)+2Z = 000001101 + 11101010\\n= 110110111 = B7 未溢出.\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-20T00:49:32.194635",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_186.jpg",
+      "image_sha256": "408a2298fa550ccd824ec47ddf049842798e6ecb0a2353af4f8d18a6151deb49",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解: X=000110110 y=001010100 Z=111010101 采用双符号位\n∴ X-2y = (X)补 + (-2y)补\n∵2y 相当于将y左移一位 2y=010101000 ∴2y发生溢出\n∴X-2y= x-y -y = (x)补 +(-y)补 +(-y)补 = 000110110 + 110101100 + 110101100\n= 110001110 = 8E 未溢出.\n∴(X÷4)+2Z ∵X÷4相当于X左移2位. ∴X÷4= 000001101\n∵2Z = 110101010\n∴(X÷4)+2Z = 000001101 + 11101010\n= 110110111 = B7 未溢出.",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_186",
+        "question_id": "CO_3",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "X=000110110 y=001010100 Z=111010101 采用双符号位\n∴ X-2y = (X)补 + (-2y)补\n∵2y 相当于将y左移一位 2y=010101000 ∴2y发生溢出\n∴X-2y= x-y -y = (x)补 +(-y)补 +(-y)补 = 000110110 + 110101100 + 110101100\n= 110001110 = 8E 未溢出.",
+        "step_2": "∴(X÷4)+2Z ∵X÷4相当于X左移2位. ∴X÷4= 000001101\n∵2Z = 110101010\n∴(X÷4)+2Z = 000001101 + 11101010\n= 110110111 = B7 未溢出."
+      }
+    },
+    "scores": [
+      5,
+      8.0,
+      7.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "X=000110110 y=001010100 Z=111010101 采用双符号位\n∴ X-2y = (X)补 + (-2y)补\n∵2y 相当于将y左移一位 2y=010101000 ∴2y发生溢出\n∴X-2y= x-y -y = (x)补 +(-y)补 +(-y)补 = 000110110 + 110101100 + 110101100\n= 110001110 = 8E 未溢出.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码及判断溢出",
+            "dependency_status": "failed",
+            "reason": "The student misread the sign of y (using +84 instead of the correct negative value), calculating -114 instead of +142, and consequently reached a completely wrong conclusion of 'no overflow' (未溢出). The matching 8E hex pattern is merely a coincidence due to 8-bit two's complement wrap-around, but the conceptual understanding and final overflow judgment are fatally incorrect."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "∴(X÷4)+2Z ∵X÷4相当于X左移2位. ∴X÷4= 000001101\n∵2Z = 110101010\n∴(X÷4)+2Z = 000001101 + 11101010\n= 110110111 = B7 未溢出.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x ÷ 4) + 2z 的补码及判断溢出",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly computed the intermediate values and the final hex result B7. They also accurately determined that no overflow occurred. The mention of 'left shift' (左移) for division by 4 is a terminology slip, but the actual arithmetic execution and values are completely correct."
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "∴X-2y= x-y -y = (x)补 +(-y)补 +(-y)补 = 000110110 + 110101100 + 110101100 = 110001110 = 8E 未溢出.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码(=8EH)并判断溢出(应判定为溢出)",
+            "dependency_status": "failed",
+            "reason": "学生正确识别2y本身溢出(2y=010101000,符号位01)，且最终补码结果8EH与标准答案一致。但学生改用x-y-y规避中间溢出后判定整体'未溢出'，与标准答案要求的溢出结论矛盾。标准答案基于8位运算中2y先溢出为A8H(-88)，再执行x-2y=54-(-88)=142超出范围判溢出。补码结果正确但溢出判断错误，给部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "∴(X÷4)+2Z ∵X÷4相当于X左移2位. ∴X÷4= 000001101 ∵2Z = 110101010 ∴(X÷4)+2Z = 000001101 + 11101010 = 110110111 = B7 未溢出.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x÷4)+2z 的补码(=B7H)并判断溢出(未溢出)",
+            "dependency_status": "satisfied",
+            "reason": "X÷4=0DH(=13)、2Z=AAH(=-86)、相加结果B7H(=-73)均与标准答案完全一致，溢出判断'未溢出'正确。学生文字描述将除以4说成'左移'(应为右移/算术右移)，但实际计算值000001101是正确的右移结果，属于表述口误而非计算错误，不影响结果正确性。"
+          }
+        ],
+        "total_score": 8.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X=000110110 y=001010100 Z=111010101 采用双符号位 ∴ X-2y = (X)补 + (-2y)补 ∵2y 相当于将y左移一位 2y=010101000 ∴2y发生溢出 ∴X-2y= x-y -y = (x)补 +(-y)补 +(-y)补 = 000110110 + 110101100 + 110101100 = 110001110 = 8E 未溢出.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 x - 2y 的补码及判断溢出 (Expected result 142 / Overflow)",
+            "dependency_status": "failed",
+            "reason": "The student uses y = +84 (001010100) instead of the standard y = -44 (missing the sign bit). Based on their y, they correctly perform the two's complement addition and logically deduce 'No overflow' since -114 is within range. However, the final result and overflow status are semantically wrong compared to the canonical answer (142, Overflow). Awarding partial credit for the correct method and intermediate steps."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "∴(X÷4)+2Z ∵X÷4相当于X左移2位. ∴X÷4= 000001101 ∵2Z = 110101010 ∴(X÷4)+2Z = 000001101 + 11101010 = 110110111 = B7 未溢出.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确计算 (x ÷ 4) + 2z 的补码及判断溢出",
+            "dependency_status": "satisfied",
+            "reason": "Although the student wrote 'left shift' (左移) by mistake in the text, the resulting value 000001101 shows they performed an arithmetic right shift correctly. The final hex value B7 and the overflow conclusion (No overflow) perfectly match the canonical answer. Under lenient grading, the typo in the descriptive text is ignored in favor of the correct mathematical execution."
+          }
+        ],
+        "total_score": 7.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        3.0,
+        2.5
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 1.7222222222222223,
+      "step_2": 0.0
+    },
+    "max_item_variance": 1.7222222222222223,
+    "avg_item_variance": 0.8611111111111112
+  }
+]
