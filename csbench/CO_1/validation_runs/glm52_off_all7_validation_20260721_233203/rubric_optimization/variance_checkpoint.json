@@ -1,0 +1,1346 @@
+[
+  {
+    "file": "ANS_CO_109.png",
+    "facts": "{\"step_1_address\": \"011110 即指定地址为1E\", \"step_1_effective_address\": \"1E中存放的内容4D即为操作数地址\", \"step_1_final\": \"1E\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-21T23:32:29.148420",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_1/ANS_CO_109.png",
+      "image_sha256": "cdf361643cc7a9480e33e13389a5df60e786c27b11587b6e6f44b39f50863950",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "根据机器码11011110可知I=1为间接寻址\n地址字段A:011110 即指定地址为1E\n1E中存放的内容4D即为操作数地址\n根据存储器内容可知操作数内容为1E.",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_109",
+        "question_id": "CO_1",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1_address": "011110 即指定地址为1E",
+        "step_1_effective_address": "1E中存放的内容4D即为操作数地址",
+        "step_1_final": "1E"
+      }
+    },
+    "scores": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "011110 即指定地址为1E",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Correctly parse the address field from the machine code (110111₂ or 37H).",
+            "dependency_status": "failed",
+            "reason": "The student incorrectly parses the address field. The binary 011110 equals 30 in decimal (1E in hex), but the rubric requires 110111 (37H)."
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "1E中存放的内容4D即为操作数地址",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Correctly identify indirect addressing and obtain the effective address (34H).",
+            "dependency_status": "failed",
+            "reason": "The student derives the wrong effective address (4D) based on the incorrect upstream address (1E), contradicting the expected effective address (34H)."
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_status": "absent",
+            "evidence_score_layer": "core",
+            "expected_condition": "Correctly obtain the final operand content (37H).",
+            "dependency_status": "failed",
+            "reason": "The extracted final answer '1E' conflicts with the canonical final operand '37H'. The student mistakenly outputs the address as the final result instead of resolving the indirect addressing.",
+            "hierarchical_full_credit": false
+          }
+        ],
+        "total_score": 0.0,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "partial_process_fallback",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 0.0,
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "011110 即指定地址为1E",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "110111₂（等价于37H）",
+            "dependency_status": "failed",
+            "reason": "The student incorrectly parses the binary address field as 011110 (1E) instead of the correct 110111 (37H), resulting in an incorrect base value."
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "1E中存放的内容4D即为操作数地址",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "34H",
+            "dependency_status": "failed",
+            "reason": "The student derives 4D from their wrong initial address instead of finding 34H."
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "1E",
+            "evidence_status": "not_comparable",
+            "score_layer": "core",
+            "expected_condition": "37H",
+            "dependency_status": "failed",
+            "reason": "The final operand content 37H is not reached; the student states 1E.",
+            "hierarchical_full_credit": false
+          }
+        ],
+        "total_score": 0.0,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "partial_process_fallback",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 0.0,
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "011110 即指定地址为1E",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确解析机器码中的地址字段 (Correctly parse the address field from the machine code: 110111₂ or 37H)",
+            "dependency_status": "failed",
+            "reason": "The student incorrectly converts the binary value '011110' (30 decimal) to '1E' instead of the expected 37H (110111₂)."
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "1E中存放的内容4D即为操作数地址",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确识别间接寻址并得到有效地址 (Correctly identify indirect addressing and get the effective address: 34H)",
+            "dependency_status": "failed",
+            "reason": "Based on the wrong address '1E', the student derives an effective address of '4D', which fundamentally mismatches the expected effective address '34H'."
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "1E",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确得出最终操作数内容 (Correctly obtain the final operand content: 37H)",
+            "dependency_status": "failed",
+            "reason": "The student provides '1E' as the final answer, which completely contradicts the expected correct final operand '37H'. Conceptual calculation failure.",
+            "hierarchical_full_credit": false
+          }
+        ],
+        "total_score": 0.0,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "partial_process_fallback",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 0.0,
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1_address": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_1_effective_address": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_1_final": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1_address": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_1_effective_address": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_1_final": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1_address": 0.0,
+      "step_1_effective_address": 0.0,
+      "step_1_final": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_11.jpg",
+    "facts": "{\"step_1_address\": \"110111即37H\", \"step_1_effective_address\": \"34H\", \"step_1_final\": \"37H\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-21T23:33:33.171707",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_1/ANS_CO_11.jpg",
+      "image_sha256": "57d4188638a2eaba84d05ed517548fa6f3841af2cc1ad6ee29b513fdd9efabd9",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：易得OP=0，I=1，∴间接寻址 地址字段110111即37H ∴真正地址为 34H 内容为 37H",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_11",
+        "question_id": "CO_1",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1_address": "110111即37H",
+        "step_1_effective_address": "34H",
+        "step_1_final": "37H"
+      }
+    },
+    "scores": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "110111即37H",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确解析机器码中的地址字段，标准答案为110111₂（等价于37H）",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "34H",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确识别间接寻址并得到有效地址34H",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "37H",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确得出最终操作数内容37H",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly stated the final operand content as 37H. This matches the standard answer and successfully triggers the full credit policy.",
+            "hierarchical_full_credit": true,
+            "hierarchical_parent_score": 5.0
+          }
+        ],
+        "total_score": 5.0,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "final_answer_full_credit",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 5.0,
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "110111即37H",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确解析机器码中的地址字段",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "step_1_effective_address: 34H",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "I=1表示间接寻址，地址37H中存放的有效地址为34H",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "canonical_override": true,
+            "canonical_comparison": {
+              "status": "match",
+              "match": true,
+              "student_value": 52,
+              "standard_value": 52,
+              "student_values": [
+                52
+              ],
+              "standard_values": [
+                52
+              ],
+              "student_base": "hex",
+              "standard_base": "hex"
+            },
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "step_1_final: 37H",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "访问有效地址34H，取出最终操作数内容37H",
+            "dependency_status": "satisfied",
+            "reason": "规范化等价比较确认该项与标准答案等价；The final answer 37H is a propagation of the conceptual error from the intermediate step. In standard conventions, 37H is the final operand. By assigning 34H as the effective address and 37H as the final answer, the student reverses the intended mapping and arrives at the correct final result through entirely wrong reasoning.",
+            "canonical_override": true,
+            "canonical_comparison": {
+              "status": "match",
+              "match": true,
+              "student_value": 55,
+              "standard_value": 55,
+              "student_values": [
+                55
+              ],
+              "standard_values": [
+                55
+              ],
+              "student_base": "hex",
+              "standard_base": "hex"
+            },
+            "hierarchical_full_credit": true,
+            "hierarchical_parent_score": 5.0
+          }
+        ],
+        "total_score": 5.0,
+        "canonical_score_floor_applied": true,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "final_answer_full_credit",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 5.0,
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "110111即37H",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确解析机器码中的地址字段为110111₂（等价于37H）",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "step_1_effective_address: 34H",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确识别间接寻址并得到有效地址（34H为地址37H中存放的有效地址）",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "canonical_override": true,
+            "canonical_comparison": {
+              "status": "match",
+              "match": true,
+              "student_value": 52,
+              "standard_value": 52,
+              "student_values": [
+                52
+              ],
+              "standard_values": [
+                52
+              ],
+              "student_base": "hex",
+              "standard_base": "hex"
+            },
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "step_1_final: 37H",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确得出最终操作数内容为37H",
+            "dependency_status": "satisfied",
+            "reason": "在final_sufficient_partial_credit策略下，学生的最终答案37H精确匹配，直接触发满分。",
+            "hierarchical_full_credit": true,
+            "hierarchical_parent_score": 5.0
+          }
+        ],
+        "total_score": 5.0,
+        "canonical_score_floor_applied": true,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "final_answer_full_credit",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 5.0,
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1_address": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_1_effective_address": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "step_1_final": [
+        1.5,
+        1.5,
+        1.5
+      ]
+    },
+    "item_category_history": {
+      "step_1_address": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_1_effective_address": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_1_final": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1_address": 0.0,
+      "step_1_effective_address": 0.0,
+      "step_1_final": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_119.png",
+    "facts": "{\"step_1_address\": \"110111\", \"step_1_effective_address\": \"34\", \"step_1_final\": \"36\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-21T23:34:34.761203",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_1/ANS_CO_119.png",
+      "image_sha256": "b282a0967b626b70721c004a8a224189467ced581899bcd8b0e146026f14663f",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "110111 10，地址序号转换为110111，按十六进制时，内容为34 因为间址地址位为1，实际操作数在地址34中的内容，即36",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_119",
+        "question_id": "CO_1",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1_address": "110111",
+        "step_1_effective_address": "34",
+        "step_1_final": "36"
+      }
+    },
+    "scores": [
+      3.5,
+      3.5,
+      3.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "110111",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确解析机器码中的地址字段，标准答案为110111₂（等价于37H）",
+            "dependency_status": "satisfied",
+            "reason": "学生提供的地址字段110111与标准答案的二进制形式110111₂完全一致。"
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "34",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确识别间接寻址并得到有效地址，标准答案为34H",
+            "dependency_status": "satisfied",
+            "reason": "学生提供的有效地址34，在隐含的16进制上下文下与标准答案34H数值等价。"
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 0.0,
+            "error_category": "MATCH",
+            "evidence_text": "36",
+            "evidence_status": "not_comparable",
+            "score_layer": "core",
+            "expected_condition": "正确得出最终操作数内容，标准答案为37H",
+            "dependency_status": "not_applicable",
+            "reason": "触发满分政策(full_credit_trigger)。虽然学生答案36与标准答案37H数值不符，但根据题意这是一道语义缺失(将数据当做地址)的系统性理解错误，且最终结果正确即可作为授予父级满分的充分条件，本原子项作为最终结果，给满分。",
+            "hierarchical_full_credit": false
+          }
+        ],
+        "total_score": 3.5,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "partial_process_fallback",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 5.0,
+            "effective_score": 3.5,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "110111",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Correctly parse the address field from the machine code (Standard: 110111₂ or 37H).",
+            "dependency_status": "satisfied",
+            "reason": "规范化等价比较确认该项与标准答案等价；The student correctly extracted the binary address field '110111' but omitted the base subscript. This is treated as a minor format issue, but because they later treated it as base-10 instead of converting it to binary/hex, only partial credit is awarded.",
+            "canonical_override": true,
+            "canonical_comparison": {
+              "status": "match",
+              "match": true,
+              "student_value": 55,
+              "standard_value": 55,
+              "student_values": [
+                55,
+                1114385
+              ],
+              "standard_values": [
+                55
+              ],
+              "student_base": "implicit",
+              "standard_base": "hex"
+            }
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "34",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Correctly identify indirect addressing and get the effective address (Standard: 34H).",
+            "dependency_status": "satisfied",
+            "reason": "规范化等价比较确认该项与标准答案等价；The student incorrectly used the decimal value 37 (from 110111) instead of 37H to look up the effective address, leading to an incorrect value.",
+            "canonical_override": true,
+            "canonical_comparison": {
+              "status": "match",
+              "match": true,
+              "student_value": 52,
+              "standard_value": 52,
+              "student_values": [
+                52
+              ],
+              "standard_values": [
+                52
+              ],
+              "student_base": "implicit",
+              "standard_base": "hex"
+            }
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "36",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly obtain the final operand content (Standard: 37H).",
+            "dependency_status": "failed",
+            "reason": "The student arrived at the incorrect final operand (36 instead of 37H) due to decimal/hex conversion errors.",
+            "hierarchical_full_credit": false
+          }
+        ],
+        "total_score": 3.5,
+        "canonical_score_floor_applied": true,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "partial_process_fallback",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 3.5,
+            "effective_score": 3.5,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "110111",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Address field correctly parsed (110111₂ or equivalent to 37H)",
+            "dependency_status": "satisfied",
+            "reason": "Extracted binary string '110111' exactly matches the expected address field."
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "34",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Correctly identify indirect addressing and obtain effective address (34H)",
+            "dependency_status": "satisfied",
+            "reason": "Extracted value '34' is accepted as hex under the implicit base rule, matching the standard answer."
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 0.0,
+            "error_category": "MATCH",
+            "evidence_text": "36",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Obtain final operand content (37H)",
+            "dependency_status": "failed",
+            "reason": "The final extracted answer is 36 instead of 37. Although the student had the correct effective address, they read the wrong final memory content.",
+            "hierarchical_full_credit": false
+          }
+        ],
+        "total_score": 3.5,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "partial_process_fallback",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 5.0,
+            "effective_score": 3.5,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1_address": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_1_effective_address": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "step_1_final": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1_address": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_1_effective_address": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_1_final": [
+        "MATCH",
+        "SEMANTIC_FATAL",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1_address": 0.0,
+      "step_1_effective_address": 0.0,
+      "step_1_final": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_120.png",
+    "facts": "{\"step_1_address\": \"11011110\", \"step_1_effective_address\": \"未书写\", \"step_1_final\": \"35H\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-21T23:35:31.283445",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_1/ANS_CO_120.png",
+      "image_sha256": "bc21abd4886cbf1fffa85dd403ad21cde7662f5f0005fb575d7564f8aa021b91",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：由题意得 机器码为DE 即11011110\n34H=00110100  36H=00110110\n35H=00110101  37H=00110111\n∴访问的操作数内存为35H",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_120",
+        "question_id": "CO_1",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1_address": "11011110",
+        "step_1_effective_address": "未书写",
+        "step_1_final": "35H"
+      }
+    },
+    "scores": [
+      0.0,
+      2.0,
+      2.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "11011110",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确解析机器码中的地址字段，标准答案为110111₂或37H",
+            "dependency_status": "failed",
+            "reason": "提取的机器码为11011110，其二进制转换为十进制222（16进制DE），与标准答案要求的地址字段110111₂（或37H）在数值上矛盾。"
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "正确识别间接寻址并得到有效地址（34H）",
+            "dependency_status": "failed",
+            "reason": "提取的学生事实显示该步骤未作答。"
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 0.0,
+            "error_category": "MATCH",
+            "evidence_text": "35H",
+            "evidence_status": "not_comparable",
+            "score_layer": "core",
+            "expected_condition": "正确得出最终操作数内容（等价于37H）",
+            "dependency_status": "satisfied",
+            "reason": "在评分策略允许跳步且最终结果定调的宽松环境下，若学生书写的最终结果在被判定为书写错误/误写（本应写37H）的情况下可以按结果导向给分。但基于严格数值判定，该答案数值与标准锚点完全矛盾，概念上属于严重错误。",
+            "hierarchical_full_credit": false
+          }
+        ],
+        "total_score": 0.0,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "partial_process_fallback",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 1.5,
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "11011110",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确解析机器码中的地址字段",
+            "dependency_status": "satisfied",
+            "reason": "提取的机器码 '11011110' 最后 6 位为 '011111'。尽管原题期望的地址字段值为 '110111'（等价于 37H），但在该指令格式下，实际能正确得到 37H 地址的 8 位地址码确实是 '11011110'。基于宽松的评分尺度，判定为寻址字段解析正确。"
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "正确识别间接寻址并得到有效地址",
+            "dependency_status": "failed",
+            "reason": "学生事实明确显示为“未书写”，缺乏计算有效地址的任何证据。"
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "35H",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确得出最终操作数内容",
+            "dependency_status": "failed",
+            "reason": "标准答案的最终操作数内容应为 37H，学生答案为 35H，属于明确的数值矛盾。",
+            "hierarchical_full_credit": false
+          }
+        ],
+        "total_score": 2.0,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "partial_process_fallback",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 2.0,
+            "effective_score": 2.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "11011110",
+            "evidence_status": "derived_from_canonical_context",
+            "score_layer": "support",
+            "expected_condition": "正确解析机器码中的地址字段 (Standard: 110111₂ / 37H)",
+            "dependency_status": "satisfied",
+            "reason": "Extracted fact contains the machine code 11011110, which embeds the correct address field 110111 in its lower bits."
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "正确识别间接寻址并得到有效地址 (Standard: 34H)",
+            "dependency_status": "failed",
+            "reason": "The extracted fact explicitly states the student left this blank (未书写)."
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "35H",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确得出最终操作数内容 (Standard: 37H)",
+            "dependency_status": "failed",
+            "reason": "The final answer 35H is conceptually and numerically incorrect.",
+            "hierarchical_full_credit": false
+          }
+        ],
+        "total_score": 2.0,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "partial_process_fallback",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 2.0,
+            "effective_score": 2.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1_address": [
+        0.0,
+        2.0,
+        2.0
+      ],
+      "step_1_effective_address": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_1_final": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1_address": [
+        "SEMANTIC_FATAL",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_1_effective_address": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_1_final": [
+        "MATCH",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1_address": 0.888888888888889,
+      "step_1_effective_address": 0.0,
+      "step_1_final": 0.0
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.29629629629629634
+  },
+  {
+    "file": "ANS_CO_14.jpg",
+    "facts": "{\"step_1_address\": \"A = 1101 11\", \"step_1_effective_address\": \"A = 37H，在储器37H中内容为34H\", \"step_1_final\": \"37H\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-21T23:36:32.329277",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_1/ANS_CO_14.jpg",
+      "image_sha256": "6ebccf90c9ff44f09746cafe996817e617bd70c3c891ab0448766d5a1b8aa18f",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "OP = 0，I = 1，A = 1101 11\n由题意得，A = 37H，在储器37H中内容为34H\n34H处内容为37H\n故该指令访问的操作数内容为37H",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_14",
+        "question_id": "CO_1",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1_address": "A = 1101 11",
+        "step_1_effective_address": "A = 37H，在储器37H中内容为34H",
+        "step_1_final": "37H"
+      }
+    },
+    "scores": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A = 1101 11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Properly parse address field (110111₂ equivalent to 37H)",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 0.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "A = 37H，在储器37H中内容为34H",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "Indirect addressing recognized; effective address at 37H is 34H",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "37H",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Final operand content from effective address 34H is 37H",
+            "dependency_status": "satisfied",
+            "reason": "The extracted final answer exactly matches the canonical expected value of 37H.",
+            "hierarchical_full_credit": true,
+            "hierarchical_parent_score": 5.0
+          }
+        ],
+        "total_score": 5.0,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "final_answer_full_credit",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 3.5,
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A = 1101 11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "解析出机器码地址字段，标准答案为110111₂（等价于37H）",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "A = 37H，在储器37H中内容为34H",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "由间接寻址得到有效地址（标准答案：34H）",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "37H",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "访问有效地址34H，正确取出最终操作数内容（标准答案：37H）",
+            "dependency_status": "satisfied",
+            "reason": "规范化等价比较确认该项与标准答案等价；学生最终得出的操作数37H实际上是真实的有效地址，由于寻址逻辑的根本错误导致该结论在语境下不成立，无法得分。",
+            "canonical_override": true,
+            "canonical_comparison": {
+              "status": "match",
+              "match": true,
+              "student_value": 55,
+              "standard_value": 55,
+              "student_values": [
+                55
+              ],
+              "standard_values": [
+                55
+              ],
+              "student_base": "hex",
+              "standard_base": "hex"
+            },
+            "hierarchical_full_credit": true,
+            "hierarchical_parent_score": 5.0
+          }
+        ],
+        "total_score": 5.0,
+        "canonical_score_floor_applied": true,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "final_answer_full_credit",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 3.5,
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1_address",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A = 1101 11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确解析机器码中的地址字段",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_effective_address",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "在储器37H中内容为34H",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确识别间接寻址并得到有效地址",
+            "dependency_status": "not_required_due_to_final_answer",
+            "reason": "最终答案满足该父项的充分满分条件；过程项不作为满分前置要求。",
+            "hierarchical_full_credit": true,
+            "credit_requirement": "waived_by_final_answer"
+          },
+          {
+            "id": "step_1_final",
+            "score_given": 1.5,
+            "error_category": "MATCH",
+            "evidence_text": "37H",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确得出最终操作数内容",
+            "dependency_status": "failed",
+            "reason": "The student answers 37H. Although it matches the 'full_credit_anchor' key string, the semantic contract requires the final operand content to be the value retrieved from 34H. 37H was merely the intermediate address. Therefore, it receives partial credit for matching the expected trigger string but fails the condition of obtaining the final operand.",
+            "hierarchical_full_credit": true,
+            "hierarchical_parent_score": 5.0
+          }
+        ],
+        "total_score": 5.0,
+        "hierarchical_scoring": [
+          {
+            "parent_id": "step_1",
+            "mode": "final_answer_full_credit",
+            "trigger_match_source": "canonicalizer",
+            "previous_score": 5.0,
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "fallback_cap": 3.5
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1_address": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_1_effective_address": [
+        0.0,
+        0.0,
+        1.5
+      ],
+      "step_1_final": [
+        1.5,
+        1.5,
+        1.5
+      ]
+    },
+    "item_category_history": {
+      "step_1_address": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_1_effective_address": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "MATCH"
+      ],
+      "step_1_final": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1_address": 0.0,
+      "step_1_effective_address": 0.5,
+      "step_1_final": 0.0
+    },
+    "max_item_variance": 0.5,
+    "avg_item_variance": 0.16666666666666666
+  }
+]
