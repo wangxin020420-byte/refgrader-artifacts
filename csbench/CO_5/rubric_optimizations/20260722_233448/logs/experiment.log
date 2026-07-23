@@ -1,0 +1,120 @@
+2026-07-22 23:26:57 | INFO     | ==================================================
+2026-07-22 23:26:57 | INFO     | 📂 正在加载试卷数据库...
+2026-07-22 23:26:57 | INFO     |    运行模式: VARIANCE_OPT
+2026-07-22 23:26:57 | INFO     |    题目范围: ['CO_3', 'CO_4', 'CO_5', 'CO_6', 'CO_7']
+2026-07-22 23:26:57 | INFO     |    文本模型: glm5 -> glm-5.2 (thinking=disabled)
+2026-07-22 23:26:57 | INFO     |    提取后端: csbench_hybrid
+2026-07-22 23:26:57 | INFO     |    题库文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\exam_database.json
+2026-07-22 23:26:57 | INFO     |    教师分文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\teacher_scores.json
+2026-07-22 23:26:57 | INFO     |    答案元数据: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\answer_metadata.jsonl
+2026-07-22 23:26:57 | INFO     |    并发数:   2
+2026-07-22 23:26:57 | INFO     |    结果目录: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_co1_co2_co3_co4_co5_co6_co7_rubric_opt
+2026-07-22 23:26:57 | INFO     |    Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\optimized
+2026-07-22 23:26:57 | INFO     |    初始Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\initial
+2026-07-22 23:26:57 | INFO     |    允许回退初始Rubric: False
+2026-07-22 23:26:57 | INFO     |    进度文件: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_co1_co2_co3_co4_co5_co6_co7_rubric_opt\progress.json
+2026-07-22 23:26:57 | INFO     |    日志文件: logs\experiment_20260722_232657.log
+2026-07-22 23:26:57 | INFO     | 🔬 当前处于【方差优化模式】(VARIANCE OPT MODE)
+2026-07-22 23:26:57 | INFO     |    系统将生成标准，进行小样本测试，修正并保存最终标准。
+2026-07-22 23:26:57 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_3
+============================================================
+2026-07-22 23:26:57 | INFO     | restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-22 23:26:57 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_3_rubric_standard.json
+2026-07-22 23:26:57 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-22 23:26:57 | INFO     | [data isolation] variance optimization is restricted to 10 calibration answers.
+2026-07-22 23:26:57 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-22 23:26:57 | INFO     | 
+📊 采样完成。平均方差: 0.5250
+2026-07-22 23:26:57 | INFO     | Item-level variance: avg=0.3931, max=1.3889
+2026-07-22 23:26:57 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-22 23:26:57 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-22 23:26:57 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_2", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-22 23:27:08 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-22 23:27:08 | INFO     | 📦 成功加载教师真实成绩单数据库！共包含 3326 名考生的数据。
+2026-07-22 23:27:53 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.2, "severe_regression_margin": 2.0, "accepted": false, "reason": "severe_sample_regression", "baseline_mae": 1.616667, "candidate_mae": 4.3, "mae_delta": 2.683333, "improved": 0, "unchanged": 0, "worsened": 5, "severe_regressions": 3, "records": [{"answer_id": "ANS_CO_140", "baseline_score": 5.666666666666667, "candidate_score": 0.0, "teacher_score": 6.0}, {"answer_id": "ANS_CO_154", "baseline_score": 7.5, "candidate_score": 5.0, "teacher_score": 9.0}, {"answer_id": "ANS_CO_173", "baseline_score": 2.0, "candidate_score": 0.0, "teacher_score": 6.0}, {"answer_id": "ANS_CO_174", "baseline_score": 7.916666666666667, "candidate_score": 7.5, "teacher_score": 9.0}, {"answer_id": "ANS_CO_186", "baseline_score": 7.833333333333333, "candidate_score": 5.0, "teacher_score": 9.0}]}
+2026-07-22 23:27:53 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: severe_sample_regression
+2026-07-22 23:27:53 | WARNING  | [rubric selection] no refined candidate passed every gate; selected the official baseline for CO_3. mode=calibrated_noninferior_baseline_selected
+2026-07-22 23:27:53 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_3_optimization.json
+2026-07-22 23:27:53 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_4
+============================================================
+2026-07-22 23:27:53 | INFO     | restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-22 23:27:53 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_4_rubric_standard.json
+2026-07-22 23:27:53 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-22 23:27:53 | INFO     | [data isolation] variance optimization is restricted to 9 calibration answers.
+2026-07-22 23:27:53 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-22 23:27:53 | INFO     | 
+📊 采样完成。平均方差: 2.3556
+2026-07-22 23:27:53 | INFO     | Item-level variance: avg=0.1619, max=0.8889
+2026-07-22 23:27:53 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-22 23:27:53 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-22 23:27:53 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_6", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 3, "weighting_policy": "role_constrained"}, {"parent_id": "step_7", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 3, "weighting_policy": "role_constrained"}]
+2026-07-22 23:29:14 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-22 23:30:44 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.4, "severe_regression_margin": 4.0, "accepted": false, "reason": "severe_sample_regression", "baseline_mae": 1.866667, "candidate_mae": 4.2, "mae_delta": 2.333333, "improved": 1, "unchanged": 0, "worsened": 4, "severe_regressions": 2, "records": [{"answer_id": "ANS_CO_647", "baseline_score": 9.333333333333334, "candidate_score": 4.0, "teacher_score": 14.0}, {"answer_id": "ANS_CO_687", "baseline_score": 7.0, "candidate_score": 5.5, "teacher_score": 9.0}, {"answer_id": "ANS_CO_693", "baseline_score": 10.666666666666666, "candidate_score": 15.0, "teacher_score": 10.0}, {"answer_id": "ANS_CO_696", "baseline_score": 20.0, "candidate_score": 17.5, "teacher_score": 20.0}, {"answer_id": "ANS_CO_701", "baseline_score": 4.0, "candidate_score": 2.0, "teacher_score": 2.0}]}
+2026-07-22 23:30:44 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: severe_sample_regression
+2026-07-22 23:30:44 | WARNING  | [rubric selection] no refined candidate passed every gate; selected the official baseline for CO_4. mode=calibrated_noninferior_baseline_selected
+2026-07-22 23:30:44 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_4_optimization.json
+2026-07-22 23:30:44 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_5
+============================================================
+2026-07-22 23:30:44 | INFO     | restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-22 23:30:44 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_5_rubric_standard.json
+2026-07-22 23:30:44 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-22 23:30:44 | INFO     | [data isolation] variance optimization is restricted to 11 calibration answers.
+2026-07-22 23:30:44 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-22 23:30:44 | INFO     | 
+📊 采样完成。平均方差: 1.3333
+2026-07-22 23:30:44 | INFO     | Item-level variance: avg=0.5000, max=1.3889
+2026-07-22 23:30:44 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-22 23:30:44 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-22 23:30:44 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-22 23:30:57 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-22 23:31:57 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.3, "severe_regression_margin": 3.0, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 4.966667, "candidate_mae": 4.8, "mae_delta": -0.166667, "improved": 3, "unchanged": 1, "worsened": 1, "severe_regressions": 0, "records": [{"answer_id": "ANS_CO_268", "baseline_score": 0.0, "candidate_score": 0.0, "teacher_score": 8.0}, {"answer_id": "ANS_CO_285", "baseline_score": 11.166666666666666, "candidate_score": 12.5, "teacher_score": 15.0}, {"answer_id": "ANS_CO_289", "baseline_score": 1.3333333333333333, "candidate_score": 2.5, "teacher_score": 8.0}, {"answer_id": "ANS_CO_301", "baseline_score": 2.5, "candidate_score": 0.0, "teacher_score": 8.0}, {"answer_id": "ANS_CO_302", "baseline_score": 14.166666666666666, "candidate_score": 15.0, "teacher_score": 15.0}]}
+2026-07-22 23:31:57 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-22 23:31:57 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_5_optimization.json
+2026-07-22 23:31:57 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_6
+============================================================
+2026-07-22 23:31:57 | INFO     | restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-22 23:31:57 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_6_rubric_standard.json
+2026-07-22 23:31:57 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-22 23:31:57 | INFO     | [data isolation] variance optimization is restricted to 6 calibration answers.
+2026-07-22 23:31:57 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-22 23:31:57 | INFO     | 
+📊 采样完成。平均方差: 3.5667
+2026-07-22 23:31:57 | INFO     | Item-level variance: avg=0.2463, max=0.8889
+2026-07-22 23:31:57 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-22 23:31:57 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-22 23:31:57 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_2", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_3", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-22 23:32:17 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-22 23:33:37 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.4, "severe_regression_margin": 4.0, "accepted": false, "reason": "candidate_mae_exceeds_margin", "baseline_mae": 1.7, "candidate_mae": 3.2, "mae_delta": 1.5, "improved": 0, "unchanged": 1, "worsened": 4, "severe_regressions": 0, "records": [{"answer_id": "ANS_CO_382", "baseline_score": 0.6666666666666666, "candidate_score": 2.0, "teacher_score": 0.0}, {"answer_id": "ANS_CO_383", "baseline_score": 5.0, "candidate_score": 4.0, "teacher_score": 7.0}, {"answer_id": "ANS_CO_414", "baseline_score": 2.0, "candidate_score": 2.0, "teacher_score": 2.0}, {"answer_id": "ANS_CO_419", "baseline_score": 8.833333333333334, "candidate_score": 6.0, "teacher_score": 12.0}, {"answer_id": "ANS_CO_424", "baseline_score": 13.333333333333334, "candidate_score": 11.0, "teacher_score": 16.0}]}
+2026-07-22 23:33:37 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: candidate_mae_exceeds_margin
+2026-07-22 23:33:37 | WARNING  | [rubric selection] no refined candidate passed every gate; selected the official baseline for CO_6. mode=calibrated_noninferior_baseline_selected
+2026-07-22 23:33:37 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_6_optimization.json
+2026-07-22 23:33:37 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_7
+============================================================
+2026-07-22 23:33:37 | INFO     | restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-22 23:33:37 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_7_rubric_standard.json
+2026-07-22 23:33:37 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-22 23:33:37 | INFO     | [data isolation] variance optimization is restricted to 6 calibration answers.
+2026-07-22 23:33:37 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-22 23:33:37 | INFO     | 
+📊 采样完成。平均方差: 1.0194
+2026-07-22 23:33:37 | INFO     | Item-level variance: avg=0.3889, max=1.8472
+2026-07-22 23:33:37 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-22 23:33:37 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-22 23:33:37 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "role_constrained"}, {"parent_id": "step_2", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "role_constrained"}]
+2026-07-22 23:34:03 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-22 23:34:47 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.2, "severe_regression_margin": 2.0, "accepted": false, "reason": "severe_sample_regression", "baseline_mae": 1.783333, "candidate_mae": 1.7, "mae_delta": -0.083333, "improved": 2, "unchanged": 2, "worsened": 1, "severe_regressions": 1, "records": [{"answer_id": "ANS_CO_471", "baseline_score": 8.5, "candidate_score": 10.0, "teacher_score": 10.0}, {"answer_id": "ANS_CO_474", "baseline_score": 10.0, "candidate_score": 10.0, "teacher_score": 10.0}, {"answer_id": "ANS_CO_495", "baseline_score": 6.25, "candidate_score": 8.25, "teacher_score": 10.0}, {"answer_id": "ANS_CO_497", "baseline_score": 6.333333333333333, "candidate_score": 3.25, "teacher_score": 10.0}, {"answer_id": "ANS_CO_500", "baseline_score": 10.0, "candidate_score": 10.0, "teacher_score": 10.0}]}
+2026-07-22 23:34:47 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: severe_sample_regression
+2026-07-22 23:34:47 | WARNING  | [rubric selection] no refined candidate passed every gate; selected the official baseline for CO_7. mode=calibrated_noninferior_baseline_selected
+2026-07-22 23:34:47 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_7_optimization.json
+2026-07-22 23:34:47 | INFO     | 
+🏆 任务完成！

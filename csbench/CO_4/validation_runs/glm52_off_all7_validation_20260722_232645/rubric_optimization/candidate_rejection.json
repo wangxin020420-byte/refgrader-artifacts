@@ -1,0 +1,89 @@
+{
+  "question_id": "CO_4",
+  "status": "candidate_rejected_baseline_selected",
+  "fallback_reason": "candidate_noninferiority_rejected:severe_sample_regression",
+  "mandatory_split_targets": [
+    {
+      "parent_id": "step_6",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 3,
+      "weighting_policy": "role_constrained"
+    },
+    {
+      "parent_id": "step_7",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 3,
+      "weighting_policy": "role_constrained"
+    }
+  ],
+  "candidate_replay": {
+    "method": "paired_teacher_score_noninferiority",
+    "expected": 5,
+    "paired": 5,
+    "required": 4,
+    "coverage": 1.0,
+    "mae_margin": 0.4,
+    "severe_regression_margin": 4.0,
+    "accepted": false,
+    "reason": "severe_sample_regression",
+    "baseline_mae": 1.866667,
+    "candidate_mae": 4.2,
+    "mae_delta": 2.333333,
+    "improved": 1,
+    "unchanged": 0,
+    "worsened": 4,
+    "severe_regressions": 2,
+    "records": [
+      {
+        "answer_id": "ANS_CO_647",
+        "baseline_score": 9.333333333333334,
+        "candidate_score": 4.0,
+        "teacher_score": 14.0
+      },
+      {
+        "answer_id": "ANS_CO_687",
+        "baseline_score": 7.0,
+        "candidate_score": 5.5,
+        "teacher_score": 9.0
+      },
+      {
+        "answer_id": "ANS_CO_693",
+        "baseline_score": 10.666666666666666,
+        "candidate_score": 15.0,
+        "teacher_score": 10.0
+      },
+      {
+        "answer_id": "ANS_CO_696",
+        "baseline_score": 20.0,
+        "candidate_score": 17.5,
+        "teacher_score": 20.0
+      },
+      {
+        "answer_id": "ANS_CO_701",
+        "baseline_score": 4.0,
+        "candidate_score": 2.0,
+        "teacher_score": 2.0
+      }
+    ]
+  },
+  "baseline_semantic_errors": [
+    "role-weighted parent step_6 must contain at least 3 scoring items, got 1",
+    "role-weighted child step_6 has invalid scoring_role ''",
+    "role-weighted parent step_6 must have exactly one final child",
+    "role-weighted parent step_6 must have a core-process child",
+    "complex role-weighted parent step_6 must have a support-process child",
+    "role-weighted parent step_6 gives insufficient process weight",
+    "role-weighted parent step_6 gives insufficient core-process weight",
+    "role-weighted parent step_7 must contain at least 3 scoring items, got 1",
+    "role-weighted child step_7 has invalid scoring_role ''",
+    "role-weighted parent step_7 must have exactly one final child",
+    "role-weighted parent step_7 must have a core-process child",
+    "complex role-weighted parent step_7 must have a support-process child",
+    "role-weighted parent step_7 gives insufficient process weight",
+    "role-weighted parent step_7 gives insufficient core-process weight"
+  ],
+  "active_rubric_preserved": true,
+  "created_at": "2026-07-22T23:30:44"
+}
