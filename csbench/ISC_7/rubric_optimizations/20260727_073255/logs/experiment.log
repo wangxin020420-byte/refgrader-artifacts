@@ -1,0 +1,189 @@
+2026-07-27 07:24:50 | INFO     | ==================================================
+2026-07-27 07:24:50 | INFO     | 📂 正在加载试卷数据库...
+2026-07-27 07:24:50 | INFO     |    运行模式: VARIANCE_OPT
+2026-07-27 07:24:50 | INFO     |    题目范围: ['ISC_1', 'ISC_2', 'ISC_3', 'ISC_4', 'ISC_5', 'ISC_6', 'ISC_7', 'ISC_8', 'ISC_9']
+2026-07-27 07:24:50 | INFO     |    文本模型: glm5 -> glm-5.2 (thinking=disabled)
+2026-07-27 07:24:50 | INFO     |    提取后端: csbench_hybrid
+2026-07-27 07:24:50 | INFO     |    题库文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\exam_database.json
+2026-07-27 07:24:50 | INFO     |    教师分文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\teacher_scores.json
+2026-07-27 07:24:50 | INFO     |    Sample quality policy: raw (mode=raw, excluded=0, corrected=0)
+2026-07-27 07:24:50 | INFO     |    答案元数据: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\answer_metadata.jsonl
+2026-07-27 07:24:50 | INFO     |    并发数:   2
+2026-07-27 07:24:50 | INFO     |    结果目录: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_isc1_isc2_isc3_isc4_isc5_isc6_isc7_isc8_isc9_rubric_opt
+2026-07-27 07:24:50 | INFO     |    Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\optimized
+2026-07-27 07:24:50 | INFO     |    初始Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\initial
+2026-07-27 07:24:50 | INFO     |    允许回退初始Rubric: False
+2026-07-27 07:24:50 | INFO     |    进度文件: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_isc1_isc2_isc3_isc4_isc5_isc6_isc7_isc8_isc9_rubric_opt\progress.json
+2026-07-27 07:24:50 | INFO     |    日志文件: logs\experiment_20260727_072450.log
+2026-07-27 07:24:50 | INFO     | 🔬 当前处于【方差优化模式】(VARIANCE OPT MODE)
+2026-07-27 07:24:50 | INFO     |    系统将生成标准，进行小样本测试，修正并保存最终标准。
+2026-07-27 07:24:50 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ISC_1
+============================================================
+2026-07-27 07:24:50 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ISC/ISC_1_rubric_standard.json
+2026-07-27 07:24:50 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 07:24:50 | INFO     | [data isolation] variance optimization is restricted to 7 calibration answers.
+2026-07-27 07:24:50 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 07:24:50 | INFO     | 
+📊 采样完成。平均方差: 0.0667
+2026-07-27 07:24:50 | INFO     | Item-level variance: avg=0.0667, max=0.1667
+2026-07-27 07:24:50 | WARNING  | ⚠️ Item-level 方差超标，开始定位不稳定评分项...
+2026-07-27 07:24:50 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-27 07:24:50 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-27 07:25:04 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 07:25:04 | INFO     | 📦 成功加载教师真实成绩单数据库！共包含 3326 名考生的数据。
+2026-07-27 07:25:44 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.1, "severe_regression_margin": 1.0, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 1.033333, "candidate_mae": 0.866667, "mae_delta": -0.166667, "improved": 2, "unchanged": 1, "worsened": 2, "severe_regressions": 0, "records": [{"answer_id": "ANS_ISC_399", "baseline_score": 1.8333333333333333, "candidate_score": 1.6666666666666667, "teacher_score": 3.0}, {"answer_id": "ANS_ISC_406", "baseline_score": 2.0, "candidate_score": 1.6666666666666667, "teacher_score": 3.0}, {"answer_id": "ANS_ISC_408", "baseline_score": 0.0, "candidate_score": 0.0, "teacher_score": 0.0}, {"answer_id": "ANS_ISC_428", "baseline_score": 1.8333333333333333, "candidate_score": 3.333333333333333, "teacher_score": 3.0}, {"answer_id": "ANS_ISC_452", "baseline_score": 1.1666666666666667, "candidate_score": 1.6666666666666665, "teacher_score": 3.0}]}
+2026-07-27 07:25:44 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-27 07:25:44 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ISC\ISC_1_optimization.json
+2026-07-27 07:25:44 | INFO     | [rubric transaction] persisted postcondition passed for ISC_1; mode=strict_candidate_contract; sha256=8b721ce1964fd06d56b18b0a9cbb496996e02c0251e3d83c50426050ef325646
+2026-07-27 07:25:44 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ISC_2
+============================================================
+2026-07-27 07:25:44 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ISC/ISC_2_rubric_standard.json
+2026-07-27 07:25:44 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 07:25:44 | INFO     | [data isolation] variance optimization is restricted to 7 calibration answers.
+2026-07-27 07:25:44 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 07:25:44 | INFO     | 
+📊 采样完成。平均方差: 0.0667
+2026-07-27 07:25:44 | INFO     | Item-level variance: avg=0.0667, max=0.1667
+2026-07-27 07:25:44 | WARNING  | ⚠️ Item-level 方差超标，开始定位不稳定评分项...
+2026-07-27 07:25:44 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-27 07:25:44 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-27 07:25:52 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 07:26:30 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.1, "severe_regression_margin": 1.0, "accepted": false, "reason": "severe_sample_regression", "baseline_mae": 0.466667, "candidate_mae": 1.0, "mae_delta": 0.533333, "improved": 1, "unchanged": 1, "worsened": 3, "severe_regressions": 1, "records": [{"answer_id": "ANS_ISC_473", "baseline_score": 3.0, "candidate_score": 4.0, "teacher_score": 2.0}, {"answer_id": "ANS_ISC_478", "baseline_score": 4.666666666666667, "candidate_score": 5.0, "teacher_score": 4.0}, {"answer_id": "ANS_ISC_485", "baseline_score": 3.3333333333333335, "candidate_score": 5.0, "teacher_score": 3.0}, {"answer_id": "ANS_ISC_491", "baseline_score": 3.6666666666666665, "candidate_score": 4.0, "teacher_score": 4.0}, {"answer_id": "ANS_ISC_509", "baseline_score": 4.0, "candidate_score": 4.0, "teacher_score": 4.0}]}
+2026-07-27 07:26:30 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: severe_sample_regression
+2026-07-27 07:26:30 | ERROR    | Final optimized rubric failed semantic validation; reverting to the immutable draft: additive parent step_1 must contain at least 2 scoring items, got 1
+2026-07-27 07:26:30 | WARNING  | [rubric fallback] preserved the unchanged baseline because no refined candidate passed every semantic and calibration gate. Required decomposition is deferred and recorded in the optimization manifest.
+2026-07-27 07:26:30 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ISC\ISC_2_optimization.json
+2026-07-27 07:26:30 | INFO     | [rubric transaction] persisted postcondition passed for ISC_2; mode=noninferiority_baseline_fallback; sha256=0a631a9a54779c68aa19a246fe610bcd841ebb8b30ece1952d2f101e5280b911
+2026-07-27 07:26:30 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ISC_3
+============================================================
+2026-07-27 07:26:30 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ISC/ISC_3_rubric_standard.json
+2026-07-27 07:26:30 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 07:26:30 | INFO     | [data isolation] variance optimization is restricted to 7 calibration answers.
+2026-07-27 07:26:30 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 07:26:30 | INFO     | 
+📊 采样完成。平均方差: 0.1667
+2026-07-27 07:26:30 | INFO     | Item-level variance: avg=0.1667, max=0.3889
+2026-07-27 07:26:30 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-27 07:26:30 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-27 07:26:30 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-27 07:26:44 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 07:27:51 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.1, "severe_regression_margin": 1.0, "accepted": false, "reason": "severe_sample_regression", "baseline_mae": 1.466667, "candidate_mae": 1.268667, "mae_delta": -0.198, "improved": 2, "unchanged": 0, "worsened": 3, "severe_regressions": 2, "records": [{"answer_id": "ANS_ISC_550", "baseline_score": 2.5, "candidate_score": 5.0, "teacher_score": 3.0}, {"answer_id": "ANS_ISC_551", "baseline_score": 2.1666666666666665, "candidate_score": 5.01, "teacher_score": 3.0}, {"answer_id": "ANS_ISC_554", "baseline_score": 3.6666666666666665, "candidate_score": 5.0, "teacher_score": 5.0}, {"answer_id": "ANS_ISC_560", "baseline_score": 2.5, "candidate_score": 5.0, "teacher_score": 5.0}, {"answer_id": "ANS_ISC_564", "baseline_score": 1.8333333333333333, "candidate_score": 1.6666666666666667, "teacher_score": 4.0}]}
+2026-07-27 07:27:51 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: severe_sample_regression
+2026-07-27 07:27:51 | ERROR    | Final optimized rubric failed semantic validation; reverting to the immutable draft: additive parent step_1 must contain at least 2 scoring items, got 1
+2026-07-27 07:27:51 | WARNING  | [rubric fallback] preserved the unchanged baseline because no refined candidate passed every semantic and calibration gate. Required decomposition is deferred and recorded in the optimization manifest.
+2026-07-27 07:27:51 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ISC\ISC_3_optimization.json
+2026-07-27 07:27:51 | INFO     | [rubric transaction] persisted postcondition passed for ISC_3; mode=noninferiority_baseline_fallback; sha256=3f14633b3246d4690967b036f1d39f91637e0b17fc6866b024be5075e1699461
+2026-07-27 07:27:51 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ISC_4
+============================================================
+2026-07-27 07:27:51 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ISC/ISC_4_rubric_standard.json
+2026-07-27 07:27:51 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 07:27:51 | INFO     | [data isolation] variance optimization is restricted to 7 calibration answers.
+2026-07-27 07:27:51 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 07:27:51 | INFO     | 
+📊 采样完成。平均方差: 0.1444
+2026-07-27 07:27:51 | INFO     | Item-level variance: avg=0.1444, max=0.5000
+2026-07-27 07:27:51 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-27 07:27:51 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-27 07:27:51 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-27 07:28:01 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 07:28:39 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.1, "severe_regression_margin": 1.0, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 1.066667, "candidate_mae": 1.1, "mae_delta": 0.033333, "improved": 1, "unchanged": 2, "worsened": 2, "severe_regressions": 0, "records": [{"answer_id": "ANS_ISC_617", "baseline_score": 2.0, "candidate_score": 1.5, "teacher_score": 3.0}, {"answer_id": "ANS_ISC_630", "baseline_score": 2.0, "candidate_score": 2.5, "teacher_score": 3.0}, {"answer_id": "ANS_ISC_637", "baseline_score": 2.5, "candidate_score": 2.5, "teacher_score": 5.0}, {"answer_id": "ANS_ISC_645", "baseline_score": 2.6666666666666665, "candidate_score": 2.5, "teacher_score": 3.0}, {"answer_id": "ANS_ISC_652", "baseline_score": 2.5, "candidate_score": 2.5, "teacher_score": 3.0}]}
+2026-07-27 07:28:39 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-27 07:28:39 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ISC\ISC_4_optimization.json
+2026-07-27 07:28:39 | INFO     | [rubric transaction] persisted postcondition passed for ISC_4; mode=strict_candidate_contract; sha256=71e90e61d58269b3b3c131f8ca6c66fec0bb24557bec1961fc9bde483a688111
+2026-07-27 07:28:39 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ISC_5
+============================================================
+2026-07-27 07:28:39 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ISC/ISC_5_rubric_standard.json
+2026-07-27 07:28:39 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 07:28:39 | INFO     | [data isolation] variance optimization is restricted to 5 calibration answers.
+2026-07-27 07:28:39 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 07:28:39 | INFO     | 
+📊 采样完成。平均方差: 0.7556
+2026-07-27 07:28:39 | INFO     | Item-level variance: avg=0.2278, max=0.7222
+2026-07-27 07:28:39 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-27 07:28:39 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-27 07:28:49 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 07:29:39 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.12, "severe_regression_margin": 1.2, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 2.033333, "candidate_mae": 1.5, "mae_delta": -0.533333, "improved": 1, "unchanged": 3, "worsened": 1, "severe_regressions": 0, "records": [{"answer_id": "ANS_ISC_24", "baseline_score": 5.833333333333333, "candidate_score": 6.0, "teacher_score": 4.5}, {"answer_id": "ANS_ISC_53", "baseline_score": 4.0, "candidate_score": 6.0, "teacher_score": 5.0}, {"answer_id": "ANS_ISC_56", "baseline_score": 6.0, "candidate_score": 6.0, "teacher_score": 6.0}, {"answer_id": "ANS_ISC_60", "baseline_score": 2.1666666666666665, "candidate_score": 6.0, "teacher_score": 5.5}, {"answer_id": "ANS_ISC_68", "baseline_score": 1.0, "candidate_score": 1.0, "teacher_score": 5.5}]}
+2026-07-27 07:29:39 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-27 07:29:39 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ISC\ISC_5_optimization.json
+2026-07-27 07:29:39 | INFO     | [rubric transaction] persisted postcondition passed for ISC_5; mode=strict_candidate_contract; sha256=e7ae2399cc77a84bc3e392dc55499fe300fd19595998266ac8e5b85211633799
+2026-07-27 07:29:39 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ISC_6
+============================================================
+2026-07-27 07:29:39 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ISC/ISC_6_rubric_standard.json
+2026-07-27 07:29:39 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 07:29:39 | INFO     | [data isolation] variance optimization is restricted to 7 calibration answers.
+2026-07-27 07:29:39 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 07:29:39 | INFO     | 
+📊 采样完成。平均方差: 0.6000
+2026-07-27 07:29:39 | INFO     | Item-level variance: avg=0.3000, max=2.0000
+2026-07-27 07:29:39 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-27 07:29:39 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-27 07:29:49 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 07:30:41 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.12, "severe_regression_margin": 1.2, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 1.3, "candidate_mae": 1.3, "mae_delta": 0.0, "improved": 1, "unchanged": 2, "worsened": 2, "severe_regressions": 0, "records": [{"answer_id": "ANS_ISC_122", "baseline_score": 3.5, "candidate_score": 4.5, "teacher_score": 6.0}, {"answer_id": "ANS_ISC_135", "baseline_score": 2.0, "candidate_score": 1.5, "teacher_score": 6.0}, {"answer_id": "ANS_ISC_145", "baseline_score": 6.0, "candidate_score": 6.0, "teacher_score": 6.0}, {"answer_id": "ANS_ISC_150", "baseline_score": 5.0, "candidate_score": 4.5, "teacher_score": 5.0}, {"answer_id": "ANS_ISC_152", "baseline_score": 6.0, "candidate_score": 6.0, "teacher_score": 6.0}]}
+2026-07-27 07:30:42 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-27 07:30:42 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ISC\ISC_6_optimization.json
+2026-07-27 07:30:42 | INFO     | [rubric transaction] persisted postcondition passed for ISC_6; mode=strict_candidate_contract; sha256=36f60c790fbfcb155e0ef06fc2b11682ade9fb2c35e85ece5ec4b597f2cf1917
+2026-07-27 07:30:42 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ISC_7
+============================================================
+2026-07-27 07:30:42 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ISC/ISC_7_rubric_standard.json
+2026-07-27 07:30:42 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 07:30:42 | INFO     | [data isolation] variance optimization is restricted to 7 calibration answers.
+2026-07-27 07:30:42 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 07:30:42 | INFO     | 
+📊 采样完成。平均方差: 0.0444
+2026-07-27 07:30:42 | INFO     | Item-level variance: avg=0.0222, max=0.2222
+2026-07-27 07:30:42 | INFO     | ✅ 标准足够稳定且粒度精细，无需进一步修正。
+2026-07-27 07:30:42 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ISC\ISC_7_optimization.json
+2026-07-27 07:30:42 | INFO     | [rubric transaction] persisted postcondition passed for ISC_7; mode=strict_candidate_contract; sha256=b89d47ed97edf2b05f63fb0b9946a34b5845ecfccc41cef740dba551e33a8762
+2026-07-27 07:30:42 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ISC_8
+============================================================
+2026-07-27 07:30:42 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ISC/ISC_8_rubric_standard.json
+2026-07-27 07:30:42 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 07:30:42 | INFO     | [data isolation] variance optimization is restricted to 7 calibration answers.
+2026-07-27 07:30:42 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 07:30:42 | INFO     | 
+📊 采样完成。平均方差: 0.1333
+2026-07-27 07:30:42 | INFO     | Item-level variance: avg=0.0667, max=0.2222
+2026-07-27 07:30:42 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-27 07:30:42 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-27 07:31:00 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 07:31:58 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.1, "severe_regression_margin": 0.8, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 0.566667, "candidate_mae": 0.1, "mae_delta": -0.466667, "improved": 4, "unchanged": 1, "worsened": 0, "severe_regressions": 0, "records": [{"answer_id": "ANS_ISC_238", "baseline_score": 3.5, "candidate_score": 4.0, "teacher_score": 4.0}, {"answer_id": "ANS_ISC_239", "baseline_score": 3.1666666666666665, "candidate_score": 4.0, "teacher_score": 4.0}, {"answer_id": "ANS_ISC_241", "baseline_score": 4.0, "candidate_score": 4.0, "teacher_score": 4.0}, {"answer_id": "ANS_ISC_250", "baseline_score": 2.6666666666666665, "candidate_score": 3.0, "teacher_score": 3.5}, {"answer_id": "ANS_ISC_264", "baseline_score": 2.3333333333333335, "candidate_score": 3.0, "teacher_score": 3.0}]}
+2026-07-27 07:31:58 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-27 07:31:58 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ISC\ISC_8_optimization.json
+2026-07-27 07:31:58 | INFO     | [rubric transaction] persisted postcondition passed for ISC_8; mode=strict_candidate_contract; sha256=c48680b515a3072d91347b0d155268dfadb776a0611ffbed7463b090963be0a5
+2026-07-27 07:31:58 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ISC_9
+============================================================
+2026-07-27 07:31:58 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ISC/ISC_9_rubric_standard.json
+2026-07-27 07:31:58 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 07:31:58 | INFO     | [data isolation] variance optimization is restricted to 8 calibration answers.
+2026-07-27 07:31:58 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 07:31:58 | INFO     | 
+📊 采样完成。平均方差: 0.8444
+2026-07-27 07:31:58 | INFO     | Item-level variance: avg=0.8444, max=1.7222
+2026-07-27 07:31:58 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-27 07:31:58 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-27 07:31:58 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 10.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-27 07:32:05 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 07:32:54 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.2, "severe_regression_margin": 2.0, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 2.266667, "candidate_mae": 2.1, "mae_delta": -0.166667, "improved": 3, "unchanged": 1, "worsened": 1, "severe_regressions": 0, "records": [{"answer_id": "ANS_ISC_314", "baseline_score": 0.6666666666666666, "candidate_score": 0.0, "teacher_score": 0.0}, {"answer_id": "ANS_ISC_323", "baseline_score": 2.8333333333333335, "candidate_score": 0.0, "teacher_score": 2.0}, {"answer_id": "ANS_ISC_334", "baseline_score": 5.0, "candidate_score": 5.0, "teacher_score": 2.0}, {"answer_id": "ANS_ISC_341", "baseline_score": 4.333333333333333, "candidate_score": 5.0, "teacher_score": 9.0}, {"answer_id": "ANS_ISC_345", "baseline_score": 1.8333333333333333, "candidate_score": 2.5, "teacher_score": 4.0}]}
+2026-07-27 07:32:54 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-27 07:32:54 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ISC\ISC_9_optimization.json
+2026-07-27 07:32:54 | INFO     | [rubric transaction] persisted postcondition passed for ISC_9; mode=strict_candidate_contract; sha256=1f3f2f64f836aa6587b0a6cf61ab181d2b60168be1b8289a2aa9c727b8861f5e
+2026-07-27 07:32:54 | INFO     | 
+🏆 任务完成！

@@ -1,0 +1,102 @@
+2026-07-27 10:16:51 | INFO     | ==================================================
+2026-07-27 10:16:51 | INFO     | 📂 正在加载试卷数据库...
+2026-07-27 10:16:51 | INFO     |    运行模式: VARIANCE_OPT
+2026-07-27 10:16:51 | INFO     |    题目范围: ['ML_1', 'ML_2', 'ML_3', 'ML_4']
+2026-07-27 10:16:51 | INFO     |    文本模型: glm5 -> glm-5.2 (thinking=disabled)
+2026-07-27 10:16:51 | INFO     |    提取后端: csbench_hybrid
+2026-07-27 10:16:51 | INFO     |    题库文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\exam_database.json
+2026-07-27 10:16:51 | INFO     |    教师分文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\teacher_scores.json
+2026-07-27 10:16:51 | INFO     |    Sample quality policy: raw (mode=raw, excluded=0, corrected=0)
+2026-07-27 10:16:51 | INFO     |    答案元数据: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\answer_metadata.jsonl
+2026-07-27 10:16:51 | INFO     |    并发数:   2
+2026-07-27 10:16:51 | INFO     |    结果目录: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_ml1_ml2_ml3_ml4_rubric_opt
+2026-07-27 10:16:51 | INFO     |    Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\optimized
+2026-07-27 10:16:51 | INFO     |    初始Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\initial
+2026-07-27 10:16:51 | INFO     |    允许回退初始Rubric: False
+2026-07-27 10:16:51 | INFO     |    进度文件: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_ml1_ml2_ml3_ml4_rubric_opt\progress.json
+2026-07-27 10:16:51 | INFO     |    日志文件: logs\experiment_20260727_101651.log
+2026-07-27 10:16:51 | INFO     | 🔬 当前处于【方差优化模式】(VARIANCE OPT MODE)
+2026-07-27 10:16:51 | INFO     |    系统将生成标准，进行小样本测试，修正并保存最终标准。
+2026-07-27 10:16:51 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ML_1
+============================================================
+2026-07-27 10:16:51 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ML/ML_1_rubric_standard.json
+2026-07-27 10:16:51 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 10:16:51 | INFO     | [data isolation] variance optimization is restricted to 6 calibration answers.
+2026-07-27 10:16:51 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 10:16:51 | INFO     | 
+📊 采样完成。平均方差: 0.3643
+2026-07-27 10:16:51 | INFO     | Item-level variance: avg=0.4639, max=0.8889
+2026-07-27 10:16:51 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-27 10:16:51 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-27 10:16:51 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-27 10:17:09 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 10:17:09 | INFO     | 📦 成功加载教师真实成绩单数据库！共包含 3326 名考生的数据。
+2026-07-27 10:18:08 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.1, "severe_regression_margin": 0.8, "accepted": false, "reason": "severe_sample_regression", "baseline_mae": 1.843333, "candidate_mae": 2.6, "mae_delta": 0.756667, "improved": 1, "unchanged": 0, "worsened": 4, "severe_regressions": 1, "records": [{"answer_id": "ANS_ML_09", "baseline_score": 1.3333333333333333, "candidate_score": 0.75, "teacher_score": 4.0}, {"answer_id": "ANS_ML_25", "baseline_score": 2.1666666666666665, "candidate_score": 1.5, "teacher_score": 4.0}, {"answer_id": "ANS_ML_28", "baseline_score": 3.033333333333333, "candidate_score": 0.0, "teacher_score": 3.5}, {"answer_id": "ANS_ML_31", "baseline_score": 2.75, "candidate_score": 2.0, "teacher_score": 4.0}, {"answer_id": "ANS_ML_37", "baseline_score": 1.0, "candidate_score": 2.25, "teacher_score": 4.0}]}
+2026-07-27 10:18:08 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: severe_sample_regression
+2026-07-27 10:18:08 | ERROR    | Final optimized rubric failed semantic validation; reverting to the immutable draft: additive parent step_1 must contain at least 2 scoring items, got 1
+2026-07-27 10:18:08 | WARNING  | [rubric fallback] preserved the unchanged baseline because no refined candidate passed every semantic and calibration gate. Required decomposition is deferred and recorded in the optimization manifest.
+2026-07-27 10:18:08 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ML\ML_1_optimization.json
+2026-07-27 10:18:08 | INFO     | [rubric transaction] persisted postcondition passed for ML_1; mode=noninferiority_baseline_fallback; sha256=bce7630468c0545f5bf08245577dda772bc58e9a9eef4be1648ff10ad1a32acd
+2026-07-27 10:18:08 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ML_2
+============================================================
+2026-07-27 10:18:08 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ML/ML_2_rubric_standard.json
+2026-07-27 10:18:08 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 10:18:08 | INFO     | [data isolation] variance optimization is restricted to 6 calibration answers.
+2026-07-27 10:18:08 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 10:18:08 | INFO     | 
+📊 采样完成。平均方差: 0.0000
+2026-07-27 10:18:08 | INFO     | Item-level variance: avg=0.0000, max=0.0000
+2026-07-27 10:18:08 | WARNING  | ⚠️ 触发语义粗粒度检查：存在允许细化的复合高分条款；原子结果项保持完整。
+2026-07-27 10:18:08 | INFO     | 🔧 [规则修正] 正在基于 2 份精选样本优化规则...
+2026-07-27 10:18:08 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-27 10:18:20 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 10:19:01 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.1, "severe_regression_margin": 0.8, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 0.0, "candidate_mae": 0.0, "mae_delta": 0.0, "improved": 0, "unchanged": 5, "worsened": 0, "severe_regressions": 0, "records": [{"answer_id": "ANS_ML_103", "baseline_score": 4.0, "candidate_score": 4.0, "teacher_score": 4.0}, {"answer_id": "ANS_ML_108", "baseline_score": 4.0, "candidate_score": 4.0, "teacher_score": 4.0}, {"answer_id": "ANS_ML_112", "baseline_score": 4.0, "candidate_score": 4.0, "teacher_score": 4.0}, {"answer_id": "ANS_ML_67", "baseline_score": 4.0, "candidate_score": 4.0, "teacher_score": 4.0}, {"answer_id": "ANS_ML_70", "baseline_score": 4.0, "candidate_score": 4.0, "teacher_score": 4.0}]}
+2026-07-27 10:19:01 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-27 10:19:01 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ML\ML_2_optimization.json
+2026-07-27 10:19:01 | INFO     | [rubric transaction] persisted postcondition passed for ML_2; mode=strict_candidate_contract; sha256=b1f7e54fb30b6e897813457cf241a5777465db4b5476dc009913656395583a7e
+2026-07-27 10:19:01 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ML_3
+============================================================
+2026-07-27 10:19:01 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ML/ML_3_rubric_standard.json
+2026-07-27 10:19:01 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 10:19:01 | INFO     | [data isolation] variance optimization is restricted to 6 calibration answers.
+2026-07-27 10:19:01 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 10:19:01 | INFO     | 
+📊 采样完成。平均方差: 0.7222
+2026-07-27 10:19:01 | INFO     | Item-level variance: avg=0.7222, max=2.8889
+2026-07-27 10:19:01 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-27 10:19:01 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-27 10:19:01 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 6.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-27 10:19:13 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 10:20:15 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.12, "severe_regression_margin": 1.2, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 1.9, "candidate_mae": 0.8, "mae_delta": -1.1, "improved": 4, "unchanged": 1, "worsened": 0, "severe_regressions": 0, "records": [{"answer_id": "ANS_ML_117", "baseline_score": 6.0, "candidate_score": 6.0, "teacher_score": 6.0}, {"answer_id": "ANS_ML_125", "baseline_score": 2.0, "candidate_score": 4.0, "teacher_score": 6.0}, {"answer_id": "ANS_ML_127", "baseline_score": 3.6666666666666665, "candidate_score": 5.0, "teacher_score": 6.0}, {"answer_id": "ANS_ML_129", "baseline_score": 4.5, "candidate_score": 6.0, "teacher_score": 6.0}, {"answer_id": "ANS_ML_159", "baseline_score": 4.333333333333333, "candidate_score": 5.0, "teacher_score": 6.0}]}
+2026-07-27 10:20:15 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-27 10:20:15 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ML\ML_3_optimization.json
+2026-07-27 10:20:15 | INFO     | [rubric transaction] persisted postcondition passed for ML_3; mode=strict_candidate_contract; sha256=b600e53199b2224ca36c09cc1d055ccb081f88aee8ba48c9682dbbd0be609b8c
+2026-07-27 10:20:15 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: ML_4
+============================================================
+2026-07-27 10:20:15 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/ML/ML_4_rubric_standard.json
+2026-07-27 10:20:15 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-27 10:20:15 | INFO     | [data isolation] variance optimization is restricted to 6 calibration answers.
+2026-07-27 10:20:15 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-27 10:20:15 | INFO     | 
+📊 采样完成。平均方差: 0.5444
+2026-07-27 10:20:15 | INFO     | Item-level variance: avg=0.5444, max=2.0000
+2026-07-27 10:20:15 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-27 10:20:15 | INFO     | 🔧 [规则修正] 正在基于 2 份精选样本优化规则...
+2026-07-27 10:20:15 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 6.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-27 10:20:37 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-27 10:21:39 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.12, "severe_regression_margin": 1.2, "accepted": false, "reason": "severe_sample_regression", "baseline_mae": 2.866667, "candidate_mae": 3.8, "mae_delta": 0.933333, "improved": 0, "unchanged": 2, "worsened": 3, "severe_regressions": 2, "records": [{"answer_id": "ANS_ML_171", "baseline_score": 1.5, "candidate_score": 0.0, "teacher_score": 6.0}, {"answer_id": "ANS_ML_189", "baseline_score": 2.0, "candidate_score": 0.0, "teacher_score": 4.0}, {"answer_id": "ANS_ML_199", "baseline_score": 3.0, "candidate_score": 3.0, "teacher_score": 6.0}, {"answer_id": "ANS_ML_201", "baseline_score": 3.0, "candidate_score": 3.0, "teacher_score": 3.0}, {"answer_id": "ANS_ML_205", "baseline_score": 1.1666666666666667, "candidate_score": 0.0, "teacher_score": 6.0}]}
+2026-07-27 10:21:39 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: severe_sample_regression
+2026-07-27 10:21:39 | ERROR    | Final optimized rubric failed semantic validation; reverting to the immutable draft: additive parent step_1 must contain at least 2 scoring items, got 1
+2026-07-27 10:21:39 | WARNING  | [rubric fallback] preserved the unchanged baseline because no refined candidate passed every semantic and calibration gate. Required decomposition is deferred and recorded in the optimization manifest.
+2026-07-27 10:21:39 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\ML\ML_4_optimization.json
+2026-07-27 10:21:39 | INFO     | [rubric transaction] persisted postcondition passed for ML_4; mode=noninferiority_baseline_fallback; sha256=986d343d7b68434526e3b7dd168559b8a60dacfcdb55097c4742ae268ba1c739
+2026-07-27 10:21:39 | INFO     | 
+🏆 任务完成！

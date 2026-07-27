@@ -1,0 +1,41 @@
+2026-07-25 21:46:59 | INFO     | ==================================================
+2026-07-25 21:46:59 | INFO     | 📂 正在加载试卷数据库...
+2026-07-25 21:46:59 | INFO     |    运行模式: VARIANCE_OPT
+2026-07-25 21:46:59 | INFO     |    题目范围: ['DM_2']
+2026-07-25 21:46:59 | INFO     |    文本模型: glm5 -> glm-5.2 (thinking=disabled)
+2026-07-25 21:46:59 | INFO     |    提取后端: csbench_hybrid
+2026-07-25 21:46:59 | INFO     |    题库文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\exam_database.json
+2026-07-25 21:46:59 | INFO     |    教师分文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\teacher_scores.json
+2026-07-25 21:46:59 | INFO     |    Sample quality policy: raw (mode=raw, excluded=0, corrected=0)
+2026-07-25 21:46:59 | INFO     |    答案元数据: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\answer_metadata.jsonl
+2026-07-25 21:46:59 | INFO     |    并发数:   2
+2026-07-25 21:46:59 | INFO     |    结果目录: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_dm1_dm2_dm3_rubric_opt
+2026-07-25 21:46:59 | INFO     |    Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\optimized
+2026-07-25 21:46:59 | INFO     |    初始Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\initial
+2026-07-25 21:46:59 | INFO     |    允许回退初始Rubric: False
+2026-07-25 21:46:59 | INFO     |    进度文件: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_dm1_dm2_dm3_rubric_opt\progress.json
+2026-07-25 21:46:59 | INFO     |    日志文件: logs\experiment_20260725_214659.log
+2026-07-25 21:46:59 | INFO     | 🔬 当前处于【方差优化模式】(VARIANCE OPT MODE)
+2026-07-25 21:46:59 | INFO     |    系统将生成标准，进行小样本测试，修正并保存最终标准。
+2026-07-25 21:46:59 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: DM_2
+============================================================
+2026-07-25 21:46:59 | INFO     | restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-07-25 21:46:59 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/DM/DM_2_rubric_standard.json
+2026-07-25 21:46:59 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-25 21:46:59 | INFO     | [data isolation] variance optimization is restricted to 9 calibration answers.
+2026-07-25 21:46:59 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-25 21:46:59 | INFO     | 
+📊 采样完成。平均方差: 0.0111
+2026-07-25 21:46:59 | INFO     | Item-level variance: avg=0.0037, max=0.0556
+2026-07-25 21:46:59 | WARNING  | ⚠️ 触发语义粗粒度检查：存在允许细化的复合高分条款；原子结果项保持完整。
+2026-07-25 21:46:59 | INFO     | 🔧 [规则修正] 正在基于 1 份精选样本优化规则...
+2026-07-25 21:46:59 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_3", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "role_constrained"}]
+2026-07-25 21:47:12 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-25 21:47:12 | INFO     | 📦 成功加载教师真实成绩单数据库！共包含 3326 名考生的数据。
+2026-07-25 21:47:51 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.2, "severe_regression_margin": 2.0, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 0.033333, "candidate_mae": 0.0, "mae_delta": -0.033333, "improved": 1, "unchanged": 4, "worsened": 0, "severe_regressions": 0, "records": [{"answer_id": "ANS_DM_100", "baseline_score": 10.0, "candidate_score": 10.0, "teacher_score": 10.0}, {"answer_id": "ANS_DM_104", "baseline_score": 10.0, "candidate_score": 10.0, "teacher_score": 10.0}, {"answer_id": "ANS_DM_107", "baseline_score": 10.0, "candidate_score": 10.0, "teacher_score": 10.0}, {"answer_id": "ANS_DM_112", "baseline_score": 9.833333333333334, "candidate_score": 10.0, "teacher_score": 10.0}, {"answer_id": "ANS_DM_123", "baseline_score": 10.0, "candidate_score": 10.0, "teacher_score": 10.0}]}
+2026-07-25 21:47:51 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-25 21:47:51 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\DM\DM_2_optimization.json
+2026-07-25 21:47:51 | INFO     | 
+🏆 任务完成！

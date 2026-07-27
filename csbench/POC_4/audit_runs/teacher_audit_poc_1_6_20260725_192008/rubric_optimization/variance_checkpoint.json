@@ -1,0 +1,611 @@
+[
+  {
+    "file": "ANS_POC_106.jpg",
+    "facts": "{\"step_1\": \"S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:25:23.862638",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_106.jpg",
+      "image_sha256": "18c742d34f7b7361ccab14a0db686a2e4afbb81c65090eb1f7df759abcc1fd7a",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_106",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9"
+      }
+    },
+    "scores": [
+      2.5,
+      5,
+      4.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "insufficient",
+            "reason": "文法正确识别了首位非零（A→1..9）、允许数字串任意扩展（B→BC）且保证末位为偶数（C→0|2|4|6|8），语义满足标准答案构造逻辑；但包含致命歧义：同一非终结符 B 被定义了两个互斥产生式集合（B→BC 与 B→0..9），且后者允许 B 直接导出奇数，破坏了“所有偶数长度>=2”的严格唯一性，属于逻辑构造部分缺陷。"
+          }
+        ],
+        "total_score": 2.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "学生构造的文法 S->AB, A->1..9, B->BC|C|0..9, C->0|2|4|6|8 能够正确生成首位为非零、末位为偶数的任意长度数字串，符合题目要求。"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "failed",
+            "reason": "文法结构完全正确且为合法的2型文法（CFG）。主要部分（如以非零数字开头、长度至少为1）均构造成功。但由于第一条产生式中 S 仅推导为 AB，强制了长度大于等于2，导致无法生成仅含单个偶数的字符串（长度为1的情况）。因此给与大部分分数以体现正确的文法构造方法，但扣除1分因未满足完整的语言要求。"
+          }
+        ],
+        "total_score": 4.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.5,
+        5.0,
+        4.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 1.0555555555555556
+    },
+    "max_item_variance": 1.0555555555555556,
+    "avg_item_variance": 1.0555555555555556
+  },
+  {
+    "file": "ANS_POC_111.jpg",
+    "facts": "{\"step_1\": \"A→2|4|6|8 \\nB→A|1|3|5|7|9 \\nC→A|0 \\nD→DB \\nS→A|DC\\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:26:05.314928",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_111.jpg",
+      "image_sha256": "ddb76ca3b909dac5c1f709ff3415e7f707def9bd7360ba9a8b4de53246929cbe",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. A→2|4|6|8 \nB→A|1|3|5|7|9 C→A|0 D→DB \nS→A|DC\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_111",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "A→2|4|6|8 \nB→A|1|3|5|7|9 \nC→A|0 \nD→DB \nS→A|DC\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9"
+      }
+    },
+    "scores": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "A→2|4|6|8 \nB→A|1|3|5|7|9 \nC→A|0 \nD→DB \nS→A|DC\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "学生构造的2型文法（生成不含前导0的正偶数）逻辑正确，思想描述清晰，完全符合题目要求。"
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "A→2|4|6|8 \nB→A|1|3|5|7|9 \nC→A|0 \nD→DB \nS→A|DC\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "The student's grammar correctly generates all positive even integers. A generates 1-digit even numbers; B acts as a leading digit for >1 digit numbers; C correctly handles multiples of 10; D recursively generates the inner digits allowing 0; and S neatly connects 1-digit, multiples of 10, and >2 digit numbers. It is a valid alternative to the standard answer."
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S→A|DC ... D→DB ... B→A|1|3|5|7|9",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "Construct a valid Type-2 grammar generating even numbers",
+            "dependency_status": "failed",
+            "reason": "The grammar utilizes a fatal left-recursion (D→DB), which causes structural infinite loops for multi-digit numbers in a Type-2 grammar. However, the mapping for the units digit and the general approach correctly handle single-digit cases, warranting partial credit."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "MATCH",
+            "evidence_text": "A→2|4|6|8 \nB→A|1|3|5|7|9 \nC→A|0 \n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "Correct generation of valid single-digit and units-place terminal mappings",
+            "dependency_status": "satisfied",
+            "reason": "The student accurately captured the generation of the units digit for even numbers (0, 2, 4, 6, 8) via A and B/C, and correctly identified the logic for valid leading digits in their thought process."
+          }
+        ],
+        "total_score": 5.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        2.5
+      ],
+      "step_2": [
+        2.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 1.3888888888888886
+    },
+    "max_item_variance": 1.3888888888888886,
+    "avg_item_variance": 1.3888888888888886
+  },
+  {
+    "file": "ANS_POC_116.jpg",
+    "facts": "{\"step_1\": \"G[S]: \\nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:26:48.200982",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_116.jpg",
+      "image_sha256": "36840d1b308e45a01b745489c4f3b81e9ef70193db32513f3c0d4aa7615c6112",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "G[S]: \nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_116",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "G[S]: \nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8"
+      }
+    },
+    "scores": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "G[S]: \nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact provides a complete and valid Type-2 grammar. By applying left-recursion elimination (standard university-level compiler theory), the student's left-recursive rules (N→NA, N→1..9) are deterministically equivalent to the target right-recursive grammar (M→MN, M→1..9). It correctly generates natural numbers ending in an even digit, fully satisfying the rubric."
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "G[S]: \nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "学生正确构造了一个生成偶数正整数的2型文法。非终结符 N 和 A 正确生成了不以 0 开头的任意数字组合，而 B 和 C 正确限制了最后一位数为偶数。非终结符 S 根据生成的整数长度正确地将这些部分组合在一起（一位数由 S->C 处理，多位数由 S->NB 处理）。该方法在概念上是合理的，满足了构造生成偶数的上下文无关文法的要求。"
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "G[S]: \nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "学生构造的文法是一个合法的2型文法（上下文无关文法），且完美生成了不含前导零的正偶数。N生成1-9，B生成0-8中的偶数，C生成2-8中的偶数。S→NB包含了所有偶数位数≥2的正偶数，S→C包含了所有1位正偶数。逻辑完全符合要求，按评分标准给满分。"
+          }
+        ],
+        "total_score": 5.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_73.jpg",
+    "facts": "{\"step_1\": \"G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:27:32.097976",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_73.jpg",
+      "image_sha256": "5c44bcaf01e2dcb91d92f4fc8e3a239cddec8fdadab82c0d78377e0b6da02dfb",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_73",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数"
+      }
+    },
+    "scores": [
+      5,
+      5,
+      3
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "The student provided a valid Type 2 grammar equivalent to the canonical one, correctly generating all positive even numbers (S→A for single digits, S→BMD for multi-digits, with appropriate terminal sets for leading, middle, and ending digits)."
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "The student constructed a context-free grammar that generates positive even integers, semantically matching the standard answer and the natural language description."
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法，能够严格生成所有正偶数，且仅生成正偶数",
+            "dependency_status": "failed",
+            "reason": "文法设计逻辑基本正确（涵盖了所有正偶数），但因 M→ε 允许了只含首位数字的单数字串（如 '2'），导致非偶数数字（1, 3, 5, 7, 9）可被生成，违反了'仅生成正偶数'的严格约束，属于推导逻辑实现上的部分缺陷。"
+          }
+        ],
+        "total_score": 3
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        3.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.888888888888889
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.888888888888889
+  },
+  {
+    "file": "ANS_POC_84.jpg",
+    "facts": "{\"step_1\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:28:18.624631",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_84.jpg",
+      "image_sha256": "9e11448fe5ec5d739b8f1dc89fa49dcd187a25f28770f1a57b0438c9cdaaf882",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_84",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {
+        "step_1": "未书写"
+      },
+      "facts": {
+        "step_1": "未书写"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法",
+            "dependency_status": "failed",
+            "reason": "The extracted facts explicitly state the student did not write anything for this step. Therefore, no points can be awarded."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "构造符合要求的2型文法",
+            "dependency_status": "failed",
+            "reason": "The student facts indicate '未书写' (not written), meaning no answer or grammatical rules were provided to satisfy the requirement of constructing a Type-2 grammar."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法",
+            "dependency_status": "failed",
+            "reason": "Extracted student fact is '未书写' (not written). No grammar, formula, or rule was provided."
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

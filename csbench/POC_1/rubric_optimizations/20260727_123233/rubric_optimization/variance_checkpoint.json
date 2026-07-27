@@ -1,0 +1,592 @@
+[
+  {
+    "file": "ANS_POC_293.jpg",
+    "facts": "{\"step_1\": \"S={a^m b^n c^p | m=n+p, m,n,p≥0}\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:12:42.647099",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_293.jpg",
+      "image_sha256": "29ef69486276c5a33095850ff5ee26fd17849a65b5c8633f30147f0cd8bdc203",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_293",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "S={a^m b^n c^p | m=n+p, m,n,p≥0}"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The language must contain exactly n 'a's followed by n characters of 'b' or 'c' (e.g., {a^n w | w ∈ {b,c}*, |w|=n}).",
+            "dependency_status": "failed",
+            "reason": "The student's answer describes strings with n 'b's followed by p 'c's, where m=n+p. This structurally changes the order of characters compared to the standard language (which requires any arbitrary interleaving of 'b' and 'c' after the 'a's). This is a core conceptual contradiction."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The language must consist of n 'a's followed by exactly n characters of 'b' or 'c' (e.g., {a^n w | w ∈ {b,c}* ∧ |w|=n}).",
+            "dependency_status": "failed",
+            "reason": "The extracted language restricts all 'b's to appear before all 'c's (b^n c^p), whereas the standard answer allows any interleaving of 'b' and 'c' (b,c*). This is a structural mismatch of the generated language."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The language must consist of n 'a's followed by n characters that are a combination of 'b's and 'c's (e.g., {a^n w | w ∈ {b,c}* and |w|=n}).",
+            "dependency_status": "failed",
+            "reason": "The student's answer specifies a language where all 'b's must precede all 'c's in a strict block order, whereas the target language allows 'b' and 'c' to be interleaved in any order. This is a fundamental mismatch of the language's structural properties."
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_297.jpg",
+    "facts": "{\"step_1\": \"{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:13:24.541010",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_297.jpg",
+      "image_sha256": "0ec660233e313cad94db59a99da470cb202f9dca5f6d6ad2f96e276701d69d53",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. {a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_297",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      1.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The language must consist of exactly n 'a's followed by exactly n characters of 'b' or 'c' (e.g., {anβ1⋯βn|βi∈b,c}).",
+            "dependency_status": "failed",
+            "reason": "The extracted language {a^m b^n C^x | m≥n, m≥x} describes a different set where the count of a's is greater than or equal to the combined counts of b's and c's. This fundamentally contradicts the standard answer, which strictly requires n a's followed by exactly n characters from the set {b, c}."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The language described by grammar G1, correctly defining the relationship between the count of 'a's and the combined count of 'b's and 'c's (e.g., {a^n w | w ∈ b,c* ∧ |w|=n}).",
+            "dependency_status": "failed",
+            "reason": "The student's answer restricts the string to a specific sequence of 'b's followed by 'c's and establishes a pairwise constraint (m>=n, m>=x) rather than a combined total. This describes a fundamentally different, more restricted language than the intended {a^n(b|c)^n}."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The language must consist of exactly n 'a's followed by n characters of 'b' or 'c'. (e.g., {a^n w | w ∈ {b,c}*, |w|=n})",
+            "dependency_status": "failed",
+            "reason": "The student correctly captures the relation that the number of 'a's is equal to or greater than the subsequent length (m≥n, m≥x), but fails to enforce the exact equality (n=m) and fails to allow interleaving of 'b' and 'c' (strictly sequencing b^n followed by c^x instead of any combination). Thus, it captures partial constraints of the target language."
+          }
+        ],
+        "total_score": 1.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        1.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.5
+    },
+    "max_item_variance": 0.5,
+    "avg_item_variance": 0.5
+  },
+  {
+    "file": "ANS_POC_306.jpg",
+    "facts": "{\"step_1\": \"a*(b|c)*\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:14:06.170050",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_306.jpg",
+      "image_sha256": "b3d8b33d3303a89e312181c75ada8ae8488c6dfe3adf72c24231cbf87ce3ea8c",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "a*(b|c)*",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_306",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "a*(b|c)*"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "a*(b|c)*",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The language must consist of exactly n leading 'a's followed by exactly n characters of 'b' or 'c' (for n >= 0).",
+            "dependency_status": "failed",
+            "reason": "The student's answer describes a*(b|c)*, which contains an arbitrary number of 'a's independent of the number of subsequent 'b'/'c' characters. This fails to capture the cross-dependency of n 'a's strictly matching n 'b'/'c' characters as required by the rubric."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "a*(b|c)*",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Describe the language generated by G1 (e.g., {a^n w | w in (b|c)* and |w|=n} or equivalent sets)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact describes the regular language 'zero or more a's followed by zero or more b's or c's', which fundamentally contradicts the context-sensitive dependency requiring the number of a's to equal the number of trailing b/c characters."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "a*(b|c)*",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Describe the language L(G1) consisting of strings with n leading 'a's followed by exactly n characters of 'b' or 'c' (n>=0).",
+            "dependency_status": "failed",
+            "reason": "The extracted answer a*(b|c)* describes a language with any number of 'a's followed by any number of 'b's or 'c's, completely losing the strict quantitative dependency (n leading a's for n trailing characters) required by the standard answer."
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_318.jpg",
+    "facts": "{\"step_1\": \"将s转换为aSb.aSc.ε三种不同情况\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:14:47.498802",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_318.jpg",
+      "image_sha256": "81da6f6a83557c967193bed324d16ff2f9316c1e0ecb20cbe55689fa344dbed0",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. 将s转换为aSb.aSc.ε三种不同情况",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_318",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "将s转换为aSb.aSc.ε三种不同情况"
+      }
+    },
+    "scores": [
+      2.5,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "将s转换为aSb.aSc.ε三种不同情况",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出文法G1描述的语言（注：三种表述任写一种均可满分）",
+            "dependency_status": "not_applicable",
+            "reason": "题目要求推导并写出文法G1描述的最终语言集合，学生仅重述了文法的三个生成规则，未给出目标语言（如anw或anβ1...βn）。考虑到其重写规则准确反映了文法的递归与终止结构，与目标语言概念相关，故依据宽容评分原则酌情给予一半分数。"
+          }
+        ],
+        "total_score": 2.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "将s转换为aSb.aSc.ε三种不同情况",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "描述文法G1生成的语言（例如：{anw|...} 或 n个a后跟n个由b或c组成的字符）",
+            "dependency_status": "failed",
+            "reason": "学生写出了文法的生成式/推导规则，而不是该文法所描述的语言的集合。这属于核心结论的根本性概念矛盾。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "将s转换为aSb.aSc.ε三种不同情况",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The set formalism or natural language description of the language generated by the grammar G1 (e.g., {a^n w | w ∈ b,c* ∧ |w|=n} or equivalent).",
+            "dependency_status": "failed",
+            "reason": "The rubric requires describing the generated language of the grammar. The student provided the grammar's production rules instead. This is a fundamental conceptual confusion between a grammar and the language it describes, failing the required core condition."
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.5,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 1.3888888888888886
+    },
+    "max_item_variance": 1.3888888888888886,
+    "avg_item_variance": 1.3888888888888886
+  },
+  {
+    "file": "ANS_POC_336.jpg",
+    "facts": "{\"step_1\": \"L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:15:30.659569",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_336.jpg",
+      "image_sha256": "2e98c2fea96e9a27ba64f1033b96c853c828acddd4f041a10a66fd9c16e4a5ae",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_336",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The language described by G1, typically {a^n w | w ∈ {b,c}*, |w|=n} or an equivalent description.",
+            "dependency_status": "failed",
+            "reason": "The extracted fact describes a fundamentally different language. The standard answer requires the number of 'a's to strictly match the total number of 'b's and 'c's (t=n). The student's expression uses t = m + n, which contradicts the required relationship and defines an incorrect language."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The language must consist of n leading 'a's followed by exactly n characters of 'b' or 'c' (e.g., a^n(b|c)^n).",
+            "dependency_status": "failed",
+            "reason": "The student defines a language where the total number of prefix characters (t) is split between 'b's and 'c's (t = m + n). However, they fail to express that the number of leading 'a's must exactly equal the total number of trailing characters (t = m + n implies total characters = m+n, but they missed linking it back to the number of 'a's). Wait, if t=m+n and there are t 'a's, then a^t b^m c^n has t 'a's and m+n total other characters, which matches length. BUT the standard answer requires the trailing characters to be a MIX of b and c in any order, whereas the student strictly uses a^t c, b^m|c^n which is structurally invalid/ambiguous. Furthermore, standard requires {a^n β1...βn | β ∈ {b,c}}. The student's notation c, b^m|c^n is fatal."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出文法G1描述的语言，如 {anw|w∈b,c*∧w=n}",
+            "dependency_status": "failed",
+            "reason": "标准答案要求前面有 n 个 a，后面紧跟 n 个由 b 或 c 组成的字符（即总数为 n）。学生提取的解答中虽然包含了 a 的数量等于后缀字符总数的关系(t = m + n)，但将后缀严格限定为了 a^m c^n 的交替形式，而非任意的 b 和 c 的组合，这构成了核心语义上的概念错误。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

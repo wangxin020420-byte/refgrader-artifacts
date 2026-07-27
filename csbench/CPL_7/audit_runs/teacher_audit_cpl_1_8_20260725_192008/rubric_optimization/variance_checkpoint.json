@@ -1,0 +1,1055 @@
+[
+  {
+    "file": "ANS_CPL_405.jpg",
+    "facts": "{\"step_1\": \"for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\\\"%d\\\",&a[i][j]);}\", \"step_2\": \"FILE *pf = NULL;pf = fopen (matrixv[1],\\\"w\\\");for(i=0;i<5;i++)for(j=0;j<5;j++){ fprintf (pf,\\\"%d\\\",b[i][j]);if(j==4) fprintf (pf,\\\"\\\\n\\\"); }fclose(pf);\", \"step_3\": \"#include<stdio.h>int main (char* matrixv[]){int a[5][5],b[5][5];int i,j;for(i=0;i<5;i++)for(j=0;j<5;j++){b[j][i] = a[i][j];}...return 0;}\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T20:55:23.119565",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_405.jpg",
+      "image_sha256": "af355557417138fe8ad31aa1bc7beeb04ae86e1dbe9337d75149ea28daeb4da8",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "#include<stdio.h>int main (char* matrixv[]){int a[5][5],b[5][5];int i,j;for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\"%d\",&a[i][j]);}for(i=0;i<5;i++)for(j=0;j<5;j++){b[j][i] = a[i][j];}FILE *pf = NULL;pf = fopen (matrixv[1],\"w\");for(i=0;i<5;i++)for(j=0;j<5;j++){ fprintf (pf,\"%d\",b[i][j]);if(j==4) fprintf (pf,\"\\n\"); }fclose(pf);return 0;}",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_405",
+        "question_id": "CPL_7",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\"%d\",&a[i][j]);}",
+        "step_2": "FILE *pf = NULL;pf = fopen (matrixv[1],\"w\");for(i=0;i<5;i++)for(j=0;j<5;j++){ fprintf (pf,\"%d\",b[i][j]);if(j==4) fprintf (pf,\"\\n\"); }fclose(pf);",
+        "step_3": "#include<stdio.h>int main (char* matrixv[]){int a[5][5],b[5][5];int i,j;for(i=0;i<5;i++)for(j=0;j<5;j++){b[j][i] = a[i][j];}...return 0;}"
+      }
+    },
+    "scores": [
+      14.0,
+      14.5,
+      15.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\"%d\",&a[i][j]);}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Read and write matrix elements using correct loops.",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly implements the read-in nested loop and the output nested loop. Deducting 1 point overall for the standard main function signature error (missing argc, using matrixv directly) as permitted by the lenient syntax error rule."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "pf = fopen (matrixv[1],\"w\");... fprintf (pf,\"%d\",b[i][j]); ... fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly open file, write data to file, and close file.",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly uses fopen, fprintf, and fclose to perform the required file operations. As per rubric notes, not checking if the pointer is NULL is not penalized."
+          },
+          {
+            "id": "step_3",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "for(i=0;i<5;i++)for(j=0;j<5;j++){b[j][i] = a[i][j];}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Matrix transposition logic and program structure.",
+            "dependency_status": "satisfied",
+            "reason": "The student perfectly implements the transposition logic using arrays a and b."
+          }
+        ],
+        "total_score": 14.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\"%d\",&a[i][j]);}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读写循环",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly wrote the nested loop to read the matrix elements. The rubric notes that missing file pointer null checks or missing newlines in output are not penalized."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "FILE *pf = NULL;pf = fopen (matrixv[1],\"w\");for(i=0;i<5;i++)for(j=0;j<5;j++){ fprintf (pf,\"%d\",b[i][j]);if(j==4) fprintf (pf,\"\\n\"); }fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "satisfied",
+            "reason": "The student successfully implements all required file operations: opening the file with fopen, writing data to it using nested loops and fprintf, and closing the file with fclose."
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "#include<stdio.h>int main (char* matrixv[]){int a[5][5],b[5][5];int i,j;for(i=0;i<5;i++)for(j=0;j<5;j++){b[j][i] = a[i][j];}...return 0;}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "satisfied",
+            "reason": "The core logic for matrix transposition (b[j][i] = a[i][j]) and the overall program structure are correct. A minor deduction of 0.5 points is applied for the non-standard main function signature (char* matrixv[] instead of int argc, char* argv[])."
+          }
+        ],
+        "total_score": 14.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\"%d\",&a[i][j]);}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入和输出矩阵的每个元素的循环",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly implemented the nested loops to read matrix elements using scanf, fully satisfying the rubric requirement for reading data."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "FILE *pf = NULL;pf = fopen (matrixv[1],\"w\");for(i=0;i<5;i++)for(j=0;j<5;j++){ fprintf (pf,\"%d\",b[i][j]);if(j==4) fprintf (pf,\"\\n\"); }fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly demonstrated file opening, writing data using fprintf, and closing the file, achieving the core file operations required."
+          },
+          {
+            "id": "step_3",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "b[j][i] = a[i][j];",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly assigned values to achieve the transpose logic (b[j][i] = a[i][j]) and set up the main function structure appropriately."
+          }
+        ],
+        "total_score": 15.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        4.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_3": [
+        5.0,
+        4.5,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "FORMAT_MINOR",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "FORMAT_MINOR",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.22222222222222224,
+      "step_2": 0.0,
+      "step_3": 0.05555555555555555
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.0925925925925926
+  },
+  {
+    "file": "ANS_CPL_407.jpg",
+    "facts": "{\"step_1\": \"for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\\\"%d\\\",&a[i][j]); } } //输入矩阵\\nfor(int i=0;i<5;i++) { for(int j=0;j<5;j++) { printf(\\\"%d \\\",a[i][j]) } printf(\\\"\\\\n\\\"); } //输出矩阵\", \"step_2\": \"未书写\", \"step_3\": \"for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } } //转置矩阵\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T20:56:09.761586",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_407.jpg",
+      "image_sha256": "1990ebaa89f121ec6424630cc555ad9b3c65e01bdfdd830a507096d05cbefbf3",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "include <stdio.h> int main() { int a[5][5]; for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\"%d\",&a[i][j]); } } //输入矩阵 for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } } //转置矩阵 for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { printf(\"%d \",a[i][j]) } printf(\"\\n\"); } return 0; } //输出矩阵",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_407",
+        "question_id": "CPL_7",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\"%d\",&a[i][j]); } } //输入矩阵\nfor(int i=0;i<5;i++) { for(int j=0;j<5;j++) { printf(\"%d \",a[i][j]) } printf(\"\\n\"); } //输出矩阵",
+        "step_2": "未书写",
+        "step_3": "for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } } //转置矩阵"
+      }
+    },
+    "scores": [
+      9.5,
+      9.5,
+      9.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\"%d\",&a[i][j]); } } //输入矩阵\nfor(int i=0;i<5;i++) { for(int j=0;j<5;j++) { printf(\"%d \",a[i][j]) } printf(\"\\n\"); } //输出矩阵",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读写循环",
+            "dependency_status": "satisfied",
+            "reason": "读写循环逻辑完全正确，满足了核心要求。但输出循环内的 printf 语句末尾缺失分号，属于轻微语法错误，按标准酌情扣除 0.5 分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "failed",
+            "reason": "提取信息明确显示学生未书写此部分内容，无法得分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } } //转置矩阵",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "satisfied",
+            "reason": "学生正确使用了双重循环，并且通过限制内层循环变量(j>i)配合临时变量实现了在不越界的情况下安全地交换矩阵主对角线两侧的元素，转置逻辑完全正确。"
+          }
+        ],
+        "total_score": 9.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\"%d\",&a[i][j]); } } //输入矩阵\nfor(int i=0;i<5;i++) { for(int j=0;j<5;j++) { printf(\"%d \",a[i][j]) } printf(\"\\n\"); } //输出矩阵",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入和输出矩阵的每个元素时的循环",
+            "dependency_status": "satisfied",
+            "reason": "学生代码正确包含了读入和输出的双层循环结构，符合要求。但printf输出语句后遗漏了分号（属于语法错误），根据规则酌情扣除0.5分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "failed",
+            "reason": "提取到的学生事实显示此项未书写，缺少任何关于文件操作的代码。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } } //转置矩阵",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "satisfied",
+            "reason": "学生正确写出了在同一个二维数组中进行矩阵转置的算法逻辑，使用了临时变量temp进行对称位置元素互换，且循环边界控制正确。"
+          }
+        ],
+        "total_score": 9.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\"%d\",&a[i][j]); } } //输入矩阵\nfor(int i=0;i<5;i++) { for(int j=0;j<5;j++) { printf(\"%d \",a[i][j]) } printf(\"\\n\"); } //输出矩阵",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly write the read and write loops for the matrix elements.",
+            "dependency_status": "satisfied",
+            "reason": "The read and write loops for the 5x5 matrix are correctly implemented in structure and logic. A minor 0.5-point deduction is applied for missing a semicolon after the printf statement in the output loop."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "Correctly open a file, write data to the file, and close the file.",
+            "dependency_status": "failed",
+            "reason": "The student did not provide any code or text regarding file operations."
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } } //转置矩阵",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct element transposition logic and other program structures.",
+            "dependency_status": "satisfied",
+            "reason": "The loop bounds (j>i) and in-place swapping logic correctly implement matrix transposition without over-swapping. This core algorithmic step is fully correct."
+          }
+        ],
+        "total_score": 9.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        4.5,
+        4.5,
+        4.5
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "FORMAT_MINOR",
+        "FORMAT_MINOR",
+        "FORMAT_MINOR"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CPL_410.jpg",
+    "facts": "{\"step_1\": \"int a[5][5], b[5][5];int i,j,o,temp;for(i=0;i<5;i++){ for(j=0;j<5;j++){ scanf('%d',&a[i][j]);}}\", \"step_2\": \"FILE *fp = fopen(\\\"matrix.txt\\\",w);if (fp == NULL)return 1;for(i=0;i<5;i++){fwrite(b[i],5,sizeof(int),fp);}fclose(fp);\", \"step_3\": \"for(i=0;i<5;i++){ for(j=0;j<5;j++){b[j][i]=a[i][j];}a[i][j]=b[j][i];b[j][i]=temp;}}\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T20:56:57.392935",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_410.jpg",
+      "image_sha256": "655add88d7189cf5af61c4613f05f2aeba300c42f6676aa5c626e9b8007d4866",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "#include <stdio.h>int main(){ int a[5][5], b[5][5];int i,j,o,temp;for(i=0;i<5;i++){ for(j=0;j<5;j++){ scanf('%d',&a[i][j]);}}for(i=0;i<5;i++){ for(j=0;j<5;j++){b[j][i]=a[i][j];}a[i][j]=b[j][i];b[j][i]=temp;}}FILE *fp = fopen(\"matrix.txt\",w);if (fp == NULL)return 1;for(i=0;i<5;i++)\n{fwrite(b[i],5,sizeof(int),fp);}fclose(fp);return 0;}",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_410",
+        "question_id": "CPL_7",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "int a[5][5], b[5][5];int i,j,o,temp;for(i=0;i<5;i++){ for(j=0;j<5;j++){ scanf('%d',&a[i][j]);}}",
+        "step_2": "FILE *fp = fopen(\"matrix.txt\",w);if (fp == NULL)return 1;for(i=0;i<5;i++){fwrite(b[i],5,sizeof(int),fp);}fclose(fp);",
+        "step_3": "for(i=0;i<5;i++){ for(j=0;j<5;j++){b[j][i]=a[i][j];}a[i][j]=b[j][i];b[j][i]=temp;}}"
+      }
+    },
+    "scores": [
+      8,
+      11.0,
+      8
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "for(i=0;i<5;i++){ for(j=0;j<5;j++){ scanf('%d',&a[i][j]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读写循环",
+            "dependency_status": "satisfied",
+            "reason": "正确写出了读入矩阵元素的嵌套循环，但缺失了输出矩阵元素的循环。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "FILE *fp = fopen(\"matrix.txt\",w);if (fp == NULL)return 1;for(i=0;i<5;i++){fwrite(b[i],5,sizeof(int),fp);}fclose(fp);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "satisfied",
+            "reason": "正确实现了文件打开(fopen)、写入(fwrite)和关闭(fclose)操作，语法上的小瑕疵不扣分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "for(i=0;i<5;i++){ for(j=0;j<5;j++){b[j][i]=a[i][j];}a[i][j]=b[j][i];b[j][i]=temp;}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "failed",
+            "reason": "循环控制与赋值逻辑存在严重结构错误，内层循环会破坏转置，且内层循环外的变量赋值索引越界错误。"
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "int a[5][5], b[5][5];int i,j,o,temp;for(i=0;i<5;i++){ for(j=0;j<5;j++){ scanf('%d',&a[i][j]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读入和输出矩阵的每个元素时，正确写出循环",
+            "dependency_status": "satisfied",
+            "reason": "正确写出了读入矩阵元素的嵌套循环逻辑，但存在轻微语法格式错误（scanf缺少双引号），且未包含标准要求的输出循环，按大学期末考试宽容尺度酌情扣0.5分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "FILE *fp = fopen(\"matrix.txt\",w);if (fp == NULL)return 1;for(i=0;i<5;i++){fwrite(b[i],5,sizeof(int),fp);}fclose(fp);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "satisfied",
+            "reason": "正确包含了打开文件、数据写入和关闭文件的核心文件操作步骤，但存在fopen参数缺少双引号的轻微语法错误，按规则酌情扣0.5分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "for(i=0;i<5;i++){ for(j=0;j<5;j++){b[j][i]=a[i][j];}a[i][j]=b[j][i];b[j][i]=temp;}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "failed",
+            "reason": "循环内部的转置核心逻辑存在严重语义与结构错误：在j的循环内部执行了b[j][i]=a[i][j]，但随后直接在内部或外部错误地使用temp进行赋值，彻底破坏了矩阵的转置结果（导致行列被覆盖且丢失数据），未实现转置目标。"
+          }
+        ],
+        "total_score": 11.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int a[5][5], b[5][5];int i,j,o,temp;for(i=0;i<5;i++){ for(j=0;j<5;j++){ scanf('%d',&a[i][j]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出循环读入矩阵（和输出，若用单数组或同数组置换此步占总分5分）",
+            "dependency_status": "satisfied",
+            "reason": "学生正确写了双重for循环读取矩阵a，但将单引号用于scanf的格式字符串（使用了'%d'而不是\"%d\"）构成轻微的语法错误。此外，step_3中存在置换逻辑错误，由于置换包含在此项的5分总分内，故按整体给部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "FILE *fp = fopen(\"matrix.txt\",w);if (fp == NULL)return 1;for(i=0;i<5;i++){fwrite(b[i],5,sizeof(int),fp);}fclose(fp);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "satisfied",
+            "reason": "学生正确包含了fopen，NULL判断，fwrite写入行数据以及fclose文件关闭逻辑。但fopen的模式参数缺少双引号（写成了w而不是\"w\"），属于轻微的语法疏忽，故扣1分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "for(i=0;i<5;i++){ for(j=0;j<5;j++){b[j][i]=a[i][j];}a[i][j]=b[j][i];b[j][i]=temp;}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "failed",
+            "reason": "转置逻辑存在核心概念错误。内层循环将 a[i][j] 赋给 b[j][i] 会产生全量转置；但在内层循环外错误地额外执行 a[i][j]=b[j][i]（此时j固定为5导致数组越界），并错误使用了未初始化的temp，完全违背了转置结构要求。"
+          }
+        ],
+        "total_score": 8
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        4.5,
+        4.0
+      ],
+      "step_2": [
+        5.0,
+        4.5,
+        4.0
+      ],
+      "step_3": [
+        0.0,
+        2.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.38888888888888884,
+      "step_2": 0.16666666666666666,
+      "step_3": 0.888888888888889
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.48148148148148145
+  },
+  {
+    "file": "ANS_CPL_413.jpg",
+    "facts": "{\"step_1\": \"int a[5][5];for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\\\"%d\\\",&a[i][j]);}}\", \"step_2\": \"FILE *pf =NULL;if(pf=fopen(matrix,\\\"r\\\")==NULL)return 1; ... fprintf(pf,\\\"%d\\\",a[i][j]); ... fclose(pf);\", \"step_3\": \"int temp;for(int i=0;i<5;i++){for(int j=0;j<5;j++){temp=a[i][j];a[i][j] = a[j][i];a[j][i] = temp;}}\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T20:57:47.606004",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_413.jpg",
+      "image_sha256": "93c73106640c18c6fd604cf79663fb6b395f3dba30d36f165c3d28c1363fa42a",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "#include<stdio.h>int main(){FILE *pf =NULL;if(pf=fopen(matrix,\"r\")==NULL)return 1;int a[5][5];for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}}int temp;for(int i=0;i<5;i++){for(int j=0;j<5;j++){temp=a[i][j];a[i][j] = a[j][i];a[j][i] = temp;}}|for(int i=0;i<5;i++){for(int i=0;i<5;i++){fprintf(pf,\"%d\",a[i][j]);}}fclose(pf);return 0;}",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_413",
+        "question_id": "CPL_7",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "int a[5][5];for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}}",
+        "step_2": "FILE *pf =NULL;if(pf=fopen(matrix,\"r\")==NULL)return 1; ... fprintf(pf,\"%d\",a[i][j]); ... fclose(pf);",
+        "step_3": "int temp;for(int i=0;i<5;i++){for(int j=0;j<5;j++){temp=a[i][j];a[i][j] = a[j][i];a[j][i] = temp;}}"
+      }
+    },
+    "scores": [
+      11.0,
+      11.0,
+      6.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int a[5][5];for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读写矩阵元素的循环",
+            "dependency_status": "satisfied",
+            "reason": "正确写出了读入矩阵元素的二维循环，但缺少显式的输出（打印）循环代码。按一半循环正确处理，给部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "FILE *pf =NULL;if(pf=fopen(matrix,\"r\")==NULL)return 1; ... fprintf(pf,\"%d\",a[i][j]); ... fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "satisfied",
+            "reason": "包含了文件打开(fopen)、文件写入(fprintf)和文件关闭(fclose)的核心操作步骤。存在文件打开模式错误（用 'r' 读模式打开文件进行写操作）及括号优先级语法错误，酌情扣除少量分数。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int temp;for(int i=0;i<5;i++){for(int j=0;j<5;j++){temp=a[i][j];a[i][j] = a[j][i];a[j][i] = temp;}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "insufficient",
+            "reason": "掌握了借助于临时变量进行数据交换（转置）的算法思想，但内层循环条件 j<5 导致矩阵所有元素被重复转置两次（相当于未发生实际改变），转置逻辑实现错误。基于方法合理性给部分分。"
+          }
+        ],
+        "total_score": 11.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "int a[5][5];for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读入和输出矩阵的每个元素时，正确写出循环",
+            "dependency_status": "satisfied",
+            "reason": "二维数组及读入矩阵的双重for循环结构正确。扣0.5分是因为在循环控制中缺少必要的空格（如for(int i=0;i<5;i++)）导致存在轻微的代码格式不规范/压缩问题。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "FILE *pf =NULL;if(pf=fopen(matrix,\"r\")==NULL)return 1; ... fprintf(pf,\"%d\",a[i][j]); ... fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "satisfied",
+            "reason": "体现了文件打开、写入和关闭的核心操作结构，但在fopen函数调用中使用了\"r\"（只读）模式，这与后续调用fprintf向文件写入数据的概念相矛盾，因此扣除部分分数。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int temp;for(int i=0;i<5;i++){for(int j=0;j<5;j++){temp=a[i][j];a[i][j] = a[j][i];a[j][i] = temp;}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "satisfied",
+            "reason": "包含正确的temp变量交换结构和转置映射逻辑。但内层循环条件写作j<5而非正确的j<i，会导致数组元素被交换两次（即最终矩阵未改变），核心转置逻辑存在实质性错误；此外还有缺少空格的轻微格式问题。"
+          }
+        ],
+        "total_score": 11.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int a[5][5];for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入和输出矩阵的循环",
+            "dependency_status": "satisfied",
+            "reason": "学生仅正确实现了读入矩阵的循环，标准答案要求的输出矩阵循环缺失或仅错误地包含在文件操作中，故给一半分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "FILE *pf =NULL;if(pf=fopen(matrix,\"r\")==NULL)return 1; ... fprintf(pf,\"%d\",a[i][j]); ... fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "failed",
+            "reason": "包含了fprintf写入和fclose关闭文件，但存在fopen以\"r\"（只读）模式打开却试图写入的逻辑矛盾，作为语法/逻辑错误酌情扣1分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "int temp;for(int i=0;i<5;i++){for(int j=0;j<5;j++){temp=a[i][j];a[i][j] = a[j][i];a[j][i] = temp;}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "failed",
+            "reason": "在方阵转置时，内层循环未限制范围（应为j<i），导致所有元素被互换两次，矩阵最终完全没变，转置失败。"
+          }
+        ],
+        "total_score": 6.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        4.0,
+        3.5,
+        2.5
+      ],
+      "step_2": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "step_3": [
+        3.0,
+        3.5,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.38888888888888884,
+      "step_2": 0.0,
+      "step_3": 2.388888888888889
+    },
+    "max_item_variance": 2.388888888888889,
+    "avg_item_variance": 0.9259259259259259
+  },
+  {
+    "file": "ANS_CPL_414.jpg",
+    "facts": "{\"step_1\": \"int a[5][5];int x,y;for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\\\"%d\\\",&a[x][y]);}}\", \"step_2\": \"fopen(matrix.,\\\"w\\\")\", \"step_3\": \"int positionchange(int a[5][5]){ int i=0,j=0,b[5][5]）for( ；i<5;i++){ for( ；j<5;j++){ b[i][j] = a[j][i];}}return b[5][5];} ... int arr[5][5];arr = positionchange(a[5][5]);\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T20:58:39.540371",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_414.jpg",
+      "image_sha256": "31ff229cdcff7954742f98cffba25abe214ec070b90ffabf06fdf74328ae8e10",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "#include <stdio.h>#include <string.h>#include <stdlib.h>int positionchange(int a[5][5]){ int i=0,j=0,b[5][5]）for( ；i<5;i++){ for( ；j<5;j++){ b[i][j] = a[j][i];}}return b[5][5];}int main(){int a[5][5];int x,y;for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\"%d\",&a[x][y]);}}int arr[5][5];arr = positionchange(a[5][5]);fopen(matrix.,\"w\")",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_414",
+        "question_id": "CPL_7",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "int a[5][5];int x,y;for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\"%d\",&a[x][y]);}}",
+        "step_2": "fopen(matrix.,\"w\")",
+        "step_3": "int positionchange(int a[5][5]){ int i=0,j=0,b[5][5]）for( ；i<5;i++){ for( ；j<5;j++){ b[i][j] = a[j][i];}}return b[5][5];} ... int arr[5][5];arr = positionchange(a[5][5]);"
+      }
+    },
+    "scores": [
+      9.0,
+      8.5,
+      5.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\"%d\",&a[x][y]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly write the loop for reading and outputting matrix elements (syntax errors penalized 0.5-2 points overall)",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly wrote the nested loops and scanf statement to read the 5x5 matrix elements."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "fopen(matrix.,\"w\")",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly write operations to open, write to, and close the file",
+            "dependency_status": "insufficient",
+            "reason": "The student provided the correct fopen() function with \"w\" mode to open the file, but completely omitted writing data to the file (fprintf/fputs) and closing the file (fclose)."
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int positionchange(int a[5][5]){ int i=0,j=0,b[5][5]）for( ；i<5;i++){ for( ；j=5;j++){ b[i][j] = a[j][i];}}return b[5][5];} ... int arr[5][5];arr = positionchange(a[5][5]);",
+            "evidence_status": "not_comparable",
+            "score_layer": "core",
+            "expected_condition": "Correct element transposition and other program structures",
+            "dependency_status": "failed",
+            "reason": "The core transposition logic b[i][j] = a[j][i] is correct, earning partial credit. However, returning an array via `return b[5][5]`, the illegal array assignment `arr = positionchange()`, combined with the single-array error penalty from the rubric, severely break the program's required structure."
+          }
+        ],
+        "total_score": 9.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "int a[5][5];int x,y;for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\"%d\",&a[x][y]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly write loops for reading and writing each matrix element",
+            "dependency_status": "satisfied",
+            "reason": "The nested for-loop for reading the 5x5 matrix is correct. Deduct 0.5 points for minor syntax errors (missing the #include<stdio.h> directive and missing the output loop/file writing loop within the provided facts)."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "fopen(matrix.,\"w\")",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly write open file, write data to file, and close file",
+            "dependency_status": "insufficient",
+            "reason": "The student demonstrates the correct file opening operation in write mode, but omits the file writing operation (like fprintf) and the file closing operation (fclose). Awarding half credit for partial completion."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "INSUFFICIENT_INFO",
+            "evidence_text": "",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "Correctly write open file, write data to file, and close file",
+            "dependency_status": "failed",
+            "reason": "The extracted facts do not contain any evidence of writing data to the file or closing the file, thus only partial credit is awarded for this step overall."
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int positionchange(int a[5][5]){ int i=0,j=0,b[5][5]）for( ；i<5;i++){ for( ；j<5;j++){ b[i][j] = a[j][i];}}return b[5][5];} ... int arr[5][5];arr = positionchange(a[5][5]);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Element transposition is correct, along with other program structures",
+            "dependency_status": "failed",
+            "reason": "The core transposition logic b[i][j] = a[j][i] is correct. However, there are fatal C structural/conceptual errors: arrays cannot be assigned or returned directly (arr = positionchange... and return b[5][5]), missing semicolon after b[5][5] declaration, and a loop initialization/structure error (inner loop j is not re-initialized to 0). Awarding 1.5 out of 5 points for the correct transpositional relation despite structural failures."
+          }
+        ],
+        "total_score": 8.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\"%d\",&a[x][y]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读写循环",
+            "dependency_status": "satisfied",
+            "reason": "正确实现了使用嵌套循环结构读取矩阵元素的逻辑。没有明确写出输出循环（部分被step_2的文件操作隐含），按照读入循环酌情给分。扣0.5分是因为存在scanf括号内缺少空格分隔的轻微格式不规范。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "fopen(matrix.,\"w\")",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "insufficient",
+            "reason": "学生只提供了fopen语句片段，且文件名'matrix.'写法不完整，同时完全没有向文件写数据（如fprintf）和关闭文件（fclose）的代码。针对此单项给少量分数。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "int positionchange(int a[5][5]){ int i=0,j=0,b[5][5]）for( ；i<5;i++){ for( ；j<5;j++){ b[i][j] = a[j][i];}}return b[5][5];} ... int arr[5][5];arr = positionchange(a[5][5]);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "failed",
+            "reason": "转置核心赋值逻辑b[i][j]=a[j][i]正确，但存在致命的语义错误：1.内层循环变量j未在循环内重置（j初始化在循环外），导致只能正确转置第一行；2.试图返回数组名b[5][5]；3.试图将函数返回值赋给数组arr。作为大学期末考官，结构错误严重导致该核心项不得分。"
+          }
+        ],
+        "total_score": 5.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        4.5,
+        4.5
+      ],
+      "step_2": [
+        2.5,
+        2.5,
+        2.5,
+        1.0
+      ],
+      "step_3": [
+        1.5,
+        1.5,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "FORMAT_MINOR",
+        "FORMAT_MINOR"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "INSUFFICIENT_INFO",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555555,
+      "step_2": 0.421875,
+      "step_3": 0.5
+    },
+    "max_item_variance": 0.5,
+    "avg_item_variance": 0.3258101851851852
+  }
+]

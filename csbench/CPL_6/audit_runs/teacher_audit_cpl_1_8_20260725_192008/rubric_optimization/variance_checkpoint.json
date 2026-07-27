@@ -1,0 +1,1492 @@
+[
+  {
+    "file": "ANS_CPL_301.jpg",
+    "facts": "{\"step_1\": \"ch>='a'&&ch<='z'\", \"step_2\": \"(ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0;\", \"step_3\": \"a[i]!=0\", \"step_4\": \"words[Upper(ch)-'A']--;\", \"step_5\": \"EqualArray(&word,26)\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T20:50:19.597870",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_6/ANS_CPL_301.jpg",
+      "image_sha256": "3c9228732bf6dfcd47261a7faf1551b53fb4b5d48afe3b650f891d39a21fd0eb",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) ch>='a'&&ch<='z' | (2) (ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0; | (3) a[i]!=0 | (4) words[Upper(ch)-'A']--; | (5) EqualArray(&word,26)",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_301",
+        "question_id": "CPL_6",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "ch>='a'&&ch<='z'",
+        "step_2": "(ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0;",
+        "step_3": "a[i]!=0",
+        "step_4": "words[Upper(ch)-'A']--;",
+        "step_5": "EqualArray(&word,26)"
+      }
+    },
+    "scores": [
+      10.0,
+      9,
+      9.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Formula for checking lowercase letter",
+            "dependency_status": "satisfied",
+            "reason": "The extracted expression exactly matches the required condition for lowercase letters."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Formula for checking either lowercase or uppercase letter",
+            "dependency_status": "satisfied",
+            "reason": "The expression correctly combines lowercase and uppercase checks with the OR operator, and including a ternary operator `?1:0` does not invalidate the correct logical condition."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Condition for non-zero array element",
+            "dependency_status": "satisfied",
+            "reason": "The expression 'a[i]!=0' matches one of the acceptable answers."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Decrement specific array element",
+            "dependency_status": "satisfied",
+            "reason": "The formula matches the standard answer exactly, and adding a semicolon is ignored as a minor formatting difference per rubric."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "EqualArray(&word,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Call EqualArray function with array and size 26",
+            "dependency_status": "satisfied",
+            "reason": "The function name and size 26 are correct. Passing address `&word` instead of array name `words` is treated as a minor typo/formatting issue rather than a semantic logic failure."
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z' (minor format variations like missing semicolons or parentheses are acceptable)",
+            "dependency_status": "satisfied",
+            "reason": "The extracted formula exactly matches the required condition for checking lowercase letters."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "(ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z') (minor format variations are acceptable)",
+            "dependency_status": "satisfied",
+            "reason": "The extracted formula contains the exact required logical expression for checking lowercase or uppercase letters, with extra valid syntax."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "The extracted expression perfectly matches one of the accepted standard answers."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "The extracted statement contains the exact required array decrement operation."
+          },
+          {
+            "id": "step_5",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "EqualArray(&word,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "failed",
+            "reason": "The function call and second argument match, but the first argument is '&word' instead of the expected array name 'words'."
+          }
+        ],
+        "total_score": 9
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "The student's answer exactly matches the required formula for checking lowercase letters."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly provides the logical OR condition for checking lowercase and uppercase letters. The extra ternary operator does not contradict the core relation and is treated as a minor addition."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "The extracted fact 'a[i]!=0' exactly matches one of the acceptable standard answers."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "The student's answer perfectly matches the required array decrement formula, and the extra semicolon is ignored per rubric instructions."
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "EqualArray(&word,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "partially_satisfied",
+            "reason": "The function name and the argument 26 match, but the array argument is written as '&word' instead of the required 'words'. As array names naturally decay to pointers and address-of array has compatible type in such contexts, this is treated as a partial mismatch due to the wrong variable name rather than a fatal semantic error."
+          }
+        ],
+        "total_score": 9.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        2.0,
+        1.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.2222222222222222
+    },
+    "max_item_variance": 0.2222222222222222,
+    "avg_item_variance": 0.04444444444444444
+  },
+  {
+    "file": "ANS_CPL_303.jpg",
+    "facts": "{\"step_1\": \"‘A’<=ch&&ch<=‘z’\", \"step_2\": \"(‘a’<=ch&&‘z’>=ch) || (‘A’<=ch&&ch<=‘Z’)\", \"step_3\": \"a[i]!=0\", \"step_4\": \"words[Upper(ch)-‘A’]--;\", \"step_5\": \"EqualArray(words,26)==1\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T20:51:08.385224",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_6/ANS_CPL_303.jpg",
+      "image_sha256": "b36d637ff37be772ab0875e292b608f9116f34a1e81aa74a291c10179522fcf7",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) ‘A’<=ch&&ch<=‘z’ | (2) (‘a’<=ch&&‘z’>=ch) || (‘A’<=ch&&ch<=‘Z’) | (3) a[i]!=0 | (4) words[Upper(ch)-‘A’]--; | (5) EqualArray(words,26)==1",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_303",
+        "question_id": "CPL_6",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "‘A’<=ch&&ch<=‘z’",
+        "step_2": "(‘a’<=ch&&‘z’>=ch) || (‘A’<=ch&&ch<=‘Z’)",
+        "step_3": "a[i]!=0",
+        "step_4": "words[Upper(ch)-‘A’]--;",
+        "step_5": "EqualArray(words,26)==1"
+      }
+    },
+    "scores": [
+      10,
+      10,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "‘A’<=ch&&ch<=‘z’",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "The student incorrectly wrote uppercase 'A' instead of lowercase 'a', which strictly evaluates as a different range. However, following the lenient university instructor policy treating such specific typos in unambiguous character comparison expressions as minor typographical errors (FORMAT_MINOR equivalent), full credit is awarded."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "(‘a’<=ch&&‘z’>=ch) || (‘A’<=ch&&ch<=‘Z’)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "The formula correctly defines the logical OR for both lowercase and uppercase character ranges. The swapped operands in the first condition (e.g., 'z'>=ch instead of ch<='z') do not change the semantics."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "The condition exactly matches one of the accepted alternative standard answers."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-‘A’]--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "The array mapping and decrement operation exactly match the required formula. The trailing semicolon is ignored per the lenient policy."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)==1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly called the function with the right parameters. Adding the explicit boolean equivalence check (==1) does not alter the logical correctness of the return value evaluation."
+          }
+        ],
+        "total_score": 10
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "‘A’<=ch&&ch<=‘z’",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Check if character ch is a lowercase letter (ch>='a'&&ch<='z').",
+            "dependency_status": "not_applicable",
+            "reason": "The student correctly wrote a relational mapping for lowercase letters. The case sensitivity (‘A’ instead of ‘a’) is treated as a FORMAT_MINOR typographical issue, not a core semantic contradiction."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "(‘a’<=ch&&‘z’>=ch) || (‘A’<=ch&&ch<=‘Z’)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Check if character ch is a letter ((ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')).",
+            "dependency_status": "not_applicable",
+            "reason": "The student correctly provided the logical OR condition mapping both lowercase and uppercase letter ranges. Although operands are swapped in one clause, it is functionally equivalent."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Check for non-zero value in array (a[i]!=0 or a[i]).",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches the required condition for checking if the element is non-zero."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-‘A’]--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Decrement array element based on character mapping (words[Upper(ch)-'A']--).",
+            "dependency_status": "not_applicable",
+            "reason": "The student's formula exactly matches the standard decrement array mapping. The trailing semicolon is ignored per the rubric's lenient instructions."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)==1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Call function to check equality of array (EqualArray(words, 26)).",
+            "dependency_status": "satisfied",
+            "reason": "The function call with correct arguments is present. Adding '==1' is an equivalent boolean relation and constitutes a MATCH under the lenient scoring policy."
+          }
+        ],
+        "total_score": 10
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "‘A’<=ch&&ch<=‘z’",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z' (checking for lowercase letters)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact checks if 'ch' is between 'A' and 'z'. This correctly captures the lowercase condition while leniently including the uppercase range (and a few symbols) without breaking the required logic. Award full points."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(‘a’<=ch&&‘z’>=ch) || (‘A’<=ch&&ch<=‘Z’)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact uses the exact correct logical structure and bounds for checking both lowercase and uppercase letters."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 or a[i]",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact exactly matches one of the standard answers."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-‘A’]--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact matches the target array and decrements the correct count. The extra semicolon is ignored as per instructions."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)==1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact correctly calls the function with the right arguments to check equality. The '==1' explicitly checks for the boolean true return and is fully correct."
+          }
+        ],
+        "total_score": 10.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CPL_324.jpg",
+    "facts": "{\"step_1\": \"ch>='a'&&ch<='z'\", \"step_2\": \"ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0\", \"step_3\": \"a[i]!=0\", \"step_4\": \"words[Upper(ch)-'A']--\", \"step_5\": \"EqualArray(words,26)\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T20:52:03.562019",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_6/ANS_CPL_324.jpg",
+      "image_sha256": "b744f19c9b057f6ed1d85c35e47668cb388429b5474bf6085a9e3eb36ab6f7fe",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) ch>='a'&&ch<='z' | (2) ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0 | (3) a[i]!=0 | (4) words[Upper(ch)-'A']-- | (5) EqualArray(words,26)",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_324",
+        "question_id": "CPL_6",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "ch>='a'&&ch<='z'",
+        "step_2": "ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0",
+        "step_3": "a[i]!=0",
+        "step_4": "words[Upper(ch)-'A']--",
+        "step_5": "EqualArray(words,26)"
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact exactly matches the required condition for checking lowercase letters."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "not_applicable",
+            "reason": "The student fact correctly provides the logical OR of lowercase and uppercase checks, wrapping it in a ternary operator returning 1 or 0, which is functionally equivalent to the standard answer."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "not_applicable",
+            "reason": "The fact precisely matches one of the expected condition forms for the array element check."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "not_applicable",
+            "reason": "The expression exactly matches the required formula for decrementing the count of the corresponding uppercase letter."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "not_applicable",
+            "reason": "The student correctly calls the equality check function with the array and length 26, matching the standard answer up to minor spacing."
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "The extracted expression perfectly matches the required formula for checking lowercase letters."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "The extracted expression correctly checks both lowercase and uppercase letters and evaluates to 1 or 0. Missing parentheses are a non-substantive notation issue explicitly allowed by the rubric."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "The extracted fact exactly matches one of the accepted conditions for array termination."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "The extracted statement perfectly matches the required decrementing formula."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "The extracted function call matches the expected answer perfectly; spacing is a non-substantive formatting detail."
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "not_applicable",
+            "reason": "The student's answer is an exact match to the standard formula."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "not_applicable",
+            "reason": "The core logical condition is exactly correct. Adding the ternary operator `?1:0` and omitting parentheses are treated as non-substantive variations under the lenient university instructor policy."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "not_applicable",
+            "reason": "Matches one of the accepted answers exactly."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "not_applicable",
+            "reason": "The student's answer is an exact match to the standard formula."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "not_applicable",
+            "reason": "The student's answer is an exact match to the standard answer, ignoring minor spacing."
+          }
+        ],
+        "total_score": 10.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CPL_328.jpg",
+    "facts": "{\"step_1\": \"if(ch>='a'&&ch<='z')\", \"step_2\": \"if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))?1:0;\", \"step_3\": \"a[i]!=0\", \"step_4\": \"words[Upper(ch)-'A']--\", \"step_5\": \"if(words[26]=={0})\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T20:52:51.651467",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_6/ANS_CPL_328.jpg",
+      "image_sha256": "f14b66ad6c1dc021f7dc9412e8d2c6f36d0b39d72252664b2845efcb0a5bbe8d",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) if(ch>='a'&&ch<='z') | (2) if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))?1:0; | (3) a[i]!=0 | (4) words[Upper(ch)-'A']-- | (5) if(words[26]=={0})",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_328",
+        "question_id": "CPL_6",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "if(ch>='a'&&ch<='z')",
+        "step_2": "if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))?1:0;",
+        "step_3": "a[i]!=0",
+        "step_4": "words[Upper(ch)-'A']--",
+        "step_5": "if(words[26]=={0})"
+      }
+    },
+    "scores": [
+      8.0,
+      8.0,
+      8.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "if(ch>='a'&&ch<='z')",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z' (extra parentheses or semicolons are tolerated)",
+            "dependency_status": "satisfied",
+            "reason": "The extracted fact perfectly matches the required formula. The included 'if' and extra parentheses are accepted as format extras per the rubric note."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "The fact contains the exact required boolean logic for both lower and upper case letters, along with a valid ternary operator and extra syntax."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 or a[i]",
+            "dependency_status": "satisfied",
+            "reason": "The student wrote 'a[i]!=0', which is one of the explicitly provided correct standard answers."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "The fact exactly matches the standard answer formula for decrementing the count of the respective letter."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "if(words[26]=={0})",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "failed",
+            "reason": "The student attempts to compare an integer element words[26] to an invalid array initializer/set {0}, which is a conceptual syntax error in C/C++ and fails to correctly check if the array elements are all equal."
+          }
+        ],
+        "total_score": 8.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "if(ch>='a'&&ch<='z')",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "The extracted fact contains the exact required condition. Adding 'if' and parentheses is considered a minor format issue and does not incur a penalty per the rubric."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "The extracted fact contains the exact required logical condition for both lowercase and uppercase letters. The additional ternary operator '?1:0' and 'if' wrapper do not violate the core logic."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "The extracted fact exactly matches the required expression 'a[i]!=0'."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "The extracted fact is an exact match with the standard answer."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "if(words[26]=={0})",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "failed",
+            "reason": "The student attempts to compare an entire array with a literal set '{0}' using '==', which is a fundamental conceptual error (invalid syntax/logic in C/C++ for checking array equality). It fails to use the required function 'EqualArray' to achieve the intended check."
+          }
+        ],
+        "total_score": 8.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "if(ch>='a'&&ch<='z')",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z' (extra parentheses or semicolons are tolerated)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted condition correctly checks for lowercase letters. Extra enclosing parentheses are ignored per the lenient instructor policy."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted code contains the exact logical OR condition required to check for lowercase and uppercase letters. The extraneous ternary operator and if statement wrapper are ignored as minor syntax additions."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact exactly matches one of the standard provided answers."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted formula correctly decrements the corresponding letter count in the array, exactly matching the standard answer."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "if(words[26]=={0})",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "failed",
+            "reason": "The extracted code attempts to compare an array element using invalid syntax (`=={0}`), which is a core conceptual and syntactic error. It fails to call the required array comparison function to check if all counts are zero."
+          }
+        ],
+        "total_score": 8.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CPL_331.jpg",
+    "facts": "{\"step_1\": \"ch>'a'&&ch<'z'\", \"step_2\": \"(ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0\", \"step_3\": \"a[i]!=0\", \"step_4\": \"words[Upper(ch)-'A']--;\", \"step_5\": \"EqualArray(words,26)\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T20:53:44.075071",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_6/ANS_CPL_331.jpg",
+      "image_sha256": "35ac5dedbd63aa45c6dfff1be3d9e9a53b41d642f88d957cfe8f6ce771cfed16",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) ch>'a'&&ch<'z' | (2) (ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0 | (3)a[i]!=0 | (4) words[Upper(ch)-'A']--; | (5) EqualArray(words,26)",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_331",
+        "question_id": "CPL_6",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "ch>'a'&&ch<'z'",
+        "step_2": "(ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0",
+        "step_3": "a[i]!=0",
+        "step_4": "words[Upper(ch)-'A']--;",
+        "step_5": "EqualArray(words,26)"
+      }
+    },
+    "scores": [
+      9.0,
+      7,
+      7.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "ch>'a'&&ch<'z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "The student wrote > and < instead of >= and <=. According to the rubric's explicit instructions, writing >= as > or <= as < results in a 0.5 point deduction."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "The relational operators >= and <= are incorrectly written as > and <. Following the rubric rule for this specific error, a 0.5 point deduction is applied. The extra ternary operator `?1:0` is harmless and does not affect the logic."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "The extracted fact exactly matches the canonical answer."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "The array index mapping and decrement operation exactly match the expected formula. The extra semicolon is ignored as per standard programming context and lenient policy."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "The function call exactly matches the canonical answer."
+          }
+        ],
+        "total_score": 9.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "ch>'a'&&ch<'z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "not_applicable",
+            "reason": "正确写出判断小写字母的逻辑关系，但 >= 写成 > 、 <= 写成 <，按评分说明扣0.5分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "not_applicable",
+            "reason": "正确组合了判断大小写字母的逻辑关系，但 >= 写成 > 、 <= 写成 <，按评分说明扣0.5分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "填写的表达式与标准答案完全一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "not_applicable",
+            "reason": "数组计数自增方向错误，写成了 -- (自减)，与正确的 ++ (自增)语义完全相反。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "填写的函数调用与标准答案逻辑一致。"
+          }
+        ],
+        "total_score": 7
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "ch>'a'&&ch<'z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "Formula correctly identifies the target range and uses the correct logical operators, but omits the equality boundaries (>= and <=). The rubric explicitly deducts 0.5 for each missing equality boundary."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Formula has the correct logical structure and identifies both cases, but misses all 4 equality boundaries (>=, <=). Per the 0.5 penalty per boundary rule, it reaches 0 points. The extra ?1:0 is ignored as a non-substantive detail."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "The extracted expression exactly matches the required condition."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "The extracted array update expression matches the target relation perfectly. Extra semicolon is ignored as permitted by instructions."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "The function call matches exactly, with only a minor spacing difference that does not affect semantic meaning."
+          }
+        ],
+        "total_score": 7.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        1.5,
+        1.5,
+        1.0
+      ],
+      "step_2": [
+        1.5,
+        1.5,
+        0.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        0.0,
+        2.0
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "SEMANTIC_FATAL",
+        "MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555556,
+      "step_2": 0.5,
+      "step_3": 0.0,
+      "step_4": 0.888888888888889,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.2888888888888889
+  }
+]

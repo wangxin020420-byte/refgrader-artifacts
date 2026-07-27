@@ -1,0 +1,1042 @@
+[
+  {
+    "file": "ANS_POC_12.jpg",
+    "facts": "{\"step_1\": \"(SaA)、(b)、((SaA)(b)) (A(SaA)(b)))\", \"step_2\": \"(SaA) (b)\", \"step_3\": \"(SaA)\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:16:58.834423",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_2/ANS_POC_12.jpg",
+      "image_sha256": "2692d3e912819870be0998ce815ea9e4d6ad051d40bd909e3b9fa2c3549333f7",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "短语：(SaA)、(b)、((SaA)(b)) (A(SaA)(b))) | 直接短语：(SaA) (b) |句柄：(SaA)",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_12",
+        "question_id": "POC_2",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "(SaA)、(b)、((SaA)(b)) (A(SaA)(b)))",
+        "step_2": "(SaA) (b)",
+        "step_3": "(SaA)"
+      }
+    },
+    "scores": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)、(b)、((SaA)(b)) (A(SaA)(b)))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语有 (A((SaA)(b)))、((SaA)(b))、(SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "The extracted facts correctly list all the required phrases. The extra trailing parenthesis in '(A(SaA)(b)))' is treated as a minor typo under the lenient instructor policy, while the semantic content remains fully correct."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA) (b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 (SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "The student accurately identifies both direct phrases, fully satisfying the rubric requirement."
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 (SaA)",
+            "dependency_status": "satisfied",
+            "reason": "The extracted fact perfectly matches the standard answer for the handle of the string."
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(SaA)、(b)、((SaA)(b)) (A(SaA)(b)))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Identify all phrases of the symbol string: (A((SaA)(b)))、((SaA)(b))、(SaA)、(b)",
+            "dependency_status": "not_applicable",
+            "reason": "The student successfully identified all the required phrases. The outermost phrase '(A((SaA)(b)))' was included in the transcription but suffers from an OCR/extraction typo as '(A(SaA)(b)))' (missing the first parenthesis). However, following instructor-aligned lenient grading, this minor bracket formatting error is overlooked, and full credit is awarded for conceptually identifying all correct elements without stating any false positives."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA) (b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Identify the direct phrases: (SaA), (b)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted student fact lists both correct direct phrases, (SaA) and (b), perfectly matching the standard answer."
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Identify the handle: (SaA)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact provides (SaA), which exactly matches the required handle."
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)、(b)、((SaA)(b)) (A(SaA)(b)))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语有 (A((SaA)(b)))、((SaA)(b))、(SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly identified all phrases: (SaA), (b), ((SaA)(b)), and (A((SaA)(b))). The extra parenthesis in the transcription for the last item is treated as a non-substantive minor typo."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA) (b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 (SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly identified both direct phrases: (SaA) and (b)."
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 (SaA)",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly identified the handle as (SaA)."
+          }
+        ],
+        "total_score": 5.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_17.jpg",
+    "facts": "{\"step_1\": \"(A((SaA)(b)))，((SaA)(b))，(SaA),(b)\", \"step_2\": \"(SaA)，(b)\", \"step_3\": \"(SaA)\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:17:44.538429",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_2/ANS_POC_17.jpg",
+      "image_sha256": "2ee4b707d303fd7be5b15dea7b89d8948727693268a8bec558a9a01a641faa85",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "2. 短语：(A((SaA)(b)))，((SaA)(b))，(SaA),(b) | 直接短语：(SaA)，(b) | 句柄：(SaA)",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_17",
+        "question_id": "POC_2",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "(A((SaA)(b)))，((SaA)(b))，(SaA),(b)",
+        "step_2": "(SaA)，(b)",
+        "step_3": "(SaA)"
+      }
+    },
+    "scores": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(A((SaA)(b)))，((SaA)(b))，(SaA),(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Identify all phrases of the symbol string",
+            "dependency_status": "not_applicable",
+            "reason": "The student correctly identified all four phrases matching the standard answer perfectly."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)，(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Identify direct phrases of the symbol string",
+            "dependency_status": "not_applicable",
+            "reason": "The student correctly identified the exact direct phrases."
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Identify the handle of the symbol string",
+            "dependency_status": "not_applicable",
+            "reason": "The student correctly identified the handle of the symbol string."
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(A((SaA)(b)))，((SaA)(b))，(SaA),(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的所有短语",
+            "dependency_status": "satisfied",
+            "reason": "学生提取的短语集合与标准答案 '(A((SaA)(b)))、((SaA)(b))、(SaA)、(b)' 完全匹配。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)，(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的直接短语",
+            "dependency_status": "satisfied",
+            "reason": "学生提取的直接短语 '(SaA)' 和 '(b)' 与标准答案完全匹配。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的句柄",
+            "dependency_status": "satisfied",
+            "reason": "学生提取的句柄 '(SaA)' 与标准答案完全匹配。"
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(A((SaA)(b)))，((SaA)(b))，(SaA),(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的所有短语: (A((SaA)(b)))、((SaA)(b))、(SaA)、(b)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted facts perfectly list all the required phrases, demonstrating a full understanding of phrasal derivation despite minor punctuation variations."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)，(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的直接短语: (SaA)、(b)",
+            "dependency_status": "not_applicable",
+            "reason": "The student correctly identifies both direct phrases from the derivation tree, fully satisfying the rubric."
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的句柄: (SaA)",
+            "dependency_status": "not_applicable",
+            "reason": "The student correctly selects the leftmost direct phrase as the handle of the string."
+          }
+        ],
+        "total_score": 5.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_2.jpg",
+    "facts": "{\"step_1\": \"(a)(b)(a)(b)\", \"step_2\": \"(b)(a)(b)\", \"step_3\": \"(ab)²\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:18:35.404410",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_2/ANS_POC_2.jpg",
+      "image_sha256": "c290c19b35e673bdfb6d9e3c0942a31f37d49811d6f2aece445f7f38c8320808",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "2. 短语：(a)(b)(a)(b) | 直接经验：(b)(a)(b) | 句柄：(ab)²",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_2",
+        "question_id": "POC_2",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "(a)(b)(a)(b)",
+        "step_2": "(b)(a)(b)",
+        "step_3": "(ab)²"
+      }
+    },
+    "scores": [
+      1.5,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(a)(b)(a)(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的所有短语 (Identify all phrases, expected: (A((SaA)(b))), ((SaA)(b)), (SaA), (b))",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly identifies '(b)' as a phrase but misses the other larger nested phrases."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(b)(a)(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的直接短语 (Identify direct phrases, expected: (SaA), (b))",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly identifies '(b)' as a direct phrase but misses '(SaA)'. Awarded half points for the partially correct set."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(ab)²",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的句柄 (Identify the handle, expected: (SaA))",
+            "dependency_status": "failed",
+            "reason": "The handle is the leftmost direct phrase, which should be (SaA). The student wrote '(ab)²', which is incorrect."
+          }
+        ],
+        "total_score": 1.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(a)(b)(a)(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语有 (A((SaA)(b)))、((SaA)(b))、(SaA)、(b)",
+            "dependency_status": "failed",
+            "reason": "The extracted answer does not match the standard phrases and presents an incorrect sequence for the symbol string."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(b)(a)(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 (SaA)、(b)",
+            "dependency_status": "failed",
+            "reason": "The extracted answer fails to provide the correct direct phrases."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(ab)²",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 (SaA)",
+            "dependency_status": "failed",
+            "reason": "The extracted answer is mathematically/completely different from the required handle."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(a)(b)(a)(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Identify all phrases of the symbol string: (A((SaA)(b)))、((SaA)(b))、(SaA)、(b)",
+            "dependency_status": "not_applicable",
+            "reason": "The provided symbols fail to match or logically overlap with any of the required standard phrases, representing a core conceptual mismatch."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(b)(a)(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Identify direct phrases: (SaA)、(b)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact provides incorrect substrings that do not correspond to the direct phrases specified in the rubric."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(ab)²",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Identify the handle: (SaA)",
+            "dependency_status": "not_applicable",
+            "reason": "The provided answer contradicts the correct handle and demonstrates a fundamental misunderstanding of the required concept."
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555556,
+      "step_2": 0.22222222222222224,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.0925925925925926
+  },
+  {
+    "file": "ANS_POC_35.jpg",
+    "facts": "{\"step_1\": \"(SaA)是A的短语，(b)是S的短语，((SaA)(b))是S的短语，(A((SaA)(b)))是S的短语\", \"step_2\": \"(SaA)和(b)\", \"step_3\": \"(SaA)\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:19:19.015967",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_2/ANS_POC_35.jpg",
+      "image_sha256": "4e1bcc2f88413cbf2f8c3448d425383ae8532106627f0c4f339cc7cafa98a7e2",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "2. 答：短语：(SaA)是A的短语，(b)是S的短语，((SaA)(b))是S的短语，(A((SaA)(b)))是S的短语 | 直接短语：(SaA)和(b) | 句柄：(SaA)",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_35",
+        "question_id": "POC_2",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "(SaA)是A的短语，(b)是S的短语，((SaA)(b))是S的短语，(A((SaA)(b)))是S的短语",
+        "step_2": "(SaA)和(b)",
+        "step_3": "(SaA)"
+      }
+    },
+    "scores": [
+      5.0,
+      4.5,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)是A的短语，(b)是S的短语，((SaA)(b))是S的短语，(A((SaA)(b)))是S的短语",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的所有短语",
+            "dependency_status": "satisfied",
+            "reason": "学生正确找出了符号串的所有短语：(SaA)、(b)、((SaA)(b))和(A((SaA)(b)))，完全符合标准答案，获得满分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)和(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的直接短语",
+            "dependency_status": "satisfied",
+            "reason": "学生准确找出了符号串的全部直接短语 (SaA) 和 (b)，与标准答案一致，获得满分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的句柄",
+            "dependency_status": "satisfied",
+            "reason": "学生正确找出了符号串的句柄 (SaA)，结论完全正确，获得满分。"
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(SaA)是A的短语，(b)是S的短语，((SaA)(b))是S的短语，(A((SaA)(b)))是S的短语",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的所有短语: (A((SaA)(b)))、((SaA)(b))、(SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly identified the strings (A((SaA)(b))), ((SaA)(b)), (SaA), and (b) as phrases. However, (SaA) is incorrectly identified as a phrase of A instead of S, making it a partial match. Awarding proportional partial credit for the 3/4 correct identifications."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)和(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的直接短语: (SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "The extracted facts correctly identify (SaA) and (b) as the direct phrases of the symbol string."
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的句柄: (SaA)",
+            "dependency_status": "satisfied",
+            "reason": "The extracted fact correctly identifies (SaA) as the handle of the string."
+          }
+        ],
+        "total_score": 4.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)是A的短语，(b)是S的短语，((SaA)(b))是S的短语，(A((SaA)(b)))是S的短语",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的所有短语 (A((SaA)(b)))、((SaA)(b))、(SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "学生正确找出了所有四个短语，虽然多标注了非终结符，但在寻找短语的题目中属于非实质性的格式问题，判定为完全正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)和(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的直接短语 (SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "学生提取出的直接短语完全正确，符合评分要求。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "找出该符号串的句柄 (SaA)",
+            "dependency_status": "satisfied",
+            "reason": "学生正确找出了该符号串的句柄 (SaA)。"
+          }
+        ],
+        "total_score": 5.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        1.5,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555556,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.01851851851851852
+  },
+  {
+    "file": "ANS_POC_5.jpg",
+    "facts": "{\"step_1\": \"(AS),(A(AS),(A((SaA)(b))\", \"step_2\": \"(SaA)(b)\", \"step_3\": \"(A((SaA)(b))\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T01:20:03.438821",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_2/ANS_POC_5.jpg",
+      "image_sha256": "f1c03c9192dd4418b61c8eefe571fb3252eb70836dc8e1aa29eae642cd2b1e48",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "2. 解: 短语为:(AS),(A(AS),(A((SaA)(b)) 直接短语为:(SaA)(b) 句柄为:(A((SaA)(b))",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_5",
+        "question_id": "POC_2",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "(AS),(A(AS),(A((SaA)(b))",
+        "step_2": "(SaA)(b)",
+        "step_3": "(A((SaA)(b))"
+      }
+    },
+    "scores": [
+      2.0,
+      3.0,
+      2.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(AS),(A(AS),(A((SaA)(b))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语有 (A((SaA)(b)))、((SaA)(b))、(SaA)、(b)",
+            "dependency_status": "failed",
+            "reason": "Extracted facts do not contain the complete, correctly spelled phrases, indicating missing or incorrect derivations rather than just missing arithmetic details."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(SaA)(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 (SaA)、(b)",
+            "dependency_status": "partial",
+            "reason": "Student provides the direct phrases (SaA) and (b) but lists them together as a single string without proper separation."
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "MATCH",
+            "evidence_text": "(SaA)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 (SaA)",
+            "dependency_status": "satisfied",
+            "reason": "The correct handle (SaA) is explicitly identified within the extracted phrase."
+          }
+        ],
+        "total_score": 2.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(AS),(A(AS),(A((SaA)(b))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语有 (A((SaA)(b)))、((SaA)(b))、(SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "正确找出了部分短语（或至少包含与目标短语结构匹配的组成部分），包含部分正确结果，但未完整或准确地列出所有短语，给予部分分数。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(SaA)(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 (SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "提取的内容中包含由目标直接短语组合而成的表达式，能推导出其具有寻找直接短语的意图且包含部分正确结果，但未能单独正确分离出(SaA)和(b)，给予部分分数。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "(A((SaA)(b))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 (SaA)",
+            "dependency_status": "satisfied",
+            "reason": "学生提取出的相关字符串包含了所要求的最左直接短语（句柄）(SaA)，虽然整体表达缺失括号但在宽松评分下不视为核心语义错误，结果有效。"
+          }
+        ],
+        "total_score": 3.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(AS),(A(AS),(A((SaA)(b))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语有 (A((SaA)(b)))、((SaA)(b))、(SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly identified the full phrase (A((SaA)(b))) and the sub-phrase (SaA), but missed ((SaA)(b)) and (b). Awarded half credit for partial identification."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(SaA)(b)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 (SaA)、(b)",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly identified (SaA) as a direct phrase (implied by the combined string), but missed (b). Awarded half credit for partial identification."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(A((SaA)(b))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 (SaA)",
+            "dependency_status": "failed",
+            "reason": "The handle is the leftmost direct phrase, which is (SaA). The student identified a non-direct phrase as the handle, representing a conceptual error."
+          }
+        ],
+        "total_score": 2.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "step_2": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "step_3": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.22222222222222224,
+      "step_2": 0.0,
+      "step_3": 0.22222222222222224
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.14814814814814817
+  }
+]

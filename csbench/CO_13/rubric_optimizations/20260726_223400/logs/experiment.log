@@ -1,0 +1,142 @@
+2026-07-26 22:19:04 | INFO     | ==================================================
+2026-07-26 22:19:04 | INFO     | 📂 正在加载试卷数据库...
+2026-07-26 22:19:04 | INFO     |    运行模式: VARIANCE_OPT
+2026-07-26 22:19:04 | INFO     |    题目范围: ['CO_10', 'CO_11', 'CO_12', 'CO_13', 'CO_8', 'CO_9']
+2026-07-26 22:19:04 | INFO     |    文本模型: glm5 -> glm-5.2 (thinking=disabled)
+2026-07-26 22:19:04 | INFO     |    提取后端: csbench_hybrid
+2026-07-26 22:19:04 | INFO     |    题库文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\exam_database.json
+2026-07-26 22:19:04 | INFO     |    教师分文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\teacher_scores.json
+2026-07-26 22:19:04 | INFO     |    Sample quality policy: raw (mode=raw, excluded=0, corrected=0)
+2026-07-26 22:19:04 | INFO     |    答案元数据: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\answer_metadata.jsonl
+2026-07-26 22:19:04 | INFO     |    并发数:   2
+2026-07-26 22:19:04 | INFO     |    结果目录: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_co10_co11_co12_co13_co8_co9_rubric_opt
+2026-07-26 22:19:04 | INFO     |    Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\optimized
+2026-07-26 22:19:04 | INFO     |    初始Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\initial
+2026-07-26 22:19:04 | INFO     |    允许回退初始Rubric: False
+2026-07-26 22:19:04 | INFO     |    进度文件: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_co10_co11_co12_co13_co8_co9_rubric_opt\progress.json
+2026-07-26 22:19:04 | INFO     |    日志文件: logs\experiment_20260726_221904.log
+2026-07-26 22:19:04 | INFO     | 🔬 当前处于【方差优化模式】(VARIANCE OPT MODE)
+2026-07-26 22:19:04 | INFO     |    系统将生成标准，进行小样本测试，修正并保存最终标准。
+2026-07-26 22:19:04 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_10
+============================================================
+2026-07-26 22:19:04 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_10_rubric_standard.json
+2026-07-26 22:19:04 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-26 22:19:04 | INFO     | [data isolation] variance optimization is restricted to 10 calibration answers.
+2026-07-26 22:19:04 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-26 22:19:04 | INFO     | 
+📊 采样完成。平均方差: 0.9667
+2026-07-26 22:19:04 | INFO     | Item-level variance: avg=0.2111, max=1.5000
+2026-07-26 22:19:04 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-26 22:19:04 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-26 22:19:04 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_3", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "role_constrained"}, {"parent_id": "step_4", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 3, "weighting_policy": "role_constrained"}]
+2026-07-26 22:20:48 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-26 22:20:48 | INFO     | 📦 成功加载教师真实成绩单数据库！共包含 3326 名考生的数据。
+2026-07-26 22:22:29 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.3, "severe_regression_margin": 3.0, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 2.8, "candidate_mae": 2.1, "mae_delta": -0.7, "improved": 4, "unchanged": 0, "worsened": 1, "severe_regressions": 0, "records": [{"answer_id": "ANS_CO_1103", "baseline_score": 10.0, "candidate_score": 11.0, "teacher_score": 12.0}, {"answer_id": "ANS_CO_1104", "baseline_score": 4.0, "candidate_score": 6.0, "teacher_score": 9.0}, {"answer_id": "ANS_CO_1128", "baseline_score": 2.6666666666666665, "candidate_score": 4.0, "teacher_score": 7.0}, {"answer_id": "ANS_CO_1137", "baseline_score": 10.666666666666666, "candidate_score": 9.5, "teacher_score": 12.0}, {"answer_id": "ANS_CO_1142", "baseline_score": 9.666666666666666, "candidate_score": 10.0, "teacher_score": 11.0}]}
+2026-07-26 22:22:29 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-26 22:22:29 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_10_optimization.json
+2026-07-26 22:22:29 | INFO     | [rubric transaction] persisted postcondition passed for CO_10; mode=strict_candidate_contract; sha256=b892b2227efe3b1056b6d8b7d50d7ff0a99602f9b9c42a9b7bf2d92397ac1fd5
+2026-07-26 22:22:29 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_11
+============================================================
+2026-07-26 22:22:29 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_11_rubric_standard.json
+2026-07-26 22:22:29 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-26 22:22:29 | INFO     | [data isolation] variance optimization is restricted to 10 calibration answers.
+2026-07-26 22:22:29 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-26 22:22:29 | INFO     | 
+📊 采样完成。平均方差: 2.9778
+2026-07-26 22:22:29 | INFO     | Item-level variance: avg=0.6222, max=5.5556
+2026-07-26 22:22:29 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-26 22:22:29 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-26 22:22:29 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "role_constrained"}, {"parent_id": "step_2", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "role_constrained"}, {"parent_id": "step_3", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "role_constrained"}]
+2026-07-26 22:24:24 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-26 22:26:03 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.3, "severe_regression_margin": 3.0, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 1.733333, "candidate_mae": 1.9, "mae_delta": 0.166667, "improved": 1, "unchanged": 3, "worsened": 1, "severe_regressions": 0, "records": [{"answer_id": "ANS_CO_1205", "baseline_score": 0.0, "candidate_score": 0.0, "teacher_score": 0.0}, {"answer_id": "ANS_CO_1226", "baseline_score": 0.5, "candidate_score": 5.5, "teacher_score": 3.0}, {"answer_id": "ANS_CO_1245", "baseline_score": 12.5, "candidate_score": 12.5, "teacher_score": 15.0}, {"answer_id": "ANS_CO_1265", "baseline_score": 12.0, "candidate_score": 10.0, "teacher_score": 14.0}, {"answer_id": "ANS_CO_1268", "baseline_score": 3.3333333333333335, "candidate_score": 5.5, "teacher_score": 5.0}]}
+2026-07-26 22:26:03 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-26 22:26:03 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_11_optimization.json
+2026-07-26 22:26:03 | INFO     | [rubric transaction] persisted postcondition passed for CO_11; mode=strict_candidate_contract; sha256=39b67728302bd55e7a290e105725339b4e4d118d3e57254e321be2eeb90cdbe6
+2026-07-26 22:26:03 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_12
+============================================================
+2026-07-26 22:26:03 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_12_rubric_standard.json
+2026-07-26 22:26:03 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-26 22:26:03 | INFO     | [data isolation] variance optimization is restricted to 14 calibration answers.
+2026-07-26 22:26:03 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-26 22:26:03 | INFO     | 
+📊 采样完成。平均方差: 4.5000
+2026-07-26 22:26:03 | INFO     | Item-level variance: avg=0.3204, max=1.5556
+2026-07-26 22:26:03 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-26 22:26:03 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-26 22:26:03 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_2", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_3", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_4", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_5", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "role_constrained"}, {"parent_id": "step_6", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-26 22:26:44 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-26 22:28:55 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.5, "severe_regression_margin": 5.0, "accepted": false, "reason": "severe_sample_regression", "baseline_mae": 1.466667, "candidate_mae": 4.08, "mae_delta": 2.613333, "improved": 1, "unchanged": 0, "worsened": 4, "severe_regressions": 2, "records": [{"answer_id": "ANS_CO_1328", "baseline_score": 18.0, "candidate_score": 24.0, "teacher_score": 18.0}, {"answer_id": "ANS_CO_1342", "baseline_score": 6.333333333333333, "candidate_score": 8.0, "teacher_score": 6.0}, {"answer_id": "ANS_CO_1364", "baseline_score": 24.666666666666668, "candidate_score": 25.0, "teacher_score": 23.0}, {"answer_id": "ANS_CO_1382", "baseline_score": 4.166666666666667, "candidate_score": 4.5, "teacher_score": 8.0}, {"answer_id": "ANS_CO_1392", "baseline_score": 15.5, "candidate_score": 7.1, "teacher_score": 14.0}]}
+2026-07-26 22:28:55 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: severe_sample_regression
+2026-07-26 22:28:55 | ERROR    | Final optimized rubric failed semantic validation; reverting to the immutable draft: additive parent step_1 must contain at least 2 scoring items, got 1; additive parent step_2 must contain at least 2 scoring items, got 1; additive parent step_3 must contain at least 2 scoring items, got 1; additive parent step_4 must contain at least 2 scoring items, got 1; role-weighted parent step_5 must contain at least 2 scoring items, got 1; role-weighted child step_5 has invalid scoring_role ''; role-weighted parent step_5 must have exactly one final child; role-weighted parent step_5 must have a core-process child; role-weighted parent step_5 gives insufficient process weight; additive parent step_6 must contain at least 2 scoring items, got 1
+2026-07-26 22:28:55 | WARNING  | [rubric fallback] preserved the unchanged baseline because no refined candidate passed every semantic and calibration gate. Required decomposition is deferred and recorded in the optimization manifest.
+2026-07-26 22:28:55 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_12_optimization.json
+2026-07-26 22:28:55 | INFO     | [rubric transaction] persisted postcondition passed for CO_12; mode=noninferiority_baseline_fallback; sha256=113bc2c35baa6937c94b15357a6a64e0f0c7a52c1c05bcb34fca71f627a40ce6
+2026-07-26 22:28:55 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_13
+============================================================
+2026-07-26 22:28:55 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_13_rubric_standard.json
+2026-07-26 22:28:55 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-26 22:28:55 | INFO     | [data isolation] variance optimization is restricted to 13 calibration answers.
+2026-07-26 22:28:55 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-26 22:28:55 | INFO     | 
+📊 采样完成。平均方差: 0.5667
+2026-07-26 22:28:55 | INFO     | Item-level variance: avg=0.3000, max=2.6667
+2026-07-26 22:28:55 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-26 22:28:55 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-26 22:28:55 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_2", "parent_points": 8.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-26 22:29:14 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-26 22:30:33 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.4, "severe_regression_margin": 4.0, "accepted": false, "reason": "severe_sample_regression", "baseline_mae": 3.333333, "candidate_mae": 4.833333, "mae_delta": 1.5, "improved": 3, "unchanged": 0, "worsened": 2, "severe_regressions": 1, "records": [{"answer_id": "ANS_CO_1500", "baseline_score": 17.666666666666668, "candidate_score": 14.67, "teacher_score": 15.0}, {"answer_id": "ANS_CO_1510", "baseline_score": 17.5, "candidate_score": 18.33, "teacher_score": 20.0}, {"answer_id": "ANS_CO_1513", "baseline_score": 11.166666666666666, "candidate_score": 0.0, "teacher_score": 15.0}, {"answer_id": "ANS_CO_1542", "baseline_score": 17.666666666666668, "candidate_score": 16.666666666666664, "teacher_score": 14.0}, {"answer_id": "ANS_CO_1546", "baseline_score": 11.0, "candidate_score": 10.5, "teacher_score": 15.0}]}
+2026-07-26 22:30:33 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: severe_sample_regression
+2026-07-26 22:30:33 | ERROR    | Final optimized rubric failed semantic validation; reverting to the immutable draft: additive parent step_1 must contain at least 2 scoring items, got 1; additive parent step_2 must contain at least 2 scoring items, got 1
+2026-07-26 22:30:33 | WARNING  | [rubric fallback] preserved the unchanged baseline because no refined candidate passed every semantic and calibration gate. Required decomposition is deferred and recorded in the optimization manifest.
+2026-07-26 22:30:33 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_13_optimization.json
+2026-07-26 22:30:33 | INFO     | [rubric transaction] persisted postcondition passed for CO_13; mode=noninferiority_baseline_fallback; sha256=8d67bd6e2ab3b8931ec61685b5d3018c4576704a7d778e6620f74458bcaf9587
+2026-07-26 22:30:33 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_8
+============================================================
+2026-07-26 22:30:33 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_8_rubric_standard.json
+2026-07-26 22:30:33 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-26 22:30:33 | INFO     | [data isolation] variance optimization is restricted to 15 calibration answers.
+2026-07-26 22:30:33 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-26 22:30:33 | INFO     | 
+📊 采样完成。平均方差: 0.8222
+2026-07-26 22:30:33 | INFO     | Item-level variance: avg=0.3556, max=1.7222
+2026-07-26 22:30:33 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-26 22:30:33 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-26 22:30:33 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_2", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-26 22:30:54 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-26 22:31:51 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.2, "severe_regression_margin": 2.0, "accepted": true, "reason": "accepted_noninferior", "baseline_mae": 0.966667, "candidate_mae": 1.1, "mae_delta": 0.133333, "improved": 1, "unchanged": 2, "worsened": 2, "severe_regressions": 0, "records": [{"answer_id": "ANS_CO_784", "baseline_score": 0.3333333333333333, "candidate_score": 0.0, "teacher_score": 2.0}, {"answer_id": "ANS_CO_787", "baseline_score": 2.0, "candidate_score": 2.5, "teacher_score": 4.0}, {"answer_id": "ANS_CO_792", "baseline_score": 6.833333333333333, "candidate_score": 10.0, "teacher_score": 8.0}, {"answer_id": "ANS_CO_795", "baseline_score": 10.0, "candidate_score": 10.0, "teacher_score": 10.0}, {"answer_id": "ANS_CO_808", "baseline_score": 10.0, "candidate_score": 10.0, "teacher_score": 10.0}]}
+2026-07-26 22:31:51 | INFO     | 🎉 修正后的最终标准已通过语义契约和校准集非劣验收。
+2026-07-26 22:31:51 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_8_optimization.json
+2026-07-26 22:31:51 | INFO     | [rubric transaction] persisted postcondition passed for CO_8; mode=strict_candidate_contract; sha256=e544fd491fd27931643ff80710046a464faf6e0c788e0806c1bc8ef549761193
+2026-07-26 22:31:51 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_9
+============================================================
+2026-07-26 22:31:51 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_9_rubric_standard.json
+2026-07-26 22:31:51 | INFO     | 📈 发现进度点：已完成 5/5 个样本。
+2026-07-26 22:31:51 | INFO     | [data isolation] variance optimization is restricted to 13 calibration answers.
+2026-07-26 22:31:51 | INFO     | ✅ 方差采样已全部完成，直接进入修正环节。
+2026-07-26 22:31:51 | INFO     | 
+📊 采样完成。平均方差: 7.1222
+2026-07-26 22:31:51 | INFO     | Item-level variance: avg=0.8722, max=6.0000
+2026-07-26 22:31:51 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-07-26 22:31:51 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-07-26 22:31:51 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_4", "parent_points": 6.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-07-26 22:32:17 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-07-26 22:33:59 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.3, "severe_regression_margin": 3.0, "accepted": false, "reason": "severe_sample_regression", "baseline_mae": 3.166667, "candidate_mae": 4.4, "mae_delta": 1.233333, "improved": 1, "unchanged": 2, "worsened": 2, "severe_regressions": 1, "records": [{"answer_id": "ANS_CO_1000", "baseline_score": 12.333333333333334, "candidate_score": 10.0, "teacher_score": 14.0}, {"answer_id": "ANS_CO_1011", "baseline_score": 6.0, "candidate_score": 6.0, "teacher_score": 11.0}, {"answer_id": "ANS_CO_1018", "baseline_score": 10.0, "candidate_score": 10.5, "teacher_score": 13.0}, {"answer_id": "ANS_CO_1027", "baseline_score": 15.0, "candidate_score": 15.0, "teacher_score": 11.0}, {"answer_id": "ANS_CO_1041", "baseline_score": 8.833333333333334, "candidate_score": 4.5, "teacher_score": 11.0}]}
+2026-07-26 22:33:59 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: severe_sample_regression
+2026-07-26 22:33:59 | ERROR    | Final optimized rubric failed semantic validation; reverting to the immutable draft: additive parent step_4 must contain at least 2 scoring items, got 1
+2026-07-26 22:33:59 | WARNING  | [rubric fallback] preserved the unchanged baseline because no refined candidate passed every semantic and calibration gate. Required decomposition is deferred and recorded in the optimization manifest.
+2026-07-26 22:33:59 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_9_optimization.json
+2026-07-26 22:33:59 | INFO     | [rubric transaction] persisted postcondition passed for CO_9; mode=noninferiority_baseline_fallback; sha256=63f7af49ef99c357ab537c7636017c8909f5647653743a9c1889dc29fc4711e5
+2026-07-26 22:33:59 | INFO     | 
+🏆 任务完成！
