@@ -1,0 +1,85 @@
+{
+  "question_id": "CPL_7",
+  "status": "candidate_rejected_baseline_selected",
+  "fallback_reason": "candidate_noninferiority_rejected:candidate_mae_exceeds_margin",
+  "mandatory_split_targets": [
+    {
+      "parent_id": "step_1",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    },
+    {
+      "parent_id": "step_2",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    },
+    {
+      "parent_id": "step_3",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    }
+  ],
+  "candidate_replay": {
+    "method": "paired_teacher_score_noninferiority",
+    "expected": 5,
+    "paired": 5,
+    "required": 4,
+    "coverage": 1.0,
+    "mae_margin": 0.3,
+    "severe_regression_margin": 3.0,
+    "accepted": false,
+    "reason": "candidate_mae_exceeds_margin",
+    "baseline_mae": 1.033333,
+    "candidate_mae": 1.6,
+    "mae_delta": 0.566667,
+    "improved": 1,
+    "unchanged": 1,
+    "worsened": 3,
+    "severe_regressions": 0,
+    "records": [
+      {
+        "answer_id": "ANS_CPL_405",
+        "baseline_score": 13.0,
+        "candidate_score": 14.0,
+        "teacher_score": 15.0
+      },
+      {
+        "answer_id": "ANS_CPL_407",
+        "baseline_score": 8.333333333333334,
+        "candidate_score": 10.0,
+        "teacher_score": 8.0
+      },
+      {
+        "answer_id": "ANS_CPL_410",
+        "baseline_score": 11.166666666666666,
+        "candidate_score": 10.0,
+        "teacher_score": 12.0
+      },
+      {
+        "answer_id": "ANS_CPL_413",
+        "baseline_score": 9.5,
+        "candidate_score": 8.5,
+        "teacher_score": 9.0
+      },
+      {
+        "answer_id": "ANS_CPL_414",
+        "baseline_score": 7.5,
+        "candidate_score": 6.5,
+        "teacher_score": 9.0
+      }
+    ]
+  },
+  "baseline_semantic_errors": [
+    "additive parent step_1 must contain at least 2 scoring items, got 1",
+    "additive parent step_2 must contain at least 2 scoring items, got 1",
+    "additive parent step_3 must contain at least 2 scoring items, got 1"
+  ],
+  "active_rubric_preserved": true,
+  "created_at": "2026-08-07T13:08:50"
+}

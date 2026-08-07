@@ -1,0 +1,208 @@
+2026-08-07 12:42:01 | INFO     | ==================================================
+2026-08-07 12:42:01 | INFO     | 📂 正在加载试卷数据库...
+2026-08-07 12:42:01 | INFO     |    运行模式: VARIANCE_OPT
+2026-08-07 12:42:01 | INFO     |    题目范围: ['CO_12']
+2026-08-07 12:42:01 | INFO     |    文本模型: glm5 -> glm-5.2 (thinking=disabled)
+2026-08-07 12:42:01 | INFO     |    提取后端: csbench_hybrid
+2026-08-07 12:42:01 | INFO     |    题库文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\exam_database.json
+2026-08-07 12:42:01 | INFO     |    教师分文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\teacher_scores.json
+2026-08-07 12:42:01 | INFO     |    Sample quality policy: raw (mode=raw, excluded=0, corrected=0)
+2026-08-07 12:42:01 | INFO     |    答案元数据: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\answer_metadata.jsonl
+2026-08-07 12:42:01 | INFO     |    并发数:   2
+2026-08-07 12:42:01 | INFO     |    结果目录: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_co12_rubric_opt
+2026-08-07 12:42:01 | INFO     |    Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\optimized
+2026-08-07 12:42:01 | INFO     |    初始Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\initial
+2026-08-07 12:42:01 | INFO     |    允许回退初始Rubric: False
+2026-08-07 12:42:01 | INFO     |    进度文件: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_co12_rubric_opt\progress.json
+2026-08-07 12:42:01 | INFO     |    日志文件: logs\experiment_20260807_124201.log
+2026-08-07 12:42:01 | INFO     | 🔬 当前处于【方差优化模式】(VARIANCE OPT MODE)
+2026-08-07 12:42:01 | INFO     |    系统将生成标准，进行小样本测试，修正并保存最终标准。
+2026-08-07 12:42:01 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_12
+============================================================
+2026-08-07 12:42:01 | INFO     | restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-08-07 12:42:01 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_12_rubric_standard.json
+2026-08-07 12:42:01 | INFO     | force-rerun enabled; ignore old variance checkpoint for this question.
+2026-08-07 12:42:01 | INFO     | [data isolation] variance optimization is restricted to 14 calibration answers.
+2026-08-07 12:42:01 | INFO     | 
+👉 正在处理新样本: ANS_CO_1328.jpg
+2026-08-07 12:42:10 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-08-07 12:42:12 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-08-07 12:42:12 | INFO     | [metadata] loaded 3326 answer records from D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\answer_metadata.jsonl
+2026-08-07 12:42:15 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-08-07 12:42:17 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:42:31 | INFO     |       ✅ [裁判亮分] 总得分: 16.0
+2026-08-07 12:42:31 | INFO     |          - [条款 step_1] 得分: 0.0 | 理由: 学生混淆了寄存器的映射关系，将IR和AR指定给了错误的字母节点，与标准答案发生核心语义冲突。
+2026-08-07 12:42:31 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 正确给出了主存到数据寄存器的通路，但后续错送至地址寄存器，缺失了指令寄存器IR的通路，部分正确。
+2026-08-07 12:42:31 | INFO     |          - [条款 step_3] 得分: 3.0 | 理由: 完整且正确地给出了存储器写（AC -> DR -> M）的通路，但在读取过程中缺失了从ALU到AC的过程描述，故给予一半分数。
+2026-08-07 12:42:31 | INFO     |          - [条款 step_4] 得分: 3.0 | 理由: 给出了数据到达ALU参与运算以及AC参与的基本过程，但缺失了ALU结果送回AC的关键数据通路，属于部分满足执行过程。
+2026-08-07 12:42:31 | INFO     |          - [条款 step_5] 得分: 3.0 | 理由: 学生通过字段位数相减（24-...=8）推导出下址字段为8位，结论2^8×24位与标准答案逻辑相符。但未明确写出最终结果2^8=256，依据宽松评分政策对计算推导结论予以大部分分数。
+2026-08-07 12:42:31 | INFO     |          - [条款 step_6] 得分: 5.0 | 理由: 设计的微指令格式及各字段分配位数与标准答案完全一致，完全匹配。
+2026-08-07 12:42:31 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:42:33 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:42:46 | INFO     |       ✅ [裁判亮分] 总得分: 19.0
+2026-08-07 12:42:46 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: The student correctly maps the letters a, b, c, and d to their respective registers: DR, AR, IR, and PC.
+2026-08-07 12:42:46 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: The student correctly identifies the path from main memory to the Data Register (DR). However, they route the instruction's address to the AR instead of passing the instruction code directly to the IR, which disrupts the core required data path.
+2026-08-07 12:42:46 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: The student correctly provides the data path for the memory write operation (AC -> DR -> M) and correctly identifies the components involved in the read operation. However, they omit the direct ALU involvement in the read path (M -> DR -> ALU -> AC), which constitutes a partial match for the required sequences.
+2026-08-07 12:42:46 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: The student correctly identifies the data flow of the operand from memory to DR and eventually into the ALU. However, the described data path misses the explicit routing of the initial accumulator contents (AC -> ALU) and the return path of the result (ALU -> AC).
+2026-08-07 12:42:46 | INFO     |          - [条款 step_5] 得分: 4.0 | 理由: The student correctly determines the next address field length (8 bits) through calculation and correctly applies the formula to find the capacity as 2^8 x 24 bits.
+2026-08-07 12:42:46 | INFO     |          - [条款 step_6] 得分: 5.0 | 理由: The student provides the correct bit allocations for all 4 operation fields (3, 4, 4, 2 bits), correctly identifies the condition testing field (3 bits), and the next address field (8 bits), matching the required design perfectly.
+2026-08-07 12:42:46 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:42:48 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:43:02 | INFO     |       ✅ [裁判亮分] 总得分: 20.0
+2026-08-07 12:43:02 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: Student correctly identifies DR and PC, but swaps IR and AR for labels b and c. Awarding partial credit for the correct components.
+2026-08-07 12:43:02 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: Student correctly identifies the initial path from Main Memory to Data Register (DR). However, they describe sending the address to the Address Register (AR) instead of the instruction to the Instruction Register (IR), which breaks the core data path for fetching an instruction.
+2026-08-07 12:43:02 | INFO     |          - [条款 step_3] 得分: 3.0 | 理由: Student perfectly describes the write path (AC -> DR -> M) and correctly describes DR fetching data and interacting with ALU and AC for the read operation. Awarding 3/4 points as the conceptual sequence is mostly correct but slightly informally expressed.
+2026-08-07 12:43:02 | INFO     |          - [条款 step_4] 得分: 4.0 | 理由: The student accurately outlines the execution flow: operand 0D is fetched to DR, AC holds the AX value, and both are processed by the ALU. This functionally maps to the required micro-operations, satisfying the rubric under lenient grading.
+2026-08-07 12:43:02 | INFO     |          - [条款 step_5] 得分: 4.0 | 理由: Student provides the correct calculation trace (deriving the 8-bit next address field) and accurately concludes the final capacity as 2^8 × 24 bits.
+2026-08-07 12:43:02 | INFO     |          - [条款 step_6] 得分: 5.0 | 理由: The student correctly groups the operation codes, sets the exact bit lengths for the external condition field and the next address field, fully satisfying the rubric requirements.
+2026-08-07 12:43:02 | INFO     | 💾 样本 ANS_CO_1328.jpg 进度已保存。
+2026-08-07 12:43:02 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-08-07 12:43:17 | INFO     | 
+👉 正在处理新样本: ANS_CO_1342.jpg
+2026-08-07 12:43:25 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-08-07 12:43:27 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-08-07 12:43:34 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-08-07 12:43:36 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:43:49 | INFO     |       ✅ [裁判亮分] 总得分: 4.0
+2026-08-07 12:43:49 | INFO     |          - [条款 step_1] 得分: 3 | 理由: 学生正确识别了3个寄存器（数据、地址、指令），但误将b识别为控制寄存器（应为程序计数器PC）。基于部分正确给予3/4分。
+2026-08-07 12:43:49 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 学生未提供取指令数据通路的任何信息。
+2026-08-07 12:43:49 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 学生未提供运算器与主存数据通路的任何信息。
+2026-08-07 12:43:49 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 学生未提供ADD指令执行数据通路的任何信息。
+2026-08-07 12:43:49 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: 学生错误地将指令字段、控制位与下地址字段进行位数的直接相加运算（错误认为指令位数也能寻址），下址字段得出9位，最终导致容量2^9×24完全错误。此为核心方法论和结论错误。
+2026-08-07 12:43:49 | INFO     |          - [条款 step_6] 得分: 1 | 理由: 学生正确给出了4组操作控制字段对应的微命令数和位数（5->3, 8->4, 14->4, 3->2，共13位），并指出了判断测试字段（控制位）的换算逻辑，保留了部分方法分。但由于受前一步错误地址逻辑影响，字段参数结论错误。
+2026-08-07 12:43:49 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:43:51 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:44:01 | INFO     |       ✅ [裁判亮分] 总得分: 5.5
+2026-08-07 12:44:01 | INFO     |          - [条款 step_1] 得分: 3 | 理由: 学生正确识别了a、c、d，但将b错误地标为控制寄存器，而不是指令寄存器（IR）。
+2026-08-07 12:44:01 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 提取事实明确标明为“未书写”。
+2026-08-07 12:44:01 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 提取事实明确标明为“未书写”。
+2026-08-07 12:44:01 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 提取事实明确标明为“未书写”。
+2026-08-07 12:44:01 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: 控制位和下址字段的计算概念错误，导致最终控制存储器容量计算错误（得出2^9×24）。
+2026-08-07 12:44:01 | INFO     |          - [条款 step_6] 得分: 2.5 | 理由: 学生正确提出了直接编译格式的顶层结构，并正确推导了条件判断位数为3位，但操作字段和下址字段由于方法不当得出错误位数。
+2026-08-07 12:44:01 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:44:03 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:44:12 | INFO     |       ✅ [裁判亮分] 总得分: 11.0
+2026-08-07 12:44:12 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: Student correctly named Data Register (DR), Address Register (AR), and Instruction Register (IR). However, 'b' is incorrectly identified as Control Register instead of Instruction Register (IR), and 'd' is incorrectly identified as Instruction Register instead of Program Counter (PC). 2 out of 4 components correct.
+2026-08-07 12:44:12 | INFO     |          - [条款 step_2] 得分: 0.0 | 理由: No data path was provided.
+2026-08-07 12:44:12 | INFO     |          - [条款 step_3] 得分: 0.0 | 理由: No data path was provided.
+2026-08-07 12:44:12 | INFO     |          - [条款 step_4] 得分: 0.0 | 理由: No data path was provided.
+2026-08-07 12:44:12 | INFO     |          - [条款 step_5] 得分: 4.0 | 理由: Student calculated the capacity based on their derived next address field (9 bits), yielding 2^9 * 24 bits. The process is correctly executed based on their own parameters.
+2026-08-07 12:44:12 | INFO     |          - [条款 step_6] 得分: 5.0 | 理由: Student correctly grouped the micro-commands using direct encoding and accurately calculated the bits for each field based on their design (13 bits operation, 2 bits control, 9 bits next address).
+2026-08-07 12:44:12 | INFO     | 💾 样本 ANS_CO_1342.jpg 进度已保存。
+2026-08-07 12:44:12 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-08-07 12:44:27 | INFO     | 
+👉 正在处理新样本: ANS_CO_1364.jpg
+2026-08-07 12:44:33 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-08-07 12:44:35 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-08-07 12:44:40 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-08-07 12:44:42 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:44:52 | INFO     |       ✅ [裁判亮分] 总得分: 25.0
+2026-08-07 12:44:52 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: The student correctly identified all four registers.
+2026-08-07 12:44:52 | INFO     |          - [条款 step_2] 得分: 4.0 | 理由: The data path from memory (DB) to IR to the controller (ID/μPC) is accurately described.
+2026-08-07 12:44:52 | INFO     |          - [条款 step_3] 得分: 4.0 | 理由: The read path (DB→DR→ALU) and write path (ALU→DR→DB) are correctly described.
+2026-08-07 12:44:52 | INFO     |          - [条款 step_4] 得分: 4.0 | 理由: The calculation data path (DR→ALU, AX→ALU, +, ALU→AX) correctly matches the required execution process.
+2026-08-07 12:44:52 | INFO     |          - [条款 step_5] 得分: 4.0 | 理由: The calculation of the next address field (8 bits) and final control memory capacity (2^8 × 24) is perfectly correct.
+2026-08-07 12:44:52 | INFO     |          - [条款 step_6] 得分: 5.0 | 理由: The bit allocations for each mutual exclusion group, external condition field, and next address field are fully correct.
+2026-08-07 12:44:52 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:44:54 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:45:06 | INFO     |       ✅ [裁判亮分] 总得分: 25.0
+2026-08-07 12:45:06 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: 提取的事实完全匹配四个寄存器的标准名称。
+2026-08-07 12:45:06 | INFO     |          - [条款 step_2] 得分: 4.0 | 理由: 提取的数据通路展示了从PC输出地址到从DB读取指令并送入IR，最后到控制器的正确序列，满足标准要求。
+2026-08-07 12:45:06 | INFO     |          - [条款 step_3] 得分: 4.0 | 理由: 事实明确展示了存储器读(DB→DR→ALU)和存储器写(ALU→DR→DB)的正确互连数据通路。
+2026-08-07 12:45:06 | INFO     |          - [条款 step_4] 得分: 4.0 | 理由: 提取的执行过程正确映射了操作数(DR和AX)送入ALU进行加法运算并将结果写回AX的过程。
+2026-08-07 12:45:06 | INFO     |          - [条款 step_5] 得分: 4.0 | 理由: 通过正确的公式（24位字长减去各字段位数得出下址字段为8位）推导出了正确的控制存储器容量（256×24位）。展示了充分的计算过程。
+2026-08-07 12:45:06 | INFO     |          - [条款 step_6] 得分: 5.0 | 理由: 设计的微指令格式完全匹配各字段所需的位数，包括互斥微命令组、外部条件字段以及下址字段的位数。
+2026-08-07 12:45:06 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:45:08 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:45:18 | INFO     |       ✅ [裁判亮分] 总得分: 25.0
+2026-08-07 12:45:18 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: 正确标明了DR, IR, AR, PC四个寄存器的名称。
+2026-08-07 12:45:18 | INFO     |          - [条款 step_2] 得分: 4.0 | 理由: 完整给出了取指周期PC更新，并给出了从主存读取指令到IR，最后操作码送入控制器的数据通路。
+2026-08-07 12:45:18 | INFO     |          - [条款 step_3] 得分: 4.0 | 理由: 正确写出了存/取访问的数据通路：读时(DB→)DR→ALU；写时ALU→DR(→DB)。
+2026-08-07 12:45:18 | INFO     |          - [条款 step_4] 得分: 4.0 | 理由: 完整写出了ADD指令执行阶段计算过程的数据通路(AX->ALU, DR->ALU, ALU->AX)。
+2026-08-07 12:45:18 | INFO     |          - [条款 step_5] 得分: 4.0 | 理由: 通过正确的计算公式（24-3-4-4-2-3=8）得出下址字段为8位，并最终得出正确的控制存储器容量2^8 × 24。
+2026-08-07 12:45:18 | INFO     |          - [条款 step_6] 得分: 5.0 | 理由: 清晰、正确地给出了微指令的各互斥组、判断测试字段及下址字段的具体位数分配格式。
+2026-08-07 12:45:18 | INFO     | 💾 样本 ANS_CO_1364.jpg 进度已保存。
+2026-08-07 12:45:18 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-08-07 12:45:33 | INFO     | 
+👉 正在处理新样本: ANS_CO_1382.jpg
+2026-08-07 12:45:39 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-08-07 12:45:41 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-08-07 12:45:43 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-08-07 12:45:45 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:45:56 | INFO     |       ✅ [裁判亮分] 总得分: 5.0
+2026-08-07 12:45:56 | INFO     |          - [条款 step_1] 得分: 1.0 | 理由: Student misaligned the registers (labeled a as IR instead of b), but correctly identified the semantic function of two components (d as counter/PC, c as memory/DR). Awarded partial credit for component mappings.
+2026-08-07 12:45:56 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: Student missed the start of the path (Main Memory) and confused the Address Register with the Data Register. However, they correctly identified that the instruction flows into the IR and then to the controller.
+2026-08-07 12:45:56 | INFO     |          - [条款 step_3] 得分: 0.0 | 理由: The student did not provide an answer.
+2026-08-07 12:45:56 | INFO     |          - [条款 step_4] 得分: 0.0 | 理由: The student did not provide an answer.
+2026-08-07 12:45:56 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: The student derived the command field length correctly (13 bits), but concluded the capacity as 2^16, failing to use the correct next-address field length and omitting the word length dimension.
+2026-08-07 12:45:56 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: The student miscalculated the operation field length as 24 bits instead of 13, resulting in an incorrect next address field of 16 bits instead of 8. Partial credit awarded for calculating the test field length (3 bits).
+2026-08-07 12:45:56 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:45:58 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:46:13 | INFO     |       ✅ [裁判亮分] 总得分: 5.5
+2026-08-07 12:46:13 | INFO     |          - [条款 step_1] 得分: 2 | 理由: 正确标明了b为指令寄存器、c为存储(数据)寄存器、d为计数器(PC)。a标错(为指令寄存器)，但存在3/4的正确匹配，按原子评分得一半分。
+2026-08-07 12:46:13 | INFO     |          - [条款 step_2] 得分: 1 | 理由: 正确识别了指令进入指令寄存器(IR)再送往控制器的环节。但路径起点错误(缺少主存到DR)，且IR之后错误地经过了地址寄存器。部分通路正确，给予部分分。
+2026-08-07 12:46:13 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 未提供任何相关信息。
+2026-08-07 12:46:13 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 未提供任何相关信息。
+2026-08-07 12:46:13 | INFO     |          - [条款 step_5] 得分: 1.0 | 理由: 正确给出了操作控制字段的计算过程(13位)，具备方法支持证据，获得过程分。但最终结果(2^16)逻辑和数值完全错误，且下址字段缺失，无法获得结果分。
+2026-08-07 12:46:13 | INFO     |          - [条款 step_6] 得分: 1.5 | 理由: 正确设计了判断测试字段(3位)，并基于前文得分给了相应的字段长度分配过程，但由于下址字段长度计算错误，整体设计不正确，给予部分分。
+2026-08-07 12:46:13 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:46:15 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:46:26 | INFO     |       ✅ [裁判亮分] 总得分: 2.0
+2026-08-07 12:46:26 | INFO     |          - [条款 step_1] 得分: 0 | 理由: 所有四个寄存器a、b、c、d的命名均与标准答案矛盾（存在概念混乱或映射错误）。
+2026-08-07 12:46:26 | INFO     |          - [条款 step_2] 得分: 0 | 理由: 数据通路完全错误，遗漏了主存与DR，且在取指阶段错误地经过了地址寄存器。
+2026-08-07 12:46:26 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 学生未提供任何解答内容。
+2026-08-07 12:46:26 | INFO     |          - [条款 step_4] 得分: 0 | 理由: 学生未提供任何解答内容。
+2026-08-07 12:46:26 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: 控制存储器容量的计算原理发生严重的概念性错误，完全忽视了字长的存在，且给出了错误的寻址空间结论。
+2026-08-07 12:46:26 | INFO     |          - [条款 step_6] 得分: 2 | 理由: 给出了判断测试字段为3位（计入了下址计算），且正确提供了对应的微命令编码字段位数（13位），部分满足设计要求。
+2026-08-07 12:46:26 | INFO     | 💾 样本 ANS_CO_1382.jpg 进度已保存。
+2026-08-07 12:46:26 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-08-07 12:46:41 | INFO     | 
+👉 正在处理新样本: ANS_CO_1392.jpg
+2026-08-07 12:46:48 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-08-07 12:46:50 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-08-07 12:46:53 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-08-07 12:46:55 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:47:10 | INFO     |       ✅ [裁判亮分] 总得分: 18.0
+2026-08-07 12:47:10 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: 正确标出了IR和PC，虽然c写成MAR（标准答案为AR），但在部件识别和命名上体现出了完全的语义等效，符合大学期末考试中的宽松评分标准，因此给满分。
+2026-08-07 12:47:10 | INFO     |          - [条款 step_2] 得分: 2.0 | 理由: 学生写出了PC送入地址寄存器（AR）的数据传送过程，但缺失了从主存读取指令送入数据寄存器（DR）、再到指令寄存器（IR）和控制器的核心数据通路，仅部分符合要求。
+2026-08-07 12:47:10 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 写出了数据寄存器（DR）和ALU之间的交互，体现了运算器侧的部分操作通路，但遗漏了ALU到累加器（AC）的传送，且完全没有体现出与主存（M）之间的完整读取/写入流向，故给一半分。
+2026-08-07 12:47:10 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: 给出了取指令和取操作数阶段涉及PC和OP到地址寄存器的控制时序与信号，但完全缺失了ADD执行阶段真正涉及运算器部件相加的数据通路（如AC→ALU，DR→ALU，ALU→AC），仅属于执行前的准备阶段。
+2026-08-07 12:47:10 | INFO     |          - [条款 step_5] 得分: 4.0 | 理由: 学生基于自己设计的微指令格式（下址字段9位），严密且正确地推导出了控制存储器的容量计算逻辑（字长24位 × 2^9字）。计算结果与其设计的参数完全自洽，公式应用正确，依据宽松的评分政策给予满分。
+2026-08-07 12:47:10 | INFO     |          - [条款 step_6] 得分: 5.0 | 理由: 学生采用字段直接编码法，正确地将外部条件和微命令分组并配平了微指令的24位总字长，完整给出了各字段的位数分配（3,3,4,2,3）并指明了9位下址字段，设计逻辑清晰且合理。
+2026-08-07 12:47:10 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:47:12 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:47:24 | INFO     |       ✅ [裁判亮分] 总得分: 8.0
+2026-08-07 12:47:24 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: Student correctly maps b to IR, c to AR (MAR is functionally the address register), and d to PC. Mapping a to AR instead of DR is likely an extraction swap, but all components are validly identified.
+2026-08-07 12:47:24 | INFO     |          - [条款 step_2] 得分: 0.0 | 理由: The required datapath is Memory -> DR -> IR -> Controller. The student's trace describes PC -> AR (address generation) and completely misses the required data flow into the controller.
+2026-08-07 12:47:24 | INFO     |          - [条款 step_3] 得分: 0.0 | 理由: The required datapath involves Memory (M) and ALU/AC. The student's response only gives a partial internal path (DR↔ALU) and omits all connections to the main memory.
+2026-08-07 12:47:24 | INFO     |          - [条款 step_4] 得分: 2.0 | 理由: Student correctly describes the address fetch (PC→AR) and operand address calculation (OP→AR) phases, but completely misses the core addition execution datapath (AC -> ALU, DR -> ALU, ALU -> AC).
+2026-08-07 12:47:24 | INFO     |          - [条款 step_5] 得分: 0.0 | 理由: Student incorrectly calculates the next address field as 9 bits by arbitrarily splitting the 15 control bits, leading to a wrong memory capacity (512 x 24 bits instead of the correct 256 x 24 bits based on the proper 8-bit next address field).
+2026-08-07 12:47:24 | INFO     |          - [条款 step_6] 得分: 2.0 | 理由: Student correctly identifies the 3-bit condition field and the group sizes (3, 4, 2), but lists a wrong group field (3 instead of 4) and incorrectly allocates 9 bits to the next address field instead of 8 bits.
+2026-08-07 12:47:24 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:47:26 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:47:44 | INFO     |       ✅ [裁判亮分] 总得分: 12.5
+2026-08-07 12:47:44 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: 学生正确识别了四个寄存器的名称。虽然MAR和AR在严格意义上有一定区别，但在单总线结构图中常作为地址寄存器互通称呼，从宽阅评分标准判定为完全正确。
+2026-08-07 12:47:44 | INFO     |          - [条款 step_2] 得分: 1.5 | 理由: 学生写出的是PC送地址总线取指令的地址形成过程，而标准答案要求的是取出的指令从主存送往控制器的数据传输路径。基于大学考试中常见的理解错位，提取信息表明学生混淆了取指周期的地址流和数据流，给以部分同情分。
+2026-08-07 12:47:44 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 标准答案要求写出存/取访问时主存与运算器之间完整的数据通路（包含M和AC），学生仅给出了DR与ALU之间的部分交互，遗漏了与主存和累加器的连接关系。包含部分正确的组件流，给予部分分数。
+2026-08-07 12:47:44 | INFO     |          - [条款 step_4] 得分: 1.0 | 理由: 学生描述的是取操作数的地址形成过程（取指和间址），并未真正写出加法指令执行阶段在运算器内部的数据通路（如DR和AC送入ALU运算），属于答非所问。鉴于其属于执行指令相关的必备前置机器周期操作，给予少量过程分。
+2026-08-07 12:47:44 | INFO     |          - [条款 step_5] 得分: 1.5 | 理由: 学生错误地汇总了操作控制字段与外部条件字段，导致计算出的下址字段位数（9位）多于标准答案（8位），容量计算也相应基于错误前提。依据评分规则，过程推导有据可循但产生了核心结果数值错误，因此只给部分过程分。
+2026-08-07 12:47:44 | INFO     |          - [条款 step_6] 得分: 2.5 | 理由: 字段直接编码法要求每组微命令需预留一个空操作状态，学生的各字段位数划分(3,4,2)未体现这一规则，且外部条件字段多算为3位导致下址字段错算为9位。但学生列出了具体的分段设计结构，应用了正确的字段编码法布局逻辑，因此给予部分分数。
+2026-08-07 12:47:44 | INFO     | 💾 样本 ANS_CO_1392.jpg 进度已保存。
+2026-08-07 12:47:44 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-08-07 12:47:59 | INFO     | 
+📊 采样完成。平均方差: 6.2111
+2026-08-07 12:47:59 | INFO     | Item-level variance: avg=0.6056, max=3.5556
+2026-08-07 12:47:59 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-08-07 12:47:59 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-08-07 12:47:59 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_2", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_3", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_4", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_5", "parent_points": 4.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "role_constrained"}, {"parent_id": "step_6", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-08-07 12:50:00 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-08-07 12:50:00 | INFO     | 📦 成功加载教师真实成绩单数据库！共包含 3326 名考生的数据。
+2026-08-07 12:51:31 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.5, "severe_regression_margin": 5.0, "accepted": false, "reason": "candidate_mae_exceeds_margin", "baseline_mae": 1.633333, "candidate_mae": 2.7, "mae_delta": 1.066667, "improved": 1, "unchanged": 1, "worsened": 3, "severe_regressions": 0, "records": [{"answer_id": "ANS_CO_1328", "baseline_score": 18.333333333333332, "candidate_score": 20.0, "teacher_score": 18.0}, {"answer_id": "ANS_CO_1342", "baseline_score": 6.833333333333333, "candidate_score": 9.0, "teacher_score": 6.0}, {"answer_id": "ANS_CO_1364", "baseline_score": 25.0, "candidate_score": 25.0, "teacher_score": 23.0}, {"answer_id": "ANS_CO_1382", "baseline_score": 4.166666666666667, "candidate_score": 8.5, "teacher_score": 8.0}, {"answer_id": "ANS_CO_1392", "baseline_score": 12.833333333333334, "candidate_score": 8.0, "teacher_score": 14.0}]}
+2026-08-07 12:51:31 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: candidate_mae_exceeds_margin
+2026-08-07 12:51:31 | WARNING  | [rubric selection] no refined candidate passed every gate; selected the official baseline for CO_12. mode=calibrated_noninferior_baseline_selected
+2026-08-07 12:51:31 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_12_optimization.json
+2026-08-07 12:51:31 | INFO     | [rubric transaction] persisted postcondition passed for CO_12; mode=calibrated_noninferior_baseline_selected; sha256=113bc2c35baa6937c94b15357a6a64e0f0c7a52c1c05bcb34fca71f627a40ce6
+2026-08-07 12:51:31 | INFO     | 
+🏆 任务完成！

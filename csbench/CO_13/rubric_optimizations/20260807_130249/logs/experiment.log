@@ -1,0 +1,163 @@
+2026-08-07 12:51:35 | INFO     | ==================================================
+2026-08-07 12:51:35 | INFO     | 📂 正在加载试卷数据库...
+2026-08-07 12:51:35 | INFO     |    运行模式: VARIANCE_OPT
+2026-08-07 12:51:35 | INFO     |    题目范围: ['CO_13']
+2026-08-07 12:51:35 | INFO     |    文本模型: glm5 -> glm-5.2 (thinking=disabled)
+2026-08-07 12:51:35 | INFO     |    提取后端: csbench_hybrid
+2026-08-07 12:51:35 | INFO     |    题库文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\exam_database.json
+2026-08-07 12:51:35 | INFO     |    教师分文件: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\teacher_scores.json
+2026-08-07 12:51:35 | INFO     |    Sample quality policy: raw (mode=raw, excluded=0, corrected=0)
+2026-08-07 12:51:35 | INFO     |    答案元数据: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\answer_metadata.jsonl
+2026-08-07 12:51:35 | INFO     |    并发数:   2
+2026-08-07 12:51:35 | INFO     |    结果目录: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_co13_rubric_opt
+2026-08-07 12:51:35 | INFO     |    Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\optimized
+2026-08-07 12:51:35 | INFO     |    初始Rubric目录: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\initial
+2026-08-07 12:51:35 | INFO     |    允许回退初始Rubric: False
+2026-08-07 12:51:35 | INFO     |    进度文件: D:\users\王鑫020420\Desktop\refgrader-main\results_runs\csbench_co13_rubric_opt\progress.json
+2026-08-07 12:51:35 | INFO     |    日志文件: logs\experiment_20260807_125135.log
+2026-08-07 12:51:35 | INFO     | 🔬 当前处于【方差优化模式】(VARIANCE OPT MODE)
+2026-08-07 12:51:35 | INFO     |    系统将生成标准，进行小样本测试，修正并保存最终标准。
+2026-08-07 12:51:35 | INFO     | 
+============================================================
+🔬 [断点续传模式] 处理题目: CO_13
+============================================================
+2026-08-07 12:51:35 | INFO     | restart from the immutable initial rubric and ignore the existing optimized rubric.
+2026-08-07 12:51:35 | INFO     | Loaded immutable initial rubric: data/csbench/rubrics/initial/CO/CO_13_rubric_standard.json
+2026-08-07 12:51:35 | INFO     | force-rerun enabled; ignore old variance checkpoint for this question.
+2026-08-07 12:51:35 | INFO     | [data isolation] variance optimization is restricted to 13 calibration answers.
+2026-08-07 12:51:35 | INFO     | 
+👉 正在处理新样本: ANS_CO_1500.jpg
+2026-08-07 12:51:40 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-08-07 12:51:42 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-08-07 12:51:42 | INFO     | [metadata] loaded 3326 answer records from D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\answer_metadata.jsonl
+2026-08-07 12:53:28 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-08-07 12:53:30 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:53:39 | INFO     |       ✅ [裁判亮分] 总得分: 17.5
+2026-08-07 12:53:39 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: 学生回答出了中断响应与返回的核心宏观轨迹（跳转到中断程序、执行结束、返回原程序），但遗漏了标准答案中要求的关键硬件细节机制（关中断、保存断点、寻找中断入口地址等）。基于大学期末考试判卷的宽松政策，对正确的宏观流程给予一半的部分分。
+2026-08-07 12:53:39 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: 提取到的屏蔽字向量（A=0001, B=1011, C=1111, D=1001）与标准答案实现等价匹配，完全满足设计目标要求。
+2026-08-07 12:53:39 | INFO     |          - [条款 step_2] 得分: 7.0 | 理由: 由于学生正确作答了上一题的屏蔽字设计，根据硬件中断响应逻辑，这自然构成了 ABCD 同时触发并按 C->B->D->A 嵌套执行的轨迹。提取出的文字准确表达了这一动态过程与轨迹关系，符合期末考中宽容的评分原则。
+2026-08-07 12:53:39 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:53:41 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:53:52 | INFO     |       ✅ [裁判亮分] 总得分: 16.5
+2026-08-07 12:53:52 | INFO     |          - [条款 step_1] 得分: 1.5 | 理由: Student correctly identifies response conditions, jump to service program, and return, but misses key steps like saving/restoring the breakpoint.
+2026-08-07 12:53:52 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: The provided mask words A=0001, B=1011, C=1111, D=1001 perfectly match the standard answer and correctly represent the C->B->D->A priority.
+2026-08-07 12:53:52 | INFO     |          - [条款 step_3] 得分: 7.0 | 理由: The student's trace correctly and concisely represents the timeline: simultaneous interrupt requests from ABCD, followed by nested execution strictly resolving in the order C, B, D, A.
+2026-08-07 12:53:52 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:53:54 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:54:01 | INFO     |       ✅ [裁判亮分] 总得分: 17.5
+2026-08-07 12:54:01 | INFO     |          - [条款 step_1] 得分: 2.5 | 理由: The student accurately describes the process of jumping to the interrupt program and returning to the original program after execution. However, the critical steps of saving the breakpoint and disabling interrupts during the implicit hardware response phase are missing. Thus, it is a partial match.
+2026-08-07 12:54:01 | INFO     |          - [条款 step_2] 得分: 8 | 理由: The extracted bit vectors exactly match the standard answer.
+2026-08-07 12:54:01 | INFO     |          - [条款 step_3] 得分: 7 | 理由: The student correctly traces the simultaneous arrival of all interrupts (ABCD) and accurately lists the nested execution and completion sequence (C -> B -> D -> A), which satisfies the rubric for the execution track.
+2026-08-07 12:54:01 | INFO     | 💾 样本 ANS_CO_1500.jpg 进度已保存。
+2026-08-07 12:54:01 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-08-07 12:54:16 | INFO     | 
+👉 正在处理新样本: ANS_CO_1510.jpg
+2026-08-07 12:54:20 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-08-07 12:54:22 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-08-07 12:55:13 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-08-07 12:55:15 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:55:24 | INFO     |       ✅ [裁判亮分] 总得分: 14.0
+2026-08-07 12:55:24 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: Student provides the correct general flow of interrupt handling including hardware and software steps (turn off interrupt, save context/PC, turn on interrupt, execute service, restore breakpoint). Missing the explicit mention of the trigger condition (instruction execution ends) and the hardware detail of sending the entry address to PC, hence partial match.
+2026-08-07 12:55:24 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: The extracted bit vectors for A, B, C, and D exactly match the standard answer.
+2026-08-07 12:55:24 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: The extracted OCR text for the trace diagram is fragmented and indicates that A, B, C, and D occur simultaneously, which correctly sets up the trace based on priority, but lacks the complete sequential trace diagram details needed for full marks.
+2026-08-07 12:55:24 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:55:26 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:55:35 | INFO     |       ✅ [裁判亮分] 总得分: 16.0
+2026-08-07 12:55:35 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: 准确描述了关中断、保护现场（记录PC和寄存器）、开/关中断及恢复断点执行服务的过程，但缺失了指令结束响应、识别中断源和返回原程序等关键步骤，扣1分。
+2026-08-07 12:55:35 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: 提取出的A、B、C、D四级中断屏蔽字与标准答案完全匹配。
+2026-08-07 12:55:35 | INFO     |          - [条款 step_3] 得分: 4.0 | 理由: OCR提取的文字碎片说明了ABCD同时触发的初始场景，但完全缺失了具体的嵌套处理与返回执行轨迹，证据不足以支撑完整的过程图，仅给部分起始分析分。
+2026-08-07 12:55:35 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:55:37 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:55:48 | INFO     |       ✅ [裁判亮分] 总得分: 14.0
+2026-08-07 12:55:48 | INFO     |          - [条款 step_1] 得分: 4.0 | 理由: 准确覆盖了硬件关中断、保护现场与断点、执行中断服务、嵌套开/关中断、恢复断点和返回等核心步骤。但缺失了'识别中断源'及'中断服务程序入口地址送PC'的关键动作。基于大学期末考试的宽松评分原则，对核心执行轨迹予以肯定，扣减缺失基本要点的分数。
+2026-08-07 12:55:48 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: 针对处理优先级 C>B>D>A，学生提取的各中断源屏蔽字（A=0001, B=1011, C=1111, D=1001）与标准答案完全一致，反映了正确的优先级映射逻辑。
+2026-08-07 12:55:48 | INFO     |          - [条款 step_3] 得分: 2.0 | 理由: 提取出的文本片段极为破碎，仅包含了屏蔽字表头复述和'ABCD同时'到达的初始已知条件，未能在文本中重建出有效的CPU执行和响应中断的轨迹过程。鉴于OCR抽取的局限性，仅基于抄写的已知前提条件酌情给予极少辛苦分。
+2026-08-07 12:55:48 | INFO     | 💾 样本 ANS_CO_1510.jpg 进度已保存。
+2026-08-07 12:55:48 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-08-07 12:56:03 | INFO     | 
+👉 正在处理新样本: ANS_CO_1513.jpg
+2026-08-07 12:56:08 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-08-07 12:56:10 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-08-07 12:57:25 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-08-07 12:57:27 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:57:37 | INFO     |       ✅ [裁判亮分] 总得分: 9.0
+2026-08-07 12:57:37 | INFO     |          - [条款 step_1] 得分: 1.0 | 理由: 学生仅提到了响应优先级和处理优先级（屏蔽）的概念，完全未包含保存断点、关中断、寻找入口地址等CPU响应中断标准过程中的基本动作，属于严重缺失大部分要点的部分匹配。
+2026-08-07 12:57:37 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: 学生给出的A、B、C、D各设备屏蔽字与标准答案完全一致，结果完全正确。
+2026-08-07 12:57:37 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 提取到的信息仅有散落的符号和无关联的数字，未呈现任何能表明执行先后顺序或断点返回的轨迹图结构，无法评判为有效的解答内容。
+2026-08-07 12:57:37 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:57:39 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:57:48 | INFO     |       ✅ [裁判亮分] 总得分: 9.0
+2026-08-07 12:57:48 | INFO     |          - [条款 step_1] 得分: 1 | 理由: 学生只写出了优先级判断的原理，完全遗漏了CPU响应中断的标准硬件执行过程（如关中断、保存断点、寻找入口地址等），仅对理解优先级这一辅助概念给予少量同情分。
+2026-08-07 12:57:48 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: 规范化等价比较确认该项与标准答案等价；提取出的屏蔽字内容存在位序颠倒（如A为1000而非0001）及数值设计错误（B为1101而非1011），未能满足C、B、D、A的处理次序要求，属于核心结论错误。
+2026-08-07 12:57:48 | INFO     |          - [条款 step_3] 得分: 0 | 理由: 提取出的信息仅为无关联的散落文字与符号，无法重建或推断出具有逻辑执行顺序的轨迹图轨迹，无法对照评分。
+2026-08-07 12:57:48 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:57:50 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:58:01 | INFO     |       ✅ [裁判亮分] 总得分: 9.0
+2026-08-07 12:58:01 | INFO     |          - [条款 step_1] 得分: 1.0 | 理由: 学生仅正确指出了中断优先级与响应、完成次序的关系，但完全未提及CPU响应及处理中断的任何基本步骤（如保存断点、关中断、寻找入口地址、恢复断点等）。缺少绝大部分核心得分点，给予少量分数。
+2026-08-07 12:58:01 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: 规范化等价比较确认该项与标准答案等价；学生设计的屏蔽字中，B（1011）错误地屏蔽了D（第二位为0），而在期望顺序中D应先于B处理，D不应被B屏蔽。屏蔽逻辑存在根本性错误，无法满足要求的执行轨迹，属于核心语义错误。
+2026-08-07 12:58:01 | INFO     |          - [条款 step_3] 得分: 0.0 | 理由: 提取的信息仅为散乱的符号和步骤2的错误屏蔽字，未展示出清晰的中断响应、嵌套和返回执行轨迹（如用户->A->B->C->...等），信息不足以判定轨迹图正确性。
+2026-08-07 12:58:01 | INFO     | 💾 样本 ANS_CO_1513.jpg 进度已保存。
+2026-08-07 12:58:01 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-08-07 12:58:16 | INFO     | 
+👉 正在处理新样本: ANS_CO_1542.jpg
+2026-08-07 12:58:22 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-08-07 12:58:24 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-08-07 12:59:03 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-08-07 12:59:05 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:59:13 | INFO     |       ✅ [裁判亮分] 总得分: 14
+2026-08-07 12:59:13 | INFO     |          - [条款 step_1] 得分: 3 | 理由: 涵盖了中断请求、优先级判优、关中断、保存断点（笔误存取断电）和多层嵌套，但缺失寻找入口地址和中断返回的关键步骤，给予部分分。
+2026-08-07 12:59:13 | INFO     |          - [条款 step_2] 得分: 8 | 理由: 四个中断源的屏蔽字提取值与标准答案完全一致，可得满分。
+2026-08-07 12:59:13 | INFO     |          - [条款 step_3] 得分: 3 | 理由: 正确列出了轨迹图的层次结构和时间节点顺序，但由于缺乏具体连线，不足以构成完整正确的轨迹图，给予部分分。
+2026-08-07 12:59:13 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:59:15 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:59:22 | INFO     |       ✅ [裁判亮分] 总得分: 14
+2026-08-07 12:59:22 | INFO     |          - [条款 step_1] 得分: 3 | 理由: 学生提到了中断请求、判优、关中断、保存断点（存取断电为笔误）以及多层中断嵌套，但遗漏了在指令执行结束响应、识别中断源、送PC和返回原程序等核心环节，给部分分。
+2026-08-07 12:59:22 | INFO     |          - [条款 step_2] 得分: 8 | 理由: 学生给出的A、B、C、D四个中断源的屏蔽字与标准答案（A=0001, B=1011, C=1111, D=1001）完全一致，满足设计要求。
+2026-08-07 12:59:22 | INFO     |          - [条款 step_3] 得分: 3 | 理由: 学生画出了轨迹图并正确列出了优先级的自上而下顺序，且关键节点（ABCD同时到来、C完成、B完成、A完成等）符合处理逻辑，但由于无法提取具体连线与轨迹走向，无法确认为完全正确，给予部分分。
+2026-08-07 12:59:22 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 12:59:24 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-08-07 12:59:32 | INFO     |       ✅ [裁判亮分] 总得分: 14.5
+2026-08-07 12:59:32 | INFO     |          - [条款 step_1] 得分: 3.0 | 理由: 学生正确答出了中断请求、判优、关中断、保存断点以及多层中断嵌套等关键步骤，但遗漏了识别中断源、将入口地址送PC以及恢复断点和中断返回等必要环节。
+2026-08-07 12:59:32 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: 学生写出的四个中断源对应的屏蔽字与标准答案完全一致。
+2026-08-07 12:59:32 | INFO     |          - [条款 step_3] 得分: 3.5 | 理由: 学生给出的轨迹图框架和时间节点基本正确（C、B、D、A依次完成），但由于缺乏具体的图表连线和轨迹方向信息，无法判定其执行轨迹的完全正确性，故给予一半的步骤分。
+2026-08-07 12:59:32 | INFO     | 💾 样本 ANS_CO_1542.jpg 进度已保存。
+2026-08-07 12:59:32 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-08-07 12:59:47 | INFO     | 
+👉 正在处理新样本: ANS_CO_1546.jpg
+2026-08-07 12:59:50 | INFO     |    ⏳ [V0 保护] 脱敏清单生成完毕，休眠 2 秒...
+2026-08-07 12:59:52 | INFO     |    [单次视觉采样] 正在看图提取事实...
+2026-08-07 13:00:46 | INFO     |    ⏳ [V0 保护] 视觉提取完成，准备进入打分循环，休眠 2 秒...
+2026-08-07 13:00:48 | INFO     |    [第 1/3 次判决] 呼叫逻辑裁判...
+2026-08-07 13:00:57 | INFO     |       ✅ [裁判亮分] 总得分: 10.0
+2026-08-07 13:00:57 | INFO     |          - [条款 step_1] 得分: 2.0 | 理由: 学生正确描述了中断响应的基本执行逻辑与多重中断（嵌套）处理规则，但缺失了关中断、保存断点、寻找入口地址等中断隐指令的具体硬件操作细节，故给予部分分。
+2026-08-07 13:00:57 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: 学生给出的四个中断源屏蔽字（A=1001, B=1011, C=1111, D=1001）与标准答案完全一致，完美实现了C、B、D、A的处理顺序。
+2026-08-07 13:00:57 | INFO     |          - [条款 step_3] 得分: 0.0 | 理由: 题目要求画出CPU执行用户程序和处理中断的具体轨迹图。学生仅列出了最终的中断执行顺序，缺失了从用户程序进入/退出各中断服务程序的过程轨迹，不符合画图题的作答要求，无法获取分数。
+2026-08-07 13:00:57 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 13:00:59 | INFO     |    [第 2/3 次判决] 呼叫逻辑裁判...
+2026-08-07 13:01:07 | INFO     |       ✅ [裁判亮分] 总得分: 18.0
+2026-08-07 13:01:07 | INFO     |          - [条款 step_1] 得分: 3.0 | 理由: 学生正确描述了按优先级响应、未被屏蔽的条件、以及多重中断嵌套的处理逻辑，但缺失了进入中断周期时的硬件隐指令操作（保存断点、关中断、中断服务程序入口地址送PC等）。基于宽松评分标准，给予部分分数。
+2026-08-07 13:01:07 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: 学生写出的各中断源屏蔽字（A=1001，B=1011，C=1111，D=1001）与标准答案完全一致，完整满足设计要求。
+2026-08-07 13:01:07 | INFO     |          - [条款 step_3] 得分: 7.0 | 理由: 学生提取出的执行轨迹序列完全符合题目设计的优先级（C>B>D>A）无嵌套顺序，覆盖了轨迹图的核心结果轨迹，判为正确。
+2026-08-07 13:01:07 | INFO     |    ⏳ [V0 保护] 判决完成，休眠 2 秒...
+2026-08-07 13:01:09 | INFO     |    [第 3/3 次判决] 呼叫逻辑裁判...
+2026-08-07 13:01:17 | INFO     |       ✅ [裁判亮分] 总得分: 16.5
+2026-08-07 13:01:17 | INFO     |          - [条款 step_1] 得分: 1.5 | 理由: 学生正确描述了优先级、屏蔽字判断和中断嵌套处理的核心机制，但遗漏了响应中断的时机（指令执行结束）、保护断点和恢复现场等基本过程步骤。属于部分正确，给予部分分数。
+2026-08-07 13:01:17 | INFO     |          - [条款 step_2] 得分: 8.0 | 理由: 学生给出的A、B、C、D的屏蔽字与标准答案完全一致，完全符合C>B>D>A的处理顺序。
+2026-08-07 13:01:17 | INFO     |          - [条款 step_3] 得分: 7.0 | 理由: 学生准确列出了中断的执行轨迹顺序（C->B->D->A），与所设计的屏蔽字和题目要求完全一致。虽然形式未画成标准图表，但语义信息完整且正确。
+2026-08-07 13:01:17 | INFO     | 💾 样本 ANS_CO_1546.jpg 进度已保存。
+2026-08-07 13:01:17 | INFO     | ⏳ 样本间冷却 15 秒...
+2026-08-07 13:01:32 | INFO     | 
+📊 采样完成。平均方差: 2.6444
+2026-08-07 13:01:32 | INFO     | Item-level variance: avg=0.8421, max=10.8889
+2026-08-07 13:01:32 | WARNING  | ⚠️ 方差超标！开始基于高方差样本修正标准...
+2026-08-07 13:01:32 | INFO     | 🔧 [规则修正] 正在基于 3 份精选样本优化规则...
+2026-08-07 13:01:32 | INFO     | [rubric structure] mandatory high-value split targets: [{"parent_id": "step_1", "parent_points": 5.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}, {"parent_id": "step_2", "parent_points": 8.0, "current_scoring_children": 1, "minimum_scoring_children": 2, "weighting_policy": "equal_atomic"}]
+2026-08-07 13:01:52 | INFO     | [candidate replay] validating refined rubric against 5 isolated calibration answers...
+2026-08-07 13:01:52 | INFO     | 📦 成功加载教师真实成绩单数据库！共包含 3326 名考生的数据。
+2026-08-07 13:02:48 | INFO     | [candidate replay] {"method": "paired_teacher_score_noninferiority", "expected": 5, "paired": 5, "required": 4, "coverage": 1.0, "mae_margin": 0.4, "severe_regression_margin": 4.0, "accepted": false, "reason": "severe_sample_regression", "baseline_mae": 2.766667, "candidate_mae": 4.55, "mae_delta": 1.783333, "improved": 2, "unchanged": 0, "worsened": 3, "severe_regressions": 1, "records": [{"answer_id": "ANS_CO_1500", "baseline_score": 17.166666666666668, "candidate_score": 15.5, "teacher_score": 15.0}, {"answer_id": "ANS_CO_1510", "baseline_score": 14.666666666666666, "candidate_score": 9.25, "teacher_score": 20.0}, {"answer_id": "ANS_CO_1513", "baseline_score": 9.0, "candidate_score": 7.0, "teacher_score": 15.0}, {"answer_id": "ANS_CO_1542", "baseline_score": 14.166666666666666, "candidate_score": 14.0, "teacher_score": 14.0}, {"answer_id": "ANS_CO_1546", "baseline_score": 14.833333333333334, "candidate_score": 11.5, "teacher_score": 15.0}]}
+2026-08-07 13:02:48 | ERROR    | Refined rubric rejected by calibration non-inferiority gate: severe_sample_regression
+2026-08-07 13:02:48 | WARNING  | [rubric selection] no refined candidate passed every gate; selected the official baseline for CO_13. mode=calibrated_noninferior_baseline_selected
+2026-08-07 13:02:48 | INFO     | [rubric manifest] saved: D:\users\王鑫020420\Desktop\refgrader-main\data\csbench\rubrics\manifests\CO\CO_13_optimization.json
+2026-08-07 13:02:48 | INFO     | [rubric transaction] persisted postcondition passed for CO_13; mode=calibrated_noninferior_baseline_selected; sha256=8d67bd6e2ab3b8931ec61685b5d3018c4576704a7d778e6620f74458bcaf9587
+2026-08-07 13:02:48 | INFO     | 
+🏆 任务完成！

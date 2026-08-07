@@ -1,0 +1,113 @@
+{
+  "question_id": "CO_12",
+  "status": "candidate_rejected_baseline_selected",
+  "fallback_reason": "candidate_noninferiority_rejected:candidate_mae_exceeds_margin",
+  "mandatory_split_targets": [
+    {
+      "parent_id": "step_1",
+      "parent_points": 4.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    },
+    {
+      "parent_id": "step_2",
+      "parent_points": 4.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    },
+    {
+      "parent_id": "step_3",
+      "parent_points": 4.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    },
+    {
+      "parent_id": "step_4",
+      "parent_points": 4.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    },
+    {
+      "parent_id": "step_5",
+      "parent_points": 4.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "role_constrained"
+    },
+    {
+      "parent_id": "step_6",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    }
+  ],
+  "candidate_replay": {
+    "method": "paired_teacher_score_noninferiority",
+    "expected": 5,
+    "paired": 5,
+    "required": 4,
+    "coverage": 1.0,
+    "mae_margin": 0.5,
+    "severe_regression_margin": 5.0,
+    "accepted": false,
+    "reason": "candidate_mae_exceeds_margin",
+    "baseline_mae": 1.633333,
+    "candidate_mae": 2.7,
+    "mae_delta": 1.066667,
+    "improved": 1,
+    "unchanged": 1,
+    "worsened": 3,
+    "severe_regressions": 0,
+    "records": [
+      {
+        "answer_id": "ANS_CO_1328",
+        "baseline_score": 18.333333333333332,
+        "candidate_score": 20.0,
+        "teacher_score": 18.0
+      },
+      {
+        "answer_id": "ANS_CO_1342",
+        "baseline_score": 6.833333333333333,
+        "candidate_score": 9.0,
+        "teacher_score": 6.0
+      },
+      {
+        "answer_id": "ANS_CO_1364",
+        "baseline_score": 25.0,
+        "candidate_score": 25.0,
+        "teacher_score": 23.0
+      },
+      {
+        "answer_id": "ANS_CO_1382",
+        "baseline_score": 4.166666666666667,
+        "candidate_score": 8.5,
+        "teacher_score": 8.0
+      },
+      {
+        "answer_id": "ANS_CO_1392",
+        "baseline_score": 12.833333333333334,
+        "candidate_score": 8.0,
+        "teacher_score": 14.0
+      }
+    ]
+  },
+  "baseline_semantic_errors": [
+    "additive parent step_1 must contain at least 2 scoring items, got 1",
+    "additive parent step_2 must contain at least 2 scoring items, got 1",
+    "additive parent step_3 must contain at least 2 scoring items, got 1",
+    "additive parent step_4 must contain at least 2 scoring items, got 1",
+    "role-weighted parent step_5 must contain at least 2 scoring items, got 1",
+    "role-weighted child step_5 has invalid scoring_role ''",
+    "role-weighted parent step_5 must have exactly one final child",
+    "role-weighted parent step_5 must have a core-process child",
+    "role-weighted parent step_5 gives insufficient process weight",
+    "additive parent step_6 must contain at least 2 scoring items, got 1"
+  ],
+  "active_rubric_preserved": true,
+  "created_at": "2026-08-07T12:51:31"
+}

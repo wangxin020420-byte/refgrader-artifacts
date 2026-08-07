@@ -1,0 +1,69 @@
+{
+  "question_id": "ISC_2",
+  "status": "candidate_rejected_baseline_selected",
+  "fallback_reason": "candidate_noninferiority_rejected:candidate_mae_exceeds_margin",
+  "mandatory_split_targets": [
+    {
+      "parent_id": "step_1",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    }
+  ],
+  "candidate_replay": {
+    "method": "paired_teacher_score_noninferiority",
+    "expected": 5,
+    "paired": 5,
+    "required": 4,
+    "coverage": 1.0,
+    "mae_margin": 0.1,
+    "severe_regression_margin": 1.0,
+    "accepted": false,
+    "reason": "candidate_mae_exceeds_margin",
+    "baseline_mae": 0.6,
+    "candidate_mae": 0.9,
+    "mae_delta": 0.3,
+    "improved": 2,
+    "unchanged": 0,
+    "worsened": 3,
+    "severe_regressions": 0,
+    "records": [
+      {
+        "answer_id": "ANS_ISC_473",
+        "baseline_score": 2.6666666666666665,
+        "candidate_score": 3.5,
+        "teacher_score": 2.0
+      },
+      {
+        "answer_id": "ANS_ISC_478",
+        "baseline_score": 4.5,
+        "candidate_score": 5.0,
+        "teacher_score": 4.0
+      },
+      {
+        "answer_id": "ANS_ISC_485",
+        "baseline_score": 3.6666666666666665,
+        "candidate_score": 3.5,
+        "teacher_score": 3.0
+      },
+      {
+        "answer_id": "ANS_ISC_491",
+        "baseline_score": 3.5,
+        "candidate_score": 4.0,
+        "teacher_score": 4.0
+      },
+      {
+        "answer_id": "ANS_ISC_509",
+        "baseline_score": 3.3333333333333335,
+        "candidate_score": 2.5,
+        "teacher_score": 4.0
+      }
+    ]
+  },
+  "baseline_semantic_errors": [
+    "additive parent step_1 must contain at least 2 scoring items, got 1"
+  ],
+  "active_rubric_preserved": true,
+  "created_at": "2026-08-07T13:13:17"
+}

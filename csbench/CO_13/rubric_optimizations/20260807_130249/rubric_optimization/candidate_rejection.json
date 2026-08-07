@@ -1,0 +1,77 @@
+{
+  "question_id": "CO_13",
+  "status": "candidate_rejected_baseline_selected",
+  "fallback_reason": "candidate_noninferiority_rejected:severe_sample_regression",
+  "mandatory_split_targets": [
+    {
+      "parent_id": "step_1",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    },
+    {
+      "parent_id": "step_2",
+      "parent_points": 8.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    }
+  ],
+  "candidate_replay": {
+    "method": "paired_teacher_score_noninferiority",
+    "expected": 5,
+    "paired": 5,
+    "required": 4,
+    "coverage": 1.0,
+    "mae_margin": 0.4,
+    "severe_regression_margin": 4.0,
+    "accepted": false,
+    "reason": "severe_sample_regression",
+    "baseline_mae": 2.766667,
+    "candidate_mae": 4.55,
+    "mae_delta": 1.783333,
+    "improved": 2,
+    "unchanged": 0,
+    "worsened": 3,
+    "severe_regressions": 1,
+    "records": [
+      {
+        "answer_id": "ANS_CO_1500",
+        "baseline_score": 17.166666666666668,
+        "candidate_score": 15.5,
+        "teacher_score": 15.0
+      },
+      {
+        "answer_id": "ANS_CO_1510",
+        "baseline_score": 14.666666666666666,
+        "candidate_score": 9.25,
+        "teacher_score": 20.0
+      },
+      {
+        "answer_id": "ANS_CO_1513",
+        "baseline_score": 9.0,
+        "candidate_score": 7.0,
+        "teacher_score": 15.0
+      },
+      {
+        "answer_id": "ANS_CO_1542",
+        "baseline_score": 14.166666666666666,
+        "candidate_score": 14.0,
+        "teacher_score": 14.0
+      },
+      {
+        "answer_id": "ANS_CO_1546",
+        "baseline_score": 14.833333333333334,
+        "candidate_score": 11.5,
+        "teacher_score": 15.0
+      }
+    ]
+  },
+  "baseline_semantic_errors": [
+    "additive parent step_1 must contain at least 2 scoring items, got 1",
+    "additive parent step_2 must contain at least 2 scoring items, got 1"
+  ],
+  "active_rubric_preserved": true,
+  "created_at": "2026-08-07T13:02:48"
+}
