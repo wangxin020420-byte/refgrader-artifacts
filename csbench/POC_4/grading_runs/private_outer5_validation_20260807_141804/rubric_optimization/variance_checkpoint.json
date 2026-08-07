@@ -1,0 +1,599 @@
+[
+  {
+    "file": "ANS_POC_106.jpg",
+    "facts": "{\"step_1\": \"S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-08-07T17:27:48.822631",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_106.jpg",
+      "image_sha256": "18c742d34f7b7361ccab14a0db686a2e4afbb81c65090eb1f7df759abcc1fd7a",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_106",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9"
+      }
+    },
+    "scores": [
+      5,
+      3,
+      3.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "The student's grammar correctly implements a right-linear structure for positive integers (using A and B) and recursively appends even digits (via B→BC and C). It correctly generates even digits through C and terminates with any digit through B. This forms a completely valid Type-2 grammar for even positive integers."
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "failed",
+            "reason": "The grammar attempts to enforce a specific constraint but contains structural and semantic flaws. The usage of B is contradictory (defined in terms of itself while also acting as a starting digit), and S→AB fails to provide a recursive path to generate strings of length 3 or more. Partial credit is awarded for correct terminal definitions and demonstrating relevant grammar construction methodology."
+          }
+        ],
+        "total_score": 3
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Construct a Type-2 grammar that generates all positive integers with distinct leading and trailing digits (including single-digit numbers).",
+            "dependency_status": "not_applicable",
+            "reason": "The grammar correctly generates single-digit numbers and ensures the trailing digit is even (via C→0|2|4|6|8). However, it fails to enforce the requirement that the first and last digits are distinct. The recursive rule B→BC combined with B→C allows strings where the leading digit and trailing digit are the same (e.g., generating '2' for A and reaching 'C→2' through B, yielding '22'), leading to a partial structural defect."
+          }
+        ],
+        "total_score": 3.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        3.0,
+        3.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.7222222222222222
+    },
+    "max_item_variance": 0.7222222222222222,
+    "avg_item_variance": 0.7222222222222222
+  },
+  {
+    "file": "ANS_POC_111.jpg",
+    "facts": "{\"step_1\": \"A→2|4|6|8 \\nB→A|1|3|5|7|9\\nC→A|0\\nD→DB\\nS→A|DC\\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-08-07T17:28:37.192873",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_111.jpg",
+      "image_sha256": "ddb76ca3b909dac5c1f709ff3415e7f707def9bd7360ba9a8b4de53246929cbe",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. A→2|4|6|8 \nB→A|1|3|5|7|9 C→A|0 D→DB \nS→A|DC\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_111",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "A→2|4|6|8 \nB→A|1|3|5|7|9\nC→A|0\nD→DB\nS→A|DC\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9"
+      }
+    },
+    "scores": [
+      5.0,
+      3.5,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "A→2|4|6|8 \nB→A|1|3|5|7|9\nC→A|0\nD→DB\nS→A|DC\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "The student constructs a valid Type 2 grammar using variables A, B, C, and D to concatenate prefixes (non-zero digits) and suffixes (even digits), accurately capturing the rules for generating positive even integers. The approach and formal grammar perfectly satisfy the rubric."
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "A→2|4|6|8 \nB→A|1|3|5|7|9\nC→A|0\nD→DB\nS→A|DC\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "insufficient",
+            "reason": "The student correctly constructs the grammar for even 1-digit numbers (S->A) and numbers ending in 0 (S->DC). However, the rule for generating intermediate digits (D->DB) is flawed: it generates an infinite loop (D generates D) and cannot terminate to produce digits 1-9. Therefore, the grammar cannot generate even numbers with 2 or more digits."
+          }
+        ],
+        "total_score": 3.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "A→2|4|6|8 \nB→A|1|3|5|7|9\nC→A|0\nD→DB\nS→A|DC\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "The student provides a complete and logically correct 2-type grammar construction that accurately generates the target language. The thought process accurately verifies the rules for 1-digit and 2-or-more-digit numbers. This is a valid alternative to the standard answer."
+          }
+        ],
+        "total_score": 5.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        3.5,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.5
+    },
+    "max_item_variance": 0.5,
+    "avg_item_variance": 0.5
+  },
+  {
+    "file": "ANS_POC_116.jpg",
+    "facts": "{\"step_1\": \"G[S]: \\nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-08-07T17:29:22.503582",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_116.jpg",
+      "image_sha256": "36840d1b308e45a01b745489c4f3b81e9ef70193db32513f3c0d4aa7615c6112",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "G[S]: \nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_116",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "G[S]: \nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8"
+      }
+    },
+    "scores": [
+      5.0,
+      5.0,
+      5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "G[S]: \nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "The student constructs a valid Type-2 grammar. By recursively using N and A, it correctly generates non-leading zeros and any positive integer of arbitrary length ending in an even digit (via S->NB), and explicitly covers single-digit even numbers (via S->C). The solution fully satisfies the problem requirements."
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "G[S]: \nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "The student's grammar explicitly defines a valid 2-type (context-free) grammar that generates all non-zero leading even numbers. Variables N and A properly handle leading and intermediate digits, B generates even digits, and S combines them correctly to produce the required language."
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "G[S]: \nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "The student's context-free grammar correctly generates all non-zero natural numbers that end in an even digit. Non-terminal N handles the leading digit (1-9) and left-recursively appends A (0-9) to generate any multi-digit prefix. B generates single-digit even numbers (2, 4, 6, 8, handling 0 via the base case). S correctly sequences N and B, covering all multi-digit even numbers. Single-digit even numbers are generated by S→C. This represents a perfectly valid alternative 2-type grammar."
+          }
+        ],
+        "total_score": 5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_73.jpg",
+    "facts": "{\"step_1\": \"G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-08-07T17:30:10.104074",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_73.jpg",
+      "image_sha256": "5c44bcaf01e2dcb91d92f4fc8e3a239cddec8fdadab82c0d78377e0b6da02dfb",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_73",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数"
+      }
+    },
+    "scores": [
+      5,
+      3,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "The student's grammar correctly generates positive even integers using recursive productions (M->MC) to build the required magnitude. The inclusion of the epsilon (ε) production in the recursive non-terminal M is a technically fatal flaw per strict formal language rules. However, following the lenient university final-exam instructor policy, this is treated as a minor structural detail/oversight rather than a core semantic contradiction. The demonstrated method and core productions are completely correct and align with the required pattern. Full points are awarded."
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "学生构造的文法逻辑基本正确，成功覆盖了正偶数的生成。但产生式 M→ε 未能为 S→BMD 生成最后一位偶数，导致无法生成诸如 12, 34 等两位及以上的正偶数，存在逻辑漏洞。鉴于大部分结构和基础逻辑成立，给予 3/5 分。"
+          }
+        ],
+        "total_score": 3
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "学生构造的文法没有歧义且完全符合正则文法（2型文法）的要求。产生式 M→MC|C|ε 成功解决了直接左递归问题，有效生成了任意长度的数字串。结合产生式 S→BMD 和 S→A，能够且仅能生成所有正偶数。满足题目的核心逻辑要求，给予满分。"
+          }
+        ],
+        "total_score": 5.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        3.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.888888888888889
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.888888888888889
+  },
+  {
+    "file": "ANS_POC_84.jpg",
+    "facts": "{\"step_1\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-08-07T17:31:05.872555",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_84.jpg",
+      "image_sha256": "9e11448fe5ec5d739b8f1dc89fa49dcd187a25f28770f1a57b0438c9cdaaf882",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_84",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {
+        "step_1": "未书写"
+      },
+      "facts": {
+        "step_1": "未书写"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "failed",
+            "reason": "The extracted fact explicitly indicates that the answer was not written ('未书写'). Therefore, no points can be awarded."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法",
+            "dependency_status": "failed",
+            "reason": "The extracted student fact is explicitly '未书写' (not written/blank), meaning the student provided no answer or grammar construction for evaluation."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "构造符合要求的2型文法（注：其他符合要求的文法同样给分）",
+            "dependency_status": "failed",
+            "reason": "提取的学生事实明确表明“未书写”，学生未提供任何文法构造或相关推导痕迹，无法给予分数。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

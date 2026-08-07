@@ -1,0 +1,817 @@
+[
+  {
+    "file": "ANS_ISC_156.jpg",
+    "facts": "{\"step_1\": \"1GB=2¹⁰B 2³²B=2²²GB\", \"step_2\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T00:12:19.419618",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_7/ANS_ISC_156.jpg",
+      "image_sha256": "1f63edfbd6a4009e41a09568051067d14a037727697d26733161a6f224f4b340",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "1GB=2¹⁰B 2³²B=2²²GB",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_156",
+        "question_id": "ISC_7",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "1GB=2¹⁰B 2³²B=2²²GB",
+        "step_2": "未书写"
+      }
+    },
+    "scores": [
+      0,
+      1,
+      1
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "1GB=2¹⁰B 2³²B=2²²GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算最大可寻址内存空间 (Calculate the maximum addressable memory space, expecting 4GB based on a 32-bit address)",
+            "dependency_status": "failed",
+            "reason": "The student attempts the conversion using the relation 1GB = 2^10B, which is a fundamental unit conversion error (conceptually contradicting the definition 1GB = 2^30B). This flawed premise leads to an incorrect result (2^22GB instead of 4GB), representing a core conceptual contradiction."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "写出CPU的机器字长 (Write the machine word length of the CPU)",
+            "dependency_status": "failed",
+            "reason": "The extracted facts explicitly state that this part of the answer was not written."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "1GB=2¹⁰B 2³²B=2²²GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "最大可寻址空间：4GB",
+            "dependency_status": "insufficient",
+            "reason": "学生写出了正确的推导关系（1GB=2^10B及2^32B=2^22GB），但未算出最终数值结果（4GB）。按宽容评分政策，给与相应的计算/过程步骤部分分数，但不给最终数值满分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "机器字长：64位",
+            "dependency_status": "failed",
+            "reason": "提取文本明确指出此处未作答。"
+          }
+        ],
+        "total_score": 1
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "1GB=2¹⁰B 2³²B=2²²GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算最大可寻址内存空间为4GB",
+            "dependency_status": "insufficient",
+            "reason": "学生未直接写出最终的正确数值结论（4GB），但正确给出了计算过程所依赖的单位换算公式和映射关系（1GB=2¹⁰B，2³²B=2²²GB）。根据评分政策，正确的推导关系可获得部分过程分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "写出CPU的机器字长：64位",
+            "dependency_status": "failed",
+            "reason": "提取的学生事实明确标为“未书写”，没有任何相关内容可供评分，故计0分。"
+          }
+        ],
+        "total_score": 1
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.22222222222222224,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.11111111111111112
+  },
+  {
+    "file": "ANS_ISC_169.jpg",
+    "facts": "{\"step_1\": \"2³²=4G 共4GB\", \"step_2\": \"32位\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T00:13:01.745221",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_7/ANS_ISC_169.jpg",
+      "image_sha256": "6219c3a2e90a2d680ba41d1c790e82eb92a8863d1f039d9f95d1680ab4d77dd7",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "2³²=4G 共4GB 32位",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_169",
+        "question_id": "ISC_7",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "2³²=4G 共4GB",
+        "step_2": "32位"
+      }
+    },
+    "scores": [
+      2,
+      2.0,
+      2.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "2³²=4G 共4GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "最大可寻址空间：4GB",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly calculates the maximum addressable memory space as 4GB and provides the valid computation trace (2^32 = 4G)."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "32位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "机器字长：64位",
+            "dependency_status": "failed",
+            "reason": "The extracted fact explicitly provides a 32-bit CPU word length, which fundamentally contradicts the canonical 64-bit requirement."
+          }
+        ],
+        "total_score": 2
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "2³²=4G 共4GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算最大可寻址内存空间，标准答案为 4GB",
+            "dependency_status": "not_applicable",
+            "reason": "学生准确计算出了最大可寻址内存空间为 4GB，包含完整的计算过程与最终结果，完全符合评分标准。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "32位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出CPU的机器字长，标准答案为 64位",
+            "dependency_status": "failed",
+            "reason": "学生回答的CPU机器字长为 32位，与标准答案（64位）矛盾，属于核心数值错误，不得分。"
+          }
+        ],
+        "total_score": 2.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "2³²=4G 共4GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "最大可寻址空间：4GB",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact explicitly states the final answer as 4GB, along with the intermediate computation 2^32=4G, fully satisfying the rubric requirement."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "32位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "机器字长：64位",
+            "dependency_status": "failed",
+            "reason": "The student provided '32位' for the CPU's machine word length, which directly contradicts the standard answer of '64位'."
+          }
+        ],
+        "total_score": 2.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_ISC_196.jpg",
+    "facts": "{\"step_1\": \"2^36=64GB\", \"step_2\": \"64位\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T00:13:40.704441",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_7/ANS_ISC_196.jpg",
+      "image_sha256": "85a7640ea9d9489bf7aabdd8894108ebeebb035f7a93231d5b9f9c72b1fba050",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：内存空间=2^36=64GB. 字长为64位.",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_196",
+        "question_id": "ISC_7",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "2^36=64GB",
+        "step_2": "64位"
+      }
+    },
+    "scores": [
+      2.0,
+      2,
+      2.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "2^36=64GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算最大可寻址内存空间",
+            "dependency_status": "failed",
+            "reason": "最大可寻址内存空间计算结果错误。标准答案为4GB（可能是基于32位地址线），学生误算为64GB。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "64位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出CPU的机器字长",
+            "dependency_status": "satisfied",
+            "reason": "学生准确给出了CPU的机器字长为64位，与标准答案完全一致。"
+          }
+        ],
+        "total_score": 2.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "2^36=64GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The maximum addressable memory space is expected to be calculated (e.g., 4GB as per standard answer, or an equivalent correct numeric value based on the address bus).",
+            "dependency_status": "failed",
+            "reason": "The student provides an explicit final answer of 64GB for the maximum addressable space, which directly contradicts the standard answer of 4GB. This represents a core numeric/conclusion error."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "64位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Write the CPU's machine word length (expected: 64 bits).",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly identifies the machine word length as 64 bits, exactly matching the standard answer."
+          }
+        ],
+        "total_score": 2
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "2^36=64GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算最大可寻址内存空间，标准答案为4GB",
+            "dependency_status": "not_applicable",
+            "reason": "计算出的最大可寻址空间为64GB，与标准答案（4GB）在核心数值上存在直接矛盾。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "64位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出CPU的机器字长，标准答案为64位",
+            "dependency_status": "not_applicable",
+            "reason": "提取的机器字长为64位，与标准答案完全吻合。"
+          }
+        ],
+        "total_score": 2.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_ISC_198.jpg",
+    "facts": "{\"step_1\": \"8GB\", \"step_2\": \"32位\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T00:14:26.546831",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_7/ANS_ISC_198.jpg",
+      "image_sha256": "d2096e9e606791b9b8fdf8c5943c352c18e2f8577597234c399af008efe9f845",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：最大可寻址内存空间是2³² = 8GB 字长是32位.",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_198",
+        "question_id": "ISC_7",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "8GB",
+        "step_2": "32位"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "8GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Maximum addressable memory space should be 4GB.",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted answer is 8GB, which fundamentally contradicts the canonical answer of 4GB. This constitutes a core numerical/conclusion contradiction."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "32位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "CPU machine word length should be 64-bit.",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted answer is 32-bit, which fundamentally contradicts the canonical answer of 64-bit."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "8GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The calculated maximum addressable memory space must be exactly 4GB.",
+            "dependency_status": "failed",
+            "reason": "The student's extracted answer for the maximum addressable space is 8GB, which directly contradicts the standard answer of 4GB."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "32位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "The CPU machine word length must be 64-bit.",
+            "dependency_status": "failed",
+            "reason": "The student's extracted answer for the CPU's machine word length is 32-bit, which directly contradicts the standard answer of 64-bit."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "8GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算最大可寻址内存空间，标准答案为4GB",
+            "dependency_status": "not_applicable",
+            "reason": "提取到的数值为8GB，与标准答案4GB存在核心数值与事实矛盾，属于语义致命错误。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "32位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出CPU的机器字长，标准答案为64位",
+            "dependency_status": "not_applicable",
+            "reason": "提取到的数值为32位，与标准答案64位完全矛盾，属于核心数值错误。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_ISC_209.jpg",
+    "facts": "{\"step_1\": \"62GB\", \"step_2\": \"64位\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-26T00:15:07.499542",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_7/ANS_ISC_209.jpg",
+      "image_sha256": "6c3c11b1ff675ab40b1d591fda021c2d7a5b9852cc5ca6048c6c8bbdd98309bb",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "地址总线宽度为32位，其最大内存空间62GB \n因为2³⁶=64G. 得2³²=62G. 其字长是64位.",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_209",
+        "question_id": "ISC_7",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "62GB",
+        "step_2": "64位"
+      }
+    },
+    "scores": [
+      2.0,
+      2.0,
+      2
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "62GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "最大可寻址空间：4GB",
+            "dependency_status": "failed",
+            "reason": "The extracted numeric value (62GB) is factually incorrect and contradicts the expected value (4GB) for maximum addressable space."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "64位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "机器字长：64位",
+            "dependency_status": "satisfied",
+            "reason": "The extracted value (64位) exactly matches the standard answer for CPU machine word length."
+          }
+        ],
+        "total_score": 2.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "62GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算最大可寻址内存空间 (Calculate maximum addressable memory space, standard answer is 4GB)",
+            "dependency_status": "failed",
+            "reason": "The student's answer of 62GB is factually incorrect and contradicts the standard answer of 4GB."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "64位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出CPU的机器字长 (Write out the CPU machine word length, standard answer is 64-bit)",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted fact '64位' exactly matches the required standard answer."
+          }
+        ],
+        "total_score": 2.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "62GB",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "最大可寻址空间：4GB",
+            "dependency_status": "failed",
+            "reason": "The extracted final answer (62GB) completely contradicts the standard answer (4GB) and represents a fundamental conceptual error in memory addressing calculation."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "64位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "机器字长：64位",
+            "dependency_status": "not_applicable",
+            "reason": "The extracted value exactly matches the required standard answer."
+          }
+        ],
+        "total_score": 2
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]
