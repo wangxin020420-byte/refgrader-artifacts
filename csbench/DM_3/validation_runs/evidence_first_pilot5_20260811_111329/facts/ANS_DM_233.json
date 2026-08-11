@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T23:34:06.119696",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_233.jpg",
+  "image_sha256": "ee528311b713d01b086b27d6c4150cb624dd4743366c6d59470825287199a0a7",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "∀x(A(x)→B(x))∨C(x))\n∀x (A(x)∧B(x)→D(x))\n∃x(A(x)∧¬D(x))\n⇒∃x (A(x)∧C(x))\n步骤 断言 根据\n1 ∃x(A(x)∧¬D(x)) P\n2 A(a)∧¬D(a) T,1,ES\n3 A(a) T,2\n4 ¬D(a) T,2\n5 ∀x(A(x)∧B(x)→D(x)) P\n6 A(a)∧B(a)→D(a) T,5,US\n7 ¬(A(a)∧B(a)) T,4,6\n8 ¬A(a)∨¬B(a) T,7\n9 ¬B(a) T,3,8\n10 ∀x(A(x)→B(x)∨C(x)) P\n11 A(a)→B(a)∨C(a) T,10,US\n12 B(a)∨C(a) T,3,11\n13 C(a) T,9,12\n14 A(a)∧C(a) T,3,13\n15 ∃x(A(x)∧C(x)) T,EG",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_233",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "∀x(A(x)→B(x))∨C(x))\n∀x (A(x)∧B(x)→D(x))\n∃x(A(x)∧¬D(x))\n⇒∃x (A(x)∧C(x))",
+    "step_2_a": "步骤2: A(a)∧¬D(a) | T,1,ES\n步骤3: A(a) | T,2\n步骤4: ¬D(a) | T,2",
+    "step_2_b": "步骤5: ∀x(A(x)∧B(x)→D(x)) | P\n步骤6: A(a)∧B(a)→D(a) | T,5,US\n步骤7: ¬(A(a)∧B(a)) | T,4,6\n步骤8: ¬A(a)∨¬B(a) | T,7\n步骤9: ¬B(a) | T,3,8\n步骤10: ∀x(A(x)→B(x)∨C(x)) | P\n步骤11: A(a)→B(a)∨C(a) | T,10,US\n步骤12: B(a)∨C(a) | T,3,11\n步骤13: C(a) | T,9,12\n步骤14: A(a)∧C(a) | T,3,13",
+    "step_2_c": "步骤15: ∃x(A(x)∧C(x)) | T,EG"
+  }
+}

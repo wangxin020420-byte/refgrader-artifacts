@@ -1,0 +1,994 @@
+[
+  {
+    "file": "ANS_DM_191.jpg",
+    "facts": "{\"step_1\": \"∀x(A(x)→B(x))∨C(x))∧∀x(A(x)∧B(x)→D(x))∧∃x(A(x)∧¬D(x)) \\n→∃x(A(x)∧C(x))\", \"step_2\": \"步骤 断言               根据 \\n1 ∃x(A(x)∧¬D(x))         P \\n2 A(a)∧¬D(a)           T,1,ES \\n3 ∀x(A(x)∧B(x)→D(x))      P \\n4 ¬∀x(A(x)∨B(x)∧¬D(x))  T,3 \\n5 ∃x(A(x)∨B(x)∧¬D(x))    T,4 \\n6 A(a)∨B(a)∧¬D(a)      T,5,ES \\n7 ¬D(a)                  T,6 \\n8 A(a)                  T,2,7 \\n9 ∀x(A(x)→B(x)∨C(x))      P \\n10 A(a)→B(a)∨C(a)       T,9,ES \\n11 C(a)                 T,8,10\\n12 A(a)∧C(a)            T,8,11 \\n13 ∃x(A(x)∧C(x))        T,12,EG\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T21:37:10.873467",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_191.jpg",
+      "image_sha256": "cb720bdaeab9ac73840c8104a0d4f01e42d6841d44c6c5c1557fbe58edddcb1f",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：由题意可得：∀x(A(x)→B(x))∨C(x))∧∀x(A(x)∧B(x)→D(x))∧∃x(A(x)∧¬D(x)) \n→∃x(A(x)∧C(x)) \n步骤 断言               根据 \n1 ∃x(A(x)∧¬D(x))         P \n2 A(a)∧¬D(a)           T,1,ES \n3 ∀x(A(x)∧B(x)→D(x))      P \n4 ¬∀x(A(x)∨B(x)∧¬D(x))  T,3 \n5 ∃x(A(x)∨B(x)∧¬D(x))    T,4 \n6 A(a)∨B(a)∧¬D(a)      T,5,ES \n7 ¬D(a)                  T,6 \n8 A(a)                  T,2,7 \n9 ∀x(A(x)→B(x)∨C(x))      P \n10 A(a)→B(a)∨C(a)       T,9,ES \n11 C(a)                 T,8,10\n12 A(a)∧C(a)            T,8,11 \n13 ∃x(A(x)∧C(x))        T,12,EG ",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_191",
+        "question_id": "DM_3",
+        "subject": "DM",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "∀x(A(x)→B(x))∨C(x))∧∀x(A(x)∧B(x)→D(x))∧∃x(A(x)∧¬D(x)) \n→∃x(A(x)∧C(x))",
+        "step_2": "步骤 断言               根据 \n1 ∃x(A(x)∧¬D(x))         P \n2 A(a)∧¬D(a)           T,1,ES \n3 ∀x(A(x)∧B(x)→D(x))      P \n4 ¬∀x(A(x)∨B(x)∧¬D(x))  T,3 \n5 ∃x(A(x)∨B(x)∧¬D(x))    T,4 \n6 A(a)∨B(a)∧¬D(a)      T,5,ES \n7 ¬D(a)                  T,6 \n8 A(a)                  T,2,7 \n9 ∀x(A(x)→B(x)∨C(x))      P \n10 A(a)→B(a)∨C(a)       T,9,ES \n11 C(a)                 T,8,10\n12 A(a)∧C(a)            T,8,11 \n13 ∃x(A(x)∧C(x))        T,12,EG"
+      }
+    },
+    "scores": [
+      9.0,
+      9.0,
+      8.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "∀x(A(x)→B(x))∨C(x))∧∀x(A(x)∧B(x)→D(x))∧∃x(A(x)∧¬D(x)) \n→∃x(A(x)∧C(x))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确将自然语言翻译为谓词逻辑公式",
+            "dependency_status": "satisfied",
+            "reason": "学生正确提取了所有的前提和结论，谓词逻辑公式翻译完全正确（括号缺失仅为笔误，不影响语义）。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 6.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "步骤 断言 根据 \n1 ∃x(A(x)∧¬D(x)) P \n2 A(a)∧¬D(a) T,1,ES \n3 ∀x(A(x)∧B(x)→D(x)) P \n4 ¬∀x(A(x)∨B(x)∧¬D(x)) T,3 \n5 ∃x(A(x)∨B(x)∧¬D(x)) T,4 \n6 A(a)∨B(a)∧¬D(a) T,5,ES \n7 ¬D(a) T,6 \n8 A(a) T,2,7 \n9 ∀x(A(x)→B(x)∨C(x)) P \n10 A(a)→B(a)∨C(a) T,9,ES \n11 C(a) T,8,10\n12 A(a)∧C(a) T,8,11 \n13 ∃x(A(x)∧C(x)) T,12,EG",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出严格的自然推理证明过程",
+            "dependency_status": "insufficient",
+            "reason": "结论推导正确，且包含大部分合理的推理步骤（如提取A(a), US, 假言推理和EG）。但步骤4-7在逻辑推导上存在实质性的概念错误（试图用嵌套的量词/恒真代换错误地推导 ¬D(a)）。依据宽大评分原则，对正确的推导框架和结论给予大部分分数。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 9.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 6.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "∀x(A(x)→B(x))∨C(x))∧∀x(A(x)∧B(x)→D(x))∧∃x(A(x)∧¬D(x)) \n→∃x(A(x)∧C(x))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确将自然语言翻译为谓词逻辑公式",
+            "dependency_status": "satisfied",
+            "reason": "学生提取出的公式与标准答案在逻辑语义上完全一致。缺少最外层括号和不严谨的符号书写（如缺少推理符⇒的标准表示、箭头优先级歧义）属于纯格式问题，不影响谓词逻辑公式的正确性，依据宽大评分政策给满分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 6.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "1 ∃x(A(x)∧¬D(x)) P \n2 A(a)∧¬D(a) T,1,ES \n3 ∀x(A(x)∧B(x)→D(x)) P \n4 ¬∀x(A(x)∨B(x)∧¬D(x))  T,3 \n5 ∃x(A(x)∨B(x)∧¬D(x))  T,4 \n6 A(a)∨B(a)∧¬D(a)  T,5,ES \n7 ¬D(a)  T,6 \n8 A(a)  T,2,7 \n9 ∀x(A(x)→B(x)∨C(x))  P \n10 A(a)→B(a)∨C(a)  T,9,ES \n11 C(a)  T,8,10 \n12 A(a)∧C(a)  T,8,11 \n13 ∃x(A(x)∧C(x))  T,12,EG",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出严格的自然推理证明过程",
+            "dependency_status": "insufficient",
+            "reason": "学生给出了完整的逻辑推理链条并得出了正确结论，体现了对自然推理系统的掌握（核心推理步骤存在）。但在步骤4-7尝试推导 ¬B(a) 时，出现了公式书写不规范（步骤4）、错误使用德摩根律导致语义错误（步骤5）以及错误使用ES规则（步骤6）。依据大学期末考试的宽容评分准则，承认其大框架正确的推导和思路，扣除部分分数。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 9.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 6.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "∀x(A(x)→B(x))∨C(x))∧∀x(A(x)∧B(x)→D(x))∧∃x(A(x)∧¬D(x)) \n→∃x(A(x)∧C(x))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Properly translate the natural language into predicate logic formulas.",
+            "dependency_status": "satisfied",
+            "reason": "The student provided all required logical premises and the conclusion. The missing parenthesis around B(x)∨C(x) is treated as a minor typographical error, which aligns with the lenient university instructor grading policy for non-substantive notation issues."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "步骤 断言               根据 \n1 ∃x(A(x)∧¬D(x))         P \n2 A(a)∧¬D(a)           T,1,ES \n3 ∀x(A(x)∧B(x)→D(x))      P \n4 ¬∀x(A(x)∨B(x)∧¬D(x))  T,3 \n5 ∃x(A(x)∨B(x)∧¬D(x))    T,4 \n6 A(a)∨B(a)∧¬D(a)      T,5,ES \n7 ¬D(a)                  T,6 \n8 A(a)                  T,2,7 \n9 ∀x(A(x)→B(x)∨C(x))      P \n10 A(a)→B(a)∨C(a)       T,9,ES \n11 C(a)                 T,8,10\n12 A(a)∧C(a)            T,8,11 \n13 ∃x(A(x)∧C(x))        T,12,EG",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Provide a rigorous natural deduction proof process.",
+            "dependency_status": "insufficient",
+            "reason": "The student executes the setup (instantiating premises) and correctly reaches the final conclusion using EG, earning setup and final conclusion credit. However, steps 4-7 contain fatal logical errors: invalidly negating a premise and misapplying ES, which breaks the core justification for ¬B(a) and ¬D(a). Because the core inferential process is flawed, partial credit is awarded instead of full marks.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 8.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 5.5,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        6.0,
+        6.0,
+        5.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.05555555555555555
+    },
+    "max_item_variance": 0.05555555555555555,
+    "avg_item_variance": 0.027777777777777776
+  },
+  {
+    "file": "ANS_DM_199.jpg",
+    "facts": "{\"step_1\": \"∀X(A(X)→B(X)⊕C(X)\\n∀X(ACX∧BCX)→D(X)\\n∃X(A(X)∧¬D(X))\\n推:∃X(ACX∧C(X)\", \"step_2\": \"1.  ∃X(A(X∧¬D(X)  P\\n2.  A(a)∧¬D(a)  T,1,ES\\n3.  A(a)  T,2\\n4.  ∀X(A(X)→B(X)⊕C(X))  P\\n5.  A(a)→B(a)⊕C(a)  T,4,US\\n6.  B(a)⊕C(a)  T,3,5\\n7.  ∀X(A(X)∧B(X)→D(X))  P\\n8.  A(a)∧B(a)→D(a)  T,7,US\\n9.  ¬D(a)→¬A(a)∨¬B(a)  T,8\\n10. ¬D(a)  T,2\\n11. ¬A(a)∨¬B(a)  T,9,10\\n12. 7B(a)  T,3,11\\n13. C(a)  T,6,12\\n14. A(a)∧C(a)  T,3,13\\n15. ∃X(A(X)∧C(X))  T,14,EG\\n证明完毕\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T21:38:02.843761",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_199.jpg",
+      "image_sha256": "36d43b293d0b5cafa60891808b441faa42f9c2873c26e0d6ba85d3f57e17bd65",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解.谓词翻译：\n∀X(A(X)→B(X)⊕C(X)\n∀X(ACX∧BCX)→D(X)\n∃X(A(X)∧¬D(X))\n推:∃X(ACX∧C(X)\n推理：\n1.  ∃X(A(X∧¬D(X)  P\n2.  A(a)∧¬D(a)  T,1,ES\n3.  A(a)  T,2\n4.  ∀X(A(X)→B(X)⊕C(X))  P\n5.  A(a)→B(a)⊕C(a)  T,4,US\n6.  B(a)⊕C(a)  T,3,5\n7.  ∀X(A(X)∧B(X)→D(X))  P\n8.  A(a)∧B(a)→D(a)  T,7,US\n9.  ¬D(a)→¬A(a)∨¬B(a)  T,8\n10. ¬D(a)  T,2\n11. ¬A(a)∨¬B(a)  T,9,10\n12. 7B(a)  T,3,11\n13. C(a)  T,6,12\n14. A(a)∧C(a)  T,3,13\n15. ∃X(A(X)∧C(X))  T,14,EG\n证明完毕",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_199",
+        "question_id": "DM_3",
+        "subject": "DM",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "∀X(A(X)→B(X)⊕C(X)\n∀X(ACX∧BCX)→D(X)\n∃X(A(X)∧¬D(X))\n推:∃X(ACX∧C(X)",
+        "step_2": "1.  ∃X(A(X∧¬D(X)  P\n2.  A(a)∧¬D(a)  T,1,ES\n3.  A(a)  T,2\n4.  ∀X(A(X)→B(X)⊕C(X))  P\n5.  A(a)→B(a)⊕C(a)  T,4,US\n6.  B(a)⊕C(a)  T,3,5\n7.  ∀X(A(X)∧B(X)→D(X))  P\n8.  A(a)∧B(a)→D(a)  T,7,US\n9.  ¬D(a)→¬A(a)∨¬B(a)  T,8\n10. ¬D(a)  T,2\n11. ¬A(a)∨¬B(a)  T,9,10\n12. 7B(a)  T,3,11\n13. C(a)  T,6,12\n14. A(a)∧C(a)  T,3,13\n15. ∃X(A(X)∧C(X))  T,14,EG\n证明完毕"
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "∀X(A(X)→B(X)⊕C(X) ... 推:∃X(ACX∧C(X)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly translate natural language into predicate logic formulas: Premises and Conclusion.",
+            "dependency_status": "satisfied",
+            "reason": "All required logical premises and the conclusion are present and fundamentally correct. The use of ⊕ instead of ∨ and minor typographical errors (like missing closing parentheses) are treated as non-substantive notation issues under the lenient instructor policy."
+          },
+          {
+            "id": "step_2",
+            "score_given": 7.0,
+            "error_category": "MATCH",
+            "evidence_text": "1. ∃X(A(X∧¬D(X) P ... 12. 7B(a) T,3,11 13. C(a) T,6,12 14. A(a)∧C(a) T,3,13 15. ∃X(A(X)∧C(X)) T,14,EG",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Provide a rigorous natural deduction proof process using rules like ES, US, Modus Ponens, Disjunctive Syllogism, and EG.",
+            "dependency_status": "satisfied",
+            "reason": "The student successfully executes the required 15-step natural deduction proof. All key logical inferences (ES, US, simplification, Modus Ponens, Disjunctive Syllogism, and EG) are correctly applied. Typos such as '7B(a)' instead of '¬B(a)' are clearly transcription errors and do not invalidate the demonstrated logical reasoning.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 7.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "∀X(A(X)→B(X)⊕C(X) ∀X(ACX∧BCX)→D(X) ∃X(A(X)∧¬D(X)) 推:∃X(ACX∧C(X)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct translation of the problem statements into predicate logic formulas.",
+            "dependency_status": "satisfied",
+            "reason": "All premises and the conclusion match the required logical translation. '⊕' is standardly used by students to denote exclusive or (OR), mapping directly to '∨', which is functionally correct in the proof's context. 'ACX' and missing parenthesis are mere typographical extraction errors."
+          },
+          {
+            "id": "step_2",
+            "score_given": 7.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "12. 7B(a) T,3,11",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A strict natural deduction proof process deriving the conclusion.",
+            "dependency_status": "satisfied",
+            "reason": "The complete and correct formal proof sequence is provided, utilizing proper rules of inference (ES, US, Modus Ponens, Disjunctive Syllogism, EG). Step 12 contains a minor typographical error ('7B(a)' instead of '¬B(a)'), but under the lenient policy, this does not invalidate the strict reasoning process.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 7.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "∀X(A(X)→B(X)⊕C(X)\n∀X(ACX∧BCX)→D(X)\n∃X(A(X)∧¬D(X))\n推:∃X(ACX∧C(X)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correctly translate the natural language premises and conclusion into predicate logic formulas.",
+            "dependency_status": "satisfied",
+            "reason": "All required logical expressions are present and correctly formulated. Minor typos such as missing closing parentheses, using ⊕ instead of ∨, and typographical errors in variable names (e.g., 'ACX' instead of 'A(X)') are treated as non-substantive notation issues under the lenient instructor policy."
+          },
+          {
+            "id": "step_2",
+            "score_given": 7.0,
+            "error_category": "MATCH",
+            "evidence_text": "1. ∃X(A(X∧¬D(X) P ... 12. 7B(a) T,3,11 ... 15. ∃X(A(X)∧C(X)) T,14,EG 证明完毕",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Provide a rigorous natural deduction proof process.",
+            "dependency_status": "satisfied",
+            "reason": "The student provides a complete and rigorous step-by-step derivation. It successfully uses Existential Specification (ES), Universal Specification (US), and Existential Generalization (EG). Minor typographical errors in the text extraction (like '7B(a)' for '¬B(a)') do not obscure the underlying correct logical flow.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 7.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        7.0,
+        7.0,
+        7.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "FORMAT_MINOR",
+        "FORMAT_MINOR",
+        "FORMAT_MINOR"
+      ],
+      "step_2": [
+        "MATCH",
+        "FORMAT_MINOR",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_DM_238.jpg",
+    "facts": "{\"step_1\": \"未书写\", \"step_2\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T21:39:12.899452",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_238.jpg",
+      "image_sha256": "0821eecc82c38a7879f4eef75d8cb60d3d7717f04bfad1d8d39fd559ef3dcc57",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": true,
+      "ocr_error": "OCR evidence not found or invalid: D:\\users\\王鑫020420\\Desktop\\refgrader-main\\ocr_cache\\csbench\\DM_3\\ANS_DM_238.json",
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_238",
+        "question_id": "DM_3",
+        "subject": "DM",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [
+        {
+          "id": "step_1",
+          "instruction": "Extract the student's concrete handwritten content for this item without revealing the expected answer. Specifically, identify the exact predicate logic formula translated by the student from the natural language. Ask the extractor to preserve all logical connectives, quantifier symbols, variable names, parentheses, and negation signs exactly as written."
+        },
+        {
+          "id": "step_2",
+          "instruction": "Extract the student's concrete handwritten content for this item without revealing the expected answer. Specifically, identify the complete natural deduction proof process provided by the student, capturing each step number, assertion, and inference rule. Ask the extractor to preserve all logical formulas, step references, derivation symbols, arrows, and exact step ordering exactly as written."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {
+        "step_1": "未书写",
+        "step_2": "未书写"
+      },
+      "facts": {
+        "step_1": "未书写",
+        "step_2": "未书写"
+      }
+    },
+    "scores": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "正确将自然语言翻译为谓词逻辑公式",
+            "dependency_status": "failed",
+            "reason": "The extracted fact indicates the student left this item blank. No predicate logic formulas were provided."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "给出严格的自然推理证明过程",
+            "dependency_status": "failed",
+            "reason": "The extracted fact indicates the student left this item blank. No formal inference proof steps were provided.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 0.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 0.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "Correct translation of natural language into predicate logic formulas.",
+            "dependency_status": "failed",
+            "reason": "The extracted fact indicates the student left this part blank."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "A strict natural deduction proof process.",
+            "dependency_status": "failed",
+            "reason": "The extracted fact indicates the student left this part blank.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 0.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 0.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "正确将自然语言翻译为谓词逻辑公式",
+            "dependency_status": "failed",
+            "reason": "The student did not provide any formula for this step, as indicated by the extracted fact '未书写'. No points can be awarded."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "给出严格的自然推理证明过程",
+            "dependency_status": "failed",
+            "reason": "The student did not provide any proof process for this step, as indicated by the extracted fact '未书写'. No points can be awarded.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 0.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 0.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_DM_242.jpg",
+    "facts": "{\"step_1\": \"∀x(A(x)∧(B(x)∨C(x)))，∀xB(x)→D(x)，∃x(A(x)∧¬D(x))⇒∃x(A(x)∧C(x))\", \"step_2\": \"序号 断言 依据\\n1 ∃x(A(x)∧¬D(x)) P\\n2 A(x₀)∧¬D(x₀) T,1\\n3 A(x₀) T,2\\n4 ¬D(x₀) T,2\\n5 ∀xB(x)→D(x) P\\n6 B(x1)→D(x1) T,5\\n7 ¬B(x)∨D(x) T,6\\n8 ¬B(x₀) T,4,7\\n9 ∀x(A(x)∧(B(x)∨C(x))) P\\n10 A(x2)∧(B(x2)∨C(x2)) T,9\\n11 (A(x2)∧B(x2))∨(A(x2)∧C(x2)) T,10\\n12 A(x₀)∧C(x₀) T,8,11\\n13 ∃x(A(x)∧C(x)) T,12\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T21:39:58.629670",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_242.jpg",
+      "image_sha256": "83e4c5823bdeea7e94eafc4a00b4177871e3bf1543b63d43b3df8868a18bc81f",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "证明：\n∀x(A(x)∧(B(x)∨C(x)))，∀xB(x)→D(x)，\n∃x(A(x)∧¬D(x))⇒∃x(A(x)∧C(x))\n序号 断言 依据\n1 ∃x(A(x)∧¬D(x)) P\n2 A(x₀)∧¬D(x₀) T,1\n3 A(x₀) T,2\n4 ¬D(x₀) T,2\n5 ∀xB(x)→D(x) P\n6 B(x1)→D(x1) T,5\n7 ¬B(x)∨D(x) T,6\n8 ¬B(x₀) T,4,7\n9 ∀x(A(x)∧(B(x)∨C(x))) P\n10 A(x2)∧(B(x2)∨C(x2)) T,9\n11 (A(x2)∧B(x2))∨(A(x2)∧C(x2)) T,10\n12 A(x₀)∧C(x₀) T,8,11\n13 ∃x(A(x)∧C(x)) T,12",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_242",
+        "question_id": "DM_3",
+        "subject": "DM",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "∀x(A(x)∧(B(x)∨C(x)))，∀xB(x)→D(x)，∃x(A(x)∧¬D(x))⇒∃x(A(x)∧C(x))",
+        "step_2": "序号 断言 依据\n1 ∃x(A(x)∧¬D(x)) P\n2 A(x₀)∧¬D(x₀) T,1\n3 A(x₀) T,2\n4 ¬D(x₀) T,2\n5 ∀xB(x)→D(x) P\n6 B(x1)→D(x1) T,5\n7 ¬B(x)∨D(x) T,6\n8 ¬B(x₀) T,4,7\n9 ∀x(A(x)∧(B(x)∨C(x))) P\n10 A(x2)∧(B(x2)∨C(x2)) T,9\n11 (A(x2)∧B(x2))∨(A(x2)∧C(x2)) T,10\n12 A(x₀)∧C(x₀) T,8,11\n13 ∃x(A(x)∧C(x)) T,12"
+      }
+    },
+    "scores": [
+      6.0,
+      10.0,
+      9.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "∀x(A(x)∧(B(x)∨C(x)))，∀xB(x)→D(x)，∃x(A(x)∧¬D(x))⇒∃x(A(x)∧C(x))",
+            "evidence_status": "not_comparable",
+            "score_layer": "core",
+            "expected_condition": "Correctly translate natural language into predicate logic formulas",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly identifies all required atomic propositions, logical connectives, the existential quantifier target, and the overall implication structure. The translation contains two precedence/grouping ambiguities (e.g., writing ∀xA(x)∧... instead of ∀x(A(x)→...)). These are structural representation errors but do not invalidate the main logic of the statements."
+          },
+          {
+            "id": "step_2",
+            "score_given": 4.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "1 ∃x(A(x)∧¬D(x)) P ... 12 A(x₀)∧C(x₀) T,8,11 ... 13 ∃x(A(x)∧C(x)) T,12",
+            "evidence_status": "not_comparable",
+            "score_layer": "core",
+            "expected_condition": "Provide a strict natural deduction proof process",
+            "dependency_status": "insufficient",
+            "reason": "The student correctly identifies the premises, correctly applies Existential Specification (ES) and Universal Specification (US), and derives the final conclusion using Existential Generalization (EG). However, the proof contains a critical fatal error in instantiating variables (failing to unify distinct Skolem constants x0, x1, x2, and unbound variable x in step 7, leading to an invalid step 8) and uses an incorrect implication equivalence for the premise ∀xB(x)→D(x). The conceptual error in instantiation prevents this from being a strict proof, warranting partial credit for the valid deductions but penalizing the core logical leap.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 6.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 4.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "∀x(A(x)∧(B(x)∨C(x)))，∀xB(x)→D(x)，∃x(A(x)∧¬D(x))⇒∃x(A(x)∧C(x))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确将自然语言翻译为谓词逻辑公式",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly captured the semantic logic of the standard answer. Although there is a minor syntax/notation ambiguity in the second premise (missing parentheses around the antecedent of the implication: ∀x(A(x)∧B(x))→D(x)), the derived proof in step 2 (line 9 and line 11) explicitly confirms the intended correct logical relation. This is treated as a minor notation issue under the lenient policy."
+          },
+          {
+            "id": "step_2",
+            "score_given": 7.0,
+            "error_category": "MATCH",
+            "evidence_text": "11 (A(x2)∧(B(x2)∨C(x2)))∨(A(x2)∧C(x2)) T,10；12 A(x0)∧C(x0) T,8,11",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出严格的自然推理证明过程",
+            "dependency_status": "satisfied",
+            "reason": "The student uses valid logical inference rules (Simplification, Disjunctive Syllogism, Universal/Existential Instantiation/Generalization). While they apply a slightly different algebraic expansion path for the premise (using Distributive Law) compared to the standard answer (using Modus Ponens), the logic is completely sound and validly proves the final conclusion. Missing ES/US annotations are treated as minor formatting omissions under the lenient policy.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 7.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "∀x(A(x)∧(B(x)∨C(x)))，∀xB(x)→D(x)，∃x(A(x)∧¬D(x))⇒∃x(A(x)∧C(x))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确将自然语言翻译为谓词逻辑公式",
+            "dependency_status": "satisfied",
+            "reason": "学生对大部分逻辑公式翻译正确，但误将第二句前提写成了∀xB(x)→D(x)，而非∀x(A(x)∧B(x)→D(x)或对应的分配律展开形式。缺失了与A(x)的关联，故扣部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 6.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "12 A(x₀)∧C(x₀) T,8,11",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出严格的自然推理证明过程",
+            "dependency_status": "failed",
+            "reason": "除承接了第一问的翻译瑕疵外（步骤5-7），学生在后续证明过程中错用了变量。步骤10实例化出变量x2，却在步骤12强行合并回步骤8实例化出的变量x0，违背了逻辑推理中同名变量需保持指向一致的基本约束。虽然推导结论写对，但因存在此致命的逻辑跳跃扣部分分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 9.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 6.5,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        3.0,
+        2.5
+      ],
+      "step_2": [
+        4.0,
+        7.0,
+        6.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.16666666666666666,
+      "step_2": 1.722222222222222
+    },
+    "max_item_variance": 1.722222222222222,
+    "avg_item_variance": 0.9444444444444444
+  },
+  {
+    "file": "ANS_DM_250.jpg",
+    "facts": "{\"step_1\": \"前提是∀x(A(x)→(B(x)∨C(x)))\\n∀x(A(x)∧B(x)→D(x))\\n∃x(A(x)∧¬D(x))\\n结论：∃x̄(A(x)∧C(x))\", \"step_2\": \"1 ∀x(A(x)→(B(x)∨C(x))) P\\n2 A(y)→(B(y)∨C(y)) -T,UG,1\\n3 ∀xA(x) P\\n4 A(y) P,US,G,2\\n5 B(y)∨C(y) T,2,4\\n6 ∀x((A(x)∧B(x))→D(x)) P\\n7 (A(y)∧B(y))→D(y) T,UG,6\\n8 ∃x(A(x)∧¬D(x)) P\\n9 A(y)∧¬D(y)) T,EG,8\\n10 ¬D(y) T,4,9\\n11 ¬(A(y)∧B(y)) T,7,10\\n12 ¬A(y)∨¬B(y) T,11\\n13 ¬B(y) T,4,12\\n14 C(y) T,5,13\\n15 A(y)∧C(y) T,4,14\\n17 ∃x(A(x)∧C(x)) T,ES,15\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T21:40:52.088863",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_250.jpg",
+      "image_sha256": "f25178d548b71243c89d1a4ab36966c2fd2ffef8edeae6022e388b3dc305e10f",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：前提是∀x(A(x)→(B(x)∨C(x)))\n∀x(A(x)∧B(x)→D(x))\n∃x(A(x)∧¬D(x))\n结论：∃x̄(A(x)∧C(x))\n1 ∀x(A(x)→(B(x)∨C(x))) P\n2 A(y)→(B(y)∨C(y)) -T,UG,1\n3 ∀xA(x) P\n4 A(y) P,US,G,2\n5 B(y)∨C(y) T,2,4\n6 ∀x((A(x)∧B(x))→D(x)) P\n7 (A(y)∧B(y))→D(y) T,UG,6\n8 ∃x(A(x)∧¬D(x)) P\n9 A(y)∧¬D(y)) T,EG,8\n10 ¬D(y) T,4,9\n11 ¬(A(y)∧B(y)) T,7,10\n12 ¬A(y)∨¬B(y) T,11\n13 ¬B(y) T,4,12\n14 C(y) T,5,13\n15 A(y)∧C(y) T,4,14\n17 ∃x(A(x)∧C(x)) T,ES,15",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_250",
+        "question_id": "DM_3",
+        "subject": "DM",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "前提是∀x(A(x)→(B(x)∨C(x)))\n∀x(A(x)∧B(x)→D(x))\n∃x(A(x)∧¬D(x))\n结论：∃x̄(A(x)∧C(x))",
+        "step_2": "1 ∀x(A(x)→(B(x)∨C(x))) P\n2 A(y)→(B(y)∨C(y)) -T,UG,1\n3 ∀xA(x) P\n4 A(y) P,US,G,2\n5 B(y)∨C(y) T,2,4\n6 ∀x((A(x)∧B(x))→D(x)) P\n7 (A(y)∧B(y))→D(y) T,UG,6\n8 ∃x(A(x)∧¬D(x)) P\n9 A(y)∧¬D(y)) T,EG,8\n10 ¬D(y) T,4,9\n11 ¬(A(y)∧B(y)) T,7,10\n12 ¬A(y)∨¬B(y) T,11\n13 ¬B(y) T,4,12\n14 C(y) T,5,13\n15 A(y)∧C(y) T,4,14\n17 ∃x(A(x)∧C(x)) T,ES,15"
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "前提是∀x(A(x)→(B(x)∨C(x)))\n∀x(A(x)∧B(x)→D(x))\n∃x(A(x)∧¬D(x))\n结论：∃x̄(A(x)∧C(x))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确将自然语言翻译为谓词逻辑公式",
+            "dependency_status": "satisfied",
+            "reason": "正确提取了所有的前提和结论，并将其翻译为了完全匹配的标准谓词逻辑公式。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 7.0,
+            "error_category": "MATCH",
+            "evidence_text": "1 ∀x(A(x)→(B(x)∨C(x))) P\n2 A(y)→(B(y)∨C(y)) -T,UG,1\n3 ∀xA(x) P\n4 A(y) P,US,G,2\n5 B(y)∨C(y) T,2,4\n6 ∀x((A(x)∧B(x))→D(x)) P\n7 (A(y)∧B(y))→D(y) T,UG,6\n8 ∃x(A(x)∧¬D(x)) P\n9 A(y)∧¬D(y)) T,EG,8\n10 ¬D(y) T,4,9\n11 ¬(A(y)∧B(y)) T,7,10\n12 ¬A(y)∨¬B(y) T,11\n13 ¬B(y) T,4,12\n14 C(y) T,5,13\n15 A(y)∧C(y) T,4,14\n17 ∃x(A(x)∧C(x)) T,ES,15",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出严格的自然推理证明过程",
+            "dependency_status": "satisfied",
+            "reason": "整体推导思路完全正确。尽管在引用规则缩写（US/UG/ES/EG）及代入假设等书写上存在瑕疵或笔误，但在大学期末考试宽松的评分尺度下，应用了代入(US)、假言推理、拒取式、德摩根律、析取三段论和存在量化(EG)等核心逻辑推理关系得到了正确且完整的证明，因此给予满分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 7.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "前提是∀x(A(x)→(B(x)∨C(x)))\n∀x(A(x)∧B(x)→D(x))\n∃x(A(x)∧¬D(x))\n结论：∃x̄(A(x)∧C(x))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Translate natural language into predicate logic formulas.",
+            "dependency_status": "satisfied",
+            "reason": "Student accurately translated premises and the conclusion into predicate logic with correct connectives and quantifiers, matching the standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 7.0,
+            "error_category": "MATCH",
+            "evidence_text": "12 ¬A(y)∨¬B(y) T,11\n13 ¬B(y) T,4,12\n14 C(y) T,5,13\n15 A(y)∧C(y) T,4,14\n17 ∃x(A(x)∧C(x)) T,ES,15",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Provide a strict natural deduction proof.",
+            "dependency_status": "satisfied",
+            "reason": "The student demonstrated the correct logical derivation. Even though there is a minor typo in the rule abbreviations for Universal Instantiation and Existential Generalization (US/UG/ES/EG are mixed up in the annotation), the proof structure, application of inference rules (Modus Tollens, Disjunctive Syllogism), and conclusion are completely correct. Under lenient instructor policy, this notation issue is a non-substantive format issue.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 7.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "前提是∀x(A(x)→(B(x)∨C(x)))\n∀x(A(x)∧B(x)→D(x))\n∃x(A(x)∧¬D(x))\n结论：∃x̄(A(x)∧C(x))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确将自然语言翻译为谓词逻辑公式",
+            "dependency_status": "satisfied",
+            "reason": "学生正确翻译了所有的前提条件和最终结论，逻辑连接词和量词使用完全正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 7.0,
+            "error_category": "MATCH",
+            "evidence_text": "1 ∀x(A(x)→(B(x)∨C(x))) P\n2 A(y)→(B(y)∨C(y)) -T,UG,1\n3 ∀xA(x) P\n4 A(y) P,US,G,2\n5 B(y)∨C(y) T,2,4\n6 ∀x((A(x)∧B(x))→D(x)) P\n7 (A(y)∧B(y))→D(y) T,UG,6\n8 ∃x(A(x)∧¬D(x)) P\n9 A(y)∧¬D(y)) T,EG,8\n10 ¬D(y) T,4,9\n11 ¬(A(y)∧B(y)) T,7,10\n12 ¬A(y)∨¬B(y) T,11\n13 ¬B(y) T,4,12\n14 C(y) T,5,13\n15 A(y)∧C(y) T,4,14\n17 ∃x(A(x)∧C(x)) T,ES,15",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出严格的自然推理证明过程",
+            "dependency_status": "satisfied",
+            "reason": "学生构建的推理证明逻辑严密，各步骤之间的推理关系（如假言推理、拒取式、德摩根律、析取三段论等）使用正确，完整推导出了所需结论。作为阅卷教师，仅扣减证明步骤中书写/规则的格式细节分（已全宽大处理为满分）。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_2",
+            "effective_score": 7.0,
+            "parent_points": 7.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        7.0,
+        7.0,
+        7.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T21:40:52.088863",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_250.jpg",
+  "image_sha256": "f25178d548b71243c89d1a4ab36966c2fd2ffef8edeae6022e388b3dc305e10f",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：前提是∀x(A(x)→(B(x)∨C(x)))\n∀x(A(x)∧B(x)→D(x))\n∃x(A(x)∧¬D(x))\n结论：∃x̄(A(x)∧C(x))\n1 ∀x(A(x)→(B(x)∨C(x))) P\n2 A(y)→(B(y)∨C(y)) -T,UG,1\n3 ∀xA(x) P\n4 A(y) P,US,G,2\n5 B(y)∨C(y) T,2,4\n6 ∀x((A(x)∧B(x))→D(x)) P\n7 (A(y)∧B(y))→D(y) T,UG,6\n8 ∃x(A(x)∧¬D(x)) P\n9 A(y)∧¬D(y)) T,EG,8\n10 ¬D(y) T,4,9\n11 ¬(A(y)∧B(y)) T,7,10\n12 ¬A(y)∨¬B(y) T,11\n13 ¬B(y) T,4,12\n14 C(y) T,5,13\n15 A(y)∧C(y) T,4,14\n17 ∃x(A(x)∧C(x)) T,ES,15",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_250",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "前提是∀x(A(x)→(B(x)∨C(x)))\n∀x(A(x)∧B(x)→D(x))\n∃x(A(x)∧¬D(x))\n结论：∃x̄(A(x)∧C(x))",
+    "step_2": "1 ∀x(A(x)→(B(x)∨C(x))) P\n2 A(y)→(B(y)∨C(y)) -T,UG,1\n3 ∀xA(x) P\n4 A(y) P,US,G,2\n5 B(y)∨C(y) T,2,4\n6 ∀x((A(x)∧B(x))→D(x)) P\n7 (A(y)∧B(y))→D(y) T,UG,6\n8 ∃x(A(x)∧¬D(x)) P\n9 A(y)∧¬D(y)) T,EG,8\n10 ¬D(y) T,4,9\n11 ¬(A(y)∧B(y)) T,7,10\n12 ¬A(y)∨¬B(y) T,11\n13 ¬B(y) T,4,12\n14 C(y) T,5,13\n15 A(y)∧C(y) T,4,14\n17 ∃x(A(x)∧C(x)) T,ES,15"
+  }
+}

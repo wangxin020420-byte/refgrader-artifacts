@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T23:40:12.766023",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_260.jpg",
+  "image_sha256": "af354e55300c1c621c9c010451d51059c9a8b722d9e169c6839ed373ba9ea45a",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：∀x(A(x)→B(x)∨C(x))，∀x(A(x)∧B(x)→D(x))，∃x(A(x)∧¬D(x)) ⇒ ∃x(A(x)∧C(x)) 步骤 推论 依据 \n1 ∃x(A(x)∧¬D(x)) P \n2 A(a)∧¬D(a) T,1,ES \n3 ∀x(A(x)∧B(x)→D(x)) P \n4 A(a)∧B(a)→D(a) T,3,US \n5 ¬D(a) T,2 \n6 ¬A(a)∨¬B(a) T,4,5 \n7 A(a) T,2 \n8 ¬B(a) T,6,7 \n9 ∀x(A(x)→B(x)∨C(x)) P \n10 A(a)→B(a)∨C(a) T,9,US \n11 B(a)∨C(a) T,7,10 \n12 C(a) T,8,11 \n13 A(a)∧C(a) T,7,12 \n14 ∃x(A(x)∧C(x)) T,13,EG \n得证",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_260",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "∀x(A(x)→B(x)∨C(x))，∀x(A(x)∧B(x)→D(x))，∃x(A(x)∧¬D(x)) ⇒ ∃x(A(x)∧C(x))",
+    "step_2_a": "步骤 2: A(a)∧¬D(a) | 依据: T,1,ES | 使用的个体常量: a；步骤 5: ¬D(a) | 依据: T,2",
+    "step_2_b": "步骤 4: A(a)∧B(a)→D(a) | 依据: T,3,US | 使用的个体常量: a（与ES步骤中指定的常量相同）；步骤 6: ¬A(a)∨¬B(a) | 依据: T,4,5；步骤 7: A(a) | 依据: T,2；步骤 8: ¬B(a) | 依据: T,6,7；步骤 10: A(a)→B(a)∨C(a) | 依据: T,9,US | 使用的个体常量: a；步骤 11: B(a)∨C(a) | 依据: T,7,10；步骤 12: C(a) | 依据: T,8,11；步骤 13: A(a)∧C(a) | 依据: T,7,12",
+    "step_2_c": "步骤 14: ∃x(A(x)∧C(x)) | 依据: T,13,EG"
+  }
+}

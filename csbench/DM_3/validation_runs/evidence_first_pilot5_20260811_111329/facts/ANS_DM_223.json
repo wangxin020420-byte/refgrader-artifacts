@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T23:32:01.939943",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_223.jpg",
+  "image_sha256": "01d646412a468b68ccec5f8902a1202b838f18c0d558b4c699358dc39967b810",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解： (∀x(A(x)→B(x)∨C(x)))∧(∀x(A(x)∧B(x)→D(x)))∧(∃x(A(x)∧¬D(x))) \n⇒∃x(A(x)∧C(x)) \n步骤                 推理规则\n1 ∀x(A(x)→B(x)∨C(x))  P\n2 A(a)→B(x)∨C(x)      T1,US\n3 ∃x(A(x)∧¬D(x))      P\n4 A(a)∧¬D(a)          T3,ES\n5 A(a)                T4\n6 B(x)∨C(x)           T2,5\n7 ∀x(A(x)∧B(x)→D(x))  P\n8 A(a)∧B(a)→D(x)      T7,US\n9 ¬D(x)               T3,ES\n10 ¬(A(a)∧B(a))       T8,9\n11 ¬B(a)              T5,10\n12 C(a)               T6,11\n13 A(a)∧C(a)          T5,12\n14 ∃x(A(x)∧C(x))      T13,EG",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_223",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "(∀x(A(x)→B(x)∨C(x)))∧(∀x(A(x)∧B(x)→D(x)))∧(∃x(A(x)∧¬D(x))) ⇒∃x(A(x)∧C(x))",
+    "step_2_a": "步骤4: A(a)∧¬D(a), T3,ES；步骤5: A(a), T4；步骤9: ¬D(x), T3,ES",
+    "step_2_b": "步骤2: A(a)→B(x)∨C(x), T1,US；步骤6: B(x)∨C(x), T2,5；步骤8: A(a)∧B(a)→D(x), T7,US；步骤10: ¬(A(a)∧B(a)), T8,9；步骤11: ¬B(a), T5,10；步骤12: C(a), T6,11",
+    "step_2_c": "步骤13: A(a)∧C(a), T5,12；步骤14: ∃x(A(x)∧C(x)), T13,EG"
+  }
+}

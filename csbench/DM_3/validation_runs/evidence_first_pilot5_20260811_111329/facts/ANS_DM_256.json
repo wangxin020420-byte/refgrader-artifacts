@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T23:39:21.671009",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_256.jpg",
+  "image_sha256": "5f29ae1a40e4c04716be1fea9ac49226d5f7e5cff619a8b630e33475a9388c16",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解:由题：∀x(A(x)→B(x)∨C(x))∧∀x(A(w)∧B(w)→D(x))∧∃x(A(x)∧¬D(x))=>∃x(A(w)∧C(x))\n序号.断言.依据.\n1.  ∃x(A(x)∧¬D(x))  P\n2.  A(y)∧¬D(y)  T,1,ES.\n3.  A(y)  T,2\n4  ¬D(y)  T,2.\n5.  ∀x(A(x)→B(x)∨C(x))  P\n6.  A(y)→B(y)∨C(y)  T,5,US.\n7.  B(y)∨C(y)  T,3,6假言推理\n8.  ∀x(A(x)∧B(x)→D(x))  P\n9.  A(y)∧B(y)→D(y)  T,8,US.\n10. ¬(A(y)∧B(y))  T,4,9拒取式.\n11. ¬B(y)  T,3,10.\n12. C(y).  T,7,11.\n13. A(y)∧C(y)  T,3,12\n14  ∃x(A(w)∧C(x))  T,13,EG\n故得证",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_256",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "∀x(A(x)→B(x)∨C(x))∧∀x(A(w)∧B(w)→D(x))∧∃x(A(x)∧¬D(x))=>∃x(A(w)∧C(x))",
+    "step_2_a": "1.  ∃x(A(x)∧¬D(x))  P\n2.  A(y)∧¬D(y)  T,1,ES.\n3.  A(y)  T,2\n4  ¬D(y)  T,2.",
+    "step_2_b": "5.  ∀x(A(x)→B(x)∨C(x))  P\n6.  A(y)→B(y)∨C(y)  T,5,US.\n7.  B(y)∨C(y)  T,3,6假言推理\n8.  ∀x(A(x)∧B(x)→D(x))  P\n9.  A(y)∧B(y)→D(y)  T,8,US.\n10. ¬(A(y)∧B(y))  T,4,9拒取式.\n11. ¬B(y)  T,3,10.\n12. C(y).  T,7,11.\n13. A(y)∧C(y)  T,3,12",
+    "step_2_c": "14  ∃x(A(w)∧C(x))  T,13,EG"
+  }
+}

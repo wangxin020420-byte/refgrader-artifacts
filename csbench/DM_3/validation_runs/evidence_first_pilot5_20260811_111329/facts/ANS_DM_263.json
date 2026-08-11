@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T23:40:38.599505",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_263.jpg",
+  "image_sha256": "8e59762c87a052c016d331059bc7e63f6880744c3c9959f97e829e2d3888a9b8",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "∀x(A(X)→B(X)∨C(X))，∀x(A(X)∧B(X)→D(X))，∃x(A(X)∧¬D(X))\n⇒∃x(A(X)∧C(X))\n步骤\t断言\t             根据\n1\t∃x(A(X)∧¬D(X))\t      P\n2\tA(a)∧¬D(a)\t          T,ES,1.\n3\t∀x(A(X)→B(X)∨C(X))\t  P\n4\tA(a)→B(a)∨C(a)\t      T,US,3.\n5\tA(a)\t             T,2.\n6\tB(a)∨C(a)\t           T,4,5\n7\t∀x(A(X)∧B(X)→D(X))\t  P\n8\tA(a)∧B(a)→D(a)      \tT,US,7.\n9\t¬D(a)\t             T,2\n10\t¬(A(a)∧B(a))        \tT,8,9\n11\t¬B(a)\t             T,10,5\n12\tC(a)\t             T,11,6\n13\t∃x(A(X)∧C(X))       \tT,12,5,EG.",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_263",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "∀x(A(X)→B(X)∨C(X))，∀x(A(X)∧B(X)→D(X))，∃x(A(X)∧¬D(X)) ⇒∃x(A(X)∧C(X))",
+    "step_2_a": "1  ∃x(A(X)∧¬D(X))  P\n2  A(a)∧¬D(a)  T,ES,1.\n5  A(a)  T,2.\n9  ¬D(a)  T,2",
+    "step_2_b": "3  ∀x(A(X)→B(X)∨C(X))  P\n4  A(a)→B(a)∨C(a)  T,US,3.\n6  B(a)∨C(a)  T,4,5\n7  ∀x(A(X)∧B(X)→D(X))  P\n8  A(a)∧B(a)→D(a)  T,US,7.\n10  ¬(A(a)∧B(a))  T,8,9\n11  ¬B(a)  T,10,5\n12  C(a)  T,11,6",
+    "step_2_c": "13  ∃x(A(X)∧C(X))  T,12,5,EG."
+  }
+}

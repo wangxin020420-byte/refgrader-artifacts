@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T23:39:51.301303",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_258.jpg",
+  "image_sha256": "fccd39bfcf3029e016db4e2686f4fec576b85b656d306ce2d091a04524144970",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：根据推理翻译成谓词公式\n前提：①∀x(A(x)→B(x)∨G(x))\n②∀x(A(x)∧B(x)→D(x))\n③¬∀x(A(x)→D(x))\n结论：∃x(A(x)∧G(x))\n现在开始证明\n步骤 推理 依据\n1. ¬∀x(A(x)→D(x)) P\n2. ¬(A(a)→D(a)) T,1,ES\n3. A(a)∧¬D(a) T,2\n4. A(a) T,3\n5. ¬D(a) T,3\n6. ∀x(A(x)∧B(x)→D(x)) P\n7. A(a)∧B(a)→D(a) T,6,US\n8. ¬B(a) T,4,5,7\n9. ∀x(A(x)→B(x)∨G(x)) P\n10. A(a)->B(a)∨G(a)  T,9,US\n11. G(a)  T,4,8,10\n12. A(a)∧G(a)  T,4,11\n13. 存在x(A(x)∧G(x)) T,12,EG\n综上即证得此推理．",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_258",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "前提：①∀x(A(x)→B(x)∨G(x))\n②∀x(A(x)∧B(x)→D(x))\n③¬∀x(A(x)→D(x))\n结论：∃x(A(x)∧G(x))",
+    "step_2_a": "2. ¬(A(a)→D(a)) T,1,ES\n3. A(a)∧¬D(a) T,2\n4. A(a) T,3\n5. ¬D(a) T,3",
+    "step_2_b": "6. ∀x(A(x)∧B(x)→D(x)) P\n7. A(a)∧B(a)→D(a) T,6,US\n8. ¬B(a) T,4,5,7\n9. ∀x(A(x)→B(x)∨G(x)) P\n10. A(a)->B(a)∨G(a) T,9,US\n11. G(a) T,4,8,10",
+    "step_2_c": "12. A(a)∧G(a) T,4,11\n13. 存在x(A(x)∧G(x)) T,12,EG"
+  }
+}

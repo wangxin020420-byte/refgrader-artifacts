@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T23:39:28.483505",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_257.jpg",
+  "image_sha256": "0ddd9b25dcbd2f427b3f355b730911ff38475f92eb1bd24490447130cac89433",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：谓词公式：\n∀x(A(x)→B(x)∨C(x)), ∀x((A(x)∧B(x))→D(x)), ∃x(A(x)∧¬D(x)) => ∃x(A(x)∧C(x))\n\n证明：\n步骤\t断言\t\t       根据\n1      \t∃x(A(x)∧¬D(x)) \tP\n2\tA(a)∧¬D(a) \t\tT,1,ES\n3\tA(a)            \tT,2\n4\t¬D(a)           \tT,2\n5\t∀x((A(x)∧B(x))→D(x))\tP\n6\t(A(a)∧B(a))→D(a)\tT,5,US\n7\t¬(A(a)∧B(a))    \tT,4,6\n8\t¬B(a)            \tT,3,7\n9\t∀x(A(x)→B(x)∨C(x))\tP\n10\tA(a)→B(a)∨C(a)\t       \tT,9,US\n11\tC(a)\t               \tT,3,8,10\n12\tA(a)∧C(a)       \tT,3,11\n13\t∃x(A(x)∧C(x))\t       \tT,12,EG\n\n由上述推理知该命题成立.",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_257",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "∀x(A(x)→B(x)∨C(x)), ∀x((A(x)∧B(x))→D(x)), ∃x(A(x)∧¬D(x)) => ∃x(A(x)∧C(x))",
+    "step_2_a": "步骤1：断言 ∃x(A(x)∧¬D(x))，根据 P\n步骤2：断言 A(a)∧¬D(a)，根据 T,1,ES\n步骤3：断言 A(a)，根据 T,2\n步骤4：断言 ¬D(a)，根据 T,2",
+    "step_2_b": "步骤5：断言 ∀x((A(x)∧B(x))→D(x))，根据 P\n步骤6：断言 (A(a)∧B(a))→D(a)，根据 T,5,US\n步骤7：断言 ¬(A(a)∧B(a))，根据 T,4,6\n步骤8：断言 ¬B(a)，根据 T,3,7\n步骤9：断言 ∀x(A(x)→B(x)∨C(x))，根据 P\n步骤10：断言 A(a)→B(a)∨C(a)，根据 T,9,US\n步骤11：断言 C(a)，根据 T,3,8,10\n步骤12：断言 A(a)∧C(a)，根据 T,3,11",
+    "step_2_c": "步骤13：断言 ∃x(A(x)∧C(x))，根据 T,12,EG"
+  }
+}

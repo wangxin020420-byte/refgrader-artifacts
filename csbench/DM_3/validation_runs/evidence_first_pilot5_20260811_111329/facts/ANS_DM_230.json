@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T23:33:32.772598",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_230.jpg",
+  "image_sha256": "fde449217790e01a17e7ed42379f1dc95e24accd574798bc6c96efd7dd885328",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "21. 证：由题意得：前提：∀x(Ax→Bx∨Cx), ∀x(Ax∧Bx→Dx), ∃x(Ax∧¬Dx)\n结论：∃x(Ax∧Cx)\n步骤        断言                \n1.          ∃x(Ax∧¬Dx)         前提引入\n2.          Aa∧¬Da             1 ES\n3.          Aa                 2 化简\n4.          ¬Da                2 化简\n5.          ∀x(Ax∧Bx→Dx)       前提引入\n6.          Aa∧Ba→Da           5 US\n7.          ¬Ba                3,4,6\n8.          ∀x(Ax→Bx∨Cx)       前提引入\n9.          Aa→Ba∨Ca           8 US\n10.         Ca                 3,7\n11.         Aa∧Ca              3,10\n12.         ∃x(Ax∧Cx)          11 EG\n证毕",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_230",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "前提：∀x(Ax→Bx∨Cx), ∀x(Ax∧Bx→Dx), ∃x(Ax∧¬Dx)\n结论：∃x(Ax∧Cx)",
+    "step_2_a": "步骤  断言\n1.  ∃x(Ax∧¬Dx)  前提引入\n2.  Aa∧¬Da  1 ES\n3.  Aa  2 化简\n4.  ¬Da  2 化简\n（使用的特定个体常量是 a；得到的谓词断言为 Aa∧¬Da，并化简出 Aa 与 ¬Da）",
+    "step_2_b": "5.  ∀x(Ax∧Bx→Dx)  前提引入\n6.  Aa∧Ba→Da  5 US\n7.  ¬Ba  3,4,6\n8.  ∀x(Ax→Bx∨Cx)  前提引入\n9.  Aa→Ba∨Ca  8 US\n10.  Ca  3,7\n11.  Aa∧Ca  3,10\n（US 中使用同一个常量 a；由 US 得到中间结论 Aa∧Ba→Da 与 Aa→Ba∨Ca；由步骤 3,4,6 得到 ¬Ba；由步骤 3,7 得到 Ca；步骤标注未写出具体规则名称）",
+    "step_2_c": "12.  ∃x(Ax∧Cx)  11 EG"
+  }
+}
