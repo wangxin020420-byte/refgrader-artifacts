@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T01:52:26.100531",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_168.jpg",
+  "image_sha256": "f2614c57c450ff60299f21ccdbd21fd60ee66fc6e2b33a5f117c167b7c5ff53b",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：\n[X]补=36H=0011 0110\n[Y]补=54H=0101 0100\n[Z]补=D5H=1101 0101\n2Y = 2[Y]补  y左移1位 10101000 [2y]补\nX-2y=[X]补+[-2Y]补\n  =0011 0110 + 01011000\n  =1000 1110\n  =8EH\nOF = Cf ⊕ Sf =1⊕0=1\n结果溢出了。\nx÷4 x右移动2位 00001101\n2z z右移1位 10101010\n(X÷4)+28\n=0000 1101 + 1010 1010\n=1011 0111\n= B7H\nOF = Cf ⊕ Sf =0 未溢出.",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_168",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "关于 x - 2y：\n- 涉及数值/二进制：[X]补=36H=0011 0110；[Y]补=54H=0101 0100；2Y = 2[Y]补 y左移1位 10101000 [2y]补；X-2y=[X]补+[-2Y]补 =0011 0110 + 01011000 =1000 1110 =8EH。\n- 公式/计算追踪：X-2y=[X]补+[-2Y]补，2Y = 2[Y]补 y左移1位。\n- 溢出判断：OF = Cf ⊕ Sf =1⊕0=1；结论：结果溢出了。",
+    "step_2": "关于 (x ÷ 4) + 2z：\n- 涉及数值/二进制：x÷4 x右移动2位 00001101；2z z右移1位 10101010；(X÷4)+28 =0000 1101 + 1010 1010 =1011 0111 = B7H。\n- 公式/计算追踪：(X÷4)+28；x÷4 x右移动2位；2z z右移1位。\n- 溢出判断：OF = Cf ⊕ Sf =0；结论：未溢出."
+  }
+}

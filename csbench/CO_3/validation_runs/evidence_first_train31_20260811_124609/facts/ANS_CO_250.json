@@ -1,0 +1,52 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-08-11T13:26:16.986998",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_250.png",
+  "image_sha256": "e89e9e39197f48cb9bc4bceb35e7e02c358ee9cf489c6ba97ae0352d872b9950",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：由题意得，采用双符号位\n[x]补=000110110\n[Y]补=001010100\n[-2Y]补=101011000\n[x-2Y]补=[x]补+[-2Y]补=110001110\n即[x-2Y]补=8EH\n∵最高位和次高位符号相同，所以未发生溢出，即OF=0\n[x]补=000110110\nx÷4表示算术右移2位\n即[x÷4]补=00 0001101 10\n[2]补=1110 0101\n[2²]补=1101 0100\n[x÷4)+2²]补=[x÷4]补+[2²]补\n= 00 0001101 + 1101 0100\n= 11 011 0111\n即[x÷4)+2²]补=B7H\n∵最高位和次高位符号相同，所以未溢出，即OF=0.",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_250",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": {
+      "initial_values": "[x]补=000110110；[Y]补=001010100；[-2Y]补=101011000",
+      "computation_trace": "[x-2Y]补=[x]补+[-2Y]补=110001110",
+      "result": "[x-2Y]补=8EH",
+      "overflow_judgment": "最高位和次高位符号相同，所以未发生溢出，即OF=0"
+    },
+    "step_2": {
+      "initial_values": "[x]补=000110110；[2]补=1110 0101；[2²]补=1101 0100",
+      "computation_trace": "x÷4表示算术右移2位，即[x÷4]补=00 0001101 10；[x÷4)+2²]补=[x÷4]补+[2²]补 = 00 0001101 + 1101 0100 = 11 011 0111",
+      "result": "[x÷4)+2²]补=B7H",
+      "overflow_judgment": "最高位和次高位符号相同，所以未溢出，即OF=0"
+    }
+  }
+}

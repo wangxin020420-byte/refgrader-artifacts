@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T01:56:16.774712",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_185.jpg",
+  "image_sha256": "61aa4eb9aefebf6dc8c79623181fbd70c149a443369b09338ab3682194dbef08",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解:X=36H=00110110\ny=54H=01010100\nz=D5H=11010101\nX-2y=X补+2[-y]补\ny补=10101100\n则X-2y:\n00110110\n+11011000\n100001110\n符号位溢出,则结果溢出\n正确结果(00001110)补=1110010=F2H\nx=4=9H=00001001\n2z=110101010(最高位是符号位)\n(X÷Y)+2Z\n0000 1001\n+1101 0101\n1101 1110\n+1101 0101\n110110011\n则(0001 1011 0011)补=111001001101\n对应十进制:D4C H",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_185",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "公式/推导: X-2y=X补+2[-y]补\n值: X=36H=00110110, y=54H=01010100, y补=10101100\n计算:\n00110110\n+11011000\n=100001110\n溢出判断: \"符号位溢出,则结果溢出\"\n结果/结论: 正确结果(00001110)补=1110010=F2H",
+    "step_2": "公式/推导: (X÷Y)+2Z（学生用 Y 代替 4，未显式写出 x÷4）\n值: x=4=9H=00001001, 2z=110101010(最高位是符号位)\n计算:\n0000 1001\n+1101 0101\n=1101 1110\n再 +1101 0101\n=110110011\n结论: 则(0001 1011 0011)补=111001001101；对应十进制: D4C H\n溢出判断: 未书写"
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:13:44.694674",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1398.jpg",
+  "image_sha256": "de694d13f12634595dbc79731aaa387d0aadb0a96d186c42d814aff3a6c2c848",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1398.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 24,
+    "accepted_token_count": 23,
+    "mean_confidence": 0.899396,
+    "min_confidence": 0.5,
+    "joined_text": ".这用寄好器 b: 指令可存器 C: 数据缓存寄存器 d: 地址寄处存器\nMI0=1,W/R=0\nPCAPC→AB\n2\nPC中值传入地址总线，地址总线数据有效，将指令地址传入指令寄存器，\n程PC指向下一条指令地址\n(③) 操作数部分地址关入AR，AR送入地址总线，读/写信号有效，地址有效\nM/IO=1，并将数据送入通数据缓存寄存器\n④ 先进行(2中取指微命令操作，再进行取数微命令操作，\n送入ALU的两端，(GR和DR送入)，再最后进行运算相加操作并将\nALU运算结果送入AX寄存器。\n(5)容量应为2MB\n⑥\n微指令具体格式：\n外部条件3个，需2位\n2位13位2位77位\n字段标志控制段互斥下址字段\n∴控制字段共3+4+4+2=13位\n标论\n下址字段长为24-13-2-2=7位\n(6) 4个互斥类需2位，N=2m-1得 m=[1og2(N+1)7\n分别为\n∴5181/1413采用字段直接偏码码长3位4位4位2位",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.164913,
+      "very_dark_pixel_ratio": 0.119995,
+      "lower_region_dark_pixel_ratio": 0.155421,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)a：通用寄存器 b：指令寄存器 c：数据缓存寄存器 d：地址寄存器\n(2) PC→AB PC中值传入地址总线，地址总线数据有效M/非IO,W/非R=0，将指令地址传入指令寄存器，PC指向下条指令地址\n(3)操作数部分地址送入AR，AR传入地址总线，读/写信号有效，地址有效，M/非Io=1，并将数据送入数据寄存器\n(4)先进行(2)中取指微命令令操作，再进行取数微命令操作，送入ALU的两端（GR和DR送入），最后进行运算相加操作并将ALU运算结果送入AX寄存器。\n(5)容量应为2MB\n(6)微指令具体格式如图所示\n外部条件3个，需2位\n∴控制字段共3+4+4+2=13位\n下址字段长为24-13-2-2=7位\n(6)4个互斥类需2位，N=2^m -1得 m=⌈log2(N+1)⌉\n∴5|8|14|3 采用字段直接编码分别为3位4位4位2位",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1398",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "数据通路：\n1. PCAPC→AB\n2. PC中值传入地址总线，地址总线数据有效，将指令地址传入指令寄存器，\n3. 程PC指向下一条指令地址\n4. (③) 操作数部分地址关入AR，AR送入地址总线，读/写信号有效，地址有效\n5. MI0=1,W/R=0\n6. M/IO=1，并将数据送入通数据缓存寄存器\n7. ④ 先进行(2中取指微命令操作，再进行取数微命令操作，\n8. 送入ALU的两端，(GR和DR送入)，再最后进行运算相加操作并将\n9. ALU运算结果送入AX寄存器。",
+    "step_5": "(5)容量应为2MB",
+    "step_6": "微指令具体格式：\n[字段标志控制段互斥下址字段]\n[2位13位2位77位]\n外部条件3个，需2位\n∴控制字段共3+4+4+2=13位\n下址字段长为24-13-2-2=7位\n(6) 4个互斥类需2位，N=2m-1得 m=[1og2(N+1)7\n∴5181/1413采用字段直接偏码码长3位4位4位2位\n分别为"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 56.17,
+        "cells_left_to_right": [
+          {
+            "text": "PCAPC→AB",
+            "x_center": 201.5,
+            "confidence": 0.9903006553649902
+          },
+          {
+            "text": ".这用寄好器 b: 指令可存器 C: 数据缓存寄存器 d: 地址寄处存器",
+            "x_center": 457.5,
+            "confidence": 0.7444633841514587
+          },
+          {
+            "text": "MI0=1,W/R=0",
+            "x_center": 614.0,
+            "confidence": 0.90152508020401
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 103.0,
+        "cells_left_to_right": [
+          {
+            "text": "2",
+            "x_center": 39.0,
+            "confidence": 0.6423590779304504
+          },
+          {
+            "text": "PC中值传入地址总线，地址总线数据有效，将指令地址传入指令寄存器，",
+            "x_center": 487.0,
+            "confidence": 0.975301206111908
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 176.0,
+        "cells_left_to_right": [
+          {
+            "text": "程PC指向下一条指令地址",
+            "x_center": 217.0,
+            "confidence": 0.9572310447692871
+          },
+          {
+            "text": "(③) 操作数部分地址关入AR，AR送入地址总线，读/写信号有效，地址有效",
+            "x_center": 480.0,
+            "confidence": 0.9289541244506836
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 236.0,
+        "cells_left_to_right": [
+          {
+            "text": "M/IO=1，并将数据送入通数据缓存寄存器",
+            "x_center": 301.5,
+            "confidence": 0.9010634422302246
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 279.0,
+        "cells_left_to_right": [
+          {
+            "text": "④ 先进行(2中取指微命令操作，再进行取数微命令操作，",
+            "x_center": 468.0,
+            "confidence": 0.9580557942390442
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 354.33,
+        "cells_left_to_right": [
+          {
+            "text": "处",
+            "x_center": 62.0,
+            "confidence": 0.18121398985385895
+          },
+          {
+            "text": "ALU运算结果送入AX寄存器。",
+            "x_center": 296.0,
+            "confidence": 0.9832685589790344
+          },
+          {
+            "text": "送入ALU的两端，(GR和DR送入)，再最后进行运算相加操作并将",
+            "x_center": 468.5,
+            "confidence": 0.950812578201294
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 420.17,
+        "cells_left_to_right": [
+          {
+            "text": "⑥",
+            "x_center": 31.0,
+            "confidence": 0.685875654220581
+          },
+          {
+            "text": "微指令具体格式：",
+            "x_center": 123.5,
+            "confidence": 0.9874888062477112
+          },
+          {
+            "text": "(5)容量应为2MB",
+            "x_center": 412.5,
+            "confidence": 0.8658968806266785
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 510.88,
+        "cells_left_to_right": [
+          {
+            "text": "字段标志控制段互斥下址字段",
+            "x_center": 187.5,
+            "confidence": 0.8771538138389587
+          },
+          {
+            "text": "2位13位2位77位",
+            "x_center": 197.0,
+            "confidence": 0.9130914807319641
+          },
+          {
+            "text": "外部条件3个，需2位",
+            "x_center": 683.0,
+            "confidence": 0.9551719427108765
+          },
+          {
+            "text": "∴控制字段共3+4+4+2=13位",
+            "x_center": 726.5,
+            "confidence": 0.9795874357223511
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 562.0,
+        "cells_left_to_right": [
+          {
+            "text": "标论",
+            "x_center": 258.5,
+            "confidence": 0.7243549823760986
+          },
+          {
+            "text": "下址字段长为24-13-2-2=7位",
+            "x_center": 755.0,
+            "confidence": 0.9945852756500244
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 644.33,
+        "cells_left_to_right": [
+          {
+            "text": "(6) 4个互斥类需2位，N=2m-1得 m=[1og2(N+1)7",
+            "x_center": 368.5,
+            "confidence": 0.8519606590270996
+          },
+          {
+            "text": "∴5181/1413采用字段直接偏码码长3位4位4位2位",
+            "x_center": 436.0,
+            "confidence": 0.9412861466407776
+          },
+          {
+            "text": "分别为",
+            "x_center": 564.5,
+            "confidence": 0.9763275980949402
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=201.5: PCAPC→AB | x=457.5: .这用寄好器 b: 指令可存器 C: 数据缓存寄存器 d: 地址寄处存器 | x=614.0: MI0=1,W/R=0\nRow 2: x=39.0: 2 | x=487.0: PC中值传入地址总线，地址总线数据有效，将指令地址传入指令寄存器，\nRow 3: x=217.0: 程PC指向下一条指令地址 | x=480.0: (③) 操作数部分地址关入AR，AR送入地址总线，读/写信号有效，地址有效\nRow 4: x=301.5: M/IO=1，并将数据送入通数据缓存寄存器\nRow 5: x=468.0: ④ 先进行(2中取指微命令操作，再进行取数微命令操作，\nRow 6: x=62.0: 处 | x=296.0: ALU运算结果送入AX寄存器。 | x=468.5: 送入ALU的两端，(GR和DR送入)，再最后进行运算相加操作并将\nRow 7: x=31.0: ⑥ | x=123.5: 微指令具体格式： | x=412.5: (5)容量应为2MB\nRow 8: x=187.5: 字段标志控制段互斥下址字段 | x=197.0: 2位13位2位77位 | x=683.0: 外部条件3个，需2位 | x=726.5: ∴控制字段共3+4+4+2=13位\nRow 9: x=258.5: 标论 | x=755.0: 下址字段长为24-13-2-2=7位\nRow 10: x=368.5: (6) 4个互斥类需2位，N=2m-1得 m=[1og2(N+1)7 | x=436.0: ∴5181/1413采用字段直接偏码码长3位4位4位2位 | x=564.5: 分别为"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a: 运算寄存器 b: 指令寄存器 c: 数据缓冲寄存器 d: 地址寄存器",
+    "step_2": "PC→AB PC→AB",
+    "step_3": "操作数部分地址输入地址AR，AR送入地址总线，读/写信号有效，地址有效，M/Io=1，并将数据送入数据寄存器",
+    "step_4": "先进行12中取指微命令令操作，再进行取数微命令操作，将数据送入ALU的两端（GR和DR送入），再最后进行运算相加操作并将运算结果送入AX寄存器。",
+    "step_5": "容量应为2 MB",
+    "step_6": "[2位][13位][2位][7位] 字段标志 控制字段 下址字段 标志 外部条件3个，需2位 ∴控制字段共3+4+4+2=13位 下址字段长为24-13-2=7位 61,4个互斥类需2位，N=2^m -1得m=⌈lg(N+1)⌉ ∴5/8/14/3 采用字段直接编译法为3位 4位 4位 2位"
+  },
+  "facts": {
+    "step_1": "a：通用寄存器 b：指令寄存器 c：数据缓存寄存器 d：地址寄存器",
+    "step_2": "PC→AB PC中值传入地址总线，地址总线数据有效M/非IO,W/非R=0，将指令地址传入指令寄存器，PC指向下条指令地址",
+    "step_3": "操作数部分地址送入AR，AR传入地址总线，读/写信号有效，地址有效，M/非Io=1，并将数据送入数据寄存器",
+    "step_4": "先进行(2)中取指微命令令操作，再进行取数微命令操作，送入ALU的两端（GR和DR送入），最后进行运算相加操作并将ALU运算结果送入AX寄存器。",
+    "step_5": "容量应为2MB",
+    "step_6": "微指令具体格式如图所示\n外部条件3个，需2位\n∴控制字段共3+4+4+2=13位\n下址字段长为24-13-2-2=7位\n4个互斥类需2位，N=2^m -1得 m=⌈log2(N+1)⌉\n∴5|8|14|3 采用字段直接编码分别为3位4位4位2位"
+  }
+}

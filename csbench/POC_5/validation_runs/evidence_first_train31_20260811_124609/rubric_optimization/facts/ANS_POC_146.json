@@ -1,0 +1,102 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-26T01:36:36.113380",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_5/ANS_POC_146.jpg",
+  "image_sha256": "4760203fe88ffbf5580420a5484e5e47fcb05fdd879fc7458e26ba403b6cb8cd",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_5/ANS_POC_146.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 32,
+    "accepted_token_count": 32,
+    "mean_confidence": 0.87962,
+    "min_confidence": 0.5,
+    "joined_text": "5.\nI1\nI4\nI7\nS→b·Ba,#\nB\nS→bBoa,\na\nB→oa,a\ns→bBao,#\nI_0\nb\nI5\nS→·S,#\nI_2\na\nS→AaA,#\nB→a.,a\nS\ns'→so,\nS→·bBa,井\nA→,al\nB→·a,a\nA\nI3\nI_6\nI8\ns→A·aA,\na\nS→Aa·A,\nA\ns→AaAo,#",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.057347,
+      "very_dark_pixel_ratio": 0.037908,
+      "lower_region_dark_pixel_ratio": 0.065323,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_146",
+    "question_id": "POC_5",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "I0 → (I1 via b, I2 via S, I3 via A) → (I4 via B, I5 via a from I1) → (I7 via a from I4) and (I6 via a from I3 → I8 via A)",
+  "diagram_facts": {
+    "step_1": "I0 contains: S'→·S, #; S→AaA, #; S→·bBa, #; A→·, a/#; B→·a, a；完整可见路径：I0 → (I1 via b, I2 via S, I3 via A) → (I4 via B, I5 via a from I1) → (I7 via a from I4) and (I6 via a from I3 → I8 via A)",
+    "step_2": "Successors from I0: I1 (on 'b') with S→b·Ba, #; B→·a, a; I2 (on 'S') with S'→S·, #; I3 (on 'A') with S→A·aA, #；完整可见路径：I0 → (I1 via b, I2 via S, I3 via A) → (I4 via B, I5 via a from I1) → (I7 via a from I4) and (I6 via a from I3 → I8 via A)",
+    "step_3": "Remaining item sets: I4 (from I1 on 'B') with S→bB·a, #; I5 (from I1 on 'a') with B→a·, a; I6 (from I3 on 'a') with S→Aa·A, #; I7 (from I4 on 'a') with S→bBa·, #; I8 (from I6 on 'A') with S→AaA·, #；完整可见路径：I0 → (I1 via b, I2 via S, I3 via A) → (I4 via B, I5 via a from I1) → (I7 via a from I4) and (I6 via a from I3 → I8 via A)",
+    "step_4": "Transitions: I0 --b--> I1; I0 --S--> I2; I0 --A--> I3; I1 --B--> I4; I1 --a--> I5; I4 --a--> I7; I3 --a--> I6; I6 --A--> I8；完整可见路径：I0 → (I1 via b, I2 via S, I3 via A) → (I4 via B, I5 via a from I1) → (I7 via a from I4) and (I6 via a from I3 → I8 via A)"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten content for the augmented grammar and the initial LR(1) item set I0. Specifically, extract the defined starting production rule, and all items within I0. Preserve all specific symbols used, the exact position of the dot (·) in each production, lookahead sets (usually enclosed in braces or quotes), and structural arrows exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's concrete handwritten LR(1) item sets generated as successors from the initial state (such as GOTO relations for 'b' and 'S'). For each generated item set, preserve its label, the exact position of the dot (·) inside its productions, lookahead sets, commas, arrows, and the order of items exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten remaining LR(1) item sets and their contents. For each item set generated from subsequent transitions (including productions with epsilon or empty string symbols), preserve the state label, the exact dot (·) position, lookahead symbols (e.g., inside braces), structural arrows, and special characters exactly as written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten transition relations for the LR(1) item sets. Preserve the source state, the transition symbol (terminal or non-terminal), the destination state, and any drawn arrows, directed edges, or text mappings (e.g., State --Symbol--> State) exactly as written, including their direction and order."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "I₀\nS'→·S, #\nS→A·aA, #\nS→·bBa, #\nA→·, a/#\nB→·a, a",
+    "step_2": "I₁\nS→b·Ba, #\nB→·a, a\nI₂\nS'→S·, #\nI₃\nS→A·aA, #",
+    "step_3": "I₄\nS→bB·a, #\nI₅\nB→a·, a\nI₆\nS→Aa·A, #\nI₇\nS→bBa·, #\nI₈\nS→AaA·, #",
+    "step_4": "I₀ --b--> I₁\nI₀ --S--> I₂\nI₀ --A--> I₃\nI₁ --B--> I₄\nI₁ --a--> I₅\nI₃ --a--> I₆\nI₄ --a--> I₇\nI₆ --A--> I₈"
+  },
+  "facts": {
+    "step_1": "I0 contains: S'→·S, #; S→AaA, #; S→·bBa, #; A→·, a/#; B→·a, a；完整可见路径：I0 → (I1 via b, I2 via S, I3 via A) → (I4 via B, I5 via a from I1) → (I7 via a from I4) and (I6 via a from I3 → I8 via A)",
+    "step_2": "Successors from I0: I1 (on 'b') with S→b·Ba, #; B→·a, a; I2 (on 'S') with S'→S·, #; I3 (on 'A') with S→A·aA, #；完整可见路径：I0 → (I1 via b, I2 via S, I3 via A) → (I4 via B, I5 via a from I1) → (I7 via a from I4) and (I6 via a from I3 → I8 via A)",
+    "step_3": "Remaining item sets: I4 (from I1 on 'B') with S→bB·a, #; I5 (from I1 on 'a') with B→a·, a; I6 (from I3 on 'a') with S→Aa·A, #; I7 (from I4 on 'a') with S→bBa·, #; I8 (from I6 on 'A') with S→AaA·, #；完整可见路径：I0 → (I1 via b, I2 via S, I3 via A) → (I4 via B, I5 via a from I1) → (I7 via a from I4) and (I6 via a from I3 → I8 via A)",
+    "step_4": "Transitions: I0 --b--> I1; I0 --S--> I2; I0 --A--> I3; I1 --B--> I4; I1 --a--> I5; I4 --a--> I7; I3 --a--> I6; I6 --A--> I8；完整可见路径：I0 → (I1 via b, I2 via S, I3 via A) → (I4 via B, I5 via a from I1) → (I7 via a from I4) and (I6 via a from I3 → I8 via A)"
+  }
+}

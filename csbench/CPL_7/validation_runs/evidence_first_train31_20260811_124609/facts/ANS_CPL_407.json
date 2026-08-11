@@ -1,0 +1,42 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T07:01:31.021148",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_407.jpg",
+  "image_sha256": "1990ebaa89f121ec6424630cc555ad9b3c65e01bdfdd830a507096d05cbefbf3",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "include <stdio.h> int main() { int a[5][5]; for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\"%d\",&a[i][j]); } } //输入矩阵 for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } } //转置矩阵 for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { printf(\"%d \",a[i][j]) } printf(\"\\n\"); } return 0; } //输出矩阵",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CPL_407",
+    "question_id": "CPL_7",
+    "subject": "CPL",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\"%d\",&a[i][j]); } } //输入矩阵\nfor(int i=0;i<5;i++) { for(int j=0;j<5;j++) { printf(\"%d \",a[i][j]) } printf(\"\\n\"); } return 0; } //输出矩阵",
+    "step_2": "未书写",
+    "step_3": "for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } } //转置矩阵"
+  }
+}

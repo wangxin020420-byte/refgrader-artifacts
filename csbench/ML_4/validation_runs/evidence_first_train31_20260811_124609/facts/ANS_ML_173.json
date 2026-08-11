@@ -1,0 +1,497 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T12:07:16.349268",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ML_4/ANS_ML_173.jpg",
+  "image_sha256": "07909ae8717ba2c7e193b7d55e7093bf5b7ecc17fc006b76a54977eefc686971",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/ML_4/ANS_ML_173.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 49,
+    "accepted_token_count": 46,
+    "mean_confidence": 0.877595,
+    "min_confidence": 0.5,
+    "joined_text": ":拉1T0，SO: 不提收有效的0\n1.\n次态/转乡\n{2:接4x01\n现态\nx=0\nx=1\nS3: 接4收010\n50\n5110\n5o10\nSB4：接4收0101\nS1\n5.10\n1/0\n8210\nS2\n5010\nS4501010\n5310\n5010\nS3\nSe\n510\n410\n0/0\nss\n状态图\n0/0\n55/1\ns0/0\n20%\n1/0\n0/1\n55\n5110\n410\n4\n1/0\ncV0\n110\n1/0\n110\n3\n52\n0/0",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.084572,
+      "very_dark_pixel_ratio": 0.055844,
+      "lower_region_dark_pixel_ratio": 0.08082,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "S₀:接收110，S₆:未接收有效的0 S₂:接收01 S₃:接收010 S₃₄:接收0101 S₄₅:接收01010",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_ML_173",
+    "question_id": "ML_4",
+    "subject": "ML",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": {
+      "state_diagram": {
+        "description": "Hand-drawn state diagram with node definitions, nodes, and directed arrows.",
+        "node_definitions": [
+          {
+            "text": "S0: 初始T0，S0: 不接收有效的0",
+            "ocr_raw": ":拉1T0，SO: 不提收有效的0"
+          },
+          {
+            "text": "S2: 接收01",
+            "ocr_raw": "{2:接4x01"
+          },
+          {
+            "text": "S3: 接收010",
+            "ocr_raw": "S3: 接4收010"
+          },
+          {
+            "text": "S4: 接收0101",
+            "ocr_raw": "SB4：接4收0101"
+          },
+          {
+            "text": "S5: 接收01010",
+            "ocr_raw": "S4501010"
+          }
+        ],
+        "nodes": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        "arrows": [
+          {
+            "source": "S4",
+            "target": "S5",
+            "transition_condition": "0",
+            "output_value": "0"
+          },
+          {
+            "source": "S5",
+            "target": "S0",
+            "transition_condition": "0",
+            "output_value": "0"
+          },
+          {
+            "source": "S0",
+            "target": "S1",
+            "transition_condition": "1",
+            "output_value": "0"
+          },
+          {
+            "source": "S1",
+            "target": "S2",
+            "transition_condition": "0",
+            "output_value": "0"
+          },
+          {
+            "source": "S2",
+            "target": "S3",
+            "transition_condition": "1",
+            "output_value": "0"
+          },
+          {
+            "source": "S2",
+            "target": "S0",
+            "transition_condition": "0",
+            "output_value": "0"
+          },
+          {
+            "source": "S3",
+            "target": "S0",
+            "transition_condition": "0",
+            "output_value": "1"
+          }
+        ]
+      },
+      "state_table": {
+        "headers": [
+          "现态",
+          "次态/输出 (x=0)",
+          "次态/输出 (x=1)"
+        ],
+        "rows": [
+          {
+            "现态": "S0",
+            "x=0": "S0/0",
+            "x=1": "S1/0"
+          },
+          {
+            "现态": "S1",
+            "x=0": "S2/0",
+            "x=1": "S2/0"
+          },
+          {
+            "现态": "S2",
+            "x=0": "S0/0",
+            "x=1": "S3/0"
+          },
+          {
+            "现态": "S3",
+            "x=0": "S3/0",
+            "x=1": "S4/0"
+          },
+          {
+            "现态": "S4",
+            "x=0": "S5/1",
+            "x=1": "S0/0"
+          },
+          {
+            "现态": "S5",
+            "x=0": "S1/0",
+            "x=1": "S0/0"
+          }
+        ]
+      }
+    }
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten content for this item without revealing the expected answer. Capture any hand-drawn state diagram, preserving all node labels, directed arrows, transition conditions, and output values exactly as written. Additionally, extract the complete contents of any handwritten state table, preserving all row and column headers, state labels, input conditions, next state transitions, and output values exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 53.3,
+        "cells_left_to_right": [
+          {
+            "text": "1.",
+            "x_center": 24.5,
+            "confidence": 0.9995284676551819
+          },
+          {
+            "text": "{2:接4x01",
+            "x_center": 114.0,
+            "confidence": 0.7876977920532227
+          },
+          {
+            "text": ":拉1T0，SO: 不提收有效的0",
+            "x_center": 241.5,
+            "confidence": 0.7103391885757446
+          },
+          {
+            "text": "现态",
+            "x_center": 586.0,
+            "confidence": 0.9610668420791626
+          },
+          {
+            "text": "次态/转乡",
+            "x_center": 719.0,
+            "confidence": 0.8518613576889038
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 103.17,
+        "cells_left_to_right": [
+          {
+            "text": "S3: 接4收010",
+            "x_center": 121.5,
+            "confidence": 0.7762308120727539
+          },
+          {
+            "text": "50",
+            "x_center": 582.0,
+            "confidence": 0.9614160060882568
+          },
+          {
+            "text": "5110",
+            "x_center": 673.0,
+            "confidence": 0.8822570443153381
+          },
+          {
+            "text": "x=0",
+            "x_center": 675.0,
+            "confidence": 0.9961423277854919
+          },
+          {
+            "text": "x=1",
+            "x_center": 756.0,
+            "confidence": 0.996272087097168
+          },
+          {
+            "text": "5o10",
+            "x_center": 758.0,
+            "confidence": 0.8761838674545288
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 158.62,
+        "cells_left_to_right": [
+          {
+            "text": "SB4：接4收0101",
+            "x_center": 129.0,
+            "confidence": 0.9045226573944092
+          },
+          {
+            "text": "1/0",
+            "x_center": 283.0,
+            "confidence": 0.8496159911155701
+          },
+          {
+            "text": "S2",
+            "x_center": 578.5,
+            "confidence": 0.9798228144645691
+          },
+          {
+            "text": "S1",
+            "x_center": 579.0,
+            "confidence": 0.7503337264060974
+          },
+          {
+            "text": "20",
+            "x_center": 667.5,
+            "confidence": 0.4140006899833679
+          },
+          {
+            "text": "5010",
+            "x_center": 676.0,
+            "confidence": 0.7124646902084351
+          },
+          {
+            "text": "8210",
+            "x_center": 756.5,
+            "confidence": 0.8205407857894897
+          },
+          {
+            "text": "5.10",
+            "x_center": 759.5,
+            "confidence": 0.7949599623680115
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 212.94,
+        "cells_left_to_right": [
+          {
+            "text": "S4501010",
+            "x_center": 134.5,
+            "confidence": 0.8789728879928589
+          },
+          {
+            "text": "Se",
+            "x_center": 252.5,
+            "confidence": 0.8511917591094971
+          },
+          {
+            "text": "0/0",
+            "x_center": 316.5,
+            "confidence": 0.8823863863945007
+          },
+          {
+            "text": "S3",
+            "x_center": 577.0,
+            "confidence": 0.9217453002929688
+          },
+          {
+            "text": "5310",
+            "x_center": 666.0,
+            "confidence": 0.7693483829498291
+          },
+          {
+            "text": "510",
+            "x_center": 668.5,
+            "confidence": 0.7929629683494568
+          },
+          {
+            "text": "5010",
+            "x_center": 756.5,
+            "confidence": 0.904388427734375
+          },
+          {
+            "text": "410",
+            "x_center": 760.0,
+            "confidence": 0.9911521077156067
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 263.19,
+        "cells_left_to_right": [
+          {
+            "text": "状态图",
+            "x_center": 77.0,
+            "confidence": 0.9755529761314392
+          },
+          {
+            "text": "1/0",
+            "x_center": 109.0,
+            "confidence": 0.8915355801582336
+          },
+          {
+            "text": "0/1",
+            "x_center": 165.0,
+            "confidence": 0.9971733093261719
+          },
+          {
+            "text": "53",
+            "x_center": 169.5,
+            "confidence": 0.4757082760334015
+          },
+          {
+            "text": "0/0",
+            "x_center": 199.5,
+            "confidence": 0.8447249531745911
+          },
+          {
+            "text": "B",
+            "x_center": 362.5,
+            "confidence": 0.1533893197774887
+          },
+          {
+            "text": "20%",
+            "x_center": 416.0,
+            "confidence": 0.831322193145752
+          },
+          {
+            "text": "ss",
+            "x_center": 578.0,
+            "confidence": 0.7349779009819031
+          },
+          {
+            "text": "55",
+            "x_center": 578.0,
+            "confidence": 0.8172650337219238
+          },
+          {
+            "text": "55/1",
+            "x_center": 669.0,
+            "confidence": 0.9540895819664001
+          },
+          {
+            "text": "5110",
+            "x_center": 670.0,
+            "confidence": 0.8502382636070251
+          },
+          {
+            "text": "410",
+            "x_center": 763.0,
+            "confidence": 0.9394022822380066
+          },
+          {
+            "text": "s0/0",
+            "x_center": 764.0,
+            "confidence": 0.7226430177688599
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 308.0,
+        "cells_left_to_right": [
+          {
+            "text": "4",
+            "x_center": 126.5,
+            "confidence": 0.9727751612663269
+          },
+          {
+            "text": "1/0",
+            "x_center": 204.5,
+            "confidence": 0.9373526573181152
+          },
+          {
+            "text": "cV0",
+            "x_center": 229.0,
+            "confidence": 0.6199931502342224
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 343.17,
+        "cells_left_to_right": [
+          {
+            "text": "110",
+            "x_center": 125.5,
+            "confidence": 0.9909718632698059
+          },
+          {
+            "text": "110",
+            "x_center": 299.0,
+            "confidence": 0.977466881275177
+          },
+          {
+            "text": "1/0",
+            "x_center": 373.0,
+            "confidence": 0.8261821866035461
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 376.0,
+        "cells_left_to_right": [
+          {
+            "text": "3",
+            "x_center": 185.0,
+            "confidence": 0.9667365550994873
+          },
+          {
+            "text": "52",
+            "x_center": 299.5,
+            "confidence": 0.9707415103912354
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 403.0,
+        "cells_left_to_right": [
+          {
+            "text": "0/0",
+            "x_center": 239.5,
+            "confidence": 0.9448080658912659
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=24.5: 1. | x=114.0: {2:接4x01 | x=241.5: :拉1T0，SO: 不提收有效的0 | x=586.0: 现态 | x=719.0: 次态/转乡\nRow 2: x=121.5: S3: 接4收010 | x=582.0: 50 | x=673.0: 5110 | x=675.0: x=0 | x=756.0: x=1 | x=758.0: 5o10\nRow 3: x=129.0: SB4：接4收0101 | x=283.0: 1/0 | x=578.5: S2 | x=579.0: S1 | x=667.5: 20 | x=676.0: 5010 | x=756.5: 8210 | x=759.5: 5.10\nRow 4: x=134.5: S4501010 | x=252.5: Se | x=316.5: 0/0 | x=577.0: S3 | x=666.0: 5310 | x=668.5: 510 | x=756.5: 5010 | x=760.0: 410\nRow 5: x=77.0: 状态图 | x=109.0: 1/0 | x=165.0: 0/1 | x=169.5: 53 | x=199.5: 0/0 | x=362.5: B | x=416.0: 20% | x=578.0: ss | x=578.0: 55 | x=669.0: 55/1 | x=670.0: 5110 | x=763.0: 410 | x=764.0: s0/0\nRow 6: x=126.5: 4 | x=204.5: 1/0 | x=229.0: cV0\nRow 7: x=125.5: 110 | x=299.0: 110 | x=373.0: 1/0\nRow 8: x=185.0: 3 | x=299.5: 52\nRow 9: x=239.5: 0/0"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "S₀: 接收1或0 ，S₆: 不接收有效的0 \nS₂: 接收01 \nS₃: 接收010 \nS₃₄: 接收0101 \nS₄₅: 接收01010 \n状态图（含节点S₀、S₁、S₂、S₃、S₄、S₅及箭头标注，如S₀→S₁ 0/0、S₁→S₀ 1/0、S₁→S₂ 0/0、S₂→S₀ 1/0、S₂→S₃ 0/0、S₃→S₃ 0/0、S₃→S₄ 1/0、S₄→S₅ 0/1、S₄→S₀ 1/0、S₅→S₁ 0/0、S₅→S₄ 1/0等）\n状态表：\n状态 | 次态/输出\n     | X=0   X=1\nS₀  | S₁/0  S₀/0\nS₁  | S₂/0  S₁/0\nS₂  | S₀/0  S₃/0\nS₃  | S₃/0  S₄/0\nS₄  | S₅/1  S₀/0\nS₅  | S₁/0  S₄/0"
+  },
+  "facts": {
+    "step_1": "S₀:接收110，S₆:未接收有效的0 S₂:接收01 S₃:接收010 S₃₄:接收0101 S₄₅:接收01010"
+  }
+}

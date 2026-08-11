@@ -1,0 +1,341 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-26T23:01:45.119855",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_10/ANS_CO_1134.jpg",
+  "image_sha256": "9865fabe6eb2e83a33e38b5a34ac14e5234c00574a40a00f83812a723c312fea",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_10/ANS_CO_1134.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 35,
+    "accepted_token_count": 35,
+    "mean_confidence": 0.922286,
+    "min_confidence": 0.5,
+    "joined_text": "3. 解：(1)\n(2) 需要4套\n4字=22\n块内偏移量2位\n因为是四路组相联\n4kw/4w=1k块(cache有11ct块)\n组间直接映射\n1k/4=28组\n泪内全相联，一组中有\n组号有8位\n16-2-8=6\n4个 Cache t块，且是全\n主存块厂\nta9\n组号\n块内地址\n相邻映射，故要4个比较器\n6\n8\n2\n而不同组间可以形了并联\ncachetp\n故是4个比较器\nt49\n有效位\n数据区\n6\n16\n4kx2+\n7\nx|k = 8\n7\n水节\n8\n8",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.059807,
+      "very_dark_pixel_ratio": 0.031542,
+      "lower_region_dark_pixel_ratio": 0.057356,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)4字=2^2\n块内偏移量2位\n4k w /4w=1k块(cache有1k块)\n1k/4=2^8组\n组号有8位\n16-2-8=6位\n主存块( tag 组号 块内地址):(6 8 2)\ncache块 (tag 有效位 数据区):(6 1 16)\n4k×2 + 7/8 ×1k = 8 7/8 k 字\n(2) 需要4套\n因为是回路组相联组间直接映射组内全相联,一组中有4个Cache块,且是全相联映射,故要4个比较器而不同组间可以并行，并联故是4个比较器",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1134",
+    "question_id": "CO_10",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": "主存块厂 | 6 | ta9 | 8 | 组号 | 块内地址 | 2\ncachetp | 6 | t49 | 有效位 | 数据区",
+    "step_2": "4字=22\n块内偏移量2位\n4kw/4w=1k块(cache有11ct块)\n1k/4=28组\n组号有8位\n16-2-8=6",
+    "step_4_core": "(2) 需要4套\n因为是四路组相联\n组间直接映射\n泪内全相联，一组中有\n4个 Cache t块，且是全\n相邻映射，故要4个比较器\n而不同组间可以形了并联\n故是4个比较器"
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten content for this item without revealing the expected answer. Extract the student's specific address field division, capturing the sequence or layout of the fields and their corresponding bit lengths. Preserve any colons, equals signs, arrows, or spacing exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's concrete handwritten content for this item without revealing the expected answer. Extract the specific address field divisions and the calculation trace or formula the student wrote to derive the tag bit length."
+    },
+    {
+      "id": "step_4_core",
+      "instruction": "Extract the student's concrete handwritten content for this item without revealing the expected answer. Extract any specific method descriptions, keywords, or explanatory text where the student details the comparison process (e.g., parallel comparison within a group) and whether circuits can be shared across different groups."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 59.12,
+        "cells_left_to_right": [
+          {
+            "text": "3. 解：(1)",
+            "x_center": 71.0,
+            "confidence": 0.8849185705184937
+          },
+          {
+            "text": "4字=22",
+            "x_center": 246.5,
+            "confidence": 0.9491192102432251
+          },
+          {
+            "text": "块内偏移量2位",
+            "x_center": 293.5,
+            "confidence": 0.9917053580284119
+          },
+          {
+            "text": "(2) 需要4套",
+            "x_center": 690.0,
+            "confidence": 0.8729454874992371
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 104.5,
+        "cells_left_to_right": [
+          {
+            "text": "因为是四路组相联",
+            "x_center": 773.5,
+            "confidence": 0.9939360618591309
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 158.75,
+        "cells_left_to_right": [
+          {
+            "text": "4kw/4w=1k块(cache有11ct块)",
+            "x_center": 359.0,
+            "confidence": 0.8863174319267273
+          },
+          {
+            "text": "组间直接映射",
+            "x_center": 737.0,
+            "confidence": 0.8523278832435608
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 221.5,
+        "cells_left_to_right": [
+          {
+            "text": "组号有8位",
+            "x_center": 275.0,
+            "confidence": 0.9960004687309265
+          },
+          {
+            "text": "1k/4=28组",
+            "x_center": 284.5,
+            "confidence": 0.9264928102493286
+          },
+          {
+            "text": "泪内全相联，一组中有",
+            "x_center": 752.5,
+            "confidence": 0.8843287229537964
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 274.75,
+        "cells_left_to_right": [
+          {
+            "text": "16-2-8=6",
+            "x_center": 323.5,
+            "confidence": 0.979293942451477
+          },
+          {
+            "text": "4个 Cache t块，且是全",
+            "x_center": 752.0,
+            "confidence": 0.9253780841827393
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 338.88,
+        "cells_left_to_right": [
+          {
+            "text": "主存块厂",
+            "x_center": 77.5,
+            "confidence": 0.7523882389068604
+          },
+          {
+            "text": "6",
+            "x_center": 190.0,
+            "confidence": 0.9999626874923706
+          },
+          {
+            "text": "ta9",
+            "x_center": 195.5,
+            "confidence": 0.7457291483879089
+          },
+          {
+            "text": "8",
+            "x_center": 279.0,
+            "confidence": 0.9999899864196777
+          },
+          {
+            "text": "组号",
+            "x_center": 282.5,
+            "confidence": 0.9978455305099487
+          },
+          {
+            "text": "块内地址",
+            "x_center": 361.0,
+            "confidence": 0.9757457971572876
+          },
+          {
+            "text": "2",
+            "x_center": 376.0,
+            "confidence": 0.8323730230331421
+          },
+          {
+            "text": "相邻映射，故要4个比较器",
+            "x_center": 782.5,
+            "confidence": 0.9276766180992126
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 427.14,
+        "cells_left_to_right": [
+          {
+            "text": "cachetp",
+            "x_center": 73.0,
+            "confidence": 0.9644123911857605
+          },
+          {
+            "text": "6",
+            "x_center": 174.5,
+            "confidence": 0.9928591251373291
+          },
+          {
+            "text": "t49",
+            "x_center": 175.5,
+            "confidence": 0.6992221474647522
+          },
+          {
+            "text": "有效位",
+            "x_center": 278.5,
+            "confidence": 0.6151883006095886
+          },
+          {
+            "text": "数据区",
+            "x_center": 367.0,
+            "confidence": 0.9996655583381653
+          },
+          {
+            "text": "故是4个比较器",
+            "x_center": 750.0,
+            "confidence": 0.9988120198249817
+          },
+          {
+            "text": "而不同组间可以形了并联",
+            "x_center": 769.5,
+            "confidence": 0.9600927233695984
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 474.5,
+        "cells_left_to_right": [
+          {
+            "text": "16",
+            "x_center": 379.5,
+            "confidence": 0.996113657951355
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 542.64,
+        "cells_left_to_right": [
+          {
+            "text": "4kx2+",
+            "x_center": 193.5,
+            "confidence": 0.9025279879570007
+          },
+          {
+            "text": "7",
+            "x_center": 279.5,
+            "confidence": 0.9996211528778076
+          },
+          {
+            "text": "8",
+            "x_center": 283.0,
+            "confidence": 0.9999908208847046
+          },
+          {
+            "text": "x|k = 8",
+            "x_center": 384.0,
+            "confidence": 0.9358991384506226
+          },
+          {
+            "text": "8",
+            "x_center": 462.0,
+            "confidence": 0.9999337196350098
+          },
+          {
+            "text": "7",
+            "x_center": 463.0,
+            "confidence": 0.9998194575309753
+          },
+          {
+            "text": "水节",
+            "x_center": 513.5,
+            "confidence": 0.841376781463623
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=71.0: 3. 解：(1) | x=246.5: 4字=22 | x=293.5: 块内偏移量2位 | x=690.0: (2) 需要4套\nRow 2: x=773.5: 因为是四路组相联\nRow 3: x=359.0: 4kw/4w=1k块(cache有11ct块) | x=737.0: 组间直接映射\nRow 4: x=275.0: 组号有8位 | x=284.5: 1k/4=28组 | x=752.5: 泪内全相联，一组中有\nRow 5: x=323.5: 16-2-8=6 | x=752.0: 4个 Cache t块，且是全\nRow 6: x=77.5: 主存块厂 | x=190.0: 6 | x=195.5: ta9 | x=279.0: 8 | x=282.5: 组号 | x=361.0: 块内地址 | x=376.0: 2 | x=782.5: 相邻映射，故要4个比较器\nRow 7: x=73.0: cachetp | x=174.5: 6 | x=175.5: t49 | x=278.5: 有效位 | x=367.0: 数据区 | x=750.0: 故是4个比较器 | x=769.5: 而不同组间可以形了并联\nRow 8: x=379.5: 16\nRow 9: x=193.5: 4kx2+ | x=279.5: 7 | x=283.0: 8 | x=384.0: x|k = 8 | x=462.0: 8 | x=463.0: 7 | x=513.5: 水节"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3_core",
+    "step_3_final",
+    "step_3_support",
+    "step_4_core",
+    "step_4_final",
+    "step_4_support"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "主存块 [tag 6][组号8][块内地址2]",
+    "step_2": "16-2-8=6位",
+    "step_3_support": "tag 6，有效1，数据区16",
+    "step_3_core": "4k×2 + 7/8 ×1k = 8 7/8 k 字节",
+    "step_3_final": "8 7/8 k 字节",
+    "step_4_support": "(2) 需要4套 因为是四路组相联 组间直接映射 组内全相联，一组中有4个Cache块，且是全相联映射，故要4个比较器 而不同组间可以共用，并联 故是4个比较器",
+    "step_4_core": "组内全相联，一组中有4个Cache块，且是全相联映射，故要4个比较器 而不同组间可以共用，并联",
+    "step_4_final": "4个比较器"
+  },
+  "facts": {
+    "step_1": "主存块( tag 组号 块内地址):(6 8 2)\ncache块 (tag 有效位 数据区):(6 1 16)",
+    "step_2": "4字=2^2\n块内偏移量2位\n4k w /4w=1k块(cache有1k块)\n1k/4=2^8组\n组号有8位\n16-2-8=6位",
+    "step_3_support": "4k×2 + 7/8 ×1k",
+    "step_3_core": "4k×2 + 7/8 ×1k",
+    "step_3_final": "= 8 7/8 k 字",
+    "step_4_support": "因为是回路组相联组间直接映射组内全相联,一组中有4个Cache块",
+    "step_4_core": "且是全相联映射,故要4个比较器而不同组间可以并行，并联",
+    "step_4_final": "需要4套"
+  }
+}

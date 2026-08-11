@@ -1,0 +1,328 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T03:41:31.784480",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_13/ANS_CO_1625.jpg",
+  "image_sha256": "6923af69465b099a71d456240ad8f2a8fbfd9501addcde4440dce64980447e63",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_13/ANS_CO_1625.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 25,
+    "accepted_token_count": 25,
+    "mean_confidence": 0.935041,
+    "min_confidence": 0.5,
+    "joined_text": "6. 解：(1). CPU正在执行程序时，外设向CPU发出中断请求，如果此时IF=1，表示允\n许中断。若多个外设(中断源)同时请求中断，CPU会首先保护现场，将正\n关中断\n在执行的程序断点及相关等存器内容入栈，然后根据中断源的响应\n开中断\n优先级进行响应，根据服务(处理)优先级按序处理，处理完的，CPU\n会回到主程序(即正在执行的程序)，继续执行\n(2) 屏蔽字设计：\nMOMC MB MA\nC/111\nD 1 0 0 1\nA 0 0 0 1\nCPU执行程序的轨迹：\n个\n1001\nD\nC\n1111\nB\n1011\n11\n0001\nA\n用产程序\nABCO同时到来",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.056003,
+      "very_dark_pixel_ratio": 0.039694,
+      "lower_region_dark_pixel_ratio": 0.031484,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) CPU正在执行程序时，外设向CPU发出中断请求，如果此时IF=1，表示允\n许中断。若针外设(中断源)同时请求中断，CPU会首先关中断保护现场，将正\n在执行的程序断点及相关寄存器内容入栈，然后开中断根据中断源的响应\n优先级进行响应，根据服务(处理)优先级按序处理，处理完后，CPU\n会回到主程序(即断正在执行的程序)，继续执行.\n(2)屏蔽字表如图所示\n调度图如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1625",
+    "question_id": "CO_13",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": "CPU正在执行程序时，外设向CPU发出中断请求，如果此时IF=1，表示允许中断。若多个外设(中断源)同时请求中断，CPU会首先保护现场，将在执行的程序断点及相关等存器内容入栈，然后根据中断源的响应优先级进行响应，根据服务(处理)优先级按序处理，处理完的，CPU会回到主程序(即正在执行的程序)，继续执行。 (侧边补充序列：关中断 -> 开中断)",
+    "step_3": "D 1001\nC 1111\nB 11 1011\nA 0001\n用产程序\nABCO同时到来"
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten descriptive text outlining the process of CPU interrupt response. Preserve any specific sequence of operations, keywords, and the exact chronological order of steps as written by the student."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten content representing the CPU execution and interrupt processing trajectory or timeline. Preserve all arrows, letters, numbers, nodes, spatial relationships, and directional lines exactly as drawn by the student."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 51.0,
+        "cells_left_to_right": [
+          {
+            "text": "6. 解：(1). CPU正在执行程序时，外设向CPU发出中断请求，如果此时IF=1，表示允",
+            "x_center": 469.5,
+            "confidence": 0.9628267884254456
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 99.0,
+        "cells_left_to_right": [
+          {
+            "text": "许中断。若多个外设(中断源)同时请求中断，CPU会首先保护现场，将正",
+            "x_center": 515.5,
+            "confidence": 0.9663739204406738
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 139.25,
+        "cells_left_to_right": [
+          {
+            "text": "在执行的程序断点及相关等存器内容入栈，然后根据中断源的响应",
+            "x_center": 518.5,
+            "confidence": 0.9819038510322571
+          },
+          {
+            "text": "关中断",
+            "x_center": 758.5,
+            "confidence": 0.8516935706138611
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 190.25,
+        "cells_left_to_right": [
+          {
+            "text": "优先级进行响应，根据服务(处理)优先级按序处理，处理完的，CPU",
+            "x_center": 509.0,
+            "confidence": 0.9622408151626587
+          },
+          {
+            "text": "开中断",
+            "x_center": 706.0,
+            "confidence": 0.9965409636497498
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 247.0,
+        "cells_left_to_right": [
+          {
+            "text": "会回到主程序(即正在执行的程序)，继续执行",
+            "x_center": 394.5,
+            "confidence": 0.9748576879501343
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 318.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 屏蔽字设计：",
+            "x_center": 149.0,
+            "confidence": 0.9974184036254883
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 373.0,
+        "cells_left_to_right": [
+          {
+            "text": "MOMC MB MA",
+            "x_center": 274.5,
+            "confidence": 0.8483427166938782
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 408.5,
+        "cells_left_to_right": [
+          {
+            "text": "C/111",
+            "x_center": 240.5,
+            "confidence": 0.7839603424072266
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 482.0,
+        "cells_left_to_right": [
+          {
+            "text": "D 1 0 0 1",
+            "x_center": 241.5,
+            "confidence": 0.9070677161216736
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 525.0,
+        "cells_left_to_right": [
+          {
+            "text": "A 0 0 0 1",
+            "x_center": 244.0,
+            "confidence": 0.9723954796791077
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 593.5,
+        "cells_left_to_right": [
+          {
+            "text": "CPU执行程序的轨迹：",
+            "x_center": 174.5,
+            "confidence": 0.9843658208847046
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 640.0,
+        "cells_left_to_right": [
+          {
+            "text": "个",
+            "x_center": 74.5,
+            "confidence": 0.8101295828819275
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 691.0,
+        "cells_left_to_right": [
+          {
+            "text": "D",
+            "x_center": 44.0,
+            "confidence": 0.999771773815155
+          },
+          {
+            "text": "1001",
+            "x_center": 356.0,
+            "confidence": 0.9998471140861511
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 748.0,
+        "cells_left_to_right": [
+          {
+            "text": "C",
+            "x_center": 40.5,
+            "confidence": 0.9942958950996399
+          },
+          {
+            "text": "1111",
+            "x_center": 149.0,
+            "confidence": 0.9943627715110779
+          }
+        ]
+      },
+      {
+        "row": 15,
+        "y_center": 811.0,
+        "cells_left_to_right": [
+          {
+            "text": "B",
+            "x_center": 45.0,
+            "confidence": 0.9996433258056641
+          },
+          {
+            "text": "11",
+            "x_center": 229.0,
+            "confidence": 0.5549528002738953
+          },
+          {
+            "text": "1011",
+            "x_center": 255.5,
+            "confidence": 0.9991537928581238
+          }
+        ]
+      },
+      {
+        "row": 16,
+        "y_center": 860.25,
+        "cells_left_to_right": [
+          {
+            "text": "A",
+            "x_center": 27.5,
+            "confidence": 0.9994240999221802
+          },
+          {
+            "text": "0001",
+            "x_center": 121.5,
+            "confidence": 0.9995237588882446
+          }
+        ]
+      },
+      {
+        "row": 17,
+        "y_center": 920.5,
+        "cells_left_to_right": [
+          {
+            "text": "用产程序",
+            "x_center": 35.5,
+            "confidence": 0.8574358820915222
+          }
+        ]
+      },
+      {
+        "row": 18,
+        "y_center": 1005.5,
+        "cells_left_to_right": [
+          {
+            "text": "ABCO同时到来",
+            "x_center": 188.5,
+            "confidence": 0.977491021156311
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=469.5: 6. 解：(1). CPU正在执行程序时，外设向CPU发出中断请求，如果此时IF=1，表示允\nRow 2: x=515.5: 许中断。若多个外设(中断源)同时请求中断，CPU会首先保护现场，将正\nRow 3: x=518.5: 在执行的程序断点及相关等存器内容入栈，然后根据中断源的响应 | x=758.5: 关中断\nRow 4: x=509.0: 优先级进行响应，根据服务(处理)优先级按序处理，处理完的，CPU | x=706.0: 开中断\nRow 5: x=394.5: 会回到主程序(即正在执行的程序)，继续执行\nRow 6: x=149.0: (2) 屏蔽字设计：\nRow 7: x=274.5: MOMC MB MA\nRow 8: x=240.5: C/111\nRow 9: x=241.5: D 1 0 0 1\nRow 10: x=244.0: A 0 0 0 1\nRow 11: x=174.5: CPU执行程序的轨迹：\nRow 12: x=74.5: 个\nRow 13: x=44.0: D | x=356.0: 1001\nRow 14: x=40.5: C | x=149.0: 1111\nRow 15: x=45.0: B | x=229.0: 11 | x=255.5: 1011\nRow 16: x=27.5: A | x=121.5: 0001\nRow 17: x=35.5: 用产程序\nRow 18: x=188.5: ABCO同时到来"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_3"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "(1). CPU正在执行程序时，外设向CPU发出中断请求，如果此时IF=1，表示允许中断。若多外设(中断源)同时请求中断，CPU会首先保护现场，将正在执行的程序断点及相关寄存器内容入栈，然后根据中断源的响应优先级进行响应，根据服务(处理)优先级按序处理，处理完后，CPU会回到主程序(即刚正在执行的程序)，继续执行.",
+    "step_2": "C 1111\nB 1011\nD 1001\nA 0001",
+    "step_3": "用户程序→C→B→D→A"
+  },
+  "facts": {
+    "step_1": "CPU正在执行程序时，外设向CPU发出中断请求，如果此时IF=1，表示允许中断。若针外设(中断源)同时请求中断，CPU会首先关中断保护现场，将正在执行的程序断点及相关寄存器内容入栈，然后开中断根据中断源的响应优先级进行响应，根据服务(处理)优先级按序处理，处理完后，CPU会回到主程序(即断正在执行的程序)，继续执行。",
+    "step_2": "C 1111\nB 1011\nD 1001\nA 0001",
+    "step_3": "D 1001\nC 1111\nB 11 1011\nA 0001\n用产程序\nABCO同时到来"
+  }
+}

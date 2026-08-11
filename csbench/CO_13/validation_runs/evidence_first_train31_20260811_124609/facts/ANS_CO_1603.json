@@ -1,0 +1,478 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T03:30:27.369173",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_13/ANS_CO_1603.jpg",
+  "image_sha256": "f3db6803a4624017ad7cc23892e470c385efd1fc97aa3052fa2bdb477c4771af",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_13/ANS_CO_1603.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 48,
+    "accepted_token_count": 47,
+    "mean_confidence": 0.969873,
+    "min_confidence": 0.5,
+    "joined_text": "6. 解：\n(1)在外设作好数据传送的准备时，向CPU发送中断请求，INTR=1，\nCPU在接收到该中断请求之后检查MASK=0即未被屏蔽，则保存断点和保存\n现场，关中断之后响应该中断请求，转去执行中断子程序，执行完成后，恢复断点和\n现场，开中断并中断返回到断点处执行原程序。\n(2)中断源的名屏蔽字如下：\nMD\nMC\nMB\nMA\nA\n0\n0\n0\nB\n1\n0\n1\n一\nC\n1\n1\n1\n一\nD\n0\n0\n响应优先级：A>B>C>D\n处理优先级：C>B>D>A\n个\nD\nD\nC\nC\nB\nB\nB\nA\nA\nA\n用户程序\n用户程序\nABCD同时到来\n首先响应A，置屏蔽字000l，此时外部还有B，C，D请求且均未被屏蔽，但B向应优先\n级较高，故到B置屏蔽字1011，C未被屏蔽，故转去C，置屏蔽字为111，故C执行完后\n回到B，此时还剩D请求但被B屏蔽了，故执行完B返回A，响应D并执行完D之后\n再将A剩余部分执行完后回到用户程序",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.100504,
+      "very_dark_pixel_ratio": 0.073325,
+      "lower_region_dark_pixel_ratio": 0.084345,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "6.解：\n（1）在外设作好数据传送的准备时，向CPU发送中断请求，INTR=1，CPU在接收到该中断请求之后检查MASK=0即未被屏蔽，则保存断点和保存现场，关中断之后响应该中断请求，转去执行中断子程序，执行完成后，恢复断点和现场，开中断并中断返回到断点处执行原程序。\n\n（2）中断源的各屏蔽字如下：\n中断源屏蔽字表如表所示。\nA：MD=0，MC=0，MB=0，MA=1\nB：MD=1，MC=0，MB=1，MA=1\nC：MD=1，MC=1，MB=1，MA=1\nD：MD=1，MC=0，MB=0，MA=1\n响应优先级：A>B>C>D\n处理优先级：C>B>D>A。\n中断处理时序图如图所示。\n\n首先响应A，置屏蔽字0001，此时外部还有B、C、D请求且均未被屏蔽，但B响应优先级较高，故跳到B置屏蔽字0101，C被屏蔽，故转去C，置屏蔽字为1111，故C执行完后回到B，此时还剩D请求但被B屏蔽了，故执行完B返回A，响应D并执行完D之后再将A剩余部分执行完后回到用户程序",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1603",
+    "question_id": "CO_13",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": "(1)在外设作好数据传送的准备时，向CPU发送中断请求，INTR=1，CPU在接收到该中断请求之后检查MASK=0即未被屏蔽，则保存断点和保存现场，关中断之后响应该中断请求，转去执行中断子程序，执行完成后，恢复断点和现场，开中断并中断返回到断点处执行原程序。",
+    "step_3": "【屏蔽字表格】\nMD | MC | MB | MA\nA: 0 | 0 | 0 | (空)\nB: 1 | 0 | 1 | 一\nC: 1 | 1 | 1 | 一\nD: (空) | 0 | 0 | (空)\n\n响应优先级：A>B>C>D\n处理优先级：C>B>D>A\n\n【文字描述与拓扑节点】\n首先响应A，置屏蔽字000l，此时外部还有B，C，D请求且均未被屏蔽，但B向应优先级较高，故到B置屏蔽字1011，C未被屏蔽，故转去C，置屏蔽字为111，故C执行完后回到B，此时还剩D请求但被B屏蔽了，故执行完B返回A，响应D并执行完D之后再将A剩余部分执行完后回到用户程序。\n\n【CPU执行轨迹节点】\n用户程序 -> A -> B -> C -> B -> A -> D -> A -> 用户程序 (各字母与'用户程序'作为独立节点分布在页面不同空间位置，'ABCD同时到来'标注于轨迹开始处)。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten descriptive text outlining the process of CPU interrupt response. Preserve any specific sequence of operations, keywords, and the exact chronological order of steps as written by the student."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten content representing the CPU execution and interrupt processing trajectory or timeline. Preserve all arrows, letters, numbers, nodes, spatial relationships, and directional lines exactly as drawn by the student."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 43.0,
+        "cells_left_to_right": [
+          {
+            "text": "6. 解：",
+            "x_center": 45.5,
+            "confidence": 0.9777575731277466
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 91.5,
+        "cells_left_to_right": [
+          {
+            "text": "(1)在外设作好数据传送的准备时，向CPU发送中断请求，INTR=1，",
+            "x_center": 444.0,
+            "confidence": 0.9785283803939819
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 140.5,
+        "cells_left_to_right": [
+          {
+            "text": "CPU在接收到该中断请求之后检查MASK=0即未被屏蔽，则保存断点和保存",
+            "x_center": 468.5,
+            "confidence": 0.9734904766082764
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 185.0,
+        "cells_left_to_right": [
+          {
+            "text": "现场，关中断之后响应该中断请求，转去执行中断子程序，执行完成后，恢复断点和",
+            "x_center": 468.0,
+            "confidence": 0.9826640486717224
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 228.5,
+        "cells_left_to_right": [
+          {
+            "text": "现场，开中断并中断返回到断点处执行原程序。",
+            "x_center": 292.5,
+            "confidence": 0.9969335198402405
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 300.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2)中断源的名屏蔽字如下：",
+            "x_center": 178.0,
+            "confidence": 0.9905727505683899
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 339.62,
+        "cells_left_to_right": [
+          {
+            "text": "MD",
+            "x_center": 104.5,
+            "confidence": 0.7018924951553345
+          },
+          {
+            "text": "MC",
+            "x_center": 169.0,
+            "confidence": 0.9486587643623352
+          },
+          {
+            "text": "MB",
+            "x_center": 222.5,
+            "confidence": 0.9725743532180786
+          },
+          {
+            "text": "MA",
+            "x_center": 280.0,
+            "confidence": 0.992774486541748
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 370.0,
+        "cells_left_to_right": [
+          {
+            "text": "A",
+            "x_center": 46.0,
+            "confidence": 0.9999716281890869
+          },
+          {
+            "text": "0",
+            "x_center": 103.5,
+            "confidence": 0.9975318908691406
+          },
+          {
+            "text": "0",
+            "x_center": 161.5,
+            "confidence": 0.9975993037223816
+          },
+          {
+            "text": "0",
+            "x_center": 217.5,
+            "confidence": 0.999392032623291
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 409.1,
+        "cells_left_to_right": [
+          {
+            "text": "B",
+            "x_center": 47.5,
+            "confidence": 0.9996753931045532
+          },
+          {
+            "text": "1",
+            "x_center": 104.0,
+            "confidence": 0.9958719611167908
+          },
+          {
+            "text": "0",
+            "x_center": 167.0,
+            "confidence": 0.999358594417572
+          },
+          {
+            "text": "1",
+            "x_center": 220.5,
+            "confidence": 0.9950065612792969
+          },
+          {
+            "text": "一",
+            "x_center": 280.0,
+            "confidence": 0.9499561786651611
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 448.5,
+        "cells_left_to_right": [
+          {
+            "text": "C",
+            "x_center": 46.0,
+            "confidence": 0.9996340274810791
+          },
+          {
+            "text": "1",
+            "x_center": 101.0,
+            "confidence": 0.9965234398841858
+          },
+          {
+            "text": "1",
+            "x_center": 163.5,
+            "confidence": 0.9927473664283752
+          },
+          {
+            "text": "1",
+            "x_center": 220.5,
+            "confidence": 0.9951819777488708
+          },
+          {
+            "text": "一",
+            "x_center": 279.5,
+            "confidence": 0.9373421669006348
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 487.33,
+        "cells_left_to_right": [
+          {
+            "text": "D",
+            "x_center": 46.0,
+            "confidence": 0.998284637928009
+          },
+          {
+            "text": "0",
+            "x_center": 165.5,
+            "confidence": 0.9936229586601257
+          },
+          {
+            "text": "0",
+            "x_center": 223.5,
+            "confidence": 0.9748993515968323
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 531.5,
+        "cells_left_to_right": [
+          {
+            "text": "响应优先级：A>B>C>D",
+            "x_center": 222.0,
+            "confidence": 0.9148926138877869
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 578.0,
+        "cells_left_to_right": [
+          {
+            "text": "处理优先级：C>B>D>A",
+            "x_center": 230.5,
+            "confidence": 0.9530417919158936
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 625.0,
+        "cells_left_to_right": [
+          {
+            "text": "个",
+            "x_center": 135.5,
+            "confidence": 0.7200296521186829
+          }
+        ]
+      },
+      {
+        "row": 15,
+        "y_center": 696.75,
+        "cells_left_to_right": [
+          {
+            "text": "D",
+            "x_center": 105.5,
+            "confidence": 0.9948246479034424
+          },
+          {
+            "text": "D",
+            "x_center": 559.0,
+            "confidence": 0.993085503578186
+          }
+        ]
+      },
+      {
+        "row": 16,
+        "y_center": 745.75,
+        "cells_left_to_right": [
+          {
+            "text": "C",
+            "x_center": 106.0,
+            "confidence": 0.9992665648460388
+          },
+          {
+            "text": "C",
+            "x_center": 310.5,
+            "confidence": 0.9592731595039368
+          }
+        ]
+      },
+      {
+        "row": 17,
+        "y_center": 784.33,
+        "cells_left_to_right": [
+          {
+            "text": "B",
+            "x_center": 106.5,
+            "confidence": 0.9813801646232605
+          },
+          {
+            "text": "B",
+            "x_center": 231.5,
+            "confidence": 0.9933111667633057
+          },
+          {
+            "text": "B",
+            "x_center": 427.5,
+            "confidence": 0.9995276927947998
+          }
+        ]
+      },
+      {
+        "row": 18,
+        "y_center": 823.5,
+        "cells_left_to_right": [
+          {
+            "text": "A",
+            "x_center": 105.0,
+            "confidence": 0.9999370574951172
+          },
+          {
+            "text": "A",
+            "x_center": 210.0,
+            "confidence": 0.9828197956085205
+          },
+          {
+            "text": "A",
+            "x_center": 635.0,
+            "confidence": 0.9999308586120605
+          }
+        ]
+      },
+      {
+        "row": 19,
+        "y_center": 874.5,
+        "cells_left_to_right": [
+          {
+            "text": "用户程序",
+            "x_center": 86.5,
+            "confidence": 0.9954946041107178
+          },
+          {
+            "text": "用户程序",
+            "x_center": 701.0,
+            "confidence": 0.9464871883392334
+          }
+        ]
+      },
+      {
+        "row": 20,
+        "y_center": 931.25,
+        "cells_left_to_right": [
+          {
+            "text": "ABCD同时到来",
+            "x_center": 243.0,
+            "confidence": 0.9886285066604614
+          },
+          {
+            "text": ">",
+            "x_center": 681.5,
+            "confidence": 0.34614241123199463
+          }
+        ]
+      },
+      {
+        "row": 21,
+        "y_center": 988.0,
+        "cells_left_to_right": [
+          {
+            "text": "首先响应A，置屏蔽字000l，此时外部还有B，C，D请求且均未被屏蔽，但B向应优先",
+            "x_center": 513.5,
+            "confidence": 0.9312940239906311
+          }
+        ]
+      },
+      {
+        "row": 22,
+        "y_center": 1036.0,
+        "cells_left_to_right": [
+          {
+            "text": "级较高，故到B置屏蔽字1011，C未被屏蔽，故转去C，置屏蔽字为111，故C执行完后",
+            "x_center": 455.0,
+            "confidence": 0.922267735004425
+          }
+        ]
+      },
+      {
+        "row": 23,
+        "y_center": 1091.0,
+        "cells_left_to_right": [
+          {
+            "text": "回到B，此时还剩D请求但被B屏蔽了，故执行完B返回A，响应D并执行完D之后",
+            "x_center": 449.5,
+            "confidence": 0.9799185991287231
+          }
+        ]
+      },
+      {
+        "row": 24,
+        "y_center": 1138.5,
+        "cells_left_to_right": [
+          {
+            "text": "再将A剩余部分执行完后回到用户程序",
+            "x_center": 233.5,
+            "confidence": 0.9901562929153442
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=45.5: 6. 解：\nRow 2: x=444.0: (1)在外设作好数据传送的准备时，向CPU发送中断请求，INTR=1，\nRow 3: x=468.5: CPU在接收到该中断请求之后检查MASK=0即未被屏蔽，则保存断点和保存\nRow 4: x=468.0: 现场，关中断之后响应该中断请求，转去执行中断子程序，执行完成后，恢复断点和\nRow 5: x=292.5: 现场，开中断并中断返回到断点处执行原程序。\nRow 6: x=178.0: (2)中断源的名屏蔽字如下：\nRow 7: x=104.5: MD | x=169.0: MC | x=222.5: MB | x=280.0: MA\nRow 8: x=46.0: A | x=103.5: 0 | x=161.5: 0 | x=217.5: 0\nRow 9: x=47.5: B | x=104.0: 1 | x=167.0: 0 | x=220.5: 1 | x=280.0: 一\nRow 10: x=46.0: C | x=101.0: 1 | x=163.5: 1 | x=220.5: 1 | x=279.5: 一\nRow 11: x=46.0: D | x=165.5: 0 | x=223.5: 0\nRow 12: x=222.0: 响应优先级：A>B>C>D\nRow 13: x=230.5: 处理优先级：C>B>D>A\nRow 14: x=135.5: 个\nRow 15: x=105.5: D | x=559.0: D\nRow 16: x=106.0: C | x=310.5: C\nRow 17: x=106.5: B | x=231.5: B | x=427.5: B\nRow 18: x=105.0: A | x=210.0: A | x=635.0: A\nRow 19: x=86.5: 用户程序 | x=701.0: 用户程序\nRow 20: x=243.0: ABCD同时到来 | x=681.5: >\nRow 21: x=513.5: 首先响应A，置屏蔽字000l，此时外部还有B，C，D请求且均未被屏蔽，但B向应优先\nRow 22: x=455.0: 级较高，故到B置屏蔽字1011，C未被屏蔽，故转去C，置屏蔽字为111，故C执行完后\nRow 23: x=449.5: 回到B，此时还剩D请求但被B屏蔽了，故执行完B返回A，响应D并执行完D之后\nRow 24: x=233.5: 再将A剩余部分执行完后回到用户程序"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "当在外设作好数据传送的准备时，向CPU发送中断请求，INTR=1，CPU在接收到该中断请求之后检查MASK=0即未做屏蔽，则保存断点和现场，关中断并之后向左该中断请求，转去执行中断子程序，执行完成后，恢复断点和现场，开中断并中断返回到断点处执行原程序。",
+    "step_2": "中断源的名屏蔽字如下：\n  MD MC MB MA\nA   0  0  0  1\nB   1  0  1  1\nC   1  1  1  1\nD   1  0  0  1",
+    "step_3": "首先响应A，置屏蔽字0001，此时外部还有B,C,D请求且均未被屏蔽，但B的向左优先级较高，故跳到B置屏蔽字1011，C未被屏蔽，故转去C，置屏蔽字为1111，故C执行完后回到B，此时还剩D请求但被B屏蔽了，故执行完B返回A，响应D并执行完D之后再A剩余部分执行完后回到用户程序"
+  },
+  "facts": {
+    "step_1": "在外设作好数据传送的准备时，向CPU发送中断请求，INTR=1，CPU在接收到该中断请求之后检查MASK=0即未被屏蔽，则保存断点和保存现场，关中断之后响应该中断请求，转去执行中断子程序，执行完成后，恢复断点和现场，开中断并中断返回到断点处执行原程序。",
+    "step_2": "A：MD=0，MC=0，MB=0，MA=1\nB：MD=1，MC=0，MB=1，MA=1\nC：MD=1，MC=1，MB=1，MA=1\nD：MD=1，MC=0，MB=0，MA=1\n（附带说明文字：响应优先级：A>B>C>D；处理优先级：C>B>D>A）",
+    "step_3": "【屏蔽字表格】\nMD | MC | MB | MA\nA: 0 | 0 | 0 | (空)\nB: 1 | 0 | 1 | 一\nC: 1 | 1 | 1 | 一\nD: (空) | 0 | 0 | (空)\n\n响应优先级：A>B>C>D\n处理优先级：C>B>D>A\n\n【文字描述与拓扑节点】\n首先响应A，置屏蔽字000l，此时外部还有B，C，D请求且均未被屏蔽，但B向应优先级较高，故到B置屏蔽字1011，C未被屏蔽，故转去C，置屏蔽字为111，故C执行完后回到B，此时还剩D请求但被B屏蔽了，故执行完B返回A，响应D并执行完D之后再将A剩余部分执行完后回到用户程序。\n\n【CPU执行轨迹节点】\n用户程序 -> A -> B -> C -> B -> A -> D -> A -> 用户程序 (各字母与'用户程序'作为独立节点分布在页面不同空间位置，'ABCD同时到来'标注于轨迹开始处)。"
+  }
+}

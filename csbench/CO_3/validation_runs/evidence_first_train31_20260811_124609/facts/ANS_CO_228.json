@@ -1,0 +1,49 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:05:12.589659",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_228.png",
+  "image_sha256": "751ff72f30b52ccf79c31cc2fcfbe66273224af8230a689103b4ed5eb4402dc2",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "[X]补 = 00110110\n[Y]补 = 01010100\n[Z]补 = 11010101\n[x-2y]补 = [x]补 + [-2y]补 = 00110110 + [-y]补 + [-y]补\n= 00110110 + 10101100 + 10101100\n= 11100010 + 10101100\n= 10001110\n[x-2y]原 = 11110010\nx-2y = -114\n结果未发生溢出\n[x÷4]补 = 00001101 + 0.1\n[(X÷4)+2Z]补=[X÷4]补+[2Z]=00001101+0.1+1010101=10110111+0.1\n(X÷4)+2Z = -72.5 结果溢出",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_228",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": {
+      "hex_or_binary_values": "[X]补 = 00110110；[-y]补 = 10101100；[x-2y]补 = 10001110；[x-2y]原 = 11110010；x-2y = -114",
+      "formula_substitution_or_trace": "[x-2y]补 = [x]补 + [-2y]补 = 00110110 + [-y]补 + [-y]补 = 00110110 + 10101100 + 10101100 = 11100010 + 10101100 = 10001110",
+      "overflow_judgment_or_conclusion": "结果未发生溢出"
+    },
+    "step_2": {
+      "hex_or_binary_values": "[x÷4]补 = 00001101 + 0.1；[2Z] = 1010101；[(X÷4)+2Z]补 = 10110111 + 0.1；(X÷4)+2Z = -72.5",
+      "formula_substitution_or_trace": "[x÷4]补 = 00001101 + 0.1；[(X÷4)+2Z]补 = [X÷4]补 + [2Z] = 00001101 + 0.1 + 1010101 = 10110111 + 0.1",
+      "overflow_judgment_or_conclusion": "结果溢出"
+    }
+  }
+}

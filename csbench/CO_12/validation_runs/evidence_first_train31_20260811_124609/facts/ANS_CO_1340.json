@@ -1,0 +1,330 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T00:41:52.150666",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1340.jpg",
+  "image_sha256": "784ee900bb9b28f455846886a4b7abac337d9af474d5218f6d19cc8851d552c1",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1340.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 29,
+    "accepted_token_count": 28,
+    "mean_confidence": 0.934522,
+    "min_confidence": 0.5,
+    "joined_text": "5. 11 数据合存Uk，b正龄器I；C是地址寄存器AR；\nd是程序计数器PC\n(2). 取时数据通路：PC→AR，AR→AB: 送指令地址；ADS\nWHR=aADS=1,M/IO=1,W/R=0:控制主存读操作；DB→DR,\nDR→IR：指令送指令寄存器；IR再送控制器，对OPC译码。\n(3). 假设直接寻址：存数：IR、OD2→AR，AR→AB: 送地址；ADS=1，\nM/IO=1,W/R=1:主存写命令；IR.OD|→DR，DR→DB:送写入内容。\n取数据：IR.OD2→AR，AR→AB：送地址给数据总线；ADS=1，\nM/IO=1，W/R=O:发出主存读命令；DB→DR：数据取到DR寄存器\n(4). 该指令有3个机器周期：—:取指：PC→AB；ADS，M/I0，W/R=1|0；\nDB→DR，DR→IR。取出指令送IR寄存器，对指令分析自动进行。二：取数：\nIR.OD→AR，AR→AB；;ADS,M/IO，W/R=1lO；DB→DR。取出OD地址中数据\n送DR。三:运算：AX→ALU；DR→ALU；+；AALU→AX:2个\n运算数送ALU，控制器生成十信号，结果再送AX寄存器。\n(5). 因字长24位，水平型，由m=2n-1知，互斥类各占3，4，4，2位，外部条件\n占3位，所以下字段=24-(3+4+4+2+3)=8位。共28个单元/微指令，每个长\n24位，所以控存CM容量=28x24位\n(6).\n4位\n4位\n2位\n位设位8位\n8位下地址\n字段\n5个微命令 8个\n14个\n3个\n3个外部降件，各占1位",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.155847,
+      "very_dark_pixel_ratio": 0.110061,
+      "lower_region_dark_pixel_ratio": 0.162154,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1). a是数据寄存器DR；b是指令寄存器IR；c是地址寄存器AR；d是程序计数器PC\n(2).取指时数据通路：PC→AR，AR→AB：送指令地址；ADS=1，M/IO=1，W/R=0：控制主存读操作；DB→DR，DR→IR：指令送指令寄存器；IR再送控制器，对OPC译码。\n(3).假设直接寻址：存数：IR.OD2→AR，AR→AB：送地址；ADS=1，M/IO=1，W/R=1：主存写命令；IR.OD1→DR，DR→DB：送写入内容。\n取数据：IR.OD2→AR，AR→AB：送地址给数据总线；ADS=1，M/IO=1，W/R=0：发出主存读命令；DB→DR：数据取到DR寄存器\n(4).该指令有3个机器周期：一：取指：PC→AB；ADS，M/IO，W/R=110；DB→DR，DR→IR。取出指令送IR寄存器，对指令分析自动进行。二：取数：IR.OD→AR，AR→AB；ADS，M/IO，W/R=110；DB→DR。取出OD地址中数据送DR。三：运算：AX→ALU；DR→ALU；+；ALU→AX：2个运算数送ALU，控制器生成+信号，结果再送AX寄存器。\n(5).因字长24位，水平型，由m=2^n-1知，互斥类各占3，4，4，2位，外部条件占3位，所以下址字段=24-(3+4+4+2+3)=8位。共2^8个单元/微指令，每个长24位，所以控存CM容量=2^8×24位\n(6).微指令格式图如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1340",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "该指令有3个机器周期：\n—:取指：PC→AB；ADS，M/I0，W/R=1|0；DB→DR，DR→IR。取出指令送IR寄存器，对指令分析自动进行。\n二：取数：IR.OD→AR，AR→AB；;ADS,M/IO，W/R=1lO；DB→DR。取出OD地址中数据送DR。\n三:运算：AX→ALU；DR→ALU；+；AALU→AX:2个运算数送ALU，控制器生成十信号，结果再送AX寄存器。",
+    "step_5": "因字长24位，水平型，由m=2n-1知，互斥类各占3，4，4，2位，外部条件占3位，所以下字段=24-(3+4+4+2+3)=8位。共28个单元/微指令，每个长24位，所以控存CM容量=28x24位",
+    "step_6": "3位 | 5个微命令 8个 | 4位 | 14个 | 4位 | 3个 | 2位 | 位设位8位\n3个外部降件，各占1位\n8位下地址 字段"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 43.75,
+        "cells_left_to_right": [
+          {
+            "text": "d是程序计数器PC",
+            "x_center": 155.0,
+            "confidence": 0.9401261806488037
+          },
+          {
+            "text": "5. 11 数据合存Uk，b正龄器I；C是地址寄存器AR；",
+            "x_center": 428.5,
+            "confidence": 0.7045360207557678
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 117.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2). 取时数据通路：PC→AR，AR→AB: 送指令地址；ADS",
+            "x_center": 472.5,
+            "confidence": 0.9205995202064514
+          },
+          {
+            "text": "WHR=aADS=1,M/IO=1,W/R=0:控制主存读操作；DB→DR,",
+            "x_center": 482.0,
+            "confidence": 0.869864284992218
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 195.25,
+        "cells_left_to_right": [
+          {
+            "text": "DR→IR：指令送指令寄存器；IR再送控制器，对OPC译码。",
+            "x_center": 399.0,
+            "confidence": 0.9635635614395142
+          },
+          {
+            "text": "(3). 假设直接寻址：存数：IR、OD2→AR，AR→AB: 送地址；ADS=1，",
+            "x_center": 461.5,
+            "confidence": 0.9435502290725708
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 265.0,
+        "cells_left_to_right": [
+          {
+            "text": "M/IO=1,W/R=1:主存写命令；IR.OD|→DR，DR→DB:送写入内容。",
+            "x_center": 453.0,
+            "confidence": 0.9041571021080017
+          },
+          {
+            "text": "取数据：IR.OD2→AR，AR→AB：送地址给数据总线；ADS=1，",
+            "x_center": 458.0,
+            "confidence": 0.9751445055007935
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 336.25,
+        "cells_left_to_right": [
+          {
+            "text": "M/IO=1，W/R=O:发出主存读命令；DB→DR：数据取到DR寄存器",
+            "x_center": 449.0,
+            "confidence": 0.928635835647583
+          },
+          {
+            "text": "(4). 该指令有3个机器周期：—:取指：PC→AB；ADS，M/I0，W/R=1|0；",
+            "x_center": 469.0,
+            "confidence": 0.9025261402130127
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 404.25,
+        "cells_left_to_right": [
+          {
+            "text": "DB→DR，DR→IR。取出指令送IR寄存器，对指令分析自动进行。二：取数：",
+            "x_center": 461.5,
+            "confidence": 0.9742351174354553
+          },
+          {
+            "text": "IR.OD→AR，AR→AB；;ADS,M/IO，W/R=1lO；DB→DR。取出OD地址中数据",
+            "x_center": 474.0,
+            "confidence": 0.9112340807914734
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 470.75,
+        "cells_left_to_right": [
+          {
+            "text": "运算数送ALU，控制器生成十信号，结果再送AX寄存器。",
+            "x_center": 376.5,
+            "confidence": 0.9639994502067566
+          },
+          {
+            "text": "送DR。三:运算：AX→ALU；DR→ALU；+；AALU→AX:2个",
+            "x_center": 460.5,
+            "confidence": 0.8989183902740479
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 537.75,
+        "cells_left_to_right": [
+          {
+            "text": "(5). 因字长24位，水平型，由m=2n-1知，互斥类各占3，4，4，2位，外部条件",
+            "x_center": 468.0,
+            "confidence": 0.9204795956611633
+          },
+          {
+            "text": "占3位，所以下字段=24-(3+4+4+2+3)=8位。共28个单元/微指令，每个长",
+            "x_center": 476.0,
+            "confidence": 0.964449942111969
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 595.0,
+        "cells_left_to_right": [
+          {
+            "text": "24位，所以控存CM容量=28x24位",
+            "x_center": 278.0,
+            "confidence": 0.9407044649124146
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 672.04,
+        "cells_left_to_right": [
+          {
+            "text": "(6).",
+            "x_center": 36.5,
+            "confidence": 0.9985595345497131
+          },
+          {
+            "text": "3位",
+            "x_center": 122.5,
+            "confidence": 0.36535120010375977
+          },
+          {
+            "text": "5个微命令 8个",
+            "x_center": 144.5,
+            "confidence": 0.9244387149810791
+          },
+          {
+            "text": "4位",
+            "x_center": 189.0,
+            "confidence": 0.9989466667175293
+          },
+          {
+            "text": "14个",
+            "x_center": 263.0,
+            "confidence": 0.9977753758430481
+          },
+          {
+            "text": "4位",
+            "x_center": 268.0,
+            "confidence": 0.9989786148071289
+          },
+          {
+            "text": "3个",
+            "x_center": 323.0,
+            "confidence": 0.9976928234100342
+          },
+          {
+            "text": "2位",
+            "x_center": 327.5,
+            "confidence": 0.999614953994751
+          },
+          {
+            "text": "位设位8位",
+            "x_center": 437.0,
+            "confidence": 0.7949881553649902
+          },
+          {
+            "text": "3个外部降件，各占1位",
+            "x_center": 450.0,
+            "confidence": 0.836622953414917
+          },
+          {
+            "text": "8位下地址",
+            "x_center": 628.5,
+            "confidence": 0.9985857009887695
+          },
+          {
+            "text": "字段",
+            "x_center": 638.5,
+            "confidence": 0.9936867952346802
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=155.0: d是程序计数器PC | x=428.5: 5. 11 数据合存Uk，b正龄器I；C是地址寄存器AR；\nRow 2: x=472.5: (2). 取时数据通路：PC→AR，AR→AB: 送指令地址；ADS | x=482.0: WHR=aADS=1,M/IO=1,W/R=0:控制主存读操作；DB→DR,\nRow 3: x=399.0: DR→IR：指令送指令寄存器；IR再送控制器，对OPC译码。 | x=461.5: (3). 假设直接寻址：存数：IR、OD2→AR，AR→AB: 送地址；ADS=1，\nRow 4: x=453.0: M/IO=1,W/R=1:主存写命令；IR.OD|→DR，DR→DB:送写入内容。 | x=458.0: 取数据：IR.OD2→AR，AR→AB：送地址给数据总线；ADS=1，\nRow 5: x=449.0: M/IO=1，W/R=O:发出主存读命令；DB→DR：数据取到DR寄存器 | x=469.0: (4). 该指令有3个机器周期：—:取指：PC→AB；ADS，M/I0，W/R=1|0；\nRow 6: x=461.5: DB→DR，DR→IR。取出指令送IR寄存器，对指令分析自动进行。二：取数： | x=474.0: IR.OD→AR，AR→AB；;ADS,M/IO，W/R=1lO；DB→DR。取出OD地址中数据\nRow 7: x=376.5: 运算数送ALU，控制器生成十信号，结果再送AX寄存器。 | x=460.5: 送DR。三:运算：AX→ALU；DR→ALU；+；AALU→AX:2个\nRow 8: x=468.0: (5). 因字长24位，水平型，由m=2n-1知，互斥类各占3，4，4，2位，外部条件 | x=476.0: 占3位，所以下字段=24-(3+4+4+2+3)=8位。共28个单元/微指令，每个长\nRow 9: x=278.0: 24位，所以控存CM容量=28x24位\nRow 10: x=36.5: (6). | x=122.5: 3位 | x=144.5: 5个微命令 8个 | x=189.0: 4位 | x=263.0: 14个 | x=268.0: 4位 | x=323.0: 3个 | x=327.5: 2位 | x=437.0: 位设位8位 | x=450.0: 3个外部降件，各占1位 | x=628.5: 8位下地址 | x=638.5: 字段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "a是数据寄存器DR，b是指令寄存器IR；C是地址寄存器AR；d是程序计数器PC",
+    "step_2": "PC→AR，AR→AB: 送指令地址；ADS, M/IO=1, W/R=0:控制主存读操作；DB→DR, DR→IR：指令送指令寄存器；IR再送控制器，对OPC译码。",
+    "step_3": "存数：IR.OD2→AR，AR→AB: 送地址；ADS=1，M/IO=1, W/R=1:主存写命令；IR.OD1→DR，DR→DB:送写入内容。取数据：IR.OD2→AR，AR→AB：送地址给数据总线；ADS=1，M/IO=1，W/R=0:发出主存读命令；DB→DR：数据取到DR寄存器"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "a是数据寄存器DR，b是指令寄存器IR；c是地址寄存器AR；d是程序计数器PC",
+    "step_2": "PC→AR，AR→AB：送指令地址；ADS、M/IO、W/R=1，ADS=1，M/IO=1，W/R=0：控制主存读操作；DB→DR，DR→IR：指令送指令寄存器；IR再送控制器，对OPC译码。",
+    "step_3": "存数：IR.OD2→AR，AR→AB：送地址；ADS=1，M/IO=1，W/R=1：主存写命令；IR.OD1→DR，DR→DB：送写入内容。取数据：IR.OD2→AR，AR→AB：送地址给数据总线；ADS=1，M/IO=1，W/R=0：发出主存读命令；DB→DR：数据取到DR寄存器",
+    "step_4": "取指：PC→AB；ADS，M/IO，W/R=110；DB→DR，DR→IR。取出指令送IR寄存器，对指令分析自动进行。二：取数：IR.OD→AR，AR→AB；ADS，M/IO，W/R=110；DB→DR。取出OD地址中数据送DR。三：运算：AX→ALU；DR→ALU；+；ALU→AX：2个运算数送ALU，控制器生成+信号，结果再送AX寄存器。",
+    "step_5": "因微指令24位，水平型，由m=2^n-1知，互斥类各占3、4、4、2位，外寄条件占3位，所以下址字段=24-(3+4+4+2+3)=8位。共2^8个单元/微指令，每个长24位，所以控存CM容量=2^8×24位",
+    "step_6": "3位 4位 4位 2位 3位 8位 外微检 8个 14个 3个 3个外部条件，各占6位 下址地址字段"
+  },
+  "facts": {
+    "step_1": "(1). a是数据寄存器DR；b是指令寄存器IR；c是地址寄存器AR；d是程序计数器PC",
+    "step_2": "(2).取指时数据通路：PC→AR，AR→AB：送指令地址；ADS=1，M/IO=1，W/R=0：控制主存读操作；DB→DR，DR→IR：指令送指令寄存器；IR再送控制器，对OPC译码。",
+    "step_3": "(3).假设直接寻址：存数：IR.OD2→AR，AR→AB：送地址；ADS=1，M/IO=1，W/R=1：主存写命令；IR.OD1→DR，DR→DB：送写入内容。\n取数据：IR.OD2→AR，AR→AB：送地址给数据总线；ADS=1，M/IO=1，W/R=0：发出主存读命令；DB→DR：数据取到DR寄存器",
+    "step_4": "(4).该指令有3个机器周期：一：取指：PC→AB；ADS，M/IO，W/R=110；DB→DR，DR→IR。取出指令送IR寄存器，对指令分析自动进行。二：取数：IR.OD→AR，AR→AB；ADS，M/IO，W/R=110；DB→DR。取出OD地址中数据送DR。三：运算：AX→ALU；DR→ALU；+；ALU→AX：2个运算数送ALU，控制器生成+信号，结果再送AX寄存器。",
+    "step_5": "(5).因字长24位，水平型，由m=2^n-1知，互斥类各占3，4，4，2位，外部条件占3位，所以下址字段=24-(3+4+4+2+3)=8位。共2^8个单元/微指令，每个长24位，所以控存CM容量=2^8×24位",
+    "step_6": "3位 | 5个微命令 8个 | 4位 | 14个 | 4位 | 3个 | 2位 | 位设位8位\n3个外部降件，各占1位\n8位下地址 字段"
+  }
+}

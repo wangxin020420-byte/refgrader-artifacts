@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:08:17.421983",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_248.png",
+  "image_sha256": "dbc59f6dceaa964d899c98acdc77bc293e74d41eda6da6c7e211e9013cf2225a",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "由题可得：\nx: 0011 0110\ny: 0101 0100\n[x-2y]补=[x]补+[-2y]补\n=[0011 0110]补+[0101 1110]补\n=[1110 0100]补 =90H\nx: 符号位 0；y 符号位 0\n结果符号位为 1（M）\nM = 非x非yz + xy非z\n1 = 1 + 0 成立，\n没有发生溢出\n对于(x÷4)+2z\n① x÷4 相当于左移2位，\n即 结果为 0000 1101 10 ⇒ 0000 1110\nz: 1101 0101\n2z 1 1010 1010\n即 (x÷4)+2z\n= 1011 1000 = B8H\n\n即 发生溢出，因为 x÷4 符号位\n为0，z符号位为1，结果符号位为1\n不符号溢出没有发生溢出条件. 1≠011+01非1",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_248",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "公式与计算过程：[x-2y]补=[x]补+[-2y]补 = [0011 0110]补 + [0101 1110]补 = [1110 0100]补 = 90H。其中 x 的补码表示为 0011 0110，[-2y] 的补码表示为 0101 1110。\n符号位与溢出判断：x 的符号位为 0，y 的符号位为 0，结果符号位为 1（记为 M）。使用公式 M = 非x非yz + xy非z，代入 1 = 1 + 0 成立。结论为“没有发生溢出”。",
+    "step_2": "公式与计算过程：对于 (x÷4)+2z。x÷4 相当于左移2位，即结果为 0000 1101 10 ⇒ 0000 1110。z 的补码为 1101 0101，2z 为 1 1010 1010。最终计算 (x÷4)+2z = 1011 1000 = B8H。\n符号位与溢出判断：x÷4 的符号位为0，z 的符号位为1，结果符号位为1。结论为“即 发生溢出”。并附有手写推导记录：“不符号溢出没有发生溢出条件. 1≠011+01非1”。"
+  }
+}

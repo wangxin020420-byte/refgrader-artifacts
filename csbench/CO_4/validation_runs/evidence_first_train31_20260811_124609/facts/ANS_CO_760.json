@@ -1,0 +1,253 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-08-11T13:32:27.064118",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_760.png",
+  "image_sha256": "e4f6ba3b5dc9be12520f47a57f38d6d9e6aa543d836fcd9b5988ed444c02a836",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_760.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 16,
+    "accepted_token_count": 16,
+    "mean_confidence": 0.889469,
+    "min_confidence": 0.5,
+    "joined_text": "2. （20分）\n(1) 主存为8MB，位与节编址：8MB/B = 8M 22{23}位\nCache最多32块.每组2块，分为16组，每块2kB，组内2位\n主存地址：8\n4\nahett址4111\nP\n↑\n块标记 组地址 块内地址\nT\n(2) 2D07FFH: 010110|0000011111111111\n组地地为0，块标记为01011010\n组地地为0.即2°与2°+块，0，1块内，H较发现块标记不一致，不能访问\n7F0057H:11111110000000001011111\n组地址为0，块标记为11////10\n第0组内第m块，即块1命中，汤同成酬功",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.070749,
+      "very_dark_pixel_ratio": 0.048378,
+      "lower_region_dark_pixel_ratio": 0.069512,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)主存为8MB，位字节编址：8MB/B=8M=2^23位\nCache容量32块，每组2块，分为16组，每块2kB，组内2^11位\n主存地址：[8][4][11]（块标记 组地址 块内地址） \ncache地址 [4][1][11]（组地址 块地址 块内地址）\n(2) 2D07FFH：0101101000 0111 1111 1111\n组地址为0，块标记为01011010\n组地址为0，即2^0与2^0+1块，0,1块内，比较发现块标记不一致，不能访问\n7F0057H：11111110 0000 0000 0101 1111\n组地址为1，块标记为11111110\n第0组内第1块，即块1命中，访问成功",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_760",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "分为16组，组内2位",
+    "step_4": "主存地址：8 4 ↑ 块标记 组地址 块内地址",
+    "step_5": "ahett址4111 T",
+    "step_6": "(2) 2D07FFH: 010110|0000011111111111\n组地地为0，块标记为01011010\n组地地为0.即2°与2°+块，0，1块内，H较发现块标记不一致，不能访问",
+    "step_7": "7F0057H:11111110000000001011111\n组地址为0，块标记为11////10\n第0组内第m块，即块1命中，汤同成酬功"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the specific formula, computation trace, or numerical value the student wrote for the number of bits in the Cache group number. Preserve any leading zeros, units, suffixes, bases, and separators exactly as written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the specific sequence, table entries, or mapping relations the student wrote defining the main memory address format. Preserve any arrows, dots, order, direction, bit lengths, and field labels exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the specific sequence, table entries, or mapping relations the student wrote defining the Cache address format. Preserve any arrows, dots, order, direction, bit lengths, and field labels exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten process and final judgment regarding whether the specified hexadecimal address hits the Cache. Include any extracted tag bits, group numbers, matching comparisons, and conclusion words. Preserve all leading zeros, bases, suffixes, and separators exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten process and final judgment regarding whether the specified hexadecimal address hits the Cache. Include any extracted tag bits, group numbers, matching comparisons, and conclusion words. Preserve all leading zeros, bases, suffixes, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 64.25,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 54.5,
+            "confidence": 0.9545534253120422
+          },
+          {
+            "text": "(1) 主存为8MB，位与节编址：8MB/B = 8M 22{23}位",
+            "x_center": 386.0,
+            "confidence": 0.8471123576164246
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 121.0,
+        "cells_left_to_right": [
+          {
+            "text": "Cache最多32块.每组2块，分为16组，每块2kB，组内2位",
+            "x_center": 419.5,
+            "confidence": 0.9342771172523499
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 183.5,
+        "cells_left_to_right": [
+          {
+            "text": "主存地址：8",
+            "x_center": 150.5,
+            "confidence": 0.9459064602851868
+          },
+          {
+            "text": "P",
+            "x_center": 199.0,
+            "confidence": 0.9131758809089661
+          },
+          {
+            "text": "↑",
+            "x_center": 267.0,
+            "confidence": 0.5718954205513
+          },
+          {
+            "text": "4",
+            "x_center": 270.0,
+            "confidence": 0.999943733215332
+          },
+          {
+            "text": "块标记 组地址 块内地址",
+            "x_center": 292.5,
+            "confidence": 0.8940249085426331
+          },
+          {
+            "text": "ahett址4111",
+            "x_center": 616.0,
+            "confidence": 0.8956529498100281
+          },
+          {
+            "text": "T",
+            "x_center": 662.0,
+            "confidence": 0.9526075720787048
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 281.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 2D07FFH: 010110|0000011111111111",
+            "x_center": 292.0,
+            "confidence": 0.9436078667640686
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 319.5,
+        "cells_left_to_right": [
+          {
+            "text": "组地地为0，块标记为01011010",
+            "x_center": 295.5,
+            "confidence": 0.9127228856086731
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 351.0,
+        "cells_left_to_right": [
+          {
+            "text": "组地地为0.即2°与2°+块，0，1块内，H较发现块标记不一致，不能访问",
+            "x_center": 475.5,
+            "confidence": 0.8600919842720032
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 411.5,
+        "cells_left_to_right": [
+          {
+            "text": "7F0057H:11111110000000001011111",
+            "x_center": 334.0,
+            "confidence": 0.9926479458808899
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 451.0,
+        "cells_left_to_right": [
+          {
+            "text": "组地址为0，块标记为11////10",
+            "x_center": 270.0,
+            "confidence": 0.7940962314605713
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 488.5,
+        "cells_left_to_right": [
+          {
+            "text": "第0组内第m块，即块1命中，汤同成酬功",
+            "x_center": 353.5,
+            "confidence": 0.8191946148872375
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=54.5: 2. （20分） | x=386.0: (1) 主存为8MB，位与节编址：8MB/B = 8M 22{23}位\nRow 2: x=419.5: Cache最多32块.每组2块，分为16组，每块2kB，组内2位\nRow 3: x=150.5: 主存地址：8 | x=199.0: P | x=267.0: ↑ | x=270.0: 4 | x=292.5: 块标记 组地址 块内地址 | x=616.0: ahett址4111 | x=662.0: T\nRow 4: x=292.0: (2) 2D07FFH: 010110|0000011111111111\nRow 5: x=295.5: 组地地为0，块标记为01011010\nRow 6: x=475.5: 组地地为0.即2°与2°+块，0，1块内，H较发现块标记不一致，不能访问\nRow 7: x=334.0: 7F0057H:11111110000000001011111\nRow 8: x=270.0: 组地址为0，块标记为11////10\nRow 9: x=353.5: 第0组内第m块，即块1命中，汤同成酬功"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "8MB/B=8M=2^23位",
+    "step_2": "11位",
+    "step_3": "4位",
+    "step_4": "块标记8位 组地址4位 块内地址11位",
+    "step_5": "组地址4位 块地址1位 块内地址11位",
+    "step_6": "2D07FFH：010110 0000 0111111111 组地址为0，块标记为01011010 组地址为0，即2^0与2^1块，0,1块内，比较发现块标记不一致，不能访问",
+    "step_7": "7F0057H：11111110 0000 0000 0101111 组地址为3，块标记为11111110 第0组内有0,1块，即块1命中，访问成功"
+  },
+  "facts": {
+    "step_1": "8MB/B=8M=2^23位",
+    "step_2": "每块2kB，组内2^11位",
+    "step_3": "Cache容量32块，每组2块，分为16组",
+    "step_4": "主存地址：[8][4][11]（块标记 组地址 块内地址）",
+    "step_5": "cache地址 [4][1][11]（组地址 块地址 块内地址）",
+    "step_6": "2D07FFH：0101101000 0111 1111 1111\n组地址为0，块标记为01011010\n组地址为0，即2^0与2^0+1块，0,1块内，比较发现块标记不一致，不能访问",
+    "step_7": "7F0057H：11111110 0000 0000 0101 1111\n组地址为1，块标记为11111110\n第0组内第1块，即块1命中，访问成功"
+  }
+}

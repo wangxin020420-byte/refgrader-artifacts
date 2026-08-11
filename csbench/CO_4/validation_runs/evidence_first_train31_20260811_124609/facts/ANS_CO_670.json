@@ -1,0 +1,421 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:17:51.664669",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_670.jpg",
+  "image_sha256": "bb4c673f5b199124fb905fb2a298187c5db8fb41a9c235b72ce6487bc45fb02a",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_670.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 46,
+    "accepted_token_count": 45,
+    "mean_confidence": 0.925244,
+    "min_confidence": 0.5,
+    "joined_text": "一\ntagcachets\n偏移地址\n2. （20分）\n23\n64 010.1.101.0000.0111.1111.1111\n解：(1)主存：8MB:23:2:23B.→\n3 20 23\n2\n=12-5=\n↑\n15\n21\n2\n1.\ntag=0101.1010.在cache中找不到\ncache: 2 2=2 B →.\n16\n=25\n2\nt夫:2kB=2.20°=2“B.→\n1而F00.57H代为2进制为\n11\n组内偏移\n+gg t地号 偏移地置.\n11111110\n0000\n00001010111\n主存：\n↑\n8.\n4\n11\n块标记(tag) ±41111.1110\n行数+4 块内偏移地\ncache:\n古久可以在cachet块3中找到\n5\n1\n11\n89\n∴2007FFH找不到\n(2).2D07FFHTt为=进制为：124位）\n7F0057H能话问\n010.11010000.0111.1111.1111.",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.052268,
+      "very_dark_pixel_ratio": 0.029437,
+      "lower_region_dark_pixel_ratio": 0.048843,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解：(1)主存:8MB=2³·2²⁰=2²³B.→2²³/2¹¹=2^(12-5)=7 cache:2⁵·2¹¹=2¹⁶B→2¹⁶/2¹¹=2⁵ \n块:2kB=2·2¹⁰=2¹¹B.→11（组内偏移） \n主存格式如图所示\ncache格式如图所示\n(2)2D07FFH化为二进制为:（24位）\n1010.1101.0000.0111.1111.1111. \n故01011010(tag)0000(cache块)11111111111(偏移地址)\ntag = 0101.1010 在cache中找不到\n而7F00 57H化为2进制为 11111110|0000|00001010111\n块标记（tag）：11111110\n故可以在cache块3中找到\n所以2D07FFH找不到7F0057H能访问到",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_670",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "学生写下了计算Cache组数的公式与结果，部分字迹受OCR识别干扰但可辨认：“cache: 2^2=2^16 = 2^5”以及“=12-5=”。其中明确给出了组数的最终值为“2^5”（对应32个组）。",
+    "step_4": "学生绘制了主存地址格式划分的表格/字段结构。主存地址被划分为几个部分，分别标注有：主存字块标记（tag、字迹模糊）、组地址、偏移地址（标为“组内偏移”/“偏移地址”）。在表下方明确写有主存地址各字段的位数分配为：“主存：8 4 11”，并在表头上方写有位数 3、20、23。",
+    "step_5": "学生绘制了Cache地址格式划分的表格/字段结构。Cache地址被划分为几个部分，分别标注有：行数+4、块内偏移地址、组内偏移。在表下方明确写有Cache地址各字段的位数分配为：“cache: 5 1 11”。",
+    "step_6": "对于地址2D07FFH，学生先将其转化为2进制（写作：64 010.1.101.0000.0111.1111.1111），并提取出标记字段为“tag=0101.1010.”。最终的显式命中/缺失判断词为缺失（“在cache中找不到”与“∴2007FFH找不到”）。",
+    "step_7": "对于地址7F0057H，学生将其转化为二进制并写出了相关的块标记（tag）字段：“块标记 ±41111.1110”（对应提取出的二进制位 11111110 0000 00001010111）。最终的显式命中判断词为命中（“古久可以在cachet块3中找到”以及“7F0057H能话问”）。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 22.17,
+        "cells_left_to_right": [
+          {
+            "text": "一",
+            "x_center": 285.0,
+            "confidence": 0.828974723815918
+          },
+          {
+            "text": "tagcachets",
+            "x_center": 712.5,
+            "confidence": 0.899327278137207
+          },
+          {
+            "text": "偏移地址",
+            "x_center": 883.0,
+            "confidence": 0.9719928503036499
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 83.58,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 53.5,
+            "confidence": 0.8738735914230347
+          },
+          {
+            "text": "解：(1)主存：8MB:23:2:23B.→",
+            "x_center": 182.0,
+            "confidence": 0.7915133833885193
+          },
+          {
+            "text": "3 20 23",
+            "x_center": 256.0,
+            "confidence": 0.9909354448318481
+          },
+          {
+            "text": "2",
+            "x_center": 368.5,
+            "confidence": 0.9797959327697754
+          },
+          {
+            "text": "21",
+            "x_center": 373.5,
+            "confidence": 0.9895776510238647
+          },
+          {
+            "text": "23",
+            "x_center": 382.5,
+            "confidence": 0.9999491572380066
+          },
+          {
+            "text": "2",
+            "x_center": 421.0,
+            "confidence": 0.9941813349723816
+          },
+          {
+            "text": "=12-5=",
+            "x_center": 444.0,
+            "confidence": 0.9994612336158752
+          },
+          {
+            "text": "1.",
+            "x_center": 511.5,
+            "confidence": 0.986846923828125
+          },
+          {
+            "text": "↑",
+            "x_center": 607.5,
+            "confidence": 0.9965816140174866
+          },
+          {
+            "text": "15",
+            "x_center": 713.0,
+            "confidence": 0.7570115327835083
+          },
+          {
+            "text": "64 010.1.101.0000.0111.1111.1111",
+            "x_center": 731.0,
+            "confidence": 0.903954029083252
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 137.8,
+        "cells_left_to_right": [
+          {
+            "text": "cache: 2 2=2 B →.",
+            "x_center": 186.0,
+            "confidence": 0.8709931969642639
+          },
+          {
+            "text": "2",
+            "x_center": 345.0,
+            "confidence": 0.9961516261100769
+          },
+          {
+            "text": "16",
+            "x_center": 360.5,
+            "confidence": 0.9981094598770142
+          },
+          {
+            "text": "=25",
+            "x_center": 401.0,
+            "confidence": 0.9838122725486755
+          },
+          {
+            "text": "tag=0101.1010.在cache中找不到",
+            "x_center": 735.0,
+            "confidence": 0.9202879071235657
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 195.62,
+        "cells_left_to_right": [
+          {
+            "text": "t夫:2kB=2.20°=2“B.→",
+            "x_center": 197.0,
+            "confidence": 0.7760900855064392
+          },
+          {
+            "text": "11",
+            "x_center": 376.5,
+            "confidence": 0.8079612851142883
+          },
+          {
+            "text": "1而F00.57H代为2进制为",
+            "x_center": 652.5,
+            "confidence": 0.8769487142562866
+          },
+          {
+            "text": "↓",
+            "x_center": 708.5,
+            "confidence": 0.48296719789505005
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 230.5,
+        "cells_left_to_right": [
+          {
+            "text": "组内偏移",
+            "x_center": 410.0,
+            "confidence": 0.8780717253684998
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 270.62,
+        "cells_left_to_right": [
+          {
+            "text": "+gg t地号 偏移地置.",
+            "x_center": 266.0,
+            "confidence": 0.7996206283569336
+          },
+          {
+            "text": "11111110",
+            "x_center": 614.0,
+            "confidence": 0.9991112947463989
+          },
+          {
+            "text": "0000",
+            "x_center": 730.5,
+            "confidence": 0.9999657869338989
+          },
+          {
+            "text": "00001010111",
+            "x_center": 839.5,
+            "confidence": 0.9502750039100647
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 320.3,
+        "cells_left_to_right": [
+          {
+            "text": "主存：",
+            "x_center": 83.5,
+            "confidence": 0.9075424671173096
+          },
+          {
+            "text": "8.",
+            "x_center": 173.0,
+            "confidence": 0.9735065698623657
+          },
+          {
+            "text": "4",
+            "x_center": 234.0,
+            "confidence": 0.9999659061431885
+          },
+          {
+            "text": "11",
+            "x_center": 290.0,
+            "confidence": 0.9981884956359863
+          },
+          {
+            "text": "↑",
+            "x_center": 590.0,
+            "confidence": 0.7257354259490967
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 366.0,
+        "cells_left_to_right": [
+          {
+            "text": "行数+4 块内偏移地",
+            "x_center": 278.0,
+            "confidence": 0.9230332374572754
+          },
+          {
+            "text": "块标记(tag) ±41111.1110",
+            "x_center": 716.5,
+            "confidence": 0.8480914831161499
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 411.7,
+        "cells_left_to_right": [
+          {
+            "text": "cache:",
+            "x_center": 85.0,
+            "confidence": 0.9976911544799805
+          },
+          {
+            "text": "5",
+            "x_center": 186.0,
+            "confidence": 0.99996018409729
+          },
+          {
+            "text": "1",
+            "x_center": 229.0,
+            "confidence": 0.997443437576294
+          },
+          {
+            "text": "11",
+            "x_center": 279.0,
+            "confidence": 0.993900716304779
+          },
+          {
+            "text": "古久可以在cachet块3中找到",
+            "x_center": 742.5,
+            "confidence": 0.9302675724029541
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 447.0,
+        "cells_left_to_right": [
+          {
+            "text": "89",
+            "x_center": 60.0,
+            "confidence": 0.7924031019210815
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 513.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2).2D07FFHTt为=进制为：124位）",
+            "x_center": 246.5,
+            "confidence": 0.9148562550544739
+          },
+          {
+            "text": "∴2007FFH找不到",
+            "x_center": 689.5,
+            "confidence": 0.99041748046875
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 567.5,
+        "cells_left_to_right": [
+          {
+            "text": "010.11010000.0111.1111.1111.",
+            "x_center": 227.5,
+            "confidence": 0.9391022324562073
+          },
+          {
+            "text": "7F0057H能话问",
+            "x_center": 736.5,
+            "confidence": 0.882506251335144
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=285.0: 一 | x=712.5: tagcachets | x=883.0: 偏移地址\nRow 2: x=53.5: 2. （20分） | x=182.0: 解：(1)主存：8MB:23:2:23B.→ | x=256.0: 3 20 23 | x=368.5: 2 | x=373.5: 21 | x=382.5: 23 | x=421.0: 2 | x=444.0: =12-5= | x=511.5: 1. | x=607.5: ↑ | x=713.0: 15 | x=731.0: 64 010.1.101.0000.0111.1111.1111\nRow 3: x=186.0: cache: 2 2=2 B →. | x=345.0: 2 | x=360.5: 16 | x=401.0: =25 | x=735.0: tag=0101.1010.在cache中找不到\nRow 4: x=197.0: t夫:2kB=2.20°=2“B.→ | x=376.5: 11 | x=652.5: 1而F00.57H代为2进制为 | x=708.5: ↓\nRow 5: x=410.0: 组内偏移\nRow 6: x=266.0: +gg t地号 偏移地置. | x=614.0: 11111110 | x=730.5: 0000 | x=839.5: 00001010111\nRow 7: x=83.5: 主存： | x=173.0: 8. | x=234.0: 4 | x=290.0: 11 | x=590.0: ↑\nRow 8: x=278.0: 行数+4 块内偏移地 | x=716.5: 块标记(tag) ±41111.1110\nRow 9: x=85.0: cache: | x=186.0: 5 | x=229.0: 1 | x=279.0: 11 | x=742.5: 古久可以在cachet块3中找到\nRow 10: x=60.0: 89\nRow 11: x=246.5: (2).2D07FFHTt为=进制为：124位） | x=689.5: ∴2007FFH找不到\nRow 12: x=227.5: 010.11010000.0111.1111.1111. | x=736.5: 7F0057H能话问"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "23位",
+    "step_2": "11位",
+    "step_3": "4位",
+    "step_4": "tag 8 . 组号 4 块偏移 11",
+    "step_5": "组号 4 . 块内偏移 11",
+    "step_6": "未命中",
+    "step_7": "命中"
+  },
+  "facts": {
+    "step_1": "主存:8MB=2³·2²⁰=2²³B.→2²³/2¹¹=2^(12-5)=7",
+    "step_2": "块:2kB=2·2¹⁰=2¹¹B.→11（组内偏移）",
+    "step_3": "cache:2⁵·2¹¹=2¹⁶B→2¹⁶/2¹¹=2⁵",
+    "step_4": "主存格式如图所示",
+    "step_5": "cache格式如图所示",
+    "step_6": "2D07FFH化为二进制为:（24位）1010.1101.0000.0111.1111.1111. 故01011010(tag)0000(cache块)11111111111(偏移地址) tag = 0101.1010 在cache中找不到",
+    "step_7": "7F00 57H化为2进制为 11111110|0000|00001010111 块标记（tag）：11111110 故可以在cache块3中找到"
+  }
+}

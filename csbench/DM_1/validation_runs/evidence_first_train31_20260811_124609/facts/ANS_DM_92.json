@@ -1,0 +1,90 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T23:07:26.193680",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_92.jpg",
+  "image_sha256": "905cfb5c5f59b768108d88dc0a07f154dbdb075ea6bafb08ac476aa9e232e652",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_92.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 16,
+    "accepted_token_count": 16,
+    "mean_confidence": 0.97288,
+    "min_confidence": 0.5,
+    "joined_text": "A的最大元不存在的理由：A的极大元24积\n16.\n解(1) 哈斯图如下：\n54中并没有谁能整除对方，\n故A的最大元不存在。\n24\n(4) B={4,6,9}\n易知：B的最小上界为9，最大下界为4\n4\n9\n2\n3\n(2) A的极大元:24.54\nA的极小元：1\n(3) A的最大元：不存在\nA的最小元：",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.06597,
+      "very_dark_pixel_ratio": 0.041852,
+      "lower_region_dark_pixel_ratio": 0.045767,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)哈斯图如下图：\n(2) A的极大元:24、54\nA的极小元:1\n(3) A的最大元:不存在\nA的最小元:1\t\nA的最大元不存在理由：A的极大元24和5中并没有谁能整除对方，故A的最大元不存在。\n(4) B={4,6,9}\n易知:B的最小上界为9,最大下界为4",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_92",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "1→2→4, 1→2→6, 1→3→6, 1→3→9",
+  "diagram_facts": {
+    "step_1": "可见节点1、2、3、4、6、9及边1-2、1-3、2-4、2-6、3-6、3-9；完整可见路径：1→2→4, 1→2→6, 1→3→6, 1→3→9"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten Hasse diagram for this item. Capture all vertices and edges exactly as drawn, preserving the structural relations, directionality, and any labels."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "1在最下，2和3在1上方；2连接4和6，3连接6和9；4连接24，6连接24和54，9连接54",
+    "step_2_1": "24、54",
+    "step_2_2": "1",
+    "step_3_1": "不存在",
+    "step_3_2": "1",
+    "step_4_1": "9",
+    "step_4_2": "4"
+  },
+  "facts": {
+    "step_1": "可见节点1、2、3、4、6、9及边1-2、1-3、2-4、2-6、3-6、3-9；完整可见路径：1→2→4, 1→2→6, 1→3→6, 1→3→9",
+    "step_2_1": "24、54",
+    "step_2_2": "1",
+    "step_3_1": "不存在",
+    "step_3_2": "1",
+    "step_4_1": "9",
+    "step_4_2": "4"
+  }
+}

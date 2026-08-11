@@ -1,0 +1,471 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T01:57:40.628523",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_177.jpg",
+  "image_sha256": "b53bdcec2af5916cc9c1b3490152948d0058353dfd88de57448611224ce74c21",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_3/ANS_CO_177.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 60,
+    "accepted_token_count": 59,
+    "mean_confidence": 0.949461,
+    "min_confidence": 0.5,
+    "joined_text": "1. （10分）\n8位补码整数 1位符号 7位数值\n[区]补=36H：00110110 H 为正数 [X]原=00110110H\n[]补=54H=01010100H 正数\n[Y]原=01010100H\n[Z]补=D5H=11010101H 负数 [Z]原=10101011H\n①x-2y：\n.溢出，采用双符码号位\n+3\n[2Y]补=10101000H [-2Y]补=01010100H\n补码结果为-72H\n1表示结果为负数且设有溢出 0F为0.\n010111000\n②(x÷4)+2z\n1100\n01101\n000110110\n90000\n1100\n011000000\n(4),6=(0100)1H\n十\n00001\n110001000\n110101010\n00000010\n1100\n010000100\n00010\n110010100\n+000001101\n[4]补=0100\n+\n1100\n∴商是1101\n110110111\n00011\n[-4]补=1100\n010010000\n+4\nOF为0,未\n←100000000\n60110\n余数是10\n(x+4)=(13)\n1100\n0110\n100101100\n10\n=(1101)2\n←001011000\n0100\n(73)102×Z=111010101×3\n=110110111\n00001101+2xZ\n00\n←01\nd01100(÷4)+222110101010\n=110101010+0000110为10110111",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.132047,
+      "very_dark_pixel_ratio": 0.089833,
+      "lower_region_dark_pixel_ratio": 0.138766,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "8位补码整数 1位符号 7位数值\n[x补]=36H=00110110H 为正数 [x原]=00110110H\n[y补]=54H=01010100H 正数 [y原]=01010100H\n[z补]=D5H=11010101H 负数 [z原]=10100111H\n\n①x-2y:\n[2y]补=10101000H 溢出，采用双符号位 [-2y]补=01010100H\n[x-2y]补=[x]补+[-2y]补=00110110+01010100H=110001110H,\n11表示结果为负数且没有溢出 OF为0. 补码结果为-72H\n\n②(x÷4)+2^z\n(4)_b=(0100)_2^1\n*[4]补=0100\n[-4]补=1100\n(x÷4)=8*(13)10\n=(1101)2\n计算如题所示\n余数是10 OF为0,未溢出",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_177",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": {
+      "computation_trace": "①x-2y： .溢出，采用双符码号位 [2Y]补=10101000H [-2Y]补=01010100H",
+      "values_and_results": "+3 补码结果为-72H",
+      "overflow_judgment": "1表示结果为负数且设有溢出 0F为0."
+    },
+    "step_2": {
+      "computation_trace": "②(x÷4)+2z (4),6=(0100)1H [4]补=0100 (x+4)=(13) =(1101)2 00001101+2xZ d01100(÷4)+222110101010 =110101010+0000110为10110111",
+      "binary_grid_traces": "(除法计算网格包含：000110110, 1100, 90000, 010111000, 011000000, 01101, 010000100, 00000010, 00001, 00010, 110001000, 110010100, +000001101, 110110111, 110101010, ←100000000, 010010000, 00011, 60110, ←001011000, 100101100, 0100, 0110, ←01, 00)",
+      "division_conclusion": "∴商是1101 余数是10 [-4]补=1100",
+      "values_and_results": "110101010 +4 =110110111",
+      "overflow_judgment": "OF为0,未"
+    }
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten content for the computation of x - 2y. Ask for the hexadecimal or binary values written, ensuring leading zeros, suffixes (like H), grouping, and separators are preserved exactly. Additionally, extract the specific formula, substitution relation, or computation trace used, as well as any written judgment word or conclusion regarding overflow (e.g., whether a carry/borrow or overflow flag is mentioned)."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's concrete handwritten content for the computation of (x ÷ 4) + 2z. Ask for the hexadecimal or binary values written, ensuring leading zeros, suffixes (like H), grouping, and separators are preserved exactly. Additionally, extract the specific formula, substitution relation, or computation trace used, as well as any written judgment word or conclusion regarding whether an overflow occurred."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 51.5,
+        "cells_left_to_right": [
+          {
+            "text": "1. （10分）",
+            "x_center": 54.5,
+            "confidence": 0.9499835968017578
+          },
+          {
+            "text": "8位补码整数 1位符号 7位数值",
+            "x_center": 286.0,
+            "confidence": 0.984926700592041
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 99.0,
+        "cells_left_to_right": [
+          {
+            "text": "[区]补=36H：00110110 H 为正数 [X]原=00110110H",
+            "x_center": 389.0,
+            "confidence": 0.9271610379219055
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 141.75,
+        "cells_left_to_right": [
+          {
+            "text": "[]补=54H=01010100H 正数",
+            "x_center": 274.5,
+            "confidence": 0.941018283367157
+          },
+          {
+            "text": "[Y]原=01010100H",
+            "x_center": 615.0,
+            "confidence": 0.9656614661216736
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 188.5,
+        "cells_left_to_right": [
+          {
+            "text": "[Z]补=D5H=11010101H 负数 [Z]原=10101011H",
+            "x_center": 397.5,
+            "confidence": 0.9653456807136536
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 249.5,
+        "cells_left_to_right": [
+          {
+            "text": "①x-2y：",
+            "x_center": 74.0,
+            "confidence": 0.8790888786315918
+          },
+          {
+            "text": ".溢出，采用双符码号位",
+            "x_center": 436.0,
+            "confidence": 0.9539573788642883
+          },
+          {
+            "text": "+3",
+            "x_center": 712.0,
+            "confidence": 0.8346233367919922
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 283.0,
+        "cells_left_to_right": [
+          {
+            "text": "[2Y]补=10101000H [-2Y]补=01010100H",
+            "x_center": 340.5,
+            "confidence": 0.9613233208656311
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 352.0,
+        "cells_left_to_right": [
+          {
+            "text": "1表示结果为负数且设有溢出 0F为0.",
+            "x_center": 303.5,
+            "confidence": 0.8925760388374329
+          },
+          {
+            "text": "补码结果为-72H",
+            "x_center": 708.0,
+            "confidence": 0.9987027645111084
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 437.6,
+        "cells_left_to_right": [
+          {
+            "text": "②(x÷4)+2z",
+            "x_center": 107.0,
+            "confidence": 0.8994128108024597
+          },
+          {
+            "text": "十",
+            "x_center": 286.5,
+            "confidence": 0.8889806270599365
+          },
+          {
+            "text": "000110110",
+            "x_center": 339.5,
+            "confidence": 0.9998972415924072
+          },
+          {
+            "text": "1100",
+            "x_center": 369.5,
+            "confidence": 0.9991192817687988
+          },
+          {
+            "text": "90000",
+            "x_center": 476.0,
+            "confidence": 0.9353872537612915
+          },
+          {
+            "text": "十",
+            "x_center": 589.5,
+            "confidence": 0.4982351064682007
+          },
+          {
+            "text": "010111000",
+            "x_center": 659.5,
+            "confidence": 0.9993970394134521
+          },
+          {
+            "text": "011000000",
+            "x_center": 660.0,
+            "confidence": 0.9765803813934326
+          },
+          {
+            "text": "1100",
+            "x_center": 702.0,
+            "confidence": 0.9995585680007935
+          },
+          {
+            "text": "01101",
+            "x_center": 818.0,
+            "confidence": 0.9915986061096191
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 494.71,
+        "cells_left_to_right": [
+          {
+            "text": "(4),6=(0100)1H",
+            "x_center": 114.5,
+            "confidence": 0.9012454748153687
+          },
+          {
+            "text": "[4]补=0100",
+            "x_center": 123.0,
+            "confidence": 0.9865481853485107
+          },
+          {
+            "text": "010000100",
+            "x_center": 331.5,
+            "confidence": 0.9986721873283386
+          },
+          {
+            "text": "00000010",
+            "x_center": 339.5,
+            "confidence": 0.9974209070205688
+          },
+          {
+            "text": "00001",
+            "x_center": 476.5,
+            "confidence": 0.8411778211593628
+          },
+          {
+            "text": "00010",
+            "x_center": 479.5,
+            "confidence": 0.9295924305915833
+          },
+          {
+            "text": "110001000",
+            "x_center": 643.0,
+            "confidence": 0.9537271857261658
+          },
+          {
+            "text": "110010100",
+            "x_center": 666.5,
+            "confidence": 0.9904841184616089
+          },
+          {
+            "text": "1100",
+            "x_center": 702.5,
+            "confidence": 0.9995615482330322
+          },
+          {
+            "text": "+000001101",
+            "x_center": 846.0,
+            "confidence": 0.9929760098457336
+          },
+          {
+            "text": "110110111",
+            "x_center": 855.0,
+            "confidence": 0.9568296074867249
+          },
+          {
+            "text": "110101010",
+            "x_center": 858.5,
+            "confidence": 0.9996740818023682
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 556.71,
+        "cells_left_to_right": [
+          {
+            "text": "[-4]补=1100",
+            "x_center": 137.5,
+            "confidence": 0.9362534284591675
+          },
+          {
+            "text": "+",
+            "x_center": 273.0,
+            "confidence": 0.6415018439292908
+          },
+          {
+            "text": "←100000000",
+            "x_center": 332.5,
+            "confidence": 0.9701467752456665
+          },
+          {
+            "text": "010010000",
+            "x_center": 343.5,
+            "confidence": 0.9995832443237305
+          },
+          {
+            "text": "1100",
+            "x_center": 373.0,
+            "confidence": 0.9998254776000977
+          },
+          {
+            "text": "1100",
+            "x_center": 380.0,
+            "confidence": 0.9997323751449585
+          },
+          {
+            "text": "00011",
+            "x_center": 476.0,
+            "confidence": 0.8919647336006165
+          },
+          {
+            "text": "60110",
+            "x_center": 477.5,
+            "confidence": 0.9321829080581665
+          },
+          {
+            "text": "∴商是1101",
+            "x_center": 657.0,
+            "confidence": 0.8968319296836853
+          },
+          {
+            "text": "余数是10",
+            "x_center": 661.5,
+            "confidence": 0.9971773028373718
+          },
+          {
+            "text": "+4",
+            "x_center": 780.0,
+            "confidence": 0.949734091758728
+          },
+          {
+            "text": "OF为0,未",
+            "x_center": 879.0,
+            "confidence": 0.8235369324684143
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 619.89,
+        "cells_left_to_right": [
+          {
+            "text": "(x+4)=(13)",
+            "x_center": 113.5,
+            "confidence": 0.9027146100997925
+          },
+          {
+            "text": "=(1101)2",
+            "x_center": 159.5,
+            "confidence": 0.9070584774017334
+          },
+          {
+            "text": "10",
+            "x_center": 192.0,
+            "confidence": 0.9991395473480225
+          },
+          {
+            "text": "←001011000",
+            "x_center": 326.5,
+            "confidence": 0.9471882581710815
+          },
+          {
+            "text": "100101100",
+            "x_center": 342.0,
+            "confidence": 0.9980360865592957
+          },
+          {
+            "text": "0100",
+            "x_center": 376.0,
+            "confidence": 0.9999688863754272
+          },
+          {
+            "text": "0110",
+            "x_center": 480.0,
+            "confidence": 0.9944255352020264
+          },
+          {
+            "text": "(73)102×Z=111010101×3",
+            "x_center": 652.5,
+            "confidence": 0.9173275828361511
+          },
+          {
+            "text": "=110110111",
+            "x_center": 874.0,
+            "confidence": 0.9855870008468628
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 667.4,
+        "cells_left_to_right": [
+          {
+            "text": "00001101+2xZ",
+            "x_center": 131.5,
+            "confidence": 0.9822264313697815
+          },
+          {
+            "text": "←01",
+            "x_center": 282.5,
+            "confidence": 0.9392493367195129
+          },
+          {
+            "text": "00",
+            "x_center": 290.5,
+            "confidence": 0.9999111294746399
+          },
+          {
+            "text": "d01100(÷4)+222110101010",
+            "x_center": 602.0,
+            "confidence": 0.9214887022972107
+          },
+          {
+            "text": "=110101010+0000110为10110111",
+            "x_center": 754.5,
+            "confidence": 0.9931747317314148
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=54.5: 1. （10分） | x=286.0: 8位补码整数 1位符号 7位数值\nRow 2: x=389.0: [区]补=36H：00110110 H 为正数 [X]原=00110110H\nRow 3: x=274.5: []补=54H=01010100H 正数 | x=615.0: [Y]原=01010100H\nRow 4: x=397.5: [Z]补=D5H=11010101H 负数 [Z]原=10101011H\nRow 5: x=74.0: ①x-2y： | x=436.0: .溢出，采用双符码号位 | x=712.0: +3\nRow 6: x=340.5: [2Y]补=10101000H [-2Y]补=01010100H\nRow 7: x=303.5: 1表示结果为负数且设有溢出 0F为0. | x=708.0: 补码结果为-72H\nRow 8: x=107.0: ②(x÷4)+2z | x=286.5: 十 | x=339.5: 000110110 | x=369.5: 1100 | x=476.0: 90000 | x=589.5: 十 | x=659.5: 010111000 | x=660.0: 011000000 | x=702.0: 1100 | x=818.0: 01101\nRow 9: x=114.5: (4),6=(0100)1H | x=123.0: [4]补=0100 | x=331.5: 010000100 | x=339.5: 00000010 | x=476.5: 00001 | x=479.5: 00010 | x=643.0: 110001000 | x=666.5: 110010100 | x=702.5: 1100 | x=846.0: +000001101 | x=855.0: 110110111 | x=858.5: 110101010\nRow 10: x=137.5: [-4]补=1100 | x=273.0: + | x=332.5: ←100000000 | x=343.5: 010010000 | x=373.0: 1100 | x=380.0: 1100 | x=476.0: 00011 | x=477.5: 60110 | x=657.0: ∴商是1101 | x=661.5: 余数是10 | x=780.0: +4 | x=879.0: OF为0,未\nRow 11: x=113.5: (x+4)=(13) | x=159.5: =(1101)2 | x=192.0: 10 | x=326.5: ←001011000 | x=342.0: 100101100 | x=376.0: 0100 | x=480.0: 0110 | x=652.5: (73)102×Z=111010101×3 | x=874.0: =110110111\nRow 12: x=131.5: 00001101+2xZ | x=282.5: ←01 | x=290.5: 00 | x=602.0: d01100(÷4)+222110101010 | x=754.5: =110101010+0000110为10110111"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "①x-2y：溢出，采用双符号位 [2y]补=10101000H [ -2y]补=01010100H [x-2y]补=[x]补+[-2y]补=00110110+01010100H=110001110H，11表示结果为负数且没有溢出 OF为0. 补码结果为-72H",
+    "step_2": "②(x÷4)+2z (4)₁₀=(0100)₂H 000110110 + 1100 00000010 000000100 + 1100 010000100 [4]补=0100 [-4]补=1100 (x÷4)=x/(13)补 = (1101)₂ 10 100101100 + 0100 100101100 00001101 + 2xZ 01101000 + 1100 01100000 01100000 0110 110101010 100000101 110110111 +4 OF为0,未溢 00001101 + 2xZ 01101110 00001101 + 01101110 10011011"
+  },
+  "facts": {
+    "step_1": "学生所写内容：\n[2y]补=10101000H 溢出，采用双符号位\n[-2y]补=01010100H\n[x-2y]补=[x]补+[-2y]补=00110110+01010100H=110001110H\n11表示结果为负数且没有溢出 OF为0.\n补码结果为-72H\n\n学生关于溢出的判断：先写[2y]补“溢出”，随后采用双符号位并得出“11表示结果为负数且没有溢出 OF为0”。补码结果写为“-72H”。",
+    "step_2": "学生所写内容（标题为②(x÷4)+2^z）：\n(4)_b=(0100)_2^1\n*[4]补=0100\n[-4]补=1100\n(x÷4)=8*(13)10\n=(1101)2\n计算如题所示\n余数是10 OF为0,未溢出\n\n关于溢出的判断：写有“OF为0,未溢出”。其中“计算如题所示”为指向性占位语，无具体图示内容。"
+  }
+}

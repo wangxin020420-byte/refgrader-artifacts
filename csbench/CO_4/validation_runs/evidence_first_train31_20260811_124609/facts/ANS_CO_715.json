@@ -1,0 +1,340 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:31:20.018287",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_715.png",
+  "image_sha256": "be279b1df0ecc339602d4e59eb3a7fd7ebb3a626217c6297b1e6c33f6bf14eff",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_715.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 31,
+    "accepted_token_count": 31,
+    "mean_confidence": 0.886058,
+    "min_confidence": 0.5,
+    "joined_text": "(21\n地址为2D07FFH时\n2. （20分）\n即为0/0110|0000011111…1\nCache块2k3=2\"1B3\n表示第0组Cache是不有\nCache有32块，每2块为一组\n01011010标记，根据表中可\n共有16=24组\n11位\n知.无法在Cache中纺\n故组号为4位，块内地址=\n问到该单元的数据。\n故CaChe 各字段表示为：\n地址为7F0057+1时\n组号字段\n块内地址字段\n即为111111100000000001010\nb\n4位\n11位\n表示第0组Cache是否有1111110\n主存各学段表示为\n标亿.据表可知，可在 Cache中\n主存决标记字段\n徒号字段\n决内地证学段\n访问到该单元半据\n4位\n11位\n8位",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.120132,
+      "very_dark_pixel_ratio": 0.082848,
+      "lower_region_dark_pixel_ratio": 0.128372,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) 主存为8MB=2²³B\nCache每块2KB=2¹¹B\nCache有32块，每2块一组\n共有16组=2⁴组\n故组号为4位，块内地址11位\n故Cache各字段表示为：\n组号字段 块内地址字段\n4位 11位\n主存字段表示为\n主存标记字段 组号字段 块内地址字段\n8位 4位 11位\n[2] 地址为2D07FFFH时\n即为0101 1010 0000 0111 1111 1111b\n表示第0组 Cache是否有\n01011010 标记，根据表可知，无法在Cache中\n访问到该单元不命中。\n地址为7F0057H时\n即为1111 1110 0000 0000 0101 0111b\n表示第0组 Cache是否有1111 1110标记，根据表可知，在Cache中\n访问到该单元命中。",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_715",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "Cache有32块，每2块为一组。共有16=2^4组。故组号为4位。",
+    "step_4": "主存各字段表示为：\n- 主存标记字段（或主存块标记字段）：8位\n- 组号字段（或徒号字段）：4位\n- 块内地址字段（或决内地证学段）：11位",
+    "step_5": "Cache各字段表示为：\n- 组号字段：4位\n- 块内地址字段：11位",
+    "step_6": "判断无法在Cache中访问到（未命中）。对于地址2D07FFH，学生写出的地址展开/代入为：即为0/0110|0000011111…1。标记字段计算或提取为01011010。判断过程为表示第0组Cache是否有01011010标记，根据表中可知，无法在Cache中问到该单元的数据。",
+    "step_7": "判断可以在Cache中访问到（命中）。对于地址7F0057H，地址展开为：即为111111100000000001010b。表示第0组Cache是否有1111110标记。据表可知，可在Cache中访问到该单元数据。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 51.5,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 56.5,
+            "confidence": 0.9462769627571106
+          },
+          {
+            "text": "(21",
+            "x_center": 519.0,
+            "confidence": 0.8564252257347107
+          },
+          {
+            "text": "地址为2D07FFH时",
+            "x_center": 694.0,
+            "confidence": 0.9051830768585205
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 117.75,
+        "cells_left_to_right": [
+          {
+            "text": "Cache块2k3=2\"1B3",
+            "x_center": 240.0,
+            "confidence": 0.7990216016769409
+          },
+          {
+            "text": "即为0/0110|0000011111…1",
+            "x_center": 745.0,
+            "confidence": 0.7866858243942261
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 183.67,
+        "cells_left_to_right": [
+          {
+            "text": "Cache有32块，每2块为一组",
+            "x_center": 275.5,
+            "confidence": 0.9139503240585327
+          },
+          {
+            "text": "表示第0组Cache是不有",
+            "x_center": 705.5,
+            "confidence": 0.9418971538543701
+          },
+          {
+            "text": "01011010标记，根据表中可",
+            "x_center": 747.0,
+            "confidence": 0.973214864730835
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 246.83,
+        "cells_left_to_right": [
+          {
+            "text": "共有16=24组",
+            "x_center": 194.0,
+            "confidence": 0.8797329664230347
+          },
+          {
+            "text": "11位",
+            "x_center": 469.5,
+            "confidence": 0.992863118648529
+          },
+          {
+            "text": "知.无法在Cache中纺",
+            "x_center": 749.0,
+            "confidence": 0.8946280479431152
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 291.5,
+        "cells_left_to_right": [
+          {
+            "text": "故组号为4位，块内地址=",
+            "x_center": 299.0,
+            "confidence": 0.9011154770851135
+          },
+          {
+            "text": "问到该单元的数据。",
+            "x_center": 693.5,
+            "confidence": 0.907235860824585
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 340.0,
+        "cells_left_to_right": [
+          {
+            "text": "故CaChe 各字段表示为：",
+            "x_center": 185.5,
+            "confidence": 0.8973730802536011
+          },
+          {
+            "text": "地址为7F0057+1时",
+            "x_center": 691.0,
+            "confidence": 0.9413217902183533
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 391.12,
+        "cells_left_to_right": [
+          {
+            "text": "组号字段",
+            "x_center": 184.0,
+            "confidence": 0.8458319306373596
+          },
+          {
+            "text": "块内地址字段",
+            "x_center": 400.0,
+            "confidence": 0.8883033394813538
+          },
+          {
+            "text": "即为111111100000000001010",
+            "x_center": 744.5,
+            "confidence": 0.9148010611534119
+          },
+          {
+            "text": "b",
+            "x_center": 937.0,
+            "confidence": 0.9969033598899841
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 442.33,
+        "cells_left_to_right": [
+          {
+            "text": "4位",
+            "x_center": 189.0,
+            "confidence": 0.9120217561721802
+          },
+          {
+            "text": "11位",
+            "x_center": 405.0,
+            "confidence": 0.9710404276847839
+          },
+          {
+            "text": "表示第0组Cache是否有1111110",
+            "x_center": 737.5,
+            "confidence": 0.9337846636772156
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 486.75,
+        "cells_left_to_right": [
+          {
+            "text": "主存各学段表示为",
+            "x_center": 170.0,
+            "confidence": 0.8577367663383484
+          },
+          {
+            "text": "标亿.据表可知，可在 Cache中",
+            "x_center": 746.0,
+            "confidence": 0.8566254377365112
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 534.62,
+        "cells_left_to_right": [
+          {
+            "text": "主存决标记字段",
+            "x_center": 186.0,
+            "confidence": 0.9430845975875854
+          },
+          {
+            "text": "徒号字段",
+            "x_center": 380.0,
+            "confidence": 0.6279894113540649
+          },
+          {
+            "text": "决内地证学段",
+            "x_center": 568.0,
+            "confidence": 0.7061317563056946
+          },
+          {
+            "text": "访问到该单元半据",
+            "x_center": 798.0,
+            "confidence": 0.848220705986023
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 581.83,
+        "cells_left_to_right": [
+          {
+            "text": "8位",
+            "x_center": 179.5,
+            "confidence": 0.8213680982589722
+          },
+          {
+            "text": "4位",
+            "x_center": 380.5,
+            "confidence": 0.9546399116516113
+          },
+          {
+            "text": "11位",
+            "x_center": 556.5,
+            "confidence": 0.8524019122123718
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=56.5: 2. （20分） | x=519.0: (21 | x=694.0: 地址为2D07FFH时\nRow 2: x=240.0: Cache块2k3=2\"1B3 | x=745.0: 即为0/0110|0000011111…1\nRow 3: x=275.5: Cache有32块，每2块为一组 | x=705.5: 表示第0组Cache是不有 | x=747.0: 01011010标记，根据表中可\nRow 4: x=194.0: 共有16=24组 | x=469.5: 11位 | x=749.0: 知.无法在Cache中纺\nRow 5: x=299.0: 故组号为4位，块内地址= | x=693.5: 问到该单元的数据。\nRow 6: x=185.5: 故CaChe 各字段表示为： | x=691.0: 地址为7F0057+1时\nRow 7: x=184.0: 组号字段 | x=400.0: 块内地址字段 | x=744.5: 即为111111100000000001010 | x=937.0: b\nRow 8: x=189.0: 4位 | x=405.0: 11位 | x=737.5: 表示第0组Cache是否有1111110\nRow 9: x=170.0: 主存各学段表示为 | x=746.0: 标亿.据表可知，可在 Cache中\nRow 10: x=186.0: 主存决标记字段 | x=380.0: 徒号字段 | x=568.0: 决内地证学段 | x=798.0: 访问到该单元半据\nRow 11: x=179.5: 8位 | x=380.5: 4位 | x=556.5: 11位"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "23位",
+    "step_2": "11位",
+    "step_3": "4位",
+    "step_4": "主存块标记字段  组号字段  块内地址字段\n8位  4位  11位",
+    "step_5": "组号字段  块内地址字段\n4位  11位",
+    "step_6": "地址为2D07FFH时 即为010110|00000111111111b 表示第0组 Cache是否有010110标记，根据表可知，没有该元素在Cache中访问到该单元无数据。",
+    "step_7": "地址为7F0057H时 即为111111|000000000001010111b 表示第0组 Cache是否有1111110标记，根据表可知，可在Cache中访问到该单元无数据。"
+  },
+  "facts": {
+    "step_1": "主存为8MB=2²³B",
+    "step_2": "Cache每块2KB=2¹¹B；块内地址11位",
+    "step_3": "Cache有32块，每2块一组；共有16组=2⁴组；故组号为4位",
+    "step_4": "主存字段表示为：\n主存标记字段 组号字段 块内地址字段\n8位 4位 11位",
+    "step_5": "故Cache各字段表示为：\n组号字段 块内地址字段\n4位 11位",
+    "step_6": "地址为2D07FFFH时\n即为0101 1010 0000 0111 1111 1111b\n表示第0组 Cache是否有01011010 标记，根据表可知，无法在Cache中访问到该单元不命中。",
+    "step_7": "地址为7F0057H时\n即为1111 1110 0000 0000 0101 0111b\n表示第0组 Cache是否有1111 1110标记，根据表可知，在Cache中访问到该单元命中。"
+  }
+}

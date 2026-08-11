@@ -1,0 +1,91 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T21:27:50.483757",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_21.jpg",
+  "image_sha256": "49fd05d6aa7071dd12437d8c03973f48a86823a30207176f42154b2d86bc6335",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_21.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 4,
+    "accepted_token_count": 4,
+    "mean_confidence": 0.95194,
+    "min_confidence": 0.5,
+    "joined_text": "16. 解：(1)\n(2) 极大元为24,54，极小元为1\n(3) 最大元不存在，最小元为 1<上界不存在，下界为1，故.\n(4)B={4,6,9}的最小上界不存在，最大下界为1",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.039484,
+      "very_dark_pixel_ratio": 0.024222,
+      "lower_region_dark_pixel_ratio": 0.039164,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)如图所示\n(2)极大元为24,54，极小元为1\n(3)最大元不存在，最小元为1，上界不存在，下界为1，故\n(4)B={4,6,9}的最小上界不存在，最大下界为1",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_21",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "1在最底层，向上连接2和3；2向上连接4和6，3向上连接6和9；4向上连接24，6向上连接24和54，9向上连接54",
+  "diagram_facts": {
+    "step_1": "哈斯图包含节点1、2、3、4、6、9、24、54及连接这些节点的边，边表示整除关系，垂直方向体现偏序层级；完整可见路径：1在最底层，向上连接2和3；2向上连接4和6，3向上连接6和9；4向上连接24，6向上连接24和54，9向上连接54",
+    "step_4": "B={4,6,9}的最小上界不存在，最大下界为1；完整可见路径：1在最底层，向上连接2和3；2向上连接4和6，3向上连接6和9；4向上连接24，6向上连接24和54，9向上连接54"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's drawn Hasse diagram for the poset exactly as it appears in the image. Preserve all nodes, labels, edges, and the vertical/hierarchical direction of the relations as drawn."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete numbers or mathematical expressions the student wrote for the least upper bound (最小上界) and greatest lower bound (最大下界) of subset B. If the student explicitly wrote that a bound does not exist, transcribe that statement."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "手绘的哈斯图，节点1在底部，连接2和3；2连接4和6；3连接6和9；4连接24；6连接24和54；9连接54",
+    "step_2": "极大元为24,54，极小元为1",
+    "step_3": "最大元不存在，最小元为1",
+    "step_4": "B={4,6,9}的最小上界不存在，最大下界为1"
+  },
+  "facts": {
+    "step_1": "哈斯图包含节点1、2、3、4、6、9、24、54及连接这些节点的边，边表示整除关系，垂直方向体现偏序层级；完整可见路径：1在最底层，向上连接2和3；2向上连接4和6，3向上连接6和9；4向上连接24，6向上连接24和54，9向上连接54",
+    "step_2": "极大元为24,54，极小元为1",
+    "step_3": "最大元不存在，最小元为1，上界不存在，下界为1，故",
+    "step_4": "B={4,6,9}的最小上界不存在，最大下界为1"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T07:04:30.535104",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_418.jpg",
+  "image_sha256": "26fbf4d74d973ca179d4c4f077034d64408f6432ad6c97cb9da6008f248cd38d",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "#include <stdio.h>\nint main()\n{\nint a[5][5], b[5][5];\nfor(int i = 0; i < 5; i++) // 输入a数组\n    for(int j = 0; j < 5; j++)\n        scanf('%d', &a[i][j]);\nfor(int i = 0; i < 5; i++) // 转置矩阵\n    for(int j = 0; j < 5; j++)\n        b[j][i] = a[i][j];\nFILE* fp;\nif((fp = fopen('matrix.txt', 'wb')) ==NULL)\n{\n    perror('输入错误');\n    return 1;\n}\nfor(int i = 0; i < 5; i++)\n{\n    fwrite(b[i], sizeof(int), 5, fp); // 按行输入;\n    fputc('\\n');//换行\n}\nfclose(fp); // 关闭文件\nreturn 0;\n}",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CPL_418",
+    "question_id": "CPL_7",
+    "subject": "CPL",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "for(int i = 0; i < 5; i++) // 输入a数组\n    for(int j = 0; j < 5; j++)\n        scanf('%d', &a[i][j]);\nfor(int i = 0; i < 5; i++) // 转置矩阵\n    for(int j = 0; j < 5; j++)\n        b[j][i] = a[i][j];\nfor(int i = 0; i < 5; i++)\n{\n    fwrite(b[i], sizeof(int), 5, fp); // 按行输入;\n    fputc('\\n');//换行\n}",
+    "step_2": "FILE* fp;\nif((fp = fopen('matrix.txt', 'wb')) ==NULL)\n{\n    perror('输入错误');\n    return 1;\n}\nfwrite(b[i], sizeof(int), 5, fp); // 按行输入;\nfputc('\\n');//换行\nfclose(fp); // 关闭文件",
+    "step_3": "int a[5][5], b[5][5];\nb[j][i] = a[i][j];"
+  }
+}

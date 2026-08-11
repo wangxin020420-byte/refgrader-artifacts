@@ -1,0 +1,178 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T00:34:10.719860",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_2/ANS_CO_523.jpg",
+  "image_sha256": "8dc9e3a4fccf1ca94d8495847e5fa595b945031112b8ce1049cdbace9f2f22d6",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_2/ANS_CO_523.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 9,
+    "accepted_token_count": 9,
+    "mean_confidence": 0.907543,
+    "min_confidence": 0.5,
+    "joined_text": "2. （20分）\n(1) 中断处理优先级：A>1)>C>E>13\n00010\n00100\nA级10000D级01000 C级0E级 3级0000\n服务程序\nEDCBA\n→t\n用户程房",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.045265,
+      "very_dark_pixel_ratio": 0.031679,
+      "lower_region_dark_pixel_ratio": 0.04051,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "（1）画出处理优先级：A > D > C > E > B\n慢 A级 10000 D级01000 C级00100 E级00010 B级00001\n(2)如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_523",
+    "question_id": "CO_2",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": "A>1)>C>E>13"
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the exact sequence of letters written by the student for the interrupt processing priority. Preserve any arrows, dots, order, and direction exactly as written by the student."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 76.12,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 52.5,
+            "confidence": 0.9459972381591797
+          },
+          {
+            "text": "(1) 中断处理优先级：A>1)>C>E>13",
+            "x_center": 207.0,
+            "confidence": 0.9059591889381409
+          },
+          {
+            "text": "00100",
+            "x_center": 461.0,
+            "confidence": 0.9947296380996704
+          },
+          {
+            "text": "00010",
+            "x_center": 608.5,
+            "confidence": 0.9889445304870605
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 123.5,
+        "cells_left_to_right": [
+          {
+            "text": "A级10000D级01000 C级0E级 3级0000",
+            "x_center": 420.0,
+            "confidence": 0.8853541612625122
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 176.5,
+        "cells_left_to_right": [
+          {
+            "text": "服务程序",
+            "x_center": 75.0,
+            "confidence": 0.7596879005432129
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 338.0,
+        "cells_left_to_right": [
+          {
+            "text": "EDCBA",
+            "x_center": 21.5,
+            "confidence": 0.9191263318061829
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 439.0,
+        "cells_left_to_right": [
+          {
+            "text": "用户程房",
+            "x_center": 71.5,
+            "confidence": 0.8975324034690857
+          },
+          {
+            "text": "→t",
+            "x_center": 628.5,
+            "confidence": 0.8705548048019409
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=52.5: 2. （20分） | x=207.0: (1) 中断处理优先级：A>1)>C>E>13 | x=461.0: 00100 | x=608.5: 00010\nRow 2: x=420.0: A级10000D级01000 C级0E级 3级0000\nRow 3: x=75.0: 服务程序\nRow 4: x=21.5: EDCBA\nRow 5: x=71.5: 用户程房 | x=628.5: →t"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "用户程序（A水平）→ 上升至C（实线平台）→ 上升至D（虚线平台）→ 下降至C（实线平台）→ 上升至E（虚线平台）→ 下降至B（实线平台）",
+  "diagram_facts": {
+    "step_7": "阶梯图展示CPU执行程序和处理中断的顺序，包含A→C→D→C→E→B的路径（通过实线与虚线平台及上升/下降段体现）；完整可见路径：用户程序（A水平）→ 上升至C（实线平台）→ 上升至D（虚线平台）→ 下降至C（实线平台）→ 上升至E（虚线平台）→ 下降至B（实线平台）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_7",
+      "instruction": "Extract the concrete handwritten diagram relations drawn by the student for the CPU execution and interrupt processing sequence. Capture all components, labels, directional arrows, and branching structures exactly as represented."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "A > D > C > E > B",
+    "step_2": "10000",
+    "step_3": "00001",
+    "step_4": "00100",
+    "step_5": "01000",
+    "step_6": "00010",
+    "step_7": "用户程序\n        ↑\n        E\n        D\n        C\n        B\n        A\n        ─────────────→ t\n        服务程序"
+  },
+  "facts": {
+    "step_1": "A > D > C > E > B",
+    "step_2": "10000",
+    "step_3": "00001",
+    "step_4": "00100",
+    "step_5": "01000",
+    "step_6": "00010",
+    "step_7": "阶梯图展示CPU执行程序和处理中断的顺序，包含A→C→D→C→E→B的路径（通过实线与虚线平台及上升/下降段体现）；完整可见路径：用户程序（A水平）→ 上升至C（实线平台）→ 上升至D（虚线平台）→ 下降至C（实线平台）→ 上升至E（虚线平台）→ 下降至B（实线平台）"
+  }
+}

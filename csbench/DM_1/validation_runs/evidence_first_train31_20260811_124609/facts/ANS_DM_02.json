@@ -1,0 +1,96 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T22:05:26.770631",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_02.jpg",
+  "image_sha256": "f2509c1ad8c934c0c3f3c8fde22ada28f1d253fc19fdfe5a78be1233c4014bb0",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_02.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 21,
+    "accepted_token_count": 21,
+    "mean_confidence": 0.970577,
+    "min_confidence": 0.5,
+    "joined_text": "16.\n解：(1) 如图\n24\n54\n0\n0\n40\n0\n6\n0\n9\n0\n2\n(2) A的极大元为 24和54\nA的极小元为1\n(3) A的最大元不存在，因为极大元有两个\nA的最小元为1，因为极小元唯一且为1。\n(4) A的子集B={4，6，9} R为整除关系\n易得\n最大下界为1\n最小上界为36",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.031278,
+      "very_dark_pixel_ratio": 0.019659,
+      "lower_region_dark_pixel_ratio": 0.031618,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) 如图所示\n(2) A的极大元为24和54 A的极小元为1\n(3) A的最大元不存在，因为极大元有两个 A的最小元为1，因为极小元唯一且为1。\n(4) A的子集B={4,6,9} R为整除关系 易得 最大下界为1 最小上界为36",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_02",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "1 → 2, 1 → 3; 2 → 4, 2 → 6; 3 → 6, 3 → 9; 4 → 24, 6 → 24, 6 → 54, 9 → 54",
+  "diagram_facts": {
+    "step_1": "Hasse diagram with vertices 1, 2, 3, 4, 6, 9, 24, 54 and directed edges as described in the observed execution path；完整可见路径：1 → 2, 1 → 3; 2 → 4, 2 → 6; 3 → 6, 3 → 9; 4 → 24, 6 → 24, 6 → 54, 9 → 54"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten Hasse diagram for this item. Capture all vertices and edges exactly as drawn, preserving the structural relations, directionality, and any labels."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2_1",
+    "step_2_2",
+    "step_3_1",
+    "step_3_2",
+    "step_4_1",
+    "step_4_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "1 - 2 - 4 - 24；1 - 3 - 9 - 54；4 - 6 - 24；6 - 54；9 - 54",
+    "step_2_1": "24和54",
+    "step_2_2": "1",
+    "step_3_1": "不存在，因为极大元有两个",
+    "step_3_2": "1，因为极小元唯一且为1",
+    "step_4_1": "36",
+    "step_4_2": "1"
+  },
+  "facts": {
+    "step_1": "Hasse diagram with vertices 1, 2, 3, 4, 6, 9, 24, 54 and directed edges as described in the observed execution path；完整可见路径：1 → 2, 1 → 3; 2 → 4, 2 → 6; 3 → 6, 3 → 9; 4 → 24, 6 → 24, 6 → 54, 9 → 54",
+    "step_2_1": "A的极大元为24和54",
+    "step_2_2": "A的极小元为1",
+    "step_3_1": "A的最大元不存在，因为极大元有两个",
+    "step_3_2": "A的最小元为1，因为极小元唯一且为1。",
+    "step_4_1": "最小上界为36",
+    "step_4_2": "最大下界为1"
+  }
+}

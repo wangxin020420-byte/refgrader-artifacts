@@ -1,0 +1,49 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:01:08.741359",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_207.png",
+  "image_sha256": "716cd7816de34e8e7a5be7134b3711e6979aefc6fbd55a3d63cc4f98652f6a20",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "[x]补=36H=0011 0110B [y]补=01010100\n[z]补=11010101 [-｜y｜]补=10101100\n[x-y]补=[x]补+[-｜y｜]补=1110 0010\n[x-2y]补=[x]补+[-｜y｜]补+[-｜y｜]补=10001110B=8EH\n没有溢出，0F=0\nx÷4=00110110÷0100 都为正数，可用原码一位除，符号位为0\n向零取整 x÷4=00001101B=>[x÷4]补=00001101\n[x÷4]补+[z]补=11100010\n[x÷4]补+2[z]补，用双符号位，得11 0110111\n符号位相同=>不溢出=>[x÷4]补+[2z]补=(10110111)B= B5H\n0F=0",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_207",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": {
+      "values": "[x]补=36H=0011 0110B；[y]补=01010100；[-｜y｜]补=10101100；[x-y]补=1110 0010；[x-2y]补=10001110B=8EH",
+      "formula_or_trace": "[x-y]补=[x]补+[-｜y｜]补；[x-2y]补=[x]补+[-｜y｜]补+[-｜y｜]补",
+      "overflow_judgment": "没有溢出，0F=0"
+    },
+    "step_2": {
+      "values": "x÷4=00110110÷0100；向零取整 x÷4=00001101B=>[x÷4]补=00001101；[x÷4]补+[z]补=11100010；用双符号位，得11 0110111；[x÷4]补+[2z]补=(10110111)B= B5H",
+      "formula_or_trace": "x÷4=00110110÷0100，都为正数，可用原码一位除，符号位为0；[x÷4]补+[z]补=11100010；[x÷4]补+2[z]补，用双符号位，得11 0110117",
+      "overflow_judgment": "符号位相同=>不溢出；0F=0"
+    }
+  }
+}

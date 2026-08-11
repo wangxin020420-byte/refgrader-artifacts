@@ -1,0 +1,63 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-08-11T13:25:36.159286",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_230.png",
+  "image_sha256": "2396628913764c4055b3959fc748c658fd049a33d37aa461f32c7d31e17fc503",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "X:16H\n补:0011 00110\nY:54H\n补:0101 0100\nZ:D5H\n补:1101 0101\n-y:10101100\nX-2Y = X-Y -Y\n= 10001110 = 8EH\nOF=1\nX÷4右移2位\n0000 1101  \n+ 1101 0101\n1110 0010  \n11 01 0101\n10 11 0111\nD7H\nOF=1",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_230",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": {
+      "initial_values": [
+        "X:16H",
+        "补:0011 00110",
+        "Y:54H",
+        "补:0101 0100",
+        "Z:D5H",
+        "补:1101 0101",
+        "-y:10101100"
+      ],
+      "computation_trace": "X-2Y = X-Y -Y = 10001110",
+      "result_string": "10001110 = 8EH",
+      "overflow_judgment": "OF=1"
+    },
+    "step_2": {
+      "initial_values": [
+        "X÷4右移2位",
+        "11 01 0101"
+      ],
+      "computation_trace": "0000 1101 + 1101 0101 = 1110 0010; 11 01 0101 -> 10 11 0111",
+      "result_string": "D7H",
+      "overflow_judgment": "OF=1"
+    }
+  }
+}

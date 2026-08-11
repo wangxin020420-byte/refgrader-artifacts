@@ -1,0 +1,91 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T22:36:15.836412",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_48.jpg",
+  "image_sha256": "2acf1e241ef6a6fd8e1cdac954aed46d4455783ec4a546a5251302967818bcaf",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_48.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 12,
+    "accepted_token_count": 12,
+    "mean_confidence": 0.980112,
+    "min_confidence": 0.5,
+    "joined_text": "16.\n解：(1). 哈斯图如下：\n54\n24\n3\n(2). 木及大元：24.54.\n木及小元.1.\n最大元：不存在\n(3)\n最小元：1.\n(4) 最大下界：\n最小上界：36",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "multiple_confident_ocr_tokens",
+      "dark_pixel_ratio": 0.031542,
+      "very_dark_pixel_ratio": 0.019044,
+      "lower_region_dark_pixel_ratio": 0.027637,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1)如图所示\n2). 极大元：24.54.;极小元：1.\n3). 最大元：不存在;最小元：1.\n4). 最大下界：1;最小上界：36.",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_48",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "哈斯图呈层级结构，底层节点为1，中间层节点为3、2，上层节点为9、6、4，顶层节点为24、54；边连接关系为1→3、1→2，3→9、3→6，2→4、2→6，6→24、6→54，9→54",
+  "diagram_facts": {
+    "step_1": "哈斯图结构：底层1，中间层3、2，上层9、6、4，顶层24、54；边连接1-3、1-2，3-9、3-6，2-4、2-6，6-24、6-54，9-54；完整可见路径：哈斯图呈层级结构，底层节点为1，中间层节点为3、2，上层节点为9、6、4，顶层节点为24、54；边连接关系为1→3、1→2，3→9、3→6，2→4、2→6，6→24、6→54，9→54"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten Hasse diagram for this item. Capture all vertices and edges exactly as drawn, preserving the structural relations, directionality, and any labels."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2_1"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "1在最下方，向上连接2和3；2连接4和6；3连接6和9；4连接24；6连接24和54；9连接54",
+    "step_2_1": "24,54",
+    "step_2_2": "1",
+    "step_3_1": "不存在",
+    "step_3_2": "1",
+    "step_4_1": "36",
+    "step_4_2": "1"
+  },
+  "facts": {
+    "step_1": "哈斯图结构：底层1，中间层3、2，上层9、6、4，顶层24、54；边连接1-3、1-2，3-9、3-6，2-4、2-6，6-24、6-54，9-54；完整可见路径：哈斯图呈层级结构，底层节点为1，中间层节点为3、2，上层节点为9、6、4，顶层节点为24、54；边连接关系为1→3、1→2，3→9、3→6，2→4、2→6，6→24、6→54，9→54",
+    "step_2_1": "24, 54",
+    "step_2_2": "1",
+    "step_3_1": "不存在",
+    "step_3_2": "1",
+    "step_4_1": "36",
+    "step_4_2": "1"
+  }
+}

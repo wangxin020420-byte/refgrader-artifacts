@@ -1,0 +1,42 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T07:03:43.919892",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_415.jpg",
+  "image_sha256": "c6768c0284a5fad997d225ef7cb36ee2d3847f229124c4f1b78ac49a8b49043e",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "#include <stdio.h>\n#include <stdlib.h>\nint main(){\nint a[5][5], b[5][5], i=0, j=0;\nFILE *pf;\npf = fopen('matrix.txt', 'w\nfor(i=0; i<5; i++){ //输入矩阵\nfor(j=0; j<5; j++){ \nscanf('%d', &a[i][j]);\n}}\nfor(i=0; i<5; i++)//计算转置矩阵\n{ \nfor(j=0; j<5; j++)\n{ \nb[i][j] = a[j][i];\nfprintf(pf, '%d', b[i][j]);  //将转置矩阵存入文件文本\n}\nfputc('\\n', pf);  //分行存入\n}fclose(pf);\nreturn 0;}",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CPL_415",
+    "question_id": "CPL_7",
+    "subject": "CPL",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "输入矩阵: for(i=0; i<5; i++){ for(j=0; j<5; j++){ scanf('%d', &a[i][j]); }} \n转置矩阵循环输出: for(i=0; i<5; i++) { for(j=0; j<5; j++) { fprintf(pf, '%d', b[i][j]); } fputc('\\n', pf); }",
+    "step_2": "FILE *pf;\npf = fopen('matrix.txt', 'w\nfclose(pf);",
+    "step_3": "int a[5][5], b[5][5], i=0, j=0;\nb[i][j] = a[j][i];"
+  }
+}

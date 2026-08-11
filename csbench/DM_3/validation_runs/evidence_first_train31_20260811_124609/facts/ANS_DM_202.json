@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T23:27:56.270244",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_202.jpg",
+  "image_sha256": "06d59e93afe90974b80b92f5996eb3abef44ec8566cdb4a3d01dec71517cb16c",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：由题得谓词公式如下：\n∀x(A(x)→B(x)∨C(x))\n∀x(A(x)∧B(x)→D(x))\n∃x(A(x)∧¬D(x))\n⇒ ∃x(A(x)∧C(x))\n有如下推理：\n1 ∃x(A(x)∧¬D(x)) P\n2 A(y)∧¬D(y) T,1,ES\n3 A(y) T,2,I\n4 ∀x(A(x)→B(x)∨C(x)) P\n5 A(y)→B(y)∨C(y) T,4,US\n6 ∀x(A(x)∧B(x)→D(x)) P\n7 A(y)∧B(y)→D(y) T,6,US\n8 B(y)∨C(y) T,3,5\n9 ¬D(y) T,2,5\n10 ¬(A(y)∧B(y)) T,9,7.\n11 ¬A(y)∨¬B(y) T,10\n12 ¬B(y) T,11,3,合取\n13 C(y) T,12,8,合取\n14 A(y)∧C(y) T,13,3,合取\n15 ∃x(A(x)∧C(x)) T,14,EG\n故得证",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_202",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "∀x(A(x)→B(x)∨C(x))\n∀x(A(x)∧B(x)→D(x))\n∃x(A(x)∧¬D(x))\n⇒ ∃x(A(x)∧C(x))",
+    "step_2_a": "1 ∃x(A(x)∧¬D(x)) P\n2 A(y)∧¬D(y) T,1,ES\n3 A(y) T,2,I",
+    "step_2_b": "4 ∀x(A(x)→B(x)∨C(x)) P\n5 A(y)→B(y)∨C(y) T,4,US\n6 ∀x(A(x)∧B(x)→D(x)) P\n7 A(y)∧B(y)→D(y) T,6,US\n8 B(y)∨C(y) T,3,5\n9 ¬D(y) T,2,5\n10 ¬(A(y)∧B(y)) T,9,7.\n11 ¬A(y)∨¬B(y) T,10\n12 ¬B(y) T,11,3,合取\n13 C(y) T,12,8,合取\n14 A(y)∧C(y) T,13,3,合取",
+    "step_2_c": "15 ∃x(A(x)∧C(x)) T,14,EG"
+  }
+}

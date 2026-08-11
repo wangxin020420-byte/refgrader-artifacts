@@ -1,0 +1,423 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:09:55.555411",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_255.png",
+  "image_sha256": "041b3e6078b32fa5f5de8120dbd04a8fddb8c52fed956a85e644c0a61d5d861c",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_3/ANS_CO_255.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 50,
+    "accepted_token_count": 49,
+    "mean_confidence": 0.953033,
+    "min_confidence": 0.5,
+    "joined_text": "00110\n1111 0000\n0110\n1. （10分）\n←11100000\n00/10116\n[-y]10101100.\n+ 1000000\n+01000000\n1111/0110\n000%\n00100000\n1101\n00110110\n01000000\n+10101100\n00110110\n0001\n00001101\n11100010\n+011000000\n+11010101\n+10101100\n1100010\n00110110\n+11010101\n10001110\n+ 1100 0000\n10.110111\n+4\n11110110\n∴x-2y的补码结果为8EH,\n←11101100\n(x÷4)+22的补码结果为\n+01000000\n结果未发生溢出.\n0001\nB7，结果未发生溢出.\n00101100\n[×]=00110110[-x]补=110010+0\n←01011000\n+5\n+11000000\n[4]补=0100[-4]补=1100]\n00011000 0011\n←00110000\n+11000000\n11110000\n0110",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.077562,
+      "very_dark_pixel_ratio": 0.043664,
+      "lower_region_dark_pixel_ratio": 0.076992,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "[-y]补=10101100.\n加法如图所示\n∴X-2y的补码结果为8EH,\n结果未发生溢出.\n[4]补=0100 [-4]补=1100\n加法如图所示\n(x÷4)+2乙的补码结果为\nB7,结果未发生溢出.",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_255",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": "学生可见的手写计算 x - 2y 的内容提取如下：\n1. 基础补码转换与提取：\n- [x]=00110110，[-x]补=11001010\n- [y]=00110110，1111/0110，[-y]补=10101100\n2. 计算过程：\n- 使用公式：00110110 + 10101100\n- 加法运算迹（包含进位标注）：\n  + 1000000（进位串）\n  00110110\n+ 10101100\n= 11100010\n3. 随后可见疑似针对此步的重新或延续计算（将x的补码加上2y的数值位01000000）：\n  00110110\n+ 01000000\n= 10001110\n4. 结论与判断：\n- 最终结论写道：“∴x-2y的补码结果为8EH，结果未发生溢出。”",
+    "step_2": "学生可见的手写计算 (x ÷ 4) + 2z 的内容提取如下：\n1. 中间值准备：\n- 写出了除以4的等价转换：[4]补=0100，[-4]补=1100\n- 针对 x ÷ 4 进行了二进制移位或相关运算（行迹包含：←01011000、00101100、←00110000 等）\n- 计算了 2z 的相关加法行迹（带有进位标记 + 1000000）：\n  00001101\n+ 01000000\n- 针对除法计算有算式过程：\n  00110110\n+ 11000000\n  11110000\n2. 加法合并过程迹：\n- 结合 2z 的值 (+11010101) 进行运算，行迹中显示：\n  10.110111\n+ 01000000\n- 另一组相关加法行迹为：\n  11110110\n+ 11010101\n  1100010\n3. 结论与判断：\n- 写出最终结论式：“(x÷4)+22的补码结果为B7，结果未发生溢出。”（注： OCR识别为“22”，实际手写意图应为2z）"
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten content for the computation of x - 2y. Ask for the hexadecimal or binary values written, ensuring leading zeros, suffixes (like H), grouping, and separators are preserved exactly. Additionally, extract the specific formula, substitution relation, or computation trace used, as well as any written judgment word or conclusion regarding overflow (e.g., whether a carry/borrow or overflow flag is mentioned)."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's concrete handwritten content for the computation of (x ÷ 4) + 2z. Ask for the hexadecimal or binary values written, ensuring leading zeros, suffixes (like H), grouping, and separators are preserved exactly. Additionally, extract the specific formula, substitution relation, or computation trace used, as well as any written judgment word or conclusion regarding whether an overflow occurred."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 39.4,
+        "cells_left_to_right": [
+          {
+            "text": "1. （10分）",
+            "x_center": 59.5,
+            "confidence": 0.9644399881362915
+          },
+          {
+            "text": "00110",
+            "x_center": 446.5,
+            "confidence": 0.6642429232597351
+          },
+          {
+            "text": "←11100000",
+            "x_center": 754.0,
+            "confidence": 0.9839789271354675
+          },
+          {
+            "text": "1111 0000",
+            "x_center": 766.0,
+            "confidence": 0.9696077704429626
+          },
+          {
+            "text": "0110",
+            "x_center": 894.0,
+            "confidence": 0.9998542666435242
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 83.7,
+        "cells_left_to_right": [
+          {
+            "text": "[-y]10101100.",
+            "x_center": 140.5,
+            "confidence": 0.8821974396705627
+          },
+          {
+            "text": "+ 1000000",
+            "x_center": 453.0,
+            "confidence": 0.9149734973907471
+          },
+          {
+            "text": "00/10116",
+            "x_center": 464.5,
+            "confidence": 0.8682551383972168
+          },
+          {
+            "text": "00",
+            "x_center": 559.0,
+            "confidence": 0.4958903193473816
+          },
+          {
+            "text": "+01000000",
+            "x_center": 756.0,
+            "confidence": 0.995611310005188
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 130.9,
+        "cells_left_to_right": [
+          {
+            "text": "00110110",
+            "x_center": 164.5,
+            "confidence": 0.9998961687088013
+          },
+          {
+            "text": "1111/0110",
+            "x_center": 466.0,
+            "confidence": 0.8883683681488037
+          },
+          {
+            "text": "000%",
+            "x_center": 569.0,
+            "confidence": 0.8688720464706421
+          },
+          {
+            "text": "00100000",
+            "x_center": 770.5,
+            "confidence": 0.9942125082015991
+          },
+          {
+            "text": "1101",
+            "x_center": 892.5,
+            "confidence": 0.9864662885665894
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 185.2,
+        "cells_left_to_right": [
+          {
+            "text": "+10101100",
+            "x_center": 156.5,
+            "confidence": 0.9906613230705261
+          },
+          {
+            "text": "01000000",
+            "x_center": 463.5,
+            "confidence": 0.9824470281600952
+          },
+          {
+            "text": "00110110",
+            "x_center": 465.0,
+            "confidence": 0.9588921070098877
+          },
+          {
+            "text": "0001",
+            "x_center": 560.5,
+            "confidence": 0.8723692297935486
+          },
+          {
+            "text": "00001101",
+            "x_center": 788.5,
+            "confidence": 0.9999125003814697
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 231.5,
+        "cells_left_to_right": [
+          {
+            "text": "11100010",
+            "x_center": 170.0,
+            "confidence": 0.9993076324462891
+          },
+          {
+            "text": "+011000000",
+            "x_center": 456.0,
+            "confidence": 0.9750483632087708
+          },
+          {
+            "text": "+11010101",
+            "x_center": 776.0,
+            "confidence": 0.9932151436805725
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 287.5,
+        "cells_left_to_right": [
+          {
+            "text": "+10101100",
+            "x_center": 158.5,
+            "confidence": 0.9985173344612122
+          },
+          {
+            "text": "00110110",
+            "x_center": 476.0,
+            "confidence": 0.9997531771659851
+          },
+          {
+            "text": "+11010101",
+            "x_center": 775.5,
+            "confidence": 0.9858094453811646
+          },
+          {
+            "text": "1100010",
+            "x_center": 787.0,
+            "confidence": 0.931056022644043
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 350.5,
+        "cells_left_to_right": [
+          {
+            "text": "10001110",
+            "x_center": 168.0,
+            "confidence": 0.9934638738632202
+          },
+          {
+            "text": "+4",
+            "x_center": 314.0,
+            "confidence": 0.9545080661773682
+          },
+          {
+            "text": "+ 1100 0000",
+            "x_center": 465.0,
+            "confidence": 0.9555631279945374
+          },
+          {
+            "text": "11110110",
+            "x_center": 479.0,
+            "confidence": 0.8989001512527466
+          },
+          {
+            "text": "10.110111",
+            "x_center": 791.5,
+            "confidence": 0.9279119968414307
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 409.5,
+        "cells_left_to_right": [
+          {
+            "text": "∴x-2y的补码结果为8EH,",
+            "x_center": 214.0,
+            "confidence": 0.9613561630249023
+          },
+          {
+            "text": "←11101100",
+            "x_center": 463.0,
+            "confidence": 0.9131417870521545
+          },
+          {
+            "text": "+01000000",
+            "x_center": 466.0,
+            "confidence": 0.9970528483390808
+          },
+          {
+            "text": "(x÷4)+22的补码结果为",
+            "x_center": 803.5,
+            "confidence": 0.963106095790863
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 464.0,
+        "cells_left_to_right": [
+          {
+            "text": "结果未发生溢出.",
+            "x_center": 175.5,
+            "confidence": 0.9607886075973511
+          },
+          {
+            "text": "←01011000",
+            "x_center": 467.0,
+            "confidence": 0.935455858707428
+          },
+          {
+            "text": "00101100",
+            "x_center": 481.5,
+            "confidence": 0.9631257057189941
+          },
+          {
+            "text": "0001",
+            "x_center": 615.5,
+            "confidence": 0.9999427199363708
+          },
+          {
+            "text": "B7，结果未发生溢出.",
+            "x_center": 805.5,
+            "confidence": 0.9423864483833313
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 498.25,
+        "cells_left_to_right": [
+          {
+            "text": "[×]=00110110[-x]补=110010+0",
+            "x_center": 255.5,
+            "confidence": 0.8428418636322021
+          },
+          {
+            "text": "+5",
+            "x_center": 785.0,
+            "confidence": 0.9952508211135864
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 532.0,
+        "cells_left_to_right": [
+          {
+            "text": "+11000000",
+            "x_center": 473.0,
+            "confidence": 0.9684293270111084
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 580.0,
+        "cells_left_to_right": [
+          {
+            "text": "[4]补=0100[-4]补=1100]",
+            "x_center": 246.0,
+            "confidence": 0.959941565990448
+          },
+          {
+            "text": "00011000 0011",
+            "x_center": 529.0,
+            "confidence": 0.9933383464813232
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 634.0,
+        "cells_left_to_right": [
+          {
+            "text": "+11000000",
+            "x_center": 458.5,
+            "confidence": 0.9131834506988525
+          },
+          {
+            "text": "←00110000",
+            "x_center": 473.0,
+            "confidence": 0.9979374408721924
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 677.25,
+        "cells_left_to_right": [
+          {
+            "text": "11110000",
+            "x_center": 488.5,
+            "confidence": 0.9939534664154053
+          },
+          {
+            "text": "0110",
+            "x_center": 602.5,
+            "confidence": 0.9990471601486206
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=59.5: 1. （10分） | x=446.5: 00110 | x=754.0: ←11100000 | x=766.0: 1111 0000 | x=894.0: 0110\nRow 2: x=140.5: [-y]10101100. | x=453.0: + 1000000 | x=464.5: 00/10116 | x=559.0: 00 | x=756.0: +01000000\nRow 3: x=164.5: 00110110 | x=466.0: 1111/0110 | x=569.0: 000% | x=770.5: 00100000 | x=892.5: 1101\nRow 4: x=156.5: +10101100 | x=463.5: 01000000 | x=465.0: 00110110 | x=560.5: 0001 | x=788.5: 00001101\nRow 5: x=170.0: 11100010 | x=456.0: +011000000 | x=776.0: +11010101\nRow 6: x=158.5: +10101100 | x=476.0: 00110110 | x=775.5: +11010101 | x=787.0: 1100010\nRow 7: x=168.0: 10001110 | x=314.0: +4 | x=465.0: + 1100 0000 | x=479.0: 11110110 | x=791.5: 10.110111\nRow 8: x=214.0: ∴x-2y的补码结果为8EH, | x=463.0: ←11101100 | x=466.0: +01000000 | x=803.5: (x÷4)+22的补码结果为\nRow 9: x=175.5: 结果未发生溢出. | x=467.0: ←01011000 | x=481.5: 00101100 | x=615.5: 0001 | x=805.5: B7，结果未发生溢出.\nRow 10: x=255.5: [×]=00110110[-x]补=110010+0 | x=785.0: +5\nRow 11: x=473.0: +11000000\nRow 12: x=246.0: [4]补=0100[-4]补=1100] | x=529.0: 00011000 0011\nRow 13: x=458.5: +11000000 | x=473.0: ←00110000\nRow 14: x=488.5: 11110000 | x=602.5: 0110"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "[ -y ]补 = 10101100.\n0011 0110\n+1010 1100\n--------\n1110 0010\n+1010 1100\n--------\n1000 1110\n∴X-2y的补码结果为8EH，结果未发生溢出.",
+    "step_2": "0000 1101\n+1101 0101\n--------\n1110 0010\n+1101 0101\n--------\n1011 0111\n(x÷4)+2z的补码结果为B7，结果未发生溢出."
+  },
+  "facts": {
+    "step_1": "[-y]补=10101100. 加法如图所示 ∴X-2y的补码结果为8EH, 结果未发生溢出.",
+    "step_2": "[4]补=0100 [-4]补=1100 加法如图所示 (x÷4)+2乙的补码结果为B7,结果未发生溢出. 加法部分：需要查看图像"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-08-11T13:25:16.808949",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_160.jpg",
+  "image_sha256": "99840248baa21d2dda08a692345343f3297b86a3d77dc609a929e5f772145ba6",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_3/ANS_CO_160.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 26,
+    "accepted_token_count": 25,
+    "mean_confidence": 0.904384,
+    "min_confidence": 0.5,
+    "joined_text": "1.(10分) X的补码:0011 0110\ny的补8.0101 0100. 7的补码：11010101\n计算x-2y 0 首先计算2y. 2的补码是000010\n设y为被乘数.2为乘数.采用加Booth算法\n0000 0000\n0010\n0辅助位\n十 0000 0000\n00010\n石移00000000\ny10101000\n故[2y]补=10101000[-2y]礼=010|1000\n1010000.\n+5\n符号位与最高数值位异或\n∴[x-2y]补:[X]补+E{2y]补=10001110=8EH OF=Cs C{4=1.\n∴溢出\n计算[x÷4]补=000001101\n11010101\n计算2Z.可视为[对]布+[2]1。11010101\n∴[2]补=10101010\n10101010\n+5\n∴[x÷4]补+[22]补=0000110|+10101010=10110111=B7\nOP{=Cs④C6.=0∴不溢出",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.086461,
+      "very_dark_pixel_ratio": 0.056461,
+      "lower_region_dark_pixel_ratio": 0.081719,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "x的补码: 0011 0110\ny的补码: 0101 0100\nz的补码: 1101 0101\n\n计算x-2y\n首先计算2y. z的补码是0000 0010\n设y为被乘数,2为乘数. 采用Booth算法\n如图所示\n故[2y]补=1010 1000 [-2y]补=0101 1000\n∴[x-2y]补=[x]补+[2y]补=0000 1110 = 8E H OF=Cs⊕C6=1. ∴溢出\n\n计算[x÷4]补=[0000 1101]\n计算2z. 可视为[z]补+[z]补\n1101 0101\n+1101 0101\n10101010\n∴[2z]补=1010 1010\n∴[x÷4]补+[2z]补=0000 1101 + 1010 1010=10110111 = B7H\nOF=Cs⊕C6=0 ∴不溢出",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_160",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": {
+      "initial_values": "X的补码:0011 0110; y的补8.0101 0100; 7的补码：11010101",
+      "computation_trace": "计算x-2y 首先计算2y. 2的补码是000010. 设y为被乘数.2为乘数.采用加Booth算法. 涉及中间过程: 十 0000 0000, 0010, 0辅助位, 石移00000000, 000O O00O, 00010, y10101000, 1010000. 得出结论: 故[2y]补=10101000[-2y]礼=010|1000. 符号位与最高数值位异或",
+      "result_string": "[x-2y]补:[X]补+E{2y]补=10001110=8EH",
+      "overflow_judgment": "OF=Cs C{4=1."
+    },
+    "step_2": {
+      "initial_values": "计算[x÷4]补=000001101; 11010101",
+      "computation_trace": "计算2Z.可视为[对]布+[2]1。11010101. 得出结论: ∴[2]补=10101010. ∴[x÷4]补+[22]补=0000110|+10101010=10110111=B7",
+      "result_string": "10110111=B7",
+      "overflow_judgment": "OP{=Cs④C6.=0∴不溢出"
+    }
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten content for the x - 2y computation. Extract any written initial hexadecimal or binary values (preserving leading zeros, base suffixes like 'H' or 'B', grouping, and separators exactly as written), the computation trace or substitution formulas used, the resulting hexadecimal or binary complement string, and the final written overflow judgment (such as a specific yes/no conclusion or flag value like CF)."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's concrete handwritten content for the (x ÷ 4) + 2z computation. Extract any written initial hexadecimal or binary values (preserving leading zeros, base suffixes like 'H' or 'B', grouping, and separators exactly as written), the computation trace or substitution formulas used, the resulting hexadecimal or binary complement string, and the final written overflow judgment (such as a specific yes/no conclusion or flag value like CF)."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 43.25,
+        "cells_left_to_right": [
+          {
+            "text": "1.(10分) X的补码:0011 0110",
+            "x_center": 207.0,
+            "confidence": 0.9175964593887329
+          },
+          {
+            "text": "y的补8.0101 0100. 7的补码：11010101",
+            "x_center": 684.0,
+            "confidence": 0.835227906703949
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 109.5,
+        "cells_left_to_right": [
+          {
+            "text": "计算x-2y 0 首先计算2y. 2的补码是000010",
+            "x_center": 462.0,
+            "confidence": 0.871906578540802
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 164.0,
+        "cells_left_to_right": [
+          {
+            "text": "设y为被乘数.2为乘数.采用加Booth算法",
+            "x_center": 352.5,
+            "confidence": 0.9328127503395081
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 210.38,
+        "cells_left_to_right": [
+          {
+            "text": "十 0000 0000",
+            "x_center": 186.0,
+            "confidence": 0.8724480271339417
+          },
+          {
+            "text": "0000 0000",
+            "x_center": 202.5,
+            "confidence": 0.832526683807373
+          },
+          {
+            "text": "0010",
+            "x_center": 462.5,
+            "confidence": 0.9998341202735901
+          },
+          {
+            "text": "0辅助位",
+            "x_center": 600.0,
+            "confidence": 0.8689594268798828
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 277.67,
+        "cells_left_to_right": [
+          {
+            "text": "石移00000000",
+            "x_center": 161.0,
+            "confidence": 0.9372614622116089
+          },
+          {
+            "text": "000O O00O",
+            "x_center": 199.0,
+            "confidence": 0.42552778124809265
+          },
+          {
+            "text": "00010",
+            "x_center": 503.0,
+            "confidence": 0.9826372265815735
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 352.1,
+        "cells_left_to_right": [
+          {
+            "text": "y10101000",
+            "x_center": 161.0,
+            "confidence": 0.9403160810470581
+          },
+          {
+            "text": "1010000.",
+            "x_center": 210.5,
+            "confidence": 0.924155056476593
+          },
+          {
+            "text": "故[2y]补=10101000[-2y]礼=010|1000",
+            "x_center": 647.0,
+            "confidence": 0.9201323986053467
+          },
+          {
+            "text": "+5",
+            "x_center": 666.5,
+            "confidence": 0.9934810400009155
+          },
+          {
+            "text": "符号位与最高数值位异或",
+            "x_center": 826.5,
+            "confidence": 0.9468517303466797
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 407.0,
+        "cells_left_to_right": [
+          {
+            "text": "∴[x-2y]补:[X]补+E{2y]补=10001110=8EH OF=Cs C{4=1.",
+            "x_center": 486.0,
+            "confidence": 0.8020676374435425
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 470.33,
+        "cells_left_to_right": [
+          {
+            "text": "计算[x÷4]补=000001101",
+            "x_center": 257.5,
+            "confidence": 0.9008658528327942
+          },
+          {
+            "text": "11010101",
+            "x_center": 560.0,
+            "confidence": 0.9998514652252197
+          },
+          {
+            "text": "∴溢出",
+            "x_center": 776.5,
+            "confidence": 0.8040410876274109
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 521.0,
+        "cells_left_to_right": [
+          {
+            "text": "计算2Z.可视为[对]布+[2]1。11010101",
+            "x_center": 342.0,
+            "confidence": 0.7512280344963074
+          },
+          {
+            "text": "∴[2]补=10101010",
+            "x_center": 801.5,
+            "confidence": 0.9008328318595886
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 571.0,
+        "cells_left_to_right": [
+          {
+            "text": "∴[x÷4]补+[22]补=0000110|+10101010=10110111=B7",
+            "x_center": 472.5,
+            "confidence": 0.9398663640022278
+          },
+          {
+            "text": "10101010",
+            "x_center": 556.0,
+            "confidence": 0.9996864795684814
+          },
+          {
+            "text": "+5",
+            "x_center": 931.5,
+            "confidence": 0.9978305101394653
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 649.5,
+        "cells_left_to_right": [
+          {
+            "text": "OP{=Cs④C6.=0∴不溢出",
+            "x_center": 618.5,
+            "confidence": 0.7371906042098999
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=207.0: 1.(10分) X的补码:0011 0110 | x=684.0: y的补8.0101 0100. 7的补码：11010101\nRow 2: x=462.0: 计算x-2y 0 首先计算2y. 2的补码是000010\nRow 3: x=352.5: 设y为被乘数.2为乘数.采用加Booth算法\nRow 4: x=186.0: 十 0000 0000 | x=202.5: 0000 0000 | x=462.5: 0010 | x=600.0: 0辅助位\nRow 5: x=161.0: 石移00000000 | x=199.0: 000O O00O | x=503.0: 00010\nRow 6: x=161.0: y10101000 | x=210.5: 1010000. | x=647.0: 故[2y]补=10101000[-2y]礼=010|1000 | x=666.5: +5 | x=826.5: 符号位与最高数值位异或\nRow 7: x=486.0: ∴[x-2y]补:[X]补+E{2y]补=10001110=8EH OF=Cs C{4=1.\nRow 8: x=257.5: 计算[x÷4]补=000001101 | x=560.0: 11010101 | x=776.5: ∴溢出\nRow 9: x=342.0: 计算2Z.可视为[对]布+[2]1。11010101 | x=801.5: ∴[2]补=10101010\nRow 10: x=472.5: ∴[x÷4]补+[22]补=0000110|+10101010=10110111=B7 | x=556.0: 10101010 | x=931.5: +5\nRow 11: x=618.5: OP{=Cs④C6.=0∴不溢出"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "x的补码: 0011 0110  y的补码: 0101 0100  z的补码: 1101 0101\n计算x-2y  首先计算2y  2的补码是0000 0010\n设y为被乘数,2为乘数,采用加法器Booth算法\n0000 0000  0010  0 辅即位\n+ 0000 0000\n----------\n0000 0000\n移 0000 0000  0001  0\n例 1010 1000\n----------\n1010 0000\n故[2y]补=1010 1000  [-2y]补=0101 1000\n∴[x-2y]补=[x]补+[2y]补=000 1110 = 8E H  OF=Cs⊕C6=1  ∴溢出",
+    "step_2": "计算[x÷4]补=0000 0110\n计算2z,可视为[z]补+[z]补  11010101  11010101\n----------\n10101010\n∴[2z]补=10101010\n∴[x÷4]补+[2z]补=0000 1101 + 10101010 = 10110111 = B7 H\nOF=Cs⊕C6=0  ∴不溢出"
+  },
+  "facts": {
+    "step_1": "计算x-2y\n首先计算2y. z的补码是0000 0010\n设y为被乘数,2为乘数. 采用Booth算法\n如图所示\n故[2y]补=1010 1000 [-2y]补=0101 1000\n∴[x-2y]补=[x]补+[2y]补=0000 1110 = 8E H OF=Cs⊕C6=1. ∴溢出",
+    "step_2": "计算[x÷4]补=[0000 1101]\n计算2z. 可视为[z]补+[z]补\n1101 0101\n+1101 0101\n10101010\n∴[2z]补=1010 1010\n∴[x÷4]补+[2z]补=0000 1101 + 1010 1010=10110111 = B7H\nOF=Cs⊕C6=0 ∴不溢出"
+  }
+}

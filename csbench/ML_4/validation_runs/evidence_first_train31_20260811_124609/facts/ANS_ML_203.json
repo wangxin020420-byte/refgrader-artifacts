@@ -1,0 +1,279 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T12:18:39.023314",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ML_4/ANS_ML_203.jpg",
+  "image_sha256": "aecd310b7e3056624b18a047c1d6af6325f9aa33f0b6d213b565f4242c2a5794",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/ML_4/ANS_ML_203.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 30,
+    "accepted_token_count": 29,
+    "mean_confidence": 0.926886,
+    "min_confidence": 0.5,
+    "joined_text": "A为'改初始状态A为0\n1.\nB为'01',C为'010',D为'0101',∈为'01010'\n110\nQ{+1/Z\nQ\n1/0\nB\nx=0x=1\n110\nA\nA10 B10\n010\n0%\n0/0\nE\n110\nB\nC/0A10\nC\nA10D/0\n0/1\nc\n①.\nD\n∈/1 A10\n110\nE\nA/0A10",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.066255,
+      "very_dark_pixel_ratio": 0.044195,
+      "lower_region_dark_pixel_ratio": 0.06005,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "A为‘0’状态A为‘0’ B为‘01’，C为‘010’，D为‘0101’，E为‘01010’",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_ML_203",
+    "question_id": "ML_4",
+    "subject": "ML",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": "学生作答内容包含状态说明、手绘状态图以及原始状态表。提取的具体手写内容如下：\n\n【状态定义说明】\nA为改初始状态A为0\nB为'01', C为'010', D为'0101', ∈(代表E)为'01010'\n\n【手绘状态图节点与转移】\n图节点包含 A, B, C, D, E。\n节点B：包含自环转移 '1/0'。\n节点C：有指向他处的转移 '110' 以及 '0/0'。\n节点E：存在指向节点C的转移 '0/1'。\n其他图线存在如 '010', '0%'(疑为箭头误识) 等标记。\n\n【原始状态表】\n表头：\n当前状态列：Q\n次态与输出列：Q{+1/Z，其下细分为：x=0，x=1\n\n各行数据：\n状态A：x=0 -> B(图注A10可能表示A/0)， x=1 -> A (输出0)\n状态B：x=0 -> C/0， x=1 -> A10 B10 (B/0)\n状态C：x=0 -> A10 D/0， x=1 -> A10 (A/0)\n状态D：x=0 -> ∈/1， x=1 -> A10 (A/0)\n状态E：x=0 -> A/0， x=1 -> A10 (A/0)"
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten content for this item without revealing the expected answer. Capture any hand-drawn state diagram, preserving all node labels, directed arrows, transition conditions, and output values exactly as written. Additionally, extract the complete contents of any handwritten state table, preserving all row and column headers, state labels, input conditions, next state transitions, and output values exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 43.5,
+        "cells_left_to_right": [
+          {
+            "text": "1.",
+            "x_center": 24.5,
+            "confidence": 0.9999663233757019
+          },
+          {
+            "text": "A为'改初始状态A为0",
+            "x_center": 207.5,
+            "confidence": 0.8830949664115906
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 75.0,
+        "cells_left_to_right": [
+          {
+            "text": "B为'01',C为'010',D为'0101',∈为'01010'",
+            "x_center": 280.5,
+            "confidence": 0.9283880591392517
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 120.25,
+        "cells_left_to_right": [
+          {
+            "text": "1/0",
+            "x_center": 186.5,
+            "confidence": 0.9870002269744873
+          },
+          {
+            "text": "110",
+            "x_center": 196.5,
+            "confidence": 0.9935538172721863
+          },
+          {
+            "text": "Q",
+            "x_center": 637.5,
+            "confidence": 0.8267279863357544
+          },
+          {
+            "text": "Q{+1/Z",
+            "x_center": 736.0,
+            "confidence": 0.8639402985572815
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 152.33,
+        "cells_left_to_right": [
+          {
+            "text": "110",
+            "x_center": 68.5,
+            "confidence": 0.9861360192298889
+          },
+          {
+            "text": "B",
+            "x_center": 250.0,
+            "confidence": 0.9988897442817688
+          },
+          {
+            "text": "x=0x=1",
+            "x_center": 729.5,
+            "confidence": 0.9749796390533447
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 198.56,
+        "cells_left_to_right": [
+          {
+            "text": "010",
+            "x_center": 92.0,
+            "confidence": 0.9995627999305725
+          },
+          {
+            "text": "110",
+            "x_center": 139.0,
+            "confidence": 0.998641312122345
+          },
+          {
+            "text": "0%",
+            "x_center": 198.0,
+            "confidence": 0.8447558879852295
+          },
+          {
+            "text": "0/0",
+            "x_center": 272.0,
+            "confidence": 0.9399840235710144
+          },
+          {
+            "text": "B",
+            "x_center": 620.0,
+            "confidence": 0.999010443687439
+          },
+          {
+            "text": "A",
+            "x_center": 623.5,
+            "confidence": 0.9998213648796082
+          },
+          {
+            "text": "C/0A10",
+            "x_center": 727.5,
+            "confidence": 0.8474944233894348
+          },
+          {
+            "text": "A10 B10",
+            "x_center": 730.0,
+            "confidence": 0.877864420413971
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 238.33,
+        "cells_left_to_right": [
+          {
+            "text": "E",
+            "x_center": 50.5,
+            "confidence": 0.9990129470825195
+          },
+          {
+            "text": "C",
+            "x_center": 618.0,
+            "confidence": 0.9978218078613281
+          },
+          {
+            "text": "A10D/0",
+            "x_center": 721.5,
+            "confidence": 0.8197090029716492
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 276.57,
+        "cells_left_to_right": [
+          {
+            "text": "0/1",
+            "x_center": 57.5,
+            "confidence": 0.9639012217521667
+          },
+          {
+            "text": "①.",
+            "x_center": 105.0,
+            "confidence": 0.6557426452636719
+          },
+          {
+            "text": "个",
+            "x_center": 129.0,
+            "confidence": 0.3373887538909912
+          },
+          {
+            "text": "110",
+            "x_center": 178.5,
+            "confidence": 0.8590943217277527
+          },
+          {
+            "text": "c",
+            "x_center": 240.5,
+            "confidence": 0.9053716659545898
+          },
+          {
+            "text": "D",
+            "x_center": 612.5,
+            "confidence": 0.9995954632759094
+          },
+          {
+            "text": "∈/1 A10",
+            "x_center": 715.0,
+            "confidence": 0.8352991938591003
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 327.75,
+        "cells_left_to_right": [
+          {
+            "text": "E",
+            "x_center": 607.0,
+            "confidence": 0.9990434050559998
+          },
+          {
+            "text": "A/0A10",
+            "x_center": 709.0,
+            "confidence": 0.8953046798706055
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=24.5: 1. | x=207.5: A为'改初始状态A为0\nRow 2: x=280.5: B为'01',C为'010',D为'0101',∈为'01010'\nRow 3: x=186.5: 1/0 | x=196.5: 110 | x=637.5: Q | x=736.0: Q{+1/Z\nRow 4: x=68.5: 110 | x=250.0: B | x=729.5: x=0x=1\nRow 5: x=92.0: 010 | x=139.0: 110 | x=198.0: 0% | x=272.0: 0/0 | x=620.0: B | x=623.5: A | x=727.5: C/0A10 | x=730.0: A10 B10\nRow 6: x=50.5: E | x=618.0: C | x=721.5: A10D/0\nRow 7: x=57.5: 0/1 | x=105.0: ①. | x=129.0: 个 | x=178.5: 110 | x=240.5: c | x=612.5: D | x=715.0: ∈/1 A10\nRow 8: x=607.0: E | x=709.0: A/0A10"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "A为输入‘0’设初始状态A为‘0’，B为‘01’，C为‘010’，D为‘0101’，E为‘01010’。\n状态图（手绘箭头及标注，如A→B 1/0、B→C 0/0、C→D 1/1、D→E 0/1、E→A 1/0等）\n状态表：\nQ | Qⁿ⁺¹/Z | x=0 | x=1\nA | A/0 | B/0\nB | C/0 | A/0\nC | A/0 | D/1\nD | E/1 | A/0\nE | A/0 | A/0"
+  },
+  "facts": {
+    "step_1": "状态定义：A为‘0’，B为‘01’，C为‘010’，D为‘0101’，E为‘01010’。"
+  }
+}

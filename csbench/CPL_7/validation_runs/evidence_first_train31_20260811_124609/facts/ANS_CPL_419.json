@@ -1,0 +1,42 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T07:04:43.015504",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_419.jpg",
+  "image_sha256": "de517be2042c66ef894d8946d81d84492d60e0f64c34de5fde1e070c28f26072",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "#include<stdio.h>\nint main(){\n    int a[5][5],b[5][5];\n    for(int i=0;i<5;i++){     //输入矩阵元素\n        for(int j=0;j<5;j++){\n            scanf(\"%d \",&a[i][j]);\n        }\n        printf(\"\\n\");\n    }\n    for(int i=0;i<5;i++){\n        for(int j=0;j<5;j++){\n            b[j][i]=a[i][j];\n        }\n    }\n    FILE *pf=NULL;\n    pf=fopen(matrix.txt,\"a\");\n    for(int i=0;i<5;i++){\n        for(int j=0;j<5;j++){\n            fput(pf,b[i][j]);\n        }\n    }\n    fdose(pf);\n    return 0;\n}",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CPL_419",
+    "question_id": "CPL_7",
+    "subject": "CPL",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "for(int i=0;i<5;i++){     //输入矩阵元素\n    for(int j=0;j<5;j++){\n        scanf(\"%d \",&a[i][j]);\n    }\n    printf(\"\\n\");\n}\nfor(int i=0;i<5;i++){\n    for(int j=0;j<5;j++){\n        fput(pf,b[i][j]);\n    }\n}",
+    "step_2": "FILE *pf=NULL;\npf=fopen(matrix.txt,\"a\");\nfdose(pf);",
+    "step_3": "int a[5][5],b[5][5];\nfor(int i=0;i<5;i++){\n    for(int j=0;j<5;j++){\n        b[j][i]=a[i][j];\n    }\n}"
+  }
+}

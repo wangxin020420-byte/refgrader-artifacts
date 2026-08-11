@@ -1,0 +1,429 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T12:06:25.456201",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ML_4/ANS_ML_171.jpg",
+  "image_sha256": "8e222fb61371a5a842edf2cbc6b81bb45867a8343bd76c125902c7207cfd33b1",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/ML_4/ANS_ML_171.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 38,
+    "accepted_token_count": 38,
+    "mean_confidence": 0.883306,
+    "min_confidence": 0.5,
+    "joined_text": "1. 解：\n状态图\n110.\n状态表\n现态\n次态/输出.\nSo: 未检测到有效输入\n(So\nV0.\nx=0x=1\nS_1}: 检测到有效0\n1/0\n9%\n00.\nSo\nS√o So/0.\nS2: 松测到有效0)\nS1\nS1\nS1/0. S210\n1/0\nS3: 检测到有效'010'\n0/0\n%\nS2\nS3/0.5010.\n52\nS4：松州到有父0101'\n0/0\nS3\nS110 S410\nSr:检测到有效01010'\nS4\n55/1 So/0\n1/9\nSs\n1/0.\nS.10. 54/0.",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.088401,
+      "very_dark_pixel_ratio": 0.059047,
+      "lower_region_dark_pixel_ratio": 0.085177,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解: S0:未检测到有效输入 S1:检测到有效‘0’ S2:检测到有效‘0’1’ S3:检测到有效‘010’ S4:检测到有效‘0101’ S5:检测到有效‘01010’",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_ML_171",
+    "question_id": "ML_4",
+    "subject": "ML",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": {
+      "state_definitions": [
+        {
+          "state": "S0",
+          "description": "未检测到有效输入"
+        },
+        {
+          "state": "S1",
+          "description": "检测到有效0"
+        },
+        {
+          "state": "S2",
+          "description": "检测到有效01"
+        },
+        {
+          "state": "S3",
+          "description": "检测到有效010"
+        },
+        {
+          "state": "S4",
+          "description": "检测到有效0101"
+        },
+        {
+          "state": "S5",
+          "description": "检测到有效01010"
+        }
+      ],
+      "state_diagram_transitions": [
+        {
+          "from_state": "S0",
+          "input_output": "0/0",
+          "to_state": "S1"
+        },
+        {
+          "from_state": "S0",
+          "input_output": "1/0",
+          "to_state": "S0"
+        },
+        {
+          "from_state": "S1",
+          "input_output": "0/0",
+          "to_state": "S0"
+        },
+        {
+          "from_state": "S1",
+          "input_output": "1/0",
+          "to_state": "S2"
+        },
+        {
+          "from_state": "S2",
+          "input_output": "0/0",
+          "to_state": "S3"
+        },
+        {
+          "from_state": "S2",
+          "input_output": "1/0",
+          "to_state": "S0"
+        },
+        {
+          "from_state": "S3",
+          "input_output": "0/0",
+          "to_state": "S1"
+        },
+        {
+          "from_state": "S3",
+          "input_output": "1/0",
+          "to_state": "S4"
+        },
+        {
+          "from_state": "S4",
+          "input_output": "0/0",
+          "to_state": "S5"
+        },
+        {
+          "from_state": "S4",
+          "input_output": "1/0",
+          "to_state": "S2"
+        },
+        {
+          "from_state": "S5",
+          "input_output": "0/1",
+          "to_state": "S3"
+        },
+        {
+          "from_state": "S5",
+          "input_output": "1/0",
+          "to_state": "S0"
+        }
+      ],
+      "state_table": {
+        "headers": [
+          "现态 (PS)",
+          "次态/输出 (NS/Z)  x=0",
+          "次态/输出 (NS/Z)  x=1"
+        ],
+        "rows": [
+          {
+            "现态": "S0",
+            "x=0": "S0/0",
+            "x=1": "S1/0"
+          },
+          {
+            "现态": "S1",
+            "x=0": "S1/0",
+            "x=1": "S2/0"
+          },
+          {
+            "现态": "S2",
+            "x=0": "S3/0",
+            "x=1": "S1/0"
+          },
+          {
+            "现态": "S3",
+            "x=0": "S1/0",
+            "x=1": "S4/0"
+          },
+          {
+            "现态": "S4",
+            "x=0": "S5/0",
+            "x=1": "S4/0"
+          },
+          {
+            "现态": "S5",
+            "x=0": "S5/1",
+            "x=1": "S0/0"
+          }
+        ]
+      }
+    }
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten content for this item without revealing the expected answer. Capture any hand-drawn state diagram, preserving all node labels, directed arrows, transition conditions, and output values exactly as written. Additionally, extract the complete contents of any handwritten state table, preserving all row and column headers, state labels, input conditions, next state transitions, and output values exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 51.93,
+        "cells_left_to_right": [
+          {
+            "text": "1. 解：",
+            "x_center": 54.5,
+            "confidence": 0.9920099973678589
+          },
+          {
+            "text": "So: 未检测到有效输入",
+            "x_center": 141.5,
+            "confidence": 0.9182217717170715
+          },
+          {
+            "text": "状态图",
+            "x_center": 360.5,
+            "confidence": 0.9998233914375305
+          },
+          {
+            "text": "110.",
+            "x_center": 475.5,
+            "confidence": 0.9958065152168274
+          },
+          {
+            "text": "现态",
+            "x_center": 710.5,
+            "confidence": 0.9960362911224365
+          },
+          {
+            "text": "状态表",
+            "x_center": 720.5,
+            "confidence": 0.9999372959136963
+          },
+          {
+            "text": "次态/输出.",
+            "x_center": 874.5,
+            "confidence": 0.9923786520957947
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 122.72,
+        "cells_left_to_right": [
+          {
+            "text": "S_1}: 检测到有效0",
+            "x_center": 129.5,
+            "confidence": 0.7624013423919678
+          },
+          {
+            "text": "1/0",
+            "x_center": 391.5,
+            "confidence": 0.9595215916633606
+          },
+          {
+            "text": "9%",
+            "x_center": 455.5,
+            "confidence": 0.6461165547370911
+          },
+          {
+            "text": "(So",
+            "x_center": 463.0,
+            "confidence": 0.7210237383842468
+          },
+          {
+            "text": "00.",
+            "x_center": 514.5,
+            "confidence": 0.7527061104774475
+          },
+          {
+            "text": "V0.",
+            "x_center": 580.0,
+            "confidence": 0.8680644035339355
+          },
+          {
+            "text": "So",
+            "x_center": 706.0,
+            "confidence": 0.9796748161315918
+          },
+          {
+            "text": "x=0x=1",
+            "x_center": 875.5,
+            "confidence": 0.9623587727546692
+          },
+          {
+            "text": "S√o So/0.",
+            "x_center": 880.5,
+            "confidence": 0.9105592370033264
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 201.81,
+        "cells_left_to_right": [
+          {
+            "text": "S3: 检测到有效'010'",
+            "x_center": 147.5,
+            "confidence": 0.9239456057548523
+          },
+          {
+            "text": "S2: 松测到有效0)",
+            "x_center": 150.0,
+            "confidence": 0.7742857336997986
+          },
+          {
+            "text": "0/0",
+            "x_center": 387.0,
+            "confidence": 0.9232836365699768
+          },
+          {
+            "text": "1/0",
+            "x_center": 461.5,
+            "confidence": 0.7563201785087585
+          },
+          {
+            "text": "S1",
+            "x_center": 466.5,
+            "confidence": 0.7926038503646851
+          },
+          {
+            "text": "%",
+            "x_center": 542.0,
+            "confidence": 0.9996367692947388
+          },
+          {
+            "text": "S1",
+            "x_center": 707.0,
+            "confidence": 0.9678071141242981
+          },
+          {
+            "text": "S1/0. S210",
+            "x_center": 880.5,
+            "confidence": 0.7937333583831787
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 268.94,
+        "cells_left_to_right": [
+          {
+            "text": "S4：松州到有父0101'",
+            "x_center": 156.0,
+            "confidence": 0.8083606958389282
+          },
+          {
+            "text": "Sr:检测到有效01010'",
+            "x_center": 168.5,
+            "confidence": 0.7569149136543274
+          },
+          {
+            "text": "0/0",
+            "x_center": 465.5,
+            "confidence": 0.7214899063110352
+          },
+          {
+            "text": "52",
+            "x_center": 472.5,
+            "confidence": 0.9730322360992432
+          },
+          {
+            "text": "S2",
+            "x_center": 708.5,
+            "confidence": 0.9554338455200195
+          },
+          {
+            "text": "S3",
+            "x_center": 710.0,
+            "confidence": 0.9972081184387207
+          },
+          {
+            "text": "S3/0.5010.",
+            "x_center": 884.0,
+            "confidence": 0.8352171778678894
+          },
+          {
+            "text": "S110 S410",
+            "x_center": 885.5,
+            "confidence": 0.8535829782485962
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 353.25,
+        "cells_left_to_right": [
+          {
+            "text": "1/9",
+            "x_center": 470.0,
+            "confidence": 0.9529810547828674
+          },
+          {
+            "text": "1/0.",
+            "x_center": 526.5,
+            "confidence": 0.8021259903907776
+          },
+          {
+            "text": "S4",
+            "x_center": 712.5,
+            "confidence": 0.9921274185180664
+          },
+          {
+            "text": "Ss",
+            "x_center": 714.5,
+            "confidence": 0.8429762721061707
+          },
+          {
+            "text": "S.10. 54/0.",
+            "x_center": 878.5,
+            "confidence": 0.8675498962402344
+          },
+          {
+            "text": "55/1 So/0",
+            "x_center": 887.0,
+            "confidence": 0.8183884024620056
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=54.5: 1. 解： | x=141.5: So: 未检测到有效输入 | x=360.5: 状态图 | x=475.5: 110. | x=710.5: 现态 | x=720.5: 状态表 | x=874.5: 次态/输出.\nRow 2: x=129.5: S_1}: 检测到有效0 | x=391.5: 1/0 | x=455.5: 9% | x=463.0: (So | x=514.5: 00. | x=580.0: V0. | x=706.0: So | x=875.5: x=0x=1 | x=880.5: S√o So/0.\nRow 3: x=147.5: S3: 检测到有效'010' | x=150.0: S2: 松测到有效0) | x=387.0: 0/0 | x=461.5: 1/0 | x=466.5: S1 | x=542.0: % | x=707.0: S1 | x=880.5: S1/0. S210\nRow 4: x=156.0: S4：松州到有父0101' | x=168.5: Sr:检测到有效01010' | x=465.5: 0/0 | x=472.5: 52 | x=708.5: S2 | x=710.0: S3 | x=884.0: S3/0.5010. | x=885.5: S110 S410\nRow 5: x=470.0: 1/9 | x=526.5: 1/0. | x=712.5: S4 | x=714.5: Ss | x=878.5: S.10. 54/0. | x=887.0: 55/1 So/0"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "解:\nS0:未检测到有效输入\nS1:检测到有效‘0’\nS2:检测到有效‘01’\nS3:检测到有效‘010’\nS4:检测到有效‘0101’\nS5:检测到有效‘01010’\n\n状态图\n\n状态表\n现态    次态/输出\n        x=0   x=1\nS0      S1/0  S0/0\nS1      S1/0  S2/0\nS2      S3/0  S0/0\nS3      S1/0  S4/0\nS4      S5/1  S0/0\nS5      S1/0  S4/0"
+  },
+  "facts": {
+    "step_1": "原始状态定义：\nS0：未检测到有效输入\nS1：检测到有效‘0’\nS2：检测到有效‘0’1’\nS3：检测到有效‘010’\nS4：检测到有效‘0101’\nS5：检测到有效‘01010’\n\n原始状态图：未书写\n原始状态表：未书写"
+  }
+}

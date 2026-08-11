@@ -1,0 +1,292 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-08-11T13:28:55.483234",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_710.png",
+  "image_sha256": "1ca07587d5658ec4a1d1ea41dcffa258fa473d641b0377f0e8cd285fb92a32ef",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_710.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 20,
+    "accepted_token_count": 20,
+    "mean_confidence": 0.928899,
+    "min_confidence": 0.5,
+    "joined_text": "(1) 每块2水B，按字节编址，所以块内地址有11位。每组2块，组内\n2. （20分）\n块号就有1位，共32个块，Cache组号就有位。主存8mB，故主存地址\n有23位，23--11=位，故主存字块标记有位。\n主存：8位4位11位.\nCache: 45位 1位.11位.\n+5\n主存字块 Cache 块内\nCache 组内\n组块内\n标记.组号 地址.\n组号. 块号.\n地址.\n(2) 二进制地地为\n① 2D07FFH的=进制为0101101000001111111111，块内地址为\n末11位11 (1111111，Cache组号为0000，即第0组，因为是二路组相联，就要\n把主存高块标记1011010和块0，块1里的tag1比对，这里不匹配，故访问不到\n② 7F0057H的=进制为1111110000000001010111，块内地比为00001010111,\nCache组号为0000，即第0坦，包含块0和块1，把主存字块标记\n11111110和块0、块1里存的tag并行比较，发现和块1里的一致，、能访问到",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.112185,
+      "very_dark_pixel_ratio": 0.072964,
+      "lower_region_dark_pixel_ratio": 0.109226,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)每块2KB，按字节编址，所以块内地址有11位。每组2块，组内块号就有1位，共32个块，Cache组号就有4位。主存8MB，故主存地址有23位，23-4-11=8位，故主存字块标记有8位。\n主存：主存块标记：Cache 组号 块内地址.  8位 4位 11位. \nCache: Cache 组号 组内块号 块内地址 4位 1位 11位.\n(2) ①2D07FFH的二进制为010 1101 0000 0111 1111 1111，块内地址为末11位111 11111111，Cache组号为0000，即第0组，因为是二路组相联，就要把主存字块标记01011010和块0，块1里的tag比对，这里不匹配，故访问不到 ②7F0057H的二进制为111 1111 0000 0000 0101 0111，块内地址为00001010111，Cache组号为0000，即第0组，包含块0和块1，把主存字块标记11111110和块0、块1里的tag并行比较，发现和块1里的一致，故能访问到",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_710",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "每组2块，组内块号就有1位，共32个块，Cache组号就有位。",
+    "step_4": "主存：8位 4位 11位. 主存字块标记. 组号. 块内地址.",
+    "step_5": "Cache: 4[5]位 1位. 11位. Cache 组号. 组内块号. 块内地址.",
+    "step_6": "2D07FFH的二进制为0101101000001111111111，块内地址为末11位11111111111，Cache组号为0000，即第0组。因为是二路组相联，就要把主存高块标记1011010和块0、块1里的tag比对，这里不匹配，故访问不到。",
+    "step_7": "7F0057H的二进制为1111110000000001010111，块内地址为00001010111，Cache组号为0000，即第0组，包含块0和块1。把主存字块标记11111110和块0、块1里存的tag并行比较，发现和块1里的一致，能访问到。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the specific formula, computation trace, or numerical value the student wrote for the number of bits in the Cache group number. Preserve any leading zeros, units, suffixes, bases, and separators exactly as written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the specific sequence, table entries, or mapping relations the student wrote defining the main memory address format. Preserve any arrows, dots, order, direction, bit lengths, and field labels exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the specific sequence, table entries, or mapping relations the student wrote defining the Cache address format. Preserve any arrows, dots, order, direction, bit lengths, and field labels exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten process and final judgment regarding whether the specified hexadecimal address hits the Cache. Include any extracted tag bits, group numbers, matching comparisons, and conclusion words. Preserve all leading zeros, bases, suffixes, and separators exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten process and final judgment regarding whether the specified hexadecimal address hits the Cache. Include any extracted tag bits, group numbers, matching comparisons, and conclusion words. Preserve all leading zeros, bases, suffixes, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 48.25,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 51.5,
+            "confidence": 0.9251248240470886
+          },
+          {
+            "text": "(1) 每块2水B，按字节编址，所以块内地址有11位。每组2块，组内",
+            "x_center": 507.0,
+            "confidence": 0.9281688332557678
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 88.5,
+        "cells_left_to_right": [
+          {
+            "text": "块号就有1位，共32个块，Cache组号就有位。主存8mB，故主存地址",
+            "x_center": 478.0,
+            "confidence": 0.973556637763977
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 134.0,
+        "cells_left_to_right": [
+          {
+            "text": "有23位，23--11=位，故主存字块标记有位。",
+            "x_center": 351.5,
+            "confidence": 0.941938579082489
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 210.42,
+        "cells_left_to_right": [
+          {
+            "text": "主存：8位4位11位.",
+            "x_center": 213.0,
+            "confidence": 0.9411365389823914
+          },
+          {
+            "text": "主存字块 Cache 块内",
+            "x_center": 267.0,
+            "confidence": 0.9254547357559204
+          },
+          {
+            "text": "Cache 组内",
+            "x_center": 614.5,
+            "confidence": 0.9982175827026367
+          },
+          {
+            "text": "Cache: 45位 1位.11位.",
+            "x_center": 624.5,
+            "confidence": 0.9397769570350647
+          },
+          {
+            "text": "+5",
+            "x_center": 698.5,
+            "confidence": 0.9712181091308594
+          },
+          {
+            "text": "组块内",
+            "x_center": 761.5,
+            "confidence": 0.9671366214752197
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 258.67,
+        "cells_left_to_right": [
+          {
+            "text": "标记.组号 地址.",
+            "x_center": 273.0,
+            "confidence": 0.8787742257118225
+          },
+          {
+            "text": "组号. 块号.",
+            "x_center": 615.5,
+            "confidence": 0.8573653101921082
+          },
+          {
+            "text": "地址.",
+            "x_center": 773.0,
+            "confidence": 0.9719614386558533
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 306.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 二进制地地为",
+            "x_center": 137.0,
+            "confidence": 0.8578044772148132
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 344.5,
+        "cells_left_to_right": [
+          {
+            "text": "① 2D07FFH的=进制为0101101000001111111111，块内地址为",
+            "x_center": 417.5,
+            "confidence": 0.9370787739753723
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 392.0,
+        "cells_left_to_right": [
+          {
+            "text": "末11位11 (1111111，Cache组号为0000，即第0组，因为是二路组相联，就要",
+            "x_center": 493.0,
+            "confidence": 0.8697373270988464
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 436.0,
+        "cells_left_to_right": [
+          {
+            "text": "把主存高块标记1011010和块0，块1里的tag1比对，这里不匹配，故访问不到",
+            "x_center": 497.0,
+            "confidence": 0.8870373964309692
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 475.5,
+        "cells_left_to_right": [
+          {
+            "text": "② 7F0057H的=进制为1111110000000001010111，块内地比为00001010111,",
+            "x_center": 466.5,
+            "confidence": 0.9510754346847534
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 520.0,
+        "cells_left_to_right": [
+          {
+            "text": "Cache组号为0000，即第0坦，包含块0和块1，把主存字块标记",
+            "x_center": 455.0,
+            "confidence": 0.916449248790741
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 565.0,
+        "cells_left_to_right": [
+          {
+            "text": "11111110和块0、块1里存的tag并行比较，发现和块1里的一致，、能访问到",
+            "x_center": 504.0,
+            "confidence": 0.9389728307723999
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=51.5: 2. （20分） | x=507.0: (1) 每块2水B，按字节编址，所以块内地址有11位。每组2块，组内\nRow 2: x=478.0: 块号就有1位，共32个块，Cache组号就有位。主存8mB，故主存地址\nRow 3: x=351.5: 有23位，23--11=位，故主存字块标记有位。\nRow 4: x=213.0: 主存：8位4位11位. | x=267.0: 主存字块 Cache 块内 | x=614.5: Cache 组内 | x=624.5: Cache: 45位 1位.11位. | x=698.5: +5 | x=761.5: 组块内\nRow 5: x=273.0: 标记.组号 地址. | x=615.5: 组号. 块号. | x=773.0: 地址.\nRow 6: x=137.0: (2) 二进制地地为\nRow 7: x=417.5: ① 2D07FFH的=进制为0101101000001111111111，块内地址为\nRow 8: x=493.0: 末11位11 (1111111，Cache组号为0000，即第0组，因为是二路组相联，就要\nRow 9: x=497.0: 把主存高块标记1011010和块0，块1里的tag1比对，这里不匹配，故访问不到\nRow 10: x=466.5: ② 7F0057H的=进制为1111110000000001010111，块内地比为00001010111,\nRow 11: x=455.0: Cache组号为0000，即第0坦，包含块0和块1，把主存字块标记\nRow 12: x=504.0: 11111110和块0、块1里存的tag并行比较，发现和块1里的一致，、能访问到"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "23位",
+    "step_2": "11位",
+    "step_3": "4位",
+    "step_4": "主存：8位 4位 11位 主存块标记 Cache组号 组内块地址",
+    "step_5": "Cache：4位 1位 11位 Cache组号 组内块号 组块内地址",
+    "step_6": "① 2D07FFH的二进制为101101 0000 0111 1111 1111，块内地址为末11位11111111111，Cache组号为0000，即第0组，因为是2路组相联，就要把主存块标记01011010和块0、块1里的tag比对，这里不匹配，故访问不到",
+    "step_7": "② 7F0057H的二进制为1111111 0000 0000 0101 0111，块内地址为0001010111，Cache组号为0000，即第0组，和块0包含块0和块1，把主存块标记11111110和块0、块1里有的tag并行比较，发现和块1里的一致，能访问到"
+  },
+  "facts": {
+    "step_1": "主存8MB，故主存地址有23位",
+    "step_2": "每块2KB，按字节编址，所以块内地址有11位",
+    "step_3": "共32个块，Cache组号就有4位",
+    "step_4": "主存：主存块标记：Cache 组号 块内地址.  8位 4位 11位. 23-4-11=8位，故主存字块标记有8位",
+    "step_5": "Cache: Cache 组号 组内块号 块内地址 4位 1位 11位.",
+    "step_6": "2D07FFH的二进制为010 1101 0000 0111 1111 1111，块内地址为末11位111 11111111，Cache组号为0000，即第0组，因为是二路组相联，就要把主存字块标记01011010和块0，块1里的tag比对，这里不匹配，故访问不到",
+    "step_7": "7F0057H的二进制为111 1111 0000 0000 0101 0111，块内地址为00001010111，Cache组号为0000，即第0组，包含块0和块1，把主存字块标记11111110和块0、块1里的tag并行比较，发现和块1里的一致，故能访问到"
+  }
+}

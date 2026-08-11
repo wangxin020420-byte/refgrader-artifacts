@@ -1,0 +1,318 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T00:33:39.565632",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1321.jpg",
+  "image_sha256": "168c4869f4daf0262d7e5c10defcbb04414b5e94474f36b167b0b28ca6d10c1a",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1321.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 27,
+    "accepted_token_count": 27,
+    "mean_confidence": 0.909279,
+    "min_confidence": 0.5,
+    "joined_text": "b: 指令寄存器工R\n50:数据缓冲奇存器 DR\nd: 程序计数器 PC\nC: 主存地扯寄存器 AR\n(2)\nM→DR→IR→操作控制器.\n(3) 存: AC → DR→M\n取：M→DR→ALU→AC\n(4)\nM→DR→ALU 取出主存中的数据\nOD→AR 取地址\nAX→ALU 取寄态器中的数据\nALU→AC→AX 计算后传回寄存器\n(5) 4个互斥类分别对应 3位，4位，4位，3位编码\n3个外部条件对应3位编码\n故下址字段为24-3-4-4-3-3为7位\n容量为24×2b=3072b\n若Cu要求为2n}的幂大小，则为2^2}=4096b\n3位1条件3位下址位\n(6)\n4个互斥类命令编码中00000操作\n090 &80\n8010\n1401033\n5个\nj01\n1100p 1101",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.086434,
+      "very_dark_pixel_ratio": 0.048344,
+      "lower_region_dark_pixel_ratio": 0.08657,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "A: 数据缓冲寄存器 DR B: 指令寄存器 IR C: 主存地址寄存器 AR d: 程序计数器 PC\n(2) M→DR→IR→操作控制器.\n(3) 存：AC→DR→M\n取：M→DR→ALU→AC\n(4) 0D→AR 取地址 M→DR→ALU 取出主存中的数据\nAX→ALU 取累加器中的数据.\nALU→AC→AX 计算后传回寄存器\n(5) 4个互斥类别对应 3位,4位,4位,3位编码.\n3个外部条件 对应 3位编码\n故7位字段为 24-3-4-4-3-3 为7位\n∴ 容量为 24×2⁷b = 3072b\n(6) 题6(表格)如表所示 4位互斥编码中000/0000表示无效操作",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1321",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "OD→AR 取地址\n取：M→DR→ALU→AC\nM→DR→ALU 取出主存中的数据\nAX→ALU 取寄态器中的数据\nALU→AC→AX 计算后传回寄存器",
+    "step_5": "4个互斥类分别对应 3位，4位，4位，3位编码\n3个外部条件对应3位编码\n故下址字段为24-3-4-4-3-3为7位\n容量为24×2b=3072b\n若Cu要求为2n}的幂大小，则为2^2}=4096b",
+    "step_6": "5个 | j01 | 090 &80 | 1100p 1101 | 8010 | 1401033 | 3位1条件3位下址位 | 4个互斥类命令编码中00000操作"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 48.25,
+        "cells_left_to_right": [
+          {
+            "text": "50:数据缓冲奇存器 DR",
+            "x_center": 216.0,
+            "confidence": 0.8106575608253479
+          },
+          {
+            "text": "C: 主存地扯寄存器 AR",
+            "x_center": 272.0,
+            "confidence": 0.9566287994384766
+          },
+          {
+            "text": "b: 指令寄存器工R",
+            "x_center": 590.0,
+            "confidence": 0.8742510676383972
+          },
+          {
+            "text": "d: 程序计数器 PC",
+            "x_center": 607.5,
+            "confidence": 0.9586711525917053
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 131.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2)",
+            "x_center": 73.0,
+            "confidence": 0.999321460723877
+          },
+          {
+            "text": "M→DR→IR→操作控制器.",
+            "x_center": 324.0,
+            "confidence": 0.9691123366355896
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 201.5,
+        "cells_left_to_right": [
+          {
+            "text": "(3) 存: AC → DR→M",
+            "x_center": 220.5,
+            "confidence": 0.8988163471221924
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 279.38,
+        "cells_left_to_right": [
+          {
+            "text": "(4)",
+            "x_center": 76.5,
+            "confidence": 0.9947533011436462
+          },
+          {
+            "text": "OD→AR 取地址",
+            "x_center": 294.0,
+            "confidence": 0.9608959555625916
+          },
+          {
+            "text": "取：M→DR→ALU→AC",
+            "x_center": 310.0,
+            "confidence": 0.9614797234535217
+          },
+          {
+            "text": "M→DR→ALU 取出主存中的数据",
+            "x_center": 650.5,
+            "confidence": 0.9779144525527954
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 336.0,
+        "cells_left_to_right": [
+          {
+            "text": "AX→ALU 取寄态器中的数据",
+            "x_center": 334.0,
+            "confidence": 0.909817099571228
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 383.0,
+        "cells_left_to_right": [
+          {
+            "text": "ALU→AC→AX 计算后传回寄存器",
+            "x_center": 373.5,
+            "confidence": 0.959578812122345
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 445.5,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 4个互斥类分别对应 3位，4位，4位，3位编码",
+            "x_center": 377.5,
+            "confidence": 0.9629920721054077
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 510.75,
+        "cells_left_to_right": [
+          {
+            "text": "3个外部条件对应3位编码",
+            "x_center": 296.0,
+            "confidence": 0.998293399810791
+          },
+          {
+            "text": "故下址字段为24-3-4-4-3-3为7位",
+            "x_center": 424.0,
+            "confidence": 0.9400417804718018
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 592.5,
+        "cells_left_to_right": [
+          {
+            "text": "容量为24×2b=3072b",
+            "x_center": 390.5,
+            "confidence": 0.9606713056564331
+          },
+          {
+            "text": "若Cu要求为2n}的幂大小，则为2^2}=4096b",
+            "x_center": 408.0,
+            "confidence": 0.8831872344017029
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 673.67,
+        "cells_left_to_right": [
+          {
+            "text": "(6)",
+            "x_center": 56.0,
+            "confidence": 0.9875666499137878
+          },
+          {
+            "text": "5个",
+            "x_center": 94.0,
+            "confidence": 0.9713643789291382
+          },
+          {
+            "text": "j01",
+            "x_center": 143.0,
+            "confidence": 0.8089192509651184
+          },
+          {
+            "text": "090 &80",
+            "x_center": 179.5,
+            "confidence": 0.6834105253219604
+          },
+          {
+            "text": "1100p 1101",
+            "x_center": 230.0,
+            "confidence": 0.812156081199646
+          },
+          {
+            "text": "8010",
+            "x_center": 267.5,
+            "confidence": 0.7540581822395325
+          },
+          {
+            "text": "1401033",
+            "x_center": 347.5,
+            "confidence": 0.6789175271987915
+          },
+          {
+            "text": "3位1条件3位下址位",
+            "x_center": 398.5,
+            "confidence": 0.9374229311943054
+          },
+          {
+            "text": "4个互斥类命令编码中00000操作",
+            "x_center": 706.5,
+            "confidence": 0.939641535282135
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=216.0: 50:数据缓冲奇存器 DR | x=272.0: C: 主存地扯寄存器 AR | x=590.0: b: 指令寄存器工R | x=607.5: d: 程序计数器 PC\nRow 2: x=73.0: (2) | x=324.0: M→DR→IR→操作控制器.\nRow 3: x=220.5: (3) 存: AC → DR→M\nRow 4: x=76.5: (4) | x=294.0: OD→AR 取地址 | x=310.0: 取：M→DR→ALU→AC | x=650.5: M→DR→ALU 取出主存中的数据\nRow 5: x=334.0: AX→ALU 取寄态器中的数据\nRow 6: x=373.5: ALU→AC→AX 计算后传回寄存器\nRow 7: x=377.5: (5) 4个互斥类分别对应 3位，4位，4位，3位编码\nRow 8: x=296.0: 3个外部条件对应3位编码 | x=424.0: 故下址字段为24-3-4-4-3-3为7位\nRow 9: x=390.5: 容量为24×2b=3072b | x=408.0: 若Cu要求为2n}的幂大小，则为2^2}=4096b\nRow 10: x=56.0: (6) | x=94.0: 5个 | x=143.0: j01 | x=179.5: 090 &80 | x=230.0: 1100p 1101 | x=267.5: 8010 | x=347.5: 1401033 | x=398.5: 3位1条件3位下址位 | x=706.5: 4个互斥类命令编码中00000操作"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "a: 数据缓冲寄存器DR；b: 指令寄存器IR；c: 主存地址寄存器AR；d: 程序计数器PC",
+    "step_2": "M→DR→IR→操作控制器",
+    "step_3": "存：AC→DR→M；取：M→DR→ALU→AC"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a:数据缓冲寄存器DR  b:指令寄存器IR  C:主存地址寄存器AR  d:程序计数器PC",
+    "step_2": "M→DR→IR→操作控制器",
+    "step_3": "存:AC→DR→M  取:M→DR→ALU→AC",
+    "step_4": "OD→AR 取地址  M→DR→ALU 取出主存中的数据  AX→ALU 取寄存器中的数据  ALU→AC→AX 计算后传回寄存器",
+    "step_5": "4个互斥类分别对应3位,4位,4位,3位编码  3个外部条件对应3位编码  故下址字段为24-3-4-4-3-3为7位  ∴容量为24×2⁷b=3072b  若CU要求为2ⁿ的最大小,则为2¹²=4096b",
+    "step_6": "5f(890 88816 8890 001 9f 3f)  4互斥类命令编码中000/0000表示∅操作"
+  },
+  "facts": {
+    "step_1": "A: 数据缓冲寄存器 DR B: 指令寄存器 IR C: 主存地址寄存器 AR d: 程序计数器 PC",
+    "step_2": "M→DR→IR→操作控制器.",
+    "step_3": "存：AC→DR→M\n取：M→DR→ALU→AC",
+    "step_4": "0D→AR 取地址 M→DR→ALU 取出主存中的数据\nAX→ALU 取累加器中的数据.\nALU→AC→AX 计算后传回寄存器",
+    "step_5": "4个互斥类别对应 3位,4位,4位,3位编码.\n3个外部条件 对应 3位编码\n故7位字段为 24-3-4-4-3-3 为7位\n∴ 容量为 24×2⁷b = 3072b",
+    "step_6": "题6(表格)如表所示 4位互斥编码中000/0000表示无效操作"
+  }
+}

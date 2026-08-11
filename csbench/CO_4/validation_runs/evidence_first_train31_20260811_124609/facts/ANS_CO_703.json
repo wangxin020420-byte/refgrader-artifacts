@@ -1,0 +1,272 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:27:44.122223",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_703.png",
+  "image_sha256": "f3dc2f53c2c38c8953d0951076ea702103da50bbc12e9e03065a23737a4a7e84",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_703.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 22,
+    "accepted_token_count": 22,
+    "mean_confidence": 0.951748,
+    "min_confidence": 0.5,
+    "joined_text": "2. (20分) (1) 8B 8MB\n=23即23位\n32\n=16组=244位组号\nB\n2\n2×2kB\n=22即12位块内地\nB\n0\n6710011\n23\n标记\n组号块内地址\n(2) 送出地址为 2007FFH时，能在Cache中访问到数据\n送出地址为7F005H时，能在Cache中访问到数据\n0010 1101 0/...\n与块2对应tag相写\n5A\n0/11 1111 0/\n与块1，块了对应标记拍子\nFE",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.071828,
+      "very_dark_pixel_ratio": 0.049315,
+      "lower_region_dark_pixel_ratio": 0.070026,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)  8MB / B =  2^3 即23位 32/2 = 16组 = 2^4 4位组号 2×2kB / B = 2^12 即12位块内地址 \n其结构如图所示\n(2) 送出地址为2007FFH时，能在Cache中访问到数据 送出地址为7F0057H时，能在Cache中访问到数据\n 0010 1101 01…  5A 与块2对应tag相等  \n0111 1111 01… FE  与块1,块3对应标记相等 ",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_703",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "学生手写内容为：“32 / 2 = 16组 = 2^4即4位组号”（注：OCR将部分上标识别为普通数字，实际推算公式为32除以2，等于16组，等于2的4次方，即4位组号）。",
+    "step_4": "学生绘制了主存地址格式表/字段图，自左向右依次包含：“标记”、“组号”、“块内地址”。并标注了位数为：0、6710011、23。具体关系和位宽为：0...标记...6710011 | 组号块内地址 | 23。",
+    "step_5": "从答卷中未提取到明确的“Cache地址格式”的表格或字段设计。学生主要设计了主存地址字段（标记、组号、块内地址）。",
+    "step_6": "针对地址2D07FFH（被学生误抄为2007FFH），判断为：“能在Cache中访问到数据”。计算和推理过程为：“5A 0010 1101 0/... 与块2对应tag相写”。（包含显式的命中判断、tag计算及对应关系）",
+    "step_7": "针对地址7F0057H（被学生误抄为7F005H），判断为：“能在Cache中访问到数据”。计算和推理过程为：“FE 0/11 1111 0/ 与块1，块了对应标记拍子”。（包含显式的命中判断、tag计算及对应关系，其中部分字迹存在OCR识别扰动）"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 69.33,
+        "cells_left_to_right": [
+          {
+            "text": "2. (20分) (1) 8B 8MB",
+            "x_center": 141.0,
+            "confidence": 0.9388566017150879
+          },
+          {
+            "text": "B",
+            "x_center": 239.5,
+            "confidence": 0.9995518326759338
+          },
+          {
+            "text": "=23即23位",
+            "x_center": 368.5,
+            "confidence": 0.9541448950767517
+          },
+          {
+            "text": "32",
+            "x_center": 531.5,
+            "confidence": 0.9999715089797974
+          },
+          {
+            "text": "2",
+            "x_center": 537.5,
+            "confidence": 0.9999314546585083
+          },
+          {
+            "text": "=16组=244位组号",
+            "x_center": 720.0,
+            "confidence": 0.9700861573219299
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 151.33,
+        "cells_left_to_right": [
+          {
+            "text": "2×2kB",
+            "x_center": 199.5,
+            "confidence": 0.9310320615768433
+          },
+          {
+            "text": "B",
+            "x_center": 218.5,
+            "confidence": 0.9993484616279602
+          },
+          {
+            "text": "=22即12位块内地",
+            "x_center": 382.0,
+            "confidence": 0.8966816663742065
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 209.0,
+        "cells_left_to_right": [
+          {
+            "text": "0",
+            "x_center": 59.0,
+            "confidence": 0.9998281002044678
+          },
+          {
+            "text": "标记",
+            "x_center": 116.5,
+            "confidence": 0.9957447648048401
+          },
+          {
+            "text": "6710011",
+            "x_center": 249.0,
+            "confidence": 0.7830657958984375
+          },
+          {
+            "text": "组号块内地址",
+            "x_center": 319.0,
+            "confidence": 0.9795398116111755
+          },
+          {
+            "text": "23",
+            "x_center": 413.5,
+            "confidence": 0.9999825954437256
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 342.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 送出地址为 2007FFH时，能在Cache中访问到数据",
+            "x_center": 476.5,
+            "confidence": 0.9602724313735962
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 414.0,
+        "cells_left_to_right": [
+          {
+            "text": "送出地址为7F005H时，能在Cache中访问到数据",
+            "x_center": 508.0,
+            "confidence": 0.9263581037521362
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 476.17,
+        "cells_left_to_right": [
+          {
+            "text": "5A",
+            "x_center": 156.5,
+            "confidence": 0.9997395277023315
+          },
+          {
+            "text": "0010 1101 0/...",
+            "x_center": 205.0,
+            "confidence": 0.9052076935768127
+          },
+          {
+            "text": "与块2对应tag相写",
+            "x_center": 488.0,
+            "confidence": 0.9427404403686523
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 562.83,
+        "cells_left_to_right": [
+          {
+            "text": "FE",
+            "x_center": 148.0,
+            "confidence": 0.9985341429710388
+          },
+          {
+            "text": "0/11 1111 0/",
+            "x_center": 187.0,
+            "confidence": 0.8480017781257629
+          },
+          {
+            "text": "与块1，块了对应标记拍子",
+            "x_center": 527.5,
+            "confidence": 0.9098368287086487
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=141.0: 2. (20分) (1) 8B 8MB | x=239.5: B | x=368.5: =23即23位 | x=531.5: 32 | x=537.5: 2 | x=720.0: =16组=244位组号\nRow 2: x=199.5: 2×2kB | x=218.5: B | x=382.0: =22即12位块内地\nRow 3: x=59.0: 0 | x=116.5: 标记 | x=249.0: 6710011 | x=319.0: 组号块内地址 | x=413.5: 23\nRow 4: x=476.5: (2) 送出地址为 2007FFH时，能在Cache中访问到数据\nRow 5: x=508.0: 送出地址为7F005H时，能在Cache中访问到数据\nRow 6: x=156.5: 5A | x=205.0: 0010 1101 0/... | x=488.0: 与块2对应tag相写\nRow 7: x=148.0: FE | x=187.0: 0/11 1111 0/ | x=527.5: 与块1，块了对应标记拍子"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "8MB=2^23 即23位",
+    "step_2": "2×2kB=2^12 即12位块内地址",
+    "step_3": "32/2=16组=2^4 4位组号",
+    "step_4": "标记 组号 块内地址",
+    "step_5": "未书写",
+    "step_6": "送出地址为2D07FFH时，不能在Cache中访问到数据 0010 1101 0/… 与块2对应tag相等",
+    "step_7": "送出地址为7F0057H时，能在Cache中访问到数据 0111 1111 0/… 与块1,块3对应标记相等"
+  },
+  "facts": {
+    "step_1": "8MB / B = 2^3 即23位",
+    "step_2": "2×2kB / B = 2^12 即12位块内地址",
+    "step_3": "32/2 = 16组 = 2^4 4位组号",
+    "step_4": "学生绘制了主存地址格式表/字段图，自左向右依次包含：“标记”、“组号”、“块内地址”。并标注了位数为：0、6710011、23。具体关系和位宽为：0...标记...6710011 | 组号块内地址 | 23。",
+    "step_5": "从答卷中未提取到明确的“Cache地址格式”的表格或字段设计。学生主要设计了主存地址字段（标记、组号、块内地址）。",
+    "step_6": "送出地址为2007FFH时，能在Cache中访问到数据；0010 1101 01… 5A 与块2对应tag相等",
+    "step_7": "送出地址为7F0057H时，能在Cache中访问到数据；0111 1111 01… FE 与块1,块3对应标记相等"
+  }
+}

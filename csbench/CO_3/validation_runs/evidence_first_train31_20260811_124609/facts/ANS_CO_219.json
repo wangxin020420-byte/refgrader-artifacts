@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:03:31.195388",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_219.png",
+  "image_sha256": "06451fc8138e3fb1685f617080f2b26b33b7a9daba89f2b15f2ab54905de0737",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "X: 00110110 y: 01010100 z: 11010101\n(X-2y)补: [X]补+[(-2y)]补 = 00110110 + 00101000 = 011011110=5EH 溢出OF为1\nX÷4相当于右移两位且向0取整舍入为00001101\n2z相当于2左移1位为10101010.(X+Z的过程溢出,OF为1).\n[(X÷4)+2Z]补= 00001101 + 10101010 = 10110111 = D7H 结果溢出\n实际上所述二者.X-2y:补码5EH. \n(X÷4)+2Z 补码D7H \n运算过程均有溢出,OF为1.",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_219",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "Student writes:\n- Values: X: 00110110, y: 01010100, z: 11010101 (binary forms given).\n- Formula/substitution: (X-2y)补: [X]补+[(-2y)]补 = 00110110 + 00101000 = 011011110 = 5EH.\n- Overflow judgment: 溢出OF为1；later restated: X-2y:补码5EH，运算过程均有溢出,OF为1.\nNote: Transcription preserves the inconsistent sum bit-length (011011110) and hex 5EH exactly as written.",
+    "step_2": "Student writes:\n- x÷4 trace: X÷4相当于右移两位且向0取整舍入为00001101.\n- 2z trace: 2z相当于2左移1位为10101010. Writes an intermediate note: (X+Z的过程溢出,OF为1).\n- Formula/sum: [(X÷4)+2Z]补= 00001101 + 10101010 = 10110111 = D7H.\n- Overflow judgment: 结果溢出；restated: (X÷4)+2Z 补码D7H，运算过程均有溢出,OF为1."
+  }
+}

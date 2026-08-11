@@ -1,0 +1,42 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T07:04:52.887784",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_420.jpg",
+  "image_sha256": "f70b5374ec47f22db829cf45c3747c47df3b8b5b257cdd8c6c25585c2402404b",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "#include <stdio.h>\nint main(){\nint m,n;\nint a[5][5]={0};\nfor(int i=0,i<5,++i){\nfor(int k=0,k<5,++k){\nscanf('%d',&a[i][k]);\n}\n}\nint b[5][5]={0};\nfor(int i=0,i<5,++i){\nfor(int k=0,k<5,++k){\nb[i][k]=a[k][i]\n}\n}\nfor(int i=0,i<5,++i){\nfor(int k=0,k<5,++k){\nprintf('%d',b[i][k]);\n}\n}\nFile *file=fopen('matrix.txt','w')\nfwrite(b,int,25,file);\nfclose(file);\nreturn 0;\n}",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CPL_420",
+    "question_id": "CPL_7",
+    "subject": "CPL",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "读取输入循环:\nfor(int i=0,i<5,++i){\nfor(int k=0,k<5,++k){\nscanf('%d',&a[i][k]);\n}\n}\n\n输出循环:\nfor(int i=0,i<5,++i){\nfor(int k=0,k<5,++k){\nprintf('%d',b[i][k]);\n}\n}",
+    "step_2": "File *file=fopen('matrix.txt','w')\nfwrite(b,int,25,file);\nfclose(file);",
+    "step_3": "int b[5][5]={0};\nfor(int i=0,i<5,++i){\nfor(int k=0,k<5,++k){\nb[i][k]=a[k][i]\n}\n}"
+  }
+}

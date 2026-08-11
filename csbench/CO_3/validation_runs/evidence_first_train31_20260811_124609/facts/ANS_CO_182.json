@@ -1,0 +1,49 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T01:55:38.023174",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_182.jpg",
+  "image_sha256": "f40c30c35a4e9c3758d8d39adf1d85f030562254cd6f7d008a9bf96429b34515",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解:由题得各整数二进制补码为[X]补=00110110. [Y]补=01010100. [Z]补=11010101  ∴X>0. Y>0. Z<0\n① X-2Y  ∵[2y]补相当于将[y]补左移1位  ∴[2y]补=10101000 (2y补结果溢出)\n∴[-2y]补=01011000  ∴[X-2y]补=[X]补+[-2y]补=(1001110)2=(+94)=(8E)16\n∵[X-2y]补用符号位与[X]补. [2y]补符号不同  ∴溢出  ∴OF=1\n② (X÷4)+2Z\n∵X÷4相当于将[X]补算术右移2位  ∴[X÷4]=00001101\n∵[2Z]补相当于将[Z]补逻辑左移1位  ∴[2Z]补=10101010 \n∴[X÷4]补+[2Z]补=(10110111)2=(B7)16\n∵数值位最高进位为0. 符号位最高进位为0. 二者相同\n∴不溢出  ∴OF=0",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_182",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": {
+      "hex_or_binary_values": "[X]补=00110110. [Y]补=01010100. [Z]补=11010101；[2y]补=10101000；[-2y]补=01011000；(1001110)2=(8E)16",
+      "formula_substitution_or_trace": "X-2Y；[2y]补相当于将[y]补左移1位；[-2y]补=01011000；[X-2y]补=[X]补+[-2y]补",
+      "overflow_judgment_or_conclusion": "2y补结果溢出；[X-2y]补用符号位与[X]补. [2y]补符号不同；溢出；OF=1"
+    },
+    "step_2": {
+      "hex_or_binary_values": "[X÷4]=00001101；[2Z]补=10101010；(10110111)2=(B7)16",
+      "formula_substitution_or_trace": "(X÷4)+2Z；X÷4相当于将[X]补算术右移2位；[2Z]补相当于将[Z]补逻辑左移1位；[X÷4]补+[2Z]补",
+      "overflow_judgment_or_conclusion": "数值位最高进位为0. 符号位最高进位为0. 二者相同；不溢出；OF=0"
+    }
+  }
+}

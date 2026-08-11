@@ -1,0 +1,327 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:29:35.771697",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_711.png",
+  "image_sha256": "6b51df740c418c9a3186cbddc7f263f1f18ef7a8e13eb696bfc92fc3589da3af",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_711.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 32,
+    "accepted_token_count": 31,
+    "mean_confidence": 0.876711,
+    "min_confidence": 0.5,
+    "joined_text": "2. (20分) 1/ 主块容量 8MB，字节偏址\n2>8xB：8×210×210B==7主右地址23位\n223B\nCache放32块，每组2块2)共，16右索引4位\n每块2KB=2xb210B22B=)块内地址111/位\nCache容量32x2KB:216B=Cache地址16位.组率引14位\n标记位\n组索引\n块地位\n2 主右地址：\n共23位.\n8位\n4位\n位\n地\nCache址：\n31\n但为快号\n块内地址\n共16位\n01011010B\n4位\n1位\ntay=\n(3) 2007 FFH，主右地址，程即标记位前位，2B\n话问块2\n余长最高位\n7F0057H，主在地址标位前8位，\ntay:1111110P 方问块?\n舍点最点位\n2) 都力能在Cache中访间到两个单元数据",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.162966,
+      "very_dark_pixel_ratio": 0.120112,
+      "lower_region_dark_pixel_ratio": 0.170853,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)主存容量8MB，字节编址\n8MB=8×2^20×2^10 B=2^23 B → 主存地址23位.\nCache共32块，每组2块→共16组→主存组索引4位\n每块2KB=2×2^10 B=2^11 B → 块内地址11位\nCache容量32×2KB=2^16 B → Cache地址16位. 组索引4位\n→主存地址：标记位 组索引 块内地址 8位 4位 11位 共23位.\nCache地址：组索引 块号 块内地址 4位 1位 11位 共16位. tag：0101 1010B\n(2)2D07FFH，主存地址，余长最底层标记位前8位，访问块2\n7F0057H，主存地址余长最高位标记位前8位，tag=1111 1110B 访问块3→都能在Cache中访问到两个单元数据",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_711",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "Cache放32块，每组2块2)共，16右索引4位 / Cache容量32x2KB:216B=Cache地址16位.组率引14位",
+    "step_4": "2 主右地址：[标记位 8位 | 组索引 4位 | 块地位 位] 共23位",
+    "step_5": "Cache址：[31 4位 | 但为快号 1位 | 块内地址 位] 共16位",
+    "step_6": "(3) 2007 FFH，主右地址，程即标记位前位，2B / tay= 01011010B / 余长最高位 / 话问块2",
+    "step_7": "7F0057H，主在地址标位前8位， / tay:1111110P / 舍点最点位 / 方问块?"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 39.0,
+        "cells_left_to_right": [
+          {
+            "text": "2. (20分) 1/ 主块容量 8MB，字节偏址",
+            "x_center": 275.5,
+            "confidence": 0.9280444383621216
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 109.83,
+        "cells_left_to_right": [
+          {
+            "text": "2>8xB：8×210×210B==7主右地址23位",
+            "x_center": 381.5,
+            "confidence": 0.8539785146713257
+          },
+          {
+            "text": "Cache放32块，每组2块2)共，16右索引4位",
+            "x_center": 387.5,
+            "confidence": 0.8017705678939819
+          },
+          {
+            "text": "223B",
+            "x_center": 400.5,
+            "confidence": 0.887405276298523
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 202.25,
+        "cells_left_to_right": [
+          {
+            "text": "每块2KB=2xb210B22B=)块内地址111/位",
+            "x_center": 353.0,
+            "confidence": 0.8575706481933594
+          },
+          {
+            "text": "Cache容量32x2KB:216B=Cache地址16位.组率引14位",
+            "x_center": 411.0,
+            "confidence": 0.8677011728286743
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 287.67,
+        "cells_left_to_right": [
+          {
+            "text": "2 主右地址：",
+            "x_center": 110.5,
+            "confidence": 0.832280158996582
+          },
+          {
+            "text": "地",
+            "x_center": 119.5,
+            "confidence": 0.9943732023239136
+          },
+          {
+            "text": "标记位",
+            "x_center": 242.0,
+            "confidence": 0.9374348521232605
+          },
+          {
+            "text": "8位",
+            "x_center": 260.5,
+            "confidence": 0.993504524230957
+          },
+          {
+            "text": "组索引",
+            "x_center": 381.0,
+            "confidence": 0.7619013786315918
+          },
+          {
+            "text": "4位",
+            "x_center": 387.5,
+            "confidence": 0.8703346252441406
+          },
+          {
+            "text": "块地位",
+            "x_center": 528.5,
+            "confidence": 0.9756579399108887
+          },
+          {
+            "text": "位",
+            "x_center": 535.5,
+            "confidence": 0.9694229960441589
+          },
+          {
+            "text": "共23位.",
+            "x_center": 691.5,
+            "confidence": 0.983845055103302
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 374.55,
+        "cells_left_to_right": [
+          {
+            "text": "Cache址：",
+            "x_center": 108.5,
+            "confidence": 0.9682775735855103
+          },
+          {
+            "text": "31",
+            "x_center": 255.5,
+            "confidence": 0.7415714859962463
+          },
+          {
+            "text": "4位",
+            "x_center": 272.0,
+            "confidence": 0.9918231964111328
+          },
+          {
+            "text": "但为快号",
+            "x_center": 393.0,
+            "confidence": 0.5727488994598389
+          },
+          {
+            "text": "1位",
+            "x_center": 402.5,
+            "confidence": 0.9822998046875
+          },
+          {
+            "text": "块内地址",
+            "x_center": 526.0,
+            "confidence": 0.980438768863678
+          },
+          {
+            "text": "位",
+            "x_center": 544.5,
+            "confidence": 0.33541348576545715
+          },
+          {
+            "text": "共16位",
+            "x_center": 680.0,
+            "confidence": 0.7996452450752258
+          },
+          {
+            "text": "tay=",
+            "x_center": 701.0,
+            "confidence": 0.8800216913223267
+          },
+          {
+            "text": "01011010B",
+            "x_center": 804.0,
+            "confidence": 0.9677771329879761
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 459.67,
+        "cells_left_to_right": [
+          {
+            "text": "余长最高位",
+            "x_center": 393.0,
+            "confidence": 0.882917046546936
+          },
+          {
+            "text": "(3) 2007 FFH，主右地址，程即标记位前位，2B",
+            "x_center": 434.5,
+            "confidence": 0.8289054036140442
+          },
+          {
+            "text": "话问块2",
+            "x_center": 749.0,
+            "confidence": 0.887980580329895
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 539.33,
+        "cells_left_to_right": [
+          {
+            "text": "舍点最点位",
+            "x_center": 360.0,
+            "confidence": 0.6781994700431824
+          },
+          {
+            "text": "7F0057H，主在地址标位前8位，",
+            "x_center": 398.0,
+            "confidence": 0.8513941764831543
+          },
+          {
+            "text": "tay:1111110P 方问块?",
+            "x_center": 684.0,
+            "confidence": 0.7889854907989502
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 600.0,
+        "cells_left_to_right": [
+          {
+            "text": "2) 都力能在Cache中访间到两个单元数据",
+            "x_center": 440.0,
+            "confidence": 0.8598411083221436
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=275.5: 2. (20分) 1/ 主块容量 8MB，字节偏址\nRow 2: x=381.5: 2>8xB：8×210×210B==7主右地址23位 | x=387.5: Cache放32块，每组2块2)共，16右索引4位 | x=400.5: 223B\nRow 3: x=353.0: 每块2KB=2xb210B22B=)块内地址111/位 | x=411.0: Cache容量32x2KB:216B=Cache地址16位.组率引14位\nRow 4: x=110.5: 2 主右地址： | x=119.5: 地 | x=242.0: 标记位 | x=260.5: 8位 | x=381.0: 组索引 | x=387.5: 4位 | x=528.5: 块地位 | x=535.5: 位 | x=691.5: 共23位.\nRow 5: x=108.5: Cache址： | x=255.5: 31 | x=272.0: 4位 | x=393.0: 但为快号 | x=402.5: 1位 | x=526.0: 块内地址 | x=544.5: 位 | x=680.0: 共16位 | x=701.0: tay= | x=804.0: 01011010B\nRow 6: x=393.0: 余长最高位 | x=434.5: (3) 2007 FFH，主右地址，程即标记位前位，2B | x=749.0: 话问块2\nRow 7: x=360.0: 舍点最点位 | x=398.0: 7F0057H，主在地址标位前8位， | x=684.0: tay:1111110P 方问块?\nRow 8: x=440.0: 2) 都力能在Cache中访间到两个单元数据"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "23位",
+    "step_2": "11位",
+    "step_3": "4位",
+    "step_4": "标记位 8位 | 组索引 4位 | 块内偏移位 11位",
+    "step_5": "组内块号 1位 | 块内地址 11位",
+    "step_6": "2D07FFH，主存地址，标记即标记位前8位，2D0H=0010 1101 0000 B，访问块2 命中",
+    "step_7": "7F0057H，主存地址，标记即标记位前8位，7F0H=111 1111 0000 B，访问块3 未命中"
+  },
+  "facts": {
+    "step_1": "8MB=8×2^20×2^10 B=2^23 B → 主存地址23位",
+    "step_2": "每块2KB=2×2^10 B=2^11 B → 块内地址11位",
+    "step_3": "Cache共32块，每组2块→共16组→主存组索引4位；Cache容量32×2KB=2^16 B → Cache地址16位. 组索引4位",
+    "step_4": "→主存地址：标记位 组索引 块内地址 8位 4位 11位 共23位.",
+    "step_5": "Cache地址：组索引 块号 块内地址 4位 1位 11位 共16位. tag：0101 1010B",
+    "step_6": "2D07FFH，主存地址，余长最底层标记位前8位，访问块2",
+    "step_7": "7F0057H，主存地址余长最高位标记位前8位，tag=1111 1110B 访问块3→都能在Cache中访问到两个单元数据"
+  }
+}

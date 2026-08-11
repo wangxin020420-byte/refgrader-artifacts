@@ -1,0 +1,364 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:07:18.462719",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1386.jpg",
+  "image_sha256": "aa1500857b0f0df8f1996a70a5b9481f114dd452aaeb20c04fce4c5438416613",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1386.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 29,
+    "accepted_token_count": 29,
+    "mean_confidence": 0.943887,
+    "min_confidence": 0.5,
+    "joined_text": "(1) a:DK寄存器\nb: IK等存器\nC:OR寄存器\nd: AR离存器\n(2)\n指令从主存取出进入a寄存器中暂存，\n再被传送至b寄存器中编译为微指令格式，最后\n被送入控制器中。\n(3) 首先数据从主存中被读出(读状态)被送入\na寄存器，进而被送入运算器进行相关运算\n算出结果后运算器向状态寄存器发出写指令，将\n运算结果通过AC写入主存中。\n(4)\n数据从主存中依据OD位置被取出，进而被送入ALU中\n与AX中的数据作运算，得出结果后改变AX中的值\n为运算结果。\n(5)\n5 3\n3+4+4+2=13\n外部条件3个⇒工位.\n8 4\n14 4\n24-13-2=9 控制器的容量=29×24位.\n3 2\n控制字段 外部条件 下址字段\n(6)\n13位\n2位\n9位",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.080183,
+      "very_dark_pixel_ratio": 0.052882,
+      "lower_region_dark_pixel_ratio": 0.090501,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "（1）\na：DR 寄存器\nb：IR 寄存器\nc：DR 寄存器\nd：AR 寄存器\n\n（2）\n指令从主存取出送入IR寄存器中暂存，\n再被传送至b寄存器中翻译为微指令格式，最后\n被送入控制器中。\n\n（3）\n首先数据从主存中被读出（读状态）被送入\na寄存器，进而被送入运算器进行相关运算，\n算出结果后运算器向状态寄存器发出写指令，将\n运算结果通过AC写入主存中。\n\n（4）\n数据从主存中依据OD位置被取出，进而被送入ALU中\n与AX中的数据作运算，得出结果后改变AX中的值\n为运算结果。\n\n（5）\n5  3\n8  4\n14 4\n3  2\n3+4+4+2=13      外部条件3个=>2位。\n24-13-2=9       控制器的容量=2^9×24位。\n（6）\n控制字段 | 外部条件 | 下址字段\n13位 | 2位 | 9位",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1386",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "数据从主存中依据OD位置被取出，进而被送入ALU中与AX中的数据作运算，得出结果后改变AX中的值为运算结果。",
+    "step_5": "5 3\n8 4\n14 4\n3+4+4+2=13\n外部条件3个⇒2位\n24-13-2=9 控制器的容量=29×24位.",
+    "step_6": "控制字段 外部条件 下址字段\n13位 2位 9位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 61.5,
+        "cells_left_to_right": [
+          {
+            "text": "(1) a:DK寄存器",
+            "x_center": 122.0,
+            "confidence": 0.8443084955215454
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 105.5,
+        "cells_left_to_right": [
+          {
+            "text": "b: IK等存器",
+            "x_center": 153.5,
+            "confidence": 0.7351933717727661
+          },
+          {
+            "text": "C:OR寄存器",
+            "x_center": 156.0,
+            "confidence": 0.8583818078041077
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 168.83,
+        "cells_left_to_right": [
+          {
+            "text": "(2)",
+            "x_center": 34.0,
+            "confidence": 0.9985325932502747
+          },
+          {
+            "text": "d: AR离存器",
+            "x_center": 160.5,
+            "confidence": 0.8563228845596313
+          },
+          {
+            "text": "指令从主存取出进入a寄存器中暂存，",
+            "x_center": 269.0,
+            "confidence": 0.9531585574150085
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 218.5,
+        "cells_left_to_right": [
+          {
+            "text": "再被传送至b寄存器中编译为微指令格式，最后",
+            "x_center": 333.0,
+            "confidence": 0.9629553556442261
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 254.0,
+        "cells_left_to_right": [
+          {
+            "text": "被送入控制器中。",
+            "x_center": 171.5,
+            "confidence": 0.9945685863494873
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 295.0,
+        "cells_left_to_right": [
+          {
+            "text": "(3) 首先数据从主存中被读出(读状态)被送入",
+            "x_center": 296.5,
+            "confidence": 0.9594171643257141
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 329.5,
+        "cells_left_to_right": [
+          {
+            "text": "a寄存器，进而被送入运算器进行相关运算",
+            "x_center": 335.0,
+            "confidence": 0.9801645874977112
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 363.0,
+        "cells_left_to_right": [
+          {
+            "text": "算出结果后运算器向状态寄存器发出写指令，将",
+            "x_center": 356.5,
+            "confidence": 0.9779742956161499
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 397.0,
+        "cells_left_to_right": [
+          {
+            "text": "运算结果通过AC写入主存中。",
+            "x_center": 251.5,
+            "confidence": 0.9801950454711914
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 431.25,
+        "cells_left_to_right": [
+          {
+            "text": "(4)",
+            "x_center": 30.5,
+            "confidence": 0.9974375367164612
+          },
+          {
+            "text": "数据从主存中依据OD位置被取出，进而被送入ALU中",
+            "x_center": 378.0,
+            "confidence": 0.9689856171607971
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 469.0,
+        "cells_left_to_right": [
+          {
+            "text": "与AX中的数据作运算，得出结果后改变AX中的值",
+            "x_center": 383.0,
+            "confidence": 0.9516046643257141
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 506.5,
+        "cells_left_to_right": [
+          {
+            "text": "为运算结果。",
+            "x_center": 158.5,
+            "confidence": 0.992671012878418
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 550.9,
+        "cells_left_to_right": [
+          {
+            "text": "(5)",
+            "x_center": 30.0,
+            "confidence": 0.9541447758674622
+          },
+          {
+            "text": "5 3",
+            "x_center": 111.5,
+            "confidence": 0.9567015171051025
+          },
+          {
+            "text": "8 4",
+            "x_center": 113.5,
+            "confidence": 0.9938051104545593
+          },
+          {
+            "text": "3+4+4+2=13",
+            "x_center": 255.5,
+            "confidence": 0.9988548159599304
+          },
+          {
+            "text": "外部条件3个⇒工位.",
+            "x_center": 460.0,
+            "confidence": 0.874963104724884
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 592.0,
+        "cells_left_to_right": [
+          {
+            "text": "14 4",
+            "x_center": 115.0,
+            "confidence": 0.9885495901107788
+          },
+          {
+            "text": "24-13-2=9 控制器的容量=29×24位.",
+            "x_center": 445.5,
+            "confidence": 0.9749442934989929
+          }
+        ]
+      },
+      {
+        "row": 15,
+        "y_center": 643.17,
+        "cells_left_to_right": [
+          {
+            "text": "(6)",
+            "x_center": 34.0,
+            "confidence": 0.8708279728889465
+          },
+          {
+            "text": "3 2",
+            "x_center": 117.0,
+            "confidence": 0.8143822550773621
+          },
+          {
+            "text": "控制字段 外部条件 下址字段",
+            "x_center": 241.0,
+            "confidence": 0.9731584787368774
+          }
+        ]
+      },
+      {
+        "row": 16,
+        "y_center": 681.17,
+        "cells_left_to_right": [
+          {
+            "text": "13位",
+            "x_center": 158.0,
+            "confidence": 0.9863638877868652
+          },
+          {
+            "text": "2位",
+            "x_center": 232.5,
+            "confidence": 0.9908609390258789
+          },
+          {
+            "text": "9位",
+            "x_center": 341.0,
+            "confidence": 0.9833034873008728
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=122.0: (1) a:DK寄存器\nRow 2: x=153.5: b: IK等存器 | x=156.0: C:OR寄存器\nRow 3: x=34.0: (2) | x=160.5: d: AR离存器 | x=269.0: 指令从主存取出进入a寄存器中暂存，\nRow 4: x=333.0: 再被传送至b寄存器中编译为微指令格式，最后\nRow 5: x=171.5: 被送入控制器中。\nRow 6: x=296.5: (3) 首先数据从主存中被读出(读状态)被送入\nRow 7: x=335.0: a寄存器，进而被送入运算器进行相关运算\nRow 8: x=356.5: 算出结果后运算器向状态寄存器发出写指令，将\nRow 9: x=251.5: 运算结果通过AC写入主存中。\nRow 10: x=30.5: (4) | x=378.0: 数据从主存中依据OD位置被取出，进而被送入ALU中\nRow 11: x=383.0: 与AX中的数据作运算，得出结果后改变AX中的值\nRow 12: x=158.5: 为运算结果。\nRow 13: x=30.0: (5) | x=111.5: 5 3 | x=113.5: 8 4 | x=255.5: 3+4+4+2=13 | x=460.0: 外部条件3个⇒工位.\nRow 14: x=115.0: 14 4 | x=445.5: 24-13-2=9 控制器的容量=29×24位.\nRow 15: x=34.0: (6) | x=117.0: 3 2 | x=241.0: 控制字段 外部条件 下址字段\nRow 16: x=158.0: 13位 | x=232.5: 2位 | x=341.0: 9位"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "未书写",
+    "step_2": "未书写",
+    "step_3": "未书写"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a: DR 寄存器\nb: IR 寄存器\nc: DR 寄存器\nd: AR 寄存器",
+    "step_2": "指令从主存取出送入IR寄存器中暂存，再被传送至b寄存器中编译为微指令格式，最后被送入控制器中。",
+    "step_3": "首先数据从主存中被读出（读状态）被送入a寄存器，进而被送入运算器进行相关运算，算出结果后运算器向状态寄存器发出写指令，将运算结果通过AL写入主存中。",
+    "step_4": "数据从主存中依据OD位置被取出，进而被送入ALU中与AX中的数据作运算，得出结果后改变AX中的值为运算结果。",
+    "step_5": "5 3\n8 4\n14 4\n3 2\n3+4+4+2=13 外部条件3个→2位。\n24-13-2=9 控制器的容量=2^9×24位。",
+    "step_6": "控制字段 外部条件 下址字段\n13位 | 2位 | 9位"
+  },
+  "facts": {
+    "step_1": "a：DR 寄存器\nb：IR 寄存器\nc：DR 寄存器\nd：AR 寄存器",
+    "step_2": "指令从主存取出送入IR寄存器中暂存，\n再被传送至b寄存器中翻译为微指令格式，最后\n被送入控制器中。",
+    "step_3": "首先数据从主存中被读出（读状态）被送入\na寄存器，进而被送入运算器进行相关运算，\n算出结果后运算器向状态寄存器发出写指令，将\n运算结果通过AC写入主存中。",
+    "step_4": "数据从主存中依据OD位置被取出，进而被送入ALU中\n与AX中的数据作运算，得出结果后改变AX中的值\n为运算结果。",
+    "step_5": "5  3\n8  4\n14 4\n3  2\n3+4+4+2=13      外部条件3个=>2位。\n24-13-2=9       控制器的容量=2^9×24位。",
+    "step_6": "控制字段 | 外部条件 | 下址字段\n13位 | 2位 | 9位"
+  }
+}

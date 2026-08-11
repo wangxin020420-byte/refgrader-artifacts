@@ -1,0 +1,88 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T13:29:45.423795",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_5/ANS_POC_138.jpg",
+  "image_sha256": "f72495e70f29dd7095a69903906d3dd40e3868d377aeabab4c5665ad064a89c0",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_5/ANS_POC_138.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 29,
+    "accepted_token_count": 29,
+    "mean_confidence": 0.876998,
+    "min_confidence": 0.5,
+    "joined_text": "5.\nI1\nI4\nI7\nS→b·Ba.#\nB\nS→bB·a，#\na\nS→bBa·,#\nB→oa.a\nS'→s,\nb\nI_5}\nS→·AaA.#\nI_{2\na\nS→.bBa.\nB→a·.a\nS'→S•,\nA→,a\nB→0a,#\nA I3\nI_6}\nI8\nS→A·aA,#\na\nS→Aa·A,#\nA\nS→AaA°,#",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.053405,
+      "very_dark_pixel_ratio": 0.034108,
+      "lower_region_dark_pixel_ratio": 0.060657,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_138",
+    "question_id": "POC_5",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "初始项目集→(b)I₁→(B)I₄→(a)I₇；初始项目集→(b)I₁→(a)I₅；初始项目集→(S)I₂；初始项目集→(A)I₃→(a)I₆→(A)I₈",
+  "diagram_facts": {
+    "step_5": "初始项目集→(b)I₁；I₁→(B)I₄；I₁→(a)I₅；I₄→(a)I₇；初始项目集→(S)I₂；初始项目集→(A)I₃；I₃→(a)I₆；I₆→(A)I₈；完整可见路径：初始项目集→(b)I₁→(B)I₄→(a)I₇；初始项目集→(b)I₁→(a)I₅；初始项目集→(S)I₂；初始项目集→(A)I₃→(a)I₆→(A)I₈"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten directed state transition edges for the LR(1) item sets. Preserve the starting state, transition symbol, arrow direction, and destination state exactly as written by the student."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_1",
+    "step_3",
+    "step_4"
+  ],
+  "visual_fallback_conflicts": [
+    "step_5"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "S'→S, #\nS→·AaA, #\nS→·bBa, #\nA→·, a\nB→·a, #",
+    "step_3": "I4: S→bB·a, #\nI5: B→a·.a",
+    "step_4": "I6: S→Aa·A, #\nI7: S→bBa·, #\nI8: S→AaA·, #",
+    "step_5": "I0 → I1 (b)\nI0 → I2 (S)\nI0 → I3 (A)\nI1 → I4 (B)\nI1 → I5 (a)\nI3 → I6 (a)\nI6 → I8 (A)\nI4 → I7 (a)"
+  },
+  "facts": {
+    "step_1": "S'→S, #\nS→·AaA, #\nS→·bBa, #\nA→·, a\nB→·a, #",
+    "step_3": "I4: S→bB·a, #\nI5: B→a·.a",
+    "step_4": "I6: S→Aa·A, #\nI7: S→bBa·, #\nI8: S→AaA·, #",
+    "step_5": "初始项目集→(b)I₁；I₁→(B)I₄；I₁→(a)I₅；I₄→(a)I₇；初始项目集→(S)I₂；初始项目集→(A)I₃；I₃→(a)I₆；I₆→(A)I₈；完整可见路径：初始项目集→(b)I₁→(B)I₄→(a)I₇；初始项目集→(b)I₁→(a)I₅；初始项目集→(S)I₂；初始项目集→(A)I₃→(a)I₆→(A)I₈"
+  }
+}

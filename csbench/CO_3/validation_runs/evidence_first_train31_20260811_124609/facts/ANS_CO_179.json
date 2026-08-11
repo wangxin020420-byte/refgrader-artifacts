@@ -1,0 +1,52 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-08-11T13:24:42.255256",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_179.jpg",
+  "image_sha256": "d087db18b6522c1e9f195c870fef48bc569ca623b8002beb9371a971b5e58a70",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "角焊：[X]补=0011 0110 [Y]补=0101 0100\n[Z]补=1101 0101\n∴2-[Y]补=1010 1100\n[X-2Y]补=[X]补+[-Y]补+[2Y]补=10001110，0F=0,并未溢出\n0011 0110\n1010 1100\n1010 1000\n1000 1110\nX÷4即X右移2位\n∴[X÷4]补=0000 1101\n∴[(X÷4)+2Z]补=[X÷4]补+[Z]补+[Z]补=1101 0111\n0000 1101\n1101 0101\n1101 0101\n1101 0111\n∴0F=1，发生了溢出.",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_179",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": {
+      "initial_values": "[X]补=0011 0110 [Y]补=0101 0100",
+      "computation_trace": "∴2-[Y]补=1010 1100\n[X-2Y]补=[X]补+[-Y]补+[2Y]补=10001110\n0011 0110\n1010 1100\n1010 1000\n1000 1110",
+      "result_string": "[X-2Y]补=10001110",
+      "overflow_judgment": "0F=0,并未溢出"
+    },
+    "step_2": {
+      "initial_values": "[X]补=0011 0110\n[Z]补=1101 0101",
+      "computation_trace": "X÷4即X右移2位\n∴[X÷4]补=0000 1101\n∴[(X÷4)+2Z]补=[X÷4]补+[Z]补+[Z]补=1101 0111\n0000 1101\n1101 0101\n1101 0101\n1101 0111",
+      "result_string": "[(X÷4)+2Z]补=1101 0111",
+      "overflow_judgment": "0F=1，发生了溢出"
+    }
+  }
+}

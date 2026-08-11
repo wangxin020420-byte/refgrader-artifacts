@@ -1,0 +1,373 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:05:35.941570",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1383.jpg",
+  "image_sha256": "2183bae16ab9a78e86a12e20bbb984ed2e547e4bf2a2578eaaddeae8d5113b46",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1383.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 32,
+    "accepted_token_count": 31,
+    "mean_confidence": 0.912858,
+    "min_confidence": 0.5,
+    "joined_text": "第十…u数据缓冲寄存器 b: 指令寄存器 C: 主存地址寄存器 d: 程序计数器\n(2): 主存储器→数据缓冲寄存器→指令寄存器→操作控制器\n(3):存：AC→数据缓冲寄存器→主存储器M\n取：存储器M→数据缓冲寄存器→ALU→AC\n(4): 首先将PC的内容送往AB: PC->AB 然后进行读操作：ADS,MIO=1,W/R=0\n再将数据总线的内容送向IR：DB→IR 最后 PC+1 完成指微指令\n再将OD的的地址送向DB：OD→DB然后进行读操作：ADS,MIO=1,W/R=0\n再将数据总线的内容暂时存放在GR中：DB→GR\n最后：GR→ALH，AX→ALU，f，ALU→AX 将GR,AX的内容送向ALU，完成加法\n送国AX\n(5): 由题意得\n5↑\n8↑\n114↑\n3向上取整又微命令字长24位\n3位\n4位\n4位\n2之\n∴控制存储器的容是应为4×24\n=12B\n000\n0000\n0000\n00\n(6) 由(5),知\n4位\n14位\n12位\n剩下的随机编码即可\n∴共有13位",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.124043,
+      "very_dark_pixel_ratio": 0.086587,
+      "lower_region_dark_pixel_ratio": 0.115675,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)a：数据缓冲寄存器 b：指令寄存器 c：主存地址寄存器 d：程序计数器\n(2):主存储器→数据缓冲寄存器→指令寄存器→操作控制器\n(3):存：AC→数据缓冲寄存器→主存储器M\n取：主存储器M→数据缓冲寄存器→ALU→AC\n(4):首先将PC的内容送往AB：PC→AB 然后进行读操作：ADS, M|非IO=1,W/非R=0\n再将数据总线的内容送回IR：DB→IR 最后PC+1 完成取指微指令\n再将OD的地址送往DB：OD→DB 然后进行读操作：ADS, M|非IO=1,W/非R=0\n再将数据总线的内容暂时存放在GR中：DB→GR\n最后：GR→ALU，AX→ALU， +，ALU→AX 将GR,AX的内容送向ALU,完成加法送回AX\n(5):由题意得 格式如图所示， 向上取整 又微命令字长24位\n∴控制存储器的容量应为 4×24/8 = 12 B\n(6)由(5)知 格式如图所示\n剩下的随机编码即可\n∴共有13位",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1383",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "(4): 首先将PC的内容送往AB: PC->AB 然后进行读操作：ADS,MIO=1,W/R=0\n再将数据总线的内容送向IR：DB→IR 最后 PC+1 完成指微指令\n再将OD的的地址送向DB：OD→DB然后进行读操作：ADS,MIO=1,W/R=0\n再将数据总线的内容暂时存放在GR中：DB→GR\n最后：GR→ALH，AX→ALU，f，ALU→AX 将GR,AX的内容送向ALU，完成加法\n送国AX",
+    "step_5": "(5): 由题意得\n5↑       8↑       114↑      2之       3向上取整又微命令字长24位\n3位      4位      4位\n∴控制存储器的容是应为4×24\n000      0000     =12B     0000      00",
+    "step_6": "(6) 由(5),知\n35立     4位      14位     12位\n剩下的随机编码即可\n∴共有13位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 28.0,
+        "cells_left_to_right": [
+          {
+            "text": "第十…u数据缓冲寄存器 b: 指令寄存器 C: 主存地址寄存器 d: 程序计数器",
+            "x_center": 459.5,
+            "confidence": 0.7598793506622314
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 82.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2): 主存储器→数据缓冲寄存器→指令寄存器→操作控制器",
+            "x_center": 335.0,
+            "confidence": 0.9542329907417297
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 124.0,
+        "cells_left_to_right": [
+          {
+            "text": "(3):存：AC→数据缓冲寄存器→主存储器M",
+            "x_center": 259.0,
+            "confidence": 0.9555251598358154
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 162.5,
+        "cells_left_to_right": [
+          {
+            "text": "取：存储器M→数据缓冲寄存器→ALU→AC",
+            "x_center": 298.0,
+            "confidence": 0.9705445170402527
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 201.0,
+        "cells_left_to_right": [
+          {
+            "text": "(4): 首先将PC的内容送往AB: PC->AB 然后进行读操作：ADS,MIO=1,W/R=0",
+            "x_center": 425.5,
+            "confidence": 0.9138345718383789
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 244.0,
+        "cells_left_to_right": [
+          {
+            "text": "再将数据总线的内容送向IR：DB→IR 最后 PC+1 完成指微指令",
+            "x_center": 379.5,
+            "confidence": 0.9334250092506409
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 288.5,
+        "cells_left_to_right": [
+          {
+            "text": "再将OD的的地址送向DB：OD→DB然后进行读操作：ADS,MIO=1,W/R=0",
+            "x_center": 427.0,
+            "confidence": 0.8874488472938538
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 327.5,
+        "cells_left_to_right": [
+          {
+            "text": "再将数据总线的内容暂时存放在GR中：DB→GR",
+            "x_center": 251.5,
+            "confidence": 0.9361213445663452
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 374.0,
+        "cells_left_to_right": [
+          {
+            "text": "最后：GR→ALH，AX→ALU，f，ALU→AX 将GR,AX的内容送向ALU，完成加法",
+            "x_center": 468.5,
+            "confidence": 0.9122770428657532
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 408.0,
+        "cells_left_to_right": [
+          {
+            "text": "送国AX",
+            "x_center": 55.5,
+            "confidence": 0.7609720230102539
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 466.33,
+        "cells_left_to_right": [
+          {
+            "text": "(5): 由题意得",
+            "x_center": 86.0,
+            "confidence": 0.937606155872345
+          },
+          {
+            "text": "3位",
+            "x_center": 222.5,
+            "confidence": 0.9528225660324097
+          },
+          {
+            "text": "5↑",
+            "x_center": 223.0,
+            "confidence": 0.8092441558837891
+          },
+          {
+            "text": "4位",
+            "x_center": 320.0,
+            "confidence": 0.8741496205329895
+          },
+          {
+            "text": "8↑",
+            "x_center": 324.5,
+            "confidence": 0.9134799242019653
+          },
+          {
+            "text": "4位",
+            "x_center": 425.5,
+            "confidence": 0.995092511177063
+          },
+          {
+            "text": "114↑",
+            "x_center": 428.5,
+            "confidence": 0.8764742016792297
+          },
+          {
+            "text": "2之",
+            "x_center": 529.5,
+            "confidence": 0.8393115401268005
+          },
+          {
+            "text": "3向上取整又微命令字长24位",
+            "x_center": 702.5,
+            "confidence": 0.9412417411804199
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 554.42,
+        "cells_left_to_right": [
+          {
+            "text": "∴控制存储器的容是应为4×24",
+            "x_center": 205.5,
+            "confidence": 0.845553457736969
+          },
+          {
+            "text": "000",
+            "x_center": 227.0,
+            "confidence": 0.9998822212219238
+          },
+          {
+            "text": "0000",
+            "x_center": 339.5,
+            "confidence": 0.9840922951698303
+          },
+          {
+            "text": "=12B",
+            "x_center": 420.5,
+            "confidence": 0.9868839383125305
+          },
+          {
+            "text": "0000",
+            "x_center": 444.0,
+            "confidence": 0.9986003637313843
+          },
+          {
+            "text": "00",
+            "x_center": 544.5,
+            "confidence": 0.9999192953109741
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 594.1,
+        "cells_left_to_right": [
+          {
+            "text": "(6) 由(5),知",
+            "x_center": 89.0,
+            "confidence": 0.9318327903747559
+          },
+          {
+            "text": "35立",
+            "x_center": 230.0,
+            "confidence": 0.45065975189208984
+          },
+          {
+            "text": "4位",
+            "x_center": 339.0,
+            "confidence": 0.6524830460548401
+          },
+          {
+            "text": "14位",
+            "x_center": 444.5,
+            "confidence": 0.864285945892334
+          },
+          {
+            "text": "12位",
+            "x_center": 541.0,
+            "confidence": 0.9600571990013123
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 640.0,
+        "cells_left_to_right": [
+          {
+            "text": "剩下的随机编码即可",
+            "x_center": 176.5,
+            "confidence": 0.9702481031417847
+          }
+        ]
+      },
+      {
+        "row": 15,
+        "y_center": 685.5,
+        "cells_left_to_right": [
+          {
+            "text": "∴共有13位",
+            "x_center": 217.5,
+            "confidence": 0.981062650680542
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=459.5: 第十…u数据缓冲寄存器 b: 指令寄存器 C: 主存地址寄存器 d: 程序计数器\nRow 2: x=335.0: (2): 主存储器→数据缓冲寄存器→指令寄存器→操作控制器\nRow 3: x=259.0: (3):存：AC→数据缓冲寄存器→主存储器M\nRow 4: x=298.0: 取：存储器M→数据缓冲寄存器→ALU→AC\nRow 5: x=425.5: (4): 首先将PC的内容送往AB: PC->AB 然后进行读操作：ADS,MIO=1,W/R=0\nRow 6: x=379.5: 再将数据总线的内容送向IR：DB→IR 最后 PC+1 完成指微指令\nRow 7: x=427.0: 再将OD的的地址送向DB：OD→DB然后进行读操作：ADS,MIO=1,W/R=0\nRow 8: x=251.5: 再将数据总线的内容暂时存放在GR中：DB→GR\nRow 9: x=468.5: 最后：GR→ALH，AX→ALU，f，ALU→AX 将GR,AX的内容送向ALU，完成加法\nRow 10: x=55.5: 送国AX\nRow 11: x=86.0: (5): 由题意得 | x=222.5: 3位 | x=223.0: 5↑ | x=320.0: 4位 | x=324.5: 8↑ | x=425.5: 4位 | x=428.5: 114↑ | x=529.5: 2之 | x=702.5: 3向上取整又微命令字长24位\nRow 12: x=205.5: ∴控制存储器的容是应为4×24 | x=227.0: 000 | x=339.5: 0000 | x=420.5: =12B | x=444.0: 0000 | x=544.5: 00\nRow 13: x=89.0: (6) 由(5),知 | x=230.0: 35立 | x=339.0: 4位 | x=444.5: 14位 | x=541.0: 12位\nRow 14: x=176.5: 剩下的随机编码即可\nRow 15: x=217.5: ∴共有13位"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "a: 数据缓冲寄存器, b: 指令寄存器, c: 主存地址寄存器, d: 程序计数器（文字标注，无图表连接）",
+    "step_2": "主存储器→数据缓冲寄存器→指令寄存器→操作控制器（文字描述，无图表连接）",
+    "step_3": "存：AC→数据缓冲寄存器→主存储器M；取：存储器M→数据缓冲寄存器→ALU→AC（文字描述，无图表连接）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a:数据缓冲寄存器 b:指令寄存器 c:主存地址寄存器 d:程序计数器",
+    "step_2": "主存储器→数据缓冲寄存器→指令寄存器→操作控制器",
+    "step_3": "存：AC→数据缓冲寄存器→主存储器M 取：主存储器M→数据缓冲寄存器→ALU→AC",
+    "step_4": "首先将PC的内容送往AB：PC→AB 然后进行读操作：ADS, M¯Io=1, W¯R=0 再将数据总线的内容送回IR：DB→IR 最后PC+1 完成取指阶段 再将OD的地址送往DB：OD→DB 然后进行读操作：ADS, M¯Io=1, W¯R=0 再将数据总线的内容暂时存放在GR中：DB→GR 最后：GR→ALU，AX→ALU，+，ALU→AX 将GR,AX的内容送往ALU，完成加法送回AX",
+    "step_5": "由题意得 5个 3位 8个 4位 14个 4位 3个 2位 向上取整 又微命令字长24位 ∴控制存储器的容量应为 4×24 = 12 B",
+    "step_6": "由(5)知 000 3位 0000 4位 0000 4位 00 2位 剩下的8位随机编码即可 ∴共有13位"
+  },
+  "facts": {
+    "step_1": "a：数据缓冲寄存器 b：指令寄存器 c：主存地址寄存器 d：程序计数器",
+    "step_2": "主存储器→数据缓冲寄存器→指令寄存器→操作控制器",
+    "step_3": "存：AC→数据缓冲寄存器→主存储器M\n取：主存储器M→数据缓冲寄存器→ALU→AC",
+    "step_4": "首先将PC的内容送往AB：PC→AB 然后进行读操作：ADS, M|非IO=1,W/非R=0\n再将数据总线的内容送回IR：DB→IR 最后PC+1 完成取指微指令\n再将OD的地址送往DB：OD→DB 然后进行读操作：ADS, M|非IO=1,W/非R=0\n再将数据总线的内容暂时存放在GR中：DB→GR\n最后：GR→ALU，AX→ALU， +，ALU→AX 将GR,AX的内容送向ALU,完成加法送回AX",
+    "step_5": "由题意得 格式如图所示， 向上取整 又微命令字长24位\n∴控制存储器的容量应为 4×24/8 = 12 B",
+    "step_6": "由(5)知 格式如图所示\n剩下的随机编码即可\n∴共有13位"
+  }
+}

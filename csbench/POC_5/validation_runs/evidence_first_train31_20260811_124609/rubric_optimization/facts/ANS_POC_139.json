@@ -1,0 +1,102 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-26T01:34:42.100800",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_5/ANS_POC_139.jpg",
+  "image_sha256": "ca4b68f7ce8b50fc875700b6fa67f02c9a6716da6e8455921c97c21fbf750e08",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_5/ANS_POC_139.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 18,
+    "accepted_token_count": 18,
+    "mean_confidence": 0.927556,
+    "min_confidence": 0.5,
+    "joined_text": "5.\nI1\nI4\nI7\nB\na\nI_0\nb\nI_5\nI_2\na\nS\nA\nI_3\nI6\nI8\na\nA",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.037061,
+      "very_dark_pixel_ratio": 0.021481,
+      "lower_region_dark_pixel_ratio": 0.04107,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_139",
+    "question_id": "POC_5",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "I0→(b)→I1; I0→(S)→I2; I0→(A)→I3; I1→(B)→I4; I1→(a)→I5; I3→(a)→I6; I6→(A)→I8; I4→(a)→I7",
+  "diagram_facts": {
+    "step_1": "图中未明确显示；完整可见路径：I0→(b)→I1; I0→(S)→I2; I0→(A)→I3; I1→(B)→I4; I1→(a)→I5; I3→(a)→I6; I6→(A)→I8; I4→(a)→I7",
+    "step_2": "I0→(b)→I1; I0→(S)→I2; I1→(B)→I4; I1→(a)→I5；完整可见路径：I0→(b)→I1; I0→(S)→I2; I0→(A)→I3; I1→(B)→I4; I1→(a)→I5; I3→(a)→I6; I6→(A)→I8; I4→(a)→I7",
+    "step_3": "I0→(A)→I3; I3→(a)→I6; I6→(A)→I8; I4→(a)→I7；完整可见路径：I0→(b)→I1; I0→(S)→I2; I0→(A)→I3; I1→(B)→I4; I1→(a)→I5; I3→(a)→I6; I6→(A)→I8; I4→(a)→I7",
+    "step_4": "I0→(b)→I1; I0→(S)→I2; I0→(A)→I3; I1→(B)→I4; I1→(a)→I5; I3→(a)→I6; I6→(A)→I8; I4→(a)→I7"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten content for the augmented grammar (if written) and the specific LR(1) item set I0, preserving all arrows (->), dots (·), commas, lookahead terminal symbols, and brackets exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's concrete handwritten LR(1) item sets and GOTO mapping relations derived from I0 and I1. Preserve all labels (e.g., GOTO), arrows (->), dots (·), commas, lookahead terminal symbols, and order exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten remaining LR(1) item sets and their GOTO mapping relations. Preserve all labels, arrows (->), dots (·), commas, lookahead terminal symbols, and order exactly as written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten state transition relations for the LR(1) item sets, preserving all state names, transition arrows, transition symbols, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "S' -> S\nI0: [S' -> ·S, $]",
+    "step_2": "I0: [S' -> ·S, $]\nI1: [S -> ·AaA, $], [S -> ·bBa, $], [A -> ·, a], [A -> ·, b], [B -> ·a, a]\nGOTO(I0, S) = I1\nGOTO(I0, A) = I2\nGOTO(I0, B) = I3",
+    "step_3": "I2: [S -> A·aA, $], [A -> ε·, a]\nGOTO(I2, a) = I4\nI3: [S -> b·Ba, $], [B -> ·a, a]\nGOTO(I3, a) = I5\nI4: [S -> Aa·A, $], [A -> ·, a], [A -> ·, b]\nGOTO(I4, A) = I6\nI5: [S -> bB·a, $], [B -> a·, a]\nGOTO(I5, a) = I7\nI6: [S -> AaA·, $], [A -> ·, a], [A -> ·, b]\nGOTO(I6, A) = I8\nI7: [S -> bBa·, $]\nI8: [S -> AaA·, $]",
+    "step_4": "I0 --S--> I1\nI0 --A--> I2\nI0 --B--> I3\nI1 --A--> I4\nI1 --b--> I5\nI2 --a--> I4\nI3 --a--> I5\nI4 --A--> I6\nI5 --a--> I7\nI6 --A--> I8"
+  },
+  "facts": {
+    "step_1": "图中未明确显示；完整可见路径：I0→(b)→I1; I0→(S)→I2; I0→(A)→I3; I1→(B)→I4; I1→(a)→I5; I3→(a)→I6; I6→(A)→I8; I4→(a)→I7",
+    "step_2": "I0→(b)→I1; I0→(S)→I2; I1→(B)→I4; I1→(a)→I5；完整可见路径：I0→(b)→I1; I0→(S)→I2; I0→(A)→I3; I1→(B)→I4; I1→(a)→I5; I3→(a)→I6; I6→(A)→I8; I4→(a)→I7",
+    "step_3": "I0→(A)→I3; I3→(a)→I6; I6→(A)→I8; I4→(a)→I7；完整可见路径：I0→(b)→I1; I0→(S)→I2; I0→(A)→I3; I1→(B)→I4; I1→(a)→I5; I3→(a)→I6; I6→(A)→I8; I4→(a)→I7",
+    "step_4": "I0→(b)→I1; I0→(S)→I2; I0→(A)→I3; I1→(B)→I4; I1→(a)→I5; I3→(a)→I6; I6→(A)→I8; I4→(a)→I7"
+  }
+}

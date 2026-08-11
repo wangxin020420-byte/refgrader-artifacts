@@ -1,0 +1,49 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:02:25.577402",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_211.png",
+  "image_sha256": "9b2129890d2f4d4aaec5eaac9d3d33e36e4284f74d0486b378934487ca262e3a",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "[X]补 = 36H\n= 00110110 b\n[Y]补 = 54H\n= 0101010 00b\n[Z]补 = D5H\n= 11010101 b\n[-Y]补 = 10101100 b\n[X-2Y]补 = [X-Y-Y]补\n= [X]补 + [-Y]补 + [-Y]补\n= 00110110 + 10101100 + 10101100\n= 10001110 b  OF =1\n= 8EH\nOF =1\n(4)0=0100 b\n X÷4等价为X右移2位.\n[X÷4]补 = 0000 1101 b\n[ (X÷4) + 2Z ]补\n= [ (X÷4) + z + z ]补\n= 0000 1101 + 11010101 + 11010101\n= 1011 0111 b \n= B7H\nOF =1\n+4",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_211",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": {
+      "hex_or_binary_values": "[X]补 = 36H = 00110110 b；[Y]补 = 54H = 0101010 00b；[-Y]补 = 10101100 b；[X-2Y]补 = 00110110 + 10101100 + 10101100 = 10001110 b = 8EH",
+      "formula_substitution_or_trace": "[X-2Y]补 = [X-Y-Y]补 = [X]补 + [-Y]补 + [-Y]补 = 00110110 + 10101100 + 10101100 = 10001110 b OF =1 = 8EH OF =1",
+      "overflow_judgment": "OF =1"
+    },
+    "step_2": {
+      "hex_or_binary_values": "[X÷4]补 = 0000 1101 b；[(X÷4) + 2Z]补 = 0000 1101 + 11010101 + 11010101 = 1011 0111 b = B7H",
+      "formula_substitution_or_trace": "X÷4等价为X右移2位。[ (X÷4) + 2Z ]补 = [ (X÷4) + z + z ]补 = 0000 1101 + 11010101 + 11010101 = 1011 0111 b = B7H OF =1",
+      "overflow_judgment": "OF =1"
+    }
+  }
+}

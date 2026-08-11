@@ -1,0 +1,308 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:29:50.636310",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1436.jpg",
+  "image_sha256": "bdb6f86d9df50db4dffe7e307238c0473421184e3401a0645bcd92beed363d98",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1436.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 21,
+    "accepted_token_count": 21,
+    "mean_confidence": 0.951062,
+    "min_confidence": 0.5,
+    "joined_text": "器、0R子器；C:AR地址寄存器，d: PC程序计数器\n 解.(2)PC→AR→M→DR→IR→操作控制器.\n(3) 取数据：AR→M→DR→ALU→AC\n存数据：AC→DR→M且AR→M指明存在主存哪个单元的地址.\n(4) ADD AX,OD 数据通路:\n①PC→AR→M→DR→IR 为取指通路.\n②IR→AR→M→DR→ALU为取数通路\n③AC→ALU，CPU发出'+运算信号\n④ALU→AC\n③④为执行通路\n(5)4个互斥类分别占：3、4、4、2位，外部条件占3位则下址字段有：\n24-3-4-4-2-3=8位则控制存储器容量：28×24位\n微指令的具体格式如下：\n(6)\n3 4 4 2\n3\n8\n控制字段\n外部条\n下字段\n件字段",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.10962,
+      "very_dark_pixel_ratio": 0.078745,
+      "lower_region_dark_pixel_ratio": 0.103857,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)a:DR数据缓冲寄存器 b:IR指令寄存器 c:AR地址寄存器 d:PC程序计数器\n(2) PC→AR→M→DR→IR→操作控制器.\n(3)取数据：AR→M→DR→ALU→AC.\n存数据：AC→DR→M且AR→M指明存在主存哪个单元的地址.\n(4)ADD AX,OD 数据通路：\n①PC→AR→M→DR→IR 为取指通路.\n②IR→AR→M→DR→ALU 为取数通路.\n③AC→ALU,CPU发出‘+’运算信号\n④ALU→AC. ③④为执行通路.\n(5)4个互斥类分别占:3、4、4、2位,外部P条件占3位 则下址字段有:\n24-3-4-4-2-3=8位 则控制存储器容量:2^8×24位\n(6)微地址的具体格式如下:\n[3 | 4 | 4 | 2 | 3 | 8]\n其中控制字段为前3 4 4 2字段 \n外部条件段为随后的3字段 \n下址字段为最后的8字段",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1436",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "(4) ADD AX,OD 数据通路:\n①PC→AR→M→DR→IR 为取指通路.\n②IR→AR→M→DR→ALU为取数通路\n③AC→ALU，CPU发出'+运算信号\n④ALU→AC\n③④为执行通路",
+    "step_5": "(5)4个互斥类分别占：3、4、4、2位，外部条件占3位则下址字段有：\n24-3-4-4-2-3=8位则控制存储器容量：28×24位",
+    "step_6": "(6) 微指令的具体格式如下：\n位长排布: 3 4 4 2 | 3 | 8\n表格列名: 控制字段 | 外部条件字段 | 下址字段"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 22.0,
+        "cells_left_to_right": [
+          {
+            "text": "器、0R子器；C:AR地址寄存器，d: PC程序计数器",
+            "x_center": 526.0,
+            "confidence": 0.8292149305343628
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 59.5,
+        "cells_left_to_right": [
+          {
+            "text": "解.(2)PC→AR→M→DR→IR→操作控制器.",
+            "x_center": 366.5,
+            "confidence": 0.9199425578117371
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 105.0,
+        "cells_left_to_right": [
+          {
+            "text": "(3) 取数据：AR→M→DR→ALU→AC",
+            "x_center": 303.5,
+            "confidence": 0.9620096683502197
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 155.5,
+        "cells_left_to_right": [
+          {
+            "text": "存数据：AC→DR→M且AR→M指明存在主存哪个单元的地址.",
+            "x_center": 465.0,
+            "confidence": 0.9799588918685913
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 201.0,
+        "cells_left_to_right": [
+          {
+            "text": "(4) ADD AX,OD 数据通路:",
+            "x_center": 233.0,
+            "confidence": 0.9091001749038696
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 239.0,
+        "cells_left_to_right": [
+          {
+            "text": "①PC→AR→M→DR→IR 为取指通路.",
+            "x_center": 328.0,
+            "confidence": 0.9436373710632324
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 285.0,
+        "cells_left_to_right": [
+          {
+            "text": "②IR→AR→M→DR→ALU为取数通路",
+            "x_center": 322.5,
+            "confidence": 0.9579480290412903
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 331.5,
+        "cells_left_to_right": [
+          {
+            "text": "③AC→ALU，CPU发出'+运算信号",
+            "x_center": 290.5,
+            "confidence": 0.9700586199760437
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 380.75,
+        "cells_left_to_right": [
+          {
+            "text": "④ALU→AC",
+            "x_center": 199.5,
+            "confidence": 0.9973637461662292
+          },
+          {
+            "text": "③④为执行通路",
+            "x_center": 419.0,
+            "confidence": 0.9944062829017639
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 454.5,
+        "cells_left_to_right": [
+          {
+            "text": "(5)4个互斥类分别占：3、4、4、2位，外部条件占3位则下址字段有：",
+            "x_center": 428.0,
+            "confidence": 0.9743656516075134
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 499.0,
+        "cells_left_to_right": [
+          {
+            "text": "24-3-4-4-2-3=8位则控制存储器容量：28×24位",
+            "x_center": 523.0,
+            "confidence": 0.967525839805603
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 570.6,
+        "cells_left_to_right": [
+          {
+            "text": "(6)",
+            "x_center": 93.0,
+            "confidence": 0.9988411068916321
+          },
+          {
+            "text": "3 4 4 2",
+            "x_center": 203.0,
+            "confidence": 0.8817732930183411
+          },
+          {
+            "text": "微指令的具体格式如下：",
+            "x_center": 248.0,
+            "confidence": 0.9926201105117798
+          },
+          {
+            "text": "3",
+            "x_center": 303.0,
+            "confidence": 0.9999353885650635
+          },
+          {
+            "text": "8",
+            "x_center": 421.0,
+            "confidence": 0.9999231100082397
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 638.17,
+        "cells_left_to_right": [
+          {
+            "text": "控制字段",
+            "x_center": 161.5,
+            "confidence": 0.9936404824256897
+          },
+          {
+            "text": "外部条",
+            "x_center": 315.0,
+            "confidence": 0.9755287170410156
+          },
+          {
+            "text": "下字段",
+            "x_center": 404.5,
+            "confidence": 0.7915677428245544
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 674.5,
+        "cells_left_to_right": [
+          {
+            "text": "件字段",
+            "x_center": 309.5,
+            "confidence": 0.9329395890235901
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=526.0: 器、0R子器；C:AR地址寄存器，d: PC程序计数器\nRow 2: x=366.5: 解.(2)PC→AR→M→DR→IR→操作控制器.\nRow 3: x=303.5: (3) 取数据：AR→M→DR→ALU→AC\nRow 4: x=465.0: 存数据：AC→DR→M且AR→M指明存在主存哪个单元的地址.\nRow 5: x=233.0: (4) ADD AX,OD 数据通路:\nRow 6: x=328.0: ①PC→AR→M→DR→IR 为取指通路.\nRow 7: x=322.5: ②IR→AR→M→DR→ALU为取数通路\nRow 8: x=290.5: ③AC→ALU，CPU发出'+运算信号\nRow 9: x=199.5: ④ALU→AC | x=419.0: ③④为执行通路\nRow 10: x=428.0: (5)4个互斥类分别占：3、4、4、2位，外部条件占3位则下址字段有：\nRow 11: x=523.0: 24-3-4-4-2-3=8位则控制存储器容量：28×24位\nRow 12: x=93.0: (6) | x=203.0: 3 4 4 2 | x=248.0: 微指令的具体格式如下： | x=303.0: 3 | x=421.0: 8\nRow 13: x=161.5: 控制字段 | x=315.0: 外部条 | x=404.5: 下字段\nRow 14: x=309.5: 件字段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a: 累加寄存器, b: 指令寄存器, c: AR地址寄存器, d: PC程序计数器",
+    "step_2": "PC→AR→M→DR→IR→操作控制器",
+    "step_3": "取数据: AR→M→DR→ALU→AC\n存数据: AC→DR→M且AR→M指明存在存贮明外单元的地址",
+    "step_4": "①PC→AR→M→DR→IR为取指通路.\n②IR→AR→M→DR→ALU为取数通路.\n③AC→ALU,CPU发出‘+’运算信号\n④ALU→AC. ③④为执行通路.",
+    "step_5": "4个互斥类分别占:3、4、4、2位,外部P条件占3位 则下址字段有:\n24-3-4-4-2-3=8位 则控制存储器容量:2^8×24位",
+    "step_6": "3 4 4 2 3 8\n控制字段  外部条件字段  下址字段"
+  },
+  "facts": {
+    "step_1": "a:DR数据缓冲寄存器 b:IR指令寄存器 c:AR地址寄存器 d:PC程序计数器",
+    "step_2": "PC→AR→M→DR→IR→操作控制器.",
+    "step_3": "取数据：AR→M→DR→ALU→AC.\n存数据：AC→DR→M且AR→M指明存在主存哪个单元的地址.",
+    "step_4": "ADD AX,OD 数据通路：\n①PC→AR→M→DR→IR 为取指通路.\n②IR→AR→M→DR→ALU 为取数通路.\n③AC→ALU,CPU发出‘+’运算信号\n④ALU→AC. ③④为执行通路.",
+    "step_5": "4个互斥类分别占:3、4、4、2位,外部P条件占3位 则下址字段有:\n24-3-4-4-2-3=8位 则控制存储器容量:2^8×24位",
+    "step_6": "微地址的具体格式如下:\n[3 | 4 | 4 | 2 | 3 | 8]\n其中控制字段为前3 4 4 2字段 \n外部条件段为随后的3字段 \n下址字段为最后的8字段"
+  }
+}

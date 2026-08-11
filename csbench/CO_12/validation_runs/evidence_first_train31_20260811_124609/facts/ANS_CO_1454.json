@@ -1,0 +1,276 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:34:58.333737",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1454.jpg",
+  "image_sha256": "7527c013d81354f9d612f94dbaf7076aaa3892cc1b14f4964c24c095aba7beb8",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1454.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 17,
+    "accepted_token_count": 17,
+    "mean_confidence": 0.897071,
+    "min_confidence": 0.5,
+    "joined_text": ") a: DR 数据寄仔器；D: IR 指令寄存器；C: AR地址寄存器；d: PC 计数器\n2) 取指：将PC中的地址码送入AB地址总线；发出读命令；\n从主存将指令读出送入数据总线DB；从B送入IR；\nIR将指令送入控制器\n3) 取数：控制器对指令译码，向控制总线(B发出误效命令；\nIR将操作数地址码送入AR，AR送入地址总线AB；\n将数据从数据总线DB传入DR；DR传入ALU。\n存数：ALU将数据送入AC，AC→DR，DR→主存\n地址存放同取数，由IR-→AR→AB.\n4) ADD AX,00\ni) 取指：PC→AB1；(0/R=1；OB→IR=1；PC+1.\ni) 取数:: OD→ AR=1； AR→AB=1 ; w/R=1; DB→DR=(i DR→ALU=1.\n…)执行： Ax→ALU；(+)=1；ALL)→Ax.\n5)：24位：[10g(5+)]=3位，[10g21]}=4位，[10g[14+]=4位，[10g2(3+1]=2位\n外部条件3个：3位，24-(3+4+4+2+3)=8位控存字量：28×24x=1536B\n6):3 44 23 8\n操作码字段 (B(F)转移条件下址字段",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.123732,
+      "very_dark_pixel_ratio": 0.08849,
+      "lower_region_dark_pixel_ratio": 0.119973,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解：1) a: DR 数据寄存器；b: IR 指令寄存器；C: AR地址寄存器；d: PC计数器\n2) 取指：将PC中的地址码送入AB地址总线；发出读命令；\n从主存沿指令读出送入数据总线DB；从DB送入IR；\nIR将指令送入控制器\n3)取数：控制器对指令译码，向控制总线CB发出读数命令；IR得操作数地址码送入AR，AR送入地址总线AB；将数据从数据总线DB传入DR；DR传入ALU。\n存数：ALU将数据送入AC，AC→DR，DR→主存，地址存放间取数，由IR→AR→AB.\n4) ADD AX,0D\ni) 取指：PC→AB=1；非w/R=1；DB→IR=1；PC+1.\nii) 取数：OD→AR=1；AR→AB=1；非w/R=1；DB→DR=1；DR→ALU=1.\niii) 执行：AX→ALU；(+) =1 ；ALU→AX.\n5)：24位 ：[log₂(5+1)]=3位，[log₂(8+1)]=4位，[log₂(14+1)]=4位，[log₂(3+1)]=2位\n外部条件3个：3位 ，24-(3+4+4+2+3)=8位\n控存容量：2⁸×24×（1/8）=1536 B\n6)：格式如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1454",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "4) ADD AX,00\ni) 取指：PC→AB1；(0/R=1；OB→IR=1；PC+1.\ni) 取数:: OD→ AR=1； AR→AB=1 ; w/R=1; DB→DR=(i DR→ALU=1.\n…)执行： Ax→ALU；(+)=1；ALL)→Ax.",
+    "step_5": "5)：24位：[10g(5+)]=3位，[10g21]}=4位，[10g[14+]=4位，[10g2(3+1]=2位\n外部条件3个：3位，24-(3+4+4+2+3)=8位控存字量：28×24x=1536B",
+    "step_6": "6):3 44 23 8\n操作码字段 (B(F)转移条件下址字段"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 30.0,
+        "cells_left_to_right": [
+          {
+            "text": ") a: DR 数据寄仔器；D: IR 指令寄存器；C: AR地址寄存器；d: PC 计数器",
+            "x_center": 472.0,
+            "confidence": 0.8454709053039551
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 88.0,
+        "cells_left_to_right": [
+          {
+            "text": "2) 取指：将PC中的地址码送入AB地址总线；发出读命令；",
+            "x_center": 433.5,
+            "confidence": 0.9800741076469421
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 130.0,
+        "cells_left_to_right": [
+          {
+            "text": "从主存将指令读出送入数据总线DB；从B送入IR；",
+            "x_center": 523.0,
+            "confidence": 0.9664976000785828
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 193.25,
+        "cells_left_to_right": [
+          {
+            "text": "IR将指令送入控制器",
+            "x_center": 329.0,
+            "confidence": 0.9737666249275208
+          },
+          {
+            "text": "3) 取数：控制器对指令译码，向控制总线(B发出误效命令；",
+            "x_center": 409.5,
+            "confidence": 0.9335106611251831
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 269.25,
+        "cells_left_to_right": [
+          {
+            "text": "将数据从数据总线DB传入DR；DR传入ALU。",
+            "x_center": 466.5,
+            "confidence": 0.9358198046684265
+          },
+          {
+            "text": "IR将操作数地址码送入AR，AR送入地址总线AB；",
+            "x_center": 492.5,
+            "confidence": 0.9789369702339172
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 349.25,
+        "cells_left_to_right": [
+          {
+            "text": "地址存放同取数，由IR-→AR→AB.",
+            "x_center": 394.5,
+            "confidence": 0.9138029217720032
+          },
+          {
+            "text": "存数：ALU将数据送入AC，AC→DR，DR→主存",
+            "x_center": 398.5,
+            "confidence": 0.9790768623352051
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 426.5,
+        "cells_left_to_right": [
+          {
+            "text": "4) ADD AX,00",
+            "x_center": 143.0,
+            "confidence": 0.8661240935325623
+          },
+          {
+            "text": "i) 取指：PC→AB1；(0/R=1；OB→IR=1；PC+1.",
+            "x_center": 318.0,
+            "confidence": 0.8365043997764587
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 491.25,
+        "cells_left_to_right": [
+          {
+            "text": "…)执行： Ax→ALU；(+)=1；ALL)→Ax.",
+            "x_center": 298.5,
+            "confidence": 0.8054165840148926
+          },
+          {
+            "text": "i) 取数:: OD→ AR=1； AR→AB=1 ; w/R=1; DB→DR=(i DR→ALU=1.",
+            "x_center": 422.0,
+            "confidence": 0.844645082950592
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 564.25,
+        "cells_left_to_right": [
+          {
+            "text": "5)：24位：[10g(5+)]=3位，[10g21]}=4位，[10g[14+]=4位，[10g2(3+1]=2位",
+            "x_center": 462.0,
+            "confidence": 0.8067929744720459
+          },
+          {
+            "text": "外部条件3个：3位，24-(3+4+4+2+3)=8位控存字量：28×24x=1536B",
+            "x_center": 562.5,
+            "confidence": 0.9068300724029541
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 645.0,
+        "cells_left_to_right": [
+          {
+            "text": "6):3 44 23 8",
+            "x_center": 213.5,
+            "confidence": 0.9088664054870605
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 688.5,
+        "cells_left_to_right": [
+          {
+            "text": "操作码字段 (B(F)转移条件下址字段",
+            "x_center": 304.0,
+            "confidence": 0.7680729031562805
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=472.0: ) a: DR 数据寄仔器；D: IR 指令寄存器；C: AR地址寄存器；d: PC 计数器\nRow 2: x=433.5: 2) 取指：将PC中的地址码送入AB地址总线；发出读命令；\nRow 3: x=523.0: 从主存将指令读出送入数据总线DB；从B送入IR；\nRow 4: x=329.0: IR将指令送入控制器 | x=409.5: 3) 取数：控制器对指令译码，向控制总线(B发出误效命令；\nRow 5: x=466.5: 将数据从数据总线DB传入DR；DR传入ALU。 | x=492.5: IR将操作数地址码送入AR，AR送入地址总线AB；\nRow 6: x=394.5: 地址存放同取数，由IR-→AR→AB. | x=398.5: 存数：ALU将数据送入AC，AC→DR，DR→主存\nRow 7: x=143.0: 4) ADD AX,00 | x=318.0: i) 取指：PC→AB1；(0/R=1；OB→IR=1；PC+1.\nRow 8: x=298.5: …)执行： Ax→ALU；(+)=1；ALL)→Ax. | x=422.0: i) 取数:: OD→ AR=1； AR→AB=1 ; w/R=1; DB→DR=(i DR→ALU=1.\nRow 9: x=462.0: 5)：24位：[10g(5+)]=3位，[10g21]}=4位，[10g[14+]=4位，[10g2(3+1]=2位 | x=562.5: 外部条件3个：3位，24-(3+4+4+2+3)=8位控存字量：28×24x=1536B\nRow 10: x=213.5: 6):3 44 23 8\nRow 11: x=304.0: 操作码字段 (B(F)转移条件下址字段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "可见执行路径包含取指（PC→地址总线AB→主存储器M→数据总线DB→IR）、取数（IR→AR→AB→主存储器M→DB→DR→ALU）、存数（AC→DR→主存储器M）、ADD指令执行（AX→ALU→AX）等数据通路序列",
+  "diagram_facts": {
+    "step_1": "a: DR 数据寄存器；b: IR 指令寄存器；c: AR 地址寄存器；d: PC 计数器；完整可见路径：可见执行路径包含取指（PC→地址总线AB→主存储器M→数据总线DB→IR）、取数（IR→AR→AB→主存储器M→DB→DR→ALU）、存数（AC→DR→主存储器M）、ADD指令执行（AX→ALU→AX）等数据通路序列",
+    "step_2": "取指：PC→AB→主存M→DB→IR；完整可见路径：可见执行路径包含取指（PC→地址总线AB→主存储器M→数据总线DB→IR）、取数（IR→AR→AB→主存储器M→DB→DR→ALU）、存数（AC→DR→主存储器M）、ADD指令执行（AX→ALU→AX）等数据通路序列",
+    "step_3": "取数：IR→AR→AB→主存M→DB→DR→ALU；存数：AC→DR→主存M；完整可见路径：可见执行路径包含取指（PC→地址总线AB→主存储器M→数据总线DB→IR）、取数（IR→AR→AB→主存储器M→DB→DR→ALU）、存数（AC→DR→主存储器M）、ADD指令执行（AX→ALU→AX）等数据通路序列"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "a: DR 数据寄存器；b: IR 指令寄存器；C: AR 地址寄存器；d: PC 计数器",
+    "step_2": "取指：将PC中的地址码送入AB地址总线；发出读命令；从主存沿指令读出送入数据总线DB；从DB送入IR；IR沿指令送入控制器",
+    "step_3": "取数：控制器对指令译码，内控制总线CB发出读数命令；IR将操作数地址码送入AR，AR送入地址总线AB；将数据从数据总线DB读入DR；DR送入ALU。存数：ALU将数据送入AC，AC→DR，DR→主存地址存放间取数，由IR→AR→AB。",
+    "step_4": "i) 取指：PC→AB；wIR=1；DB→IR；PC+1. ii) 取数：OD→AR；AR→AB；wIR=1；DB→DR；DR→ALU；iii) 执行：AX→ALU；(+) =1 ；ALU→AX.",
+    "step_5": "24位 ：[log₂(5ⁿ)]=3位，[log₂(8ⁿ)]=4位，[log₂(14ⁿ)]=4位，[log₂(3ⁿ)]=2位 外部条件3个：3位 ，24-(3+4+4+2+3)=8位 控存容量：2⁸×24×1/8=1536 B",
+    "step_6": "6): 3 | 4 | 4 | 2 | 3 | 8’ 操作码字段 (BCF)控制字段 下址字段"
+  },
+  "facts": {
+    "step_1": "a: DR 数据寄存器；b: IR 指令寄存器；C: AR地址寄存器；d: PC计数器",
+    "step_2": "取指：将PC中的地址码送入AB地址总线；发出读命令；\n从主存沿指令读出送入数据总线DB；从DB送入IR；\nIR将指令送入控制器",
+    "step_3": "取数：控制器对指令译码，向控制总线CB发出读数命令；IR得操作数地址码送入AR，AR送入地址总线AB；将数据从数据总线DB传入DR；DR传入ALU。\n存数：ALU将数据送入AC，AC→DR，DR→主存，地址存放间取数，由IR→AR→AB.",
+    "step_4": "ADD AX,0D\ni) 取指：PC→AB=1；非w/R=1；DB→IR=1；PC+1.\nii) 取数：OD→AR=1；AR→AB=1；非w/R=1；DB→DR=1；DR→ALU=1.\niii) 执行：AX→ALU；(+) =1 ；ALU→AX.",
+    "step_5": "24位 ：[log₂(5+1)]=3位，[log₂(8+1)]=4位，[log₂(14+1)]=4位，[log₂(3+1)]=2位\n外部条件3个：3位 ，24-(3+4+4+2+3)=8位\n控存容量：2⁸×24×（1/8）=1536 B",
+    "step_6": "6):3 44 23 8\n操作码字段 (B(F)转移条件下址字段"
+  }
+}

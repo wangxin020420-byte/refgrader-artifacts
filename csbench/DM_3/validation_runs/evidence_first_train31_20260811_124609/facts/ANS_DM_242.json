@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T23:36:04.237784",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_242.jpg",
+  "image_sha256": "83e4c5823bdeea7e94eafc4a00b4177871e3bf1543b63d43b3df8868a18bc81f",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "证明：\n∀x(A(x)∧(B(x)∨C(x)))，∀xB(x)→D(x)，\n∃x(A(x)∧¬D(x))⇒∃x(A(x)∧C(x))\n序号 断言 依据\n1 ∃x(A(x)∧¬D(x)) P\n2 A(x₀)∧¬D(x₀) T,1\n3 A(x₀) T,2\n4 ¬D(x₀) T,2\n5 ∀xB(x)→D(x) P\n6 B(x1)→D(x1) T,5\n7 ¬B(x)∨D(x) T,6\n8 ¬B(x₀) T,4,7\n9 ∀x(A(x)∧(B(x)∨C(x))) P\n10 A(x2)∧(B(x2)∨C(x2)) T,9\n11 (A(x2)∧B(x2))∨(A(x2)∧C(x2)) T,10\n12 A(x₀)∧C(x₀) T,8,11\n13 ∃x(A(x)∧C(x)) T,12",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_242",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "∀x(A(x)∧(B(x)∨C(x)))，∀xB(x)→D(x)，∃x(A(x)∧¬D(x))⇒∃x(A(x)∧C(x))",
+    "step_2_a": "1 ∃x(A(x)∧¬D(x)) P\n2 A(x₀)∧¬D(x₀) T,1\n3 A(x₀) T,2\n4 ¬D(x₀) T,2",
+    "step_2_b": "5 ∀xB(x)→D(x) P\n6 B(x1)→D(x1) T,5\n7 ¬B(x)∨D(x) T,6\n8 ¬B(x₀) T,4,7\n9 ∀x(A(x)∧(B(x)∨C(x))) P\n10 A(x2)∧(B(x2)∨C(x2)) T,9\n11 (A(x2)∧B(x2))∨(A(x2)∧C(x2)) T,10\n12 A(x₀)∧C(x₀) T,8,11",
+    "step_2_c": "13 ∃x(A(x)∧C(x)) T,12"
+  }
+}

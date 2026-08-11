@@ -1,0 +1,398 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:41:50.905242",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1470.jpg",
+  "image_sha256": "33f8464199cda10851fa78ada58e14a978efe63cb75a6a53687f605a11496c49",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1470.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 34,
+    "accepted_token_count": 33,
+    "mean_confidence": 0.955877,
+    "min_confidence": 0.5,
+    "joined_text": "(4) ①取指\n5. 解.：：数据分存器DR\nPC→AB\nb： 指令寄存骂 IR\nDB→IR\nC: 地址寄存器 AR\npc+1\n③运算\n②取数\nd: PC\nOD→AR\nGR→ALU\n(1) ①PC→AB\nAR→AB\nAX→ALU\n②ADS,M/I0=1,W/R=0\nDB→GR\nADD→AX\n③DB→IR(从主存中取到的指令\n(5) 容量应为 26位.\n④ PC+1 通过数据传输线\n传进指令寄存器中)\n(3) ①运算器中的数\n(6) 微指令具体格式：\n先传入通用寄存器GR\n24\n12\n6\n6\n② GR通过数据传输线\n下址字段\n向主存中存入数据\n反之，从主存中取数亦然",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.068158,
+      "very_dark_pixel_ratio": 0.047532,
+      "lower_region_dark_pixel_ratio": 0.066041,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a: 数据寄存器DR\nb: 指令寄存器IR\nc: 地址寄存器AR\nd: PC\n(2) ①PC→AB\n②ADS, M/非IO=1, W/非R=0\n③DB→IR (从主存中取到的指令通过数据传输线传进指令寄存器中\n④PC+1 \n(3) ①运算器中的数\n先传入通用寄存器GR\n②GR通过数据传输线\n向主存中存入数据.\n反之,从主存中取数亦然.\n(4) ①取指\nPC→AB\nDB→IR\nPC+1\n②取数\nOD→AR\nAR→AB\nDB→GR\n③运算\nGR→ALU\nAX→ALU\nADD→AX\n(5) 容量应为 2⁶位.\n(6) 微指令具体格式如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1470",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": {
+      "id": "step_4",
+      "extracted_sequences": [
+        {
+          "phase": "①取指",
+          "data_path": "PC→AB, pc+1, DB→IR"
+        },
+        {
+          "phase": "②取数",
+          "data_path": "OD→AR, AR→AB, DB→GR"
+        },
+        {
+          "phase": "③运算",
+          "data_path": "GR→ALU, AX→ALU, ADD→AX"
+        }
+      ]
+    },
+    "step_5": {
+      "id": "step_5",
+      "extracted_computation": "(5) 容量应为 26位."
+    },
+    "step_6": {
+      "id": "step_6",
+      "extracted_design": "(6) 微指令具体格式：\n12 | 6 | 6 | 24\n下址字段"
+    }
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 28.67,
+        "cells_left_to_right": [
+          {
+            "text": "5. 解.：：数据分存器DR",
+            "x_center": 186.0,
+            "confidence": 0.7348232865333557
+          },
+          {
+            "text": "(4) ①取指",
+            "x_center": 582.5,
+            "confidence": 0.9728231430053711
+          },
+          {
+            "text": "PC→AB",
+            "x_center": 628.0,
+            "confidence": 0.9775932431221008
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 86.0,
+        "cells_left_to_right": [
+          {
+            "text": "C: 地址寄存器 AR",
+            "x_center": 244.0,
+            "confidence": 0.894950270652771
+          },
+          {
+            "text": "b： 指令寄存骂 IR",
+            "x_center": 245.5,
+            "confidence": 0.8415164947509766
+          },
+          {
+            "text": "pc+1",
+            "x_center": 612.5,
+            "confidence": 0.769940972328186
+          },
+          {
+            "text": "DB→IR",
+            "x_center": 625.5,
+            "confidence": 0.9992214441299438
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 137.9,
+        "cells_left_to_right": [
+          {
+            "text": "d: PC",
+            "x_center": 175.5,
+            "confidence": 0.9903844594955444
+          },
+          {
+            "text": "②取数",
+            "x_center": 610.0,
+            "confidence": 0.9936714768409729
+          },
+          {
+            "text": "OD→AR",
+            "x_center": 632.5,
+            "confidence": 0.989895224571228
+          },
+          {
+            "text": "③运算",
+            "x_center": 754.5,
+            "confidence": 0.9055207371711731
+          },
+          {
+            "text": "GR→ALU",
+            "x_center": 780.0,
+            "confidence": 0.9991781115531921
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 185.5,
+        "cells_left_to_right": [
+          {
+            "text": "(1) ①PC→AB",
+            "x_center": 155.0,
+            "confidence": 0.9542703628540039
+          },
+          {
+            "text": "AR→AB",
+            "x_center": 633.0,
+            "confidence": 0.9987634420394897
+          },
+          {
+            "text": "AX→ALU",
+            "x_center": 781.5,
+            "confidence": 0.9958140254020691
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 219.67,
+        "cells_left_to_right": [
+          {
+            "text": "②ADS,M/I0=1,W/R=0",
+            "x_center": 245.0,
+            "confidence": 0.872023344039917
+          },
+          {
+            "text": "DB→GR",
+            "x_center": 636.0,
+            "confidence": 0.9963929057121277
+          },
+          {
+            "text": "ADD→AX",
+            "x_center": 788.5,
+            "confidence": 0.9982133507728577
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 262.25,
+        "cells_left_to_right": [
+          {
+            "text": "③DB→IR(从主存中取到的指令",
+            "x_center": 283.0,
+            "confidence": 0.9754025936126709
+          },
+          {
+            "text": "(5) 容量应为 26位.",
+            "x_center": 644.0,
+            "confidence": 0.951423704624176
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 299.0,
+        "cells_left_to_right": [
+          {
+            "text": "④ PC+1 通过数据传输线",
+            "x_center": 278.0,
+            "confidence": 0.9415770769119263
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 335.75,
+        "cells_left_to_right": [
+          {
+            "text": "国",
+            "x_center": 90.0,
+            "confidence": 0.3002621829509735
+          },
+          {
+            "text": "传进指令寄存器中)",
+            "x_center": 359.5,
+            "confidence": 0.9269542694091797
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 391.0,
+        "cells_left_to_right": [
+          {
+            "text": "(3) ①运算器中的数",
+            "x_center": 192.5,
+            "confidence": 0.9715274572372437
+          },
+          {
+            "text": "(6) 微指令具体格式：",
+            "x_center": 640.5,
+            "confidence": 0.9850963950157166
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 428.5,
+        "cells_left_to_right": [
+          {
+            "text": "先传入通用寄存器GR",
+            "x_center": 263.0,
+            "confidence": 0.9846833944320679
+          },
+          {
+            "text": "24",
+            "x_center": 666.5,
+            "confidence": 0.9760080575942993
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 464.5,
+        "cells_left_to_right": [
+          {
+            "text": "② GR通过数据传输线",
+            "x_center": 250.0,
+            "confidence": 0.9589558243751526
+          },
+          {
+            "text": "12",
+            "x_center": 612.5,
+            "confidence": 0.999976396560669
+          },
+          {
+            "text": "6",
+            "x_center": 668.0,
+            "confidence": 0.9999581575393677
+          },
+          {
+            "text": "6",
+            "x_center": 723.0,
+            "confidence": 0.9999604225158691
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 510.0,
+        "cells_left_to_right": [
+          {
+            "text": "向主存中存入数据",
+            "x_center": 255.5,
+            "confidence": 0.9982609748840332
+          },
+          {
+            "text": "下址字段",
+            "x_center": 746.0,
+            "confidence": 0.9941021800041199
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 570.0,
+        "cells_left_to_right": [
+          {
+            "text": "反之，从主存中取数亦然",
+            "x_center": 254.0,
+            "confidence": 0.9950673580169678
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=186.0: 5. 解.：：数据分存器DR | x=582.5: (4) ①取指 | x=628.0: PC→AB\nRow 2: x=244.0: C: 地址寄存器 AR | x=245.5: b： 指令寄存骂 IR | x=612.5: pc+1 | x=625.5: DB→IR\nRow 3: x=175.5: d: PC | x=610.0: ②取数 | x=632.5: OD→AR | x=754.5: ③运算 | x=780.0: GR→ALU\nRow 4: x=155.0: (1) ①PC→AB | x=633.0: AR→AB | x=781.5: AX→ALU\nRow 5: x=245.0: ②ADS,M/I0=1,W/R=0 | x=636.0: DB→GR | x=788.5: ADD→AX\nRow 6: x=283.0: ③DB→IR(从主存中取到的指令 | x=644.0: (5) 容量应为 26位.\nRow 7: x=278.0: ④ PC+1 通过数据传输线\nRow 8: x=90.0: 国 | x=359.5: 传进指令寄存器中)\nRow 9: x=192.5: (3) ①运算器中的数 | x=640.5: (6) 微指令具体格式：\nRow 10: x=263.0: 先传入通用寄存器GR | x=666.5: 24\nRow 11: x=250.0: ② GR通过数据传输线 | x=612.5: 12 | x=668.0: 6 | x=723.0: 6\nRow 12: x=255.5: 向主存中存入数据 | x=746.0: 下址字段\nRow 13: x=254.0: 反之，从主存中取数亦然"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "a: 数据寄存器DR, b: 指令寄存器IR, c: 地址寄存器AR, d: PC",
+    "step_2": "PC→AB, DB→IR, PC+1",
+    "step_3": "GR→ALU, AX→ALU, ADD→AX, OD→AR, AR→AB, DB→GR"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "a: 数据寄存器DR\nb: 指令寄存器IR\nc: 地址寄存器AR\nd: PC",
+    "step_2": "①PC→AB\n②ADS, M/IO=1, WR=0\n③DB→IR (从主存中取到的指令通过数据传输线传进指令寄存器中)\n④PC+1",
+    "step_3": "①运算器中的数\n先传入通用寄存器GR\n②GR通过数据传输线\n向主存中存入数据。\n反之,从主存中取数亦然。",
+    "step_4": "①取指\nPC→AB\nDB→IR\nPC+1\n②取数\nOD→AR\nAR→AB\nDB→GR\n③运算\nGR→ALU\nAX→ALU\nADD→AX",
+    "step_5": "容量应为2^6位.",
+    "step_6": "微指令具体格式：\n24\n12  6  6\n下址字段"
+  },
+  "facts": {
+    "step_1": "a: 数据寄存器DR\nb: 指令寄存器IR\nc: 地址寄存器AR\nd: PC",
+    "step_2": "①PC→AB\n②ADS, M/非IO=1, W/非R=0\n③DB→IR (从主存中取到的指令通过数据传输线传进指令寄存器中\n④PC+1",
+    "step_3": "①运算器中的数\n先传入通用寄存器GR\n②GR通过数据传输线\n向主存中存入数据.\n反之,从主存中取数亦然.",
+    "step_4": "①取指\nPC→AB\nDB→IR\nPC+1\n②取数\nOD→AR\nAR→AB\nDB→GR\n③运算\nGR→ALU\nAX→ALU\nADD→AX",
+    "step_5": "容量应为 2⁶位.",
+    "step_6": {
+      "id": "step_6",
+      "extracted_design": "(6) 微指令具体格式：\n12 | 6 | 6 | 24\n下址字段"
+    }
+  }
+}

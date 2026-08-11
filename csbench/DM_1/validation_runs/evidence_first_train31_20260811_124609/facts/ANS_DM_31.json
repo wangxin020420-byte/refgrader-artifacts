@@ -1,0 +1,93 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T22:26:02.704997",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_31.jpg",
+  "image_sha256": "4197145247c165932d61b1d2f9e3b9138500c54eb7922a222a2377f9236b108a",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_31.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 30,
+    "accepted_token_count": 28,
+    "mean_confidence": 0.952537,
+    "min_confidence": 0.5,
+    "joined_text": "(1)\n112，3，T,0,11-154\n9154\n54\n16.\n214.6，24,54，由上述二元关系，作哈斯图\n4\n316.9,24,54,4124\n2\n6124,54\n3\n24\n(2)由哈图，极小元为1，极大元为24和54\n54\n9\n曰\n小元为1，24554无法比较，故不存在最大元\n4\n(3)\n取\n2\n(4) B:\na 4\n0\n0\n6\n9\n4.6.9均无法比车交，故B不存在最小上界和最大下界",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.039622,
+      "very_dark_pixel_ratio": 0.019148,
+      "lower_region_dark_pixel_ratio": 0.03178,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) 112,3,4,56,9,24,54  9154\n213,6,24,54,由上述二元关系，作哈斯图，哈斯图如图所示\n316,9,24,54,4124\n6124,54\n(2) 由哈斯图，极小元为1，极大元为24和54\n(3) 最小元为1，24与54无法比较，故不存在最大元\n(4) B： 4 6 9 4,6,9均无法比较，故B不存在最小上界和最大下界",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_31",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "节点层级自下而上：底层为1，第二层为2、3，第三层为4、6、9，顶层为24、54；连接关系：1连接2和3，2连接4和6，3连接6和9，4连接24，6连接24，9连接54",
+  "diagram_facts": {
+    "step_1": "可见节点1、2、3、4、6、9、24、54，以及连接关系：1-2、1-3、2-4、2-6、3-6、3-9、4-24、6-24、9-54；完整可见路径：节点层级自下而上：底层为1，第二层为2、3，第三层为4、6、9，顶层为24、54；连接关系：1连接2和3，2连接4和6，3连接6和9，4连接24，6连接24，9连接54"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten Hasse diagram for this item. Capture all vertices and edges exactly as drawn, preserving the structural relations, directionality, and any labels."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_3_1",
+    "step_4_1",
+    "step_4_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "1在最下，连接2和3；2连接4和6；3连接9；4连接24；6连接24；9连接54；24连接54（第一个图）；1在最下，连接2和3；2连接4和6；3连接9；4连接24；6连接24；9连接54；24连接54（第二个图）",
+    "step_2_1": "24和54",
+    "step_2_2": "1",
+    "step_3_1": "不存在最大元",
+    "step_3_2": "1",
+    "step_4_1": "不存在最小上界",
+    "step_4_2": "不存在最大下界"
+  },
+  "facts": {
+    "step_1": "可见节点1、2、3、4、6、9、24、54，以及连接关系：1-2、1-3、2-4、2-6、3-6、3-9、4-24、6-24、9-54；完整可见路径：节点层级自下而上：底层为1，第二层为2、3，第三层为4、6、9，顶层为24、54；连接关系：1连接2和3，2连接4和6，3连接6和9，4连接24，6连接24，9连接54",
+    "step_2_1": "24和54",
+    "step_2_2": "1",
+    "step_3_1": "24与54无法比较，故不存在最大元",
+    "step_3_2": "1",
+    "step_4_1": "4,6,9均无法比较，故B不存在最小上界",
+    "step_4_2": "4,6,9均无法比较，故B不存在最大下界"
+  }
+}

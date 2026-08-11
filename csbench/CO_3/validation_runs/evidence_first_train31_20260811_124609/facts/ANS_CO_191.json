@@ -1,0 +1,49 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T01:57:36.168743",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_191.jpg",
+  "image_sha256": "03fe22583da7bf164cf917bbd67642888be844f30c7dd836e5ccf20a25baa339",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解: x=00110110\ny=01010000\nz=11010101\n对x-2y:\n-y=10101100\nx-2y = x+(-y)+(-y)\n即: 00110110\n+10101100\n------\n11100010\n+10101100  +3\n------\n10001110\n第二次加法时,数值位最高位为，符号位进位为0，根据双进位法,没有发生溢出\n第二次加法时，同理可得二者进位分别为1和1，没有发生溢出。\nx-2y的补码结果为:8EH\n对(x÷4)+2z:\nx÷4 = x>>2\nx÷4 =00110110>>2\n=00001101\n(x÷4)+2z = (x÷4)+z+z\n即: 00001101\n+11010101\n------\n11100010\n+11010101  +5\n------\n10110111\n第一次加法时,数值位最高位进位为0,符号位最高位进位为0,根据双进位法,没有发生溢出;第二次加法时,两者进位均为1,同理可得,没有溢出。\n最终运算结果为: 0B7H",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_191",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": {
+      "values": "x = 00110110；y = 01010000；-y = 10101100；中间相加结果：11100010、+3；最终补码结果：8EH",
+      "formula_substitution_trace": "x - 2y = x + (-y) + (-y)；\n第一次加法：00110110 + 10101100 = 11100010；\n第二次加法：11100010 + 10101100（+3）= 10001110",
+      "overflow_judgment": "第二次加法时，数值位最高位为[空缺]，符号位进位为0，根据双进位法，没有发生溢出；并写有“第二次加法时，同理可得二者进位分别为1和1，没有发生溢出”。"
+    },
+    "step_2": {
+      "values": "x ÷ 4 = x >> 2 = 00110110 >> 2 = 00001101；中间相加结果：11100010、+5；最终运算结果：0B7H",
+      "formula_substitution_trace": "(x ÷ 4) + 2z = (x ÷ 4) + z + z；\n第一次加法：00001101 + 11010101 = 11100010；\n第二次加法：11100010 + 11010101（+5）= 10110111",
+      "overflow_judgment": "第一次加法时，数值位最高位进位为0，符号位最高位进位为0，根据双进位法，没有发生溢出；第二次加法时，两者进位均为1，同理可得，没有溢出。"
+    }
+  }
+}

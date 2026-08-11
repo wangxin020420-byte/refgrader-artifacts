@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:03:15.000468",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_218.png",
+  "image_sha256": "8904682774358abb8331cd0111f251c37cba0f3495c7866cf943371af8428c43",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：将x与y转为二进制．∴[x]补(0011 0110)₂ [y]补(0101 0100)₂\n[z]补(1101 0101)₂\n\n[-y]补=1010 1100\n∴[x-2y]补=[x]补+[-2y]补=[x]补+[-y]补+[-y]补=1 1000 1110\n=1000 1110\n∴[x-2y]补=(1000 1110)₂=8E H 未溢出，OF=0\n由题知 [x]补÷4=(0000 1101)₂\n[x]补÷4+[2z]补=[x]补÷4+[z]补+[z]补=1 1011 0111=1011 0111\n∴为 B7H 未溢出，OF=0",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_218",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "x - 2y 的计算：\n- 二进制/十六进制值：[x]补=(0011 0110)₂，[y]补=(0101 0100)₂，[-y]补=1010 1100，[x-2y]补=(1000 1110)₂=8E H（中间值 1 1000 1110 含进位位）。\n- 公式/代入/计算过程：[-y]补=1010 1100；[x-2y]补=[x]补+[-2y]补=[x]补+[-y]补+[-y]补=1 1000 1110=1000 1110。\n- 溢出判断：未溢出，OF=0。",
+    "step_2": "(x ÷ 4) + 2z 的计算：\n- 二进制/十六进制值：[x]补÷4=(0000 1101)₂，[z]补=(1101 0101)₂，结果=1011 0111=B7H（中间值 1 1011 0111 含进位位）。\n- 公式/代入/计算过程：由题知 [x]补÷4=(0000 1101)₂；[x]补÷4+[2z]补=[x]补÷4+[z]补+[z]补=1 1011 0111=1011 0111。\n- 溢出判断：未溢出，OF=0。"
+  }
+}

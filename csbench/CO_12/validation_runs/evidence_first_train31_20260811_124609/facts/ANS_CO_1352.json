@@ -1,0 +1,283 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T00:49:58.666165",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1352.jpg",
+  "image_sha256": "bc26ad7a4b6bdcdd5358efd3a7cdd7dd7110c5a561e06077219cd77ecc9c5e5a",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1352.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 20,
+    "accepted_token_count": 20,
+    "mean_confidence": 0.939946,
+    "min_confidence": 0.5,
+    "joined_text": "5. 解数据，b:指器，C:地器d：程序计数器\n(2) 从主存中取出指令，放入指令写存器工R，此时PC+1(PC根据当前\n指令长度加该长度，指到下一条指令)，挖制器根据指令发出微程方和微\nDR后，最后送入运算器.\n(4) ADD AX,OD:先取指令，PC-→AB，将指令送入IR后: PC+1,\n然后从OD单元地址取数，最后执行x会与AX原来的数相加，结果保存在AX中\n(5) 控制器共有微命令30个，构成千个互斥类，包含5,8,14，3个微命令，\n考虑到还有一个空状态，故需6.9,15,4个状态，分别为3.4,4,2位，\n外部条件共3个，加空状态，为2位，微指令字长24位，下地址字段有24-\n3-4-4-2-2=93.故控制存储器容量为29×24=24×512b=12288b.\n(6)\n3\n4\n4\n2\n2\n9\n↓下地址字段\n控制字段\n外部条件",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.137005,
+      "very_dark_pixel_ratio": 0.094254,
+      "lower_region_dark_pixel_ratio": 0.127282,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a：数据寄存器，b：运算器，c：地址寄存器，d：程序计数器。\n(2) 从主存中取出指令，放入指令寄存器IR，此时PC+1（PC根据当前指令长度加该长度，指到下一条指令），控制器根据指令发出微程序和微指令。\n(3) 数据由AR给出的地址，按地址在内存中取数，放入DR后，最后送入运算器。\n(4) ADD AX,0D：先取指令，PC->AB，将指令送入IR后，PC+1，然后从0D单元地址取数，最后执行指令与AX原来的数相加，结果保存在AX中。\n(5) 控制器共有微命令30个，构成4个互斥类，包含5、8、14、3个微命令，考虑到还有一位状态，故需6、9、15、4个状态，分别为3、4、4、2位，外部条件共3个，加空状态，为2位，微指令字长24位，下地址字段有24-3-4-4-2-2=9位，故控制存储器容量为2^9×24=24×512b=12288b。\n(6) 字段图如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1352",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "(4) ADD AX,OD:先取指令，PC-→AB，将指令送入IR后: PC+1, 然后从OD单元地址取数，最后执行x会与AX原来的数相加，结果保存在AX中",
+    "step_5": "(5) 控制器共有微命令30个，构成千个互斥类，包含5,8,14，3个微命令， 考虑到还有一个空状态，故需6.9,15,4个状态，分别为3.4,4,2位， 外部条件共3个，加空状态，为2位，微指令字长24位，下地址字段有24- 3-4-4-2-2=93.故控制存储器容量为29×24=24×512b=12288b.",
+    "step_6": "(6) [3, 4, 4, 2, 2, 9] (Lengths for: 控制字段, 外部条件, ↓下地址字段)"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 50.0,
+        "cells_left_to_right": [
+          {
+            "text": "5. 解数据，b:指器，C:地器d：程序计数器",
+            "x_center": 367.0,
+            "confidence": 0.7017006278038025
+          },
+          {
+            "text": "(2) 从主存中取出指令，放入指令写存器工R，此时PC+1(PC根据当前",
+            "x_center": 500.5,
+            "confidence": 0.9266413450241089
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 117.5,
+        "cells_left_to_right": [
+          {
+            "text": "指令长度加该长度，指到下一条指令)，挖制器根据指令发出微程方和微",
+            "x_center": 503.5,
+            "confidence": 0.9179523587226868
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 240.0,
+        "cells_left_to_right": [
+          {
+            "text": "DR后，最后送入运算器.",
+            "x_center": 265.5,
+            "confidence": 0.9851221442222595
+          },
+          {
+            "text": "(4) ADD AX,OD:先取指令，PC-→AB，将指令送入IR后: PC+1,",
+            "x_center": 486.0,
+            "confidence": 0.8657091856002808
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 308.5,
+        "cells_left_to_right": [
+          {
+            "text": "然后从OD单元地址取数，最后执行x会与AX原来的数相加，结果保存在AX中",
+            "x_center": 473.5,
+            "confidence": 0.9308781027793884
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 358.0,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 控制器共有微命令30个，构成千个互斥类，包含5,8,14，3个微命令，",
+            "x_center": 495.5,
+            "confidence": 0.9226455688476562
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 414.0,
+        "cells_left_to_right": [
+          {
+            "text": "考虑到还有一个空状态，故需6.9,15,4个状态，分别为3.4,4,2位，",
+            "x_center": 495.5,
+            "confidence": 0.9361134171485901
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 464.5,
+        "cells_left_to_right": [
+          {
+            "text": "外部条件共3个，加空状态，为2位，微指令字长24位，下地址字段有24-",
+            "x_center": 481.5,
+            "confidence": 0.9202853441238403
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 514.0,
+        "cells_left_to_right": [
+          {
+            "text": "3-4-4-2-2=93.故控制存储器容量为29×24=24×512b=12288b.",
+            "x_center": 482.5,
+            "confidence": 0.9523604512214661
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 580.71,
+        "cells_left_to_right": [
+          {
+            "text": "(6)",
+            "x_center": 99.0,
+            "confidence": 0.9975029826164246
+          },
+          {
+            "text": "3",
+            "x_center": 167.0,
+            "confidence": 0.9999964237213135
+          },
+          {
+            "text": "4",
+            "x_center": 241.5,
+            "confidence": 0.9999778270721436
+          },
+          {
+            "text": "4",
+            "x_center": 340.0,
+            "confidence": 0.9998877048492432
+          },
+          {
+            "text": "2",
+            "x_center": 399.5,
+            "confidence": 0.9999556541442871
+          },
+          {
+            "text": "2",
+            "x_center": 445.0,
+            "confidence": 0.9952521324157715
+          },
+          {
+            "text": "9",
+            "x_center": 491.0,
+            "confidence": 0.9999585151672363
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 648.17,
+        "cells_left_to_right": [
+          {
+            "text": "控制字段",
+            "x_center": 268.0,
+            "confidence": 0.868377149105072
+          },
+          {
+            "text": "外部条件",
+            "x_center": 464.0,
+            "confidence": 0.9731725454330444
+          },
+          {
+            "text": "↓下地址字段",
+            "x_center": 515.0,
+            "confidence": 0.9054206013679504
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=367.0: 5. 解数据，b:指器，C:地器d：程序计数器 | x=500.5: (2) 从主存中取出指令，放入指令写存器工R，此时PC+1(PC根据当前\nRow 2: x=503.5: 指令长度加该长度，指到下一条指令)，挖制器根据指令发出微程方和微\nRow 3: x=265.5: DR后，最后送入运算器. | x=486.0: (4) ADD AX,OD:先取指令，PC-→AB，将指令送入IR后: PC+1,\nRow 4: x=473.5: 然后从OD单元地址取数，最后执行x会与AX原来的数相加，结果保存在AX中\nRow 5: x=495.5: (5) 控制器共有微命令30个，构成千个互斥类，包含5,8,14，3个微命令，\nRow 6: x=495.5: 考虑到还有一个空状态，故需6.9,15,4个状态，分别为3.4,4,2位，\nRow 7: x=481.5: 外部条件共3个，加空状态，为2位，微指令字长24位，下地址字段有24-\nRow 8: x=482.5: 3-4-4-2-2=93.故控制存储器容量为29×24=24×512b=12288b.\nRow 9: x=99.0: (6) | x=167.0: 3 | x=241.5: 4 | x=340.0: 4 | x=399.5: 2 | x=445.0: 2 | x=491.0: 9\nRow 10: x=268.0: 控制字段 | x=464.0: 外部条件 | x=515.0: ↓下地址字段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "可见数据通路连线：主存储器M与寄存器a间有双向箭头，寄存器a与ALU间有双向箭头，寄存器AC与ALU间有双向箭头，ALU与状态寄存器间有单向箭头；寄存器b与操作控制器间有单向箭头，寄存器c与主存储器M间有双向箭头，寄存器d与寄存器c间有单向箭头且d有+1输入箭头",
+  "diagram_facts": {
+    "step_1": "a:数器，b:指器，c:地器，d:程序计数器；完整可见路径：可见数据通路连线：主存储器M与寄存器a间有双向箭头，寄存器a与ALU间有双向箭头，寄存器AC与ALU间有双向箭头，ALU与状态寄存器间有单向箭头；寄存器b与操作控制器间有单向箭头，寄存器c与主存储器M间有双向箭头，寄存器d与寄存器c间有单向箭头且d有+1输入箭头",
+    "step_2": "主存→a→b→控制器（PC+1）；完整可见路径：可见数据通路连线：主存储器M与寄存器a间有双向箭头，寄存器a与ALU间有双向箭头，寄存器AC与ALU间有双向箭头，ALU与状态寄存器间有单向箭头；寄存器b与操作控制器间有单向箭头，寄存器c与主存储器M间有双向箭头，寄存器d与寄存器c间有单向箭头且d有+1输入箭头",
+    "step_3": "主存→a→ALU（读）；ALU→a→主存（写）；完整可见路径：可见数据通路连线：主存储器M与寄存器a间有双向箭头，寄存器a与ALU间有双向箭头，寄存器AC与ALU间有双向箭头，ALU与状态寄存器间有单向箭头；寄存器b与操作控制器间有单向箭头，寄存器c与主存储器M间有双向箭头，寄存器d与寄存器c间有单向箭头且d有+1输入箭头"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a:数据缓冲寄存器，b:指令寄存器，c:地址寄存器，d:程序计数器",
+    "step_2": "从主存中取出指令，放入指令寄存器IR，此时PC+1( PC根据当前指令长度加该长度，指向下一条指令)，控制器根据指令发出微程序和微指令。",
+    "step_3": "数据由AR给出的地址，按地址再在内存中取数，暂存入DR后，最后送入运算器。",
+    "step_4": "ADD AX,OD：先取指令，PC->AB，将指令送入IR后，PC+1，然后从OD单元地址取数，最后执行指令与AX原来的数相加，结果保存在AX中",
+    "step_5": "控制器共有微命令30个，构成4个互斥类，包含5,8,14,3个微命令，考虑到还有一个总状态，故需6,9,15,4个状态，分别为3,4,4,2位，外部除件共3个，加空状态，为2位，微指令字长24位，下地址字段有24-3-4-4-2-2=9位.故 控制存储器容量为2^9×24=24×512b=12288b.",
+    "step_6": "3 4 4 2 2 9\n控制字段 外部条件 下地址字段"
+  },
+  "facts": {
+    "step_1": "a：数据寄存器，b：运算器，c：地址寄存器，d：程序计数器。",
+    "step_2": "从主存中取出指令，放入指令寄存器IR，此时PC+1（PC根据当前指令长度加该长度，指到下一条指令），控制器根据指令发出微程序和微指令。",
+    "step_3": "数据由AR给出的地址，按地址在内存中取数，放入DR后，最后送入运算器。",
+    "step_4": "ADD AX,0D：先取指令，PC->AB，将指令送入IR后，PC+1，然后从0D单元地址取数，最后执行指令与AX原来的数相加，结果保存在AX中。",
+    "step_5": "控制器共有微命令30个，构成4个互斥类，包含5、8、14、3个微命令，考虑到还有一位状态，故需6、9、15、4个状态，分别为3、4、4、2位，外部条件共3个，加空状态，为2位，微指令字长24位，下地址字段有24-3-4-4-2-2=9位，故控制存储器容量为2^9×24=24×512b=12288b。",
+    "step_6": "字段图如图所示"
+  }
+}

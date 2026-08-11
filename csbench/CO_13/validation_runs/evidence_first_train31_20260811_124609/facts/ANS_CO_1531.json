@@ -1,0 +1,371 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-08-11T13:05:35.646919",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_13/ANS_CO_1531.jpg",
+  "image_sha256": "3bbae429486353be18dab801a25f2f9f36f1903327a3e7b0e4687f27417de866",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_13/ANS_CO_1531.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 30,
+    "accepted_token_count": 29,
+    "mean_confidence": 0.987017,
+    "min_confidence": 0.5,
+    "joined_text": "6.\n(1)\nCPU执行主程序，在每个指令周期结束时会\n检测是否有中断请求(INTR=1?)\n若检测到中断请求，先进入到中断周期。\n做3件事：①保护断点\n②关中断(EINT=0)\n③中断源识别\n接着进入中服务子程序，依次执行以下过程：\n①保护现场\n②设备服务\n③恢复现场\n④开中断，(EINT=1)\n至此，中断结束，CPU回到主程序.\n(2).\n每中断源对应屏蔽字：\n轨迹：\nDCBA\nC:1111\nD\nB:1011\nC\n0:1001\nB\nA:000 1.\nA\n用户程序\nABCD\n同时到来",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.041722,
+      "very_dark_pixel_ratio": 0.027279,
+      "lower_region_dark_pixel_ratio": 0.039032,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)\nCPU执行主程序.在每个指令周期结束时会\n检测是否有中断请求(INTR=1?)\n若检测到中断请求,先进入到中断周期.\n做3件事: ①保护断点\n        ②关中断(EINT=0)\n        ③中断源识别\n接着进入中断服务子程序,依次执行以下过程:\n        ①保护现场\n        ②设备服务\n        ③恢复现场\n        ④开中断.(EINT=1)\n至此,中断结束,CPU回到主程序.\n(2)\n每中断源对应屏蔽字c：1111 B：1011 D：1001 A：0001\nCPU程序的轨迹如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1531",
+    "question_id": "CO_13",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": "中\nCPU执行主程序，在每个指令周期结束时会\n检测是否有中断请求(INTR=1?)\n若检测到中断请求，先进入到中断周期。\n做3件事：①保护断点\n②关中断(EINT=0)\n③中断源识别\n接着进入中服务子程序，依次执行以下过程：\n①保护现场\n②设备服务\n③恢复现场\n④开中断，(EINT=1)\n至此，中断结束，CPU回到主程序.",
+    "step_3": "D\nC\nB\nA\n用户程序\nABCD\n同时到来"
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten steps describing the CPU interrupt response process. Preserve the sequence of operations, arrows, dots, order, and direction exactly as written by the student, without revealing the expected answer."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten trajectory diagram mapping the CPU execution and interrupt processing sequence. Preserve all arrows, dots, nodes, branching, order, and direction exactly as drawn by the student, without revealing the expected answer."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 53.25,
+        "cells_left_to_right": [
+          {
+            "text": "6.",
+            "x_center": 21.5,
+            "confidence": 0.9991409778594971
+          },
+          {
+            "text": "(1)",
+            "x_center": 28.5,
+            "confidence": 0.9808536171913147
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 109.0,
+        "cells_left_to_right": [
+          {
+            "text": "中",
+            "x_center": 41.5,
+            "confidence": 0.20618224143981934
+          },
+          {
+            "text": "CPU执行主程序，在每个指令周期结束时会",
+            "x_center": 226.0,
+            "confidence": 0.9938720464706421
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 174.0,
+        "cells_left_to_right": [
+          {
+            "text": "检测是否有中断请求(INTR=1?)",
+            "x_center": 196.0,
+            "confidence": 0.9709930419921875
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 225.0,
+        "cells_left_to_right": [
+          {
+            "text": "若检测到中断请求，先进入到中断周期。",
+            "x_center": 231.0,
+            "confidence": 0.9720625281333923
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 270.5,
+        "cells_left_to_right": [
+          {
+            "text": "做3件事：①保护断点",
+            "x_center": 136.0,
+            "confidence": 0.9910498857498169
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 308.5,
+        "cells_left_to_right": [
+          {
+            "text": "②关中断(EINT=0)",
+            "x_center": 238.5,
+            "confidence": 0.9881413578987122
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 346.5,
+        "cells_left_to_right": [
+          {
+            "text": "③中断源识别",
+            "x_center": 203.5,
+            "confidence": 0.9887540340423584
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 393.5,
+        "cells_left_to_right": [
+          {
+            "text": "接着进入中服务子程序，依次执行以下过程：",
+            "x_center": 233.5,
+            "confidence": 0.9979467391967773
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 437.5,
+        "cells_left_to_right": [
+          {
+            "text": "①保护现场",
+            "x_center": 161.5,
+            "confidence": 0.9982423782348633
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 478.5,
+        "cells_left_to_right": [
+          {
+            "text": "②设备服务",
+            "x_center": 153.5,
+            "confidence": 0.9746055603027344
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 520.0,
+        "cells_left_to_right": [
+          {
+            "text": "③恢复现场",
+            "x_center": 157.5,
+            "confidence": 0.9997465014457703
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 564.5,
+        "cells_left_to_right": [
+          {
+            "text": "④开中断，(EINT=1)",
+            "x_center": 210.0,
+            "confidence": 0.9378865957260132
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 605.5,
+        "cells_left_to_right": [
+          {
+            "text": "至此，中断结束，CPU回到主程序.",
+            "x_center": 169.5,
+            "confidence": 0.9465346336364746
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 689.83,
+        "cells_left_to_right": [
+          {
+            "text": "(2).",
+            "x_center": 31.0,
+            "confidence": 0.9995089173316956
+          },
+          {
+            "text": "每中断源对应屏蔽字：",
+            "x_center": 124.0,
+            "confidence": 0.9899231195449829
+          },
+          {
+            "text": "轨迹：",
+            "x_center": 342.0,
+            "confidence": 0.9940497875213623
+          }
+        ]
+      },
+      {
+        "row": 15,
+        "y_center": 720.5,
+        "cells_left_to_right": [
+          {
+            "text": "DCBA",
+            "x_center": 101.5,
+            "confidence": 0.9975382685661316
+          }
+        ]
+      },
+      {
+        "row": 16,
+        "y_center": 752.5,
+        "cells_left_to_right": [
+          {
+            "text": "C:1111",
+            "x_center": 77.5,
+            "confidence": 0.9865972399711609
+          }
+        ]
+      },
+      {
+        "row": 17,
+        "y_center": 793.75,
+        "cells_left_to_right": [
+          {
+            "text": "B:1011",
+            "x_center": 75.5,
+            "confidence": 0.9918267726898193
+          },
+          {
+            "text": "D",
+            "x_center": 360.0,
+            "confidence": 0.9998830556869507
+          }
+        ]
+      },
+      {
+        "row": 18,
+        "y_center": 846.5,
+        "cells_left_to_right": [
+          {
+            "text": "0:1001",
+            "x_center": 70.0,
+            "confidence": 0.9972069263458252
+          },
+          {
+            "text": "C",
+            "x_center": 360.5,
+            "confidence": 0.9856095910072327
+          },
+          {
+            "text": "B",
+            "x_center": 365.0,
+            "confidence": 0.9999130964279175
+          }
+        ]
+      },
+      {
+        "row": 19,
+        "y_center": 896.5,
+        "cells_left_to_right": [
+          {
+            "text": "A:000 1.",
+            "x_center": 73.0,
+            "confidence": 0.942939817905426
+          },
+          {
+            "text": "A",
+            "x_center": 354.5,
+            "confidence": 0.9999692440032959
+          }
+        ]
+      },
+      {
+        "row": 20,
+        "y_center": 931.5,
+        "cells_left_to_right": [
+          {
+            "text": "用户程序",
+            "x_center": 326.5,
+            "confidence": 0.9996265172958374
+          }
+        ]
+      },
+      {
+        "row": 21,
+        "y_center": 994.0,
+        "cells_left_to_right": [
+          {
+            "text": "ABCD",
+            "x_center": 478.0,
+            "confidence": 0.9998801350593567
+          },
+          {
+            "text": "同时到来",
+            "x_center": 490.0,
+            "confidence": 0.9991878271102905
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=21.5: 6. | x=28.5: (1)\nRow 2: x=41.5: 中 | x=226.0: CPU执行主程序，在每个指令周期结束时会\nRow 3: x=196.0: 检测是否有中断请求(INTR=1?)\nRow 4: x=231.0: 若检测到中断请求，先进入到中断周期。\nRow 5: x=136.0: 做3件事：①保护断点\nRow 6: x=238.5: ②关中断(EINT=0)\nRow 7: x=203.5: ③中断源识别\nRow 8: x=233.5: 接着进入中服务子程序，依次执行以下过程：\nRow 9: x=161.5: ①保护现场\nRow 10: x=153.5: ②设备服务\nRow 11: x=157.5: ③恢复现场\nRow 12: x=210.0: ④开中断，(EINT=1)\nRow 13: x=169.5: 至此，中断结束，CPU回到主程序.\nRow 14: x=31.0: (2). | x=124.0: 每中断源对应屏蔽字： | x=342.0: 轨迹：\nRow 15: x=101.5: DCBA\nRow 16: x=77.5: C:1111\nRow 17: x=75.5: B:1011 | x=360.0: D\nRow 18: x=70.0: 0:1001 | x=360.5: C | x=365.0: B\nRow 19: x=73.0: A:000 1. | x=354.5: A\nRow 20: x=326.5: 用户程序\nRow 21: x=478.0: ABCD | x=490.0: 同时到来"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "CPU执行主程序，在每个指令周期结束时会检测是否有中断请求（INTR=1？）若检测到中断请求，先进入到中断周期，做3件事：①保护断点 ②关中断（EIMT=0） ③中断源识别 接着进入中断服务子程序，依次执行以下过程： ①保护现场 ②设备服务 ③恢复现场 ④开中断（EINT=1） 至此，中断结束，CPU回到主程序。",
+    "step_2": "C：1111 B：1011 D：1001 A：0001",
+    "step_3": "用户程序 → ABCD同时到来 → C → B → D → A"
+  },
+  "facts": {
+    "step_1": "CPU执行主程序.在每个指令周期结束时会检测是否有中断请求(INTR=1?) 若检测到中断请求,先进入到中断周期. 做3件事: ①保护断点 ②关中断(EINT=0) ③中断源识别 接着进入中断服务子程序,依次执行以下过程: ①保护现场 ②设备服务 ③恢复现场 ④开中断.(EINT=1) 至此,中断结束,CPU回到主程序.",
+    "step_2": "c：1111 B：1011 D：1001 A：0001",
+    "step_3": "D\nC\nB\nA\n用户程序\nABCD\n同时到来"
+  }
+}

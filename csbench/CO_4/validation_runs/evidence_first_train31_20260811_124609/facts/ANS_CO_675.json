@@ -1,0 +1,446 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:19:04.845388",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_675.jpg",
+  "image_sha256": "f3b8a88c14ea7c180b633e46b9c5e075b8266104be08330c1e189ac0fd162fc6",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_675.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 51,
+    "accepted_token_count": 50,
+    "mean_confidence": 0.897397,
+    "min_confidence": 0.5,
+    "joined_text": "2. （20分）\n主存容\n8MB=223B，上地上止位文23位\n①2DOTFFH 访问不到\n(1)\n2\n解：\n(2)\n转为二进制：\n(ache容量=32×2kB=2°B,上地址位数16元\n100111010000011111111\n(ache组数=32/2=16组，组号位，块号1位\n组号为0000对应第。组\nCa块2kB=2B，块内地址位.\n第0块\n主存乘余位数：23-34-11=8位，存放tag字段.\ntag为0oll101D\n设计如下：\n在第0.1块中没有相等的\ntag字段\n组号\n块内土地址\n共23位\n故访问不到\n主存：\n8位\n4位\n11位\n② 7F0057H. 能访问到块\n地址：\n22\n二制：\n+5\n11111 0000 000 0101 0111\n+5\ncache\n组号\n组内块号\n块内土地址\n共16位\n土地址\n4位\n1位\n11位\n组号 0000, tag: 1111 1110\n0\n在第0组第0、块中查式\n15\n块l的tag与其相月!\n故能的访问到，能访问到块！",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.089749,
+      "very_dark_pixel_ratio": 0.052455,
+      "lower_region_dark_pixel_ratio": 0.09401,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解：(1) 主存容量8MB=2^23B，上地址位数23位\ncache容量=32×2kB=2^16B，上地址位数16位.\ncache组数=32/2=16组，组号4位. 块号1位\n每块2kB=2^11B，块内地址11位.\n主存标记位数：23-4-11=8位，存放tag字段.\n设计如下表：\n主存：tag字段 组号 块内地址 共23位\n地址： 8位 4位 11位 \nCache地址：\n 组号 组内块号 块内地址 共16位\n 4位 1位 11位  共16位\n(2) ① 2D07FFH 访问不到\n转为二进制：\n0001 1101 0000 0111 1111 1111\n组号为0000，对应第0组\n自第0块\ntag为 0111 0110\n在第0，1块中没有相等的.\n故访问不到\n② 7F0057H. 能访问到块1\n二进制：\n0111 1111 0000 0000 0101 0111\n组号0000，tag:1111 1110\n在第四组第0，1块中查找，块1的tag与其相同！\n故能访问到，能访问到块1",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_675",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "(ache组数=32/2=16组，组号位，块号1位。主存乘余位数：23-34-11=8位，存放tag字段。主存： tag字段 8位 组号 4位 块内土地址 11位 共23位。",
+    "step_4": "主存： 设计如下： [ tag字段 | 组号 | 块内土地址 ]。地址位分配为：[ 8位 | 4位 | 11位 ]，共23位。",
+    "step_5": "cache： [ 组号 | 组内块号 | 块内土地址 ]。cache土地址位分配为：[ 4位 | 1位 | 11位 ]，共16位。",
+    "step_6": "①2DOTFFH 访问不到（判断为miss）。转为二进制：100111010000011111111。组号为0000对应第。组，第0块。tag为0oll101D。在第0.1块中没有相等的。故访问不到。",
+    "step_7": "② 7F0057H. 能访问到块（判断为hit）。二制：11111 0000 000 0101 0111。组号 0000, tag: 1111 1110。在第0组第0、块中查式，块l的tag与其相月! 故能的访问到，能访问到块！"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 78.25,
+        "cells_left_to_right": [
+          {
+            "text": "解：",
+            "x_center": 44.0,
+            "confidence": 0.636620044708252
+          },
+          {
+            "text": "2. （20分）",
+            "x_center": 54.0,
+            "confidence": 0.9264156818389893
+          },
+          {
+            "text": "(1)",
+            "x_center": 105.0,
+            "confidence": 0.9813487529754639
+          },
+          {
+            "text": "主存容",
+            "x_center": 166.5,
+            "confidence": 0.981279194355011
+          },
+          {
+            "text": "2",
+            "x_center": 208.0,
+            "confidence": 0.5934107303619385
+          },
+          {
+            "text": "2",
+            "x_center": 209.0,
+            "confidence": 0.4570278525352478
+          },
+          {
+            "text": "8MB=223B，上地上止位文23位",
+            "x_center": 376.5,
+            "confidence": 0.9080302119255066
+          },
+          {
+            "text": "(2)",
+            "x_center": 623.0,
+            "confidence": 0.9940608143806458
+          },
+          {
+            "text": "转为二进制：",
+            "x_center": 705.0,
+            "confidence": 0.9824749827384949
+          },
+          {
+            "text": "①2DOTFFH 访问不到",
+            "x_center": 777.5,
+            "confidence": 0.9101611375808716
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 135.0,
+        "cells_left_to_right": [
+          {
+            "text": "(ache容量=32×2kB=2°B,上地址位数16元",
+            "x_center": 316.0,
+            "confidence": 0.8997233510017395
+          },
+          {
+            "text": "100111010000011111111",
+            "x_center": 717.0,
+            "confidence": 0.7217725515365601
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 183.0,
+        "cells_left_to_right": [
+          {
+            "text": "(ache组数=32/2=16组，组号位，块号1位",
+            "x_center": 296.5,
+            "confidence": 0.8857735395431519
+          },
+          {
+            "text": "组号为0000对应第。组",
+            "x_center": 749.0,
+            "confidence": 0.8761823773384094
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 224.75,
+        "cells_left_to_right": [
+          {
+            "text": "Ca块2kB=2B，块内地址位.",
+            "x_center": 273.5,
+            "confidence": 0.8894190192222595
+          },
+          {
+            "text": "第0块",
+            "x_center": 722.0,
+            "confidence": 0.9352094531059265
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 270.75,
+        "cells_left_to_right": [
+          {
+            "text": "主存乘余位数：23-34-11=8位，存放tag字段.",
+            "x_center": 307.0,
+            "confidence": 0.8683958649635315
+          },
+          {
+            "text": "tag为0oll101D",
+            "x_center": 701.5,
+            "confidence": 0.8111431002616882
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 343.69,
+        "cells_left_to_right": [
+          {
+            "text": "主存：",
+            "x_center": 72.0,
+            "confidence": 0.9263786673545837
+          },
+          {
+            "text": "设计如下：",
+            "x_center": 112.5,
+            "confidence": 0.9622229337692261
+          },
+          {
+            "text": "tag字段",
+            "x_center": 180.0,
+            "confidence": 0.8684190511703491
+          },
+          {
+            "text": "组号",
+            "x_center": 261.0,
+            "confidence": 0.8368145227432251
+          },
+          {
+            "text": "块内土地址",
+            "x_center": 365.5,
+            "confidence": 0.9887655377388
+          },
+          {
+            "text": "共23位",
+            "x_center": 490.5,
+            "confidence": 0.9919003248214722
+          },
+          {
+            "text": "故访问不到",
+            "x_center": 683.5,
+            "confidence": 0.8715330362319946
+          },
+          {
+            "text": "在第0.1块中没有相等的",
+            "x_center": 730.5,
+            "confidence": 0.9373639225959778
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 391.75,
+        "cells_left_to_right": [
+          {
+            "text": "地址：",
+            "x_center": 69.5,
+            "confidence": 0.986897885799408
+          },
+          {
+            "text": "22",
+            "x_center": 136.5,
+            "confidence": 0.9989026784896851
+          },
+          {
+            "text": "8位",
+            "x_center": 172.5,
+            "confidence": 0.9984019994735718
+          },
+          {
+            "text": "4位",
+            "x_center": 266.5,
+            "confidence": 0.8630154132843018
+          },
+          {
+            "text": "11位",
+            "x_center": 352.5,
+            "confidence": 0.8919997215270996
+          },
+          {
+            "text": "② 7F0057H. 能访问到块",
+            "x_center": 746.5,
+            "confidence": 0.9045649170875549
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 453.67,
+        "cells_left_to_right": [
+          {
+            "text": "cache",
+            "x_center": 65.5,
+            "confidence": 0.9204164743423462
+          },
+          {
+            "text": "组号",
+            "x_center": 182.0,
+            "confidence": 0.986950159072876
+          },
+          {
+            "text": "+5",
+            "x_center": 232.5,
+            "confidence": 0.9102509021759033
+          },
+          {
+            "text": "组内块号",
+            "x_center": 281.0,
+            "confidence": 0.9879905581474304
+          },
+          {
+            "text": "块内土地址",
+            "x_center": 387.0,
+            "confidence": 0.9128519296646118
+          },
+          {
+            "text": "共16位",
+            "x_center": 500.0,
+            "confidence": 0.7777910828590393
+          },
+          {
+            "text": "二制：",
+            "x_center": 617.5,
+            "confidence": 0.944407045841217
+          },
+          {
+            "text": "+5",
+            "x_center": 712.5,
+            "confidence": 0.9818187952041626
+          },
+          {
+            "text": "11111 0000 000 0101 0111",
+            "x_center": 719.5,
+            "confidence": 0.6779777407646179
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 500.42,
+        "cells_left_to_right": [
+          {
+            "text": "土地址",
+            "x_center": 67.5,
+            "confidence": 0.934820830821991
+          },
+          {
+            "text": "4位",
+            "x_center": 194.5,
+            "confidence": 0.9822400808334351
+          },
+          {
+            "text": "1位",
+            "x_center": 272.5,
+            "confidence": 0.947379469871521
+          },
+          {
+            "text": "11位",
+            "x_center": 367.0,
+            "confidence": 0.73479825258255
+          },
+          {
+            "text": "0",
+            "x_center": 448.5,
+            "confidence": 0.9664065837860107
+          },
+          {
+            "text": "组号 0000, tag: 1111 1110",
+            "x_center": 710.5,
+            "confidence": 0.7593914270401001
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 536.75,
+        "cells_left_to_right": [
+          {
+            "text": "15",
+            "x_center": 157.0,
+            "confidence": 0.9925655126571655
+          },
+          {
+            "text": "在第0组第0、块中查式",
+            "x_center": 670.5,
+            "confidence": 0.7802432775497437
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 574.5,
+        "cells_left_to_right": [
+          {
+            "text": "块l的tag与其相月!",
+            "x_center": 648.5,
+            "confidence": 0.8627817034721375
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 615.5,
+        "cells_left_to_right": [
+          {
+            "text": "故能的访问到，能访问到块！",
+            "x_center": 702.5,
+            "confidence": 0.9801874160766602
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=44.0: 解： | x=54.0: 2. （20分） | x=105.0: (1) | x=166.5: 主存容 | x=208.0: 2 | x=209.0: 2 | x=376.5: 8MB=223B，上地上止位文23位 | x=623.0: (2) | x=705.0: 转为二进制： | x=777.5: ①2DOTFFH 访问不到\nRow 2: x=316.0: (ache容量=32×2kB=2°B,上地址位数16元 | x=717.0: 100111010000011111111\nRow 3: x=296.5: (ache组数=32/2=16组，组号位，块号1位 | x=749.0: 组号为0000对应第。组\nRow 4: x=273.5: Ca块2kB=2B，块内地址位. | x=722.0: 第0块\nRow 5: x=307.0: 主存乘余位数：23-34-11=8位，存放tag字段. | x=701.5: tag为0oll101D\nRow 6: x=72.0: 主存： | x=112.5: 设计如下： | x=180.0: tag字段 | x=261.0: 组号 | x=365.5: 块内土地址 | x=490.5: 共23位 | x=683.5: 故访问不到 | x=730.5: 在第0.1块中没有相等的\nRow 7: x=69.5: 地址： | x=136.5: 22 | x=172.5: 8位 | x=266.5: 4位 | x=352.5: 11位 | x=746.5: ② 7F0057H. 能访问到块\nRow 8: x=65.5: cache | x=182.0: 组号 | x=232.5: +5 | x=281.0: 组内块号 | x=387.0: 块内土地址 | x=500.0: 共16位 | x=617.5: 二制： | x=712.5: +5 | x=719.5: 11111 0000 000 0101 0111\nRow 9: x=67.5: 土地址 | x=194.5: 4位 | x=272.5: 1位 | x=367.0: 11位 | x=448.5: 0 | x=710.5: 组号 0000, tag: 1111 1110\nRow 10: x=157.0: 15 | x=670.5: 在第0组第0、块中查式\nRow 11: x=648.5: 块l的tag与其相月!\nRow 12: x=702.5: 故能的访问到，能访问到块！"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "主存容量8MB=2^23B，上地址位数23位",
+    "step_2": "cache每块2kB=2^11B，块内地址11位",
+    "step_3": "cache组数=32/2=16组，组号4位",
+    "step_4": "主存：tag字段 组号 块内地址 共23位 地址：23 8位 4位 11位 0",
+    "step_5": "Cache 上地址 组号 组内块号 块内地址 共16位 15 4位 1位 11位 0",
+    "step_6": "①2D07FFH 访问不到 转为二进制：0001 1101 0000 0111 1111 1111 组号为0000，对应第0组 自第0组第0块 tag为0011 0100 10101 在第1块中没有相等的，故访问不到",
+    "step_7": "②7F0057H 能访问到块1 二进制：0111 1111 0000 0000 0101 0111 组号0000，tag:1111 1110 在第0组第1块中查找，块1的tag与其相同！故能访问到，能访问到块1"
+  },
+  "facts": {
+    "step_1": "主存容量8MB=2^23B，上地址位数23位\ncache容量=32×2kB=2^16B，上地址位数16位",
+    "step_2": "每块2kB=2^11B，块内地址11位",
+    "step_3": "cache组数=32/2=16组，组号4位. 块号1位",
+    "step_4": "主存：tag字段 组号 块内地址 共23位\n地址： 8位 4位 11位\n主存标记位数：23-4-11=8位，存放tag字段",
+    "step_5": "Cache地址：\n 组号 组内块号 块内地址 共16位\n 4位 1位 11位  共16位",
+    "step_6": "2D07FFH 访问不到\n转为二进制：\n0001 1101 0000 0111 1111 1111\n组号为0000，对应第0组\n自第0块\ntag为 0111 0110\n在第0，1块中没有相等的.\n故访问不到",
+    "step_7": "7F0057H. 能访问到块1\n二进制：\n0111 1111 0000 0000 0101 0111\n组号0000，tag:1111 1110\n在第四组第0，1块中查找，块1的tag与其相同！\n故能访问到，能访问到块1"
+  }
+}

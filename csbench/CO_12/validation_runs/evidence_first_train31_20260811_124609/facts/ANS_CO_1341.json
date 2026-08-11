@@ -1,0 +1,337 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T00:43:00.666652",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1341.jpg",
+  "image_sha256": "bfc88a029de4da61160cad5e6f1cc60090d4708919c7d41eadbc73d847edd752",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1341.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 28,
+    "accepted_token_count": 27,
+    "mean_confidence": 0.871616,
+    "min_confidence": 0.5,
+    "joined_text": "用g：以)Ga是 DR 数据寄右器\nb是IR指令寄有\n52\nC 是 AR 地址寄存器\nd是PC 程序计数寄存点\n(2) 主存→DR→IR→制控制器\n先根据地址寄右器内容找到指令位置，在主有对应地址中取出，放入DR敬\n据寄存器中，再送入工R指令寄有器进行保存，然后送入控制器中解析指令\n(3). 取：主右储器从. → DR→ ALU→ AC\n存：\nAC→DR→主右储路从\n数据根据，地址寄有器指向的地址从主存中取出送入DR数据寄有器，由DR\n数据寄存器送入运算器ALV中进行计算，将结果保存在累加器AC中\n将累加器可内容送入数据寄有器DR，DR将数据存入主存从中\n(4)根据OD给出的地址，将地址送入AR中，括AR中地址在主右中找到对应右单元，取出其中向数据\n送入DR，由DR送入ALO中。将Ax的数据送入ALU中，进行计算，将结果送入AC中，再由AC送入AX中\n(5) 容量：要需要：\n(4) PC+1得指令地址，存入AR中，根据AR的以主右政\n28×24位，则可取28×32位即1kB\n指令，送入DR，DR送入工R，IR送入控制等角指令、指中\nBS\nOD送入AR，根据AR从主右取出数据到DK入_V，自将\n(6) 3位、4份，4代、2位：3位.8份\n共24位\nAx送入ALU，计算结果送入AC，再由AC送入AX中.\n控制学段. 判别条件下址学段\n热行加法",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.146289,
+      "very_dark_pixel_ratio": 0.10151,
+      "lower_region_dark_pixel_ratio": 0.160451,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a是DR数据寄存器\nb是IR指令寄存器\nc是AR地址寄存器\nd是PC程序计数器\n\n(2) 主存→DR→IR→控制器\n先根据地址寄存器内容找到指令位置，在主存对应地址中取出，放入DR数据寄存器中，再送入IR指令寄存器进行保存，然后送入控制器中解析指令。\n\n(3) 取：主存储器M→DR→ALU→AC\n存：AC→DR→主存储器M\n数据根据地址寄存器指向的地址从主存中取出送入DR数据寄存器，由DR数据寄存器送入运算器ALU中进行计算，将结果保存在X累加器AC中。\n将累加器的内容送入数据寄存器DR，由DR将数据存入主存M中。\n\n(4) PC+1得指令地址，存入AR中，根据AR中地址在主存中找到指令送入DR，DR送入IR，IR送入控制器分析指令，指令中OD送入AR，根据AR从主存取出操作数到DR，DR送入ALU，再将AX送入ALU，执行加法计算结果送入AC，再由AC送入AX中。\n\n(5) 要求存需要：2^8×24位<1KB，则可取2^8×32位，即1KB\n\n(16) 字段图如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1341",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "(4)根据OD给出的地址，将地址送入AR中，括AR中地址在主右中找到对应右单元，取出其中向数据 送入DR，由DR送入ALO中。将Ax的数据送入ALU中，进行计算，将结果送入AC中，再由AC送入AX中\n(4) PC+1得指令地址，存入AR中，根据AR的以主右政\nOD送入AR，根据AR从主右取出数据到DK入_V，自将\n指令，送入DR，DR送入工R，IR送入控制等角指令、指中\n热行加法\nAx送入ALU，计算结果送入AC，再由AC送入AX中.",
+    "step_5": "(5) 容量：要需要： BS 28×24位，则可取28×32位即1kB",
+    "step_6": "(6) 3位、4份，4代、2位：3位.8份 控制学段. 判别条件下址学段 共24位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 38.67,
+        "cells_left_to_right": [
+          {
+            "text": "52",
+            "x_center": 21.0,
+            "confidence": 0.8760348558425903
+          },
+          {
+            "text": "用g：以)Ga是 DR 数据寄右器",
+            "x_center": 229.0,
+            "confidence": 0.7505412101745605
+          },
+          {
+            "text": "b是IR指令寄有",
+            "x_center": 567.0,
+            "confidence": 0.909725546836853
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 84.25,
+        "cells_left_to_right": [
+          {
+            "text": "C 是 AR 地址寄存器",
+            "x_center": 266.0,
+            "confidence": 0.9215129017829895
+          },
+          {
+            "text": "d是PC 程序计数寄存点",
+            "x_center": 602.0,
+            "confidence": 0.7639561295509338
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 159.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 主存→DR→IR→制控制器",
+            "x_center": 279.0,
+            "confidence": 0.9610416293144226
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 196.5,
+        "cells_left_to_right": [
+          {
+            "text": "先根据地址寄右器内容找到指令位置，在主有对应地址中取出，放入DR敬",
+            "x_center": 485.5,
+            "confidence": 0.9042792916297913
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 255.5,
+        "cells_left_to_right": [
+          {
+            "text": "据寄存器中，再送入工R指令寄有器进行保存，然后送入控制器中解析指令",
+            "x_center": 494.0,
+            "confidence": 0.9312098026275635
+          },
+          {
+            "text": "通",
+            "x_center": 662.0,
+            "confidence": 0.11768209934234619
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 305.0,
+        "cells_left_to_right": [
+          {
+            "text": "(3). 取：主右储器从. → DR→ ALU→ AC",
+            "x_center": 342.0,
+            "confidence": 0.8555012345314026
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 368.75,
+        "cells_left_to_right": [
+          {
+            "text": "存：",
+            "x_center": 104.0,
+            "confidence": 0.9744797945022583
+          },
+          {
+            "text": "AC→DR→主右储路从",
+            "x_center": 351.5,
+            "confidence": 0.885148823261261
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 419.0,
+        "cells_left_to_right": [
+          {
+            "text": "数据根据，地址寄有器指向的地址从主存中取出送入DR数据寄有器，由DR",
+            "x_center": 505.0,
+            "confidence": 0.9090161323547363
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 462.5,
+        "cells_left_to_right": [
+          {
+            "text": "数据寄存器送入运算器ALV中进行计算，将结果保存在累加器AC中",
+            "x_center": 502.0,
+            "confidence": 0.9658690690994263
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 517.5,
+        "cells_left_to_right": [
+          {
+            "text": "将累加器可内容送入数据寄有器DR，DR将数据存入主存从中",
+            "x_center": 491.0,
+            "confidence": 0.9241065979003906
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 572.75,
+        "cells_left_to_right": [
+          {
+            "text": "(4)根据OD给出的地址，将地址送入AR中，括AR中地址在主右中找到对应右单元，取出其中向数据",
+            "x_center": 469.0,
+            "confidence": 0.9018983840942383
+          },
+          {
+            "text": "送入DR，由DR送入ALO中。将Ax的数据送入ALU中，进行计算，将结果送入AC中，再由AC送入AX中",
+            "x_center": 478.0,
+            "confidence": 0.8889334201812744
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 639.17,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 容量：要需要：",
+            "x_center": 87.0,
+            "confidence": 0.8508642315864563
+          },
+          {
+            "text": "BS",
+            "x_center": 92.0,
+            "confidence": 0.6577538847923279
+          },
+          {
+            "text": "28×24位，则可取28×32位即1kB",
+            "x_center": 294.0,
+            "confidence": 0.9274075627326965
+          },
+          {
+            "text": "(4) PC+1得指令地址，存入AR中，根据AR的以主右政",
+            "x_center": 727.0,
+            "confidence": 0.890778660774231
+          },
+          {
+            "text": "OD送入AR，根据AR从主右取出数据到DK入_V，自将",
+            "x_center": 728.5,
+            "confidence": 0.8442460298538208
+          },
+          {
+            "text": "指令，送入DR，DR送入工R，IR送入控制等角指令、指中",
+            "x_center": 729.5,
+            "confidence": 0.8449893593788147
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 690.9,
+        "cells_left_to_right": [
+          {
+            "text": "(6) 3位、4份，4代、2位：3位.8份",
+            "x_center": 139.0,
+            "confidence": 0.7294098734855652
+          },
+          {
+            "text": "控制学段. 判别条件下址学段",
+            "x_center": 177.0,
+            "confidence": 0.7913655638694763
+          },
+          {
+            "text": "共24位",
+            "x_center": 350.5,
+            "confidence": 0.9965953826904297
+          },
+          {
+            "text": "热行加法",
+            "x_center": 638.0,
+            "confidence": 0.7402205467224121
+          },
+          {
+            "text": "Ax送入ALU，计算结果送入AC，再由AC送入AX中.",
+            "x_center": 703.5,
+            "confidence": 0.9367545247077942
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=21.0: 52 | x=229.0: 用g：以)Ga是 DR 数据寄右器 | x=567.0: b是IR指令寄有\nRow 2: x=266.0: C 是 AR 地址寄存器 | x=602.0: d是PC 程序计数寄存点\nRow 3: x=279.0: (2) 主存→DR→IR→制控制器\nRow 4: x=485.5: 先根据地址寄右器内容找到指令位置，在主有对应地址中取出，放入DR敬\nRow 5: x=494.0: 据寄存器中，再送入工R指令寄有器进行保存，然后送入控制器中解析指令 | x=662.0: 通\nRow 6: x=342.0: (3). 取：主右储器从. → DR→ ALU→ AC\nRow 7: x=104.0: 存： | x=351.5: AC→DR→主右储路从\nRow 8: x=505.0: 数据根据，地址寄有器指向的地址从主存中取出送入DR数据寄有器，由DR\nRow 9: x=502.0: 数据寄存器送入运算器ALV中进行计算，将结果保存在累加器AC中\nRow 10: x=491.0: 将累加器可内容送入数据寄有器DR，DR将数据存入主存从中\nRow 11: x=469.0: (4)根据OD给出的地址，将地址送入AR中，括AR中地址在主右中找到对应右单元，取出其中向数据 | x=478.0: 送入DR，由DR送入ALO中。将Ax的数据送入ALU中，进行计算，将结果送入AC中，再由AC送入AX中\nRow 12: x=87.0: (5) 容量：要需要： | x=92.0: BS | x=294.0: 28×24位，则可取28×32位即1kB | x=727.0: (4) PC+1得指令地址，存入AR中，根据AR的以主右政 | x=728.5: OD送入AR，根据AR从主右取出数据到DK入_V，自将 | x=729.5: 指令，送入DR，DR送入工R，IR送入控制等角指令、指中\nRow 13: x=139.0: (6) 3位、4份，4代、2位：3位.8份 | x=177.0: 控制学段. 判别条件下址学段 | x=350.5: 共24位 | x=638.0: 热行加法 | x=703.5: Ax送入ALU，计算结果送入AC，再由AC送入AX中."
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a是DR数据寄存器 b是IR指令寄存器 c是AR地址寄存器 d是PC程序计数器寄存器",
+    "step_2": "主存→DR→IR→控制器",
+    "step_3": "取：主存储器M→DR→ALU→AC 存：AC→DR→主存储器M",
+    "step_4": "根据OD给出的地址，将地址送入AR中，按AR中的地址在主存中找到对应存储单元，取出其中的数据送入DR，由DR送入ALU中。将AX的数据送入ALU中，进行计算，将结果送入AC中，再由AC送入AX中。",
+    "step_5": "容量=2^8×24位=256×24位=2^8×32位即1KB",
+    "step_6": "操作控制字段：5位，8位，14位，3位；下址字段：8位；且共24位。"
+  },
+  "facts": {
+    "step_1": "a是DR数据寄存器\nb是IR指令寄存器\nc是AR地址寄存器\nd是PC程序计数器",
+    "step_2": "主存→DR→IR→控制器\n先根据地址寄存器内容找到指令位置，在主存对应地址中取出，放入DR数据寄存器中，再送入IR指令寄存器进行保存，然后送入控制器中解析指令。",
+    "step_3": "取：主存储器M→DR→ALU→AC\n存：AC→DR→主存储器M\n数据根据地址寄存器指向的地址从主存中取出送入DR数据寄存器，由DR数据寄存器送入运算器ALU中进行计算，将结果保存在X累加器AC中。\n将累加器的内容送入数据寄存器DR，由DR将数据存入主存M中。",
+    "step_4": "PC+1得指令地址，存入AR中，根据AR中地址在主存中找到指令送入DR，DR送入IR，IR送入控制器分析指令，指令中OD送入AR，根据AR从主存取出操作数到DR，DR送入ALU，再将AX送入ALU，执行加法计算结果送入AC，再由AC送入AX中。",
+    "step_5": "要求存需要：2^8×24位<1KB，则可取2^8×32位，即1KB",
+    "step_6": "字段图如图所示"
+  }
+}

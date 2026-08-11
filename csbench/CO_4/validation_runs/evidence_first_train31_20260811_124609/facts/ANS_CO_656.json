@@ -1,0 +1,312 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:14:56.041281",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_656.jpg",
+  "image_sha256": "34c4728eb9c4c991ca42081770c302f99d495de3a7ea06957c21e42b22c32325",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_656.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 29,
+    "accepted_token_count": 26,
+    "mean_confidence": 0.828464,
+    "min_confidence": 0.5,
+    "joined_text": "2. （20分）\n25个\nB\n解：(1). 主存容量：8MB=22B. 则主存块号\n8\n2\n=2{2B.\n块内地址：B2kB=2\"B.有11位，Cache块号：\n2'B\n操作段\n：\n=2”，月11位.\ncachet地：\n3\n块内E址\n则主存：\n 主在块块内地址\n7位\n5位\n11位\n11位\n11位\n(2). 地址力2D07FFH即001011010000 0111 1111111 去掉块内地数块内地址.11位.\n得001011010000，查表不能找到该数据\n地 7F0057H 即0111100 0 0 01010111，去掉块内地址，位.\n0111111100000,",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.091762,
+      "very_dark_pixel_ratio": 0.065761,
+      "lower_region_dark_pixel_ratio": 0.091102,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解：(1).主存容量：8MB=2²³B，则主存地址\n每块地址：2KB=2¹¹B，有11位，Cache块号：2²¹B/2¹¹B=2¹²B。\n组：2¹²/2=2¹¹，有11位。\n则主存地址格式如图所示\nCache地址格式如图所示\n(2).地址为2D07FFH即0010110100000111 1111 1111，去掉块内地址，11位，\n得0010110100000，查表不能找到该数据\n\n地址为7F0057H即0111 1111 0000 0000 0101 0111，去掉块内地址，11位，\n得011111110000，",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_656",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "Cache块号：2'B=2{2B. 操作段10，5位 (OCR evidence shows student calculated Cache block number as 2'B=2{2B. Under the cache address diagram, there is an '操作段' of '10' with '5位'. This represents the set index calculation in the student's diagram).",
+    "step_4": "则主存： 主在块块内地址 (Field order: 主存块 [missing label for tag in OCR] -> 主在块 [Main memory block] -> 块内地址 [Block offset])\nBit counts mapped under the fields: 7位 (Tag) -> 5位 (Block/Set) -> 11位 (Offset).",
+    "step_5": "cachet地： 3点 (Cache block/Set) 块内E址 (Block offset)\nBit counts mapped under the fields: 11位 (Tag) -> 5位 (Block/Set) -> 11位 (Offset).",
+    "step_6": "地址力2D07FFH即001011010000 0111 1111111 去掉块内地数块内地址.11位. 得001011010000，查表不能找到该数据。 (Judgment: 查表不能找到该数据 / Miss. Computed fields: block address binary 001011010000, with 11-bit offset removed).",
+    "step_7": "地 7F0057H 即0111100 0 0 01010111，去掉块内地址，位. 0111111100000, (Judgment is missing/not explicitly written as hit or miss. Computed fields: binary conversion 0111100 0 0 01010111 and resulting tag/set bits 0111111100000)."
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 75.92,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 53.5,
+            "confidence": 0.8905520439147949
+          },
+          {
+            "text": "解：(1). 主存容量：8MB=22B. 则主存块号",
+            "x_center": 228.5,
+            "confidence": 0.9326941967010498
+          },
+          {
+            "text": "8",
+            "x_center": 493.5,
+            "confidence": 0.5244240760803223
+          },
+          {
+            "text": "25个",
+            "x_center": 544.5,
+            "confidence": 0.9156544804573059
+          },
+          {
+            "text": "2",
+            "x_center": 579.5,
+            "confidence": 0.9999911785125732
+          },
+          {
+            "text": "B",
+            "x_center": 606.0,
+            "confidence": 0.9783772826194763
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 122.62,
+        "cells_left_to_right": [
+          {
+            "text": "块内地址：B2kB=2\"B.有11位，Cache块号：",
+            "x_center": 287.0,
+            "confidence": 0.8797155022621155
+          },
+          {
+            "text": "操作段",
+            "x_center": 528.0,
+            "confidence": 0.546658456325531
+          },
+          {
+            "text": "2'B",
+            "x_center": 594.0,
+            "confidence": 0.6629323959350586
+          },
+          {
+            "text": "=2{2B.",
+            "x_center": 679.0,
+            "confidence": 0.6233279705047607
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 179.0,
+        "cells_left_to_right": [
+          {
+            "text": "则主存：",
+            "x_center": 58.0,
+            "confidence": 0.8876701593399048
+          },
+          {
+            "text": "：",
+            "x_center": 65.0,
+            "confidence": 0.9517902135848999
+          },
+          {
+            "text": "2",
+            "x_center": 93.5,
+            "confidence": 0.41185811161994934
+          },
+          {
+            "text": "=2”，月11位.",
+            "x_center": 185.5,
+            "confidence": 0.8188897967338562
+          },
+          {
+            "text": "主在块块内地址",
+            "x_center": 231.0,
+            "confidence": 0.7456169724464417
+          },
+          {
+            "text": "cachet地：",
+            "x_center": 460.0,
+            "confidence": 0.8357135057449341
+          },
+          {
+            "text": "3",
+            "x_center": 601.5,
+            "confidence": 0.8605976104736328
+          },
+          {
+            "text": "点",
+            "x_center": 603.0,
+            "confidence": 0.45517051219940186
+          },
+          {
+            "text": "块内E址",
+            "x_center": 696.0,
+            "confidence": 0.6328086853027344
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 227.42,
+        "cells_left_to_right": [
+          {
+            "text": "7位",
+            "x_center": 155.5,
+            "confidence": 0.927280604839325
+          },
+          {
+            "text": "5位",
+            "x_center": 214.0,
+            "confidence": 0.6104252338409424
+          },
+          {
+            "text": "11位",
+            "x_center": 289.0,
+            "confidence": 0.8725481033325195
+          },
+          {
+            "text": "10",
+            "x_center": 493.0,
+            "confidence": 0.4590867757797241
+          },
+          {
+            "text": "11位",
+            "x_center": 595.5,
+            "confidence": 0.9758920669555664
+          },
+          {
+            "text": "11位",
+            "x_center": 685.5,
+            "confidence": 0.9602697491645813
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 286.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2). 地址力2D07FFH即001011010000 0111 1111111 去掉块内地数块内地址.11位.",
+            "x_center": 453.0,
+            "confidence": 0.8958979845046997
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 338.0,
+        "cells_left_to_right": [
+          {
+            "text": "得001011010000，查表不能找到该数据",
+            "x_center": 269.5,
+            "confidence": 0.9721160531044006
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 435.5,
+        "cells_left_to_right": [
+          {
+            "text": "地 7F0057H 即0111100 0 0 01010111，去掉块内地址，位.",
+            "x_center": 440.0,
+            "confidence": 0.7079442739486694
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 496.5,
+        "cells_left_to_right": [
+          {
+            "text": "0111111100000,",
+            "x_center": 170.5,
+            "confidence": 0.9302882552146912
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=53.5: 2. （20分） | x=228.5: 解：(1). 主存容量：8MB=22B. 则主存块号 | x=493.5: 8 | x=544.5: 25个 | x=579.5: 2 | x=606.0: B\nRow 2: x=287.0: 块内地址：B2kB=2\"B.有11位，Cache块号： | x=528.0: 操作段 | x=594.0: 2'B | x=679.0: =2{2B.\nRow 3: x=58.0: 则主存： | x=65.0: ： | x=93.5: 2 | x=185.5: =2”，月11位. | x=231.0: 主在块块内地址 | x=460.0: cachet地： | x=601.5: 3 | x=603.0: 点 | x=696.0: 块内E址\nRow 4: x=155.5: 7位 | x=214.0: 5位 | x=289.0: 11位 | x=493.0: 10 | x=595.5: 11位 | x=685.5: 11位\nRow 5: x=453.0: (2). 地址力2D07FFH即001011010000 0111 1111111 去掉块内地数块内地址.11位.\nRow 6: x=269.5: 得001011010000，查表不能找到该数据\nRow 7: x=440.0: 地 7F0057H 即0111100 0 0 01010111，去掉块内地址，位.\nRow 8: x=170.5: 0111111100000,"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "23位",
+    "step_2": "11位",
+    "step_3": "6位",
+    "step_4": "7位 5位 11位",
+    "step_5": "7位 11位 11位",
+    "step_6": "查表不能找到该数据",
+    "step_7": "得 011111110000 0"
+  },
+  "facts": {
+    "step_1": "主存容量：8MB=2²³B，则主存地址",
+    "step_2": "每块地址：2KB=2¹¹B，有11位",
+    "step_3": "Cache块号：2²¹B/2¹¹B=2¹²B。组：2¹²/2=2¹¹，有11位。",
+    "step_4": "主存地址格式如图所示",
+    "step_5": "Cache地址格式如图所示",
+    "step_6": "地址为2D07FFH即0010110100000111 1111 1111，去掉块内地址，11位，得0010110100000，查表不能找到该数据",
+    "step_7": "地址为7F0057H即0111 1111 0000 0000 0101 0111，去掉块内地址，11位，得011111110000，"
+  }
+}

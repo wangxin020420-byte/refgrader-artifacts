@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T19:31:53.816238",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_10/ANS_CO_1137.jpg",
+  "image_sha256": "12452d4edb77022b2f91dabf5f22030e36ce5f7f1e89e1f69e78b02f5a175483",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "采用4路组相联，即每一组有4块\n一共有：4k / 4 = 2^10 块\n一共有：2^10 / 2^2 = 2^8 组.\nM共 64K=2^16K存储单元，有16位\n由题意得 块大小为4字节，∴块内地址2位\n∴标记位有：16-2-8=6位\n∴Cache标记应有6位\n则标记区共有：6位标记位+1位有效位=7位.\n一共有：2^10 块\n∴总字节为：2^10 × 7bit / 8bit = 896B.\n\n(2) 主存：\n标记位  组号  块内地址\n6位.   8位   2位\n∴一共有2^8组\n∴需要配置8套这样的相等比较电路\n理由：\n根据4路组相联映射特点\n确定主存的块位于哪片Cache组仅\n与8位组号相关，再根据有效位\n和标记位来判断是否命中\n∴需要配置8套8个比较相等电路.",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1137",
+    "question_id": "CO_10",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "学生写有“一共有：4k / 4 = 2^10 块”、“一共有：2^10 / 2^2 = 2^8 组.”，以及“由题意得 块大小为4字节，∴块内地址2位”。地址字段中写有“组号 8位”、“块内地址 2位”。未写主存地址或Cache地址为二进制串/位向量形式。",
+    "step_2": "学生写有“M共 64K=2^16K存储单元，有16位”、“块内地址2位”、“组号 8位”，并据此计算“标记位有：16-2-8=6位”、“Cache标记应有6位”。未以二进制串/位向量形式写主存地址。",
+    "step_3": "学生写有计算过程：“6位标记位+1位有效位=7位”、“一共有：2^10 块”、“总字节为：2^10 × 7bit / 8bit = 896B.”。",
+    "step_4": "学生结论为“需要配置8套这样的相等比较电路”，并写有理由：“根据4路组相联映射特点 确定主存的块位于哪片Cache组仅 与8位组号相关，再根据有效位 和标记位来判断是否命中 ∴需要配置8套8个比较相等电路.”。"
+  }
+}

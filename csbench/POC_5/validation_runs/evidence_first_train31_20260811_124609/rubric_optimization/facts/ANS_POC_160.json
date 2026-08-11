@@ -1,0 +1,102 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-26T01:38:29.082623",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_5/ANS_POC_160.jpg",
+  "image_sha256": "cd567a4d95a2d335ef763d83ab26958285a5bddc13d6368ec1d17aa948355f52",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_5/ANS_POC_160.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 31,
+    "accepted_token_count": 31,
+    "mean_confidence": 0.883302,
+    "min_confidence": 0.5,
+    "joined_text": "5.\nI1\nI4\nI7\nS→6·Ba,\nB\nS→bB·a,\na\nB→.a,a\ns→bBa·,#\nI_0\nb\nI_5}\nS→·S,#\nI_2\na\nS\nB→a.,a\nS→·AaA#\nS→s.,\nS→.bBa,\nA→,a\nA I3\nI_6\nI8\nS→A·aA,井\na\nA\nS→Aa·A#\nS→A aA,t!\nA→·，#",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.052288,
+      "very_dark_pixel_ratio": 0.033822,
+      "lower_region_dark_pixel_ratio": 0.059724,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_160",
+    "question_id": "POC_5",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "I0→b→I1; I0→S→I2; I0→A→I3; I1→B→I4; I1→a→I5; I4→a→I7; I3→a→I6; I6→A→I8",
+  "diagram_facts": {
+    "step_1": "I0内项目：S'→·S,#；S→·AaA,#；S→·bBa,#；A→·,a；完整可见路径：I0→b→I1; I0→S→I2; I0→A→I3; I1→B→I4; I1→a→I5; I4→a→I7; I3→a→I6; I6→A→I8",
+    "step_2": "I1内项目：S→b·Ba,#；B→·a,a；I2内项目：S→S·,#；I3内项目：S→A·aA,#；完整可见路径：I0→b→I1; I0→S→I2; I0→A→I3; I1→B→I4; I1→a→I5; I4→a→I7; I3→a→I6; I6→A→I8",
+    "step_3": "I4内项目：S→bB·a,#；I5内项目：B→a·,a；I6内项目：S→Aa·A,#；A→·,#；I7内项目：S→bBa·,#；I8内项目：S→AaA,±!；完整可见路径：I0→b→I1; I0→S→I2; I0→A→I3; I1→B→I4; I1→a→I5; I4→a→I7; I3→a→I6; I6→A→I8",
+    "step_4": "状态转移：I0→(b)I1；I0→(S)I2；I0→(A)I3；I1→(B)I4；I1→(a)I5；I4→(a)I7；I3→(a)I6；I6→(A)I8；完整可见路径：I0→b→I1; I0→S→I2; I0→A→I3; I1→B→I4; I1→a→I5; I4→a→I7; I3→a→I6; I6→A→I8"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten content for the extended grammar (拓广文法) and the items within the initial LR(1) item set I0. Preserve all arrows, dots, commas, separators, and lookahead symbols exactly as written by the student."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's concrete handwritten content for the successor LR(1) item sets (e.g., I1, I2, etc.) and their internal derivation items. Preserve all arrows, dots, commas, separators, order, and lookahead symbols exactly as written by the student."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content for the remaining LR(1) item sets (e.g., I6, I7, I8, etc.), including any epsilon (ε) productions and their specific lookahead symbols. Preserve all arrows, dots, commas, separators, and order exactly as written by the student."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten state transition relations for the LR(1) item sets. Preserve all nodes, arrows (directions), and transition labels (terminals/non-terminals) exactly in the order and format written by the student."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "S'→·S, #\nS→·AaA, #\nS→·bBa, #\nA→·, a",
+    "step_2": "I₁: S→b·Ba, #\n      B→·a, a\nI₂: S→S·, #\nI₃: S→A·aA, #\nI₄: S→bB·a, #\nI₅: B→a·, a",
+    "step_3": "I₆: S→Aa·A, #\n      A→·, #\nI₇: S→bBa·, #\nI₈: S→AaA·, #",
+    "step_4": "I₀→I₁ (b)\nI₀→I₂ (S)\nI₀→I₃ (A)\nI₁→I₄ (B)\nI₁→I₅ (a)\nI₃→I₆ (a)\nI₆→I₈ (A)"
+  },
+  "facts": {
+    "step_1": "I0内项目：S'→·S,#；S→·AaA,#；S→·bBa,#；A→·,a；完整可见路径：I0→b→I1; I0→S→I2; I0→A→I3; I1→B→I4; I1→a→I5; I4→a→I7; I3→a→I6; I6→A→I8",
+    "step_2": "I1内项目：S→b·Ba,#；B→·a,a；I2内项目：S→S·,#；I3内项目：S→A·aA,#；完整可见路径：I0→b→I1; I0→S→I2; I0→A→I3; I1→B→I4; I1→a→I5; I4→a→I7; I3→a→I6; I6→A→I8",
+    "step_3": "I4内项目：S→bB·a,#；I5内项目：B→a·,a；I6内项目：S→Aa·A,#；A→·,#；I7内项目：S→bBa·,#；I8内项目：S→AaA,±!；完整可见路径：I0→b→I1; I0→S→I2; I0→A→I3; I1→B→I4; I1→a→I5; I4→a→I7; I3→a→I6; I6→A→I8",
+    "step_4": "状态转移：I0→(b)I1；I0→(S)I2；I0→(A)I3；I1→(B)I4；I1→(a)I5；I4→(a)I7；I3→(a)I6；I6→(A)I8；完整可见路径：I0→b→I1; I0→S→I2; I0→A→I3; I1→B→I4; I1→a→I5; I4→a→I7; I3→a→I6; I6→A→I8"
+  }
+}

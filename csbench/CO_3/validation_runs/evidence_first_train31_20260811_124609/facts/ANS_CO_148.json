@@ -1,0 +1,49 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T01:48:29.261950",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_148.jpg",
+  "image_sha256": "9ff9cef51853f13c49ae0411c4707d91426ee877c417b6de931f0f7e7bff0dc7",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "[x]补=00110110 [y]补=01010100 [z]补=1101010\n[-y]补=10101100\n[x-2y]补=[x]补+[-y]补+[-y]补=00110110+10101100+10101100\n=10001110， [x-y]补的符号位为1.\nOF = f₁f₂¬f₄ + f₁¬f₂¬f₄ =0.未发生溢出。\nx÷4化为00110110向右移两位，即[x÷4]补=00001101\n[x÷4]补+[z]补=00001101+11010101=11100010,为负.\n[(x÷4)+22]补=11100010+11010101=10110111 为负.\nOF = f₁f₂¬f₄ + ¬f₁¬f₂f₄ =0.未发生溢出。",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_148",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": {
+      "values_written": "[x]补=00110110; [y]补=01010100; [z]补=1101010; [-y]补=10101100; [x-2y]补=[x]补+[-y]补+[-y]补=00110110+10101100+10101100=10001110",
+      "formula_or_trace": "[x-2y]补=[x]补+[-y]补+[-y]补=00110110+10101100+10101100=10001110",
+      "overflow_judgment": "[x-y]补的符号位为1. OF = f₁f₂¬f₄ + f₁¬f₂¬f₄ =0.未发生溢出。"
+    },
+    "step_2": {
+      "values_written": "x÷4化为00110110向右移两位，即[x÷4]补=00001101; [x÷4]补+[z]补=00001101+11010101=11100010; [(x÷4)+22]补=11100010+11010101=10110111",
+      "formula_or_trace": "x÷4化为00110110向右移两位，即[x÷4]补=00001101；[x÷4]补+[z]补=00001101+11010101=11100010；[(x÷4)+22]补=11100010+11010101=10110111",
+      "overflow_judgment": "11100010,为负. 10110111 为负. OF = f₁f₂¬f₄ + ¬f₁¬f₂f₄ =0.未发生溢出。"
+    }
+  }
+}

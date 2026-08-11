@@ -1,0 +1,42 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T06:54:18.947493",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_375.jpg",
+  "image_sha256": "7743563b7256be9394837eab8abbd31c0c7485b29de4e738dd226d9c2a3899d5",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "#include <stdio.h>|#include <stdlib.h>|int main(){|int a[5][5]={0};|for(int i=0;i<5;i++){|for(int j=0;j<5;j++){|scanf(\"%d\",&a[i][j]);|}|}|int zhong = 0;|for(int i=0;i<5;i++){|for(int j=i;j<5;j++){| zhong=a[i][j];|a[i][j]=a[j][i];|a[j][i]=zhong;|}|}|FILE* fp = fopen(matrix.txt,\"w\");|if(fp == Null)|exit(0);|char cun[29]={0};|int g=0;|for(int i=0;i<5;i++){|for(int j=0;j<5;j++){|cun[g]=a[i][j]+48|g++;|}|}|cun[g]='\\n'|g++;|}|fputs(cun,fp);|fclose(fp);|return 0;|}",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CPL_375",
+    "question_id": "CPL_7",
+    "subject": "CPL",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "for(int i=0;i<5;i++){ for(int j=0;j<5;j++){ scanf(\"%d\",&a[i][j]); } } for(int i=0;i<5;i++){ for(int j=i;j<5;j++){ ... } } for(int i=0;i<5;i++){ for(int j=0;j<5;j++){ ... } }",
+    "step_2": "FILE* fp = fopen(matrix.txt,\"w\"); if(fp == Null) exit(0); fputs(cun,fp); fclose(fp);",
+    "step_3": "zhong=a[i][j]; a[i][j]=a[j][i]; a[j][i]=zhong; cun[g]=a[i][j]+48 g++; cun[g]='\\n' g++;"
+  }
+}

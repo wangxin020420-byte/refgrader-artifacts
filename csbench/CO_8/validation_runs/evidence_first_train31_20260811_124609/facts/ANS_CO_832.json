@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T04:07:54.690530",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_8/ANS_CO_832.jpg",
+  "image_sha256": "cb0d5038d1defff5222fddc723f1162a1563891c62394e55b95098928abba8d4",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "(1) CPU时钟频率50MHz，即1S内CPU可提供5×10⁷个时钟周期\n磁盘数据传输速率为1MB/s 即1S内向CPU传 10⁶B数据.\n数据传输以32位字（4B）为单位，采用程序查询，至少应查询 10⁶B/4B = 2.5×10⁵次.\n每次需100个时钟周期\n∴CPU为I/O查询所花费的时间比率为 100×2.5×10⁵/5×10⁷ ×100% = 50%\n(2) 采用DMA方式，即在主存和磁盘间建立了直接的数据通路.\n平均传输数据长度4KB.\n∴共需传输4KB/4B=1K次，每次需要1500+500=2000个时钟周期（包括DMA的启动和后处理）\n∴I/O操作的时间比率：1K×2×10³/5×10⁷ ×100% = 4%\n∴DMA占用时间更少",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_832",
+    "question_id": "CO_8",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1_sub_1": "1S内向CPU传 10⁶B数据.\n数据传输以32位字（4B）为单位，采用程序查询，至少应查询 10⁶B/4B = 2.5×10⁵次.\n每次需100个时钟周期\n100×2.5×10⁵",
+    "step_1_sub_2": "CPU为I/O查询所花费的时间比率为 100×2.5×10⁵/5×10⁷ ×100% = 50%",
+    "step_2_sub_1": "平均传输数据长度4KB.\n∴共需传输4KB/4B=1K次，每次需要1500+500=2000个时钟周期（包括DMA的启动和后处理）\n1K×2×10³",
+    "step_2_sub_2": "I/O操作的时间比率：1K×2×10³/5×10⁷ ×100% = 4%"
+  }
+}

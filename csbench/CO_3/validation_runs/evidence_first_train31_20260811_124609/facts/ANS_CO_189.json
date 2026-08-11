@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T01:57:13.249427",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_189.jpg",
+  "image_sha256": "d24dcf3ba8c38363f48126dbadf604b2b2a612af411b36dfb16de8855c0343a9",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "采用双符号位溢出\n[x-2y]补=[x]补+[-2y]补，将y左移1位得[-2y]补=10.1011000（双符号）\n采用双符号位，[x]补= 00.011 0110\n[-2y]补= 10.101 1000\n[x]补+[-2y]补=11.0001110=8EH其双符号位一致，不溢出\n∴[x-2y]补=8EH，OF=0\n(x÷4)+22，x先右移2位，只高位补符号位\n得[x/4]补=(0000,1101)₂ [z]补=11,101 0101(双符号位)\n将z左移一位， [2z]补=11,0101010(双符号位)\n∴有[x/4]补+[2z]补= 00,0001101 + 11,0101010\n= 11,0110111 双符号位一致，结果溢出\n∴结果为B7H，OF=P\na 综上所述：[x-2y]补=8EH，OF=0 (x÷4)+22=B7H，OF=0",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_189",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "[x-2y]补=[x]补+[-2y]补，将y左移1位得[-2y]补=10.1011000（双符号）。采用双符号位，[x]补=00.011 0110；[-2y]补=10.101 1000；[x]补+[-2y]补=11.0001110=8EH，其双符号位一致，不溢出。∴[x-2y]补=8EH，OF=0。综上所述：[x-2y]补=8EH，OF=0。",
+    "step_2": "(x÷4)+22，x先右移2位，只高位补符号位，得[x/4]补=(0000,1101)₂；[z]补=11,101 0101(双符号位)；将z左移一位，[2z]补=11,0101010(双符号位)。∴有[x/4]补+[2z]补=00,0001101 + 11,0101010 = 11,0110111，双符号位一致，结果溢出。∴结果为B7H，OF=P。综上所述：(x÷4)+22=B7H，OF=0。"
+  }
+}

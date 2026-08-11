@@ -1,0 +1,285 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:32:38.434825",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_720.png",
+  "image_sha256": "023b508452aa9b11f009621cfbf3d99daadeedfb8ea40dbd0fe879afd960682f",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_720.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 23,
+    "accepted_token_count": 22,
+    "mean_confidence": 0.932352,
+    "min_confidence": 0.5,
+    "joined_text": "2. （20分）\n(1) 主有为8MB. 则共有23位\n每块 2水B，按字节编址.则块内地址位数为11位\nCache每组2块.则r=1\nCache中最多存放32个主存块则Q2共有16组.q=4.\n主存S=23-4-11=8位\nCache\n组号\n块内地址\n主存\n标记C块内地址\n1位\n11位\n8位4\n11位\n4\n(2) 地址为2007FFH时.对：010110100000111111(111\n主有地址标记为01011010本能在Cache中纺问到数据\n7F0057y. 对应11111 0000 000 0101 0111\n主有地址标记为 11110. 也能找到\n+5\nCache缺号加0",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.082064,
+      "very_dark_pixel_ratio": 0.055342,
+      "lower_region_dark_pixel_ratio": 0.08318,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)主存为8MB，则有23位。每块2kB，按字节编址，则块内地址位数为11位。Cache每组2块，则r=1。Cache中最多存放32个主存块，共有16组，q=4。主存S=23-4-11=8位。\n主存结构和cache结构如图所示\n(2)地址为2D07FFH时，对应010 1101 0000 0111 1111 1111 主存地址标记为01011010，不能在Cache中访问到数据 7F0057H，对应1111 0000 0000 0101 0111 \n主存地址标记为111 11110，也能找到Cache块号为0",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_720",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "Written computation: \"Cache每组2块.则r=1\", \"Cache中最多存放32个主存块则Q2共有16组.q=4.\", and in row 5 cell x=373.5/426.0: \"4 1位\".",
+    "step_4": "Field table written: [标记 | 块内地址], with numerical bit lengths in row 5 as: [8位4 | 11位]. Also written: \"主存S=23-4-11=8位\".",
+    "step_5": "Field table written: [组号 | 块内地址], with numerical bit lengths in row 5 as: [4 | 1位] and [11位].",
+    "step_6": "Written: \"地址为2007FFH时.对：010110100000111111(111\" and \"主有地址标记为01011010本能在Cache中纺问到数据\". (Note: OCR shows 2007FFH instead of the question's 2D07FFH.)",
+    "step_7": "Written: \"7F0057y. 对应11111 0000 000 0101 0111\", \"主有地址标记为 11110. 也能找到\", \"+5\", and \"Cache缺号加0\"."
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 60.75,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 51.0,
+            "confidence": 0.8793052434921265
+          },
+          {
+            "text": "(1) 主有为8MB. 则共有23位",
+            "x_center": 170.0,
+            "confidence": 0.9445464611053467
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 109.0,
+        "cells_left_to_right": [
+          {
+            "text": "每块 2水B，按字节编址.则块内地址位数为11位",
+            "x_center": 302.5,
+            "confidence": 0.9308714866638184
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 173.0,
+        "cells_left_to_right": [
+          {
+            "text": "Cache每组2块.则r=1",
+            "x_center": 182.5,
+            "confidence": 0.9712934494018555
+          },
+          {
+            "text": "Cache中最多存放32个主存块则Q2共有16组.q=4.",
+            "x_center": 359.5,
+            "confidence": 0.9407086968421936
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 274.14,
+        "cells_left_to_right": [
+          {
+            "text": "主存",
+            "x_center": 58.5,
+            "confidence": 0.944033145904541
+          },
+          {
+            "text": "标记C块内地址",
+            "x_center": 170.0,
+            "confidence": 0.9446249604225159
+          },
+          {
+            "text": "主存S=23-4-11=8位",
+            "x_center": 194.0,
+            "confidence": 0.9896458983421326
+          },
+          {
+            "text": "Cache",
+            "x_center": 321.0,
+            "confidence": 0.999752402305603
+          },
+          {
+            "text": "组号",
+            "x_center": 375.5,
+            "confidence": 0.9894157648086548
+          },
+          {
+            "text": "块内地址",
+            "x_center": 495.5,
+            "confidence": 0.9787880182266235
+          },
+          {
+            "text": "11位",
+            "x_center": 505.5,
+            "confidence": 0.7905284762382507
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 313.88,
+        "cells_left_to_right": [
+          {
+            "text": "8位4",
+            "x_center": 137.0,
+            "confidence": 0.9998640418052673
+          },
+          {
+            "text": "11位",
+            "x_center": 226.0,
+            "confidence": 0.9990442395210266
+          },
+          {
+            "text": "4",
+            "x_center": 373.5,
+            "confidence": 0.9999780654907227
+          },
+          {
+            "text": "1位",
+            "x_center": 426.0,
+            "confidence": 0.9997646808624268
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 369.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 地址为2007FFH时.对：010110100000111111(111",
+            "x_center": 300.5,
+            "confidence": 0.8649386167526245
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 405.0,
+        "cells_left_to_right": [
+          {
+            "text": "主有地址标记为01011010本能在Cache中纺问到数据",
+            "x_center": 340.5,
+            "confidence": 0.9483395218849182
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 477.83,
+        "cells_left_to_right": [
+          {
+            "text": "主有地址标记为 11110. 也能找到",
+            "x_center": 256.5,
+            "confidence": 0.8280621767044067
+          },
+          {
+            "text": "7F0057y. 对应11111 0000 000 0101 0111",
+            "x_center": 268.0,
+            "confidence": 0.8595851063728333
+          },
+          {
+            "text": "+5",
+            "x_center": 305.0,
+            "confidence": 0.8774290084838867
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 535.0,
+        "cells_left_to_right": [
+          {
+            "text": "Cache缺号加0",
+            "x_center": 325.0,
+            "confidence": 0.831221342086792
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=51.0: 2. （20分） | x=170.0: (1) 主有为8MB. 则共有23位\nRow 2: x=302.5: 每块 2水B，按字节编址.则块内地址位数为11位\nRow 3: x=182.5: Cache每组2块.则r=1 | x=359.5: Cache中最多存放32个主存块则Q2共有16组.q=4.\nRow 4: x=58.5: 主存 | x=170.0: 标记C块内地址 | x=194.0: 主存S=23-4-11=8位 | x=321.0: Cache | x=375.5: 组号 | x=495.5: 块内地址 | x=505.5: 11位\nRow 5: x=137.0: 8位4 | x=226.0: 11位 | x=373.5: 4 | x=426.0: 1位\nRow 6: x=300.5: (2) 地址为2007FFH时.对：010110100000111111(111\nRow 7: x=340.5: 主有地址标记为01011010本能在Cache中纺问到数据\nRow 8: x=256.5: 主有地址标记为 11110. 也能找到 | x=268.0: 7F0057y. 对应11111 0000 000 0101 0111 | x=305.0: +5\nRow 9: x=325.0: Cache缺号加0"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "23位",
+    "step_2": "11位",
+    "step_3": "4",
+    "step_4": "主存 标记 8位 组号 4 块内地址 11位",
+    "step_5": "Cache 组号 4 组内块号 1位 块内地址 11位",
+    "step_6": "地址为2D07FFH时，对应0/0 1101 0000 0111 1111 1111 主存地址标记为01011010 不能在Cache中访问到数据",
+    "step_7": "7F0057H，对应111 0000 0000 0101 0111 主存地址标记为111 1110，也能找到 Cache块号为0"
+  },
+  "facts": {
+    "step_1": "主存为8MB，则有23位。",
+    "step_2": "每块2kB，按字节编址，则块内地址位数为11位。",
+    "step_3": "Cache每组2块，则r=1。Cache中最多存放32个主存块，共有16组，q=4。",
+    "step_4": "Field table written: [标记 | 块内地址], with numerical bit lengths in row 5 as: [8位4 | 11位]. Also written: \"主存S=23-4-11=8位\".",
+    "step_5": "Field table written: [组号 | 块内地址], with numerical bit lengths in row 5 as: [4 | 1位] and [11位].",
+    "step_6": "地址为2D07FFH时，对应010 1101 0000 0111 1111 1111 主存地址标记为01011010，不能在Cache中访问到数据",
+    "step_7": "7F0057H，对应1111 0000 0000 0101 0111 主存地址标记为111 11110，也能找到Cache块号为0"
+  }
+}

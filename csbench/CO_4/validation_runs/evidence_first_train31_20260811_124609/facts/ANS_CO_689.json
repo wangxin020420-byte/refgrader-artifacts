@@ -1,0 +1,323 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:24:30.585644",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_689.jpg",
+  "image_sha256": "69e995b6740e8410b93d75005a67fe5a17abd7dd10f09d693265a442cc4a892d",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_689.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 24,
+    "accepted_token_count": 24,
+    "mean_confidence": 0.929801,
+    "min_confidence": 0.5,
+    "joined_text": "一\n一\n一\n一\n2. （20分）\n解(1)8MB=23}x^2{20=223}∴主存位数为23\n3212=16组\n24=16∴Cache组址地址=4.\n2KB=2\n∴tache位数为11.-4=7. 偏移地址为11 23-11-4=.8\ntag cache组号 偏移地址\n主存地址偏移地址\n8\n45 11\n8\n11\n主存\nLache\n(2) 2107FFH. =0010 1101 0000111 1111 1111\n该地址能找到对 0000对应ache组0，tag标记为01011010与Cache块tag不同.\n∴不能访问\n7F0057H=.0'111 1111 0000 00000101H0111\n0000对应组0.，组0组内1tg标记为11111110，相同.\n∴能够访问",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.07264,
+      "very_dark_pixel_ratio": 0.046823,
+      "lower_region_dark_pixel_ratio": 0.077414,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)8MB=2³×2²⁰=2²³ ∴主存位数为23\n3212=16组 2⁴=16 ∴Cache组地址=4.\n2KB=2¹¹  偏移地址为11 23-11-4=.8\n主存结构和cache结构如图所示\n(2)2D07FFH = 0010 1101 0000 0111 1111 1111\n0000对应Cache组0，tag标记为01011010与Cache块内tag不同.\n∴不能访问\n7FD057H = 0111 1111 0000 0000 0101 0111\n0000对应组0，组0内块1 tag标记为111 11110,相同.\n∴能够访问",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_689",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "学生明确计算出Cache组号的位数为4位。计算过程包含两部分：\n1. “3212=16组”（根据上下文对应32个主存块除以每组2块得出16组）。\n2. “24=16∴Cache组址地址=4.”（即 $2^4=16$，得出组地址位数为4位）。",
+    "step_4": "学生通过绘制表格定义了主存地址格式，字段顺序和位数如下：\n表头：tag | cache组号 | 偏移地址\n主存行：8 | 45 11 | （此单元格在OCR中缺失数值，但下方文字推导出主存tag位数为8位）\n注：文字推导中写有“23-11-4=.8”，对应主存总位数23减去偏移11减去组号4等于主存tag8位。",
+    "step_5": "学生通过绘制表格定义了Cache地址格式，字段顺序和位数如下：\n表头：主存地址偏移地址（注：此处字迹根据上下文推断应为“cache组号 偏移地址”的字迹误识）\nCache行（OCR识别为“Lache”）：8 | 11\n结合上方的计算“∴tache位数为11.-4=7”，可推断该表格内Cache的组号与Tag合计占8位（7+1或类似组合，具体数值在表中为8），偏移地址占11位。",
+    "step_6": "对于地址2D07FFH（学生笔迹写为2107FFH），学生的判定和推导如下：\n1. 二进制展开：0010 1101 0000111 1111 1111\n2. 字段提取：0000对应ache组0（组号为0），tag标记为01011010。\n3. 判定结论：“tag标记为01011010与Cache块tag不同”，得出结论“∴不能访问”。",
+    "step_7": "对于地址7F0057H，学生的判定和推导如下：\n1. 二进制展开：0'111 1111 0000 00000101H0111\n2. 字段提取与比对：“0000对应组0.，组0组内1tg标记为11111110，相同.”\n3. 判定结论：因为标记相同，得出结论“∴能够访问”。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 12.25,
+        "cells_left_to_right": [
+          {
+            "text": "一",
+            "x_center": 78.5,
+            "confidence": 0.7922678589820862
+          },
+          {
+            "text": "一",
+            "x_center": 138.0,
+            "confidence": 0.9909185171127319
+          },
+          {
+            "text": "一",
+            "x_center": 222.5,
+            "confidence": 0.9886884093284607
+          },
+          {
+            "text": "一",
+            "x_center": 283.0,
+            "confidence": 0.8827795386314392
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 53.5,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 52.5,
+            "confidence": 0.8665105104446411
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 84.0,
+        "cells_left_to_right": [
+          {
+            "text": "解(1)8MB=23}x^2{20=223}∴主存位数为23",
+            "x_center": 233.0,
+            "confidence": 0.705358624458313
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 125.5,
+        "cells_left_to_right": [
+          {
+            "text": "3212=16组",
+            "x_center": 133.0,
+            "confidence": 0.997376561164856
+          },
+          {
+            "text": "24=16∴Cache组址地址=4.",
+            "x_center": 444.5,
+            "confidence": 0.9249243140220642
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 160.75,
+        "cells_left_to_right": [
+          {
+            "text": "2KB=2",
+            "x_center": 113.5,
+            "confidence": 0.9843149185180664
+          },
+          {
+            "text": "∴tache位数为11.-4=7. 偏移地址为11 23-11-4=.8",
+            "x_center": 546.5,
+            "confidence": 0.8690558671951294
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 200.0,
+        "cells_left_to_right": [
+          {
+            "text": "tag cache组号 偏移地址",
+            "x_center": 192.5,
+            "confidence": 0.9856631755828857
+          },
+          {
+            "text": "主存地址偏移地址",
+            "x_center": 444.0,
+            "confidence": 0.9094375371932983
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 233.12,
+        "cells_left_to_right": [
+          {
+            "text": "8",
+            "x_center": 96.0,
+            "confidence": 0.9948686361312866
+          },
+          {
+            "text": "45 11",
+            "x_center": 187.5,
+            "confidence": 0.9276536107063293
+          },
+          {
+            "text": "8",
+            "x_center": 398.0,
+            "confidence": 0.9999107122421265
+          },
+          {
+            "text": "11",
+            "x_center": 457.0,
+            "confidence": 0.9698071479797363
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 267.75,
+        "cells_left_to_right": [
+          {
+            "text": "主存",
+            "x_center": 134.5,
+            "confidence": 0.9902920722961426
+          },
+          {
+            "text": "Lache",
+            "x_center": 408.5,
+            "confidence": 0.894618034362793
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 374.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 2107FFH. =0010 1101 0000111 1111 1111",
+            "x_center": 288.0,
+            "confidence": 0.8713579177856445
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 414.5,
+        "cells_left_to_right": [
+          {
+            "text": "该地址能找到对 0000对应ache组0，tag标记为01011010与Cache块tag不同.",
+            "x_center": 515.0,
+            "confidence": 0.9473356604576111
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 453.5,
+        "cells_left_to_right": [
+          {
+            "text": "∴不能访问",
+            "x_center": 389.0,
+            "confidence": 0.9954293370246887
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 501.0,
+        "cells_left_to_right": [
+          {
+            "text": "7F0057H=.0'111 1111 0000 00000101H0111",
+            "x_center": 315.5,
+            "confidence": 0.9414025545120239
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 540.0,
+        "cells_left_to_right": [
+          {
+            "text": "0000对应组0.，组0组内1tg标记为11111110，相同.",
+            "x_center": 420.5,
+            "confidence": 0.9018685221672058
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 583.5,
+        "cells_left_to_right": [
+          {
+            "text": "∴能够访问",
+            "x_center": 362.0,
+            "confidence": 0.9833841323852539
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=78.5: 一 | x=138.0: 一 | x=222.5: 一 | x=283.0: 一\nRow 2: x=52.5: 2. （20分）\nRow 3: x=233.0: 解(1)8MB=23}x^2{20=223}∴主存位数为23\nRow 4: x=133.0: 3212=16组 | x=444.5: 24=16∴Cache组址地址=4.\nRow 5: x=113.5: 2KB=2 | x=546.5: ∴tache位数为11.-4=7. 偏移地址为11 23-11-4=.8\nRow 6: x=192.5: tag cache组号 偏移地址 | x=444.0: 主存地址偏移地址\nRow 7: x=96.0: 8 | x=187.5: 45 11 | x=398.0: 8 | x=457.0: 11\nRow 8: x=134.5: 主存 | x=408.5: Lache\nRow 9: x=288.0: (2) 2107FFH. =0010 1101 0000111 1111 1111\nRow 10: x=515.0: 该地址能找到对 0000对应ache组0，tag标记为01011010与Cache块tag不同.\nRow 11: x=389.0: ∴不能访问\nRow 12: x=315.5: 7F0057H=.0'111 1111 0000 00000101H0111\nRow 13: x=420.5: 0000对应组0.，组0组内1tg标记为11111110，相同.\nRow 14: x=362.0: ∴能够访问"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "8MB=2³×2²⁰=2²³ ∴ 主存位数为23",
+    "step_2": "2KB=2¹¹ ∴ Cache块数为11",
+    "step_3": "32/2=16组 2⁴=16 ∴ Cache组地址=4",
+    "step_4": "tag Cache组号 偏移地址 主存 8 4 11",
+    "step_5": "主存地址 偏移地址 Cache 8 11",
+    "step_6": "2D07FFH = 0010 1101 0000 0111 1111 1111 该地址能找到对 0000 对应Cache组0，tag标记为01011010与Cache块内tag不同 ∴ 不能访问",
+    "step_7": "7F0057H = 0111 1111 0000 0000 0101 0111 0000 对应组0，组0组内块1 tag标记为01111110，相同 ∴ 能够访问"
+  },
+  "facts": {
+    "step_1": "8MB=2³×2²⁰=2²³ ∴主存位数为23",
+    "step_2": "2KB=2¹¹  偏移地址为11",
+    "step_3": "3212=16组 2⁴=16 ∴Cache组地址=4",
+    "step_4": "主存结构和cache结构如图所示",
+    "step_5": "主存结构和cache结构如图所示",
+    "step_6": "2D07FFH = 0010 1101 0000 0111 1111 1111\n0000对应Cache组0，tag标记为01011010与Cache块内tag不同\n∴不能访问",
+    "step_7": "7FD057H = 0111 1111 0000 0000 0101 0111\n0000对应组0，组0内块1 tag标记为111 11110,相同\n∴能够访问"
+  }
+}

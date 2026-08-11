@@ -1,0 +1,422 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T00:56:07.060553",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1362.jpg",
+  "image_sha256": "09a63d6d08e3ce3568c8fdd4a6076fb12bb969722bfac82f11e4bf32b279fae6",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1362.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 40,
+    "accepted_token_count": 40,
+    "mean_confidence": 0.950162,
+    "min_confidence": 0.5,
+    "joined_text": "5: ？据寄存器 b: 指寄存器 C: 地地寄存器 d: 程序寄存器\n(2): d→C\n(4):①取指阶段：程序寄存器将要取指令\n地址送入地址寄存器中地地寄存器将数据\nC→AB,ABS,W/R=O,M/IO=1\n送入地地总线，地址总线信号有效，主存将内容\nDB→ a\n送入数据总线，再送到数据寄存器，再送入指令\na→b\n寄存器，然后编译.同(2)所示，不再叙述\nb→控制器\n(d+1→d)\n(3):OD→C\n②执行阶段：操作数送入地地寄存器中，主存通过\nC→AB,ABS,W/R=O,M/=\n数据总线将数据送入数据寄存器，再送入ALU，\nDB→a\n同时通用寄存器AX将数据进入ALU.发\na→ALU\n出+信号运算结果送入AC中再送入A×中\nALU→AC\nOD→C。\nC→AB\nAc→ a\nDB→a\na→M(c)\na→ALU,AX→ALU\n十\n(5):由题可得4类互斥微命令位数\nALU→AC\nAC-→AX\n分别为3.4,5,2.外部条件位数2位\n数命令 外部条件 下地址\n则下址字段位数为20-3-4-5-2-2=4位\n(6):1\n3位 4位\n5位\n2位2位\n4位\n故控制存储器容量为4×24",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.114438,
+      "very_dark_pixel_ratio": 0.074474,
+      "lower_region_dark_pixel_ratio": 0.110213,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(2)d→C\nc→题AB,ABS,W/R=0,M/而=1\nDB→a\na→b\nb→控制器\n(d+1→d)\n(3)OD→C\nC→AB,ABS,W/R=0,M/而=1\nDB→a\na→ALU\nALU→AC\nAC→a\na→M(c)\n(5)由题可得4类互斥微命令位数\n分别为3,4,5,2.外部条件位数2位\n则下址字段位数为20-3-4-5-2-2=4位\n故控制存储器容量为4×24\n(4)①取指阶段：程序寄存器将要取指令\n地址送入地址寄存器中,地址寄存器将数据\n送入地址总线,地址总线信号有效,主存将内容\n送入数据总线,再送到数据寄存器,再送入指令\n寄存器,然后编译.同(2)所示,不再复述\n\n②执行阶段：操作数送入地址寄存器中,主存通过\n数据总线将数据送入数据寄存器,再送入ALU,\n同时通用寄存器AX将数据送入ALU,发\n出+信号运算结果送入AC中,再送入AX中\n\n指令示意图如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1362",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "①取指阶段：程序寄存器将要取指令送入地地总线，地址总线信号有效，主存将内容地址送入地址寄存器中地地寄存器将数据送入数据总线，再送到数据寄存器，再送入指令寄存器，然后编译.同(2)所示，不再叙述\n②执行阶段：操作数送入地地寄存器中，主存通过数据总线将数据送入数据寄存器，再送入ALU，同时通用寄存器AX将数据进入ALU.发出+信号运算结果送入AC中再送入A×中\n相关数据通路序列：\nOD→C。\nC→AB\nDB→a\na→ALU,AX→ALU\n十\nALU→AC\nAC-→AX",
+    "step_5": "由题可得4类互斥微命令位数分别为3.4,5,2.外部条件位数2位\n则下址字段位数为20-3-4-5-2-2=4位\n故控制存储器容量为4×24",
+    "step_6": "数命令 外部条件 下地址\n1\n3位 4位 5位 2位2位 4位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 27.5,
+        "cells_left_to_right": [
+          {
+            "text": "5: ？据寄存器 b: 指寄存器 C: 地地寄存器 d: 程序寄存器",
+            "x_center": 377.0,
+            "confidence": 0.8322217464447021
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 78.75,
+        "cells_left_to_right": [
+          {
+            "text": "(2): d→C",
+            "x_center": 112.5,
+            "confidence": 0.9786058664321899
+          },
+          {
+            "text": "(4):①取指阶段：程序寄存器将要取指令",
+            "x_center": 690.5,
+            "confidence": 0.9381731748580933
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 125.83,
+        "cells_left_to_right": [
+          {
+            "text": "C→AB,ABS,W/R=O,M/IO=1",
+            "x_center": 254.5,
+            "confidence": 0.7891011238098145
+          },
+          {
+            "text": "送入地地总线，地址总线信号有效，主存将内容",
+            "x_center": 701.5,
+            "confidence": 0.9630066752433777
+          },
+          {
+            "text": "地址送入地址寄存器中地地寄存器将数据",
+            "x_center": 711.5,
+            "confidence": 0.9609736204147339
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 172.0,
+        "cells_left_to_right": [
+          {
+            "text": "DB→ a",
+            "x_center": 139.5,
+            "confidence": 0.90013188123703
+          },
+          {
+            "text": "送入数据总线，再送到数据寄存器，再送入指令",
+            "x_center": 707.5,
+            "confidence": 0.9353840351104736
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 208.5,
+        "cells_left_to_right": [
+          {
+            "text": "a→b",
+            "x_center": 133.5,
+            "confidence": 0.9970837235450745
+          },
+          {
+            "text": "寄存器，然后编译.同(2)所示，不再叙述",
+            "x_center": 693.0,
+            "confidence": 0.9507405161857605
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 248.5,
+        "cells_left_to_right": [
+          {
+            "text": "(d+1→d)",
+            "x_center": 135.0,
+            "confidence": 0.9969288110733032
+          },
+          {
+            "text": "b→控制器",
+            "x_center": 151.5,
+            "confidence": 0.9829546213150024
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 297.75,
+        "cells_left_to_right": [
+          {
+            "text": "(3):OD→C",
+            "x_center": 113.0,
+            "confidence": 0.9867770671844482
+          },
+          {
+            "text": "②执行阶段：操作数送入地地寄存器中，主存通过",
+            "x_center": 693.0,
+            "confidence": 0.9616714119911194
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 330.5,
+        "cells_left_to_right": [
+          {
+            "text": "C→AB,ABS,W/R=O,M/=",
+            "x_center": 233.0,
+            "confidence": 0.9200952053070068
+          },
+          {
+            "text": "数据总线将数据送入数据寄存器，再送入ALU，",
+            "x_center": 695.5,
+            "confidence": 0.9775025844573975
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 363.0,
+        "cells_left_to_right": [
+          {
+            "text": "DB→a",
+            "x_center": 135.0,
+            "confidence": 0.9836430549621582
+          },
+          {
+            "text": "同时通用寄存器AX将数据进入ALU.发",
+            "x_center": 702.0,
+            "confidence": 0.8798272013664246
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 397.75,
+        "cells_left_to_right": [
+          {
+            "text": "a→ALU",
+            "x_center": 144.5,
+            "confidence": 0.9966594576835632
+          },
+          {
+            "text": "出+信号运算结果送入AC中再送入A×中",
+            "x_center": 646.5,
+            "confidence": 0.9860479235649109
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 443.83,
+        "cells_left_to_right": [
+          {
+            "text": "ALU→AC",
+            "x_center": 141.0,
+            "confidence": 0.9986299872398376
+          },
+          {
+            "text": "C→AB",
+            "x_center": 506.5,
+            "confidence": 0.9966346025466919
+          },
+          {
+            "text": "OD→C。",
+            "x_center": 514.5,
+            "confidence": 0.9799330830574036
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 480.5,
+        "cells_left_to_right": [
+          {
+            "text": "Ac→ a",
+            "x_center": 139.0,
+            "confidence": 0.952187180519104
+          },
+          {
+            "text": "DB→a",
+            "x_center": 511.0,
+            "confidence": 0.9854512214660645
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 510.5,
+        "cells_left_to_right": [
+          {
+            "text": "a→M(c)",
+            "x_center": 151.0,
+            "confidence": 0.9912424683570862
+          },
+          {
+            "text": "a→ALU,AX→ALU",
+            "x_center": 564.0,
+            "confidence": 0.9453496336936951
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 560.88,
+        "cells_left_to_right": [
+          {
+            "text": "(5):由题可得4类互斥微命令位数",
+            "x_center": 184.0,
+            "confidence": 0.9688454866409302
+          },
+          {
+            "text": "十",
+            "x_center": 482.0,
+            "confidence": 0.7551572322845459
+          },
+          {
+            "text": "AC-→AX",
+            "x_center": 501.5,
+            "confidence": 0.8416960835456848
+          },
+          {
+            "text": "ALU→AC",
+            "x_center": 528.0,
+            "confidence": 0.9986850619316101
+          }
+        ]
+      },
+      {
+        "row": 15,
+        "y_center": 599.25,
+        "cells_left_to_right": [
+          {
+            "text": "分别为3.4,5,2.外部条件位数2位",
+            "x_center": 206.0,
+            "confidence": 0.9167656898498535
+          },
+          {
+            "text": "数命令 外部条件 下地址",
+            "x_center": 723.5,
+            "confidence": 0.9005594849586487
+          }
+        ]
+      },
+      {
+        "row": 16,
+        "y_center": 654.14,
+        "cells_left_to_right": [
+          {
+            "text": "故控制存储器容量为4×24",
+            "x_center": 178.0,
+            "confidence": 0.9987428188323975
+          },
+          {
+            "text": "则下址字段位数为20-3-4-5-2-2=4位",
+            "x_center": 227.0,
+            "confidence": 0.9873521327972412
+          },
+          {
+            "text": "(6):1",
+            "x_center": 483.0,
+            "confidence": 0.9687688946723938
+          },
+          {
+            "text": "3位 4位",
+            "x_center": 552.0,
+            "confidence": 0.9167437553405762
+          },
+          {
+            "text": "5位",
+            "x_center": 631.0,
+            "confidence": 0.998733401298523
+          },
+          {
+            "text": "2位2位",
+            "x_center": 708.5,
+            "confidence": 0.9921356439590454
+          },
+          {
+            "text": "4位",
+            "x_center": 796.0,
+            "confidence": 0.9953562021255493
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=377.0: 5: ？据寄存器 b: 指寄存器 C: 地地寄存器 d: 程序寄存器\nRow 2: x=112.5: (2): d→C | x=690.5: (4):①取指阶段：程序寄存器将要取指令\nRow 3: x=254.5: C→AB,ABS,W/R=O,M/IO=1 | x=701.5: 送入地地总线，地址总线信号有效，主存将内容 | x=711.5: 地址送入地址寄存器中地地寄存器将数据\nRow 4: x=139.5: DB→ a | x=707.5: 送入数据总线，再送到数据寄存器，再送入指令\nRow 5: x=133.5: a→b | x=693.0: 寄存器，然后编译.同(2)所示，不再叙述\nRow 6: x=135.0: (d+1→d) | x=151.5: b→控制器\nRow 7: x=113.0: (3):OD→C | x=693.0: ②执行阶段：操作数送入地地寄存器中，主存通过\nRow 8: x=233.0: C→AB,ABS,W/R=O,M/= | x=695.5: 数据总线将数据送入数据寄存器，再送入ALU，\nRow 9: x=135.0: DB→a | x=702.0: 同时通用寄存器AX将数据进入ALU.发\nRow 10: x=144.5: a→ALU | x=646.5: 出+信号运算结果送入AC中再送入A×中\nRow 11: x=141.0: ALU→AC | x=506.5: C→AB | x=514.5: OD→C。\nRow 12: x=139.0: Ac→ a | x=511.0: DB→a\nRow 13: x=151.0: a→M(c) | x=564.0: a→ALU,AX→ALU\nRow 14: x=184.0: (5):由题可得4类互斥微命令位数 | x=482.0: 十 | x=501.5: AC-→AX | x=528.0: ALU→AC\nRow 15: x=206.0: 分别为3.4,5,2.外部条件位数2位 | x=723.5: 数命令 外部条件 下地址\nRow 16: x=178.0: 故控制存储器容量为4×24 | x=227.0: 则下址字段位数为20-3-4-5-2-2=4位 | x=483.0: (6):1 | x=552.0: 3位 4位 | x=631.0: 5位 | x=708.5: 2位2位 | x=796.0: 4位"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "a: 数据寄存器 b: 指令寄存器 C: 地址寄存器 d: 程序寄存器",
+    "step_2": "d→C → C→AB,ABS,W/R=0,M/IO=1 → DB→a → a→b → b→控制器（(d+1→d)）",
+    "step_3": "OD→C → C→AB,ABS,W/R=0,M/IO=1 → DB→a → a→ALU → ALU→AC → Ac→a → a→M(c)；执行阶段可见a→ALU,AX→ALU → + → ALU→AC → AC→AX"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered",
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "a:数据寄存器 b:指令寄存器 c:地址寄存器 d:程序计数器",
+    "step_2": "(2): d→C c→AB, ABS, W/R=0, M/IO=1 DB→a a→b b→控制器 (d+1→d)",
+    "step_3": "(3): OD→C C→AB, ABS, W/R=0, M/IO=1 DB→a a→ALU ALU→AC AC→a a→M(c)",
+    "step_4": "OD→C C→AB DB→a a→ALU, AX→ALU + ALU→AC AC→AX",
+    "step_5": "(5): 由题可得4类互斥微命令位数分别为3,4,5,2. 外部条件位数2位 则下址字段位数为20-3-4-5-2-2=4位 故控制存储器容量为4×24",
+    "step_6": "微命令 外部条件 下地址 3位 4位 5位 2位 2位 4位"
+  },
+  "facts": {
+    "step_1": "a: 数据寄存器 b: 指令寄存器 C: 地址寄存器 d: 程序寄存器",
+    "step_2": "d→C\nc→题AB,ABS,W/R=0,M/而=1\nDB→a\na→b\nb→控制器\n(d+1→d)",
+    "step_3": "OD→C → C→AB,ABS,W/R=0,M/IO=1 → DB→a → a→ALU → ALU→AC → Ac→a → a→M(c)；执行阶段可见a→ALU,AX→ALU → + → ALU→AC → AC→AX",
+    "step_4": "OD→C\nC→AB,ABS,W/R=0,M/而=1\nDB→a\na→ALU\nALU→AC\nAC→a\na→M(c)\n①取指阶段：程序寄存器将要取指令地址送入地址寄存器中,地址寄存器将数据送入地址总线,地址总线信号有效,主存将内容送入数据总线,再送到数据寄存器,再送入指令寄存器,然后编译.同(2)所示,不再复述\n②执行阶段：操作数送入地址寄存器中,主存通过数据总线将数据送入数据寄存器,再送入ALU,同时通用寄存器AX将数据送入ALU,发出+信号运算结果送入AC中,再送入AX中",
+    "step_5": "4类互斥微命令位数分别为3,4,5,2.外部条件位数2位\n下址字段位数为20-3-4-5-2-2=4位\n控制存储器容量为4×24",
+    "step_6": "数命令 外部条件 下地址\n1\n3位 4位 5位 2位2位 4位"
+  }
+}

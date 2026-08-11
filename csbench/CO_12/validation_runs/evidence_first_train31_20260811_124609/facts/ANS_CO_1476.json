@@ -1,0 +1,262 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:44:44.806517",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1476.jpg",
+  "image_sha256": "cc93856fc57646f6617394de91532bbe6d81c8321abc4a3707e232052a1e9f60",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1476.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 17,
+    "accepted_token_count": 17,
+    "mean_confidence": 0.953872,
+    "min_confidence": 0.5,
+    "joined_text": "b: 指令寄存器\nC: 地址寄存器\n5: ()：a.:数据寄存器\nd: 程序计数器\n(2) 主存储器M→ a → b→ 操作控制器\n(3) ALU→ AC→ a → 主存\n主存→a→ALU\n(4) GR→ALU a→ ALU ALU→ AC AC→a a→GR\n(5) 224B=16MB\n转移控制：3位\n(6) 微命令：3位，4位，4位，2位\n4\n2\n3\n8\nBCF\nBAF",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.049098,
+      "very_dark_pixel_ratio": 0.033234,
+      "lower_region_dark_pixel_ratio": 0.045503,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)a:数据寄存器 b:指令寄存器 c:地址寄存器 d:程序计数器\n(2) 主存储器M→a→b→操作控制器\n(3) ALU→AC→a→主存 主存→a→ALU\n(4) GR→ALU a→ALU ALU→AC AC→a a→GR\n(5) 2²⁴B = 16MB\n(6) 微命令：3位，4位，4位，2位 转移控制：3位\n其结构如所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1476",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "(4) GR→ALU a→ ALU ALU→ AC AC→a a→GR",
+    "step_5": "(5) 224B=16MB",
+    "step_6": "(6) 微命令：3位，4位，4位，2位 转移控制：3位 | 下方表格: 4, 2, 3, 8, BCF, BAF"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 30.17,
+        "cells_left_to_right": [
+          {
+            "text": "5: ()：a.:数据寄存器",
+            "x_center": 156.5,
+            "confidence": 0.7865020632743835
+          },
+          {
+            "text": "b: 指令寄存器",
+            "x_center": 456.0,
+            "confidence": 0.9075884819030762
+          },
+          {
+            "text": "C: 地址寄存器",
+            "x_center": 693.5,
+            "confidence": 0.8817147612571716
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 78.5,
+        "cells_left_to_right": [
+          {
+            "text": "d: 程序计数器",
+            "x_center": 213.0,
+            "confidence": 0.9448061585426331
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 136.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 主存储器M→ a → b→ 操作控制器",
+            "x_center": 329.5,
+            "confidence": 0.9643406271934509
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 203.75,
+        "cells_left_to_right": [
+          {
+            "text": "(3) ALU→ AC→ a → 主存",
+            "x_center": 234.0,
+            "confidence": 0.9107627868652344
+          },
+          {
+            "text": "主存→a→ALU",
+            "x_center": 674.0,
+            "confidence": 0.9979822635650635
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 263.5,
+        "cells_left_to_right": [
+          {
+            "text": "(4) GR→ALU a→ ALU ALU→ AC AC→a a→GR",
+            "x_center": 442.0,
+            "confidence": 0.9510279893875122
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 435.0,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 224B=16MB",
+            "x_center": 148.5,
+            "confidence": 0.9023149013519287
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 511.75,
+        "cells_left_to_right": [
+          {
+            "text": "(6) 微命令：3位，4位，4位，2位",
+            "x_center": 272.0,
+            "confidence": 0.978304922580719
+          },
+          {
+            "text": "转移控制：3位",
+            "x_center": 698.0,
+            "confidence": 0.996094286441803
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 583.25,
+        "cells_left_to_right": [
+          {
+            "text": "4",
+            "x_center": 292.5,
+            "confidence": 0.9999818801879883
+          },
+          {
+            "text": "2",
+            "x_center": 367.5,
+            "confidence": 0.9950542449951172
+          },
+          {
+            "text": "3",
+            "x_center": 433.0,
+            "confidence": 0.9999363422393799
+          },
+          {
+            "text": "8",
+            "x_center": 537.5,
+            "confidence": 0.9997082352638245
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 619.25,
+        "cells_left_to_right": [
+          {
+            "text": "BCF",
+            "x_center": 441.5,
+            "confidence": 0.9998272061347961
+          },
+          {
+            "text": "BAF",
+            "x_center": 537.0,
+            "confidence": 0.9998824000358582
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=156.5: 5: ()：a.:数据寄存器 | x=456.0: b: 指令寄存器 | x=693.5: C: 地址寄存器\nRow 2: x=213.0: d: 程序计数器\nRow 3: x=329.5: (2) 主存储器M→ a → b→ 操作控制器\nRow 4: x=234.0: (3) ALU→ AC→ a → 主存 | x=674.0: 主存→a→ALU\nRow 5: x=442.0: (4) GR→ALU a→ ALU ALU→ AC AC→a a→GR\nRow 6: x=148.5: (5) 224B=16MB\nRow 7: x=272.0: (6) 微命令：3位，4位，4位，2位 | x=698.0: 转移控制：3位\nRow 8: x=292.5: 4 | x=367.5: 2 | x=433.0: 3 | x=537.5: 8\nRow 9: x=441.5: BCF | x=537.0: BAF"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "主存储器M→a→b→操作控制器；ALU→AC→a→主存；主存→a→ALU；GR→ALU a→ALU ALU→AC AC→a a→GR",
+  "diagram_facts": {
+    "step_1": "a:数据寄存器；b:指令寄存器；c:地址寄存器；d:程序计数器；完整可见路径：主存储器M→a→b→操作控制器；ALU→AC→a→主存；主存→a→ALU；GR→ALU a→ALU ALU→AC AC→a a→GR",
+    "step_2": "主存储器M→a→b→操作控制器；完整可见路径：主存储器M→a→b→操作控制器；ALU→AC→a→主存；主存→a→ALU；GR→ALU a→ALU ALU→AC AC→a a→GR",
+    "step_3": "ALU→AC→a→主存；主存→a→ALU；完整可见路径：主存储器M→a→b→操作控制器；ALU→AC→a→主存；主存→a→ALU；GR→ALU a→ALU ALU→AC AC→a a→GR"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a:数据寄存器 b:指令寄存器 c:地址寄存器 d:程序计数器",
+    "step_2": "主存储器M→a→b→操作控制器",
+    "step_3": "ALU→AC→a→主存 主存→a→ALU",
+    "step_4": "GR→ALU a→ALU ALU→AC AC→a a→GR",
+    "step_5": "2²⁴B = 16MB",
+    "step_6": "微命令：3位，4位，4位，2位 转移控制：3位 3 4 4 2 3 8 BCF BAF"
+  },
+  "facts": {
+    "step_1": "a:数据寄存器 b:指令寄存器 c:地址寄存器 d:程序计数器",
+    "step_2": "主存储器M→a→b→操作控制器",
+    "step_3": "ALU→AC→a→主存 主存→a→ALU",
+    "step_4": "GR→ALU a→ALU ALU→AC AC→a a→GR",
+    "step_5": "2²⁴B = 16MB",
+    "step_6": "微命令：3位，4位，4位，2位 转移控制：3位"
+  }
+}

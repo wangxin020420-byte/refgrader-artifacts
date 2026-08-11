@@ -1,0 +1,322 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:42:09.064784",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1471.jpg",
+  "image_sha256": "9096834c3227305a521259fb646773f4995574bd6132c0e88a30e69526f6059c",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1471.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 25,
+    "accepted_token_count": 25,
+    "mean_confidence": 0.904434,
+    "min_confidence": 0.5,
+    "joined_text": "5. 11 0..12\nb: IR C: AR d:PC\n(2) 主存→控制器：M→DR→IR→操作控制器\n(3> 存：运并结果经ALU到AC. 接着AC→DR→M.\n耳取：M→DR→ALU. ALU经运并后将数据存到AC CALU不是寄存器，不能存放数据)\n<4> 取指：PC→AR. CU发出读命令 MCAR)→DR. DR→IR. P(+1 =1\n分析取数：OD→AR Cu发出命令M(AR)→DR\n执行：DR→ALU.AC→ALU(假设该通用寄在器Ax的值已送AC).\nALV+=1 ALU→AC. AC→Ax(最后将运并终到的结果速回AX)\n(5) T(O_2(5+1)7=3 Tlog2(+1)7=4 Tlog2(14+)127=4 [lOg2(3+1)7=2\n外部条件直接制∴3位\n∴7址字段：24-3-4-4-2-3:8.\n容量：28x\n24\n=25x24=32×24=768B\n8\n(b)\n3\n4\n4\n2\n3\n8\n到别1位.下址.\n将如li.",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.075803,
+      "very_dark_pixel_ratio": 0.047682,
+      "lower_region_dark_pixel_ratio": 0.081258,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)a:DR  b:IR  c:AR d:pc\n(2)主存→控制器：M→DR→IR→操作控制； (3)存：运算结果经ALU到AL，接着AC→DR→M. 取：M→DR→ALU. ALU运算后将数据存到AC（ALU不是存储器，不能存放数据） (4)取指：PC→AR，CU发出读命令M(AR)→DR. DR→IR. PC+1=1 分析取数：OD→AR CU发出读命令M(AR)→DR 执行：DR→ALU. AC→ALU（假设该通用寄存器AX的值已送AC）. \nALU+=1 ALU→AC. AC→AX（最后将运算结果送回AX） \n(5)[log₂(5+1)]向上取整=3，[log₂(8+1)]向上取整=4，[log₂(14+1)]向上取整=4「ω₂(3+1)」=2 外部事件直接控制 所以3位. ∴下址字段：24-3-4-4-4-2-3=8位. 容量：2⁸×24/8=2⁵×24=32×24=768 B \n(6)格式如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1471",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "取指：PC→AR. CU发出读命令 MCAR)→DR. DR→IR. P(+1 =1\n分析取数：OD→AR Cu发出命令M(AR)→DR\n执行：DR→ALU.AC→ALU(假设该通用寄在器Ax的值已送AC).\nALV+=1 ALU→AC. AC→Ax(最后将运并终到的结果速回AX)",
+    "step_5": "T(O_2(5+1)7=3 Tlog2(+1)7=4 Tlog2(14+)127=4 [lOg2(3+1)7=2\n外部条件直接制∴3位\n∴7址字段：24-3-4-4-2-3:8.\n容量：28x248=25x24=32×24=768B",
+    "step_6": "微指令具体格式各字段位长表格项数值依次为：3, 4, 4, 2, 3, 8。表格下方备注写有：“将如li.”、“到别1位.下址.”"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 36.5,
+        "cells_left_to_right": [
+          {
+            "text": "5. 11 0..12",
+            "x_center": 83.5,
+            "confidence": 0.7506786584854126
+          },
+          {
+            "text": "b: IR C: AR d:PC",
+            "x_center": 360.0,
+            "confidence": 0.9728875160217285
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 88.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 主存→控制器：M→DR→IR→操作控制器",
+            "x_center": 311.5,
+            "confidence": 0.9703238010406494
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 136.0,
+        "cells_left_to_right": [
+          {
+            "text": "(3> 存：运并结果经ALU到AC. 接着AC→DR→M.",
+            "x_center": 312.0,
+            "confidence": 0.8814371824264526
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 180.0,
+        "cells_left_to_right": [
+          {
+            "text": "耳取：M→DR→ALU. ALU经运并后将数据存到AC CALU不是寄存器，不能存放数据)",
+            "x_center": 491.0,
+            "confidence": 0.9228489398956299
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 235.0,
+        "cells_left_to_right": [
+          {
+            "text": "<4> 取指：PC→AR. CU发出读命令 MCAR)→DR. DR→IR. P(+1 =1",
+            "x_center": 342.5,
+            "confidence": 0.903789758682251
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 284.0,
+        "cells_left_to_right": [
+          {
+            "text": "分析取数：OD→AR Cu发出命令M(AR)→DR",
+            "x_center": 288.0,
+            "confidence": 0.9235684275627136
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 333.5,
+        "cells_left_to_right": [
+          {
+            "text": "执行：DR→ALU.AC→ALU(假设该通用寄在器Ax的值已送AC).",
+            "x_center": 374.0,
+            "confidence": 0.891093373298645
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 375.0,
+        "cells_left_to_right": [
+          {
+            "text": "ALV+=1 ALU→AC. AC→Ax(最后将运并终到的结果速回AX)",
+            "x_center": 437.0,
+            "confidence": 0.8423827290534973
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 448.75,
+        "cells_left_to_right": [
+          {
+            "text": "(5) T(O_2(5+1)7=3 Tlog2(+1)7=4 Tlog2(14+)127=4 [lOg2(3+1)7=2",
+            "x_center": 346.0,
+            "confidence": 0.7528821229934692
+          },
+          {
+            "text": "外部条件直接制∴3位",
+            "x_center": 812.0,
+            "confidence": 0.903329074382782
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 496.5,
+        "cells_left_to_right": [
+          {
+            "text": "∴7址字段：24-3-4-4-2-3:8.",
+            "x_center": 280.0,
+            "confidence": 0.8691241145133972
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 542.38,
+        "cells_left_to_right": [
+          {
+            "text": "容量：28x",
+            "x_center": 202.0,
+            "confidence": 0.959053099155426
+          },
+          {
+            "text": "24",
+            "x_center": 295.0,
+            "confidence": 0.9999799728393555
+          },
+          {
+            "text": "8",
+            "x_center": 296.5,
+            "confidence": 0.9999221563339233
+          },
+          {
+            "text": "=25x24=32×24=768B",
+            "x_center": 454.5,
+            "confidence": 0.9604868292808533
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 618.14,
+        "cells_left_to_right": [
+          {
+            "text": "(b)",
+            "x_center": 41.0,
+            "confidence": 0.8831613659858704
+          },
+          {
+            "text": "3",
+            "x_center": 153.0,
+            "confidence": 0.9970301389694214
+          },
+          {
+            "text": "4",
+            "x_center": 225.5,
+            "confidence": 0.999962568283081
+          },
+          {
+            "text": "4",
+            "x_center": 326.0,
+            "confidence": 0.9999518394470215
+          },
+          {
+            "text": "2",
+            "x_center": 402.0,
+            "confidence": 0.9998952150344849
+          },
+          {
+            "text": "3",
+            "x_center": 461.5,
+            "confidence": 0.999504566192627
+          },
+          {
+            "text": "8",
+            "x_center": 515.0,
+            "confidence": 0.9999560117721558
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 664.75,
+        "cells_left_to_right": [
+          {
+            "text": "将如li.",
+            "x_center": 284.5,
+            "confidence": 0.5112928748130798
+          },
+          {
+            "text": "到别1位.下址.",
+            "x_center": 486.5,
+            "confidence": 0.7163077592849731
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=83.5: 5. 11 0..12 | x=360.0: b: IR C: AR d:PC\nRow 2: x=311.5: (2) 主存→控制器：M→DR→IR→操作控制器\nRow 3: x=312.0: (3> 存：运并结果经ALU到AC. 接着AC→DR→M.\nRow 4: x=491.0: 耳取：M→DR→ALU. ALU经运并后将数据存到AC CALU不是寄存器，不能存放数据)\nRow 5: x=342.5: <4> 取指：PC→AR. CU发出读命令 MCAR)→DR. DR→IR. P(+1 =1\nRow 6: x=288.0: 分析取数：OD→AR Cu发出命令M(AR)→DR\nRow 7: x=374.0: 执行：DR→ALU.AC→ALU(假设该通用寄在器Ax的值已送AC).\nRow 8: x=437.0: ALV+=1 ALU→AC. AC→Ax(最后将运并终到的结果速回AX)\nRow 9: x=346.0: (5) T(O_2(5+1)7=3 Tlog2(+1)7=4 Tlog2(14+)127=4 [lOg2(3+1)7=2 | x=812.0: 外部条件直接制∴3位\nRow 10: x=280.0: ∴7址字段：24-3-4-4-2-3:8.\nRow 11: x=202.0: 容量：28x | x=295.0: 24 | x=296.5: 8 | x=454.5: =25x24=32×24=768B\nRow 12: x=41.0: (b) | x=153.0: 3 | x=225.5: 4 | x=326.0: 4 | x=402.0: 2 | x=461.5: 3 | x=515.0: 8\nRow 13: x=284.5: 将如li. | x=486.5: 到别1位.下址."
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a:IR b:DR c:AR d:PC",
+    "step_2": "主存→控制器：M→DR→IR→操作控制器",
+    "step_3": "存：运算结果经ALU到AC，接着AC→DR→M。 取：M→DR→ALU，ALU运算后将数据存到AC（ALU不是存贮器，不能存放数据）",
+    "step_4": "取指：PC→AR，发出读命令MAR→DR，DR→IR，PC+1=1 分析取数：OD→AR 发出读命令MAR→DR 执行：DR→ALU，AC→ALU（假设该通用寄存器AX的值已送AC），ALU+1=1 ALU→AC，AC→AX（最后将运算结果传送回AX）",
+    "step_5": "[log₂(5+1)]=3 [log₂(8+1)]=4 [log₂(14+1)]=4 [log₂(3+1)]=2 外部条件直接控制：3位 ∴下址字段：4 - 3 - 4 - 4 - 2 - 3 = 8位 容量：2⁸ × 24/8 = 2⁵×24 = 32×24 = 768 B",
+    "step_6": "3 4 4 2 3 8 操作位，下址"
+  },
+  "facts": {
+    "step_1": "a:DR  b:IR  c:AR d:pc",
+    "step_2": "主存→控制器：M→DR→IR→操作控制；",
+    "step_3": "存：运算结果经ALU到AL，接着AC→DR→M. 取：M→DR→ALU. ALU运算后将数据存到AC（ALU不是存储器，不能存放数据）",
+    "step_4": "取指：PC→AR，CU发出读命令M(AR)→DR. DR→IR. PC+1=1 分析取数：OD→AR CU发出读命令M(AR)→DR 执行：DR→ALU. AC→ALU（假设该通用寄存器AX的值已送AC）. \nALU+=1 ALU→AC. AC→AX（最后将运算结果送回AX）",
+    "step_5": "[log₂(5+1)]向上取整=3，[log₂(8+1)]向上取整=4，[log₂(14+1)]向上取整=4「ω₂(3+1)」=2 外部事件直接控制 所以3位. ∴下址字段：24-3-4-4-4-2-3=8位. 容量：2⁸×24/8=2⁵×24=32×24=768 B",
+    "step_6": "格式如图所示"
+  }
+}

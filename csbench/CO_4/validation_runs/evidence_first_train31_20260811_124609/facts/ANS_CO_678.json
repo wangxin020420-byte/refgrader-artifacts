@@ -1,0 +1,306 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:19:46.632348",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_678.jpg",
+  "image_sha256": "c63106a26ccd7d6ecbac63da38589a5f1fa6a3d63c85009dc53835c3be3abcae",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_678.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 28,
+    "accepted_token_count": 28,
+    "mean_confidence": 0.928961,
+    "min_confidence": 0.5,
+    "joined_text": "一\n2. （20分）\n8MB=223\n∴主存地址共有23位\n(2) 地址为2007FFH时，能访问到\n(1) cache共有\n32\n=24组\n2\n该单元的数据，对应cache中的块！\n∴主存中有4位主号区内块号\n王存区号占23-4-11=8位\n地址为7F0057H时，不能访问到\ncache中有4位tag标记字段\n每个数据块占21B\n∴数据块占川位\n∴主存地址：\n主存区号区内块号数据决号\n主存区号数据决号\n8b 4b 116\n4b\n12b\ncache地址：\n+2\n有效位tag标记数据块号\n16\n86\n12116",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.079265,
+      "very_dark_pixel_ratio": 0.050772,
+      "lower_region_dark_pixel_ratio": 0.078047,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "8MB=2^23 主存地址共有23位 \n(1) cache共有32/2=2^4组 主存中有4位区内块号 主存区号占23-4-11=8位  \n每个数据块占2^11B \n数据块占11位 \n主存地址如图所示： 8b 46 11b \nCache地址如图所示：  8b 12b 11b (2)地址为2D07FFH时，能访问到该单元的数据，对应cache中的块1 \n地址为7F0057H时，不能访问到",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_678",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "cache共有 32 / 2 = 24组",
+    "step_4": "主存地址：主存区号 | 区内块号 | 数据决号\n8b | 4b | 116\n（注：OCR中“数据决号”和“116”推测为学生手写的“数据块号”和“11b”，此处严格保留OCR识别结果）",
+    "step_5": "cache地址：有效位 | tag标记 | 数据块号\n（注：具体位数行OCR识别为“有效位tag标记数据块号”、“16”、“86”、“12116”，字迹模糊）",
+    "step_6": "(2) 地址为2007FFH时，能访问到该单元的数据，对应cache中的块！",
+    "step_7": "地址为7F0057H时，不能访问到"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 42.0,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 55.0,
+            "confidence": 0.9559212923049927
+          },
+          {
+            "text": "8MB=223",
+            "x_center": 154.0,
+            "confidence": 0.9888474345207214
+          },
+          {
+            "text": "∴主存地址共有23位",
+            "x_center": 189.0,
+            "confidence": 0.9618956446647644
+          },
+          {
+            "text": "一",
+            "x_center": 280.0,
+            "confidence": 0.8633601069450378
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 99.08,
+        "cells_left_to_right": [
+          {
+            "text": "(1) cache共有",
+            "x_center": 109.5,
+            "confidence": 0.9991754293441772
+          },
+          {
+            "text": "2",
+            "x_center": 212.5,
+            "confidence": 0.9999864101409912
+          },
+          {
+            "text": "32",
+            "x_center": 213.0,
+            "confidence": 0.9999814033508301
+          },
+          {
+            "text": "=24组",
+            "x_center": 272.0,
+            "confidence": 0.9630036354064941
+          },
+          {
+            "text": "(2) 地址为2007FFH时，能访问到",
+            "x_center": 709.5,
+            "confidence": 0.9645093083381653
+          },
+          {
+            "text": "该单元的数据，对应cache中的块！",
+            "x_center": 731.5,
+            "confidence": 0.9672855734825134
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 172.75,
+        "cells_left_to_right": [
+          {
+            "text": "王存区号占23-4-11=8位",
+            "x_center": 202.0,
+            "confidence": 0.9483096599578857
+          },
+          {
+            "text": "∴主存中有4位主号区内块号",
+            "x_center": 211.0,
+            "confidence": 0.8672475218772888
+          },
+          {
+            "text": "cache中有4位tag标记字段",
+            "x_center": 228.5,
+            "confidence": 0.8967193961143494
+          },
+          {
+            "text": "地址为7F0057H时，不能访问到",
+            "x_center": 724.0,
+            "confidence": 0.9763568639755249
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 240.0,
+        "cells_left_to_right": [
+          {
+            "text": "每个数据块占21B",
+            "x_center": 218.0,
+            "confidence": 0.8696082234382629
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 306.38,
+        "cells_left_to_right": [
+          {
+            "text": "∴主存地址：",
+            "x_center": 107.5,
+            "confidence": 0.9755273461341858
+          },
+          {
+            "text": "∴数据块占川位",
+            "x_center": 220.5,
+            "confidence": 0.8061667084693909
+          },
+          {
+            "text": "主存区号数据决号",
+            "x_center": 282.0,
+            "confidence": 0.7884348630905151
+          },
+          {
+            "text": "主存区号区内块号数据决号",
+            "x_center": 490.5,
+            "confidence": 0.8824465870857239
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 355.5,
+        "cells_left_to_right": [
+          {
+            "text": "4b",
+            "x_center": 226.5,
+            "confidence": 0.993574857711792
+          },
+          {
+            "text": "12b",
+            "x_center": 306.0,
+            "confidence": 0.9389610290527344
+          },
+          {
+            "text": "8b 4b 116",
+            "x_center": 482.5,
+            "confidence": 0.8674182891845703
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 435.67,
+        "cells_left_to_right": [
+          {
+            "text": "cache地址：",
+            "x_center": 112.0,
+            "confidence": 0.9227453470230103
+          },
+          {
+            "text": "+2",
+            "x_center": 158.5,
+            "confidence": 0.9990501403808594
+          },
+          {
+            "text": "有效位tag标记数据块号",
+            "x_center": 331.0,
+            "confidence": 0.9879176020622253
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 481.0,
+        "cells_left_to_right": [
+          {
+            "text": "16",
+            "x_center": 229.5,
+            "confidence": 0.7537168264389038
+          },
+          {
+            "text": "86",
+            "x_center": 308.5,
+            "confidence": 0.9607293605804443
+          },
+          {
+            "text": "12116",
+            "x_center": 434.0,
+            "confidence": 0.9120227098464966
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=55.0: 2. （20分） | x=154.0: 8MB=223 | x=189.0: ∴主存地址共有23位 | x=280.0: 一\nRow 2: x=109.5: (1) cache共有 | x=212.5: 2 | x=213.0: 32 | x=272.0: =24组 | x=709.5: (2) 地址为2007FFH时，能访问到 | x=731.5: 该单元的数据，对应cache中的块！\nRow 3: x=202.0: 王存区号占23-4-11=8位 | x=211.0: ∴主存中有4位主号区内块号 | x=228.5: cache中有4位tag标记字段 | x=724.0: 地址为7F0057H时，不能访问到\nRow 4: x=218.0: 每个数据块占21B\nRow 5: x=107.5: ∴主存地址： | x=220.5: ∴数据块占川位 | x=282.0: 主存区号数据决号 | x=490.5: 主存区号区内块号数据决号\nRow 6: x=226.5: 4b | x=306.0: 12b | x=482.5: 8b 4b 116\nRow 7: x=112.0: cache地址： | x=158.5: +2 | x=331.0: 有效位tag标记数据块号\nRow 8: x=229.5: 16 | x=308.5: 86 | x=434.0: 12116"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "8MB=2^23 ∴主存地址共有23位",
+    "step_2": "每块2KB=2^11B ∴为块内块占11位",
+    "step_3": "cache共有32/2=2^4组 ∴主存中有4位主存块号用作组号",
+    "step_4": "主存地址：[组号][块号][数据块号] 4b 12b 11b",
+    "step_5": "Cache地址：[有效位][tag标记][数据块号] 1b 8b 11b",
+    "step_6": "地址为2D07FFH时，能访问到该单元的数据，对应cache中的块1",
+    "step_7": "地址为7F0057H时，不能访问到"
+  },
+  "facts": {
+    "step_1": "8MB=2^23 主存地址共有23位",
+    "step_2": "每个数据块占2^11B 数据块占11位",
+    "step_3": "cache共有32/2=2^4组 主存中有4位区内块号",
+    "step_4": "主存地址如图所示： 8b 46 11b",
+    "step_5": "Cache地址如图所示：  8b 12b 11b",
+    "step_6": "地址为2D07FFH时，能访问到该单元的数据，对应cache中的块1",
+    "step_7": "地址为7F0057H时，不能访问到"
+  }
+}

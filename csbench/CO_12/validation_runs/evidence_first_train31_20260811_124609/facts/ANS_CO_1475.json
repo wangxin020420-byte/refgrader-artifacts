@@ -1,0 +1,352 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:44:10.833750",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1475.jpg",
+  "image_sha256": "1cfbd9a7e15616089267fa686015d88009c896892284c2e70ee614dd65470223",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1475.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 30,
+    "accepted_token_count": 29,
+    "mean_confidence": 0.920233,
+    "min_confidence": 0.5,
+    "joined_text": "5) (1) a: 数据缓冲寄存器 DR\nb: 指令寄存器IR\nAR.\nd: pc 程序计数器\n12) PC→AR.，AR→ 主存储器M，主存储器→DR，DR→IR，\nIR→操作控制器\n,PL+1\n(3)取:PC→AR，AR→主存储器\nM，主存储\nD2\n→DR，DR→ALU,PL+1\n存：PL→AR，AR→主存分储器M，主存储器→DR，DR→ALU，ALU→AC\nAC→DR,DR→\n主存储器m，pc+1\n(4 指PC→AR，AR→主存储器，主存分储器→DR，DR→IR，PC+1\n取数：IR→AR，AR→主存储器，主存储器→PR：DR→ALU，OD→ALU\nALU→AC,AC→AX\n15)4个互斥类分别有3、4、4、2位，外部条件3个采用直接控制方式，占3位\n下址字段占24-(3+4+4+2+3)=8位\n28×24=6144位\n(6)\n3\n4\n4\n2\n3\n8\n下址字段\n操作控制字段",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.062691,
+      "very_dark_pixel_ratio": 0.034795,
+      "lower_region_dark_pixel_ratio": 0.067315,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)a: 数据缓冲寄存器 DR  b: 指令寄存器 IR  c: 地址寄存器 AR, d: PC 程序计数器\n(2)PC→AR，AR→主存储器M ，主存储器→DR，DR→IR，IR→操作控制器，PC+1\n(3)取:PC→AR，AR→主存储器M，主存储器→DR，DR→ALU，PC+1 \n存: PC→AR，AR→主存储器M，主存储器→DR，DR→ALU，ALU→AC AC→DR，DR→主存储器M，PC+1\n(4)取指PC→AR，AR→主存储器，主存储器→DR，DR→IR，PC+1 \n取数: IR→AR，AR→主存储器，主存储器→DR,DR→ALU，OD→ALU ALU→AC，AC→AX.\n(5)4个互斥类分别有3、4、4、2位，外寄存件3个采用直接控制方式，占3位 下址字段占24-(3+4+4+2+3)=8位 2^8×24=6144位\n(6)如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1475",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "(4 指PC→AR，AR→主存储器，主存分储器→DR，DR→IR，PC+1\n取数：IR→AR，AR→主存储器，主存储器→PR：DR→ALU，OD→ALU\nALU→AC,AC→AX",
+    "step_5": "4个互斥类分别有3、4、4、2位，外部条件3个采用直接控制方式，占3位\n下址字段占24-(3+4+4+2+3)=8位\n28×24=6144位",
+    "step_6": "操作控制字段：3 | 4 | 4 | 2 | 3\n下址字段：8\n表格结构表示微指令格式设计，具体字段名（对应各互斥类和外部条件）未完全写出。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 50.5,
+        "cells_left_to_right": [
+          {
+            "text": "5) (1) a: 数据缓冲寄存器 DR",
+            "x_center": 191.0,
+            "confidence": 0.9173144102096558
+          },
+          {
+            "text": "b: 指令寄存器IR",
+            "x_center": 534.5,
+            "confidence": 0.8018843531608582
+          },
+          {
+            "text": "AR.",
+            "x_center": 855.0,
+            "confidence": 0.9149674773216248
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 86.5,
+        "cells_left_to_right": [
+          {
+            "text": "d: pc 程序计数器",
+            "x_center": 224.5,
+            "confidence": 0.9298831820487976
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 143.0,
+        "cells_left_to_right": [
+          {
+            "text": "12) PC→AR.，AR→ 主存储器M，主存储器→DR，DR→IR，",
+            "x_center": 461.5,
+            "confidence": 0.9265033006668091
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 186.75,
+        "cells_left_to_right": [
+          {
+            "text": "IR→操作控制器",
+            "x_center": 225.5,
+            "confidence": 0.9961647391319275
+          },
+          {
+            "text": ",PL+1",
+            "x_center": 382.0,
+            "confidence": 0.8780514001846313
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 240.5,
+        "cells_left_to_right": [
+          {
+            "text": "(3)取:PC→AR，AR→主存储器",
+            "x_center": 259.0,
+            "confidence": 0.9253215789794922
+          },
+          {
+            "text": "M，主存储",
+            "x_center": 521.5,
+            "confidence": 0.9038349986076355
+          },
+          {
+            "text": "D2",
+            "x_center": 607.0,
+            "confidence": 0.5554827451705933
+          },
+          {
+            "text": "→DR，DR→ALU,PL+1",
+            "x_center": 768.0,
+            "confidence": 0.9054946303367615
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 297.5,
+        "cells_left_to_right": [
+          {
+            "text": "存：PL→AR，AR→主存分储器M，主存储器→DR，DR→ALU，ALU→AC",
+            "x_center": 508.5,
+            "confidence": 0.9258221387863159
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 335.75,
+        "cells_left_to_right": [
+          {
+            "text": "AC→DR,DR→",
+            "x_center": 226.5,
+            "confidence": 0.866805911064148
+          },
+          {
+            "text": "主存储器m，pc+1",
+            "x_center": 428.0,
+            "confidence": 0.8525223731994629
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 387.5,
+        "cells_left_to_right": [
+          {
+            "text": "(4 指PC→AR，AR→主存储器，主存分储器→DR，DR→IR，PC+1",
+            "x_center": 454.0,
+            "confidence": 0.8927432894706726
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 430.0,
+        "cells_left_to_right": [
+          {
+            "text": "取数：IR→AR，AR→主存储器，主存储器→PR：DR→ALU，OD→ALU",
+            "x_center": 468.0,
+            "confidence": 0.9433520436286926
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 469.0,
+        "cells_left_to_right": [
+          {
+            "text": "ALU→AC,AC→AX",
+            "x_center": 269.0,
+            "confidence": 0.9208521246910095
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 518.5,
+        "cells_left_to_right": [
+          {
+            "text": "15)4个互斥类分别有3、4、4、2位，外部条件3个采用直接控制方式，占3位",
+            "x_center": 464.0,
+            "confidence": 0.9540027976036072
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 567.5,
+        "cells_left_to_right": [
+          {
+            "text": "28×24=6144位",
+            "x_center": 248.0,
+            "confidence": 0.9814027547836304
+          },
+          {
+            "text": "下址字段占24-(3+4+4+2+3)=8位",
+            "x_center": 334.5,
+            "confidence": 0.9451916217803955
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 632.86,
+        "cells_left_to_right": [
+          {
+            "text": "(6)",
+            "x_center": 62.5,
+            "confidence": 0.9435915350914001
+          },
+          {
+            "text": "3",
+            "x_center": 132.0,
+            "confidence": 0.9998080134391785
+          },
+          {
+            "text": "4",
+            "x_center": 226.5,
+            "confidence": 0.9984057545661926
+          },
+          {
+            "text": "4",
+            "x_center": 302.5,
+            "confidence": 0.9997562766075134
+          },
+          {
+            "text": "2",
+            "x_center": 402.5,
+            "confidence": 0.9996238946914673
+          },
+          {
+            "text": "3",
+            "x_center": 505.5,
+            "confidence": 0.9999151229858398
+          },
+          {
+            "text": "8",
+            "x_center": 687.5,
+            "confidence": 0.9998632669448853
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 691.75,
+        "cells_left_to_right": [
+          {
+            "text": "操作控制字段",
+            "x_center": 218.0,
+            "confidence": 0.9255823493003845
+          },
+          {
+            "text": "下址字段",
+            "x_center": 718.0,
+            "confidence": 0.8826055526733398
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=191.0: 5) (1) a: 数据缓冲寄存器 DR | x=534.5: b: 指令寄存器IR | x=855.0: AR.\nRow 2: x=224.5: d: pc 程序计数器\nRow 3: x=461.5: 12) PC→AR.，AR→ 主存储器M，主存储器→DR，DR→IR，\nRow 4: x=225.5: IR→操作控制器 | x=382.0: ,PL+1\nRow 5: x=259.0: (3)取:PC→AR，AR→主存储器 | x=521.5: M，主存储 | x=607.0: D2 | x=768.0: →DR，DR→ALU,PL+1\nRow 6: x=508.5: 存：PL→AR，AR→主存分储器M，主存储器→DR，DR→ALU，ALU→AC\nRow 7: x=226.5: AC→DR,DR→ | x=428.0: 主存储器m，pc+1\nRow 8: x=454.0: (4 指PC→AR，AR→主存储器，主存分储器→DR，DR→IR，PC+1\nRow 9: x=468.0: 取数：IR→AR，AR→主存储器，主存储器→PR：DR→ALU，OD→ALU\nRow 10: x=269.0: ALU→AC,AC→AX\nRow 11: x=464.0: 15)4个互斥类分别有3、4、4、2位，外部条件3个采用直接控制方式，占3位\nRow 12: x=248.0: 28×24=6144位 | x=334.5: 下址字段占24-(3+4+4+2+3)=8位\nRow 13: x=62.5: (6) | x=132.0: 3 | x=226.5: 4 | x=302.5: 4 | x=402.5: 2 | x=505.5: 3 | x=687.5: 8\nRow 14: x=218.0: 操作控制字段 | x=718.0: 下址字段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "a: 数据缓冲寄存器 DR, b: 指令寄存器IR, c: 地址寄存器AR, d: PC 程序计数器",
+    "step_2": "PC→AR, AR→主存储器M, 主存储器→DR, DR→IR, IR→操作控制器, PC+1",
+    "step_3": "取:PC→AR, AR→主存储器M, 主存储器→DR, DR→ALU, PC+1; 存:PC→AR, AR→主存储器M, 主存储器→DR, DR→ALU, ALU→AC, AC→DR, DR→主存储器M, PC+1; 取数:IR→AR, AR→主存储器, 主存储器→DR, DR→ALU, OD→ALU, ALU→AC, AC→AX"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a: 数据缓冲寄存器DR  b: 指令寄存器IR  c: 地址寄存器AR, d: PC 程序计数器",
+    "step_2": "PC→AR，AR→主存储器M，主存储器→DR，DR→IR，IR→操作控制器，PC+1",
+    "step_3": "取:PC→AR，AR→主存储器M，主存储器→DR，DR→ALU，PC+1 存: PC→AR，AR→主存储器M，主存储器→DR，DR→ALU，ALU→AC AC→DR，DR→主存储器M，PC+1",
+    "step_4": "取指:PC→AR，AR→主存储器，主存储器→DR，DR→IR，PC+1 取数: IR→AR，AR→主存储器，主存储器→DR，DR→ALU，OD→ALU ALU→AC，AC→AX",
+    "step_5": "4个互斥类分别有3、4、4、2位，外条件3个采用直接控制方式，占3位 下址字段占24-(3+4+4+2+3)=8位 2^8×24=6144位",
+    "step_6": "3 4 4 2 3 8 操作控制字段 下址字段"
+  },
+  "facts": {
+    "step_1": "a: 数据缓冲寄存器 DR  b: 指令寄存器 IR  c: 地址寄存器 AR, d: PC 程序计数器",
+    "step_2": "PC→AR，AR→主存储器M ，主存储器→DR，DR→IR，IR→操作控制器，PC+1",
+    "step_3": "取:PC→AR，AR→主存储器M，主存储器→DR，DR→ALU，PC+1 \n存: PC→AR，AR→主存储器M，主存储器→DR，DR→ALU，ALU→AC AC→DR，DR→主存储器M，PC+1",
+    "step_4": "取指PC→AR，AR→主存储器，主存储器→DR，DR→IR，PC+1 \n取数: IR→AR，AR→主存储器，主存储器→DR,DR→ALU，OD→ALU ALU→AC，AC→AX.",
+    "step_5": "4个互斥类分别有3、4、4、2位，外寄存件3个采用直接控制方式，占3位 下址字段占24-(3+4+4+2+3)=8位 2^8×24=6144位",
+    "step_6": "如图所示"
+  }
+}

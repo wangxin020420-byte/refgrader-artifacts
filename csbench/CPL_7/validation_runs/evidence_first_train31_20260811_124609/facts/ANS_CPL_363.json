@@ -1,0 +1,42 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T06:51:30.392994",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_363.jpg",
+  "image_sha256": "6b5ce1f6acc2c921017702e79629b6cd156482b79e4e1a03f1e7ce5fb412c30c",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "#include<stdio.h>#include<stdlib.h>int main(){int a[3][3];int b[3][3];int i,j;for(i=0;i<3;i++) {for(j=0;j<3;j++){    scanf(\"%d\",&a[i][j]);} }for(i=0;i<3;i++){  for(j=0;j<3;j++){    b[i][j]=a[j][i];  }} | FILE *pf = NULL;pf = fopen(matrix,\"r\");for(i=0;i<3;i++) { for(j=0;j<3;j++){    fscanf(pf,\"%d\",&b[i][j]); } }\nfclose(matrix)\nreturn 0;",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CPL_363",
+    "question_id": "CPL_7",
+    "subject": "CPL",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "for(i=0;i<3;i++) {for(j=0;j<3;j++){    scanf(\"%d\",&a[i][j]);} }\nfor(i=0;i<3;i++){  for(j=0;j<3;j++){    b[i][j]=a[j][i];  }}\nfor(i=0;i<3;i++) { for(j=0;j<3;j++){    fscanf(pf,\"%d\",&b[i][j]); } }",
+    "step_2": "FILE *pf = NULL;\npf = fopen(matrix,\"r\");\nfclose(matrix)",
+    "step_3": "int a[3][3];\nint b[3][3];\nint i,j;\nb[i][j]=a[j][i];"
+  }
+}

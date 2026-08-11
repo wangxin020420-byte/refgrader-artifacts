@@ -1,0 +1,269 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:34:03.902997",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_725.png",
+  "image_sha256": "1cd5bb839068e9da75d3e0c188dbe321fb914a9c9ff20a11e640334b886d2b11",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_725.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 18,
+    "accepted_token_count": 18,
+    "mean_confidence": 0.880591,
+    "min_confidence": 0.5,
+    "joined_text": "2. (20分)解以主存地址数为223.\n组数=25/2=24.\n块内地址=.11.\n且\n读标记\n∴主：存批制cache内地\n8\n4\n11\n Cache容量:216.\n址\n(achel记. 组内块\n∴Cache\n于央内地址\n4. 1 +1\n+3\n(2) LD07FFH. 无法命中\n7F0057H可以命钟",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.052523,
+      "very_dark_pixel_ratio": 0.037237,
+      "lower_region_dark_pixel_ratio": 0.051703,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解:(1)主存地址为2^23\n旧数=2^5/2=2^4\n块内地址=11.组标记\n∴主存：如图所示\nCache容量：2^16\ncache地址如图所示\n(2)2D07FFH 无法命中\n7F0057H 可以命中",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_725",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "The student writes the formula and computation trace as '组数=25/2=24.', interpreting the cache set number (组数) as 4 bits.",
+    "step_4": "The student provides a bit count sequence for the main memory address format as '8', '4', and '11' (corresponding to a drawn row beneath their fields). The OCR also reads the label '主存批制cache内地' (likely '主存地址 cache 内地[址]') with '8 | 4 | 11' as the bit counts.",
+    "step_5": "The student writes 'Cache容量:216.', '(achel记. 组内块', and '址'. Below this, the bit count sequence for the Cache address format is written as '4. 1 +1', '+3'.",
+    "step_6": "The student writes the explicit judgment as '无法命中' (miss). The OCR reads the address as 'LD07FFH' (likely a misread of '2D07FFH'), with no visible binary or hexadecimal tag/set fields computed.",
+    "step_7": "The student writes the explicit judgment as '可以命钟' (likely '可以命中' / hit) for the address '7F0057H'. No binary or hexadecimal tag/set fields are written."
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 55.0,
+        "cells_left_to_right": [
+          {
+            "text": "2. (20分)解以主存地址数为223.",
+            "x_center": 191.5,
+            "confidence": 0.9083508253097534
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 111.0,
+        "cells_left_to_right": [
+          {
+            "text": "组数=25/2=24.",
+            "x_center": 268.5,
+            "confidence": 0.9237091541290283
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 175.67,
+        "cells_left_to_right": [
+          {
+            "text": "块内地址=.11.",
+            "x_center": 276.5,
+            "confidence": 0.9339759349822998
+          },
+          {
+            "text": "且",
+            "x_center": 422.0,
+            "confidence": 0.5060329437255859
+          },
+          {
+            "text": "读标记",
+            "x_center": 444.0,
+            "confidence": 0.7495496869087219
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 233.5,
+        "cells_left_to_right": [
+          {
+            "text": "∴主：存批制cache内地",
+            "x_center": 315.5,
+            "confidence": 0.8164936304092407
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 283.5,
+        "cells_left_to_right": [
+          {
+            "text": "8",
+            "x_center": 263.5,
+            "confidence": 0.9999048709869385
+          },
+          {
+            "text": "4",
+            "x_center": 371.0,
+            "confidence": 0.9999055862426758
+          },
+          {
+            "text": "11",
+            "x_center": 430.0,
+            "confidence": 0.9990352392196655
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 345.33,
+        "cells_left_to_right": [
+          {
+            "text": "Cache容量:216.",
+            "x_center": 238.5,
+            "confidence": 0.9147902131080627
+          },
+          {
+            "text": "(achel记. 组内块",
+            "x_center": 372.0,
+            "confidence": 0.7375261187553406
+          },
+          {
+            "text": "址",
+            "x_center": 488.0,
+            "confidence": 0.9669083952903748
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 403.0,
+        "cells_left_to_right": [
+          {
+            "text": "∴Cache",
+            "x_center": 185.5,
+            "confidence": 0.9309651851654053
+          },
+          {
+            "text": "于央内地址",
+            "x_center": 500.0,
+            "confidence": 0.6811257600784302
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 467.5,
+        "cells_left_to_right": [
+          {
+            "text": "4. 1 +1",
+            "x_center": 349.5,
+            "confidence": 0.9107037782669067
+          },
+          {
+            "text": "+3",
+            "x_center": 372.0,
+            "confidence": 0.9950125813484192
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 528.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) LD07FFH. 无法命中",
+            "x_center": 224.5,
+            "confidence": 0.9003975987434387
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 593.0,
+        "cells_left_to_right": [
+          {
+            "text": "7F0057H可以命钟",
+            "x_center": 252.5,
+            "confidence": 0.9762552380561829
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=191.5: 2. (20分)解以主存地址数为223.\nRow 2: x=268.5: 组数=25/2=24.\nRow 3: x=276.5: 块内地址=.11. | x=422.0: 且 | x=444.0: 读标记\nRow 4: x=315.5: ∴主：存批制cache内地\nRow 5: x=263.5: 8 | x=371.0: 4 | x=430.0: 11\nRow 6: x=238.5: Cache容量:216. | x=372.0: (achel记. 组内块 | x=488.0: 址\nRow 7: x=185.5: ∴Cache | x=500.0: 于央内地址\nRow 8: x=349.5: 4. 1 +1 | x=372.0: +3\nRow 9: x=224.5: (2) LD07FFH. 无法命中\nRow 10: x=252.5: 7F0057H可以命钟"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "2^23",
+    "step_2": "11",
+    "step_3": "4",
+    "step_4": "主存：[tag][cache组号][块内地址] 8 4 11",
+    "step_5": "Cache [cache标记][组号][块内地址] 4 1 11",
+    "step_6": "无命中",
+    "step_7": "可以命中"
+  },
+  "facts": {
+    "step_1": "主存地址为2^23",
+    "step_2": "块内地址=11.组标记",
+    "step_3": "旧数=2^5/2=2^4",
+    "step_4": "需要查看图像。主存：如图所示",
+    "step_5": "需要查看图像。Cache容量：2^16；cache地址如图所示",
+    "step_6": "2D07FFH 无法命中",
+    "step_7": "7F0057H 可以命中"
+  }
+}

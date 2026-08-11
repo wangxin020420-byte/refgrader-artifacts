@@ -1,0 +1,102 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-08-11T14:14:57.443699",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_240.jpg",
+  "image_sha256": "f63f298ab74ba639a1005ef4976f7e71ae1a4eb868ae889c113a046f6a5ea3a4",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：翻译为符号语言为\n∀x(A(x)→(B(x)∨C(x))), ∀x((A(x)∧B(x))→D(x))\n∃x(A(x)∧¬D(x)) => ∃x(A(x)∧C(x))\n推理如下：\n1. ∀x(A(x)→(B(x)∨C(x))) 前提\n2. A(a)→(B(a)∨C(a))\n3. ∀x((A(x)∧B(x))→D(x)) 前提\n4. (A(a)∧B(a))→D(a)\n5. ∃x(A(x)∧¬D(x)) 前提\n6. A(b)∧¬D(b)\n7. (A(b)∧¬D(b))→C(b) T, 6.\n8. ¬(A(b)∧¬D(b))\n9. ¬A(b)∨D(b)\n10. ¬A(b) F, 1, 8.\n11. D(b) T, 7.\n12. ¬D(b)∧C(b)\n即证",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_240",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "∀x(A(x)→(B(x)∨C(x))), ∀x((A(x)∧B(x))→D(x))\n∃x(A(x)∧¬D(x)) => ∃x(A(x)∧C(x))",
+    "step_2_a": [
+      {
+        "step_number": "6",
+        "formula": "A(b)∧¬D(b)",
+        "referenced_premise_or_step_numbers": "5 (前提: ∃x(A(x)∧¬D(x)))",
+        "rule_name": "未书写",
+        "specific_individual_constant": "b"
+      }
+    ],
+    "step_2_b": [
+      {
+        "step_number": "2",
+        "formula": "A(a)→(B(a)∨C(a))",
+        "referenced_steps": "1",
+        "rule_name": "未书写",
+        "same_constant_note": "个体常量 a"
+      },
+      {
+        "step_number": "4",
+        "formula": "(A(a)∧B(a))→D(a)",
+        "referenced_steps": "3",
+        "rule_name": "未书写",
+        "same_constant_note": "个体常量 a"
+      },
+      {
+        "step_number": "7",
+        "formula": "(A(b)∧¬D(b))→C(b)",
+        "referenced_steps": "T, 6",
+        "rule_name": "T",
+        "same_constant_note": "个体常量 b"
+      },
+      {
+        "step_number": "8",
+        "formula": "¬(A(b)∧¬D(b))",
+        "referenced_steps": "未书写",
+        "rule_name": "未书写",
+        "same_constant_note": "个体常量 b"
+      },
+      {
+        "step_number": "9",
+        "formula": "¬A(b)∨D(b)",
+        "referenced_steps": "未书写",
+        "rule_name": "未书写",
+        "same_constant_note": "个体常量 b"
+      },
+      {
+        "step_number": "10",
+        "formula": "¬A(b)",
+        "referenced_steps": "F, 1, 8",
+        "rule_name": "F",
+        "same_constant_note": "个体常量 b"
+      },
+      {
+        "step_number": "11",
+        "formula": "D(b)",
+        "referenced_steps": "T, 7",
+        "rule_name": "T",
+        "same_constant_note": "个体常量 b"
+      }
+    ],
+    "step_2_c": "学生未书写 ∃x(A(x)∧C(x)) 的存在推广（EG）步骤。推导过程止于第 12 步：¬D(b)∧C(b)，随后标注“即证”。"
+  }
+}

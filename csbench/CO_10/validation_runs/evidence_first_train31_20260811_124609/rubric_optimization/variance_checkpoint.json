@@ -1,0 +1,1780 @@
+[
+  {
+    "file": "ANS_CO_1103.jpg",
+    "facts": "{\"step_1\": \"Cache有12位，每块4个字，用2个二进制位表示，则Cache有2¹⁰块。采用4路组相联则有2⁸组，每组内4块。\", \"step_2\": \"主存共有16位，每块4个字，有2位，块组号用8位表示，则标记位有6位\\n\\n地址字段示意：[6][8][2]，分别为标记位、Cache组号、块内地址\", \"step_3\": \"故Cache中每块有 6+1+4×16=71 bit\\n总容量为 71×4×2⁸=71×2¹⁰ bit=71×2⁷ B\\n标记区每块有7位，共有2¹⁰块\\n标记区总容量有 7×2¹⁰ bit=7×2⁷ B=896 B\", \"step_4\": \"Cache的每块都需要这样的比较电路。主存与Cache之间以块映射方式对应\\n所以共需要2¹⁰个这样的相等比较电路。\\nCache的每一块都有单独的tag字段和有效位，在判断是否命中时要对每块的标记字段进行比较。\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T19:28:04.856094",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_10/ANS_CO_1103.jpg",
+      "image_sha256": "11ff7b7550f270f72942698acdd3d71e34072b05714ec06d547bd17cd48f5ad7",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "3.1) Cache有12位，每块4个字，用2个二进制位表示，则Cache有2¹⁰块。采用4路组相联\n则有2⁸组，每组内4块。\n主存共有16位，每块4个字，有2位，块组号用8位表示，则标记位有6位\n\n地址字段示意：[6][8][2]，分别为标记位、Cache组号、块内地址\n\n故Cache中每块有 6+1+4×16=71 bit\n总容量为 71×4×2⁸=71×2¹⁰ bit=71×2⁷ B\n标记区每块有7位，共有2¹⁰块\n标记区总容量有 7×2¹⁰ bit=7×2⁷ B=896 B\n\n1.2) Cache的每块都需要这样的比较电路。主存与Cache之间以块映射方式对应\n所以共需要2¹⁰个这样的相等比较电路。\nCache的每一块都有单独的tag字段和有效位，在判断是否命中时要对每块的标记字段进行比较。",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1103",
+        "question_id": "CO_10",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "Cache有12位，每块4个字，用2个二进制位表示，则Cache有2¹⁰块。采用4路组相联则有2⁸组，每组内4块。",
+        "step_2": "主存共有16位，每块4个字，有2位，块组号用8位表示，则标记位有6位\n\n地址字段示意：[6][8][2]，分别为标记位、Cache组号、块内地址",
+        "step_3": "故Cache中每块有 6+1+4×16=71 bit\n总容量为 71×4×2⁸=71×2¹⁰ bit=71×2⁷ B\n标记区每块有7位，共有2¹⁰块\n标记区总容量有 7×2¹⁰ bit=7×2⁷ B=896 B",
+        "step_4": "Cache的每块都需要这样的比较电路。主存与Cache之间以块映射方式对应\n所以共需要2¹⁰个这样的相等比较电路。\nCache的每一块都有单独的tag字段和有效位，在判断是否命中时要对每块的标记字段进行比较。"
+      }
+    },
+    "scores": [
+      10.0,
+      9.0,
+      11.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "Cache有12位，每块4个字，用2个二进制位表示，则Cache有2¹⁰块。采用4路组相联则有2⁸组，每组内4块。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分Cache地址字段：1024块，256组。",
+            "dependency_status": "satisfied",
+            "reason": "学生正确得出了Cache共有1024块、采用4路组相联有256组的结构，且块内地址使用了2个二进制位，符合地址字段划分要求。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "主存共有16位，每块4个字，有2位，块组号用8位表示，则标记位有6位\n\n地址字段示意：[6][8][2]，分别为标记位、Cache组号、块内地址",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分主存地址字段并得到tag位数(6位)。",
+            "dependency_status": "satisfied",
+            "reason": "学生正确推算出了主存字地址为16位，并准确划分了块内地址(2位)、组号(8位)，进而正确计算出标记位 tag 为 6 位。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "标记区每块有7位，共有2¹⁰块\n标记区总容量有 7×2¹⁰ bit=7×2⁷ B=896 B",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算Cache标记区总容量：每块7位(6位tag+1位有效位)，共1024块，总容量896字节。",
+            "dependency_status": "satisfied",
+            "reason": "学生明确列出了计算每块标记位所需的数据（6位tag+1位有效位=7位），正确使用了Cache的总块数(2^10)，且最终算出的总容量(896 B)完全正确，过程与结果均符合标准。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "所以共需要2¹⁰个这样的相等比较电路。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断相等比较电路数量(4套)并说明依据(4路组相联，组间共享)。",
+            "dependency_status": "failed",
+            "reason": "学生认为共需要 2^10 (1024) 套比较电路，这存在核心概念错误。在组相联映射中，比较电路是按组并行工作的，不同组之间可以共享同一组比较电路，因此4路组相联只需要4套比较电路即可。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "Cache有12位，每块4个字，用2个二进制位表示，则Cache有2¹⁰块。采用4路组相联则有2⁸组，每组内4块。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分Cache地址字段，得出1024块，256组，8位组号，2位块内字偏移。",
+            "dependency_status": "satisfied",
+            "reason": "学生准确计算了Cache的块数(2^10)和组数(2^8)，且隐含了正确的块内字偏移位(2位)和组内块号(隐含4路为2位)。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "主存共有16位，每块4个字，有2位，块组号用8位表示，则标记位有6位\n地址字段示意：[6][8][2]...",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分主存地址字段并得到tag位数为6位。",
+            "dependency_status": "satisfied",
+            "reason": "学生正确划分了主存地址16位，并基于正确的组号(8位)和块内偏移(2位)计算出标记位tag为6位。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Cache中每块有 6+1+4×16=71 bit\n总容量为 71×4×2⁸=...\n标记区每块有7位...标记区总容量有 7×2¹⁰ bit=7×2⁷ B=896 B",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算Cache每块需要tag(6位)和有效位(1位)，共7位，且共有1024块，标记区容量为896字节。",
+            "dependency_status": "insufficient",
+            "reason": "公式与方法均正确，并准确计算出了Cache标记区容量为896字节。但学生在计算过程中将主存地址(16位)误当为每块容量的一部分参与了计算(71 bit)，体现了一定的概念混淆，故给予大部分分数。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "所以共需要2¹⁰个这样的相等比较电路。\nCache的每一块都有单独的tag字段和有效位，在判断是否命中时要对每块的标记字段进行比较。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "采用4路组相联，每组4块并行比较，不同组之间共享电路，总共只需4套相等比较电路。",
+            "dependency_status": "failed",
+            "reason": "概念错误。学生认为需要对Cache的每一块进行比较，得出需要2^10套电路的结论，违背了组相联映射中按组访问并并行比较该组内4块tag的机制。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 9.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 3.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "Cache有12位，每块4个字，用2个二进制位表示，则Cache有2¹⁰块。采用4路组相联则有2⁸组，每组内4块。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache地址字段划分（块数1024，组数256，块内偏移2位）",
+            "dependency_status": "satisfied",
+            "reason": "学生正确计算了Cache的块数(2^10块)、组数(2^8组)以及块内字偏移(2位)，完全符合标准答案要求。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "主存共有16位，每块4个字，有2位，块组号用8位表示，则标记位有6位\n\n地址字段示意：[6][8][2]，分别为标记位、Cache组号、块内地址",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存地址字段划分并得到tag位数（16-8-2=6位）",
+            "dependency_status": "satisfied",
+            "reason": "学生正确推导出主存字地址16位，并利用块内偏移2位、组号8位计算出标记tag为6位，逻辑正确，字段划分完全匹配。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "故Cache中每块有 6+1+4×16=71 bit\n总容量为 71×4×2⁸=71×2¹⁰ bit=71×2⁷ B\n标记区每块有7位，共有2¹⁰块\n标记区总容量有 7×2¹⁰ bit=7×2⁷ B=896 B",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算Cache标记区总容量（1024×(6+1)/8=896字节）",
+            "dependency_status": "satisfied",
+            "reason": "学生准确识别出标记区每块包含tag(6位)和有效位(1位)共7位，根据总块数正确计算出标记区总容量为896字节。虽然误写了Cache总容量的中间加法项（混入了数据块大小），但这不影响求标记区容量这一最终目标项的计算得分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Cache的每块都需要这样的比较电路。主存与Cache之间以块映射方式对应\n所以共需要2¹⁰个这样的相等比较电路。\nCache的每一块都有单独的tag字段和有效位，在判断是否命中时要对每块的标记字段进行比较。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "判断相等比较电路数量并说明依据（4路组相联需要4套并行比较电路）",
+            "dependency_status": "failed",
+            "reason": "学生正确提取了‘4路组相联’和‘tag字段比较’的前提依据，但由于概念上混淆了组相联与全相联映射，误认为每个Cache块都需要独立的比较电路，得出了2^10个的错误结论。故仅能获得依据部分的过程分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 11.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 1.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_3": [
+        4.0,
+        3.0,
+        4.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.22222222222222224,
+      "step_4": 0.22222222222222224
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.11111111111111112
+  },
+  {
+    "file": "ANS_CO_1104.jpg",
+    "facts": "{\"step_1\": \"64k=2¹⁶ t=16\\n16=2B b=1\\n4路 r=2\\n4kW/16=4k=2¹²  c=12\\n主存 b 10 1\\nCache 10 2 1\\n组号 组块 块内地址\", \"step_2\": \"64k=2¹⁶ t=16\\n16=2B b=1\\n4路 r=2\\n4kW/16=4k=2¹²  c=12\\n主存 b 10 1\\nCache 10 2 1\\n组号 组块 块内地址\", \"step_3\": \"=2¹³=8k个字节\", \"step_4\": \"4套，因为该Cache为4路组相联映射 需要4次比较，才能确定是哪一处。\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T19:29:59.641428",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_10/ANS_CO_1104.jpg",
+      "image_sha256": "d11ee6b94598fdab56373b1bea646a75bca010477067e897bec5f544d3162454",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_10/ANS_CO_1104.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 18,
+        "accepted_token_count": 18,
+        "mean_confidence": 0.884027,
+        "min_confidence": 0.5,
+        "joined_text": "3. (1)\n415212\nC=12:Cache\n4kW=41k×16=4k×2B=8k13\n∴共有8k个字节\n64k=216t=16\n16=23b=1\n43谷 r=2\n41cw/16=4k=22\n(=12\n主存\nCache\n10\n2\n组 组织地内地址\n=2{}=8k分节\n(2) 4套，因为该 Cache为4路细映候\n需要4次比较，才能的火是哪一地",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.048603,
+          "very_dark_pixel_ratio": 0.033197,
+          "lower_region_dark_pixel_ratio": 0.046414,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "(1)64k=2¹⁶ t=16\n16=2B b=1\n4路 r=2\n4kW/16=4k=2¹²  c=12\n主存 b 10 1\nCache 10 2 1\n组号 组块 块内地址\n=2¹³=8k个字节\n(2) 4套，因为该Cache为4路组相联映射 需要4次比较，才能确定是哪一处。",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1104",
+        "question_id": "CO_10",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "table_parser_used": true,
+      "table_facts": {
+        "step_1": "提取的可见字段内容中：明确提到“主存”（对应主存地址）和“Cache”字样。其后方按从左至右的顺序排列了“10”、“2”、“组 组织地内地址”。这组数据在空间结构上构成了Cache地址字段的划分（学生草图中出现了表示地址长度的上标值，但由于被描黑导致字迹模糊）。",
+        "step_2": "提取的可见推导内容为：\n1. 计算主存地址长度：明确写出“64k=216 t=16”。\n2. 隐式存在对字段长度的减法分配关系：“16 = 2... b = 1”及“r = 2”。\n3. 计算块内偏移与组内块数：给出“4k w / 16 = 4k = 2^...”的映射关系。\n4. 标记区域的计算最终对应草图的“主存/Cache 10 2 组...”结构（由于涉及多步公式推导，学生草图中部分中间结果存在字迹模糊，此处仅保留原始可见的数学式子）。",
+        "step_4": "提取的明确结论及说明文字如下：\n- 电路套数结论：“(2) 4套”\n- 文字说明依据：“因为该 Cache为4路细映候”\n- 补充说明步骤：“需要4次比较，才能的火是哪一地”"
+      },
+      "table_checklist": [
+        {
+          "id": "step_1",
+          "instruction": "Extract the concrete handwritten content defining the division of the Cache address fields. Specifically, record the explicit field names (e.g., set index, block offset) and their corresponding bit lengths. If the student writes the bit lengths as binary strings or addresses, preserve any leading zeros, suffixes, grouping, and separators exactly as written."
+        },
+        {
+          "id": "step_2",
+          "instruction": "Extract the concrete handwritten content defining the division of the main memory address fields and the calculation of the tag bits. Record the stated field names, bit lengths, and any formula or substitution relation used to compute the tag. Preserve any leading zeros, suffixes, and separators in the numbers exactly as written."
+        },
+        {
+          "id": "step_4",
+          "instruction": "Extract the student's concrete handwritten content regarding the number of equality comparison circuits. Record the explicit number of circuits concluded by the student, along with the full written explanation, mapping steps, or logical derivation (e.g., mentioning the set associativity and how groups share circuits) provided as the basis for their conclusion."
+        }
+      ],
+      "table_view": {
+        "rows": [
+          {
+            "row": 1,
+            "y_center": 46.75,
+            "cells_left_to_right": [
+              {
+                "text": "3. (1)",
+                "x_center": 49.5,
+                "confidence": 0.9942818284034729
+              },
+              {
+                "text": "415212",
+                "x_center": 158.5,
+                "confidence": 0.6081433892250061
+              }
+            ]
+          },
+          {
+            "row": 2,
+            "y_center": 106.5,
+            "cells_left_to_right": [
+              {
+                "text": "C=12:Cache",
+                "x_center": 226.5,
+                "confidence": 0.9206477403640747
+              },
+              {
+                "text": "4kW=41k×16=4k×2B=8k13",
+                "x_center": 263.0,
+                "confidence": 0.8786241412162781
+              }
+            ]
+          },
+          {
+            "row": 3,
+            "y_center": 164.0,
+            "cells_left_to_right": [
+              {
+                "text": "∴共有8k个字节",
+                "x_center": 200.0,
+                "confidence": 0.8480833768844604
+              }
+            ]
+          },
+          {
+            "row": 4,
+            "y_center": 204.5,
+            "cells_left_to_right": [
+              {
+                "text": "64k=216t=16",
+                "x_center": 187.5,
+                "confidence": 0.8733063340187073
+              }
+            ]
+          },
+          {
+            "row": 5,
+            "y_center": 242.0,
+            "cells_left_to_right": [
+              {
+                "text": "16=23b=1",
+                "x_center": 187.5,
+                "confidence": 0.991704523563385
+              }
+            ]
+          },
+          {
+            "row": 6,
+            "y_center": 300.5,
+            "cells_left_to_right": [
+              {
+                "text": "43谷 r=2",
+                "x_center": 159.5,
+                "confidence": 0.8615365624427795
+              },
+              {
+                "text": "41cw/16=4k=22",
+                "x_center": 202.5,
+                "confidence": 0.9440136551856995
+              },
+              {
+                "text": "(=12",
+                "x_center": 350.0,
+                "confidence": 0.9449751377105713
+              }
+            ]
+          },
+          {
+            "row": 7,
+            "y_center": 389.0,
+            "cells_left_to_right": [
+              {
+                "text": "主存",
+                "x_center": 129.0,
+                "confidence": 0.8933747410774231
+              }
+            ]
+          },
+          {
+            "row": 8,
+            "y_center": 460.38,
+            "cells_left_to_right": [
+              {
+                "text": "Cache",
+                "x_center": 140.5,
+                "confidence": 0.9703418612480164
+              },
+              {
+                "text": "10",
+                "x_center": 224.5,
+                "confidence": 0.9999658465385437
+              },
+              {
+                "text": "2",
+                "x_center": 285.5,
+                "confidence": 0.9999701976776123
+              },
+              {
+                "text": "组 组织地内地址",
+                "x_center": 296.0,
+                "confidence": 0.7324836850166321
+              }
+            ]
+          },
+          {
+            "row": 9,
+            "y_center": 521.5,
+            "cells_left_to_right": [
+              {
+                "text": "=2{}=8k分节",
+                "x_center": 194.0,
+                "confidence": 0.7578942775726318
+              }
+            ]
+          },
+          {
+            "row": 10,
+            "y_center": 573.5,
+            "cells_left_to_right": [
+              {
+                "text": "(2) 4套，因为该 Cache为4路细映候",
+                "x_center": 260.0,
+                "confidence": 0.8521872162818909
+              }
+            ]
+          },
+          {
+            "row": 11,
+            "y_center": 630.5,
+            "cells_left_to_right": [
+              {
+                "text": "需要4次比较，才能的火是哪一地",
+                "x_center": 299.0,
+                "confidence": 0.8409497141838074
+              }
+            ]
+          }
+        ],
+        "unpositioned_tokens": [],
+        "plain_text": "Row 1: x=49.5: 3. (1) | x=158.5: 415212\nRow 2: x=226.5: C=12:Cache | x=263.0: 4kW=41k×16=4k×2B=8k13\nRow 3: x=200.0: ∴共有8k个字节\nRow 4: x=187.5: 64k=216t=16\nRow 5: x=187.5: 16=23b=1\nRow 6: x=159.5: 43谷 r=2 | x=202.5: 41cw/16=4k=22 | x=350.0: (=12\nRow 7: x=129.0: 主存\nRow 8: x=140.5: Cache | x=224.5: 10 | x=285.5: 2 | x=296.0: 组 组织地内地址\nRow 9: x=194.0: =2{}=8k分节\nRow 10: x=260.0: (2) 4套，因为该 Cache为4路细映候\nRow 11: x=299.0: 需要4次比较，才能的火是哪一地"
+      },
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {
+        "step_1": "Cache  10  2  1",
+        "step_2": "主存  b  10  1  64K=2^16 t:16  16=2^8 b=1  4路 r=2  4Kw/16=4k=2^12 (c=12",
+        "step_3": "4KW×4K×16=4K×2^8=8K/3  ∴共有8K个字节",
+        "step_4": "4套，因为该Cache为4路组相联映像，需要4比较，才能确定是哪一处"
+      },
+      "facts": {
+        "step_1": "64k=2¹⁶ t=16\n16=2B b=1\n4路 r=2\n4kW/16=4k=2¹²  c=12\n主存 b 10 1\nCache 10 2 1\n组号 组块 块内地址",
+        "step_2": "64k=2¹⁶ t=16\n16=2B b=1\n4路 r=2\n4kW/16=4k=2¹²  c=12\n主存 b 10 1\nCache 10 2 1\n组号 组块 块内地址",
+        "step_3": "=2¹³=8k个字节",
+        "step_4": "4套，因为该Cache为4路组相联映射 需要4次比较，才能确定是哪一处。"
+      }
+    },
+    "scores": [
+      3.5,
+      6.5,
+      2.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "4kW/16=4k=2¹² c=12\n主存 b 10 1\nCache 10 2 1\n组号 组块 块内地址",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "Cache地址字段划分：组号8位、组内块号2位、块内字偏移2位。",
+            "dependency_status": "failed",
+            "reason": "学生将16=2B b=1误解为块大小16字（2^4字），进而得出块内地址4位，与标准答案要求的块大小4W（2位）产生了根本性的语义冲突，导致Cache地址各字段计算错误。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "64k=2¹⁶ t=16\n主存 b 10 1\n组号 组块 块内地址",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "主存地址16位，块内2位，组号8位，tag为6位。",
+            "dependency_status": "failed",
+            "reason": "主存字地址位数（16位）计算正确，但因块大小理解错误导致地址结构划分出现根本性错误，且未能得出正确的tag位数（6位）。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "=2¹³=8k个字节",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "计算Cache标记区总容量：1024×(6+1)/8=896字节。",
+            "dependency_status": "failed",
+            "reason": "得出的结果8k字节与正确结果896字节存在严重的数值矛盾，且没有提供任何计算公式或有效步骤。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "4套，因为该Cache为4路组相联映射 需要4次比较，才能确定是哪一处。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总共需要4套相等比较电路，因为Cache采用4路组相联，且不同组之间比较电路可共享。",
+            "dependency_status": "insufficient",
+            "reason": "最终结论数量（4套）及局部依据（4路组相联映射需要4次比较）正确，但缺失了决定性推理步骤“不同组之间比较电路可共享”，因此仅给与部分分数。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 3.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 3.5,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "16=2B b=1\n4路 r=2\n4kW/16=4k=2¹² c=12\nCache 10 2 1\n组号 组块 块内地址",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分Cache地址字段为组号8位、组内块号2位、块内字偏移2位。",
+            "dependency_status": "failed",
+            "reason": "学生给出的Cache地址字段分配为'10 2 1'，并得出'c=12'。但标准答案中Cache地址字段应为组号8位、组内块号2位、块内字偏移2位。学生在该步骤存在根本性的概念或计算错误，未能正确划分字段，因此不得分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "64k=2¹⁶ t=16\n主存 b 10 1",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分主存地址字段并得到tag位数为6位。",
+            "dependency_status": "failed",
+            "reason": "学生正确求出了主存字地址为16位，但其主存地址字段划分（10 1）与标准划分（组号8位，块内字偏移2位）完全不符，导致无法得出正确的Tag位数（6位）。基于宽容评分原则，仅对正确得出的16位主存字地址部分给予一半的步骤分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "INSUFFICIENT_INFO",
+            "evidence_text": "=2¹³=8k个字节",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确计算Cache标记区总容量为896字节。",
+            "dependency_status": "insufficient",
+            "reason": "学生直接写出了最终结果（8k个字节），但数值与正确答案（896字节）不符，且未提供任何公式或计算过程（如 1024 * 7 / 8）作为支撑，不满足角色加权评分的最低过程要求，无法判定对错或给予过程分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "4套，因为该Cache为4路组相联映射 需要4次比较，才能确定是哪一处。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "判断相等比较电路数量为4套并说明依据。",
+            "dependency_status": "satisfied",
+            "reason": "学生正确指出了需要4套比较电路，并清楚解释了原因（4路组相联映射需要并行比较4次），逻辑完整且符合标准答案的推理要求，给满分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 6.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "4kW/16=4k=2¹² c=12\nCache 10 2 1",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache地址字段为：组号8位、组内块号2位、块内字偏移2位。",
+            "dependency_status": "failed",
+            "reason": "学生将块大小视为16字而不是实际正确的4字，从而得出总Cache块数（4096）和组数（1024）的根本错误结论，导致Cache地址字段的概念矛盾。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "64k=2¹⁶ t=16\n主存 b 10 1",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存地址中的标记tag为16-8-2=6位。",
+            "dependency_status": "failed",
+            "reason": "学生正确确定了16位的主存字地址，但分配给Tag的位数有误（10位而不是6位）。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "=2¹³=8k个字节",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache每块需要tag标记6位和有效位1位，共7位；共有1024块，因此标记区容量为1024×(6+1)/8=896字节。",
+            "dependency_status": "failed",
+            "reason": "最终答案（8k个字节）与标准结果896字节相矛盾，这是由于继承了之前步骤中错误的Tag大小和块数。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "4套，因为该Cache为4路组相联映射 需要4次比较，才能确定是哪一处。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache采用4路组相联，访问某一组时需要把主存地址tag与该组4个Cache块的tag并行比较，不同组之间比较电路可共享。因此总共需要4套相等比较电路。",
+            "dependency_status": "insufficient",
+            "reason": "正确给出了最终结论（4套比较器），但提供的依据不足；完全遗漏了解释不同组之间的比较电路可以共享这一核心架构概念，而这是证明答案成立的关键。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 2.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 2.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        3.5,
+        5.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "INSUFFICIENT_INFO",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.5,
+      "step_3": 0.0,
+      "step_4": 1.5
+    },
+    "max_item_variance": 1.5,
+    "avg_item_variance": 0.5
+  },
+  {
+    "file": "ANS_CO_1128.jpg",
+    "facts": "{\"step_1\": \"Cache分为2¹⁰块，按组相联映象分为2^8组\", \"step_2\": \"主存分为2¹⁴块，∴tag为10位\", \"step_3\": \"∴tag为10位，加上有效位为11位\\n∴Cache标记区的总容量为2¹¹bit = 2⁸B\", \"step_4\": \"11套，因为每tag的每一位和有效位均需要1套该电路，而 tag位和有效位共11位。\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T19:30:53.889176",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_10/ANS_CO_1128.jpg",
+      "image_sha256": "488761c85fed91e020bbc4d2d0cf7f087ed6f301eb950582b1567d573125ec8b",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：\n(1) 由题意：Cache分为2¹⁰块，按组相联映象分为2^8组，主存分为2¹⁴块\n∴tag为10位，加上有效位为11位\n∴Cache标记区的总容量为2¹¹bit = 2⁸B\n(2) 11套，因为每tag的每一位和有效位均需要1套该电路，\n而 tag位和有效位共11位。",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1128",
+        "question_id": "CO_10",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "Cache分为2¹⁰块，按组相联映象分为2^8组",
+        "step_2": "主存分为2¹⁴块，∴tag为10位",
+        "step_3": "∴tag为10位，加上有效位为11位\n∴Cache标记区的总容量为2¹¹bit = 2⁸B",
+        "step_4": "11套，因为每tag的每一位和有效位均需要1套该电路，而 tag位和有效位共11位。"
+      }
+    },
+    "scores": [
+      3.0,
+      3.0,
+      2.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Cache分为2¹⁰块，按组相联映象分为2^8组",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分Cache地址字段：组号8位、组内块号2位、块内字偏移2位",
+            "dependency_status": "satisfied",
+            "reason": "正确推导出Cache的总块数(1024块)和组数(256组)，对应8位组号，但没有提供组内块号(2位)和块内字偏移(2位)的划分依据。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "主存分为2¹⁴块，∴tag为10位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存地址字段标记tag为6位",
+            "dependency_status": "failed",
+            "reason": "主存块数计算与地址位数推导错误，导致最终tag位(10位)与标准答案(6位)直接矛盾，属于核心概念致命错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "tag为10位，加上有效位为11位\n∴Cache标记区的总容量为2¹¹bit = 2⁸B",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache每块需要tag标记6位和有效位1位，共7位；标记区容量为896字节",
+            "dependency_status": "failed",
+            "reason": "虽然最终结果数值错误，但过程公式逻辑正确（考虑了tag+有效位，并乘以块数）。基于上游错误的正确逻辑推导，酌情给予少量的过程分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "11套，因为每tag的每一位和有效位均需要1套该电路，而 tag位和有效位共11位。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "需要4套相等比较电路",
+            "dependency_status": "failed",
+            "reason": "相等比较电路的数量取决于组相联的路数，而不是tag的位数。学生在比较电路的原理上存在严重的核心概念理解错误。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 3.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 1.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Cache分为2¹⁰块，按组相联映象分为2^8组",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache数据区共有1024块；4路组相联共有256组；Cache地址字段为：组号8位、组内块号2位、块内字偏移2位。",
+            "dependency_status": "satisfied",
+            "reason": "学生正确推算出了Cache总块数（2^10块）和组数（2^8组），对应了正确的组号位宽（8位）。但未提供组内块号和块内字偏移的地址字段划分说明，故只给部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "主存分为2¹⁴块，∴tag为10位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存字地址16位；块内字偏移2位，组号8位，所以主存地址中的标记tag为6位。",
+            "dependency_status": "failed",
+            "reason": "主存块数计算错误且tag位数计算概念有根本性错误。64KW的主存对应2^16字，字地址为16位，tag应为16-8-2=6位，而不是用主存块数减去Cache组数。存在核心概念矛盾。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "tag为10位，加上有效位为11位 ∴Cache标记区的总容量为2¹¹bit = 2⁸B",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache每块需要tag标记6位和有效位1位，共7位；共有1024块，因此标记区容量为1024×(6+1)/8=896字节。",
+            "dependency_status": "failed",
+            "reason": "学生正确提出了计算公式：总容量 = 块数 × (tag + 有效位)，且单位换算逻辑正确（2^11 bit = 2^8 B）。但由于上游tag位数错误导致最终结果完全错误。根据容错评分规则，保留其正确的计算过程关系，但由于最终结果数值错误且未独立满足计算条件，得0分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "11套，因为每tag的每一位和有效位均需要1套该电路，而 tag位和有效位共11位。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache采用4路组相联，每组有4块；访问时需要把主存地址tag与该组4个Cache块的tag并行比较。因此总共需要4套相等比较电路。",
+            "dependency_status": "failed",
+            "reason": "学生对比较电路的工作原理产生了根本性的概念误解。学生以为按tag的每一位各分配一套电路（故为11套），而实际上是组内每个Cache块各需要一套比较电路进行并行比较（4路即4套）。结论和核心原理均错误，但由于其尝试基于自己的（错误的）前置数值给出了逻辑依据，给予少量过程分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 3.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 1.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Cache分为2¹⁰块，按组相联映象分为2^8组",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分Cache地址字段：组号8位、组内块号2位、块内字偏移2位",
+            "dependency_status": "satisfied",
+            "reason": "正确推导出Cache共1024块、分为256组（组号8位），但缺少块大小及块内地址字段的划分，故给予部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "主存分为2¹⁴块，∴tag为10位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分主存地址字段并得到tag为6位",
+            "dependency_status": "failed",
+            "reason": "主存容量计算错误，得出tag位为10位，与标准答案6位发生核心矛盾，属概念与计算错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "∴tag为10位，加上有效位为11位\n∴Cache标记区的总容量为2¹¹bit = 2⁸B",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算Cache标记区总容量为896字节",
+            "dependency_status": "insufficient",
+            "reason": "正确将tag位与有效位结合并使用了公式（块数×每块标记位）来推导总容量，但因上游错误导致最终数值错误。根据评分规则保留方法分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "11套，因为每tag的每一位和有效位均需要1套该电路，而 tag位和有效位共11位。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "需要4套相等比较电路（基于4路组相联）",
+            "dependency_status": "failed",
+            "reason": "比较电路套数取决于组相联的路数（每组4块需4套），而不是tag的位数。学生答11套存在核心概念与方法错误。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 2.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 1.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        1.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "step_4": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.2222222222222222,
+      "step_2": 0.0,
+      "step_3": 0.22222222222222224,
+      "step_4": 0.22222222222222224
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.16666666666666666
+  },
+  {
+    "file": "ANS_CO_1137.jpg",
+    "facts": "{\"step_1\": \"学生写有“一共有：4k / 4 = 2^10 块”、“一共有：2^10 / 2^2 = 2^8 组.”，以及“由题意得 块大小为4字节，∴块内地址2位”。地址字段中写有“组号 8位”、“块内地址 2位”。未写主存地址或Cache地址为二进制串/位向量形式。\", \"step_2\": \"学生写有“M共 64K=2^16K存储单元，有16位”、“块内地址2位”、“组号 8位”，并据此计算“标记位有：16-2-8=6位”、“Cache标记应有6位”。未以二进制串/位向量形式写主存地址。\", \"step_3\": \"学生写有计算过程：“6位标记位+1位有效位=7位”、“一共有：2^10 块”、“总字节为：2^10 × 7bit / 8bit = 896B.”。\", \"step_4\": \"学生结论为“需要配置8套这样的相等比较电路”，并写有理由：“根据4路组相联映射特点 确定主存的块位于哪片Cache组仅 与8位组号相关，再根据有效位 和标记位来判断是否命中 ∴需要配置8套8个比较相等电路.”。\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T19:31:53.816238",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_10/ANS_CO_1137.jpg",
+      "image_sha256": "12452d4edb77022b2f91dabf5f22030e36ce5f7f1e89e1f69e78b02f5a175483",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "采用4路组相联，即每一组有4块\n一共有：4k / 4 = 2^10 块\n一共有：2^10 / 2^2 = 2^8 组.\nM共 64K=2^16K存储单元，有16位\n由题意得 块大小为4字节，∴块内地址2位\n∴标记位有：16-2-8=6位\n∴Cache标记应有6位\n则标记区共有：6位标记位+1位有效位=7位.\n一共有：2^10 块\n∴总字节为：2^10 × 7bit / 8bit = 896B.\n\n(2) 主存：\n标记位  组号  块内地址\n6位.   8位   2位\n∴一共有2^8组\n∴需要配置8套这样的相等比较电路\n理由：\n根据4路组相联映射特点\n确定主存的块位于哪片Cache组仅\n与8位组号相关，再根据有效位\n和标记位来判断是否命中\n∴需要配置8套8个比较相等电路.",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1137",
+        "question_id": "CO_10",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "学生写有“一共有：4k / 4 = 2^10 块”、“一共有：2^10 / 2^2 = 2^8 组.”，以及“由题意得 块大小为4字节，∴块内地址2位”。地址字段中写有“组号 8位”、“块内地址 2位”。未写主存地址或Cache地址为二进制串/位向量形式。",
+        "step_2": "学生写有“M共 64K=2^16K存储单元，有16位”、“块内地址2位”、“组号 8位”，并据此计算“标记位有：16-2-8=6位”、“Cache标记应有6位”。未以二进制串/位向量形式写主存地址。",
+        "step_3": "学生写有计算过程：“6位标记位+1位有效位=7位”、“一共有：2^10 块”、“总字节为：2^10 × 7bit / 8bit = 896B.”。",
+        "step_4": "学生结论为“需要配置8套这样的相等比较电路”，并写有理由：“根据4路组相联映射特点 确定主存的块位于哪片Cache组仅 与8位组号相关，再根据有效位 和标记位来判断是否命中 ∴需要配置8套8个比较相等电路.”。"
+      }
+    },
+    "scores": [
+      10.0,
+      11.0,
+      11.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "“一共有：4k / 4 = 2^10 块”、“一共有：2^10 / 2^2 = 2^8 组.”，“组号 8位”、“块内地址 2位”",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分Cache地址字段（组号8位、组内块号2位、块内字偏移2位）",
+            "dependency_status": "satisfied",
+            "reason": "学生正确给出了块内地址2位和组号8位。虽然没有直接写出组内块号，但列出了“2^10/2^2=2^8组”的计算过程，说明其隐含使用了组内块号2位（4路）的关系。在宽容的评分标准下，推导关系可作为等价证据，故给满分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "“M共 64K=2^16K存储单元，有16位”、“块内地址2位”、“组号 8位”，“标记位有：16-2-8=6位”",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分主存地址字段并得到tag位数（16-8-2=6位）",
+            "dependency_status": "satisfied",
+            "reason": "学生正确求出了主存字地址共16位，并准确划分了块内地址和组号，利用公式正确计算出标记位为6位，完全符合要求。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "“6位标记位+1位有效位=7位”、“一共有：2^10 块”、“总字节为：2^10 × 7bit / 8bit = 896B.”",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算Cache标记区总容量：1024×(6+1)/8=896字节",
+            "dependency_status": "satisfied",
+            "reason": "学生提供了清晰且完整的计算公式和步骤，正确得出Cache标记区总容量为896B，给满分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "“需要配置8套这样的相等比较电路”，“根据4路组相联映射特点 确定主存的块位于哪片Cache组仅 与8位组号相关... ∴需要配置8套8个比较相等电路.”",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "因为采用4路组相联，每组4块并行比较，所以需要4套比较电路。",
+            "dependency_status": "failed",
+            "reason": "学生得出了错误的结论（配置8套）。其推导基于“8位组号”（即组数256），犯了概念性错误：在组相联映射中，比较电路的数量取决于相联度（4路），而不是组号位数或组数。根据评分规则，核心结论与概念错误记为零分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "学生写有“一共有：4k / 4 = 2^10 块”、“一共有：2^10 / 2^2 = 2^8 组.”，以及“由题意得 块大小为4字节，∴块内地址2位”。地址字段中写有“组号 8位”、“块内地址 2位”。未写主存地址或Cache地址为二进制串/位向量形式。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分Cache地址字段，得出组号8位、块内字偏移2位等。",
+            "dependency_status": "satisfied",
+            "reason": "学生通过计算正确得出了Cache的块数、组数、组号位数（8位）以及块内地址位数（2位），逻辑严密，符合标准答案要求。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "学生写有“M共 64K=2^16K存储单元，有16位”、“块内地址2位”、“组号 8位”，并据此计算“标记位有：16-2-8=6位”、“Cache标记应有6位”。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分主存地址字段并得到tag位数",
+            "dependency_status": "satisfied",
+            "reason": "学生正确解析了主存地址长度（16位），并且利用前述的块内地址和组号位数，正确推导计算出标记位tag为6位。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "学生写有计算过程：“6位标记位+1位有效位=7位”、“一共有：2^10 块”、“总字节为：2^10 × 7bit / 8bit = 896B.”。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算Cache标记区总容量",
+            "dependency_status": "satisfied",
+            "reason": "学生不仅给出了正确的最终结果（896B），而且保留了完整、正确的计算代换过程，符合评分标准的全部要求。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生结论为“需要配置8套这样的相等比较电路”，并写有理由：“根据4路组相联映射特点 确定主存的块位于哪片Cache组仅 与8位组号相关，再根据有效位 和标记位来判断是否命中 ∴需要配置8套8个比较相等电路.”。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache采用4路组相联，每组有4块，并行比较需要4套相等比较电路。",
+            "dependency_status": "failed",
+            "reason": "学生得出了错误的结论“需要配置8套”，违背了4路组相联仅需4套比较电路的核心概念，属于根本性的理解错误。给定的1分仅为其说明过程中正确提及“判断有效位和标记位来决定命中”的过程分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 11.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 1.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "学生写有“一共有：4k / 4 = 2^10 块”、“一共有：2^10 / 2^2 = 2^8 组.”，以及“由题意得 块大小为4字节，∴块内地址2位”。地址字段中写有“组号 8位”、“块内地址 2位”。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分Cache地址字段，包含组号8位、块内地址2位（及隐含的正确块数、组数推导）。",
+            "dependency_status": "satisfied",
+            "reason": "学生明确推导出了块数和组数，并写出了组号8位、块内地址2位，结果与标准答案等价，充分满足评分点要求。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "学生写有“M共 64K=2^16K存储单元，有16位”、“块内地址2位”、“组号 8位”，并据此计算“标记位有：16-2-8=6位”、“Cache标记应有6位”。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分主存地址字段并得到tag位数为6位。",
+            "dependency_status": "satisfied",
+            "reason": "学生正确求出了主存字地址为16位，并通过减去组号和块内地址准确计算出标记位（tag）为6位。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "学生写有计算过程：“6位标记位+1位有效位=7位”、“一共有：2^10 块”、“总字节为：2^10 × 7bit / 8bit = 896B.”。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算Cache标记区总容量，公式及结果正确（896字节）。",
+            "dependency_status": "satisfied",
+            "reason": "学生明确列出了正确的计算关系（每块7位，共1024块），并得出了正确的总容量896B，过程与结果均正确。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "学生结论为“需要配置8套这样的相等比较电路”，并写有理由：“根据4路组相联映射特点 确定主存的块位于哪片Cache组仅 与8位组号相关，再根据有效位 和标记位来判断是否命中 ∴需要配置8套8个比较相等电路.”。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "判断相等比较电路数量并说明依据，正确结论应为4套。",
+            "dependency_status": "failed",
+            "reason": "学生在理由中正确理解了4路组相联映射的机制与命中判断依据（属于有效的过程证据），但最终电路数量错误地得出了8套，结论存在核心概念性错误。根据规则，给予部分过程分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 11.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 1.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_3": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "step_4": [
+        0.0,
+        1.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.22222222222222224
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.05555555555555556
+  },
+  {
+    "file": "ANS_CO_1142.jpg",
+    "facts": "{\"step_1\": \"一组4块，块间地址2位\\n块大小4字，块内地址2位\\n共有4K/(4×4)=2^8个组，组地址8位\", \"step_2\": \"64K=2^16，主存地址共16位，组地址8位，块内地址2位\\n主存标记位为16-8-2=6位\", \"step_3\": \"主存标记位为16-8-2=6位\\n∴Cache标记区容量6+1=7位\\n4K/4×7b=7Kb\\n7Kb/8=7×2^7字节\", \"step_4\": \"相等比较电路 Cache数据线的字都必须有\\n∴要4K个\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T19:32:52.607981",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_10/ANS_CO_1142.jpg",
+      "image_sha256": "225dc2aeba9d729a241ffe157b124022df2a32b6c46a789108e443e9881ac249",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1)解：一组4块，块间地址2位\n块大小4字，块内地址2位\n共有4K/(4×4)=2^8个组，组地址8位\n\n64K=2^16，主存地址共16位，组地址8位，块内地址2位\n主存标记位为16-8-2=6位\n∴Cache标记区容量6+1=7位\n\n4K/4×7b=7Kb\n7Kb/8=7×2^7字节\n\n(2)解：相等比较电路 Cache数据线的字都必须有\n\n∴要4K个",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1142",
+        "question_id": "CO_10",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "一组4块，块间地址2位\n块大小4字，块内地址2位\n共有4K/(4×4)=2^8个组，组地址8位",
+        "step_2": "64K=2^16，主存地址共16位，组地址8位，块内地址2位\n主存标记位为16-8-2=6位",
+        "step_3": "主存标记位为16-8-2=6位\n∴Cache标记区容量6+1=7位\n4K/4×7b=7Kb\n7Kb/8=7×2^7字节",
+        "step_4": "相等比较电路 Cache数据线的字都必须有\n∴要4K个"
+      }
+    },
+    "scores": [
+      9.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "一组4块，块间地址2位\n块大小4字，块内地址2位\n共有4K/(4×4)=2^8个组，组地址8位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分Cache地址字段",
+            "dependency_status": "satisfied",
+            "reason": "学生正确计算了组数（256）、组内块号（2位）、块内字偏移（2位），完全符合标准答案的地址字段划分要求。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "64K=2^16，主存地址共16位，组地址8位，块内地址2位\n主存标记位为16-8-2=6位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分主存地址字段并得到tag位数",
+            "dependency_status": "satisfied",
+            "reason": "正确识别了主存总字长为16位，并结合组号和块内地址准确推导出了Tag位数为6位，推理与结果完全正确。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "主存标记位为16-8-2=6位\n∴Cache标记区容量6+1=7位\n4K/4×7b=7Kb\n7Kb/8=7×2^7字节",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算Cache标记区总容量（每块tag 6位+有效位1位，共1024块，乘积换算为字节）",
+            "dependency_status": "failed",
+            "reason": "核心计算公式（总块数1024块 × 7位）正确，但在从位转换为字节（Bytes）时发生了严重的单位换算错误。将7168位错算成7×2^7字节，丢失了过程精度。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "相等比较电路 Cache数据线的字都必须有\n∴要4K个",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "判断相等比较电路数量并说明依据（4路组相联需要4套并行比较电路）",
+            "dependency_status": "failed",
+            "reason": "学生仅基于Cache数据线的字数得出了4K个的结论，严重误解了组相联机制下比较电路的共享原理（不同组间可共享），得出了完全错误的数值结论。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 9.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 2.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 1.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "一组4块，块间地址2位\n块大小4字，块内地址2位\n共有4K/(4×4)=2^8个组，组地址8位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分Cache地址字段：组号8位、组内块号2位、块内字偏移2位",
+            "dependency_status": "satisfied",
+            "reason": "学生正确识别了组相联的参数，并准确计算出组地址为8位、组内块号为2位、块内地址为2位，与标准答案完全相符。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "64K=2^16，主存地址共16位，组地址8位，块内地址2位\n主存标记位为16-8-2=6位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分主存地址字段并得到tag位数：16-8-2=6位",
+            "dependency_status": "satisfied",
+            "reason": "学生正确推导出主存字地址为16位，并通过减去组地址和块内地址准确计算得出主存标记tag位为6位。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "主存标记位为16-8-2=6位\n∴Cache标记区容量6+1=7位\n4K/4×7b=7Kb\n7Kb/8=7×2^7字节",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算Cache标记区总容量为1024×(6+1)/8=896字节",
+            "dependency_status": "satisfied",
+            "reason": "完整给出了有效计算公式（6+1位）并计算出中间结果（7Kb）。虽然最后化为字节的除法计算出现笔误（7×2^7=896，但错写为7×2^7字节），按宽容评分原则，不算作核心语义错误，公式和计算过程完整给满分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "相等比较电路 Cache数据线的字都必须有\n∴要4K个",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "判断相等比较电路数量并说明依据（共需4套，因为4路组相联并行比较）",
+            "dependency_status": "failed",
+            "reason": "学生得出了错误的结论（4K个），违背了组相联存储器中比较电路可以在不同组间共享的原理，属于核心概念错误。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "一组4块，块间地址2位\n块大小4字，块内地址2位\n共有4K/(4×4)=2^8个组，组地址8位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分Cache地址字段（组号8位、组内块号2位、块内字偏移2位）",
+            "dependency_status": "satisfied",
+            "reason": "学生正确计算了块大小、每组包含的块数以及Cache的总组数，准确划分了对应的地址字段长度。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "64K=2^16，主存地址共16位，组地址8位，块内地址2位\n主存标记位为16-8-2=6位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "正确划分主存地址字段并得到tag位数（16-8-2=6位）",
+            "dependency_status": "satisfied",
+            "reason": "主存地址总长度和各字段划分正确，且基于减法关系正确算出了主存标记位为6位。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "主存标记位为16-8-2=6位\n∴Cache标记区容量6+1=7位\n4K/4×7b=7Kb",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算Cache标记区总容量（正确找出总块数1024并乘以7位，最终得到896字节）",
+            "dependency_status": "insufficient",
+            "reason": "方法与公式关系正确（正确算出了单块7位，并列出了总位数计算式），但计算关系出现错误（误用4K字总容量除以块大小4字，导致块数误算为1K，丢失了相联度4，最终单位转换也错误）。根据计算题过程评分原则，给与步骤公式大部分分数。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "相等比较电路 Cache数据线的字都必须有\n∴要4K个",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "判断相等比较电路数量并说明依据（应得出需要4套并说明是因为4路组相联）",
+            "dependency_status": "failed",
+            "reason": "结论错误（误答为4K个），但提取的事实中带有部分讨论切面的推理过程（试图从Cache数据线角度探讨），而非完全空白。根据规则给予极少部分过程分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 3.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_4",
+            "effective_score": 1.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_3": [
+        2.0,
+        4.0,
+        3.0
+      ],
+      "step_4": [
+        1.0,
+        0.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.6666666666666666,
+      "step_4": 0.22222222222222224
+    },
+    "max_item_variance": 0.6666666666666666,
+    "avg_item_variance": 0.2222222222222222
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:04:49.023523",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_226.png",
+  "image_sha256": "6774cc64f9a956360a656bd187b129620c568d4192cc7a40e68a98e3dd01df76",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "计算 x-2y.\n我们先假使8位为数值位\n2位为符号位 \n2y 即算术右移1位\n[-2y]补 = 11 0101 0111\n[x]补 = 00 0011 0110.\n  11 0101 0111\n+ 00 0011 0110\n------------\n  11 1000 1101.\n[x]补 + [-2y]补 = 11 1000 1101\n根据双进位判断\n0⊕0 = 0\n0= 0不发生溢出\n(x÷4) 故将x算术右移2位\nx÷4: 0000 1101.\n  \n2²原码故将y算术左移1位\n[2y]补 = 1010 101\n[x÷4]补 + [2y]补\n  0000 1101 \n+ 1010 1010\n------------\n  1011 0111\n0F=0 不发生溢出.\n[(x÷4)+2y]补 = 1011 0111",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_226",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "计算式/运算逻辑：假使8位为数值位，2位为符号位；2y 即算术右移1位。计算代入与过程：[-2y]补 = 11 0101 0111；[x]补 = 00 0011 0110；竖式：11 0101 0111 + 00 0011 0110 = 11 1000 1101。结论：[x]补 + [-2y]补 = 11 1000 1101；根据双进位判断：0⊕0 = 0，0= 0，不发生溢出。",
+    "step_2": "计算式/运算逻辑：(x÷4) 故将x算术右移2位；2²原码故将y算术左移1位（注：学生书写为“2²原码故将y算术左移1位”）。计算代入与过程：x÷4: 0000 1101；[2y]补 = 1010 101；竖式：0000 1101 + 1010 1010 = 1011 0111。结论：0F=0，不发生溢出；[(x÷4)+2y]补 = 1011 0111。"
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:05:36.517113",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1384.jpg",
+  "image_sha256": "546be4eae2ad0ac241e4c5fa92f187ae6b092b6cfebba14543224d1017c22558",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1384.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 26,
+    "accepted_token_count": 26,
+    "mean_confidence": 0.932129,
+    "min_confidence": 0.5,
+    "joined_text": "5: (1) U: DR b: IR C: AR d: PC\n(2) PC→AB ADS,M/2O=1,W/R=0,\nDB→2R PC+1 完成取指操作\nOD→AR AR→AB GR→DB\nOD→AR AR→AB ADS,M/20\n(3)\n(存)\n=1,\nM/IO=1 W/R=1 DB→DR\nDB→DR\nw/R=0\n(取)\n(4) PC→AB ADS，M/I0=1, W/R=0\nDB→IR PC+1\nOD→AR AR→AB ADS,M/20=1,W/R=0\nDB→DR\nDR→ ALU GR→ALU + ALU→GR\n(5) 5个微命令需要 3位\n8个需要千位14个需要4位3个要2位共13位\n外部条件3个共2位24-2-13=9位.(下址字段)\n故容量为29×24\n(6)\n3位4位4位2位2位19位\n→下址字段\n4个互斥类\n外部条件",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.069379,
+      "very_dark_pixel_ratio": 0.038643,
+      "lower_region_dark_pixel_ratio": 0.074413,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a: DR    b: IR    c: AR    d: PC\n(2) PC→AB  ADS, M/IO=1, W/R=0\nDB→IR  PC+1  完成取指操作\n(3)(存) OD→AR  AR→AB  GR→DB  \nM/IO=1  W/R=1  DB→DR\n(取) OD→AR  AR→AB  ADS, M/IO=1\nDB→DR  W/R=0  \n(4) PC→AB  ADS, M/IO=1, W/R=0\nDB→IR  PC+1\nOD→AR  AR→AB  ADS, M/IO=1, W/R=0\nDB→DR\nDR→ALU  GR→ALU  +  ALU→GR\n(5) 5个微命令需要3位\n8个需要4位  14个需要4位  3个需要2位  共13位\n外部条件5个共2位  24-2-13=9位（下址字段）\n故容量为2^9×24\n(6) 字段划分如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1384",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "PC→AB ADS，M/I0=1, W/R=0 (取)\nDB→IR PC+1\nOD→AR AR→AB ADS,M/20=1,W/R=0\nDB→DR\nDR→ ALU GR→ALU + ALU→GR",
+    "step_5": "5个微命令需要 3位\n8个需要千位14个需要4位3个要2位共13位\n外部条件3个共2位24-2-13=9位.(下址字段)\n故容量为29×24",
+    "step_6": "(6) 4个互斥类 外部条件 →下址字段\n3位4位4位2位2位19位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 45.0,
+        "cells_left_to_right": [
+          {
+            "text": "5: (1) U: DR b: IR C: AR d: PC",
+            "x_center": 309.0,
+            "confidence": 0.8964745402336121
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 106.75,
+        "cells_left_to_right": [
+          {
+            "text": "(2) PC→AB ADS,M/2O=1,W/R=0,",
+            "x_center": 296.0,
+            "confidence": 0.8890358209609985
+          },
+          {
+            "text": "DB→2R PC+1 完成取指操作",
+            "x_center": 329.0,
+            "confidence": 0.8873645067214966
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 182.81,
+        "cells_left_to_right": [
+          {
+            "text": "(3)",
+            "x_center": 66.0,
+            "confidence": 0.9084901213645935
+          },
+          {
+            "text": "OD→AR AR→AB GR→DB",
+            "x_center": 282.5,
+            "confidence": 0.971540093421936
+          },
+          {
+            "text": "M/IO=1 W/R=1 DB→DR",
+            "x_center": 284.5,
+            "confidence": 0.9071331024169922
+          },
+          {
+            "text": "(存)",
+            "x_center": 510.5,
+            "confidence": 0.7453510761260986
+          },
+          {
+            "text": "DB→DR",
+            "x_center": 646.5,
+            "confidence": 0.9871963262557983
+          },
+          {
+            "text": "OD→AR AR→AB ADS,M/20",
+            "x_center": 742.0,
+            "confidence": 0.9304900169372559
+          },
+          {
+            "text": "w/R=0",
+            "x_center": 888.0,
+            "confidence": 0.9469950795173645
+          },
+          {
+            "text": "=1,",
+            "x_center": 922.0,
+            "confidence": 0.8441751599311829
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 264.0,
+        "cells_left_to_right": [
+          {
+            "text": "(4) PC→AB ADS，M/I0=1, W/R=0",
+            "x_center": 298.0,
+            "confidence": 0.8525465726852417
+          },
+          {
+            "text": "(取)",
+            "x_center": 855.5,
+            "confidence": 0.9683049321174622
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 311.5,
+        "cells_left_to_right": [
+          {
+            "text": "DB→IR PC+1",
+            "x_center": 206.5,
+            "confidence": 0.9250307083129883
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 374.25,
+        "cells_left_to_right": [
+          {
+            "text": "DB→DR",
+            "x_center": 165.0,
+            "confidence": 0.9927422404289246
+          },
+          {
+            "text": "OD→AR AR→AB ADS,M/20=1,W/R=0",
+            "x_center": 382.0,
+            "confidence": 0.9219125509262085
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 428.5,
+        "cells_left_to_right": [
+          {
+            "text": "DR→ ALU GR→ALU + ALU→GR",
+            "x_center": 360.5,
+            "confidence": 0.953571081161499
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 486.0,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 5个微命令需要 3位",
+            "x_center": 225.5,
+            "confidence": 0.9560633301734924
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 528.5,
+        "cells_left_to_right": [
+          {
+            "text": "8个需要千位14个需要4位3个要2位共13位",
+            "x_center": 458.0,
+            "confidence": 0.96478271484375
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 576.5,
+        "cells_left_to_right": [
+          {
+            "text": "外部条件3个共2位24-2-13=9位.(下址字段)",
+            "x_center": 500.5,
+            "confidence": 0.9613220691680908
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 616.0,
+        "cells_left_to_right": [
+          {
+            "text": "故容量为29×24",
+            "x_center": 233.0,
+            "confidence": 0.947246253490448
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 679.5,
+        "cells_left_to_right": [
+          {
+            "text": "(6)",
+            "x_center": 42.5,
+            "confidence": 0.961778461933136
+          },
+          {
+            "text": "4个互斥类",
+            "x_center": 186.5,
+            "confidence": 0.9901649355888367
+          },
+          {
+            "text": "3位4位4位2位2位19位",
+            "x_center": 256.5,
+            "confidence": 0.9905188083648682
+          },
+          {
+            "text": "外部条件",
+            "x_center": 364.0,
+            "confidence": 0.9972467422485352
+          },
+          {
+            "text": "→下址字段",
+            "x_center": 527.5,
+            "confidence": 0.937873363494873
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=309.0: 5: (1) U: DR b: IR C: AR d: PC\nRow 2: x=296.0: (2) PC→AB ADS,M/2O=1,W/R=0, | x=329.0: DB→2R PC+1 完成取指操作\nRow 3: x=66.0: (3) | x=282.5: OD→AR AR→AB GR→DB | x=284.5: M/IO=1 W/R=1 DB→DR | x=510.5: (存) | x=646.5: DB→DR | x=742.0: OD→AR AR→AB ADS,M/20 | x=888.0: w/R=0 | x=922.0: =1,\nRow 4: x=298.0: (4) PC→AB ADS，M/I0=1, W/R=0 | x=855.5: (取)\nRow 5: x=206.5: DB→IR PC+1\nRow 6: x=165.0: DB→DR | x=382.0: OD→AR AR→AB ADS,M/20=1,W/R=0\nRow 7: x=360.5: DR→ ALU GR→ALU + ALU→GR\nRow 8: x=225.5: (5) 5个微命令需要 3位\nRow 9: x=458.0: 8个需要千位14个需要4位3个要2位共13位\nRow 10: x=500.5: 外部条件3个共2位24-2-13=9位.(下址字段)\nRow 11: x=233.0: 故容量为29×24\nRow 12: x=42.5: (6) | x=186.5: 4个互斥类 | x=256.5: 3位4位4位2位2位19位 | x=364.0: 外部条件 | x=527.5: →下址字段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "a: DR b: IR C: AR d: PC",
+    "step_2": "PC→AB ADS,M/IO=1,W/R=0, DB→IR PC+1",
+    "step_3": "OD→AR AR→AB GR→DB M/IO=1 W/R=1 DB→DR（存）；OD→AR AR→AB ADS,M/IO=1,W/R=0 DB→DR（取）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a: DR  b: IR  c: AR  d: Pc",
+    "step_2": "PC→AB  ADS, M/¯Io=1, W/¯R=0,  DB→DR  PC+1  完成取指操作",
+    "step_3": "OD→AR  AR→AB  ADS, M/¯Io=1, W/¯R=1  DB→DR  (写)  OD→AR  AR→AB  ADS, M/¯Io=1, W/¯R=0  DB→DR  (取)",
+    "step_4": "PC→AB  ADS, M/¯Io=1, W/¯R=0  DB→IR  PC+1  OD→AR  AR→AB  ADS, M/¯Io=1, W/¯R=0  DB→DR  DR→ALU  GR→ALU  +  ALU→GR",
+    "step_5": "5个微命令需要 3位  8个需要4位  14个需要4位  3个需要2位  共13位  外部条件3个共2位  24 - 2 -13 =9位.(下址字段)  故容量为 2^9 ×24",
+    "step_6": "3位  4位  4位  2位  2位  9位  →下址字段.  4个互斥类  9位条件"
+  },
+  "facts": {
+    "step_1": "a: DR    b: IR    c: AR    d: PC",
+    "step_2": "PC→AB  ADS, M/IO=1, W/R=0\nDB→IR  PC+1  完成取指操作",
+    "step_3": "(存) OD→AR  AR→AB  GR→DB  \nM/IO=1  W/R=1  DB→DR\n(取) OD→AR  AR→AB  ADS, M/IO=1\nDB→DR  W/R=0",
+    "step_4": "PC→AB  ADS, M/IO=1, W/R=0\nDB→IR  PC+1\nOD→AR  AR→AB  ADS, M/IO=1, W/R=0\nDB→DR\nDR→ALU  GR→ALU  +  ALU→GR",
+    "step_5": "5个微命令需要3位\n8个需要4位  14个需要4位  3个需要2位  共13位\n外部条件5个共2位  24-2-13=9位（下址字段）\n故容量为2^9×24",
+    "step_6": "字段划分如图所示\n[需要查看图像]"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T01:52:25.920945",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_166.jpg",
+  "image_sha256": "8c1ce95e23737b7ebd243a53fa2efd8da244038c2db22bdb69bd8023c7dd3cd3",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "①[X]补= 0011 0110  [y]补= 0101 0100  [Z]补= 1101 0101\n[2y]补= 1010 1000 相当于向左移2位 ，此时已经发生3溢出，OF=1\n 判断:数值位进位f1=1,符号位进位f2=0 f1⊕f2=1故溢出\n②[X÷4]补= 0000 1101 ，相当于向右移进位,在左边补符号位\n[Z]补= 1 0101 010\n[(X÷4)+2Z]补 = [X÷4]补+[Z]补 = 1011 0111 = B7 H\n无溢出，OF=0  判断:若用双符号位,[X÷4]补符号位f1f2=00\n[2z]补符号位f3f4=11\n结果符号位为11故无溢出\n若1在溢出时继续计算:\n[-2y]补= 0101 1000\n[X-2y]补=[X]补+[-2y]补= 1000 1110 =8EH \n结果符号位为11,故无溢出\n故计算X-2y时,计算2y发生溢出，OF=1，结果为8EH\n(X÷4)+2Z 计算结果为B7H，OF=0",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_166",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "数值与补码：[X]补= 0011 0110；[y]补= 0101 0100；[Z]补= 1101 0101；[2y]补= 1010 1000；[-2y]补= 0101 1000；[X-2y]补=[X]补+[-2y]补= 1000 1110 =8EH。计算过程与移位关系：[2y]补 相当于向左移2位。溢出判断与结论：此时已经发生3溢出，OF=1；判断:数值位进位f1=1,符号位进位f2=0 f1⊕f2=1故溢出；若1在溢出时继续计算，结果符号位为11,故无溢出；故计算X-2y时,计算2y发生溢出，OF=1，结果为8EH。",
+    "step_2": "数值与补码：[X÷4]补= 0000 1101；[Z]补= 1 0101 010；[(X÷4)+2Z]补 = [X÷4]补+[Z]补 = 1011 0111 = B7 H。计算过程与移位关系：[X÷4]补 相当于向右移进位,在左边补符号位。溢出判断与结论：无溢出，OF=0；判断:若用双符号位,[X÷4]补符号位f1f2=00；[2z]补符号位f3f4=11；结果符号位为11故无溢出；(X÷4)+2Z 计算结果为B7H，OF=0。"
+  }
+}

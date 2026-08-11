@@ -1,0 +1,281 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T00:44:17.080044",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1345.jpg",
+  "image_sha256": "89d4fd1294e32ad0e844d8a78315dd1614557154ca01947cd1179207b10c63b2",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1345.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 17,
+    "accepted_token_count": 17,
+    "mean_confidence": 0.955166,
+    "min_confidence": 0.5,
+    "joined_text": "5: (1) a: 数据缓中寄在器DR.\n地址寄存器AR\nb: 指令寄存器IR\nd: 计数程序计数器PC\n(2) 主存M→地址寄存器AR→指令寄*存器IR→控制器\n(3)存：ALCALU→数据缓冲寄存器DR→主存M\n取：主存M→数据缓冲寄存器DR→ALU→AC\n(4) PC指向指令ADD AX，O1D，指令寄存器IR将地址送往地址寄存器AR\n从主存取出所需的单元内容送至数据缓冲寄存器DR，随后送至通\n用寄存器Ax，PC指向下一条指令\n(5) 24位=3B 容量：3B×30=9013\n(6) 微指令包括控制字段和下址字段，共24位\n30<32=25下止字段5位，控制字字段24-5=19位\n1 19位\n15位\n控制字段\n下址字段",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.096906,
+      "very_dark_pixel_ratio": 0.066333,
+      "lower_region_dark_pixel_ratio": 0.098715,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a:数据缓冲寄存器DR. c:地址寄存器AR b.指令寄存器IR \nd:程序计数器PC\n(2) 主存M→地址寄存器AR→指令寄存器IR→控制器\n(3) 存：ALU→数据缓冲寄存器DR→主存M \n取:主存M→数据缓冲寄存器DR→ALU→AC\n(4) PC指向指令ADD AX,0D,指令寄存器IR将地址送往地址寄存器AR,\n从主存取出所需的单元内容送至数据缓冲寄存器DR,随后送至通用寄存器AX,PC指向下一条指令\n(5) 24位=3B 容量:3B×30=90B\n(6) 微指令包括控制字段和下址字段,共24位 30<32=2^5 下址字段5位,控制字段24-5=19位\n微指令格式如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1345",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "PC指向指令ADD AX，O1D，指令寄存器IR将地址送往地址寄存器AR\n从主存取出所需的单元内容送至数据缓冲寄存器DR，随后送至通用寄存器Ax，PC指向下一条指令",
+    "step_5": "24位=3B\n容量：3B×30=9013",
+    "step_6": "微指令包括控制字段和下址字段，共24位\n30<32=25下止字段5位，控制字字段24-5=19位\n表格结构：\n控制字段 | 下址字段\n1 19位 | 15位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 42.33,
+        "cells_left_to_right": [
+          {
+            "text": "5: (1) a: 数据缓中寄在器DR.",
+            "x_center": 183.5,
+            "confidence": 0.8096653819084167
+          },
+          {
+            "text": "地址寄存器AR",
+            "x_center": 498.5,
+            "confidence": 0.9926648736000061
+          },
+          {
+            "text": "b: 指令寄存器IR",
+            "x_center": 791.0,
+            "confidence": 0.8952120542526245
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 97.0,
+        "cells_left_to_right": [
+          {
+            "text": "d: 计数程序计数器PC",
+            "x_center": 211.0,
+            "confidence": 0.9520862102508545
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 149.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 主存M→地址寄存器AR→指令寄*存器IR→控制器",
+            "x_center": 373.0,
+            "confidence": 0.9815599322319031
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 208.5,
+        "cells_left_to_right": [
+          {
+            "text": "(3)存：ALCALU→数据缓冲寄存器DR→主存M",
+            "x_center": 322.0,
+            "confidence": 0.9644523859024048
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 261.5,
+        "cells_left_to_right": [
+          {
+            "text": "取：主存M→数据缓冲寄存器DR→ALU→AC",
+            "x_center": 359.5,
+            "confidence": 0.9854215979576111
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 316.5,
+        "cells_left_to_right": [
+          {
+            "text": "(4) PC指向指令ADD AX，O1D，指令寄存器IR将地址送往地址寄存器AR",
+            "x_center": 473.0,
+            "confidence": 0.9301530718803406
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 365.5,
+        "cells_left_to_right": [
+          {
+            "text": "从主存取出所需的单元内容送至数据缓冲寄存器DR，随后送至通",
+            "x_center": 496.5,
+            "confidence": 0.9920850396156311
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 417.5,
+        "cells_left_to_right": [
+          {
+            "text": "用寄存器Ax，PC指向下一条指令",
+            "x_center": 275.0,
+            "confidence": 0.9646155834197998
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 471.5,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 24位=3B 容量：3B×30=9013",
+            "x_center": 274.5,
+            "confidence": 0.9376559257507324
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 528.0,
+        "cells_left_to_right": [
+          {
+            "text": "(6) 微指令包括控制字段和下址字段，共24位",
+            "x_center": 330.5,
+            "confidence": 0.9855948686599731
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 580.0,
+        "cells_left_to_right": [
+          {
+            "text": "30<32=25下止字段5位，控制字字段24-5=19位",
+            "x_center": 422.0,
+            "confidence": 0.9693219065666199
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 634.0,
+        "cells_left_to_right": [
+          {
+            "text": "1 19位",
+            "x_center": 128.0,
+            "confidence": 0.9365664720535278
+          },
+          {
+            "text": "15位",
+            "x_center": 286.5,
+            "confidence": 0.9978511333465576
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 690.0,
+        "cells_left_to_right": [
+          {
+            "text": "控制字段",
+            "x_center": 158.5,
+            "confidence": 0.9886674880981445
+          },
+          {
+            "text": "下址字段",
+            "x_center": 325.0,
+            "confidence": 0.9542532563209534
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=183.5: 5: (1) a: 数据缓中寄在器DR. | x=498.5: 地址寄存器AR | x=791.0: b: 指令寄存器IR\nRow 2: x=211.0: d: 计数程序计数器PC\nRow 3: x=373.0: (2) 主存M→地址寄存器AR→指令寄*存器IR→控制器\nRow 4: x=322.0: (3)存：ALCALU→数据缓冲寄存器DR→主存M\nRow 5: x=359.5: 取：主存M→数据缓冲寄存器DR→ALU→AC\nRow 6: x=473.0: (4) PC指向指令ADD AX，O1D，指令寄存器IR将地址送往地址寄存器AR\nRow 7: x=496.5: 从主存取出所需的单元内容送至数据缓冲寄存器DR，随后送至通\nRow 8: x=275.0: 用寄存器Ax，PC指向下一条指令\nRow 9: x=274.5: (5) 24位=3B 容量：3B×30=9013\nRow 10: x=330.5: (6) 微指令包括控制字段和下址字段，共24位\nRow 11: x=422.0: 30<32=25下止字段5位，控制字字段24-5=19位\nRow 12: x=128.0: 1 19位 | x=286.5: 15位\nRow 13: x=158.5: 控制字段 | x=325.0: 下址字段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a:数据缓冲寄存器DR  b:地址寄存器AR  c:指令寄存器IR  d:计数/程序计数器PC",
+    "step_2": "主存M→地址寄存器AR→指令寄存器IR→控制器",
+    "step_3": "存：ALU→数据缓冲寄存器DR→主存M\n取：主存M→数据缓冲寄存器DR→ALU→AC",
+    "step_4": "PC指向指令ADD AX,OD，指令寄存器IR将地址送往地址寄存器AR，从主存取出所需单元内容送至数据缓冲寄存器DR，随后送至通用寄存器AX，PC指向下一条指令",
+    "step_5": "24位=3B  容量：3B×30=90B",
+    "step_6": "微指令包括控制字段和下址字段，共24位\n30<32=2^5  下址字段5位，控制字段24-5=19位\n19位 | 5位 | \n控制字段  下址字段"
+  },
+  "facts": {
+    "step_1": "a:数据缓冲寄存器DR. c:地址寄存器AR b.指令寄存器IR \nd:程序计数器PC",
+    "step_2": "主存M→地址寄存器AR→指令寄存器IR→控制器",
+    "step_3": "存：ALU→数据缓冲寄存器DR→主存M \n取:主存M→数据缓冲寄存器DR→ALU→AC",
+    "step_4": "PC指向指令ADD AX,0D,指令寄存器IR将地址送往地址寄存器AR,\n从主存取出所需的单元内容送至数据缓冲寄存器DR,随后送至通用寄存器AX,PC指向下一条指令",
+    "step_5": "24位=3B 容量:3B×30=90B",
+    "step_6": "微指令包括控制字段和下址字段,共24位 30<32=2^5 下址字段5位,控制字段24-5=19位\n微指令格式如图所示"
+  }
+}

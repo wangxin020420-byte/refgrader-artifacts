@@ -1,0 +1,88 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T13:39:14.884862",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_5/ANS_POC_152.jpg",
+  "image_sha256": "9510514cdbe396f21528df7b7bf3c38d65bb56d456e718a4699de83545b87d0c",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_5/ANS_POC_152.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 35,
+    "accepted_token_count": 35,
+    "mean_confidence": 0.870628,
+    "min_confidence": 0.5,
+    "joined_text": "7.#0\ne\nD2\n2.\n5.\nI1\nI4\nI7\nS→b.Ba,#\nB\ns→bB·a,井\nB→.a ,a\na\nS→bBa.,#\nI_0\nb\nI_5\ns'→·s,\nI_2\na\nS\nB→a.,a\n$'ss\nS→.AaA,\nA→,a\nA I3\nS→·bBa,\nI_6\nI_8\na\nA\nS→A· aA,\nS→AaA\nS→Aa·A,\nA→,a",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.052993,
+      "very_dark_pixel_ratio": 0.032192,
+      "lower_region_dark_pixel_ratio": 0.058204,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_152",
+    "question_id": "POC_5",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_5": "I0→[b]I1; I0→[S]I2; I0→[A]I3; I1→[B]I4; I1→[a]I5; I3→[a]I6; I4→[a]I7; I6→[A]I8"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten directed state transition edges for the LR(1) item sets. Preserve the starting state, transition symbol, arrow direction, and destination state exactly as written by the student."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_1",
+    "step_3",
+    "step_4"
+  ],
+  "visual_fallback_conflicts": [
+    "step_5"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "s'→·S, #\nS→·AaA, #\nA→·, a\nS→·bBa, #",
+    "step_3": "I4: s→bB·a, #\nI5: B→a·, a",
+    "step_4": "I6: s→Aa·A, #\nA→·, a\nI7: s→bBa·, #\nI8: s→AaA·, #",
+    "step_5": "I0→I1 (b)\nI0→I2 (S)\nI0→I3 (A)\nI1→I4 (B)\nI1→I5 (a)\nI3→I6 (a)\nI6→I8 (A)\nI4→I7 (a)"
+  },
+  "facts": {
+    "step_1": "s'→·S, #\nS→·AaA, #\nA→·, a\nS→·bBa, #",
+    "step_3": "I4: s→bB·a, #\nI5: B→a·, a",
+    "step_4": "I6: s→Aa·A, #\nA→·, a\nI7: s→bBa·, #\nI8: s→AaA·, #",
+    "step_5": "I0→[b]I1; I0→[S]I2; I0→[A]I3; I1→[B]I4; I1→[a]I5; I3→[a]I6; I4→[a]I7; I6→[A]I8"
+  }
+}

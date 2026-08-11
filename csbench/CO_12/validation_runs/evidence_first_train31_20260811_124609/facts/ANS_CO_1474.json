@@ -1,0 +1,337 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:43:31.750889",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1474.jpg",
+  "image_sha256": "3993e49abf7a3d592c8db24b74bc3b0f396ba9a2fecde60fce9718dedab751bb",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1474.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 26,
+    "accepted_token_count": 26,
+    "mean_confidence": 0.93297,
+    "min_confidence": 0.5,
+    "joined_text": "解: (1) a: DR b: IR, C: AR\n,d: PC\n(2) 主存M→DR，DR→IR，IR→操作控制器\n(3取:主存M->DRDR→ALU\n存:ALU→AC，AC→DR，DR→主右M\n(4) 取指\nPC→AB=|\nAOS=1,W/IO=1，W/R=0\nDB→IR\nPC+1\n取数\nOD→AR，W/R=0\nDB→→DR\n执行\nDR→ALU=1,Ax->ALU=1\nCu发出'+'=1.ALU→AX\n(5) 微命令分别占3位，4位位，2位。外部条件占3位，总长24位\n∴下址字段占24-13-3=8位∴控制存储器容量为256字节\n(6)\n3位4位14位2位\n3位\n8位\n外部\n控制字段\n条件\n下址字段",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.062307,
+      "very_dark_pixel_ratio": 0.037502,
+      "lower_region_dark_pixel_ratio": 0.064877,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a: DR , b: IR , C: AR , d: PC\n(2) 主存M→DR，DR→IR，IR→操作控制器\n(3)取主存M→DR，DR→ALU\n存: ALU→AC，AC→DR，DR→主存M\n(4) 取指\nPC→AB=1\nADS=1, W/非IO=1, W/非R=0\nDB→IR\nPC+1\n取数\nOD→AR，W/非R=0\nDB→DR\n执行\nDR→ALU=1, AX→ALU=1\nCU发出'+'=1，ALU→AX\n(5) 微命令分别占3位，4位，4位，2位。外部条件占3位，总长24位\n∴ 下址字段占24-13-3=8位 ∴控制存储器容量为256 字\n(6) 格式如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1474",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "取指: PC→AB=|, AOS=1,W/IO=1，W/R=0; PC+1; DB→IR\n取数: OD→AR，W/R=0; DB→→DR\n执行: DR→ALU=1,Ax->ALU=1; Cu发出'+'=1.ALU→AX",
+    "step_5": "微命令分别占3位，4位位，2位。外部条件占3位，总长24位\n∴下址字段占24-13-3=8位∴控制存储器容量为256字节",
+    "step_6": "控制字段: 3位, 4位, 14位, 2位\n外部条件: 3位\n下址字段: 8位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 51.0,
+        "cells_left_to_right": [
+          {
+            "text": "解: (1) a: DR b: IR, C: AR",
+            "x_center": 324.5,
+            "confidence": 0.8457905054092407
+          },
+          {
+            "text": ",d: PC",
+            "x_center": 722.5,
+            "confidence": 0.8871376514434814
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 116.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 主存M→DR，DR→IR，IR→操作控制器",
+            "x_center": 377.5,
+            "confidence": 0.9759073853492737
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 165.0,
+        "cells_left_to_right": [
+          {
+            "text": "(3取:主存M->DRDR→ALU",
+            "x_center": 260.5,
+            "confidence": 0.9027771949768066
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 204.0,
+        "cells_left_to_right": [
+          {
+            "text": "存:ALU→AC，AC→DR，DR→主右M",
+            "x_center": 365.0,
+            "confidence": 0.9322846531867981
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 246.5,
+        "cells_left_to_right": [
+          {
+            "text": "(4) 取指",
+            "x_center": 132.0,
+            "confidence": 0.9349784851074219
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 291.0,
+        "cells_left_to_right": [
+          {
+            "text": "PC→AB=|",
+            "x_center": 186.0,
+            "confidence": 0.9390969276428223
+          },
+          {
+            "text": "AOS=1,W/IO=1，W/R=0",
+            "x_center": 242.5,
+            "confidence": 0.9045449495315552
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 345.25,
+        "cells_left_to_right": [
+          {
+            "text": "PC+1",
+            "x_center": 168.5,
+            "confidence": 0.9480470418930054
+          },
+          {
+            "text": "DB→IR",
+            "x_center": 176.0,
+            "confidence": 0.9975101351737976
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 395.25,
+        "cells_left_to_right": [
+          {
+            "text": "取数",
+            "x_center": 169.0,
+            "confidence": 0.9918161034584045
+          },
+          {
+            "text": "OD→AR，W/R=0",
+            "x_center": 240.0,
+            "confidence": 0.9327245354652405
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 455.25,
+        "cells_left_to_right": [
+          {
+            "text": "执行",
+            "x_center": 167.5,
+            "confidence": 0.9983718395233154
+          },
+          {
+            "text": "DB→→DR",
+            "x_center": 188.0,
+            "confidence": 0.9208537936210632
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 500.0,
+        "cells_left_to_right": [
+          {
+            "text": "DR→ALU=1,Ax->ALU=1",
+            "x_center": 255.5,
+            "confidence": 0.9402827024459839
+          },
+          {
+            "text": "Cu发出'+'=1.ALU→AX",
+            "x_center": 276.0,
+            "confidence": 0.7596230506896973
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 545.0,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 微命令分别占3位，4位位，2位。外部条件占3位，总长24位",
+            "x_center": 453.0,
+            "confidence": 0.9675322771072388
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 583.0,
+        "cells_left_to_right": [
+          {
+            "text": "∴下址字段占24-13-3=8位∴控制存储器容量为256字节",
+            "x_center": 494.0,
+            "confidence": 0.9687464833259583
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 644.25,
+        "cells_left_to_right": [
+          {
+            "text": "(6)",
+            "x_center": 90.5,
+            "confidence": 0.9988834261894226
+          },
+          {
+            "text": "3位4位14位2位",
+            "x_center": 282.5,
+            "confidence": 0.917877197265625
+          },
+          {
+            "text": "3位",
+            "x_center": 424.0,
+            "confidence": 0.9999184012413025
+          },
+          {
+            "text": "8位",
+            "x_center": 499.5,
+            "confidence": 0.9982520341873169
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 696.5,
+        "cells_left_to_right": [
+          {
+            "text": "控制字段",
+            "x_center": 263.0,
+            "confidence": 0.9579243063926697
+          },
+          {
+            "text": "外部",
+            "x_center": 433.0,
+            "confidence": 0.6425093412399292
+          },
+          {
+            "text": "条件",
+            "x_center": 435.0,
+            "confidence": 0.9995890855789185
+          },
+          {
+            "text": "下址字段",
+            "x_center": 552.5,
+            "confidence": 0.9942529201507568
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=324.5: 解: (1) a: DR b: IR, C: AR | x=722.5: ,d: PC\nRow 2: x=377.5: (2) 主存M→DR，DR→IR，IR→操作控制器\nRow 3: x=260.5: (3取:主存M->DRDR→ALU\nRow 4: x=365.0: 存:ALU→AC，AC→DR，DR→主右M\nRow 5: x=132.0: (4) 取指\nRow 6: x=186.0: PC→AB=| | x=242.5: AOS=1,W/IO=1，W/R=0\nRow 7: x=168.5: PC+1 | x=176.0: DB→IR\nRow 8: x=169.0: 取数 | x=240.0: OD→AR，W/R=0\nRow 9: x=167.5: 执行 | x=188.0: DB→→DR\nRow 10: x=255.5: DR→ALU=1,Ax->ALU=1 | x=276.0: Cu发出'+'=1.ALU→AX\nRow 11: x=453.0: (5) 微命令分别占3位，4位位，2位。外部条件占3位，总长24位\nRow 12: x=494.0: ∴下址字段占24-13-3=8位∴控制存储器容量为256字节\nRow 13: x=90.5: (6) | x=282.5: 3位4位14位2位 | x=424.0: 3位 | x=499.5: 8位\nRow 14: x=263.0: 控制字段 | x=433.0: 外部 | x=435.0: 条件 | x=552.5: 下址字段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "a: DR, b: IR, c: AR, d: PC",
+    "step_2": "主存M→DR，DR→IR，IR→操作控制器",
+    "step_3": "取:主存M→DR→ALU；存:ALU→AC，AC→DR，DR→主存M"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "(1) a: DR . b: IR , c: AR , d: PC",
+    "step_2": "(2) 主存M→DR，DR→IR，IR→操作控制器",
+    "step_3": "(3) 取主存M→DR→ALU 存: ALU→AC，AC→DR，DR→主存M",
+    "step_4": "(4) 取指 PC→AB=1 ADS=1, W/IO=1, W/R=0 DB→IR PC+1 取数 OD→AR，W/R=0 DB→DR 执行 DR→ALU=1, Ax→ALU=1 CU发出4=1，ALU→AX",
+    "step_5": "(5) 微命令分别占3位，4位，4位，2位。外部条件占3位，总长24位 ∴ 下址字段占24-13-3=8位 ∴ 控制存储器容量为256 字",
+    "step_6": "(6) 控制字段 3位 4位 4位 2位 3位 8位 外部条件 下址字段"
+  },
+  "facts": {
+    "step_1": "(1) a: DR , b: IR , C: AR , d: PC",
+    "step_2": "主存M→DR，DR→IR，IR→操作控制器",
+    "step_3": "取主存M→DR，DR→ALU\n存: ALU→AC，AC→DR，DR→主存M",
+    "step_4": "取指\nPC→AB=1\nADS=1, W/非IO=1, W/非R=0\nDB→IR\nPC+1\n取数\nOD→AR，W/非R=0\nDB→DR\n执行\nDR→ALU=1, AX→ALU=1\nCU发出'+'=1，ALU→AX",
+    "step_5": "微命令分别占3位，4位，4位，2位。外部条件占3位，总长24位\n∴ 下址字段占24-13-3=8位 ∴控制存储器容量为256 字",
+    "step_6": "格式如图所示"
+  }
+}

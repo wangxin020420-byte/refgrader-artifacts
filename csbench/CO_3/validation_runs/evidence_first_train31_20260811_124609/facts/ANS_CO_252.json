@@ -1,0 +1,49 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:09:14.931483",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_252.png",
+  "image_sha256": "23cf5bb6726811a22ed4d4d370c09a1ddf6b4f70270755da5c48a9ee1dfe2583",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "(一)[X]补=0011 0110\n[y]补=0101 0100\n[z]补=1101 0101\nx-2y\n[y]补=1010 1100\n2[-y]补=0101 1000\n符号位溢出，0F标志位为1\n[x-2y]补=[x]补+2[-y]补=1000 1110\n=1000 1110\n|x-2y|=(0111 0010)2=72H\n加上溢出的符号位\nx-2y = -72H\n(4)10=(0100)2，看作原码，基本移2位\n[x÷4]补=0000 1101\n2[Z]补=1010 1010\n符号位溢出，0F标志位为1\n[(x÷4)+2z]补=0000 1101+1010 1010\n=1011 0111\n(x÷4)+2z = -47H ",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_252",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": {
+      "values": "[x]补=0011 0110；[y]补=0101 0100；[z]补=1101 0101；[y]补=1010 1100；2[-y]补=0101 1000；[x-2y]补=[x]补+2[-y]补=1000 1110；=1000 1110；|x-2y|=(0111 0010)2=72H；x-2y = -72H",
+      "formula_trace": "x-2y；[x-2y]补=[x]补+2[-y]补；加上溢出的符号位",
+      "overflow_judgment": "符号位溢出，0F标志位为1"
+    },
+    "step_2": {
+      "values": "(4)10=(0100)2；[x÷4]补=0000 1101；2[Z]补=1010 1010；[(x÷4)+2z]补=0000 1101+1010 1010；=1011 0111；(x÷4)+2z = -47H",
+      "formula_trace": "看作原码，基本移2位；[(x÷4)+2z]补=0000 1101+1010 1010",
+      "overflow_judgment": "符号位溢出，0F标志位为1"
+    }
+  }
+}

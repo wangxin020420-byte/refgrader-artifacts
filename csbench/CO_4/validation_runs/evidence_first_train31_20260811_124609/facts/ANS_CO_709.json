@@ -1,0 +1,296 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:28:41.308672",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_709.png",
+  "image_sha256": "77c631074e2072b79c5d6d7df5333c1ed08d0e3497a515a6568ab37cb58d4f4a",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_709.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 27,
+    "accepted_token_count": 27,
+    "mean_confidence": 0.802039,
+    "min_confidence": 0.5,
+    "joined_text": "2. （20分）(1\n21\n组数32÷2=16组\n(2D07FF11)\n24:16 组索14位\n= (0/0 1101 0000 0111 111 (111)1\n组学引为0000\n2k:2“∴块内地址/位\n生存tay号为。1011010与块0,1tag号不符\n8MB、2B主存比址23位\n∴E法访问\n5. 23-4-11:8位.\n块内地址\n(7F0057H1\n∴当存地址区地址\n13\n8任\n4\n11位\n= 111 111 0000 0000 0101 011\n组索31为000\nCache 北址 区地址块内地址\n区地址1…11/10与块1相区西\n有效化位\n8位\n1位.\n可以治问",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.061257,
+      "very_dark_pixel_ratio": 0.037708,
+      "lower_region_dark_pixel_ratio": 0.063145,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)组数32/2=16组\n2^4=16 组索引4位\n2^k=2^11 ∴块内地址11位\n8MB=2^23 B ∴主存地址23位\n∴3-4-11=8位\n∴主存地址如图所示\nCache地址如图所示\n(2)12D07FFH\n=(010 1101 0000 0111 1111 1111)\n组索引为0000\n主相tag号为010 1101 0与块0,1 tag号不符\n∴无法访问\n(7F 00 57H)\n=111 1111 0000 0000 0101 0111\n组索引为0000\n区地址111 11110 与块1相匹配\n可以访问",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_709",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "学生手写内容明确给出了Cache组数的公式与计算结果：“组数32÷2=16组”，并进一步推导得出“组索14位”（对应OCR文本：组数32÷2=16组，24:16 组索14位）。",
+    "step_4": "学生手写的主存地址格式定义包含以下内容及字段排布：总长度为“主存比址23位”；字段的排列关系与位数为“当存地址区地址 块内地址”（对应OCR：“∴当存地址区地址 块内地址”），其中区地址（组地址）注明为“4 11位”（对应23-4-11:8位），块内地址为“11位”。",
+    "step_5": "学生手写的Cache地址格式按从左到右的顺序定义为：“Cache 北址 区地址 块内地址”（对应OCR：“Cache 北址 区地址块内地址”），并在下方补充了相关字段的位数排布：“有效化位 8位 1位.”（结合行排布为8位与1位）。",
+    "step_6": "针对地址(2D07FFH)，学生的计算过程为“= (0/0 1101 0000 0111 111 (111)1”，得出的索引值为“组学引为0000”。最终给出的判定词为“∴E法访问”（无法访问），相关推导理由文本为“生存tay号为。1011010与块0,1tag号不符”。",
+    "step_7": "针对地址(7F0057H)，学生的展开计算式为“= 111 111 0000 0000 0101 011”，得出的索引值为“组索31为000”。推导理由文本为“区地址1…11/10与块1相区西”，最终给出的判定词为“可以治问”（可以访问）。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 57.88,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）(1",
+            "x_center": 80.0,
+            "confidence": 0.8655723333358765
+          },
+          {
+            "text": "组数32÷2=16组",
+            "x_center": 210.0,
+            "confidence": 0.8979366421699524
+          },
+          {
+            "text": "21",
+            "x_center": 576.5,
+            "confidence": 0.9698524475097656
+          },
+          {
+            "text": "(2D07FF11)",
+            "x_center": 637.0,
+            "confidence": 0.8479691743850708
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 127.0,
+        "cells_left_to_right": [
+          {
+            "text": "24:16 组索14位",
+            "x_center": 226.5,
+            "confidence": 0.8937578797340393
+          },
+          {
+            "text": "组学引为0000",
+            "x_center": 640.0,
+            "confidence": 0.8737488985061646
+          },
+          {
+            "text": "= (0/0 1101 0000 0111 111 (111)1",
+            "x_center": 702.0,
+            "confidence": 0.8164910674095154
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 187.67,
+        "cells_left_to_right": [
+          {
+            "text": "2k:2“∴块内地址/位",
+            "x_center": 252.5,
+            "confidence": 0.745389461517334
+          },
+          {
+            "text": "8MB、2B主存比址23位",
+            "x_center": 284.5,
+            "confidence": 0.8631458878517151
+          },
+          {
+            "text": "生存tay号为。1011010与块0,1tag号不符",
+            "x_center": 725.0,
+            "confidence": 0.8610677123069763
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 263.88,
+        "cells_left_to_right": [
+          {
+            "text": "5. 23-4-11:8位.",
+            "x_center": 239.0,
+            "confidence": 0.8223022818565369
+          },
+          {
+            "text": "块内地址",
+            "x_center": 504.5,
+            "confidence": 0.8634046316146851
+          },
+          {
+            "text": "∴E法访问",
+            "x_center": 646.0,
+            "confidence": 0.6473499536514282
+          },
+          {
+            "text": "(7F0057H1",
+            "x_center": 648.5,
+            "confidence": 0.9568941593170166
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 324.17,
+        "cells_left_to_right": [
+          {
+            "text": "∴当存地址区地址",
+            "x_center": 243.5,
+            "confidence": 0.77872633934021
+          },
+          {
+            "text": "8任",
+            "x_center": 312.5,
+            "confidence": 0.6679252982139587
+          },
+          {
+            "text": "13",
+            "x_center": 417.0,
+            "confidence": 0.6188592314720154
+          },
+          {
+            "text": "4",
+            "x_center": 420.5,
+            "confidence": 0.9927444458007812
+          },
+          {
+            "text": "11位",
+            "x_center": 485.5,
+            "confidence": 0.8243374228477478
+          },
+          {
+            "text": "= 111 111 0000 0000 0101 011",
+            "x_center": 722.0,
+            "confidence": 0.878606379032135
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 396.33,
+        "cells_left_to_right": [
+          {
+            "text": "Cache 北址 区地址块内地址",
+            "x_center": 310.5,
+            "confidence": 0.891207218170166
+          },
+          {
+            "text": "组索31为000",
+            "x_center": 651.5,
+            "confidence": 0.6867663860321045
+          },
+          {
+            "text": "区地址1…11/10与块1相区西",
+            "x_center": 726.5,
+            "confidence": 0.6499982476234436
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 457.62,
+        "cells_left_to_right": [
+          {
+            "text": "有效化位",
+            "x_center": 293.0,
+            "confidence": 0.6013215184211731
+          },
+          {
+            "text": "8位",
+            "x_center": 369.0,
+            "confidence": 0.6104117631912231
+          },
+          {
+            "text": "1位.",
+            "x_center": 447.0,
+            "confidence": 0.7768440246582031
+          },
+          {
+            "text": "可以治问",
+            "x_center": 706.0,
+            "confidence": 0.7524248361587524
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=80.0: 2. （20分）(1 | x=210.0: 组数32÷2=16组 | x=576.5: 21 | x=637.0: (2D07FF11)\nRow 2: x=226.5: 24:16 组索14位 | x=640.0: 组学引为0000 | x=702.0: = (0/0 1101 0000 0111 111 (111)1\nRow 3: x=252.5: 2k:2“∴块内地址/位 | x=284.5: 8MB、2B主存比址23位 | x=725.0: 生存tay号为。1011010与块0,1tag号不符\nRow 4: x=239.0: 5. 23-4-11:8位. | x=504.5: 块内地址 | x=646.0: ∴E法访问 | x=648.5: (7F0057H1\nRow 5: x=243.5: ∴当存地址区地址 | x=312.5: 8任 | x=417.0: 13 | x=420.5: 4 | x=485.5: 11位 | x=722.0: = 111 111 0000 0000 0101 011\nRow 6: x=310.5: Cache 北址 区地址块内地址 | x=651.5: 组索31为000 | x=726.5: 区地址1…11/10与块1相区西\nRow 7: x=293.0: 有效化位 | x=369.0: 8位 | x=447.0: 1位. | x=706.0: 可以治问"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "8MB、2^23，主存地址23位",
+    "step_2": "2^k=2^11，块内地址11位",
+    "step_3": "组数2^4=16组，组号4位",
+    "step_4": "主存地址 [区地址 | 组号 | 块内地址] 8位 4位 11位",
+    "step_5": "Cache地址 [区地址 | 块内地址] 8位 11位",
+    "step_6": "(2D07FFH) = (0101 1010 0000 0111 1111 1111)B 组索引为0000 主存tag号为01011010与块0,1 tag号不符 ∴无法访问",
+    "step_7": "(7F0057H) = (111 1111 0000 0000 0101 0111)B 组索引为0000 区地址11111110与块1相匹配 可以访问"
+  },
+  "facts": {
+    "step_1": "8MB=2^23 B ∴主存地址23位",
+    "step_2": "2^k=2^11 ∴块内地址11位",
+    "step_3": "组数32/2=16组\n2^4=16 组索引4位",
+    "step_4": "主存地址如图所示\n注：文本提到“3-4-11=8位”，但完整主存地址格式需要查看图像",
+    "step_5": "Cache地址如图所示\n需要查看图像",
+    "step_6": "12D07FFH\n=(010 1101 0000 0111 1111 1111)\n组索引为0000\n主相tag号为010 1101 0与块0,1 tag号不符\n∴无法访问",
+    "step_7": "(7F 00 57H)\n=111 1111 0000 0000 0101 0111\n组索引为0000\n区地址111 11110 与块1相匹配\n可以访问"
+  }
+}

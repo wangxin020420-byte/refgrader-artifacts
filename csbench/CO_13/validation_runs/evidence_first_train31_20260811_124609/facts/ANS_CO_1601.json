@@ -1,0 +1,352 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T03:29:13.624129",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_13/ANS_CO_1601.jpg",
+  "image_sha256": "6ed67ab42a05130598305ad7121835fefb183327e9e53be44ca6f5c1c57d584d",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_13/ANS_CO_1601.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 36,
+    "accepted_token_count": 36,
+    "mean_confidence": 0.970974,
+    "min_confidence": 0.5,
+    "joined_text": "6.\n(2)解:由题可知\n(1)答：当外设提出中断请求时\n由于中断请求硬件\n若CPU上的中断允许标记IF=0时，\n优先级为A、B、C.D.\n则CPU此时不会响应中断，\nCPU处理中断的顺序\n若IF=1时，则有\n为C、B、D、A\n关中断\n保护现场\nA、B、C、D对应的屏蔽字为\nMO Mc MB MA\n地址入栈\nA 0 0 0 1\n开中断\n中断服务过程\nC\n1111\n1 0 0 1\n关中断\n且CPU执行程序的轨迹为\n现场还原\nD\n地址出栈\nD\nC\n开中断\nC\nB\nB\nA\nA\n用户程序\nABCD同时到来",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.038005,
+      "very_dark_pixel_ratio": 0.025842,
+      "lower_region_dark_pixel_ratio": 0.026611,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)答：当外设提出中断请求时,\n若CPU上的中断允许标记IF=0时\n则CPU此时不会响应中断,\n若IF=1时 则有\n关中断->保护现场->地址入栈->开中断->中断服务过程->关中断->现场还原->地址出栈->开中断\n(2)解：由题可知\n由于中断请求硬件优先级为A、B、C、D。CPU处理中断的顺序为C、B、D、A\n所以A，B，C，D对应的屏蔽字为：A:0001 B:1011 C:1111 D:1001\nCPU程序的轨迹如图所示",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1601",
+    "question_id": "CO_13",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": "答：当外设提出中断请求时：\n若CPU上的中断允许标记IF=0时，则CPU此时不会响应中断，\n若IF=1时，则有：\n关中断\n保护现场\n地址入栈\n开中断\n中断服务过程\n关中断\n现场还原\n地址出栈\n开中断",
+    "step_3": "由题可知：\n由于中断请求硬件优先级为A、B、C.D. CPU处理中断的顺序为C、B、D、A\nA、B、C、D对应的屏蔽字为\nMO Mc MB MA\nA 0 0 0 1\nC 1111\n1 0 0 1\n且CPU执行程序的轨迹为\n轨迹包含以下节点标记：\nC\nD\nC\nD\nA\nB\nB\nA\n用户程序\nABCD同时到来"
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete handwritten descriptive text outlining the process of CPU interrupt response. Preserve any specific sequence of operations, keywords, and the exact chronological order of steps as written by the student."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten content representing the CPU execution and interrupt processing trajectory or timeline. Preserve all arrows, letters, numbers, nodes, spatial relationships, and directional lines exactly as drawn by the student."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 55.5,
+        "cells_left_to_right": [
+          {
+            "text": "6.",
+            "x_center": 20.0,
+            "confidence": 0.9999732971191406
+          },
+          {
+            "text": "(1)答：当外设提出中断请求时",
+            "x_center": 147.0,
+            "confidence": 0.954764187335968
+          },
+          {
+            "text": "(2)解:由题可知",
+            "x_center": 446.0,
+            "confidence": 0.9497863054275513
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 112.83,
+        "cells_left_to_right": [
+          {
+            "text": "若CPU上的中断允许标记IF=0时，",
+            "x_center": 164.5,
+            "confidence": 0.9506514072418213
+          },
+          {
+            "text": "由于中断请求硬件",
+            "x_center": 456.5,
+            "confidence": 0.9754420518875122
+          },
+          {
+            "text": "优先级为A、B、C.D.",
+            "x_center": 457.0,
+            "confidence": 0.9088054299354553
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 165.83,
+        "cells_left_to_right": [
+          {
+            "text": "若IF=1时，则有",
+            "x_center": 89.5,
+            "confidence": 0.9833365678787231
+          },
+          {
+            "text": "则CPU此时不会响应中断，",
+            "x_center": 141.5,
+            "confidence": 0.9952207803726196
+          },
+          {
+            "text": "CPU处理中断的顺序",
+            "x_center": 469.5,
+            "confidence": 0.9967877268791199
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 210.5,
+        "cells_left_to_right": [
+          {
+            "text": "关中断",
+            "x_center": 126.5,
+            "confidence": 0.9979152679443359
+          },
+          {
+            "text": "为C、B、D、A",
+            "x_center": 428.5,
+            "confidence": 0.9141057133674622
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 260.0,
+        "cells_left_to_right": [
+          {
+            "text": "保护现场",
+            "x_center": 129.0,
+            "confidence": 0.9997664093971252
+          },
+          {
+            "text": "MO Mc MB MA",
+            "x_center": 479.0,
+            "confidence": 0.8166570663452148
+          },
+          {
+            "text": "A、B、C、D对应的屏蔽字为",
+            "x_center": 484.0,
+            "confidence": 0.9407380223274231
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 300.0,
+        "cells_left_to_right": [
+          {
+            "text": "地址入栈",
+            "x_center": 125.0,
+            "confidence": 0.9925110340118408
+          },
+          {
+            "text": "A 0 0 0 1",
+            "x_center": 457.5,
+            "confidence": 0.9684447050094604
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 363.62,
+        "cells_left_to_right": [
+          {
+            "text": "开中断",
+            "x_center": 125.5,
+            "confidence": 0.9935540556907654
+          },
+          {
+            "text": "中断服务过程",
+            "x_center": 134.0,
+            "confidence": 0.9704770445823669
+          },
+          {
+            "text": "C",
+            "x_center": 387.0,
+            "confidence": 0.9962806105613708
+          },
+          {
+            "text": "1111",
+            "x_center": 475.5,
+            "confidence": 0.8545694947242737
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 412.0,
+        "cells_left_to_right": [
+          {
+            "text": "关中断",
+            "x_center": 128.0,
+            "confidence": 0.9990559220314026
+          },
+          {
+            "text": "1 0 0 1",
+            "x_center": 472.0,
+            "confidence": 0.9042782783508301
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 457.0,
+        "cells_left_to_right": [
+          {
+            "text": "现场还原",
+            "x_center": 130.0,
+            "confidence": 0.9922499656677246
+          },
+          {
+            "text": "且CPU执行程序的轨迹为",
+            "x_center": 491.0,
+            "confidence": 0.9977870583534241
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 513.5,
+        "cells_left_to_right": [
+          {
+            "text": "地址出栈",
+            "x_center": 129.5,
+            "confidence": 0.981151819229126
+          },
+          {
+            "text": "C",
+            "x_center": 352.5,
+            "confidence": 0.9988963603973389
+          },
+          {
+            "text": "D",
+            "x_center": 354.5,
+            "confidence": 0.9997448325157166
+          },
+          {
+            "text": "C",
+            "x_center": 474.0,
+            "confidence": 0.9945871829986572
+          },
+          {
+            "text": "D",
+            "x_center": 573.5,
+            "confidence": 0.9992573857307434
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 566.6,
+        "cells_left_to_right": [
+          {
+            "text": "开中断",
+            "x_center": 130.0,
+            "confidence": 0.9962788224220276
+          },
+          {
+            "text": "A",
+            "x_center": 353.0,
+            "confidence": 0.9999758005142212
+          },
+          {
+            "text": "B",
+            "x_center": 354.0,
+            "confidence": 0.9999464750289917
+          },
+          {
+            "text": "B",
+            "x_center": 523.0,
+            "confidence": 0.9999510049819946
+          },
+          {
+            "text": "A",
+            "x_center": 622.0,
+            "confidence": 0.9999446868896484
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 619.5,
+        "cells_left_to_right": [
+          {
+            "text": "用户程序",
+            "x_center": 339.5,
+            "confidence": 0.9995107054710388
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 662.5,
+        "cells_left_to_right": [
+          {
+            "text": "ABCD同时到来",
+            "x_center": 457.5,
+            "confidence": 0.9326492547988892
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=20.0: 6. | x=147.0: (1)答：当外设提出中断请求时 | x=446.0: (2)解:由题可知\nRow 2: x=164.5: 若CPU上的中断允许标记IF=0时， | x=456.5: 由于中断请求硬件 | x=457.0: 优先级为A、B、C.D.\nRow 3: x=89.5: 若IF=1时，则有 | x=141.5: 则CPU此时不会响应中断， | x=469.5: CPU处理中断的顺序\nRow 4: x=126.5: 关中断 | x=428.5: 为C、B、D、A\nRow 5: x=129.0: 保护现场 | x=479.0: MO Mc MB MA | x=484.0: A、B、C、D对应的屏蔽字为\nRow 6: x=125.0: 地址入栈 | x=457.5: A 0 0 0 1\nRow 7: x=125.5: 开中断 | x=134.0: 中断服务过程 | x=387.0: C | x=475.5: 1111\nRow 8: x=128.0: 关中断 | x=472.0: 1 0 0 1\nRow 9: x=130.0: 现场还原 | x=491.0: 且CPU执行程序的轨迹为\nRow 10: x=129.5: 地址出栈 | x=352.5: C | x=354.5: D | x=474.0: C | x=573.5: D\nRow 11: x=130.0: 开中断 | x=353.0: A | x=354.0: B | x=523.0: B | x=622.0: A\nRow 12: x=339.5: 用户程序\nRow 13: x=457.5: ABCD同时到来"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "当外设提出中断请求时，若CPU上的中断允许标记IF=0时，则CPU此时不会响应中断，若IF=1时，则有 关中断 保护现场 地址入栈 开中断 中断服务过程 关中断 现场还原 地址出栈 开中断",
+    "step_2": "A 0 0 0 1\nB 1 0 1 1\nC 1 1 1 1\nD 1 0 0 1",
+    "step_3": "用户程序 → ABCD同时到来 → C → B → D → A"
+  },
+  "facts": {
+    "step_1": "当外设提出中断请求时, 若CPU上的中断允许标记IF=0时 则CPU此时不会响应中断, 若IF=1时 则有 关中断->保护现场->地址入栈->开中断->中断服务过程->关中断->现场还原->地址出栈->开中断",
+    "step_2": "A:0001 B:1011 C:1111 D:1001",
+    "step_3": "由题可知：\n由于中断请求硬件优先级为A、B、C.D. CPU处理中断的顺序为C、B、D、A\nA、B、C、D对应的屏蔽字为\nMO Mc MB MA\nA 0 0 0 1\nC 1111\n1 0 0 1\n且CPU执行程序的轨迹为\n轨迹包含以下节点标记：\nC\nD\nC\nD\nA\nB\nB\nA\n用户程序\nABCD同时到来"
+  }
+}

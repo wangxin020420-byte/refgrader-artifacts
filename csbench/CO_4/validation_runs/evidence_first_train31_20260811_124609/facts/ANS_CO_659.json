@@ -1,0 +1,385 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-25T02:14:49.533722",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_659.jpg",
+  "image_sha256": "bd1bf133ab1d30df530a0e8417ccf6ca196ea698012e73467ff8bb1642443f47",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_659.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 36,
+    "accepted_token_count": 36,
+    "mean_confidence": 0.895504,
+    "min_confidence": 0.5,
+    "joined_text": "一\n2. （20分）\n11) 解： Cache每块2kB=2B. 块内地址为11位\n每组块\n组内块号为1位\nCache中最多放32个主有块即32/2=16=24组 组号4位\n主有为8MB=23B.标记23-4-11=8位\n设计如下\nCache\n主存：\n中=\n4\niP\n1\n8\n4\n组号组内块号块内地址\n标记.组号\n块内地址\nCache.\n(2)解：①CPU送出的地址为2D07FFH时\n② CPU送出的地址为7F0057H时\n即0010 1101 0000 0111 1111 1111\n即0111 1111 0000 0000 01010111\n!组号\n组号\n标记为01011010. 第0组\n标记为1111 1110.第0组\n对表可知，标记为01011010时Cache块为t块2.\n对表可知块标记为1,11 1110时\n属于第组\nCachek可为1也可为，\n+5\nh在集\n故不能在Cache中访间到法单元的数据\n故能在Cache中访用到法单元的数据",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.112939,
+      "very_dark_pixel_ratio": 0.081066,
+      "lower_region_dark_pixel_ratio": 0.122613,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1)解：Cache每块大小=2¹¹B，块内地址为11位\n每组2块，组内块号为1位\nCache中最多放32个主存块，即32/2=16=2⁴组，组号4位\n主存为8MB=2²³B，标记为23-4-11=8位\n设计如下\nCache地址格式示意图、主存地址格式示意图如图所示\n\n(1)解：①CPU送出的地址为2D07FFH时\n即0010 1101 0000 0111 1111 1111\n标记为0101 1010，第0组\n对表可知，块标记为0101 1010时，Cache块为块2，属于第0组\n故不能在Cache中访问到该单元的数据\n\n②CPU送出的地址为7F0057H时\n即0111 1111 0000 0|000 0|101 0111\n                    组号\n标记为1111 1110，第0组\n对表可知，块标记为1111 1110时，Cache块可为块1也可为块3\n块1在第2组\n故能在Cache中访问到该单元的数据",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_659",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "“Cache中最多放32个主有块即32/2=16=24组 组号4位”",
+    "step_4": "字段顺序与位数为：标记（8位）、组号（4位）、块内地址（11位）。（对应文本：“主存：”/“8”/“标记.组号”/“4”/“块内地址”）",
+    "step_5": "字段顺序与位数为：组号（4位）、组内块号（1位）、块内地址（11位）。（对应文本：“Cache”/“4”/“组号组内块号块内地址”/“1”）",
+    "step_6": "判定为：不能在Cache中访问到该单元的数据。计算与推理为：即0010 1101 0000 0111 1111 1111，标记为01011010，第0组；对表可知，标记为01011010时Cache块为t块2，属于第组。",
+    "step_7": "判定为：能在Cache中访用到该单元的数据。计算与推理为：即0111 1111 0000 0000 01010111，组号；标记为1111 1110，第0组；对表可知块标记为1,11 1110时Cachek可为1也可为。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content regarding the number of bits for the Cache set number. Ask for the exact formula, computation trace, or final numerical value written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content defining the main memory address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content defining the Cache address format. Ask for the exact sequence, mapping relation, or table entry written, preserving any arrows, separators, bit counts, and order exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 2D07FFH. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    },
+    {
+      "id": "step_7",
+      "instruction": "Extract the student's concrete handwritten content for the hit/miss judgment of the hexadecimal address 7F0057H. Ask for the explicit judgment word (hit or miss), the binary or hexadecimal tag/set fields computed, and the exact reasoning or substitution relation written. Preserve all leading zeros, suffixes (like H or B), and bit groupings exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 12.5,
+        "cells_left_to_right": [
+          {
+            "text": "一",
+            "x_center": 222.0,
+            "confidence": 0.9946388602256775
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 67.75,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 53.5,
+            "confidence": 0.9151287078857422
+          },
+          {
+            "text": "11) 解： Cache每块2kB=2B. 块内地址为11位",
+            "x_center": 225.5,
+            "confidence": 0.8500834703445435
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 115.0,
+        "cells_left_to_right": [
+          {
+            "text": "每组块",
+            "x_center": 135.0,
+            "confidence": 0.9163196682929993
+          },
+          {
+            "text": "组内块号为1位",
+            "x_center": 353.5,
+            "confidence": 0.9143920540809631
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 149.5,
+        "cells_left_to_right": [
+          {
+            "text": "Cache中最多放32个主有块即32/2=16=24组 组号4位",
+            "x_center": 326.0,
+            "confidence": 0.9193806648254395
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 187.0,
+        "cells_left_to_right": [
+          {
+            "text": "主有为8MB=23B.标记23-4-11=8位",
+            "x_center": 282.0,
+            "confidence": 0.9305826425552368
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 222.0,
+        "cells_left_to_right": [
+          {
+            "text": "设计如下",
+            "x_center": 74.0,
+            "confidence": 0.9638674259185791
+          },
+          {
+            "text": "Cache",
+            "x_center": 224.0,
+            "confidence": 0.9997674226760864
+          },
+          {
+            "text": "主存：",
+            "x_center": 520.0,
+            "confidence": 0.6931653618812561
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 262.25,
+        "cells_left_to_right": [
+          {
+            "text": "4",
+            "x_center": 112.5,
+            "confidence": 0.999735414981842
+          },
+          {
+            "text": "1",
+            "x_center": 151.5,
+            "confidence": 0.9819763898849487
+          },
+          {
+            "text": "中=",
+            "x_center": 213.0,
+            "confidence": 0.8088517189025879
+          },
+          {
+            "text": "8",
+            "x_center": 351.0,
+            "confidence": 0.9999908208847046
+          },
+          {
+            "text": "4",
+            "x_center": 417.5,
+            "confidence": 0.9999833106994629
+          },
+          {
+            "text": "iP",
+            "x_center": 496.5,
+            "confidence": 0.7447277903556824
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 305.62,
+        "cells_left_to_right": [
+          {
+            "text": "组号组内块号块内地址",
+            "x_center": 178.0,
+            "confidence": 0.9457781910896301
+          },
+          {
+            "text": "标记.组号",
+            "x_center": 389.0,
+            "confidence": 0.9555837512016296
+          },
+          {
+            "text": "Cache.",
+            "x_center": 425.5,
+            "confidence": 0.910085141658783
+          },
+          {
+            "text": "块内地址",
+            "x_center": 509.5,
+            "confidence": 0.9901571273803711
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 360.25,
+        "cells_left_to_right": [
+          {
+            "text": "(2)解：①CPU送出的地址为2D07FFH时",
+            "x_center": 205.0,
+            "confidence": 0.9101108312606812
+          },
+          {
+            "text": "② CPU送出的地址为7F0057H时",
+            "x_center": 703.0,
+            "confidence": 0.8623483777046204
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 416.12,
+        "cells_left_to_right": [
+          {
+            "text": "即0010 1101 0000 0111 1111 1111",
+            "x_center": 316.0,
+            "confidence": 0.924339234828949
+          },
+          {
+            "text": "!组号",
+            "x_center": 320.5,
+            "confidence": 0.735262393951416
+          },
+          {
+            "text": "即0111 1111 0000 0000 01010111",
+            "x_center": 770.5,
+            "confidence": 0.8596892356872559
+          },
+          {
+            "text": "组号",
+            "x_center": 779.5,
+            "confidence": 0.9978690147399902
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 462.0,
+        "cells_left_to_right": [
+          {
+            "text": "标记为01011010. 第0组",
+            "x_center": 249.5,
+            "confidence": 0.9194217920303345
+          },
+          {
+            "text": "标记为1111 1110.第0组",
+            "x_center": 737.0,
+            "confidence": 0.8201839923858643
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 524.12,
+        "cells_left_to_right": [
+          {
+            "text": "对表可知，标记为01011010时Cache块为t块2.",
+            "x_center": 304.0,
+            "confidence": 0.9211515784263611
+          },
+          {
+            "text": "属于第组",
+            "x_center": 408.5,
+            "confidence": 0.8609796166419983
+          },
+          {
+            "text": "对表可知块标记为1,11 1110时",
+            "x_center": 711.0,
+            "confidence": 0.8605867028236389
+          },
+          {
+            "text": "Cachek可为1也可为，",
+            "x_center": 776.0,
+            "confidence": 0.8200273513793945
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 567.67,
+        "cells_left_to_right": [
+          {
+            "text": "故不能在Cache中访间到法单元的数据",
+            "x_center": 281.0,
+            "confidence": 0.9306153655052185
+          },
+          {
+            "text": "+5",
+            "x_center": 674.0,
+            "confidence": 0.9667202830314636
+          },
+          {
+            "text": "h在集",
+            "x_center": 785.5,
+            "confidence": 0.5014888644218445
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 599.0,
+        "cells_left_to_right": [
+          {
+            "text": "故能在Cache中访用到法单元的数据",
+            "x_center": 727.0,
+            "confidence": 0.9131653308868408
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=222.0: 一\nRow 2: x=53.5: 2. （20分） | x=225.5: 11) 解： Cache每块2kB=2B. 块内地址为11位\nRow 3: x=135.0: 每组块 | x=353.5: 组内块号为1位\nRow 4: x=326.0: Cache中最多放32个主有块即32/2=16=24组 组号4位\nRow 5: x=282.0: 主有为8MB=23B.标记23-4-11=8位\nRow 6: x=74.0: 设计如下 | x=224.0: Cache | x=520.0: 主存：\nRow 7: x=112.5: 4 | x=151.5: 1 | x=213.0: 中= | x=351.0: 8 | x=417.5: 4 | x=496.5: iP\nRow 8: x=178.0: 组号组内块号块内地址 | x=389.0: 标记.组号 | x=425.5: Cache. | x=509.5: 块内地址\nRow 9: x=205.0: (2)解：①CPU送出的地址为2D07FFH时 | x=703.0: ② CPU送出的地址为7F0057H时\nRow 10: x=316.0: 即0010 1101 0000 0111 1111 1111 | x=320.5: !组号 | x=770.5: 即0111 1111 0000 0000 01010111 | x=779.5: 组号\nRow 11: x=249.5: 标记为01011010. 第0组 | x=737.0: 标记为1111 1110.第0组\nRow 12: x=304.0: 对表可知，标记为01011010时Cache块为t块2. | x=408.5: 属于第组 | x=711.0: 对表可知块标记为1,11 1110时 | x=776.0: Cachek可为1也可为，\nRow 13: x=281.0: 故不能在Cache中访间到法单元的数据 | x=674.0: +5 | x=785.5: h在集\nRow 14: x=727.0: 故能在Cache中访用到法单元的数据"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6",
+    "step_7"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "23位",
+    "step_2": "11位",
+    "step_3": "4位",
+    "step_4": "标记8位 组号4位 块内偏移11位",
+    "step_5": "组号4位 块内块号1位 块内偏移11位",
+    "step_6": "不能在Cache中访问到该单元的数据",
+    "step_7": "能在Cache中访问到该单元的数据"
+  },
+  "facts": {
+    "step_1": "主存为8MB=2²³B",
+    "step_2": "Cache每块大小=2¹¹B，块内地址为11位",
+    "step_3": "每组2块，组内块号为1位；Cache中最多放32个主存块，即32/2=16=2⁴组，组号4位",
+    "step_4": "字段顺序与位数为：标记（8位）、组号（4位）、块内地址（11位）。（对应文本：“主存：”/“8”/“标记.组号”/“4”/“块内地址”）",
+    "step_5": "字段顺序与位数为：组号（4位）、组内块号（1位）、块内地址（11位）。（对应文本：“Cache”/“4”/“组号组内块号块内地址”/“1”）",
+    "step_6": "CPU送出的地址为2D07FFH时，即0010 1101 0000 0111 1111 1111，标记为0101 1010，第0组。对表可知，块标记为0101 1010时，Cache块为块2，属于第0组。故不能在Cache中访问到该单元的数据",
+    "step_7": "CPU送出的地址为7F0057H时，即0111 1111 0000 0|000 0|101 0111（组号），标记为1111 1110，第0组。对表可知，块标记为1111 1110时，Cache块可为块1也可为块3，块1在第2组。故能在Cache中访问到该单元的数据"
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-07-27T01:24:12.208828",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1421.jpg",
+  "image_sha256": "c8c4e0418ea6ad7699186ab9ac13d20f683a03e5f1cec41e018b05261243be15",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1421.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 20,
+    "accepted_token_count": 19,
+    "mean_confidence": 0.889053,
+    "min_confidence": 0.5,
+    "joined_text": "(1) d:数据缓冲寄存器\n5\nb： 指令寄存器\nC: 地址寄存器\nd: 升程序计数器\n(2) 主存→数据缓冲寄存器→指令寄存器→操作控制器\n(3)主存取数据到数据缓冲寄存器，然后经ALU将第一次取出的数据暂\n存在AC中，然后再伏主存取出别一组数组，两组数据在ALU中相加，\n并将结果转存至AC，再经AC送往数据缓冲等存器，最左在八主存。\n(4) AOD→AC\n3\n16\nADNAXAC→ALU\n控制字段外部降件下址字段\nALU→Ae\n16)\n如右金\n(5) 采用字段直接编译法，微长度分别为\n3.4,4,2.故故总长为3+4+4+2+3=16.故存储器容量为216=64kB",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.114286,
+      "very_dark_pixel_ratio": 0.073655,
+      "lower_region_dark_pixel_ratio": 0.128068,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "（1）\na：数据缓冲寄存器\nb：指令寄存器\nc：地址寄存器\nd：程序计数器\n\n（2）\n主存→数据缓冲寄存器→指令寄存器→操作控制器\n\n（3）\n主存取数据到数据缓冲寄存器，然后经ALU将第一次取出的数据暂存在AC中，然后再从主存取出另一组数，两组数据在ALU中相加，并将结果转存至AC，再经AC送往数据缓冲寄存器，最后存入主存。\n\n（4）\nOD→AC\n(AX,AC)→ALU\nALU→AC\n\n（5）\n采用字段直接编译法，微指令分别为3，4，4，2，故总长为3+4+4+2+3=16，故存储器容量为2^16=64KB\n\n（6）表格如图所示。\n\n（8）表格如图所示。",
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1421",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_4": "(4) AOD→AC，ADNAXAC→ALU，ALU→Ae",
+    "step_5": "3.4,4,2.故故总长为3+4+4+2+3=16.故存储器容量为216=64kB",
+    "step_6": "表格结构不清晰"
+  },
+  "table_checklist": [
+    {
+      "id": "step_4",
+      "instruction": "Extract the concrete handwritten data path sequences for the ADD instruction execution written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the concrete handwritten formulas, substitution relations, and computation traces used by the student to calculate the control memory capacity. Preserve any binary values, leading zeros, suffixes, groupings, and mathematical separators exactly as written."
+    },
+    {
+      "id": "step_6",
+      "instruction": "Extract the concrete handwritten microinstruction format design and the table entries for the bit lengths of each field written by the student. Preserve any numbers, binary values, leading zeros, suffixes, groupings, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 40.5,
+        "cells_left_to_right": [
+          {
+            "text": "5",
+            "x_center": 21.5,
+            "confidence": 0.9972403049468994
+          },
+          {
+            "text": "(1) d:数据缓冲寄存器",
+            "x_center": 225.0,
+            "confidence": 0.9044532179832458
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 89.0,
+        "cells_left_to_right": [
+          {
+            "text": "b： 指令寄存器",
+            "x_center": 205.5,
+            "confidence": 0.8520358800888062
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 133.0,
+        "cells_left_to_right": [
+          {
+            "text": "C: 地址寄存器",
+            "x_center": 204.0,
+            "confidence": 0.9859932065010071
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 180.0,
+        "cells_left_to_right": [
+          {
+            "text": "d: 升程序计数器",
+            "x_center": 224.0,
+            "confidence": 0.8334612250328064
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 253.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 主存→数据缓冲寄存器→指令寄存器→操作控制器",
+            "x_center": 397.5,
+            "confidence": 0.9602607488632202
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 349.5,
+        "cells_left_to_right": [
+          {
+            "text": "(3)主存取数据到数据缓冲寄存器，然后经ALU将第一次取出的数据暂",
+            "x_center": 475.5,
+            "confidence": 0.9729682207107544
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 402.5,
+        "cells_left_to_right": [
+          {
+            "text": "存在AC中，然后再伏主存取出别一组数组，两组数据在ALU中相加，",
+            "x_center": 474.5,
+            "confidence": 0.9466632604598999
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 453.5,
+        "cells_left_to_right": [
+          {
+            "text": "并将结果转存至AC，再经AC送往数据缓冲等存器，最左在八主存。",
+            "x_center": 468.5,
+            "confidence": 0.8945387601852417
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 536.8,
+        "cells_left_to_right": [
+          {
+            "text": "(4) AOD→AC",
+            "x_center": 130.0,
+            "confidence": 0.9347939491271973
+          },
+          {
+            "text": "ADNAXAC→ALU",
+            "x_center": 277.0,
+            "confidence": 0.7463680505752563
+          },
+          {
+            "text": "16",
+            "x_center": 743.5,
+            "confidence": 0.9913904666900635
+          },
+          {
+            "text": "控制字段外部降件下址字段",
+            "x_center": 806.0,
+            "confidence": 0.7973986268043518
+          },
+          {
+            "text": "3",
+            "x_center": 830.5,
+            "confidence": 0.9996387958526611
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 614.6,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 采用字段直接编译法，微长度分别为",
+            "x_center": 262.5,
+            "confidence": 0.8931482434272766
+          },
+          {
+            "text": "ALU→Ae",
+            "x_center": 339.5,
+            "confidence": 0.7395460605621338
+          },
+          {
+            "text": "16)",
+            "x_center": 692.5,
+            "confidence": 0.8635408282279968
+          },
+          {
+            "text": "如右金",
+            "x_center": 793.5,
+            "confidence": 0.6443839073181152
+          },
+          {
+            "text": "2",
+            "x_center": 839.5,
+            "confidence": 0.37864068150520325
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 680.5,
+        "cells_left_to_right": [
+          {
+            "text": "3.4,4,2.故故总长为3+4+4+2+3=16.故存储器容量为216=64kB",
+            "x_center": 444.0,
+            "confidence": 0.9341899752616882
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=21.5: 5 | x=225.0: (1) d:数据缓冲寄存器\nRow 2: x=205.5: b： 指令寄存器\nRow 3: x=204.0: C: 地址寄存器\nRow 4: x=224.0: d: 升程序计数器\nRow 5: x=397.5: (2) 主存→数据缓冲寄存器→指令寄存器→操作控制器\nRow 6: x=475.5: (3)主存取数据到数据缓冲寄存器，然后经ALU将第一次取出的数据暂\nRow 7: x=474.5: 存在AC中，然后再伏主存取出别一组数组，两组数据在ALU中相加，\nRow 8: x=468.5: 并将结果转存至AC，再经AC送往数据缓冲等存器，最左在八主存。\nRow 9: x=130.0: (4) AOD→AC | x=277.0: ADNAXAC→ALU | x=743.5: 16 | x=806.0: 控制字段外部降件下址字段 | x=830.5: 3\nRow 10: x=262.5: (5) 采用字段直接编译法，微长度分别为 | x=339.5: ALU→Ae | x=692.5: 16) | x=793.5: 如右金 | x=839.5: 2\nRow 11: x=444.0: 3.4,4,2.故故总长为3+4+4+2+3=16.故存储器容量为216=64kB"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "a:数据缓冲寄存器；b:指令寄存器；c:地址寄存器；d:程序计数器",
+    "step_2": "主存→数据缓冲寄存器→指令寄存器→操作控制器",
+    "step_3": "主存取数据到数据缓冲寄存器，然后经ALU将第一次取出的数据暂存在AC中，然后再从主存取出另一组数组，两组数据在ALU中相加，并将结果转存至AC，再经AC送往数据缓冲寄存器，最后存入主存"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the concrete handwritten text the student used to label the four registers (e.g., a, b, c, d). Preserve any arrows, colons, separators, and spatial relationships exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the concrete handwritten data path sequence for fetching instructions to the controller written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the concrete handwritten data path sequences for memory read and memory write between the arithmetic unit and main memory written by the student. Preserve all arrows, dots, order, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_6"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_3",
+    "step_4",
+    "step_5"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "a:数据缓冲寄存器\nb:指令寄存器\nc:地址寄存器\nd:程序计数器",
+    "step_2": "主存→数据缓冲寄存器→指令寄存器→操作控制器",
+    "step_3": "主存取数据到数据缓冲寄存器，然后经ALU将第一次取出的数据暂存在AC中，然后再从主存取出另一组数组，两组数据在ALU中相加，并将结果转存至AC，再经AC送往数据缓冲寄存器，最后存入主存。",
+    "step_4": "AC OD→AC；AX即AX,AD→ALU；ALU→AC",
+    "step_5": "采用字段直接编译法，微指令的各段为3,4,4,2，故总长为3+4+4+2+3=16，故存储器容量为2^16=64KB",
+    "step_6": "如下： 3 3 5 1 控制字段 外部条件 下址字段\n16 3 3 2 2 5"
+  },
+  "facts": {
+    "step_1": "a：数据缓冲寄存器\nb：指令寄存器\nc：地址寄存器\nd：程序计数器",
+    "step_2": "主存→数据缓冲寄存器→指令寄存器→操作控制器",
+    "step_3": "主存取数据到数据缓冲寄存器，然后经ALU将第一次取出的数据暂存在AC中，然后再从主存取出另一组数，两组数据在ALU中相加，并将结果转存至AC，再经AC送往数据缓冲寄存器，最后存入主存。",
+    "step_4": "OD→AC\n(AX,AC)→ALU\nALU→AC",
+    "step_5": "采用字段直接编译法，微指令分别为3，4，4，2，故总长为3+4+4+2+3=16，故存储器容量为2^16=64KB",
+    "step_6": "如下： 3 3 5 1 控制字段 外部条件 下址字段\n16 3 3 2 2 5"
+  }
+}

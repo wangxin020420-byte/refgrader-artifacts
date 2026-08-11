@@ -1,0 +1,52 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-08-11T13:25:57.734935",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_237.png",
+  "image_sha256": "dcebfde69e9bdf5cf58bf5e3fb1825db7c0d6697cf6d4164f1cf4bf5f853431d",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：[x]补=0011 0110\n[y]补=0101 0100\n[-y]补=1010 1011\nx-2y=x-y-y\n  =x+y+[-y]\n  =1110 0001 +[-y]补\n  =0000 1100=0CH\n结果发生溢出\nOF=1\nx÷4=0011 0110 ÷100\n  =0000 1101\n[z]补=1101 0101\nx÷4+z+z\n  =00001101+11010101+11010101\n  =1110 0010+11010101\n  =10110111\n  =B7H\nOF=0\n没溢出\n",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_237",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": {
+      "initial_values": "[x]补=0011 0110\n[y]补=0101 0100\n[-y]补=1010 1011",
+      "computation_trace": "x-2y=x-y-y\n=x+y+[-y]\n=1110 0001 +[-y]补\n=0000 1100",
+      "result": "=0000 1100=0CH",
+      "overflow_judgment": "结果发生溢出\nOF=1"
+    },
+    "step_2": {
+      "initial_values": "x÷4=0011 0110 ÷100\n=0000 1101\n[z]补=1101 0101",
+      "computation_trace": "x÷4+z+z\n=00001101+11010101+11010101\n=1110 0010+11010101\n=10110111",
+      "result": "=10110111\n=B7H",
+      "overflow_judgment": "OF=0\n没溢出"
+    }
+  }
+}
