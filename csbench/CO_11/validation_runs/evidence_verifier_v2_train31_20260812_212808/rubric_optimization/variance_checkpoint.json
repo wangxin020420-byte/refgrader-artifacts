@@ -1,0 +1,1477 @@
+[
+  {
+    "file": "ANS_CO_1205.jpg",
+    "facts": "{\"step_1\": \"学生写有计算式：16×16=2^8，以及“每条指令2¹⁶字”。未明确写出来自指令格式位宽推导的进一步计算公式或计算痕迹。\", \"step_2\": \"学生未书写关于操作码分配的公式、映射逻辑、关系或计算痕迹。\", \"step_3\": \"学生写有最终结果：工型516条，R型128条，J型32条。未写出来自操作码位数或计数推导的具体公式或推导过程。\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T19:35:01.367035",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_11/ANS_CO_1205.jpg",
+      "image_sha256": "de4015a837ba695593f81cb67b7b7bb84b276dc2a9aa8f49470716641c03407d",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "16×16=2^8\n每条指令2¹⁶字\n工型516条，R型128条，J型32条。",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1205",
+        "question_id": "CO_11",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "学生写有计算式：16×16=2^8，以及“每条指令2¹⁶字”。未明确写出来自指令格式位宽推导的进一步计算公式或计算痕迹。",
+        "step_2": "学生未书写关于操作码分配的公式、映射逻辑、关系或计算痕迹。",
+        "step_3": "学生写有最终结果：工型516条，R型128条，J型32条。未写出来自操作码位数或计数推导的具体公式或推导过程。"
+      }
+    },
+    "scores": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生写有计算式：16×16=2^8，以及“每条指令2¹⁶字”。未明确写出来自指令格式位宽推导的进一步计算公式或计算痕迹。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "推导并计算R型指令最多条数（基于5位操作码）",
+            "dependency_status": "failed",
+            "reason": "学生写出的计算公式（16x16=2^8）与标准要求的5位操作码推导（2^5=32）毫无关联，属于概念与方法上的严重错误，不满足过程证据要求。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "学生未书写关于操作码分配的公式、映射逻辑、关系或计算痕迹。",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "在保证I型最多且J型存在的条件下计算I型指令最多条数（扣除R型占用的1个和预留给J型的1个操作码）",
+            "dependency_status": "failed",
+            "reason": "卷面完全没有提取到有关此步骤的公式或计算痕迹，缺乏任何过程支撑证据。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生写有最终结果：工型516条，R型128条，J型32条。未写出来自操作码位数或计数推导的具体公式或推导过程。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算J型指令最多条数（2^2=4条）",
+            "dependency_status": "failed",
+            "reason": "学生填写的最终数值（J型32条）与标准答案（4条）严重矛盾，属于核心数值错误。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 0.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生写有计算式：16×16=2^8，以及“每条指令2¹⁶字”。未明确写出来自指令格式位宽推导的进一步计算公式或计算痕迹。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算并得出R型指令最多有32条（2^5）",
+            "dependency_status": "failed",
+            "reason": "学生的计算逻辑（16×16=2^8）和结论（“每条指令2¹⁶字”）与所要求的方法和量（R型指令占5位，最多2^5=32条指令）相矛盾。这构成了核心方法错误。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生未书写关于操作码分配的公式、映射逻辑、关系或计算痕迹。",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "推导在保证I型最多且J型存在的条件下，I型指令最多有30条",
+            "dependency_status": "failed",
+            "reason": "提取出的事实显示，缺失操作码分配的公式或映射逻辑。学生写下的最终结果“516”直接与标准答案“30”矛盾。因此，这属于缺乏正确方法支撑的核心结论错误。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生写有最终结果：工型516条，R型128条，J型32条。未写出来自操作码位数或计数推导的具体公式或推导过程。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "推导计算J型指令最多有4条",
+            "dependency_status": "failed",
+            "reason": "学生给出了“32条”作为J型指令的最终结果，这与要求的结论“4条”存在严重的数值和语义矛盾。因此，不得分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 0.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生写有计算式：16×16=2^8，以及“每条指令2¹⁶字”。未明确写出来自指令格式位宽推导的进一步计算公式或计算痕迹。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算R型指令最多条数（依据Opcode字段占5位，得出2^5=32条）",
+            "dependency_status": "failed",
+            "reason": "提取的事实表明学生使用了错误的计算逻辑（16×16=2^8）来推导指令数，并未建立操作码位宽与指令数量的正确映射关系，属于核心概念与计算方法的根本性错误。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生未书写关于操作码分配的公式、映射逻辑、关系或计算痕迹。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "在保证I型最多且J型存在的条件下计算I型指令最多条数（需合理分配操作码，得出30条）",
+            "dependency_status": "failed",
+            "reason": "提取的事实显示学生未书写任何相关的操作码分配逻辑或公式，无法体现推导过程。同时结合其错误的前提与最终结果，属于结论与方法的双重错误。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生写有最终结果：工型516条，R型128条，J型32条。未写出来自操作码位数或计数推导的具体公式或推导过程。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算J型指令最多条数（通过扩展位计算得出2^2=4条）",
+            "dependency_status": "failed",
+            "reason": "学生写出的最终结果（J型32条，R型128条等）与基于指令格式的正确推导存在严重数值与概念冲突，完全背离了正确结论。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 0.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "BLANK",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_1226.jpg",
+    "facts": "{\"step_1\": \"R型 地址码 地址码 操作码 5位\\n设R型有x条\\nx最大 有y=1，x=31-z/4 且 x≤z. \\n∴x最多可有24条\\n R型最多有24条\", \"step_2\": \"I型 操作码 5位 地址码 地址码\\n设I型有z条\\n(((2⁵ - x)×2^0) - y)×2² = z\\n当z最大，有x=1，y=1 z=120.\\n∴I型最多有120条\", \"step_3\": \"J型 操作码 7位 地址码 9位\\n设J型有y条\\ny最多时x=1，y=31-z/4 且 y≤z\\n∴y最多可有24.8≈24条\\n  J型最多有24条\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T19:35:50.628007",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_11/ANS_CO_1226.jpg",
+      "image_sha256": "7c1cc30498a639f9e8071242c8f8113ed46d0ea0e8c61108ff358d25948a99a2",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "R型 地址码 地址码 操作码 5位\nI型 操作码 5位 地址码 地址码\nJ型 操作码 7位 地址码 9位\n设R型有x条，J型有y条，I型有z条\n(((2⁵ - x)×2^0) - y)×2² = z\n当z最大，有x=1，y=1 z=120.\n∴I型最多有120条\ny最多时x=1，y=31-z/4 且 y≤z\n∴y最多可有24.8≈24条\n  J型最多有24条\nx最大 有y=1，x=31-z/4 且 x≤z. \n∴x最多可有24条\n R型最多有24条",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1226",
+        "question_id": "CO_11",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "R型 地址码 地址码 操作码 5位\n设R型有x条\nx最大 有y=1，x=31-z/4 且 x≤z. \n∴x最多可有24条\n R型最多有24条",
+        "step_2": "I型 操作码 5位 地址码 地址码\n设I型有z条\n(((2⁵ - x)×2^0) - y)×2² = z\n当z最大，有x=1，y=1 z=120.\n∴I型最多有120条",
+        "step_3": "J型 操作码 7位 地址码 9位\n设J型有y条\ny最多时x=1，y=31-z/4 且 y≤z\n∴y最多可有24.8≈24条\n  J型最多有24条"
+      }
+    },
+    "scores": [
+      1.5,
+      0.0,
+      0.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "R型 地址码 地址码 操作码 5位\n设R型有x条\nx最大 有y=1，x=31-z/4 且 x≤z. \n∴x最多可有24条\n R型最多有24条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "R型指令Opcode字段占5位，因此R型指令最多有2^5=32条。",
+            "dependency_status": "failed",
+            "reason": "学生正确提取了R型指令操作码为5位的已知条件，可获取部分步骤分；但由于后续构建的公式及得出的最终结果（24条）与正确逻辑（2^5=32条）相矛盾，属于结论与方法上的严重错误。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "I型 操作码 5位 地址码 地址码\n设I型有z条\n(((2⁵ - x)×2^0) - y)×2² = z\n当z最大，有x=1，y=1 z=120.\n∴I型最多有120条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "I型Opcode字段中，00000已被R型占用，最多还剩31个操作码编码；由于J型也必须存在，且要保证I型最多，只能留一个I型操作码作为J型指令的扩展编码，因此I型最多有30条。",
+            "dependency_status": "failed",
+            "reason": "计算I型指令最多条数使用了错误的推导公式，得出了120条的错误结论，与标准答案的30条产生严重语义冲突和逻辑悖论，不得分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "J型 操作码 7位 地址码 9位\n设J型有y条\ny最多时x=1，y=31-z/4 且 y≤z\n∴y最多可有24.8≈24条\n  J型最多有24条",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "留给J型扩展的1个I型操作码后，J型可由后续2位字段扩展得到2^2=4条，因此J型最多有4条。",
+            "dependency_status": "failed",
+            "reason": "J型指令最多条数的计算公式错误，且最终结果（24条）与标准答案（4条）存在核心结论上的严重矛盾，属于致命语义错误。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 1.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 1.5,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "x最大 有y=1，x=31-z/4 且 x≤z. ∴x最多可有24条 R型最多有24条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "R型指令Opcode字段占5位，因此R型指令最多有2^5=32条。",
+            "dependency_status": "failed",
+            "reason": "The student fails to recognize that R-type instructions have a 5-bit opcode, leading to a maximum of 32. Instead, they introduce an incorrect formula relying on other instruction types, resulting in a completely wrong maximum count of 24. This is a fundamental conceptual error.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "当z最大，有x=1，y=1 z=120. ∴I型最多有120条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "I型Opcode字段中，00000已被R型占用，最多还剩31个操作码编码；由于J型也必须存在，且要保证I型最多，只能留一个I型操作码作为J型指令的扩展编码，因此I型最多有30条。",
+            "dependency_status": "failed",
+            "reason": "The student calculates the maximum number of I-type instructions as 120 based on an entirely fabricated and dimensionally incorrect formula ((((2⁵ - x)×2^0) - y)×2² = z). The standard answer is 30. This shows a complete failure to understand the instruction format expansion.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "y最多时x=1，y=31-z/4 且 y≤z ∴y最多可有24.8≈24条 J型最多有24条",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "留给J型扩展的1个I型操作码后，J型可由后续2位字段扩展得到2^2=4条，因此J型最多有4条。",
+            "dependency_status": "failed",
+            "reason": "The student attempts to reuse an incorrect and fabricated formula (y=31-z/4) to find the maximum J-type instructions, yielding 24. This ignores the correct expansion logic using the next 2 bits (2^2=4) and represents a core conceptual failure.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 0.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "R型 操作码 5位 地址码 地址码 操作码 5位\n设R型有x条\nx最大 有y=1，x=31-z/4 且 x≤z. \n∴x最多可有24条\n R型最多有24条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Given 5 bits, R-type instructions can have a maximum of 2^5 = 32 instructions.",
+            "dependency_status": "failed",
+            "reason": "The student uses a completely wrong relationship (x = 31 - z/4, x ≤ z) for calculating the maximum R-type instructions, completely ignoring the direct 2^5 = 32 limit, leading to a wrong numerical answer.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "I型 操作码 5位 地址码 地址码\n设I型有z条\n(((2⁵ - x)×2^0) - y)×2² = z\n当z最大，有x=1，y=1 z=120.\n∴I型最多有120条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "With R-type taking 1 opcode, 31 remain. To ensure J-type exists, 1 is reserved, leaving 30 I-type opcodes. Max I-type is 30.",
+            "dependency_status": "failed",
+            "reason": "The student assumes a bizarre formula structure involving 'z' and arrives at a mathematically and conceptually impossible value of 120, contradicting the 5-bit opcode space limit.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "J型 操作码 7位 地址码 9位\n设J型有y条\ny最多时x=1，y=31-z/4 且 y≤z\n∴y最多可有24.8≈24条\n  J型最多有24条",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Extending 1 reserved I-type opcode by 2 bits yields 2^2 = 4 J-type instructions.",
+            "dependency_status": "failed",
+            "reason": "Uses the same erroneous formula (y = 31 - z/4) to derive a non-integer (24.8) which is rounded to 24, contradicting the basic expansion mapping of 2^2=4 for a 7-bit opcode.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 0.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        1.5,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.5,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.5,
+    "avg_item_variance": 0.16666666666666666
+  },
+  {
+    "file": "ANS_CO_1245.jpg",
+    "facts": "{\"step_1\": \"保证I型指令最多.最多情况即I型前5位Opcode均编码 但编码00000是R型的开始.同时I型和J型共用前5位编码. I型需要改第1位作为J型的开始\", \"step_2\": \"I型: 2^5 -2 =30(条) \\nJ型: 2^1 =4.条.\", \"step_3\": \"R型:最后5位给35操作码: 2^5 =32条.\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T19:36:42.067218",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_11/ANS_CO_1245.jpg",
+      "image_sha256": "f38001e9cdd1c6cb551cd6493c561520c8c228bf7eed99841312b142d6b8c144",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解:保证I型指令最多.最多情况即I型前5位Opcode均编码 但编码00000是R型的开始.同时I型和J型共用前5位编码. I型需要改第1位作为J型的开始: \nI型: 2^5 -2 =30(条) \nJ型: 2^1 =4.条. \nR型:最后5位给35操作码: 2^5 =32条.",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1245",
+        "question_id": "CO_11",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "保证I型指令最多.最多情况即I型前5位Opcode均编码 但编码00000是R型的开始.同时I型和J型共用前5位编码. I型需要改第1位作为J型的开始",
+        "step_2": "I型: 2^5 -2 =30(条) \nJ型: 2^1 =4.条.",
+        "step_3": "R型:最后5位给35操作码: 2^5 =32条."
+      }
+    },
+    "scores": [
+      7.5,
+      15.0,
+      15.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "step_3: R型:最后5位给35操作码: 2^5 =32条.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "R型指令Opcode字段占5位，因此R型指令最多有2^5=32条。",
+            "dependency_status": "failed",
+            "reason": "The student calculates 32 using a contradictory conceptual method (allocating the last 5 bits for 35 opcodes) rather than recognizing the opcode field is intrinsically 5 bits long.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "step_1: I型需要改第1位作为J型的开始 \nstep_2: I型: 2^5 -2 =30(条)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "I型Opcode字段中，00000已被R型占用，最多还剩31个操作码编码；由于J型也必须存在，且要保证I型最多，只能留一个I型操作码作为J型指令的扩展编码，因此I型最多有30条。",
+            "dependency_status": "insufficient",
+            "reason": "The final answer of 30 is correct, but the calculation lacks the correct semantic derivation (it omits accounting for the R-type opcode and uses 2 as a magic number). Partial credit awarded for the correct conclusion.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "step_1: I型需要改第1位作为J型的开始 \nstep_2: J型: 2^1 =4.条.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "留给J型扩展的1个I型操作码后，J型可由后续2位字段扩展得到2^2=4条，因此J型最多有4条。",
+            "dependency_status": "satisfied",
+            "reason": "Under a lenient grading policy, the extracted fact uses the 1 bit taken from the I-type to calculate 2^2 = 4, which correctly satisfies the required process and final result for J-type.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 7.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 2.5,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "R型:最后5位给35操作码: 2^5 =32条.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算R型指令最多条数 (2^5=32)",
+            "dependency_status": "satisfied",
+            "reason": "学生明确提取到了R型占用5位操作码，并且计算出最多有 2^5=32 条，与标准答案完全一致。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "I型: 2^5 -2 =30(条)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "在保证I型最多且J型存在的条件下计算I型指令最多条数 (30条)",
+            "dependency_status": "satisfied",
+            "reason": "学生提取出I型最多有30条，数值与正确答案完全匹配。同时，学生给出的2^5-2 = 30的计算过程与设计意图（5位Opcode提供32个可能，减去1个给R型，再减去1个留作J型扩展）等效。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "J型: 2^1 =4.条.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算J型指令最多条数 (4条)",
+            "dependency_status": "satisfied",
+            "reason": "学生明确给出了J型最多4条的结论，且算式 2^1 = 4 属于典型OCR将'2^2'误识为'2^1'的格式误差（指数位置的象素重叠），基于最终结果和判定宽容原则，按 MATCH 处理。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 15.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "R型:最后5位给35操作码: 2^5 =32条.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算R型指令最多条数 (R-type max count)",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly identifies the bit allocation for the R-type and calculates the maximum number of instructions as 2^5 = 32, which perfectly matches the required answer.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "I型: 2^5 -2 =30(条)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "在保证I型最多且J型存在的条件下计算I型指令最多条数 (I-type max count with J-type existing)",
+            "dependency_status": "satisfied",
+            "reason": "The student's trace '2^5 - 2 = 30' successfully captures the required core logic: taking the total 5-bit combinations and subtracting the R-type opcode and the one reserved extension code for the J-type.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "J型: 2^1 =4.条.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算J型指令最多条数 (J-type max count)",
+            "dependency_status": "satisfied",
+            "reason": "Although the student wrote '2^1 = 4' (a minor arithmetic typo instead of 2^2), the final derived answer of 4 conditions is correct, demonstrating a full grasp of the J-type extension allocation.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 15.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        2.5,
+        5.0,
+        5.0
+      ],
+      "step_3": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 5.555555555555556,
+      "step_2": 1.3888888888888886,
+      "step_3": 0.0
+    },
+    "max_item_variance": 5.555555555555556,
+    "avg_item_variance": 2.314814814814815
+  },
+  {
+    "file": "ANS_CO_1265.jpg",
+    "facts": "{\"step_1\": \"R型指令前5位固定为00000，其指令数取决于后5位，即R型指令最多为2^5=32条。\", \"step_2\": \"I型指令最多时，指令数为2^5-1=31。\", \"step_3\": \"J型指令的操作的字的5位为前5位的，不能使用。指令条数最多为2^2=4条。\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T19:37:34.513045",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_11/ANS_CO_1265.jpg",
+      "image_sha256": "cedd61ef61ce8af4494545a7b1f8aa6749bf03ce1fb01b347be81f493c5c1d49",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：R型指令前5位固定为00000，其指令数取决于\n后5位，即R型指令最多为2^5=32条.\nI型指令最多时，指令数为2^5-1=31\nJ型指令的操作的字的5位为前5位的，不能使用。\n指令条数最多为2^2=4条。\n则R型，I型，J型指令分别最多为32，31，4条。",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1265",
+        "question_id": "CO_11",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "R型指令前5位固定为00000，其指令数取决于后5位，即R型指令最多为2^5=32条。",
+        "step_2": "I型指令最多时，指令数为2^5-1=31。",
+        "step_3": "J型指令的操作的字的5位为前5位的，不能使用。指令条数最多为2^2=4条。"
+      }
+    },
+    "scores": [
+      11.0,
+      12.5,
+      12.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "R型指令前5位固定为00000，其指令数取决于后5位，即R型指令最多为2^5=32条。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算R型指令最多条数 (标准答案: 32)",
+            "dependency_status": "satisfied",
+            "reason": "学生准确计算出扩展位为5位，并正确计算出R型指令最多为32条，与标准答案完全一致。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "I型指令最多时，指令数为2^5-1=31。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "在保证I型最多且J型存在的条件下计算I型指令最多条数 (标准答案: 30)",
+            "dependency_status": "insufficient",
+            "reason": "学生只考虑了扣除R型占用的00000，得出31条，但忽略了题干中“且J型存在”的约束条件。根据标准答案，需再留一个操作码给J型，故I型最多为30条。因为推导过程部分正确，给予少量过程分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "J型指令的操作的字的5位为前5位的，不能使用。指令条数最多为2^2=4条。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算J型指令最多条数 (标准答案: 4)",
+            "dependency_status": "not_applicable",
+            "reason": "尽管学生由于前置条件的理解瑕疵可能误以为J型占用了其他的 Opcode 编码，但学生直接正确识别出J型指令的最终扩展仅由后续的2位决定，且正确计算出最终结果 2^2=4 条，符合本步骤结果判定。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 11.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 1.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "R型指令前5位固定为00000，其指令数取决于后5位，即R型指令最多为2^5=32条。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算R型指令最多条数",
+            "dependency_status": "satisfied",
+            "reason": "学生明确指出R型指令操作码字段由后5位扩展，并正确计算出最多32条指令，与标准答案完全相符。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "I型指令最多时，指令数为2^5-1=31。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "在保证I型最多且J型存在的条件下计算I型指令最多条数",
+            "dependency_status": "insufficient",
+            "reason": "学生正确认识到由于R型占用了一个操作码（00000），剩余可用操作码数为31（2^5-1=31），这是一个有效的中间推理结果。但是，学生遗漏了为了保证J型存在必须再预留一个扩展操作码的条件，导致最终结果（31条）与标准答案（30条）不符。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "J型指令的操作的字的5位为前5位的，不能使用。指令条数最多为2^2=4条。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算J型指令最多条数",
+            "dependency_status": "satisfied",
+            "reason": "学生正确推断了J型指令利用后续字段进行扩展，计算出最多有4条（2^2=4），与标准答案的核心数值结果完全一致。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 12.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 2.5,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "R型指令前5位固定为00000，其指令数取决于后5位，即R型指令最多为2^5=32条。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算R型指令最多条数",
+            "dependency_status": "satisfied",
+            "reason": "学生正确识别出扩展位为5位，并使用正确的计算关系得出R型指令最多为32条，逻辑完整且计算准确。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "I型指令最多时，指令数为2^5-1=31。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "在保证I型最多且J型存在的条件下计算I型指令最多条数",
+            "dependency_status": "insufficient",
+            "reason": "学生正确使用了2^5=32的基础参数，并扣除了R型占用的1个操作码得出31，部分逻辑正确。但忽略了题目“J型存在”的约束条件（需再留一个操作码给J型扩展），导致推理未完成，属于部分正确。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "J型指令的操作的字的5位为前5位的，不能使用。指令条数最多为2^2=4条。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算J型指令最多条数",
+            "dependency_status": "satisfied",
+            "reason": "学生得出J型指令最多为4条，最终数值完全匹配。虽然表述中对于未用位“不能使用”的因果解释略显口语化，但核心结论与扩展位数(2^2=4)的计算完全符合标准答案。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 12.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 2.5,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        1.0,
+        2.5,
+        2.5
+      ],
+      "step_3": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.5,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.5,
+    "avg_item_variance": 0.16666666666666666
+  },
+  {
+    "file": "ANS_CO_1268.jpg",
+    "facts": "{\"step_1\": \"R型：2¹⁶⁻⁵=2¹¹条\", \"step_2\": \"I型：(2⁵-2)×2¹⁶⁻⁵=30×2¹¹=15×2¹²条. 解释:为确保I型指令最多，且三个互不为前缀码，I型前5位只能有2⁵-2种，R型前5位为00000\", \"step_3\": \"J型：2¹⁶⁻⁵=2¹¹条 解释:J型前5位只有一种，以此保证I型最多\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T19:38:26.759645",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_11/ANS_CO_1268.jpg",
+      "image_sha256": "53831288da1f535ca2ea8e1a510914a0492a461bd12de38f7882e67e21d1d089",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：\nR型：2¹⁶⁻⁵=2¹¹条 \nI型：(2⁵-2)×2¹⁶⁻⁵=30×2¹¹=15×2¹²条. \nJ型：2¹⁶⁻⁵=2¹¹条 解释:为确保I型指令最多，且三个互不为前缀码，\nI型前5位只能有2⁵-2种，R型前5位为00000，\nJ型前5位只有一种，以此保证I型最多",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1268",
+        "question_id": "CO_11",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "R型：2¹⁶⁻⁵=2¹¹条",
+        "step_2": "I型：(2⁵-2)×2¹⁶⁻⁵=30×2¹¹=15×2¹²条. 解释:为确保I型指令最多，且三个互不为前缀码，I型前5位只能有2⁵-2种，R型前5位为00000",
+        "step_3": "J型：2¹⁶⁻⁵=2¹¹条 解释:J型前5位只有一种，以此保证I型最多"
+      }
+    },
+    "scores": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "R型：2¹⁶⁻⁵=2¹¹条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "R型指令Opcode字段占5位，因此R型指令最多有2^5=32条。",
+            "dependency_status": "failed",
+            "reason": "The student attempts to calculate the R-type size using a power of 2, but misinterprets the base constraints. Using 16-5 instead of just the 5-bit opcode field yields the wrong quantity.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "I型：(2⁵-2)×2¹⁶⁻⁵=30×2¹¹=15×2¹²条. 解释:为确保I型指令最多，且三个互不为前缀码，I型前5位只能有2⁵-2种，R型前5位为00000",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "I型Opcode字段中，00000已被R型占用，最多还剩31个操作码编码；由于J型也必须存在，且要保证I型最多，只能留一个I型操作码作为J型指令的扩展编码，因此I型最多有30条。",
+            "dependency_status": "satisfied",
+            "reason": "The student accurately derives the count of 30 valid primary opcodes for the I-type instruction to satisfy the prefix constraints and ensure maximum size. However, they erroneously multiply this by an upstream error (2^11) rather than evaluating the count as exactly 30.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "J型：2¹⁶⁻⁵=2¹¹条 解释:J型前5位只有一种，以此保证I型最多",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "留给J型扩展的1个I型操作码后，J型可由后续2位字段扩展得到2^2=4条，因此J型最多有4条。",
+            "dependency_status": "failed",
+            "reason": "The student assigns the full remaining address space (2^11) to J-type instructions. This fundamentally violates the architectural constraint that J-type must only use the expansion field (which would yield 2^2=4), thereby invalidating the core calculation.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 5.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 2.5,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 2.5,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "R型：2¹⁶⁻⁵=2¹¹条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算R型指令最多条数（基于5位Opcode计算，应为32条）",
+            "dependency_status": "failed",
+            "reason": "学生使用了16位指令总长度减去5位操作码的错误计算逻辑（2^(16-5)=2^11），而不是正确计算5位Opcode所能提供的最多指令数（2^5=32）。存在核心概念错误。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "I型：(2⁵-2)×2¹⁶⁻⁵=30×2¹¹=15×2¹²条. 解释:为确保I型指令最多，且三个互不为前缀码，I型前5位只能有2⁵-2种，R型前5位为00000",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "在保证I型最多且J型存在的条件下计算I型指令最多条数",
+            "dependency_status": "insufficient",
+            "reason": "推理过程部分正确：扣除R型占用的1个和J型扩展占用的1个操作码（2^5-2=30）；但最终公式和数值计算错误地保留了上游传入的错误因子(2^(16-5))。给予部分过程分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "J型：2¹⁶⁻⁵=2¹¹条 解释:J型前5位只有一种，以此保证I型最多",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "计算J型指令最多条数（利用后续2位字段扩展得到4条）",
+            "dependency_status": "failed",
+            "reason": "结论和公式严重违背题意。标准要求利用剩余操作码后的2位进行扩展得到最多4条指令，而学生计算出的J型条数等同于总指令数（2^11），存在核心逻辑和方法矛盾。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 2.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 2.5,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "R型：2¹⁶⁻⁵=2¹¹条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Calculate the maximum number of R-type instructions, which should be 2^5 = 32.",
+            "dependency_status": "failed",
+            "reason": "Uses total instruction length (16) instead of opcode bits (5) to calculate the number of R-type instructions, resulting in a fundamentally wrong value (2^11 instead of 32).",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "I型：(2⁵-2)×2¹⁶⁻⁵=30×2¹¹=15×2¹²条. 解释:为确保I型指令最多，且三个互不为前缀码，I型前5位只能有2⁵-2种，R型前5位为00000",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Calculate the maximum number of I-type instructions (30) ensuring J-type exists, explaining the opcode allocation.",
+            "dependency_status": "satisfied",
+            "reason": "The core logic for reserving 2 opcodes (2^5 - 2) to satisfy the non-prefix condition for R and J types is correct, demonstrating a valid method. However, the final numeric answer is scaled incorrectly by multiplying by 2^11 due to the upstream R-type error.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "J型：2¹⁶⁻⁵=2¹¹条 解释:J型前5位只有一种，以此保证I型最多",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Calculate the maximum number of J-type instructions (4), which requires using the remaining bits after the I-type opcode prefix.",
+            "dependency_status": "failed",
+            "reason": "The student assumes J-type uses the entire remaining 11 bits (2^11) rather than extending the reserved 5-bit I-type prefix by 2 bits (2^2 = 4). This violates prefix coding rules and yields an incorrect numeric value.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 2.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_2",
+            "effective_score": 2.5,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_3",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.5,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        2.5,
+        2.5,
+        2.5
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 1.3888888888888886,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 1.3888888888888886,
+    "avg_item_variance": 0.46296296296296285
+  }
+]

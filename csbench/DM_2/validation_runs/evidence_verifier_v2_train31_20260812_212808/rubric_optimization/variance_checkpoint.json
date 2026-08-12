@@ -1,0 +1,1207 @@
+[
+  {
+    "file": "ANS_DM_100.jpg",
+    "facts": "{\"step_1\": \"∀<a,b>∈A×A. \\n因为a+b=a+b. \\n所以<a,b>R<a,b> \\n所以R满足自反性.\", \"step_2\": \"因为 ∀<a,b>,<c,d>∈A×A. \\n<a,b>R<c,d> ⇔ a+b=c+d \\n而 c+d=a+b, 所以 <c,d>R<a,b> \\n所以R满足对称性.\", \"step_3\": \"∀<a,b>,<c,d>,<e,f>∈A×A. \\n<a,b>R<c,d> ⇔ a+b=c+d. \\n<c,d>R<e,f>⇔ c+d=e+f \\n所以 a+b=e+f, 所以 <a,b>R<e,f> \\n所以R满足传递性.\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T21:32:01.134479",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_2/ANS_DM_100.jpg",
+      "image_sha256": "119f9d8d04b7fde333a28c2b04438c6f0c5b1b55ef86e88879e4e152186e8dc9",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "A={1,2,3,4}  \n因为  ∀<a,b>,<c,d>∈A×A. \n<a,b>R<c,d> ⇔ a+b=c+d  \n而 c+d=a+b, 所以 <c,d>R<a,b>  \n所以R满足对称性.  \n∀<a,b>,<c,d>,<e,f>∈A×A. \n<a,b>R<c,d> ⇔ a+b=c+d. \n<c,d>R<e,f>⇔ c+d=e+f  \n所以 a+b=e+f, 所以 <a,b>R<e,f>  \n所以R满足传递性.  \n∀<a,b>∈A×A.   \n因为a+b=a+b. \n所以<a,b>R<a,b> \n所以R满足自反性.  \n综上，R满足自反性、对称性、传递性.  \n所以R是等价关系.",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_100",
+        "question_id": "DM_2",
+        "subject": "DM",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "∀<a,b>∈A×A. \n因为a+b=a+b. \n所以<a,b>R<a,b> \n所以R满足自反性.",
+        "step_2": "因为 ∀<a,b>,<c,d>∈A×A. \n<a,b>R<c,d> ⇔ a+b=c+d \n而 c+d=a+b, 所以 <c,d>R<a,b> \n所以R满足对称性.",
+        "step_3": "∀<a,b>,<c,d>,<e,f>∈A×A. \n<a,b>R<c,d> ⇔ a+b=c+d. \n<c,d>R<e,f>⇔ c+d=e+f \n所以 a+b=e+f, 所以 <a,b>R<e,f> \n所以R满足传递性."
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "∀<a,b>∈A×A. 因为a+b=a+b. 所以<a,b>R<a,b> 所以R满足自反性.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性",
+            "dependency_status": "satisfied",
+            "reason": "正确声明了∀<a, b>∈A×A的前提，利用a+b=a+b得出<a, b>R<a, b>，并得出自反性的结论，逻辑完整。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "因为 ∀<a,b>,<c,d>∈A×A. <a,b>R<c,d> ⇔ a+b=c+d 而 c+d=a+b, 所以 <c,d>R<a,b> 所以R满足对称性.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性",
+            "dependency_status": "satisfied",
+            "reason": "在∀<a, b>, <c, d>∈A×A的前提下，正确利用等式对称性a+b=c+d ⇒ c+d=a+b，推导出<c, d>R<a, b>，证明过程严密。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "∀<a,b>,<c,d>,<e,f>∈A×A. <a,b>R<c,d> ⇔ a+b=c+d. <c,d>R<e,f>⇔ c+d=e+f 所以 a+b=e+f, 所以 <a,b>R<e,f> 所以R满足传递性.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性",
+            "dependency_status": "satisfied",
+            "reason": "正确声明了三组变量属于A×A的前提，由a+b=c+d和c+d=e+f等量代换得出a+b=e+f，进而推导出<a, b>R<e, f>，充分证明了传递性。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "∀<a,b>∈A×A. \n因为a+b=a+b. \n所以<a,b>R<a,b> \n所以R满足自反性.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确选择了A×A上的任意元素<a,b>，利用a+b=a+b推出<a,b>R<a,b>，完整且正确地证明了自反性。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "因为 ∀<a,b>,<c,d>∈A×A. \n<a,b>R<c,d> ⇔ a+b=c+d \n而 c+d=a+b, 所以 <c,d>R<a,b> \n所以R满足对称性.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确假设了<a,b>R<c,d>，并利用加法交换原则得出c+d=a+b从而推出<c,d>R<a,b>，逻辑严密，证明对称性成立。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "∀<a,b>,<c,d>,<e,f>∈A×A. \n<a,b>R<c,d> ⇔ a+b=c+d. \n<c,d>R<e,f>⇔ c+d=e+f \n所以 a+b=e+f, 所以 <a,b>R<e,f> \n所以R满足传递性.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确写出前置条件，并通过等式的传递性得出a+b=e+f，从而推出<a,b>R<e,f>，过程与结论均完全正确。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "∀<a,b>∈A×A. \n因为a+b=a+b. \n所以<a,b>R<a,b> \n所以R满足自反性.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性: ∀<a, b>∈A×A, a+b=a+b ⇔ <a, b>R<a, b>",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly defines the universal quantifier over A×A, proves the equality a+b=a+b, concludes <a,b>R<a,b>, and correctly states R is reflexive."
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "因为 ∀<a,b>,<c,d>∈A×A. \n<a,b>R<c,d> ⇔ a+b=c+d \n而 c+d=a+b, 所以 <c,d>R<a,b> \n所以R满足对称性.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性: <a, b>R<c, d> ⇔ a+b=c+d ⇒ c+d=a+b ⇒ <c, d>R<a, b>",
+            "dependency_status": "satisfied",
+            "reason": "Student assumes <a,b>R<c,d>, correctly translates to a+b=c+d, shows symmetry of equality (c+d=a+b), and concludes <c,d>R<a,b>."
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "∀<a,b>,<c,d>,<e,f>∈A×A. \n<a,b>R<c,d> ⇔ a+b=c+d. \n<c,d>R<e,f>⇔ c+d=e+f \n所以 a+b=e+f, 所以 <a,b>R<e,f> \n所以R满足传递性.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性: <a, b>R<c, d> ∧ <c, d>R<e, f> ⇔ a+b=c+d ∧ c+d=e+f ⇒ a+b=e+f ⇒ <a, b>R<e, f>",
+            "dependency_status": "satisfied",
+            "reason": "Student correctly sets up the two relational conditions, substitutes the intermediate sum to get a+b=e+f, and correctly concludes <a,b>R<e,f>.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_3": [
+        4.0,
+        4.0,
+        4.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_DM_104.jpg",
+    "facts": "{\"step_1\": \"自反性：a+b=a+b恒成立，∀<a,b>∈A×A,a∈A,b∈A即<a,b>R<a,b>成立，自反性得证。\", \"step_2\": \"对称性，∀<a,b>,<c,d>∈A×A，有<a,b>R<c,d> ⇔ a+b=c+d ⇔ c+d=a+b ⇔ <c,d>R<a,b>，对称性得证。\", \"step_3\": \"传递性 ∀<a,b>,<c,d>,<e,f>∈A×A 有<a,b>R<c,d>,<c,d>R<e,f>成立 即有a+b=c+d c+d=e+f ⇒ a+b=e+f ⇔ <a,b>R<e,f>，传递性得证。\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T21:32:52.134302",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_2/ANS_DM_104.jpg",
+      "image_sha256": "7056d6aa12774d8fc65b379f63473145b3cbeb49f931bc6b087f5204b30c7d96",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：(1)自反性：a+b=a+b恒成立，∀<a,b>∈A×A,a∈A,b∈A即<a,b>R<a,b>成立，自反性得证。\n(2)传递性 ∀<a,b>,<c,d>,<e,f>∈A×A 有<a,b>R<c,d>,<c,d>R<e,f>成立 即有a+b=c+d c+d=e+f ⇒ a+b=e+f ⇔ <a,b>R<e,f>，传递性得证。\n(4)对称性，∀<a,b>,<c,d>∈A×A，有<a,b>R<c,d> ⇔ a+b=c+d ⇔ c+d=a+b ⇔ <c,d>R<a,b>，对称性得证。\n综上所述，R是等价关系。",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_104",
+        "question_id": "DM_2",
+        "subject": "DM",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "自反性：a+b=a+b恒成立，∀<a,b>∈A×A,a∈A,b∈A即<a,b>R<a,b>成立，自反性得证。",
+        "step_2": "对称性，∀<a,b>,<c,d>∈A×A，有<a,b>R<c,d> ⇔ a+b=c+d ⇔ c+d=a+b ⇔ <c,d>R<a,b>，对称性得证。",
+        "step_3": "传递性 ∀<a,b>,<c,d>,<e,f>∈A×A 有<a,b>R<c,d>,<c,d>R<e,f>成立 即有a+b=c+d c+d=e+f ⇒ a+b=e+f ⇔ <a,b>R<e,f>，传递性得证。"
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "自反性：a+b=a+b恒成立，∀<a,b>∈A×A,a∈A,b∈A即<a,b>R<a,b>成立，自反性得证。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性",
+            "dependency_status": "satisfied",
+            "reason": "正确设置条件并应用定义证明了自反性。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "对称性，∀<a,b>,<c,d>∈A×A，有<a,b>R<c,d> ⇔ a+b=c+d ⇔ c+d=a+b ⇔ <c,d>R<a,b>，对称性得证。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性",
+            "dependency_status": "satisfied",
+            "reason": "完整且正确地利用等式对称性证明了对称性。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "传递性 ∀<a,b>,<c,d>,<e,f>∈A×A 有<a,b>R<c,d>,<c,d>R<e,f>成立 即有a+b=c+d c+d=e+f ⇒ a+b=e+f ⇔ <a,b>R<e,f>，传递性得证。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性",
+            "dependency_status": "satisfied",
+            "reason": "正确应用等量代换原理证明了传递性，推理过程无误。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "自反性：a+b=a+b恒成立，∀<a,b>∈A×A,a∈A,b∈A即<a,b>R<a,b>成立，自反性得证。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性",
+            "dependency_status": "satisfied",
+            "reason": "The student explicitly states the condition a+b=a+b for all <a,b> in A×A and correctly concludes that <a,b>R<a,b> holds."
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "对称性，∀<a,b>,<c,d>∈A×A，有<a,b>R<c,d> ⇔ a+b=c+d ⇔ c+d=a+b ⇔ <c,d>R<a,b>，对称性得证。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly demonstrates that <a,b>R<c,d> implies c+d=a+b, which in turn implies <c,d>R<a,b>."
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "传递性 ∀<a,b>,<c,d>,<e,f>∈A×A 有<a,b>R<c,d>,<c,d>R<e,f>成立 即有a+b=c+d c+d=e+f ⇒ a+b=e+f ⇔ <a,b>R<e,f>，传递性得证。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性",
+            "dependency_status": "satisfied",
+            "reason": "The student properly sets up the premises <a,b>R<c,d> and <c,d>R<e,f>, performs the transitive algebraic step yielding a+b=e+f, and concludes <a,b>R<e,f>.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "自反性：a+b=a+b恒成立，∀<a,b>∈A×A,a∈A,b∈A即<a,b>R<a,b>成立，自反性得证。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性：对于 A×A 中的任意 <a, b>，a+b=a+b，因此 <a,b>R<a,b>。",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly establishes the reflexive property by showing a+b=a+b holds for all <a,b> in A×A, satisfying the required relation <a,b>R<a,b>."
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "对称性，∀<a,b>,<c,d>∈A×A，有<a,b>R<c,d> ⇔ a+b=c+d ⇔ c+d=a+b ⇔ <c,d>R<a,b>，对称性得证。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性：对于 A×A 中的任意 <a, b> 和 <c, d>，a+b=c+d ⇒ c+d=a+b ⇒ <c,d>R<a,b>。",
+            "dependency_status": "satisfied",
+            "reason": "The student accurately proves the symmetric property by utilizing the equivalence of a+b=c+d and c+d=a+b to derive <c,d>R<a,b>."
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "传递性 ∀<a,b>,<c,d>,<e,f>∈A×A 有<a,b>R<c,d>,<c,d>R<e,f>成立 即有a+b=c+d c+d=e+f ⇒ a+b=e+f ⇔ <a,b>R<e,f>，传递性得证。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性：对于 A×A 中的任意 <a, b>, <c, d>, 和 <e, f>，a+b=c+d ∧ c+d=e+f ⇒ a+b=e+f ⇒ <a,b>R<e,f>。",
+            "dependency_status": "satisfied",
+            "reason": "The student provides the complete valid chain of inference for transitivity, correctly substituting and equating the sums to prove the relation.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_3": [
+        4.0,
+        4.0,
+        4.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_DM_107.jpg",
+    "facts": "{\"step_1\": \"①自反性：∀a,b,c,d∈A \\n对 <a,b>∈A×A：a+b=a+b \\n则 <a,b>R<a,b>\", \"step_2\": \"②对称性 \\n∀a,b,c,d∈A \\n对<a,b>,<c,d>∈A×A \\na+b=c+d \\n则<a,b>R<c,d> \\nc+d=a+b \\n则<c,d>R<a,b> \\n即证对称性\", \"step_3\": \"③传递性 \\n若<a,b>,<c,d>,<e,f>∈A×A <a,b>R<c,d>,则a+b=c+d \\n<c,d>R<e,f>则 c+d=e+f \\n那么有a+b=e+f \\n则<a,b>R<e,f> \\n即证传递性 \\n综上,R是等价关系\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T21:33:39.915624",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_2/ANS_DM_107.jpg",
+      "image_sha256": "0aaf19ee8e887e64a40a789290782779c7380b81516ef9e50709a48564bd1cc0",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "证：①自反性：∀a,b,c,d∈A \n对 <a,b>∈A×A：a+b=a+b \n则 <a,b>R<a,b> \n②对称性 \n∀a,b,c,d∈A \n对<a,b>,<c,d>∈A×A \na+b=c+d \n则<a,b>R<c,d> \nc+d=a+b \n则<c,d>R<a,b> \n即证对称性 \n③传递性 \n若<a,b>,<c,d>,<e,f>∈A×A <a,b>R<c,d>,则a+b=c+d \n<c,d>R<e,f>则 c+d=e+f \n那么有a+b=e+f \n则<a,b>R<e,f> \n即证传递性 \n综上,R是等价关系",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_107",
+        "question_id": "DM_2",
+        "subject": "DM",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "①自反性：∀a,b,c,d∈A \n对 <a,b>∈A×A：a+b=a+b \n则 <a,b>R<a,b>",
+        "step_2": "②对称性 \n∀a,b,c,d∈A \n对<a,b>,<c,d>∈A×A \na+b=c+d \n则<a,b>R<c,d> \nc+d=a+b \n则<c,d>R<a,b> \n即证对称性",
+        "step_3": "③传递性 \n若<a,b>,<c,d>,<e,f>∈A×A <a,b>R<c,d>,则a+b=c+d \n<c,d>R<e,f>则 c+d=e+f \n那么有a+b=e+f \n则<a,b>R<e,f> \n即证传递性 \n综上,R是等价关系"
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "①自反性：∀a,b,c,d∈A \n对 <a,b>∈A×A：a+b=a+b \n则 <a,b>R<a,b>",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性",
+            "dependency_status": "satisfied",
+            "reason": "学生明确指出了对于 A×A 中的任意元素 <a,b>，存在 a+b=a+b，从而推导出 <a,b>R<a,b>。逻辑严密，符合自反性的定义，虽然包含了未使用的冗余变量但属于非实质性笔误，符合给分标准。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "②对称性 \n∀a,b,c,d∈A \n对<a,b>,<c,d>∈A×A \na+b=c+d \n则<a,b>R<c,d> \nc+d=a+b \n则<c,d>R<a,b> \n即证对称性",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确写出若 <a,b>R<c,d> 则有 a+b=c+d，由加法对称性得出 c+d=a+b，从而证明 <c,d>R<a,b>。满足等价关系对称性的证明要求。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "③传递性 \n若<a,b>,<c,d>,<e,f>∈A×A <a,b>R<c,d>,则a+b=c+d \n<c,d>R<e,f>则 c+d=e+f \n那么有a+b=e+f \n则<a,b>R<e,f> \n即证传递性 \n综上,R是等价关系",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确构造了条件 <a,b>R<c,d> 与 <c,d>R<e,f>，并利用等式推导出 a+b=e+f，得出 <a,b>R<e,f>。最后总结了等价关系，过程完整，逻辑正确。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "①自反性：∀a,b,c,d∈A \n对 <a,b>∈A×A：a+b=a+b \n则 <a,b>R<a,b>",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确选取了A×A中的任意元素<a,b>，利用实数相等a+b=a+b推出了<a,b>R<a,b>，完整证明了自反性。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "②对称性 \n∀a,b,c,d∈A \n对<a,b>,<c,d>∈A×A \na+b=c+d \n则<a,b>R<c,d> \nc+d=a+b \n则<c,d>R<a,b> \n即证对称性",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确假设<a,b>R<c,d>推出a+b=c+d，并利用等式对称性得到c+d=a+b，从而推出<c,d>R<a,b>，完整证明了对称性。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "③传递性 \n若<a,b>,<c,d>,<e,f>∈A×A <a,b>R<c,d>,则a+b=c+d \n<c,d>R<e,f>则 c+d=e+f \n那么有a+b=e+f \n则<a,b>R<e,f> \n即证传递性",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确假设<a,b>R<c,d>与<c,d>R<e,f>，通过等量代换得到a+b=e+f，从而推出<a,b>R<e,f>，完整证明了传递性。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "①自反性：∀a,b,c,d∈A \n对 <a,b>∈A×A：a+b=a+b \n则 <a,b>R<a,b>",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性",
+            "dependency_status": "satisfied",
+            "reason": "正确选取A×A中的任意元素<a,b>，利用实数加法的自反性得出a+b=a+b，进而推导出<a,b>R<a,b>，逻辑完整且符合标准证明过程。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "②对称性 \n∀a,b,c,d∈A \n对<a,b>,<c,d>∈A×A \na+b=c+d \n则<a,b>R<c,d> \nc+d=a+b \n则<c,d>R<a,b> \n即证对称性",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性",
+            "dependency_status": "satisfied",
+            "reason": "正确假设<a,b>R<c,d>，利用实数加法的对称性得出c+d=a+b，从而推出<c,d>R<a,b>，证明过程完全等价于标准答案。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "③传递性 \n若<a,b>,<c,d>,<e,f>∈A×A <a,b>R<c,d>,则a+b=c+d \n<c,d>R<e,f>则 c+d=e+f \n那么有a+b=e+f \n则<a,b>R<e,f> \n即证传递性 \n综上,R是等价关系",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性",
+            "dependency_status": "satisfied",
+            "reason": "正确列出两个前提条件并得出a+b=c+d与c+d=e+f，通过等量代换推导出a+b=e+f，最终得出<a,b>R<e,f>并作答等价关系成立，逻辑严密。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_3": [
+        4.0,
+        4.0,
+        4.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_DM_112.jpg",
+    "facts": "{\"step_1\": \"①.自反：对∀<a,b>∈A×A，<a,b>R<a,b>⇔a+b=b+a，即证：\", \"step_2\": \"①.对称：对∀<a,b>，<c,d>∈A×A，\\n<a,b>R<c,d>⇔a+b=c+d⇔c+d=a+b⇔\\n<c,d>R<a,b>\", \"step_3\": \"③.传递：对∀<a,b>，<c,d>，<e,f>∈A×A，\\n<a,b>R<c,d>，<c,d>R<e,f>⇔a+b=c+d，c+d=e+f\\n⇔a+b=e+f⇔<a,b>R<e,f>\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T21:34:31.411787",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_2/ANS_DM_112.jpg",
+      "image_sha256": "4e201d218751cb07a03cefe666630defaa7f5575ea8d20ca000a97313a4ec529",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "证：①.自反：对∀<a,b>∈A×A，<a,b>R<a,b>⇔a+b=b+a，即证：\n①.对称：对∀<a,b>，<c,d>∈A×A，\n<a,b>R<c,d>⇔a+b=c+d⇔c+d=a+b⇔\n<c,d>R<a,b>\n③.传递：对∀<a,b>，<c,d>，<e,f>∈A×A，\n<a,b>R<c,d>，<c,d>R<e,f>⇔a+b=c+d，c+d=e+f\n⇔a+b=e+f⇔<a,b>R<e,f>\n综上，即证R是等价关系。",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_112",
+        "question_id": "DM_2",
+        "subject": "DM",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "①.自反：对∀<a,b>∈A×A，<a,b>R<a,b>⇔a+b=b+a，即证：",
+        "step_2": "①.对称：对∀<a,b>，<c,d>∈A×A，\n<a,b>R<c,d>⇔a+b=c+d⇔c+d=a+b⇔\n<c,d>R<a,b>",
+        "step_3": "③.传递：对∀<a,b>，<c,d>，<e,f>∈A×A，\n<a,b>R<c,d>，<c,d>R<e,f>⇔a+b=c+d，c+d=e+f\n⇔a+b=e+f⇔<a,b>R<e,f>"
+      }
+    },
+    "scores": [
+      9.5,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "①.自反：对∀<a,b>∈A×A，<a,b>R<a,b>⇔a+b=b+a，即证：",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确设定了证明目标和核心等价关系式(a+b=b+a)，但由于抄写或提取遗漏，缺失了将等式代回关系R以及得出自反性结论的后续步骤，故按大部分正确给分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "①.对称：对∀<a,b>，<c,d>∈A×A，\n<a,b>R<c,d>⇔a+b=c+d⇔c+d=a+b⇔\n<c,d>R<a,b>",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性",
+            "dependency_status": "satisfied",
+            "reason": "证明过程完整且逻辑等价于标准答案，正确使用加法交换律得出双向蕴含关系，满足满分要求。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "③.传递：对∀<a,b>，<c,d>，<e,f>∈A×A，\n<a,b>R<c,d>，<c,d>R<e,f>⇔a+b=c+d，c+d=e+f\n⇔a+b=e+f⇔<a,b>R<e,f>",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性",
+            "dependency_status": "satisfied",
+            "reason": "证明过程完整正确，清晰展示了等式的传递性推导，核心逻辑与标准答案一致，得满分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 9.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "①.自反：对∀<a,b>∈A×A，<a,b>R<a,b>⇔a+b=b+a，即证：",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性：∀<a, b>∈A×A, a+b=a+b ⇔ <a, b>R<a, b>",
+            "dependency_status": "satisfied",
+            "reason": "学生正确写出了自反性的定义并给出了a+b=b+a这一正确的代换过程，通过加法交换律显然可证。虽然未写出最终结论，且存在未完结的“即证：”字眼，但核心推导过程已完整给出，属于格式/细节上的轻微缺失。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "①.对称：对∀<a,b>，<c,d>∈A×A，\n<a,b>R<c,d>⇔a+b=c+d⇔c+d=a+b⇔\n<c,d>R<a,b>",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性：∀<a, b>, <c, d>∈A×A, <a, b>R<c, d> ⇔ a+b=c+d ⇒ c+d=a+b ⇒ <c, d>R<a, b>",
+            "dependency_status": "satisfied",
+            "reason": "学生正确写出了任意两个元素属于A×A的前提定义，并完整给出了利用加法交换律进行等价推导的证明链条，逻辑严密，完全符合评分标准。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "③.传递：对∀<a,b>，<c,d>，<e,f>∈A×A，\n<a,b>R<c,d>，<c,d>R<e,f>⇔a+b=c+d，c+d=e+f\n⇔a+b=e+f⇔<a,b>R<e,f>",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性：∀<a, b>, <c, d>, <e, f>∈A×A, <a, b>R<c, d> ∧ <c, d>R<e, f> ⇔ a+b=c+d ∧ c+d=e+f ⇒ a+b=e+f ⇒ <a, b>R<e, f>",
+            "dependency_status": "satisfied",
+            "reason": "学生正确写出了任意三个元素属于A×A的定义，并给出了利用等式的传递性（等量代换）进行推导的证明过程，逻辑严密，与标准答案等价，给满分。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "①.自反：对∀<a,b>∈A×A，<a,b>R<a,b>⇔a+b=b+a，即证：",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性 (a+b=a+b ⇒ <a, b>R<a, b>)",
+            "dependency_status": "satisfied",
+            "reason": "学生正确识别了自反性的对象（∀<a,b>∈A×A）和关系定义（<a,b>R<a,b>），并给出了 a+b=b+a 的代数步骤，这完全等价于标准答案中的 a+b=a+b，逻辑清晰且正确，未展开书写不影响核心逻辑的正确性。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "①.对称：对∀<a,b>，<c,d>∈A×A，\n<a,b>R<c,d>⇔a+b=c+d⇔c+d=a+b⇔\n<c,d>R<a,b>",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性 (a+b=c+d ⇒ c+d=a+b ⇒ <c, d>R<a, b>)",
+            "dependency_status": "satisfied",
+            "reason": "学生完整展示了从 <a,b>R<c,d> 推导出 <c,d>R<a,b> 的代换过程，利用加法交换律完成证明，逻辑步骤严密，符合标准答案。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "③.传递：对∀<a,b>，<c,d>，<e,f>∈A×A，\n<a,b>R<c,d>，<c,d>R<e,f>⇔a+b=c+d，c+d=e+f\n⇔a+b=e+f⇔<a,b>R<e,f>",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性 (<a, b>R<c, d> ∧ <c, d>R<e, f> ⇒ a+b=e+f ⇒ <a, b>R<e, f>)",
+            "dependency_status": "satisfied",
+            "reason": "学生正确写出了传递性的条件前提与结论，并准确使用了等式代换（a+b=c+d 且 c+d=e+f 得到 a+b=e+f），推导关系成立，满足得分要求。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.5,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_3": [
+        4.0,
+        4.0,
+        4.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555556,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.01851851851851852
+  },
+  {
+    "file": "ANS_DM_123.jpg",
+    "facts": "{\"step_1\": \"①自反 ∀x=<a,b>∈A×A a+b=a+b，故<a,b>R<a,b>，即xRx\", \"step_2\": \"②对称 ∀x=<a,b>，∀y=<c,d>∈A×A 若xRy，即a+b=c+d，\\n得到 c+d=a+b，即yRx，则∀x∀y(xRy→yRx)\", \"step_3\": \"③传递 ∀x=<a,b>，∀y=<c,d>，∀z=<e,f>∈A×A\\n若xRy，yRz 有a+b=c+d，c+d=e+f 得到 a+b=c+d=e+f，即a+b=e+f，即xRz， 于是 ∀x∀y∀z(xRy∧yRz→xRz)\"}",
+    "extraction_evidence": {
+      "schema_version": 3,
+      "created_at": "2026-07-25T21:35:25.139182",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_2/ANS_DM_123.jpg",
+      "image_sha256": "fe2ea8a29460283b8e1118810ac1f30c8facffea8007da2051e56699fde93887",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "①自反 ∀x=<a,b>∈A×A a+b=a+b，故<a,b>R<a,b>，即xRx \n②对称 ∀x=<a,b>，∀y=<c,d>∈A×A 若xRy，即a+b=c+d， \n得到 c+d=a+b，即yRx，则∀x∀y(xRy→yRx) \n③传递 ∀x=<a,b>，∀y=<c,d>，∀z=<e,f>∈A×A \n若xRy，yRz 有a+b=c+d，c+d=e+f 得到 a+b=c+d=e+f，即a+b=e+f，即xRz， 于是 ∀x∀y∀z(xRy∧yRz→xRz) \n综上 ①②③，R是等价关系",
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_123",
+        "question_id": "DM_2",
+        "subject": "DM",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "①自反 ∀x=<a,b>∈A×A a+b=a+b，故<a,b>R<a,b>，即xRx",
+        "step_2": "②对称 ∀x=<a,b>，∀y=<c,d>∈A×A 若xRy，即a+b=c+d，\n得到 c+d=a+b，即yRx，则∀x∀y(xRy→yRx)",
+        "step_3": "③传递 ∀x=<a,b>，∀y=<c,d>，∀z=<e,f>∈A×A\n若xRy，yRz 有a+b=c+d，c+d=e+f 得到 a+b=c+d=e+f，即a+b=e+f，即xRz， 于是 ∀x∀y∀z(xRy∧yRz→xRz)"
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "①自反 ∀x=<a,b>∈A×A a+b=a+b，故<a,b>R<a,b>，即xRx",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性：对任意元素属于 A×A，存在 x=〈a,b〉，利用 a+b=a+b 推导出 〈a,b〉R〈a,b〉",
+            "dependency_status": "satisfied",
+            "reason": "学生明确写出了任意 <a,b>∈A×A 满足 a+b=a+b，并推导出 <a,b>R<a,b>，完全证明了自反性，符合满分要求。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "②对称 ∀x=<a,b>，∀y=<c,d>∈A×A 若xRy，即a+b=c+d，\n得到 c+d=a+b，即yRx，则∀x∀y(xRy→yRx)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性：对任意 〈a,b〉, 〈c,d〉 ∈ A×A，存在 xRy，利用 a+b=c+d 推导出 c+d=a+b，进而得到 yRx",
+            "dependency_status": "satisfied",
+            "reason": "学生正确写出假设 xRy (即 a+b=c+d)，并通过等式对称得到 c+d=a+b，推导出 yRx，正确完成了对称性的证明。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "③传递 ∀x=<a,b>，∀y=<c,d>，∀z=<e,f>∈A×A\n若xRy，yRz 有a+b=c+d，c+d=e+f 得到 a+b=c+d=e+f，即a+b=e+f，即xRz， 于是 ∀x∀y∀z(xRy∧yRz→xRz)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性：对任意 〈a,b〉, 〈c,d〉, 〈e,f〉 ∈ A×A，若存在 xRy 和 yRz，利用等量代换推导出 xRz",
+            "dependency_status": "satisfied",
+            "reason": "学生通过 a+b=c+d 和 c+d=e+f 进行等量代换，正确得出 a+b=e+f，进而推导出 xRz，逻辑严密，完全符合传递性的证明要求。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "①自反 ∀x=<a,b>∈A×A a+b=a+b，故<a,b>R<a,b>，即xRx",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性",
+            "dependency_status": "satisfied",
+            "reason": "The student correctly sets up the arbitrary element from A×A, uses the equality a+b=a+b, and correctly concludes <a,b>R<a,b>, satisfying reflexivity."
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "②对称 ∀x=<a,b>，∀y=<c,d>∈A×A 若xRy，即a+b=c+d，\n得到 c+d=a+b，即yRx，则∀x∀y(xRy→yRx)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性",
+            "dependency_status": "satisfied",
+            "reason": "The student assumes xRy and correctly shows the algebraic symmetry a+b=c+d => c+d=a+b, concluding yRx, proving symmetry."
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "③传递 ∀x=<a,b>，∀y=<c,d>，∀z=<e,f>∈A×A\n若xRy，yRz 有a+b=c+d，c+d=e+f 得到 a+b=c+d=e+f，即a+b=e+f，即xRz， 于是 ∀x∀y∀z(xRy∧yRz→xRz)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性",
+            "dependency_status": "satisfied",
+            "reason": "The student assumes xRy and yRz, correctly links them via a+b=c+d=e+f, and concludes a+b=e+f to prove xRz, properly establishing transitivity.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "①自反 ∀x=<a,b>∈A×A a+b=a+b，故<a,b>R<a,b>，即xRx",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足自反性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确使用了量词∀x=<a,b>∈A×A，给出了核心代数等式a+b=a+b，并正确推导出关系<a,b>R<a,b>，完整证明了自反性。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "②对称 ∀x=<a,b>，∀y=<c,d>∈A×A 若xRy，即a+b=c+d，\n得到 c+d=a+b，即yRx，则∀x∀y(xRy→yRx)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足对称性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确设定了前提xRy即a+b=c+d，并根据等式对称性得出c+d=a+b，准确推导出yRx，证明过程完整且正确。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "③传递 ∀x=<a,b>，∀y=<c,d>，∀z=<e,f>∈A×A\n若xRy，yRz 有a+b=c+d，c+d=e+f 得到 a+b=c+d=e+f，即a+b=e+f，即xRz， 于是 ∀x∀y∀z(xRy∧yRz→xRz)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "证明关系 R 满足传递性",
+            "dependency_status": "satisfied",
+            "reason": "学生正确设定了前提条件xRy和yRz对应的等式，通过中间变量传递得出了a+b=e+f的结论，进而推导出xRz，核心推理过程完备。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_3",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_3": [
+        4.0,
+        4.0,
+        4.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]
