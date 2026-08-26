@@ -1,0 +1,604 @@
+[
+  {
+    "file": "ANS_POC_106.jpg",
+    "facts": "{\"step_1\": \"S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T03:18:34.788703",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_106.jpg",
+      "image_sha256": "18c742d34f7b7361ccab14a0db686a2e4afbb81c65090eb1f7df759abcc1fd7a",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_106",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9"
+      }
+    },
+    "scores": [
+      5,
+      4,
+      2
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造产生偶数（末位为偶数字）的2型文法，其他符合要求的文法同样给分",
+            "dependency_status": "satisfied",
+            "reason": "学生文法：S→AB，A为非零首位数字，B→BC|C|0..9 结合 C→偶数字，使B产生以偶数字结尾的任意数字串，因此S恰好产生首位非零且末位为偶数的整数，与标准答案语言等价，属于符合要求的另一文法。"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（生成首位非零、末位为偶数的数，含单个偶数字情形）",
+            "dependency_status": "satisfied",
+            "reason": "文法结构正确：A 保证首位非零，B→BC|C 递归保证末位为 C（偶数字），覆盖两位及以上的数。但 S→AB 强制至少两位，遗漏了单个偶数字（如 \"2\"）的情形，而标准答案 S→ME|2|4|6|8 包含该情形，属多部分条件缺一部分，给大部分分。"
+          }
+        ],
+        "total_score": 4
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S→AB | A→1|2|3|4|5|6|7|8|9 | B→BC|C | C→0|2|4|6|8 | B→0|1|2|3|4|5|6|7|8|9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造生成（正）偶数的2型文法，例如 S→ME, E→0|2|4|6|8, M→MN|1..9, N→0..9",
+            "dependency_status": "insufficient",
+            "reason": "结构思路正确（首数字A为非零数字，尾字符由偶数集合C控制），但额外给出的产生式 B→0|1|...|9 与 B→BC|C 合并后使 B 可产生任意数字串，句子的末位数字可为奇数，因此文法产生所有正整数而非仅偶数，核心语言约束被破坏，只能给部分分。"
+          }
+        ],
+        "total_score": 2
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        4.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 1.5555555555555554
+    },
+    "max_item_variance": 1.5555555555555554,
+    "avg_item_variance": 1.5555555555555554
+  },
+  {
+    "file": "ANS_POC_111.jpg",
+    "facts": "{\"step_1\": \"文法产生式（按学生书写原样记录）：\\nA→2|4|6|8\\nB→A|1|3|5|7|9\\nC→A|0\\nD→DB\\nS→A|DC\\n\\n学生思想说明（原文）：思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T03:19:31.317494",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_111.jpg",
+      "image_sha256": "ddb76ca3b909dac5c1f709ff3415e7f707def9bd7360ba9a8b4de53246929cbe",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. A→2|4|6|8 \nB→A|1|3|5|7|9 C→A|0 D→DB \nS→A|DC\n思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_111",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "文法产生式（按学生书写原样记录）：\nA→2|4|6|8\nB→A|1|3|5|7|9\nC→A|0\nD→DB\nS→A|DC\n\n学生思想说明（原文）：思想：1位：2、4、6、8 | 2位及以上：个位为0、2、4、6、8 | 十位及以上为1、2、3、4、5、6、7、8、9"
+      }
+    },
+    "scores": [
+      2,
+      3,
+      3
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "A→2|4|6|8 B→A|1|3|5|7|9 C→A|0 D→DB S→A|DC",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造生成全体偶数的2型文法",
+            "dependency_status": "failed",
+            "reason": "A、B、C 及 S→A 部分正确，可生成一位偶数；但 D→DB 仅有递归产生式而无终止基础产生式（缺少如 D→B 之类的基础情况），D 永远无法推导出终结符串，因此 S→DC 无法产生任何多位偶数，文法不完整。方法思想（个位为偶数、高位为非零数字）正确，按宽松标准给部分分。"
+          }
+        ],
+        "total_score": 2
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "A→2|4|6|8; B→A|1|3|5|7|9; C→A|0; D→DB; S→A|DC",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "构造产生所有以偶数字结尾的正整数的2型文法（其他正确文法亦可）",
+            "dependency_status": "partial",
+            "reason": "整体思路正确：S→A 覆盖1位偶数，S→DC 覆盖多位数，C 保证末位为偶数。但 D→DB 只有递归产生式、无基础产生式（如 D→B），D 无法推导出终结符串，故多位数情形实际上无法生成，文法不完整。其余部分（A、B、C、S）均正确，按宽松标准给部分分 3/5。"
+          }
+        ],
+        "total_score": 3
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "A→2|4|6|8; B→A|1|3|5|7|9; C→A|0; D→DB; S→A|DC；思想：个位为0、2、4、6、8，十位及以上为1-9",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（偶数文法，其他正确文法同样给分）",
+            "dependency_status": "failed",
+            "reason": "思路正确：A为非零偶数字，C保证个位为偶数（含0），B覆盖十位及以上的1-9。但D→DB缺少终止产生式（如D→B），D无法推导出终结串，多位数实际不可生成，文法整体不完整。方法与结构大体正确，仅缺一条产生式，按宽严适中的评分给予部分分。"
+          }
+        ],
+        "total_score": 3
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        3.0,
+        3.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.22222222222222224
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.22222222222222224
+  },
+  {
+    "file": "ANS_POC_116.jpg",
+    "facts": "{\"step_1\": \"G[S]: S→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T03:20:29.556840",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_116.jpg",
+      "image_sha256": "36840d1b308e45a01b745489c4f3b81e9ef70193db32513f3c0d4aa7615c6112",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "G[S]: \nS→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_116",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "G[S]: S→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8"
+      }
+    },
+    "scores": [
+      5.0,
+      5,
+      5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "S→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "该文法正确：S→C 生成单个偶数字（2/4/6/8）；S→NB 中 N 递归生成以非零数字开头的数字串，B 生成偶数字结尾，A 覆盖中间位数字 0-9。所生成的语言（各位数字组成、末位为偶的十进制正整数）与标准答案等价，且题目明确允许其他符合要求的文法，故给满分。"
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "S→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造生成偶数（无前导零）的2型文法，其他符合要求的文法同样给分",
+            "dependency_status": "satisfied",
+            "reason": "学生文法正确：N生成非零开头的数字串（N→NA|1..9, A→0..9），S→NB在末尾接偶数数字B，S→C覆盖单个偶数，恰好生成所有无前导零的偶数，属等价正确文法"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "S→NB|C | N→NA | N→1|2|3|4|5|6|7|8|9 | A→0|1|2|3|4|5|6|7|8|9 | B→0|2|4|6|8 | C→2|4|6|8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造产生无前导零的偶数的2型文法（其他正确文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "学生文法与标准文法等价：N（由N→NA及N→1..9）产生无前导零的非空数字串，S→NB产生多位的以偶数字结尾的数，S→C产生单个偶数字，恰好覆盖全部偶数语言；文法形式正确（2型/上下文无关）。"
+          }
+        ],
+        "total_score": 5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_73.jpg",
+    "facts": "{\"step_1\": \"G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T03:21:14.872391",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_73.jpg",
+      "image_sha256": "5c44bcaf01e2dcb91d92f4fc8e3a239cddec8fdadab82c0d78377e0b6da02dfb",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_73",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数"
+      }
+    },
+    "scores": [
+      5,
+      5.0,
+      5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造产生全体正偶数的2型文法（其他符合要求的文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "学生文法 S→A|BMD, A→2|4|6|8, B→非0数字, C→任意数字, D→偶数字, M→MC|C|ε 正确产生所有正偶数：单个偶数字或首位非0、末位偶数的多位数，与标准答案语言等价，属于注中允许的等价正确文法。"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "S→A | S→BMD | M→MC|C|ε | A→2|4|6|8（正偶数） | B→1|2|3|4|5|6|7|8|9（非0数） | C→0|1|2|3|4|5|6|7|8|9（任意数） | D→0|2|4|6|8（偶数） | S可以是个任意正偶数，或是非0数+任意个任意数+偶数",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造产生所有正偶数的2型文法（其他正确文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "学生文法正确：S→A 覆盖单个非零偶数字，S→BMD 覆盖首位非零、末位为偶数字的任意位偶数，M 递归产生任意多个数字（含 ε）。所有正偶数均可产生，且不会产生 0 或奇数，与标准答案等价，属另一种正确文法。"
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "G[s]：S→A | S→BMD | M→MC|C|ε | A→2|4|6|8 | B→1|2|3|4|5|6|7|8|9 | C→0|1|...|9 | D→0|2|4|6|8；S可以是个任意正偶数，或是非0数+任意个任意数+偶数",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "构造产生所有正偶数的2型文法（其他正确文法同样给分）",
+            "dependency_status": "satisfied",
+            "reason": "文法正确：S→A 覆盖一位正偶数；S→BMD 产生首位非零、中间任意数字串、末位为偶数的所有正偶数，与标准答案不同但等价，符合'其他符合要求的文法同样给分'。"
+          }
+        ],
+        "total_score": 5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_84.jpg",
+    "facts": "{\"step_1\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T03:22:09.815765",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_4/ANS_POC_84.jpg",
+      "image_sha256": "9e11448fe5ec5d739b8f1dc89fa49dcd187a25f28770f1a57b0438c9cdaaf882",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_84",
+        "question_id": "POC_4",
+        "subject": "POC_24",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {
+        "step_1": "未书写"
+      },
+      "facts": {
+        "step_1": "未书写"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（偶数开头的正偶数文法等价形式均可）",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何文法内容，无可用证据，判为空白，不得分。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（其他符合要求的文法同样给分）",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何文法构造内容，无证据可给分。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "构造符合要求的2型文法（产生偶数的文法等）",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何文法内容，无可用证据，无法给分。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

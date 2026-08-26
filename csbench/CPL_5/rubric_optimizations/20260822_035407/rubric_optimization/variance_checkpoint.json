@@ -1,0 +1,1503 @@
+[
+  {
+    "file": "ANS_CPL_249.jpg",
+    "facts": "{\"step_1\": \"4) 将 float result=0; 改为 float result=1;\", \"step_2\": \"未书写\", \"step_3\": \"(6) 将 FILE *pf=NULL; 改为 FILE *pf;\", \"step_4\": \"22) 将 for(int i=N;i>=0;i--) 改为 for(int i=N-1;i>=0;i--)\", \"step_5\": \"24) 将 printf(\\\"%2f\\\",polynomial(x,&c)); 改为 printf(\\\"%2f\\\",polynomial(x,c));\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:23:11.205557",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_5/ANS_CPL_249.jpg",
+      "image_sha256": "7a8cc94112edee3ec27fdf81a116413734698a3226e6e0c1b8bc9c00e337e5f2",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "【1】4) 将 float result=0 ; 改为 float result =1; | 【2】 | 【3】(6)将 FILE *pf=NULL; 改为 FILE *pf; | 【4】22) 将 for(int i=N;i>=0;i--) 改为 for(int i=N-1;i>=0;i--) | 【5】24) 将 printf(\"%2f\",polynomial(x,&c)); 改为 printf(\"%2f\",polynomial(x,c));",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_249",
+        "question_id": "CPL_5",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "4) 将 float result=0; 改为 float result=1;",
+        "step_2": "未书写",
+        "step_3": "(6) 将 FILE *pf=NULL; 改为 FILE *pf;",
+        "step_4": "22) 将 for(int i=N;i>=0;i--) 改为 for(int i=N-1;i>=0;i--)",
+        "step_5": "24) 将 printf(\"%2f\",polynomial(x,&c)); 改为 printf(\"%2f\",polynomial(x,c));"
+      }
+    },
+    "scores": [
+      6,
+      6.0,
+      6.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "4) 将 float result=0; 改为 float result=1;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1；即改为 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "正确指出并修改 result 初值为1，与标准答案一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r或r+;",
+            "dependency_status": "failed",
+            "reason": "该处错误未作答，无得分依据。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(6) 将 FILE *pf=NULL; 改为 FILE *pf;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen 返回值先赋值给pf再判断是否为NULL。",
+            "error_category_note": "",
+            "dependency_status": "failed",
+            "reason": "学生把初始化 FILE *pf=NULL 改为 FILE *pf，并未解决 fopen 返回值先赋值再判断的顺序问题，属于错误定位与错误修改，概念上与标准答案矛盾。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "22) 将 for(int i=N;i>=0;i--) 改为 for(int i=N-1;i>=0;i--)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1；即改为 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "satisfied",
+            "reason": "正确指出循环上界应为N-1并给出修改，与标准答案完全一致。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "24) 将 printf(\"%2f\",polynomial(x,&c)); 改为 printf(\"%2f\",polynomial(x,c));",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&，即改为 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "satisfied",
+            "reason": "核心错误（去掉&）已正确指出并修改；仅格式串 %2f 与 %.2f 的差异属非实质性记法问题，不扣分。"
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "将 float result=0; 改为 float result=1;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1；即改为 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "改正内容与标准答案一致：result初值改为1。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r或r+;",
+            "dependency_status": "failed",
+            "reason": "学生未书写该处错误的指认与改正。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "将 FILE *pf=NULL; 改为 FILE *pf;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen返回值先赋值给pf再判断是否为NULL",
+            "dependency_status": "failed",
+            "reason": "学生改动的是指针初始化，与要求的fopen返回值赋值判断无关，属概念性错误。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "将 for(int i=N;i>=0;i--) 改为 for(int i=N-1;i>=0;i--)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1；即改为 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "satisfied",
+            "reason": "改正与标准答案完全一致。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "将 printf(\"%2f\",polynomial(x,&c)); 改为 printf(\"%2f\",polynomial(x,c));",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&，即改为 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "satisfied",
+            "reason": "核心改正（去掉&）正确；%2f与%.2f仅格式细节差异，不影响该错误点的改正。"
+          }
+        ],
+        "total_score": 6.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "4) 将 float result=0; 改为 float result=1;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1；即改为 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "学生正确指出并改正了float result=1，与标准答案一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r或r+（或与第3处合并为正确的if判断）",
+            "dependency_status": "failed",
+            "reason": "该处学生未作答。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(6) 将 FILE *pf=NULL; 改为 FILE *pf;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen返回值先赋值给pf再判断是否为NULL",
+            "dependency_status": "failed",
+            "reason": "学生改的是无关的指针初始化，未涉及fopen返回值判断的真正错误，属于改错位置错误。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "22) 将 for(int i=N;i>=0;i--) 改为 for(int i=N-1;i>=0;i--)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1；即改为 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "24) 将 printf(\"%2f\",polynomial(x,&c)); 改为 printf(\"%2f\",polynomial(x,c));",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&，即改为 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "satisfied",
+            "reason": "正确去掉&，格式串%2f与%.2f属非实质性差异，核心改错正确。"
+          }
+        ],
+        "total_score": 6.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "FORMAT_MINOR",
+        "FORMAT_MINOR",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CPL_254.jpg",
+    "facts": "{\"step_1\": \"6) { result = 1 ; result *= X ; }\", \"step_2\": \"if(argc != 2 || (pf = fopen(argv[1], \\\"w\\\")) == NULL)\", \"step_3\": \"for(int i = N-1; i >= 0; i--)\", \"step_4\": \"printf(\\\"%.2f\\\", polynomial(X, c));\", \"step_5\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:24:15.702239",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_5/ANS_CPL_254.jpg",
+      "image_sha256": "bbe2c10e935115f87a2140ac3ca5e6745757fde466c506b5bd9833a13a543660",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "1. 6) { result = 1 ; result *= X ; } | 2. if(argc != 2 || (pf = fopen(argv[1], \"w\")) == NULL) | 3. for(int i = N-1; i >= 0; i--) | 4. printf(\"%.2f\", polynomial(X, c)); | 5. ",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_254",
+        "question_id": "CPL_5",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "6) { result = 1 ; result *= X ; }",
+        "step_2": "if(argc != 2 || (pf = fopen(argv[1], \"w\")) == NULL)",
+        "step_3": "for(int i = N-1; i >= 0; i--)",
+        "step_4": "printf(\"%.2f\", polynomial(X, c));",
+        "step_5": "未书写"
+      }
+    },
+    "scores": [
+      6,
+      6,
+      8.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "6) { result = 1 ; result *= X ; }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1，即 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "学生已将 result 初始化为 1，与参考改正一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "if(argc != 2 || (pf = fopen(argv[1], \"w\")) == NULL)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r或r+",
+            "dependency_status": "failed",
+            "reason": "学生写的 fopen 仍用 \"w\" 模式，未按参考答案改为 r 或 r+，核心语义错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "if(argc != 2 || (pf = fopen(argv[1], \"w\")) == NULL)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "确保fopen返回值先赋值给pf再判断是否为NULL",
+            "dependency_status": "satisfied",
+            "reason": "括号已保证 pf 先被赋值再与 NULL 比较，满足本处改正要求。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "for(int i = N-1; i >= 0; i--)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1，即 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "satisfied",
+            "reason": "循环起点已改为 N-1，与参考答案完全一致。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第24行去掉&，即 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "failed",
+            "reason": "学生未作答该处错误。"
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "6) { result = 1 ; result *= X ; }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1；即改为 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "学生已将result初始化为1，与参考改法语义一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "if(argc != 2 || (pf = fopen(argv[1], \"w\")) == NULL)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r或r+",
+            "dependency_status": "failed",
+            "reason": "fopen模式仍为\"w\"，未改为\"r\"，该项改正未完成"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "if(argc != 2 || (pf = fopen(argv[1], \"w\")) == NULL)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen返回值先赋值给pf再判断是否为NULL",
+            "dependency_status": "satisfied",
+            "reason": "已用括号确保先赋值给pf再与NULL比较，赋值顺序正确（模式字符串错误在step_2单独扣分）"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "for(int i = N-1; i >= 0; i--)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1；即改为 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "satisfied",
+            "reason": "循环上限已改为N-1，与标准答案完全一致"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&，即改为 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "failed",
+            "reason": "学生未作答，无法得分"
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "6) { result = 1 ; result *= X ; }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "将 result 初始化为 1（float result = 1;）",
+            "dependency_status": "satisfied",
+            "reason": "学生明确写出 result = 1，与标准答案一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "if(argc != 2 || (pf = fopen(argv[1], \"w\")) == NULL)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "将 fopen 模式 \"w\" 改为 \"r\" 或 \"r+\"",
+            "dependency_status": "failed",
+            "reason": "学生改正后的代码仍保留 \"w\"，未完成模式修改，属实质性错误"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "if(argc != 2 || (pf = fopen(argv[1], \"w\")) == NULL)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "fopen 返回值先赋给 pf 再判断是否为 NULL",
+            "dependency_status": "satisfied",
+            "reason": "赋值已加括号，先赋值给 pf 再与 NULL 比较，满足第3处改正要求"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "for(int i = N-1; i >= 0; i--)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "循环起点改为 N-1：for(int i=N-1; i>=0; i--)",
+            "dependency_status": "satisfied",
+            "reason": "循环变量从 N-1 开始，与标准答案一致"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "printf(\"%.2f\", polynomial(X, c));",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "去掉 &，改为 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "satisfied",
+            "reason": "实参前已无 &，直接传递变量，符合要求"
+          }
+        ],
+        "total_score": 8.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "BLANK",
+        "BLANK",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.888888888888889
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.17777777777777778
+  },
+  {
+    "file": "ANS_CPL_259.jpg",
+    "facts": "{\"step_1\": \"第4行: 改为 float result=1;\", \"step_2\": \"第16行: 改为 FILE *pt;\", \"step_3\": \"第17行: 改为 if(argc!=2||(pf=fopen(argv[1],\\\"r\\\")==NULL))\", \"step_4\": \"第24行: 改为 printf(\\\"%2f\\\",polynomial(x,c[N])\", \"step_5\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:25:30.130554",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_5/ANS_CPL_259.jpg",
+      "image_sha256": "437854f57f4df992907b632a483fc602f528bdd5cdb7b24684e6cbf2fbc69af1",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "【1】4) 改为float result=1; | \n【2】16) 改为FILE *pt; | \n【3】17) 改为if(argc!=2||(pf=fopen(argv[1],\"r\")==NULL))| \n【4】24)改为printf(\"%2f\",polynomial(x,c[N])",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_259",
+        "question_id": "CPL_5",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "第4行: 改为 float result=1;",
+        "step_2": "第16行: 改为 FILE *pt;",
+        "step_3": "第17行: 改为 if(argc!=2||(pf=fopen(argv[1],\"r\")==NULL))",
+        "step_4": "第24行: 改为 printf(\"%2f\",polynomial(x,c[N])",
+        "step_5": "未书写"
+      }
+    },
+    "scores": [
+      6,
+      5.0,
+      6
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第4行: 改为 float result=1;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1；即改为 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "行号与改法均与标准答案一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第17行: 改为 if(argc!=2||(pf=fopen(argv[1],\"r\")==NULL))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r（或与第3处合并为 if(argc!=2 || ((pf=fopen(argv[1],\"r\"))==NULL))）",
+            "dependency_status": "satisfied",
+            "reason": "学生在第17行改写中明确使用了 \"r\" 打开模式，且给出了合并形式，符合标准答案允许的写法。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "第17行: 改为 if(argc!=2||(pf=fopen(argv[1],\"r\")==NULL))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "确保fopen返回值先赋值给pf再判断是否为NULL，即 ((pf=fopen(argv[1],\"r\"))==NULL)",
+            "dependency_status": "insufficient",
+            "reason": "学生给出的括号位置仍使 pf=fopen(argv[1],\"r\")==NULL 先比较后整体赋值，赋值顺序问题未真正修复，仅体现了修改意图，给一半分。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "第24行: 改为 printf(\"%2f\",polynomial(x,c[N])",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1；即改为 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "failed",
+            "reason": "学生未指出第22行循环边界N改为N-1的错误，无相关内容。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "第24行: 改为 printf(\"%2f\",polynomial(x,c[N])",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&，即改为 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "insufficient",
+            "reason": "学生正确定位第24行并去掉了&，但实参仍写c[N]而非c，格式串也有小瑕疵，给一半分。"
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "第4行: 改为 float result=1;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1；即改为 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "Exactly identifies line 4 and the fix result=1."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "第16行: 改为 FILE *pt;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，将fopen的\"w\"改为\"r\"或\"r+\"",
+            "dependency_status": "failed",
+            "reason": "Points to line 16 with an unrelated declaration change (FILE *pt) instead of the mode string fix on line 17; the 'w'→'r' correction is not addressed here (it only appears incidentally inside the later combined if-statement fix credited to step_3)."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "第17行: 改为 if(argc!=2||(pf=fopen(argv[1],\"r\")==NULL))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen返回值先赋值给pf再判断NULL；合并参考答案 if (argc!=2 || ((pf=fopen(argv[1],\"r\"))==NULL))",
+            "dependency_status": "satisfied",
+            "reason": "The rubric explicitly allows the combined argc/fopen form; the student's version matches it in structure, target line, and uses \"r\" (covering the mode fix). Missing one pair of parentheses around the assignment is a non-substantive notation slip under the lenient policy."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "第24行: 改为 printf(\"%2f\",polynomial(x,c[N])",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1；即改为 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "failed",
+            "reason": "The required loop bound fix (line 22, N→N-1) is not addressed; the offered fix concerns the printf line, a different error."
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "第24行: 改为 printf(\"%2f\",polynomial(x,c[N])",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&，即改为 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "partial",
+            "reason": "Correctly targets line 24's printf and the rewritten call shows no '&' (the key fix), but keeps c[N] instead of c and writes %2f instead of %.2f, so only partial credit."
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第4行: 改为 float result=1;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1；即改为 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "与参考答案一致，指出第4行并将初值改为1。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第17行: 改为 if(argc!=2||(pf=fopen(argv[1],\"r\")==NULL))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r或r+（第2、3处合并写法亦认可）",
+            "dependency_status": "satisfied",
+            "reason": "学生在第17行的合并修正中使用了\"r\"打开方式，且写法与注释中给出的合并参考答案形式一致，按宽容评分认可。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第17行: 改为 if(argc!=2||(pf=fopen(argv[1],\"r\")==NULL))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen返回值先赋值给pf再判断是否为NULL",
+            "dependency_status": "satisfied",
+            "reason": "学生的修正中 fopen(argv[1],\"r\") 先赋给 pf 再与 NULL 比较，满足要求（括号细节属格式问题，不扣分）。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "第24行: 改为 printf(\"%2f\",polynomial(x,c[N])",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1；即改为 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "failed",
+            "reason": "学生未指出第22行循环边界错误，且其答案仍保留错误的 c[N]，属于概念性错误而非细节缺失。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&，即改为 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "insufficient",
+            "reason": "该处错误学生未作答。"
+          }
+        ],
+        "total_score": 6
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        0.0,
+        2.0
+      ],
+      "step_3": [
+        1.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "SEMANTIC_FATAL",
+        "MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR",
+        "MATCH"
+      ],
+      "step_4": [
+        "BLANK",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_5": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.888888888888889,
+      "step_3": 0.2222222222222222,
+      "step_4": 0.0,
+      "step_5": 0.22222222222222224
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.2666666666666667
+  },
+  {
+    "file": "ANS_CPL_275.jpg",
+    "facts": "{\"step_1\": \"第4行，result =0 改成 result =1\", \"step_2\": \"第17行，参数中的“w”改成“r”\", \"step_3\": \"第18行：return 1; 改成 return 0;\", \"step_4\": \"第22行：i = N 改成 i = N-1\", \"step_5\": \"第24行，& c 改成 c\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:26:49.787380",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_5/ANS_CPL_275.jpg",
+      "image_sha256": "7cd3c25b16072418ede111c94ad525b9c214b65d001ad84c669595c5b3d8b468",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "【1】第4行，result =0 改成 result =1 | 【2】第17行，参数中的“w”改成“r” | 【3】第18行：return 1; 改成 return 0; | 【4】第22行：i = N 改成 i = N-1 | 【5】第24行，& c 改成 c",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_275",
+        "question_id": "CPL_5",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "第4行，result =0 改成 result =1",
+        "step_2": "第17行，参数中的“w”改成“r”",
+        "step_3": "第18行：return 1; 改成 return 0;",
+        "step_4": "第22行：i = N 改成 i = N-1",
+        "step_5": "第24行，& c 改成 c"
+      }
+    },
+    "scores": [
+      8,
+      8,
+      8
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第4行，result =0 改成 result =1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1",
+            "dependency_status": "satisfied",
+            "reason": "行号与修改内容均与参考答案一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第17行，参数中的\"w\"改成\"r\"",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r或r+",
+            "dependency_status": "satisfied",
+            "reason": "正确指出第17行并改为r"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "第18行：return 1; 改成 return 0;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen返回值先赋值给pf再判断是否为NULL",
+            "dependency_status": "failed",
+            "reason": "学生修改的是第18行return语句，与要求的fopen赋值后判NULL无关，属概念性错误"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第22行：i = N 改成 i = N-1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1",
+            "dependency_status": "satisfied",
+            "reason": "正确指出第22行并改为N-1"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第24行，& c 改成 c",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&",
+            "dependency_status": "satisfied",
+            "reason": "正确指出第24行去掉取地址符"
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第4行，result =0 改成 result =1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1；即改为 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "Correctly identifies line 4 and changes 0 to 1, matching the standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第17行，参数中的“w”改成“r”",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r或r+;",
+            "dependency_status": "satisfied",
+            "reason": "Correctly identifies line 17 and changes the fopen mode from w to r."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "第18行：return 1; 改成 return 0;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen 返回值先赋值给pf再判断是否为NULL。",
+            "dependency_status": "failed",
+            "reason": "Student points to a different error (line 18 return statement) unrelated to the required fopen/pf assignment-order fix; conceptual mismatch."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第22行：i = N 改成 i = N-1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1；即改为 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "satisfied",
+            "reason": "Correctly identifies line 22 and changes N to N-1."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第24行，& c 改成 c",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&，即改为 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "satisfied",
+            "reason": "Correctly identifies line 24 and removes the & before c."
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第4行，result =0 改成 result =1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1",
+            "dependency_status": "satisfied",
+            "reason": "与参考答案完全一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第17行，参数中的“w”改成“r”",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r或r+",
+            "dependency_status": "satisfied",
+            "reason": "指出第17行并将w改为r，正确"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "第18行：return 1; 改成 return 0;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen返回值先赋值给pf再判断是否为NULL",
+            "dependency_status": "failed",
+            "reason": "学生指出的是另一处不相关的错误，未涉及fopen返回值赋值判断的问题"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第22行：i = N 改成 i = N-1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1",
+            "dependency_status": "satisfied",
+            "reason": "与参考答案完全一致"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "第24行，& c 改成 c",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&",
+            "dependency_status": "satisfied",
+            "reason": "正确去掉&，与参考答案一致"
+          }
+        ],
+        "total_score": 8
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CPL_299.jpg",
+    "facts": "{\"step_1\": \"float result = 1;\", \"step_2\": \"int main(float argc, int *argv[]){\", \"step_3\": \"for(int i=5;i>=0;i--)\", \"step_4\": \"未书写\", \"step_5\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:27:43.527110",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_5/ANS_CPL_299.jpg",
+      "image_sha256": "2618c2d45dcdc06cd0d2421ca041dbfadc110747e54df5ff2f4851807de75494",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "【1】 float result = 1; | 【2】int main(float argc, int *argv[]){ | 【3】  for(int i=5;i>=0;i--) | 【4】 ",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_299",
+        "question_id": "CPL_5",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "float result = 1;",
+        "step_2": "int main(float argc, int *argv[]){",
+        "step_3": "for(int i=5;i>=0;i--)",
+        "step_4": "未书写",
+        "step_5": "未书写"
+      }
+    },
+    "scores": [
+      2,
+      2,
+      2
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "float result = 1;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1；即改为 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的改正结果 float result = 1; 与参考改正一致，修正了初始值错误。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "int main(float argc, int *argv[]){",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r或r+",
+            "dependency_status": "failed",
+            "reason": "学生写的是修改main函数签名，与要求的第17行fopen打开模式w→r的改正无关，属概念性错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "for(int i=5;i>=0;i--)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen返回值先赋值给pf再判断是否为NULL",
+            "dependency_status": "failed",
+            "reason": "学生写的是循环语句，与要求的fopen返回值判断顺序改正无关。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1；即改为 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "failed",
+            "reason": "该项未作答。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&，即改为 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "failed",
+            "reason": "该项未作答。"
+          }
+        ],
+        "total_score": 2
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "float result = 1;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "指出并改正第1处错误：将0改为1，即 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的修正 float result = 1; 与标准答案一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "int main(float argc, int *argv[]){",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，将fopen模式w改为r或r+",
+            "dependency_status": "failed",
+            "reason": "学生修改的是main函数参数类型（argc改为float、argv改为int*），与要求的fopen模式字符串修正无关，且该修改本身引入新的错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "for(int i=5;i>=0;i--)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen返回值先赋给pf再判断是否为NULL",
+            "dependency_status": "failed",
+            "reason": "学生写的是循环语句，与要求的fopen返回值判断顺序修正完全无关。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1，即 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "failed",
+            "reason": "该处未作答；提取内容中的 for(int i=5;i>=0;i--) 被置于第3处，无法确认对应本题。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&，即 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "failed",
+            "reason": "该处未作答。"
+          }
+        ],
+        "total_score": 2
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "float result = 1;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第4行，将0改为1；即改为 float result = 1;",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的改正与参考答案一致（float result = 1;），即使未写行号，核心修正正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "int main(float argc, int *argv[]){",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，将w改为r或r+",
+            "dependency_status": "failed",
+            "reason": "学生修改的是main函数签名，与要求的fopen打开模式 w→r 无关，属于不同错误对象。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "for(int i=5;i>=0;i--)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "第17行，确保fopen 返回值先赋值给pf再判断是否为NULL",
+            "dependency_status": "failed",
+            "reason": "学生给出的是for循环边界（对应第4处错误），与要求的fopen返回值先赋值后判断无关。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第22行，将N改为N-1；即改为 for(int i=N-1; i>=0; i--)",
+            "dependency_status": "insufficient",
+            "reason": "学生未书写该处错误。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "第24行，去掉&，即改为 printf(\"%.2f\", polynomial(x, c));",
+            "dependency_status": "insufficient",
+            "reason": "学生未书写该处错误。"
+          }
+        ],
+        "total_score": 2
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_5": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

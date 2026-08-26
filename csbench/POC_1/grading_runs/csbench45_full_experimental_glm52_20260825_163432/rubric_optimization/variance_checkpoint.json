@@ -1,0 +1,602 @@
+[
+  {
+    "file": "ANS_POC_293.jpg",
+    "facts": "{\"step_1\": \"S={a^m b^n c^p | m=n+p, m,n,p≥0}\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T03:05:57.294835",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_293.jpg",
+      "image_sha256": "29ef69486276c5a33095850ff5ee26fd17849a65b5c8633f30147f0cd8bdc203",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_293",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "S={a^m b^n c^p | m=n+p, m,n,p≥0}"
+      }
+    },
+    "scores": [
+      2.5,
+      2,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "语言为 {a^n w | w∈{b,c}*, |w|=n}：前面 n 个 a，后面紧跟 n 个 b 或 c 组成的字符（顺序任意）",
+            "dependency_status": "satisfied",
+            "reason": "学生正确抓住了核心数量关系：a 的个数 m = n + p，即 a 的个数等于后面 b/c 字符总个数，且 a 全在前，此部分正确。但标准语言中 b 和 c 可以任意顺序混排（βi∈{b,c}），学生写成所有 b 必须在所有 c 之前（b^n c^p），是标准语言的真子集，描述的结构偏窄，故给部分分。"
+          }
+        ],
+        "total_score": 2.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "L(G1) = {a^n w | w ∈ {b,c}*, |w| = n}（或等价的三种表述之一）",
+            "dependency_status": "failed",
+            "reason": "学生正确抓住了关键结构：前面 a 的个数等于后面 b、c 的总个数（m=n+p），这是核心关系的正确部分。但其表述强制所有 b 必须在所有 c 之前（b^n c^p 的有序形式），而标准语言允许 b 和 c 任意排列（如 acbb 应属于该语言但被排除）。因此该集合是目标语言的真子集，非等价表述，属于核心偏差但非完全错误，给予部分分。"
+          }
+        ],
+        "total_score": 2
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "L = {a^n w | w∈{b,c}*, |w|=n}：n 个 a 后跟 n 个 b 或 c 组成的串（任意次序），n≥0",
+            "dependency_status": "failed",
+            "reason": "学生语言要求所有 b 都排在所有 c 之前（b^n c^p 的固定次序），而标准语言中 n 个 b/c 字符可任意排列（例如 abc...、acb 等混合串均属标准语言但不在学生集合中），二者是不同的语言，属于核心概念错误，而非记法或展开细节问题。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.5,
+        2.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 1.1666666666666667
+    },
+    "max_item_variance": 1.1666666666666667,
+    "avg_item_variance": 1.1666666666666667
+  },
+  {
+    "file": "ANS_POC_297.jpg",
+    "facts": "{\"step_1\": \"{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T03:06:48.261640",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_297.jpg",
+      "image_sha256": "0ec660233e313cad94db59a99da470cb202f9dca5f6d6ad2f96e276701d69d53",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. {a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_297",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "L(G1) = {a^n w | w∈{b,c}*, |w|=n}，即前面 n 个 a 后紧跟 n 个 b/c 组成的串",
+            "dependency_status": "failed",
+            "reason": "标准语言要求 a 的个数等于 b 和 c 的总个数（m = n + x），而学生写成 m≥n 且 m≥x 的不等式约束，两者描述不同的语言，属于核心概念错误而非表述差异。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "L = {a^n w | w∈{b,c}*, |w|=n}，即 n 个 a 后跟 n 个 b/c 组成的串",
+            "dependency_status": "failed",
+            "reason": "学生答案描述的是由不等式约束的三段语言（a、b、c 数量各自独立且仅满足 m≥n、m≥x），而标准语言要求 a 的个数与 b/c 字符总数相等且 b、c 可任意交错。这是对语言本质结构的错误刻画，非格式或细节问题。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "{a^n w | w∈{b,c}*, |w|=n}，即 n 个 a 后跟 n 个由 b 或 c 组成的字符",
+            "dependency_status": "failed",
+            "reason": "学生答案要求 a、b、c 的个数两两满足 m≥n 且 m≥x（b、c 数量可不等），且 b 必须在 c 之前；而标准语言要求 b/c 字符总数恰等于 a 的个数且 b、c 可任意交错。这是对文法 G1 描述语言的核心概念性错误，非细节缺失。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_306.jpg",
+    "facts": "{\"step_1\": \"a*(b|c)*\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T03:07:34.364652",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_306.jpg",
+      "image_sha256": "b3d8b33d3303a89e312181c75ada8ae8488c6dfe3adf72c24231cbf87ce3ea8c",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "a*(b|c)*",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_306",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "a*(b|c)*"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "a*(b|c)*",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "语言中 a 的个数 n 必须等于后续 b/c 字符串的长度 n（{a^n w | w∈{b,c}*, |w|=n} 等任一等价表述）",
+            "dependency_status": "failed",
+            "reason": "学生答案 a*(b|c)* 中 a 的数量与 b/c 字符数量相互独立，丢掉了核心约束 |w|=n，描述的是错误的语言，属核心语义错误。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "a*(b|c)*",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Language {a^n w | n≥0, w∈{b,c}*, |w|=n}: n 个 a 后跟 n 个 b/c 字符",
+            "dependency_status": "failed",
+            "reason": "学生答案 a*(b|c)* 丢失了 a 的个数与 b/c 字符个数相等（n=n）的核心约束，允许任意数量的 a 后跟任意数量的 b/c，与标准语言语义实质不符，属核心概念错误。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "a*(b|c)*",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "语言为 {a^n w | w∈{b,c}*, |w|=n}，即 n 个 a 后跟恰好 n 个 b/c 字符",
+            "dependency_status": "failed",
+            "reason": "学生写成 a*(b|c)*，即任意个 a 后跟任意个 b/c，丢失了 a 的个数与 b/c 字符个数必须相等这一核心约束，是对语言描述的概念性错误"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_318.jpg",
+    "facts": "{\"step_1\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T03:08:16.024962",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_318.jpg",
+      "image_sha256": "81da6f6a83557c967193bed324d16ff2f9316c1e0ecb20cbe55689fa344dbed0",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. 将s转换为aSb.aSc.ε三种不同情况",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_318",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "未书写"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "写出文法G1描述的语言（任一表述均可）",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何内容，无任何可评分证据。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "写出文法G1描述的语言（三种表述任写一种均可满分）",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何内容，无可用证据，判BLANK得0分。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "写出文法G1描述的语言（三种表述任写一种均可满分）",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何内容，无法给出语言描述，按空白计零分。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_336.jpg",
+    "facts": "{\"step_1\": \"L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T03:08:56.603322",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_336.jpg",
+      "image_sha256": "2e98c2fea96e9a27ba64f1033b96c853c828acddd4f041a10a66fd9c16e4a5ae",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_336",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}"
+      }
+    },
+    "scores": [
+      0,
+      5.0,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "{a^n w | w ∈ {b,c}*, |w|=n} 或 '前面有 n 个 a，后面紧跟着 n 个由 b 或 c 组成的字符' 或 {a^n β1…βn | βi∈{b,c}}",
+            "dependency_status": "failed",
+            "reason": "学生答案描述的语言与标准答案不同：标准语言是 n 个 a 后跟 n 个 b/c 字符（a 的个数与 b/c 总个数相等且 a 必须在最前），而学生写成了 {a^t c, b^m|c^n} 的集合形式，结构上把 a 段与 b/c 段写成并列的候选串，核心语义（a^n 后跟 n 个 b/c 字符）不成立，属于概念性错误，仅 t=m+n 的计数约束有一点相似但不能等同。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "L(G1) = {a^n w | w ∈ {b,c}*, |w| = n}，即前导 a 的个数等于其后 b/c 字符个数",
+            "dependency_status": "satisfied",
+            "reason": "学生用 t = m + n（m 个 b、n 个 c）表达了前导 a 的个数等于后续 b/c 字符总个数这一核心计数关系，语义上与标准答案 a^n 后跟 n 个 b/c 字符等价；表述形式不规范（集合记号混乱）但不影响语义，按宽容评分给满分。"
+          }
+        ],
+        "total_score": 5.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Language of G1: n a's followed by n symbols from {b,c}, e.g. {a^n w | w∈{b,c}*, |w|=n}",
+            "dependency_status": "satisfied",
+            "reason": "Student writes a^t followed by m b's and n c's with t = m+n (m,n≥0). This is semantically equivalent to the standard answer: t a's followed by exactly t = m+n symbols, each being b or c, i.e., a^n β1…βn with βi∈{b,c}. Set-builder notation is garbled (misplaced braces) but the core relation t = m+n and alphabet {b,c} are explicit, so under lenient formatting this matches."
+          }
+        ],
+        "total_score": 5.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 5.555555555555556
+    },
+    "max_item_variance": 5.555555555555556,
+    "avg_item_variance": 5.555555555555556
+  }
+]

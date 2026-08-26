@@ -1,0 +1,1726 @@
+[
+  {
+    "file": "ANS_CO_382.png",
+    "facts": "{\"step_1\": \"未书写\", \"step_2\": \"未书写\", \"step_3\": \"BCF需6位；BAF需3位\", \"step_4\": \"每条指令占全总长度为9位\", \"step_5\": \"总容量为48位\", \"step_6\": \"共 48字节\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T23:33:05.945021",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_6/ANS_CO_382.png",
+      "image_sha256": "50cb7efe80a222b5376f0c9f7b123c54d70442b6fcade7c870c430789556e2e6",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：有题意可知：\nBCF需6位\nBAF需3位 \n每条指令占全总长度为9位\nm.总容量为48位共 48字节 ",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_382",
+        "question_id": "CO_6",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "未书写",
+        "step_2": "未书写",
+        "step_3": "BCF需6位；BAF需3位",
+        "step_4": "每条指令占全总长度为9位",
+        "step_5": "总容量为48位",
+        "step_6": "共 48字节"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "四组互斥信号分别需4、4、5、3位，共16位",
+            "dependency_status": "failed",
+            "reason": "学生未书写该步骤"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条，控制字段总长156位",
+            "dependency_status": "failed",
+            "reason": "学生未书写该步骤"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "BCF需6位；BAF需3位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF 3位（8种条件转移），BAF 9位（可寻址512条）",
+            "dependency_status": "failed",
+            "reason": "两个数值均错误，且疑似将BCF与BAF的位数互换并算错，核心结论错误"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "每条指令占全总长度为9位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度 = 156 + 3 + 9 = 168位",
+            "dependency_status": "failed",
+            "reason": "总长度9位与标准答案168位严重不符，结论错误"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "总容量为48位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512 × 168 = 86016位",
+            "dependency_status": "failed",
+            "reason": "容量48位与86016位严重不符，且无正确计算关系痕迹"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "共 48字节",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016 ÷ 8 = 10752字节",
+            "dependency_status": "failed",
+            "reason": "最终答案48字节与10752字节严重不符"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "4+4+5+3=16位",
+            "dependency_status": "failed",
+            "reason": "No content written."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "140条非互斥信号，控制字段共156位",
+            "dependency_status": "failed",
+            "reason": "No content written."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "BCF需6位；BAF需3位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF 3位；BAF 9位",
+            "dependency_status": "failed",
+            "reason": "Both numeric values wrong (values appear swapped/inverted); no partial credit since both sub-values incorrect."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "每条指令占全总长度为9位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度=156+3+9=168位",
+            "dependency_status": "failed",
+            "reason": "Wrong total length (9位 vs 168位); also no formula trace."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "总容量为48位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512×168=86016位",
+            "dependency_status": "failed",
+            "reason": "Wrong capacity value; no multiplication trace."
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "共 48字节",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016÷8=10752字节",
+            "dependency_status": "failed",
+            "reason": "Final byte capacity contradicts the standard answer."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "四组互斥信号分别需要4、4、5、3位，共16位",
+            "dependency_status": "failed",
+            "reason": "学生未书写该步骤，无任何事实可评。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条，控制字段总长156位",
+            "dependency_status": "failed",
+            "reason": "学生未书写该步骤，无任何事实可评。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "BCF需6位；BAF需3位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF需3位；BAF需9位",
+            "dependency_status": "failed",
+            "reason": "BCF应为3位（8种条件），学生答6位；BAF应为9位（512条微指令），学生答3位，两值均错误，属核心数值矛盾。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "每条指令占全总长度为9位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度 = 156 + 3 + 9 = 168位",
+            "dependency_status": "failed",
+            "reason": "学生答9位，与标准168位严重不符，且未见任何求和关系式，无法视为过程分。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "总容量为48位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512 × 168 = 86016位",
+            "dependency_status": "failed",
+            "reason": "48位与正确值86016位矛盾，且无乘法关系式可给过程分。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "共 48字节",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016 ÷ 8 = 10752字节",
+            "dependency_status": "failed",
+            "reason": "48字节与正确值10752字节严重矛盾，核心结论错误。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_6": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_5": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_6": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_383.png",
+    "facts": "{\"step_1\": \"第1组需要4位，第2组需要3位... 4组共需要 4+3+4+2=13位。\", \"step_2\": \"互斥信号共有40个. 剩下140个由控制字段来控制. 控制字段要140位.（未显式书写减法表达式，仅有结果140）\", \"step_3\": \"BCF 13位. BAF=2^9=9位.\", \"step_4\": \"总长度为 140+13+9=162位.\", \"step_5\": \"控制存储器总容量为2^9，9位（未书写乘法表达式）\", \"step_6\": \"2字节（除法表达式未书写）\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T23:34:23.159548",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_6/ANS_CO_383.png",
+      "image_sha256": "cf8b4a1973fe324e8b6a84484471b2311001e43967b52375107ba645eccaca23",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解:(1). 互斥信号共有40个. 剩下140个由控制字段来控制.\n控制字段要140位.\n第1组需要4位,第2组需要3位...\n4组共需要 4+3+4+2=13位.\n∴BCF 13位. BAF=2^9=9位.\n总长度为 140+13+9=162位.\n(2). 控制存储器总容量为2^9,9位,2字节",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_383",
+        "question_id": "CO_6",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "第1组需要4位，第2组需要3位... 4组共需要 4+3+4+2=13位。",
+        "step_2": "互斥信号共有40个. 剩下140个由控制字段来控制. 控制字段要140位.（未显式书写减法表达式，仅有结果140）",
+        "step_3": "BCF 13位. BAF=2^9=9位.",
+        "step_4": "总长度为 140+13+9=162位.",
+        "step_5": "控制存储器总容量为2^9，9位（未书写乘法表达式）",
+        "step_6": "2字节（除法表达式未书写）"
+      }
+    },
+    "scores": [
+      6,
+      6,
+      5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "第1组需要4位，第2组需要3位... 4组共需要 4+3+4+2=13位。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "四组互斥信号分别需要4、4、5、3位，共16位。",
+            "dependency_status": "failed",
+            "reason": "加总各组位数的加法方法正确且有计算痕迹，但各组数值与总和（13）均与标准（16）不符，属数值错误而非方法错误，酌情给部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "互斥信号共有40个. 剩下140个由控制字段来控制. 控制字段要140位.（未显式书写减法表达式，仅有结果140）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条，控制字段总长=140+16=156位。",
+            "dependency_status": "partial",
+            "reason": "非互斥信号数140正确（半分）；但控制字段未加回互斥组字段16位，总长156未得出，仅得140，另半分不给。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "BCF 13位. BAF=2^9=9位.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF为3位；BAF为9位。",
+            "dependency_status": "partial",
+            "reason": "BAF=9位正确；BCF=13位错误（应为3位），两项各占一半分值。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "总长度为 140+13+9=162位.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度=156+3+9=168位。",
+            "dependency_status": "failed",
+            "reason": "加法结构正确（控制字段+BCF+BAF），但因上游数值错误导致结果162≠168，保留一半过程分。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "控制存储器总容量为2^9，9位（未书写乘法表达式）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512条微指令×168位=86016位。",
+            "dependency_status": "failed",
+            "reason": "所需为总位数（乘积），学生给出的2^9/9位只是微指令条数寻址宽度，计算对象错误，属概念性错误，0分。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "2字节（除法表达式未书写）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016÷8=10752字节。",
+            "dependency_status": "failed",
+            "reason": "结果2字节与10752字节严重不符，且无数值依据，数值结论错误，0分。"
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "第1组需要4位，第2组需要3位... 4组共需要 4+3+4+2=13位。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "四组分别需4、4、5、3位，共4+4+5+3=16位",
+            "dependency_status": "failed",
+            "reason": "加法求和方法正确，但各组位数值错误（4+3+4+2≠4+4+5+3），结果13≠16，仅保留少量方法分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "互斥信号共有40个. 剩下140个由控制字段来控制. 控制字段要140位.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条正确；控制字段应为140+16=156位",
+            "dependency_status": "failed",
+            "reason": "非互斥信号140条计算正确，但控制字段总数遗漏了互斥组16位，140≠156，得一半分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "BCF 13位. BAF=2^9=9位.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF为3位；BAF为9位",
+            "dependency_status": "failed",
+            "reason": "BAF=9位正确；BCF应为3位（8种条件），学生写13位，数量级/数值概念性错误，两项各半分"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "总长度为 140+13+9=162位.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度=156+3+9=168位",
+            "dependency_status": "failed",
+            "reason": "总长=控制字段+BCF+BAF的求和结构正确，加法对自身错误数值计算无误，属上游错误传导，给一半分"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "控制存储器总容量为2^9，9位（未书写乘法表达式）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512条微指令×168位=86016位",
+            "dependency_status": "failed",
+            "reason": "容量应为条数×位长的乘积（86016位），学生给出2^9=9位，量纲和计算对象均错误，概念性错误"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "2字节（除法表达式未书写）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016÷8=10752字节",
+            "dependency_status": "failed",
+            "reason": "正确答案为10752字节，学生给2字节，数值与量级完全错误，且无有效换算过程"
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "第1组需要4位，第2组需要3位... 4组共需要 4+3+4+2=13位。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "四组分别4、4、5、3位，共16位",
+            "dependency_status": "failed",
+            "reason": "分组位数取值错误（3、4、2应为4、5、3），总数13错误，属概念/数据错误而非省略展开。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "互斥信号共有40个. 剩下140个由控制字段来控制. 控制字段要140位.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条，控制字段140+16=156位",
+            "dependency_status": "insufficient",
+            "reason": "非互斥信号数140正确；但控制字段总长漏加互斥组编码位，得140而非156，部分正确。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "BCF 13位. BAF=2^9=9位.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF 3位；BAF 9位",
+            "dependency_status": "partial",
+            "reason": "BAF=9位正确；BCF 13位概念错误（应为3位），两原子各半。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "总长度为 140+13+9=162位.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度 = 156 + 3 + 9 = 168位",
+            "dependency_status": "partial",
+            "reason": "求和方法结构正确，但因上游数值错误结果为162而非168，方法正确保留部分分。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "控制存储器总容量为2^9，9位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512条 × 168位 = 86016位",
+            "dependency_status": "failed",
+            "reason": "未做容量=条数×位长的乘法，答成2^9（9位），量纲与量级均错误。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "2字节（除法表达式未书写）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016 ÷ 8 = 10752字节",
+            "dependency_status": "failed",
+            "reason": "结果2字节与10752字节相差数量级，结论性数值错误。"
+          }
+        ],
+        "total_score": 5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        1.0,
+        1.0,
+        0.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_6": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_5": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_6": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.22222222222222224,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.0
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.03703703703703704
+  },
+  {
+    "file": "ANS_CO_414.png",
+    "facts": "{\"step_1\": \"未书写\", \"step_2\": \"未书写\", \"step_3\": \"BCF：19位；BAF：9位\", \"step_4\": \"控制字段 8位；总长度38\", \"step_5\": \"未书写\", \"step_6\": \"(2) 9位， 128字节\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T23:35:41.039892",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_6/ANS_CO_414.png",
+      "image_sha256": "5abf92986132dc73d7bb48a22fc213e640ef443f0133b7bea821b625f2e3df57",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解(1)控制字段 8位\nBCF：19位\nBAF：9位\n总长度38\n(2) 9位， 128字节",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_414",
+        "question_id": "CO_6",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "未书写",
+        "step_2": "未书写",
+        "step_3": "BCF：19位；BAF：9位",
+        "step_4": "控制字段 8位；总长度38",
+        "step_5": "未书写",
+        "step_6": "(2) 9位， 128字节"
+      }
+    },
+    "scores": [
+      2,
+      2,
+      2
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "四组互斥信号分别需要4、4、5、3位，共16位",
+            "dependency_status": "failed",
+            "reason": "学生未书写该步骤"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条，控制字段共156位",
+            "dependency_status": "failed",
+            "reason": "学生未书写该步骤"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "BCF：19位；BAF：9位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF需3位；BAF需9位",
+            "dependency_status": "partial",
+            "reason": "BAF 9位正确得一半；BCF 19位与标准3位矛盾，为概念性错误"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "控制字段 8位；总长度38",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度 = 156 + 3 + 9 = 168位",
+            "dependency_status": "failed",
+            "reason": "控制字段与总长度数值均错误，结论性数值矛盾"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "512 × 168 = 86016位",
+            "dependency_status": "failed",
+            "reason": "学生未书写该步骤"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(2) 9位， 128字节",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016 ÷ 8 = 10752字节",
+            "dependency_status": "failed",
+            "reason": "128字节与标准10752字节严重不符，属结论性数值错误"
+          }
+        ],
+        "total_score": 2
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "四组互斥信号位数 4+4+5+3=16位",
+            "dependency_status": "failed",
+            "reason": "学生未书写该步骤内容。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条，控制字段总数156位",
+            "dependency_status": "failed",
+            "reason": "学生未书写该步骤内容。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "BCF：19位；BAF：9位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF 3位；BAF 9位",
+            "dependency_status": "insufficient",
+            "reason": "BAF 9位正确；BCF 19位与标准3位不符，取半分。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "控制字段 8位；总长度38",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度 = 156 + 3 + 9 = 168位",
+            "dependency_status": "failed",
+            "reason": "总长度38与标准168位矛盾，控制字段8位也错误，数值性结论错误。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "512 × 168 = 86016位",
+            "dependency_status": "failed",
+            "reason": "学生未书写该步骤内容。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(2) 9位， 128字节",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016 ÷ 8 = 10752字节",
+            "dependency_status": "failed",
+            "reason": "128字节与标准10752字节矛盾，最终数值结论错误。"
+          }
+        ],
+        "total_score": 2
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "4+4+5+3=16位",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何相关内容"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条，控制字段共156位",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何相关内容"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "BCF：19位；BAF：9位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF 3位；BAF 9位",
+            "dependency_status": "insufficient",
+            "reason": "BAF 9位正确，BCF 19位错误（应为3位），两原子各半给分"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "控制字段 8位；总长度38",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度 = 156 + 3 + 9 = 168位",
+            "dependency_status": "failed",
+            "reason": "总长度38与标准168位数值矛盾，且控制字段8位与156位不符"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "512 × 168 = 86016位",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何相关内容"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(2) 9位， 128字节",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016 ÷ 8 = 10752字节",
+            "dependency_status": "failed",
+            "reason": "128字节与标准10752字节明显矛盾"
+          }
+        ],
+        "total_score": 2
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_6": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_5": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_6": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_419.png",
+    "facts": "{\"step_1\": \"四个互斥组需要的位数分别为:4,4,5,3(当互斥字段对应位全为零时表示不发出任何控制信号)；∴控制字段的位数:4+4+5+3=17\", \"step_2\": \"非互斥但需要的位数为:(用1位控制存储非互斥的信号)；控制字段的位数:4+4+5+3=17（非互斥信号的具体减法算式未书写，仅注明用1位控制存储非互斥的信号，且17位的求和中未显式包含非互斥位数的加数）\", \"step_3\": \"BCF的位数:4(一元情况对应顺序执行)；∵寻址微指令条数为512,∴微指令BAF的位数:9\", \"step_4\": \"∴每条微指令的总长度为:17+4+9=30\", \"step_5\": \"∴控制存储器容量:512×4B=2048B=2kB=16k位\", \"step_6\": \"(1)∵每条微指令的长度为30位,因此每条微指令需要4字节；2048B=2kB；即16k位,2k字节（由位转字节的除法算式未书写，仅给出结论：30位→4字节）\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T23:37:00.071219",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_6/ANS_CO_419.png",
+      "image_sha256": "deb784616ca86d8bf25d1d51313294e67beb6723be87ff29f4887e6b212f270d",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1)四个互斥组需要的位数分别为:4,4,5,3(当互斥字段对应位全为零时表示不发出任何控制信号)\n非互斥但需要的位数为:(用1位控制存储非互斥的信号)\n∴控制字段的位数:4+4+5+3=17\nBCF的位数:4(一元情况对应顺序执行)\n∵寻址微指令条数为512,∴微指令BAF的位数:9\n\n∴每条微指令的总长度为:17+4+9=30\n\n(1)∵每条微指令的长度为30位,因此每条微指令需要4字节\n∴控制存储器容量:512×4B=2048B=2kB=16k位\n即16k位,2k字节",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_419",
+        "question_id": "CO_6",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "四个互斥组需要的位数分别为:4,4,5,3(当互斥字段对应位全为零时表示不发出任何控制信号)；∴控制字段的位数:4+4+5+3=17",
+        "step_2": "非互斥但需要的位数为:(用1位控制存储非互斥的信号)；控制字段的位数:4+4+5+3=17（非互斥信号的具体减法算式未书写，仅注明用1位控制存储非互斥的信号，且17位的求和中未显式包含非互斥位数的加数）",
+        "step_3": "BCF的位数:4(一元情况对应顺序执行)；∵寻址微指令条数为512,∴微指令BAF的位数:9",
+        "step_4": "∴每条微指令的总长度为:17+4+9=30",
+        "step_5": "∴控制存储器容量:512×4B=2048B=2kB=16k位",
+        "step_6": "(1)∵每条微指令的长度为30位,因此每条微指令需要4字节；2048B=2kB；即16k位,2k字节（由位转字节的除法算式未书写，仅给出结论：30位→4字节）"
+      }
+    },
+    "scores": [
+      3,
+      7,
+      6
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "四个互斥组需要的位数分别为:4,4,5,3...控制字段的位数:4+4+5+3=17",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "4+4+5+3 = 16位",
+            "dependency_status": "failed",
+            "reason": "每位组取值被错误地多计一位全零编码，得到17位而非16位，属方法性错误"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "非互斥但需要的位数为:(用1位控制存储非互斥的信号)；控制字段的位数:4+4+5+3=17",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号 180-(12+8+16+4)=140条，控制字段总数 140+16=156位",
+            "dependency_status": "failed",
+            "reason": "未计算140条非互斥信号，控制字段总长17位与标准156位严重矛盾，方法错误"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "BCF的位数:4(一元情况对应顺序执行)；微指令BAF的位数:9",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF 3位；BAF 9位",
+            "dependency_status": "partial",
+            "reason": "BAF=9位正确；BCF取4位而非3位，错误"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "每条微指令的总长度为:17+4+9=30",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度 = 156+3+9 = 168位",
+            "dependency_status": "partial",
+            "reason": "求和结构正确，但各加数均来自错误的上游值，结果30位错误"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "控制存储器容量:512×4B=2048B=2kB=16k位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512×168位 = 86016位",
+            "dependency_status": "failed",
+            "reason": "使用字节化后的4B而非位长度相乘，且结果2048B与标准86016位不符，量纲与数值均错"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "2048B=2kB；即16k位,2k字节（30位→4字节）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016÷8 = 10752字节",
+            "dependency_status": "failed",
+            "reason": "最终字节容量错误，源于上游错误并伴随错误的进位取整（30位→4字节）"
+          }
+        ],
+        "total_score": 3
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "四个互斥组需要的位数分别为:4,4,5,3(当互斥字段对应位全为零时表示不发出任何控制信号)；∴控制字段的位数:4+4+5+3=17",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "四组分别需要4、4、5、3位，合计16位",
+            "dependency_status": "failed",
+            "reason": "各组位数4,4,5,3判断正确且给出求和公式，但算术求和错误(=17，应为16)，下游数值受影响"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "非互斥但需要的位数为:(用1位控制存储非互斥的信号)；控制字段的位数:4+4+5+3=17（非互斥信号的具体减法算式未书写，仅注明用1位控制存储非互斥的信号，且17位的求和中未显式包含非互斥位数）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条，控制字段总长156位",
+            "dependency_status": "failed",
+            "reason": "未计算非互斥信号数(应180-40=140)，控制字段总长错误，缺少核心计算"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "BCF的位数:4(一元情况对应顺序执行)；∵寻址微指令条数为512,∴微指令BAF的位数:9",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF需3位(8种条件)；BAF需9位",
+            "dependency_status": "insufficient",
+            "reason": "BAF=9位正确(由512条推出)，BCF=4位错误(应为3位)，两个子项各2分只得其一"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "∴每条微指令的总长度为:17+4+9=30",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度=156+3+9=168位",
+            "dependency_status": "failed",
+            "reason": "总长度=控制字段+BCF+BAF的结构关系正确，但由上游错误值得出30位而非168位"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "∴控制存储器容量:512×4B=2048B=2kB=16k位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512×168位=86016位",
+            "dependency_status": "failed",
+            "reason": "容量=条数×每条长度的方法正确，但按字节(4B)而非位计算且上游长度错误，结果2048B≠86016位"
+          },
+          {
+            "id": "step_6",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(1)∵每条微指令的长度为30位,因此每条微指令需要4字节；2048B=2kB；即16k位,2k字节",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016÷8=10752字节",
+            "dependency_status": "failed",
+            "reason": "位到字节的换算意识存在且单位换算自洽，但基于错误长度得出2kB，与标准10752字节不符"
+          }
+        ],
+        "total_score": 7
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "四个互斥组需要的位数分别为:4,4,5,3...控制字段的位数:4+4+5+3=17",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "四组互斥信号分别需要4、4、5、3位，共16位",
+            "dependency_status": "failed",
+            "reason": "四个分组的位数(4,4,5,3)全部正确，但求和结果17算错(应为16)，且含全零不发信号的说明正确；因算术错误数值不正确，给部分分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "非互斥但需要的位数为:(用1位控制存储非互斥的信号)；控制字段的位数:4+4+5+3=17（...17位的求和中未显式包含非互斥位数的加数）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条，控制字段总数156位",
+            "dependency_status": "failed",
+            "reason": "学生完全未将非互斥信号(140条)计入控制字段，概念上遗漏了整个非互斥类别，总数17与156严重不符，属方法性遗漏"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "BCF的位数:4(一元情况对应顺序执行)；∵寻址微指令条数为512,∴微指令BAF的位数:9",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF需3位；BAF需9位",
+            "dependency_status": "failed",
+            "reason": "BAF=9位正确；BCF=4位错误(应为3位)，仅一半子项正确"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "∴每条微指令的总长度为:17+4+9=30",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度=156+3+9=168位",
+            "dependency_status": "failed",
+            "reason": "总长=控制字段+BCF+BAF的求和结构正确，但各加数为上游错误值，结果30与168不符，属传播性错误的方法分"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "∴控制存储器容量:512×4B=2048B=2kB=16k位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512×168位=86016位",
+            "dependency_status": "failed",
+            "reason": "按条数×每条微指令长度求容量的结构正确(512×每条大小)，但因上游长度错误先转为4字节再相乘，与标准按位计算(86016位)不符，仅保留结构性方法分"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "即16k位,2k字节（由位转字节的除法算式未书写，仅给出结论：30位→4字节）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016÷8=10752字节",
+            "dependency_status": "failed",
+            "reason": "最终字节数2kB(2048B)与标准10752字节完全不符，且由错误的每条4字节推出，最终数值结论错误"
+          }
+        ],
+        "total_score": 6
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "step_5": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "step_6": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_5": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_6": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.888888888888889,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.22222222222222224,
+      "step_6": 0.22222222222222224
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.22222222222222224
+  },
+  {
+    "file": "ANS_CO_424.png",
+    "facts": "{\"step_1\": \"互斥组 所需位数: 12→4, 8→4, 16→5, 4→3; 控制字段:4+4+5+3=16位\", \"step_2\": \"非互斥信号个数未书写（无 180−(12+8+16+4) 类算式）；控制字段长度写作 16位\", \"step_3\": \"条件转移:2³个. 需要3位. → BCF:3 位; 微指令:2⁹个条. 需要9位 → BAF:9 位\", \"step_4\": \"每条微指令总长度:28. （控制字段16位+BCF 3位+BAF 9位的综合结果，学生仅写最终值28，未写加法式）\", \"step_5\": \"容量:2⁹×28. = 14336\", \"step_6\": \"字节: 2⁹×28/2³ = 1792\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T23:38:27.377253",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_6/ANS_CO_424.png",
+      "image_sha256": "7f244a5acb038ab4370dea8f9f4d88e197f40f3cd74708a90d2413f19d67fb56",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) 互斥组 所需位数\n12 4\n8 4\n16 5\n4 3\n控制字段:4+4+5+3=16位\n条件转移:2³个. 需要3位.\n微指令:2⁹个条. 需要9位\n综上:\n控制字段:16位\nBCF:3 位\nBAF:9 位\n每条微指令总长度:28.\n(2).控制存储器地址空间:9.\n容量:2⁹×28. = 14336\n字节: 2⁹×28/2³ = 1792",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_424",
+        "question_id": "CO_6",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "互斥组 所需位数: 12→4, 8→4, 16→5, 4→3; 控制字段:4+4+5+3=16位",
+        "step_2": "非互斥信号个数未书写（无 180−(12+8+16+4) 类算式）；控制字段长度写作 16位",
+        "step_3": "条件转移:2³个. 需要3位. → BCF:3 位; 微指令:2⁹个条. 需要9位 → BAF:9 位",
+        "step_4": "每条微指令总长度:28. （控制字段16位+BCF 3位+BAF 9位的综合结果，学生仅写最终值28，未写加法式）",
+        "step_5": "容量:2⁹×28. = 14336",
+        "step_6": "字节: 2⁹×28/2³ = 1792"
+      }
+    },
+    "scores": [
+      10.5,
+      12,
+      13
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "互斥组 所需位数: 12→4, 8→4, 16→5, 4→3; 控制字段:4+4+5+3=16位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "四组分别需4、4、5、3位，共16位",
+            "dependency_status": "satisfied",
+            "reason": "各组位数与总和计算完全正确，含加法式。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "非互斥信号个数未书写（无 180−(12+8+16+4) 类算式）；控制字段长度写作 16位",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条，控制字段 140+16=156位",
+            "dependency_status": "failed",
+            "reason": "缺少非互斥信号计算，控制字段总长写成16位（仅为互斥部分），遗漏140位，核心数值矛盾。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "条件转移:2³个. 需要3位. → BCF:3 位; 微指令:2⁹个条. 需要9位 → BAF:9 位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF=3位，BAF=9位",
+            "dependency_status": "satisfied",
+            "reason": "两个位数及推理均正确。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "每条微指令总长度:28. （控制字段16位+BCF 3位+BAF 9位的综合结果，学生仅写最终值28）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度=156+3+9=168位",
+            "dependency_status": "failed",
+            "reason": "加法关系（控制字段+3+9）正确套用，但上游控制字段错误导致28≠168，数值错误，给一半过程分。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "容量:2⁹×28. = 14336",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512×168=86016位",
+            "dependency_status": "failed",
+            "reason": "容量=条数×微指令长度的公式正确，但每条长度沿袭错误值28，结果错误，给一半。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "字节: 2⁹×28/2³ = 1792",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016÷8=10752字节",
+            "dependency_status": "failed",
+            "reason": "最终数值1792≠10752，最终结果项不给分。"
+          }
+        ],
+        "total_score": 10.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "12→4, 8→4, 16→5, 4→3; 4+4+5+3=16位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "四个互斥组分别需4、4、5、3位，合计16位",
+            "dependency_status": "satisfied",
+            "reason": "各组位数及总和均正确，公式与算式齐全"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "非互斥信号个数未书写；控制字段长度写作 16位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "非互斥信号140条，控制字段 140+16=156位",
+            "dependency_status": "failed",
+            "reason": "完全遗漏非互斥信号计算，控制字段总长误写为16位，与标准156位概念性错误"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "条件转移:2³个 → 3位 BCF；微指令:2⁹条 → 9位 BAF",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF需3位，BAF需9位",
+            "dependency_status": "satisfied",
+            "reason": "BCF与BAF位数计算及推理均正确"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "每条微指令总长度:28（控制字段16位+BCF 3位+BAF 9位综合结果，仅写最终值28）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "总长度 = 156 + 3 + 9 = 168位",
+            "dependency_status": "insufficient",
+            "reason": "加法结构正确（16+3+9=28），但由于step_2漏算非互斥信号导致最终值28错误，属上游错误传播的正确方法"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "容量: 2⁹×28 = 14336",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512 × 168 = 86016位",
+            "dependency_status": "insufficient",
+            "reason": "容量=条数×位数的公式正确，但因位宽错误导致数值错误（14336≠86016）"
+          },
+          {
+            "id": "step_6",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "字节: 2⁹×28/2³ = 1792",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016 ÷ 8 = 10752字节",
+            "dependency_status": "insufficient",
+            "reason": "位转字节的换算关系（÷8）正确应用，但因上游容量错误导致结果错误"
+          }
+        ],
+        "total_score": 12
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "互斥组 所需位数: 12→4, 8→4, 16→5, 4→3; 控制字段:4+4+5+3=16位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "四组互斥信号分别需要4、4、5、3位，共16位",
+            "dependency_status": "satisfied",
+            "reason": "四个组的位数与总和16位均正确，且展示了求和过程"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "非互斥信号个数未书写（无 180−(12+8+16+4) 类算式）；控制字段长度写作 16位",
+            "evidence_status": "explicit",
+            "expected_condition": "非互斥信号 180-(12+8+16+4)=140条，控制字段总数 140+16=156位",
+            "dependency_status": "failed",
+            "reason": "未计算非互斥信号140条，控制字段总长写成16位（漏加140），结论错误；仅互斥组部分正确，给少量分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "条件转移:2³个. 需要3位. → BCF:3 位; 微指令:2⁹个条. 需要9位 → BAF:9 位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "BCF需3位；BAF需9位",
+            "dependency_status": "satisfied",
+            "reason": "BCF=3位、BAF=9位均正确，且给出了推导依据"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_status": "not_comparable",
+            "evidence_text": "每条微指令总长度:28. （控制字段16位+BCF 3位+BAF 9位的综合结果，学生仅写最终值28，未写加法式）",
+            "score_layer": "support",
+            "expected_condition": "总长度 = 156 + 3 + 9 = 168位",
+            "dependency_status": "failed",
+            "reason": "求和方法（控制字段+BCF+BAF）按其数值正确应用，但上游控制字段16错误导致结果28≠168，属传导错误"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "容量:2⁹×28. = 14336",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "512条微指令 × 168位 = 86016位",
+            "dependency_status": "failed",
+            "reason": "容量=条数×位长的公式正确，但用错误的28位得到14336位，结果错误属上游传导"
+          },
+          {
+            "id": "step_6",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "字节: 2⁹×28/2³ = 1792",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "86016 ÷ 8 = 10752字节",
+            "dependency_status": "failed",
+            "reason": "位转字节（除以8）的换算关系正确，但基于错误容量得1792≠10752字节"
+          }
+        ],
+        "total_score": 13
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "step_3": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "step_4": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "step_5": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "step_6": [
+        0.0,
+        1.5,
+        1.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_5": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_6": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.22222222222222224,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.5
+    },
+    "max_item_variance": 0.5,
+    "avg_item_variance": 0.12037037037037036
+  }
+]

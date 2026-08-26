@@ -1,0 +1,1502 @@
+[
+  {
+    "file": "ANS_CPL_301.jpg",
+    "facts": "{\"step_1\": \"ch>='a'&&ch<='z'\", \"step_2\": \"(ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0;\", \"step_3\": \"a[i]!=0\", \"step_4\": \"words[Upper(ch)-'A']--;\", \"step_5\": \"EqualArray(&word,26)\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:30:22.785207",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_6/ANS_CPL_301.jpg",
+      "image_sha256": "3c9228732bf6dfcd47261a7faf1551b53fb4b5d48afe3b650f891d39a21fd0eb",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) ch>='a'&&ch<='z' | (2) (ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0; | (3) a[i]!=0 | (4) words[Upper(ch)-'A']--; | (5) EqualArray(&word,26)",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_301",
+        "question_id": "CPL_6",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "ch>='a'&&ch<='z'",
+        "step_2": "(ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0;",
+        "step_3": "a[i]!=0",
+        "step_4": "words[Upper(ch)-'A']--;",
+        "step_5": "EqualArray(&word,26)"
+      }
+    },
+    "scores": [
+      9.0,
+      10,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches the standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Core condition identical; the extra ?1:0 wrapper is a non-substantive format addition."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Exact match to the accepted answer a[i]!=0."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Exact match; trailing semicolon not penalized."
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "EqualArray(&word,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "insufficient",
+            "reason": "Function name and count 26 correct, but argument is &word instead of the array words; the address-of form changes the passed object and is not clearly the same array, so only partial credit."
+          }
+        ],
+        "total_score": 9.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "Exact match with standard answer; correct >= comparisons."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "(ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Core condition identical; extra ?1:0 and ; are non-substantive additions (rubric explicitly tolerates extra () or ;)."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Matches the first accepted standard answer exactly."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Identical expression; trailing semicolon explicitly not penalized."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "EqualArray(&word,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "Same function call and count 26; argument is the same array (address-of array name is equivalent to array name), a non-substantive notation difference. Full credit."
+          }
+        ],
+        "total_score": 10
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "完全等于标准答案"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "(ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "条件表达式与标准答案等价，额外?1:0属非实质格式差异"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案一致"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案一致，多余分号不扣分"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(&word,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "调用EqualArray并传入数组与26，&word与words为等价写法（取地址传数组），语义一致"
+          }
+        ],
+        "total_score": 10.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        1.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.2222222222222222
+    },
+    "max_item_variance": 0.2222222222222222,
+    "avg_item_variance": 0.04444444444444444
+  },
+  {
+    "file": "ANS_CPL_303.jpg",
+    "facts": "{\"step_1\": \"'A'<=ch&&ch<='z'\", \"step_2\": \"('a'<=ch&&'z'>=ch) || ('A'<=ch&&ch<='Z')\", \"step_3\": \"a[i]!=0\", \"step_4\": \"words[Upper(ch)-'A']--;\", \"step_5\": \"EqualArray(words,26)==1\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:31:43.094982",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_6/ANS_CPL_303.jpg",
+      "image_sha256": "b36d637ff37be772ab0875e292b608f9116f34a1e81aa74a291c10179522fcf7",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) ‘A’<=ch&&ch<=‘z’ | (2) (‘a’<=ch&&‘z’>=ch) || (‘A’<=ch&&ch<=‘Z’) | (3) a[i]!=0 | (4) words[Upper(ch)-‘A’]--; | (5) EqualArray(words,26)==1",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_303",
+        "question_id": "CPL_6",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "'A'<=ch&&ch<='z'",
+        "step_2": "('a'<=ch&&'z'>=ch) || ('A'<=ch&&ch<='Z')",
+        "step_3": "a[i]!=0",
+        "step_4": "words[Upper(ch)-'A']--;",
+        "step_5": "EqualArray(words,26)==1"
+      }
+    },
+    "scores": [
+      8,
+      8,
+      9
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "'A'<=ch&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z' (lowercase range check)",
+            "dependency_status": "failed",
+            "reason": "Student wrote 'A' instead of 'a', producing the range 'A'..'z', which is not the lowercase check; a conceptual range error, not a notation slip."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "('a'<=ch&&'z'>=ch) || ('A'<=ch&&ch<='Z')",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Operand order ('z'>=ch vs ch<='z') is semantically equivalent to the standard answer."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches the accepted standard answer."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Identical expression; trailing semicolon is a non-substantive extra."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)==1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "Explicit comparison ==1 is semantically the same condition as the standard answer."
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "'A'<=ch&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "failed",
+            "reason": "下界用了'A'而非'a'，区间'A'到'z'范围错误，属概念错误而非笔误"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "('a'<=ch&&'z'>=ch) || ('A'<=ch&&ch<='Z')",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案逻辑等价，操作数顺序不同不影响"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案一致"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "完全一致，多写分号不扣分"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)==1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "显式比较==1与函数真值等价"
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "'A'<=ch&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z' (lowercase range check)",
+            "dependency_status": "failed",
+            "reason": "Structure of the range check is correct, but lower bound uses 'A' instead of 'a', making the condition semantically different (includes uppercase); lenient partial credit."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "('a'<=ch&&'z'>=ch) || ('A'<=ch&&ch<='Z')",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Equivalent condition, operand order irrelevant."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Matches standard answer exactly."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Identical to standard answer; trailing semicolon not penalized."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)==1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "Same call; explicit ==1 comparison is equivalent in a boolean context."
+          }
+        ],
+        "total_score": 9
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.22222222222222224,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.044444444444444446
+  },
+  {
+    "file": "ANS_CPL_324.jpg",
+    "facts": "{\"step_1\": \"ch>='a'&&ch<='z'\", \"step_2\": \"ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0\", \"step_3\": \"a[i]!=0\", \"step_4\": \"words[Upper(ch)-'A']--\", \"step_5\": \"EqualArray(words,26)\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:32:49.343853",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_6/ANS_CPL_324.jpg",
+      "image_sha256": "b744f19c9b057f6ed1d85c35e47668cb388429b5474bf6085a9e3eb36ab6f7fe",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) ch>='a'&&ch<='z' | (2) ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0 | (3) a[i]!=0 | (4) words[Upper(ch)-'A']-- | (5) EqualArray(words,26)",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_324",
+        "question_id": "CPL_6",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "ch>='a'&&ch<='z'",
+        "step_2": "ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0",
+        "step_3": "a[i]!=0",
+        "step_4": "words[Upper(ch)-'A']--",
+        "step_5": "EqualArray(words,26)"
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches the standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Contains both conditions joined by ||; the ?1:0 wrapper is an equivalent boolean-to-int expression, a minor format difference only."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Matches the standard answer exactly."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Matches the standard answer exactly."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "Same call; spacing difference is non-substantive."
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches the standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Same logical condition (OR of both range tests); extra ?1:0 is a non-substantive equivalent wrapper."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Matches the accepted standard answer directly."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Identical to standard answer."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "Same call; spacing difference is non-substantive."
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='a'&&ch<='z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "Identical to standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Equivalent condition; extra ?1:0 is a minor format addition, condition identical."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches standard answer."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches standard answer."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches standard answer; spacing irrelevant."
+          }
+        ],
+        "total_score": 10
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CPL_328.jpg",
+    "facts": "{\"step_1\": \"if(ch>='a'&&ch<='z')\", \"step_2\": \"if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))?1:0;\", \"step_3\": \"a[i]!=0\", \"step_4\": \"words[Upper(ch)-'A']--\", \"step_5\": \"if(words[26]=={0})\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:33:41.701803",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_6/ANS_CPL_328.jpg",
+      "image_sha256": "f14b66ad6c1dc021f7dc9412e8d2c6f36d0b39d72252664b2845efcb0a5bbe8d",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) if(ch>='a'&&ch<='z') | (2) if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))?1:0; | (3) a[i]!=0 | (4) words[Upper(ch)-'A']-- | (5) if(words[26]=={0})",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_328",
+        "question_id": "CPL_6",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "if(ch>='a'&&ch<='z')",
+        "step_2": "if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))?1:0;",
+        "step_3": "a[i]!=0",
+        "step_4": "words[Upper(ch)-'A']--",
+        "step_5": "if(words[26]=={0})"
+      }
+    },
+    "scores": [
+      8,
+      7.5,
+      7.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "if(ch>='a'&&ch<='z')",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "Contains exactly the required condition; extra if() and ; are non-penalized."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Required OR-condition fully present."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches accepted alternative a[i]!=0."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Identical to standard answer."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "if(words[26]=={0})",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26): check all 26 counters are equal",
+            "dependency_status": "failed",
+            "reason": "Required relation is that all 26 elements are equal to each other; the student instead compares element words[26] (an out-of-range/unused index) with an invalid initializer literal, a wrong conceptual relation."
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "if(ch>='a'&&ch<='z')",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches the standard answer; extra parentheses allowed."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "if((ch>='a'&&ch<='z')||(ch>'A'&&ch<'Z'))?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Core relation correct, but '>'A' and '<'Z' use strict comparisons instead of >= and <=; rubric note deducts 0.5 for this."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Matches the standard answer exactly."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Identical to the standard answer."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "if(words[26]=={0})",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "failed",
+            "reason": "Required a call to check all 26 elements for equality; student wrote an invalid comparison of words[26] to {0}, which is a different, incorrect relation (out-of-bounds element, wrong object)."
+          }
+        ],
+        "total_score": 7.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "if(ch>='a'&&ch<='z')",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "Exactly the required condition; extra parentheses/if allowed."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "if((ch>='a'&&ch<='z')||(ch>'A'&&ch<'Z'))?1:0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Lowercase part correct; uppercase part uses strict > and < instead of >= and <=, per rubric note deduct 0.5."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Matches the accepted alternative form a[i]!=0."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Identical to the standard answer."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "if(words[26]=={0})",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "failed",
+            "reason": "Requires checking all 26 elements for equality (EqualArray call); words[26]=={0} is out-of-bounds, syntactically invalid C, and does not express the required relation."
+          }
+        ],
+        "total_score": 7.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        1.5,
+        1.5
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.05555555555555556,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.011111111111111112
+  },
+  {
+    "file": "ANS_CPL_331.jpg",
+    "facts": "{\"step_1\": \"ch>'a'&&ch<'z'\", \"step_2\": \"(ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0\", \"step_3\": \"a[i]!=0\", \"step_4\": \"words[Upper(ch)-'A']--;\", \"step_5\": \"EqualArray(words,26)\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:34:50.499010",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_6/ANS_CPL_331.jpg",
+      "image_sha256": "35ac5dedbd63aa45c6dfff1be3d9e9a53b41d642f88d957cfe8f6ce771cfed16",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) ch>'a'&&ch<'z' | (2) (ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0 | (3)a[i]!=0 | (4) words[Upper(ch)-'A']--; | (5) EqualArray(words,26)",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_331",
+        "question_id": "CPL_6",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "ch>'a'&&ch<'z'",
+        "step_2": "(ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0",
+        "step_3": "a[i]!=0",
+        "step_4": "words[Upper(ch)-'A']--;",
+        "step_5": "EqualArray(words,26)"
+      }
+    },
+    "scores": [
+      8.5,
+      9,
+      8.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "ch>'a'&&ch<'z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z' (>=写成>、<=写成<扣0.5分)",
+            "dependency_status": "satisfied",
+            "reason": "逻辑关系正确，但>=写成>且<=写成<，按规则扣0.5分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "两分支条件逻辑正确，但两个区间均缺等号（四处>、<），按规则合计扣1分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案一致（多写分号不扣分）"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案一致，空格差异不扣分"
+          }
+        ],
+        "total_score": 8.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "ch>'a'&&ch<'z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "Correct structure and range, but > / < used instead of >= / <=; rubric explicitly deducts 0.5 for this, so 2 - 0.5 = 1.5."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Correct logical structure with both cases; uses > and < instead of >= and <=, same 0.5 deduction applies, so 1.5."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches the accepted standard answer."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Identical to the standard answer; trailing semicolon is non-substantive."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "Matches the standard function call exactly; space difference is non-substantive."
+          }
+        ],
+        "total_score": 9
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "ch>'a'&&ch<'z'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "ch>='a'&&ch<='z'",
+            "dependency_status": "satisfied",
+            "reason": "Structure and logic correct, but >= written as > and <= written as <; rubric explicitly deducts 0.5 each, so 2-1=1."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(ch>'A'&&ch<'Z')||(ch>'a'&&ch<'z')?1:0",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "(ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z')",
+            "dependency_status": "satisfied",
+            "reason": "Correct two-range OR logic and 1:0 mapping, but both comparisons omit '=', deducting 0.5 each per rubric note."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a[i]!=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a[i]!=0 或 a[i]",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches the accepted answer a[i]!=0."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "words[Upper(ch)-'A']--;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "words[Upper(ch)-'A']--",
+            "dependency_status": "satisfied",
+            "reason": "Identical to standard answer; trailing semicolon explicitly not penalized."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "EqualArray(words,26)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "EqualArray(words, 26)",
+            "dependency_status": "satisfied",
+            "reason": "Function name, arguments, and order match standard answer exactly; spacing is non-substantive."
+          }
+        ],
+        "total_score": 8.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        1.5,
+        1.5,
+        1.0
+      ],
+      "step_2": [
+        1.0,
+        1.5,
+        1.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555556,
+      "step_2": 0.05555555555555556,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.022222222222222223
+  }
+]

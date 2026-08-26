@@ -1,0 +1,1052 @@
+[
+  {
+    "file": "ANS_CPL_405.jpg",
+    "facts": "{\"step_1\": \"for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\\\"%d\\\",&a[i][j]);}\", \"step_2\": \"FILE *pf = NULL;pf = fopen (matrixv[1],\\\"w\\\");for(i=0;i<5;i++)for(j=0;j<5;j++){ fprintf (pf,\\\"%d\\\",b[i][j]);if(j==4) fprintf (pf,\\\"\\\\n\\\"); }fclose(pf);\", \"step_3\": \"int a[5][5],b[5][5];int i,j;for(i=0;i<5;i++)for(j=0;j<5;j++){b[j][i] = a[i][j];}（转置通过 b[j][i] = a[i][j]; 下标互换实现，未见元素交换语句；其余控制流：#include<stdio.h> int main (char* matrixv[]) ... return 0;）\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:36:53.482451",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_405.jpg",
+      "image_sha256": "af355557417138fe8ad31aa1bc7beeb04ae86e1dbe9337d75149ea28daeb4da8",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "#include<stdio.h>int main (char* matrixv[]){int a[5][5],b[5][5];int i,j;for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\"%d\",&a[i][j]);}for(i=0;i<5;i++)for(j=0;j<5;j++){b[j][i] = a[i][j];}FILE *pf = NULL;pf = fopen (matrixv[1],\"w\");for(i=0;i<5;i++)for(j=0;j<5;j++){ fprintf (pf,\"%d\",b[i][j]);if(j==4) fprintf (pf,\"\\n\"); }fclose(pf);return 0;}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_405",
+        "question_id": "CPL_7",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\"%d\",&a[i][j]);}",
+        "step_2": "FILE *pf = NULL;pf = fopen (matrixv[1],\"w\");for(i=0;i<5;i++)for(j=0;j<5;j++){ fprintf (pf,\"%d\",b[i][j]);if(j==4) fprintf (pf,\"\\n\"); }fclose(pf);",
+        "step_3": "int a[5][5],b[5][5];int i,j;for(i=0;i<5;i++)for(j=0;j<5;j++){b[j][i] = a[i][j];}（转置通过 b[j][i] = a[i][j]; 下标互换实现，未见元素交换语句；其余控制流：#include<stdio.h> int main (char* matrixv[]) ... return 0;）"
+      }
+    },
+    "scores": [
+      14.5,
+      14,
+      15
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\"%d\",&a[i][j]);}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入矩阵元素的循环",
+            "dependency_status": "satisfied",
+            "reason": "双重循环读入5x5矩阵，scanf格式正确，循环边界正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "FILE *pf = NULL;pf = fopen (matrixv[1],\"w\");...fprintf(pf,\"%d\",b[i][j]);if(j==4) fprintf(pf,\"\\n\");...fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "satisfied",
+            "reason": "fopen写模式打开、fprintf写矩阵元素并换行、fclose关闭，文件操作三要素齐全；未判空指针按题目说明不扣分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "b[j][i] = a[i][j];（转置通过下标互换实现）；#include<stdio.h> int main (char* matrixv[]) ... return 0;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "satisfied",
+            "reason": "转置逻辑 b[j][i]=a[i][j] 正确，程序结构完整（头文件、main、return），但main函数签名书写不规范（缺int/argc类型声明），按语法错误酌情扣0.5分"
+          }
+        ],
+        "total_score": 14.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\"%d\",&a[i][j]);}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct nested loops reading matrix elements",
+            "dependency_status": "satisfied",
+            "reason": "Nested loops correctly read all 5x5 elements with scanf."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "FILE *pf = NULL;pf = fopen (matrixv[1],\"w\");for(i=0;i<5;i++)for(j=0;j<5;j++){ fprintf (pf,\"%d\",b[i][j]);if(j==4) fprintf (pf,\"\\n\"); }fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct file open, write, and close",
+            "dependency_status": "satisfied",
+            "reason": "fopen for writing, fprintf of all elements with newline per row, and fclose all present; per rubric, missing NULL check is not penalized."
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "for(i=0;i<5;i++)for(j=0;j<5;j++){b[j][i] = a[i][j];}（转置通过 b[j][i] = a[i][j]; 下标互换实现...）#include<stdio.h> int main (char* matrixv[]) ... return 0;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct transpose logic and overall program structure",
+            "dependency_status": "insufficient",
+            "reason": "Transpose via index swap b[j][i]=a[i][j] into second array is fully correct; however main signature int main(char* matrixv[]) is a syntax error (missing argc, wrong main type), warranting the small rubric-declared syntax deduction."
+          }
+        ],
+        "total_score": 14
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(i=0;i<5;i++)for(j=0;j<5;j++){scanf (\"%d\",&a[i][j]);}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct read loop for all matrix elements",
+            "dependency_status": "satisfied",
+            "reason": "Nested double loop correctly reads all 25 elements of a[5][5] with scanf; loop structure fully correct."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "FILE *pf = NULL;pf = fopen (matrixv[1],\"w\");for(i=0;i<5;i++)for(j=0;j<5;j++){ fprintf (pf,\"%d\",b[i][j]);if(j==4) fprintf (pf,\"\\n\"); }fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct file open, write data to file, and close file",
+            "dependency_status": "satisfied",
+            "reason": "fopen with write mode, fprintf of all elements with newline at row end, and fclose all present; missing space between numbers is a non-substantive format issue, and null-pointer check is explicitly not penalized."
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(i=0;i<5;i++)for(j=0;j<5;j++){b[j][i] = a[i][j];}（转置通过 b[j][i] = a[i][j]; 下标互换实现...#include<stdio.h> int main (char* matrixv[]) ... return 0;）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct transpose logic and overall program structure",
+            "dependency_status": "satisfied",
+            "reason": "Transpose correctly implemented via index swap b[j][i]=a[i][j] with a second array; include, main, and return structure present; missing int argc in main signature is negligible."
+          }
+        ],
+        "total_score": 15
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_3": [
+        4.5,
+        4.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "FORMAT_MINOR"
+      ],
+      "step_3": [
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.16666666666666666
+    },
+    "max_item_variance": 0.16666666666666666,
+    "avg_item_variance": 0.05555555555555555
+  },
+  {
+    "file": "ANS_CPL_407.jpg",
+    "facts": "{\"step_1\": \"for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\\\"%d\\\",&a[i][j]); } } //输入矩阵；输出部分: for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { printf(\\\"%d \\\",a[i][j]) } printf(\\\"\\\\n\\\"); } //输出矩阵 (注意 printf 语句缺少分号，按原样保留)\", \"step_2\": \"未书写 (转写中没有任何文件操作语句：无 fopen/fprintf/fclose，无写入 matrix.txt 的代码)\", \"step_3\": \"include <stdio.h> int main() { int a[5][5]; 声明为 int a[5][5]; 转置逻辑: for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } } //转置矩阵；程序结构: main 函数内依次为声明、输入循环、转置循环、输出循环，末尾 return 0; }\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:38:08.671382",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_407.jpg",
+      "image_sha256": "1990ebaa89f121ec6424630cc555ad9b3c65e01bdfdd830a507096d05cbefbf3",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "include <stdio.h> int main() { int a[5][5]; for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\"%d\",&a[i][j]); } } //输入矩阵 for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } } //转置矩阵 for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { printf(\"%d \",a[i][j]) } printf(\"\\n\"); } return 0; } //输出矩阵",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_407",
+        "question_id": "CPL_7",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\"%d\",&a[i][j]); } } //输入矩阵；输出部分: for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { printf(\"%d \",a[i][j]) } printf(\"\\n\"); } //输出矩阵 (注意 printf 语句缺少分号，按原样保留)",
+        "step_2": "未书写 (转写中没有任何文件操作语句：无 fopen/fprintf/fclose，无写入 matrix.txt 的代码)",
+        "step_3": "include <stdio.h> int main() { int a[5][5]; 声明为 int a[5][5]; 转置逻辑: for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } } //转置矩阵；程序结构: main 函数内依次为声明、输入循环、转置循环、输出循环，末尾 return 0; }"
+      }
+    },
+    "scores": [
+      9.5,
+      9.5,
+      9.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}} 输出循环同理，printf 语句缺少分号",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入和输出矩阵的循环",
+            "dependency_status": "satisfied",
+            "reason": "读入与输出循环均完整正确，仅一处 printf 缺少分号，属轻微语法问题，酌情扣0.5分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写 (转写中没有任何文件操作语句：无 fopen/fprintf/fclose，无写入 matrix.txt 的代码)",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "failed",
+            "reason": "完全没有文件操作相关代码，无任何证据可给分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(int i=0;i<5;i++){for(int j=4;j>i;j--){int temp=a[i][j];a[i][j]=a[j][i];a[j][i]=temp;}} 程序结构: 声明、输入、转置、输出循环，末尾 return 0;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "satisfied",
+            "reason": "单数组原地转置逻辑正确（j>i 上三角交换），程序整体结构完整含 return 0"
+          }
+        ],
+        "total_score": 9.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}} ... printf(\"%d \",a[i][j]) } //输出矩阵 (printf 语句缺少分号)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入和输出矩阵的循环",
+            "dependency_status": "satisfied",
+            "reason": "输入和输出双重循环均正确；仅一处缺少分号的轻微语法问题，按规则扣0.5分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写 (转写中没有任何文件操作语句：无 fopen/fprintf/fclose，无写入 matrix.txt 的代码)",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "failed",
+            "reason": "完全没有文件操作相关代码"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "转置逻辑: for(int i=0;i<5;i++){for(int j=4;j>i;j--){int temp=a[i][j];a[i][j]=a[j][i];a[j][i]=temp;}} ... main 函数内依次为声明、输入循环、转置循环、输出循环，末尾 return 0;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "satisfied",
+            "reason": "上三角交换转置逻辑正确，程序整体结构完整（声明、输入、转置、输出、return 0）"
+          }
+        ],
+        "total_score": 9.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "for(int i=0;i<5;i++) { for(int j=0;j<5;j++) { scanf(\"%d\",&a[i][j]); } } 输入；输出 for 循环同结构，printf 语句缺少分号",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入和输出矩阵的循环",
+            "dependency_status": "satisfied",
+            "reason": "读写循环结构完全正确，仅 printf 缺分号属轻微语法错误，按评分说明酌情扣0.5分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写 (转写中没有任何文件操作语句：无 fopen/fprintf/fclose，无写入 matrix.txt 的代码)",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "failed",
+            "reason": "完全没有文件操作相关代码，不得分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "转置逻辑: for(int i=0;i<5;i++) { for(int j=4;j>i;j--) { int temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp; } }；main 函数内依次为声明、输入循环、转置循环、输出循环，末尾 return 0;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "satisfied",
+            "reason": "在原数组上沿对角线正确交换实现转置，程序整体结构（声明、输入、转置、输出、return 0）完整正确"
+          }
+        ],
+        "total_score": 9.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        4.5,
+        4.5,
+        4.5
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "FORMAT_MINOR",
+        "FORMAT_MINOR",
+        "FORMAT_MINOR"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CPL_410.jpg",
+    "facts": "{\"step_1\": \"for(i=0;i<5;i++)\\n{\\n    for(j=0;j<5;j++)\\n    {\\n        scanf('%d',&a[i][j]);\\n    }\\n}\\n\\n输出/写入循环:\\nfor(i=0;i<5;i++)\\n{\\n    fwrite(b[i],5,sizeof(int),fp);\\n}\", \"step_2\": \"FILE *fp = fopen(\\\"matrix.txt\\\",w);\\nif (fp == NULL)\\n    return 1;\\nfwrite(b[i],5,sizeof(int),fp);\\nfclose(fp);\", \"step_3\": \"int a[5][5], b[5][5];\\nint i,j,o,temp;\\n\\nfor(i=0;i<5;i++)\\n{\\n    for(j=0;j<5;j++)\\n    {\\n        b[j][i]=a[i][j];\\n    }\\n    a[i][j]=b[j][i];\\n    b[j][i]=temp;\\n}\\n\\n程序块顺序: 头文件包含 -> main函数 -> 变量声明 -> 输入循环 -> 转置循环 -> 文件操作(fopen -> 判空 -> fwrite写入 -> fclose) -> return 0;\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:39:31.959317",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_410.jpg",
+      "image_sha256": "655add88d7189cf5af61c4613f05f2aeba300c42f6676aa5c626e9b8007d4866",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "#include <stdio.h>int main(){ int a[5][5], b[5][5];int i,j,o,temp;for(i=0;i<5;i++){ for(j=0;j<5;j++){ scanf('%d',&a[i][j]);}}for(i=0;i<5;i++){ for(j=0;j<5;j++){b[j][i]=a[i][j];}a[i][j]=b[j][i];b[j][i]=temp;}}FILE *fp = fopen(\"matrix.txt\",w);if (fp == NULL)return 1;for(i=0;i<5;i++)\n{fwrite(b[i],5,sizeof(int),fp);}fclose(fp);return 0;}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_410",
+        "question_id": "CPL_7",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "for(i=0;i<5;i++)\n{\n    for(j=0;j<5;j++)\n    {\n        scanf('%d',&a[i][j]);\n    }\n}\n\n输出/写入循环:\nfor(i=0;i<5;i++)\n{\n    fwrite(b[i],5,sizeof(int),fp);\n}",
+        "step_2": "FILE *fp = fopen(\"matrix.txt\",w);\nif (fp == NULL)\n    return 1;\nfwrite(b[i],5,sizeof(int),fp);\nfclose(fp);",
+        "step_3": "int a[5][5], b[5][5];\nint i,j,o,temp;\n\nfor(i=0;i<5;i++)\n{\n    for(j=0;j<5;j++)\n    {\n        b[j][i]=a[i][j];\n    }\n    a[i][j]=b[j][i];\n    b[j][i]=temp;\n}\n\n程序块顺序: 头文件包含 -> main函数 -> 变量声明 -> 输入循环 -> 转置循环 -> 文件操作(fopen -> 判空 -> fwrite写入 -> fclose) -> return 0;"
+      }
+    },
+    "scores": [
+      12.5,
+      13,
+      12.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "for(i=0;i<5;i++){for(j=0;j<5;j++){scanf('%d',&a[i][j]);}} ... for(i=0;i<5;i++){fwrite(b[i],5,sizeof(int),fp);}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读入和输出矩阵元素的双层循环正确",
+            "dependency_status": "satisfied",
+            "reason": "读入双层循环和写入循环结构均正确；scanf用单引号属轻微语法瑕疵，酌情扣0.5分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "FILE *fp = fopen(\"matrix.txt\",w); if (fp == NULL) return 1; fwrite(...); fclose(fp);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确打开文件、写数据、关闭文件",
+            "dependency_status": "satisfied",
+            "reason": "fopen、判空、fwrite、fclose齐全；w未加引号为轻微语法错误，酌扣0.5分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "for(i=0;i<5;i++){for(j=0;j<5;j++){b[j][i]=a[i][j];} a[i][j]=b[j][i]; b[j][i]=temp;}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "转置逻辑正确及整体程序结构",
+            "dependency_status": "partial",
+            "reason": "内层转置赋值b[j][i]=a[i][j]正确，且程序块顺序描述完整；但外层多出错误的a[i][j]=b[j][i]和b[j][i]=temp语句（j已越界、逻辑混乱），酌情扣分"
+          }
+        ],
+        "total_score": 12.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "for(i=0;i<5;i++){ for(j=0;j<5;j++){ scanf('%d',&a[i][j]); } } ... for(i=0;i<5;i++){ fwrite(b[i],5,sizeof(int),fp); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入和输出循环",
+            "dependency_status": "satisfied",
+            "reason": "读入双循环和按行输出循环均正确；scanf格式串用单引号属轻微语法问题，酌情扣0.5分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "FILE *fp = fopen(\"matrix.txt\",w); if (fp == NULL) return 1; fwrite(...); fclose(fp);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、写数据、关闭文件",
+            "dependency_status": "satisfied",
+            "reason": "fopen、判空、fwrite、fclose 齐全；打开模式 w 缺引号属语法小错，扣0.5分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "b[j][i]=a[i][j]; ... a[i][j]=b[j][i]; b[j][i]=temp; ... 程序块顺序: 头文件包含 -> main函数 -> 变量声明 -> 输入循环 -> 转置循环 -> 文件操作 -> return 0;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "转置正确及程序整体结构正确",
+            "dependency_status": "satisfied",
+            "reason": "核心转置 b[j][i]=a[i][j] 正确且程序块顺序完整，但多余且错误的 a[i][j]=b[j][i]; b[j][i]=temp; 会破坏数据，酌情扣1分。"
+          }
+        ],
+        "total_score": 13
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "for(i=0;i<5;i++){ for(j=0;j<5;j++){ scanf('%d',&a[i][j]); } } 输出/写入循环: for(i=0;i<5;i++){ fwrite(b[i],5,sizeof(int),fp); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入和输出矩阵元素的循环",
+            "dependency_status": "satisfied",
+            "reason": "读写循环结构正确；scanf引号使用单引号等轻微语法瑕疵，按政策酌情扣0.5分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4.5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "FILE *fp = fopen(\"matrix.txt\",w); if (fp == NULL) return 1; fwrite(b[i],5,sizeof(int),fp); fclose(fp);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、写数据、关闭文件",
+            "dependency_status": "satisfied",
+            "reason": "fopen、fwrite、fclose三要素齐全，且做了判空；仅\"w\"缺少引号属轻微语法问题，扣0.5分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "for(i=0;i<5;i++){ for(j=0;j<5;j++){ b[j][i]=a[i][j]; } a[i][j]=b[j][i]; b[j][i]=temp; } 程序块顺序: 头文件包含 -> main函数 -> 变量声明 -> 输入循环 -> 转置循环 -> 文件操作 -> return 0;",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确及程序整体结构",
+            "dependency_status": "partial",
+            "reason": "核心转置 b[j][i]=a[i][j] 正确且程序结构顺序完整；但内层循环外多余的 a[i][j]=b[j][i]; b[j][i]=temp; 属错误的交换逻辑，转置部分有实质错误，给一半分"
+          }
+        ],
+        "total_score": 12.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        4.5,
+        4.5,
+        4.5
+      ],
+      "step_2": [
+        4.5,
+        4.5,
+        4.5
+      ],
+      "step_3": [
+        3.5,
+        4.0,
+        3.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR"
+      ],
+      "step_2": [
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.16666666666666666
+    },
+    "max_item_variance": 0.16666666666666666,
+    "avg_item_variance": 0.05555555555555555
+  },
+  {
+    "file": "ANS_CPL_413.jpg",
+    "facts": "{\"step_1\": \"for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\\\"%d\\\",&a[i][j]);}}\", \"step_2\": \"FILE *pf =NULL; if(pf=fopen(matrix,\\\"r\\\")==NULL) return 1; |for(int i=0;i<5;i++){for(int i=0;i<5;i++){fprintf(pf,\\\"%d\\\",a[i][j]);}} fclose(pf);\", \"step_3\": \"int temp; for(int i=0;i<5;i++){for(int j=0;j<5;j++){ temp=a[i][j]; a[i][j] = a[j][i]; a[j][i] = temp; }} (整体结构：main函数内，先读入矩阵，再用temp三步交换 a[i][j] 与 a[j][i])\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:40:33.534725",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_413.jpg",
+      "image_sha256": "93c73106640c18c6fd604cf79663fb6b395f3dba30d36f165c3d28c1363fa42a",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "#include<stdio.h>int main(){FILE *pf =NULL;if(pf=fopen(matrix,\"r\")==NULL)return 1;int a[5][5];for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}}int temp;for(int i=0;i<5;i++){for(int j=0;j<5;j++){temp=a[i][j];a[i][j] = a[j][i];a[j][i] = temp;}}|for(int i=0;i<5;i++){for(int i=0;i<5;i++){fprintf(pf,\"%d\",a[i][j]);}}fclose(pf);return 0;}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_413",
+        "question_id": "CPL_7",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}}",
+        "step_2": "FILE *pf =NULL; if(pf=fopen(matrix,\"r\")==NULL) return 1; |for(int i=0;i<5;i++){for(int i=0;i<5;i++){fprintf(pf,\"%d\",a[i][j]);}} fclose(pf);",
+        "step_3": "int temp; for(int i=0;i<5;i++){for(int j=0;j<5;j++){ temp=a[i][j]; a[i][j] = a[j][i]; a[j][i] = temp; }} (整体结构：main函数内，先读入矩阵，再用temp三步交换 a[i][j] 与 a[j][i])"
+      }
+    },
+    "scores": [
+      9,
+      10.5,
+      9
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}} | for(int i=0;i<5;i++){for(int i=0;i<5;i++){fprintf(pf,\"%d\",a[i][j]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入和输出矩阵元素的循环",
+            "dependency_status": "satisfied",
+            "reason": "读入循环完全正确；输出循环内层误写为第二个 i 循环（应为 j），且输出无分隔符，按语法/循环错误酌情扣分（扣1.5）"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "FILE *pf =NULL; if(pf=fopen(matrix,\"r\")==NULL) return 1; fprintf(pf,\"%d\",a[i][j]); fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "partial",
+            "reason": "有打开、判空、写、关闭的整体结构；但打开模式用 \"r\"（写文件应为 \"w\"），且 fopen 赋值与比较的优先级写法错误会导致 pf 被赋为比较结果，写文件无法正常工作，扣半分以上"
+          },
+          {
+            "id": "step_3",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int temp; for(int i=0;i<5;i++){for(int j=0;j<5;j++){ temp=a[i][j]; a[i][j] = a[j][i]; a[j][i] = temp; }} (整体结构：main函数内，先读入矩阵，再用temp三步交换 a[i][j] 与 a[j][i])",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "partial",
+            "reason": "temp 三步交换及整体 main 结构正确；但内层循环应为 j<i（或 j<=i），全范围交换使矩阵被换两次回到原状，转置逻辑实际失效，扣部分分"
+          }
+        ],
+        "total_score": 9
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出矩阵元素读写循环",
+            "dependency_status": "satisfied",
+            "reason": "二维双重循环读入正确，i、j 变量使用无误，完全符合要求"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "FILE *pf =NULL; if(pf=fopen(matrix,\"r\")==NULL) return 1; |for(int i=0;i<5;i++){for(int i=0;i<5;i++){fprintf(pf,\"%d\",a[i][j]);}} fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "insufficient",
+            "reason": "有fopen/fclose/fprintf的文件操作框架，但打开模式用\"r\"而非\"w\"（写文件概念错误），内层循环重复声明i且引用未定义的j，if中赋值与比较优先级错误；核心结构存在，扣部分分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int temp; for(int i=0;i<5;i++){for(int j=0;j<5;j++){ temp=a[i][j]; a[i][j] = a[j][i]; a[j][i] = temp; }} (整体结构：main函数内，先读入矩阵，再用temp三步交换 a[i][j] 与 a[j][i])",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "insufficient",
+            "reason": "temp三步交换思路正确且main结构完整，但双重循环遍历全部j<5导致每对元素交换两次（矩阵复原，转置无效），正确应j<i或j从i+1开始；按评分注对单数组同数组交换有错误的情况，读入循环与置换两项合计按5分处理，置换项给一半"
+          }
+        ],
+        "total_score": 10.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "for(int i=0;i<5;i++){for(int j=0;j<5;j++){scanf(\"%d\",&a[i][j]);}}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入矩阵的循环",
+            "dependency_status": "satisfied",
+            "reason": "二维双重循环读入正确，无实质错误"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "FILE *pf =NULL; if(pf=fopen(matrix,\"r\")==NULL) return 1; for(...){fprintf(pf,\"%d\",a[i][j]);} fclose(pf);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确打开文件、写入数据、关闭文件",
+            "dependency_status": "partial",
+            "reason": "有fopen、fprintf、fclose的文件操作框架，但以\"r\"方式打开用于写、赋值优先级错误、内层循环变量误写为i导致j未定义，存在多处语法/逻辑错误，酌情扣分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int temp; for(i...)for(j...){temp=a[i][j]; a[i][j]=a[j][i]; a[j][i]=temp;} 整体结构：main函数内，先读入矩阵，再用temp三步交换",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确及程序其他结构",
+            "dependency_status": "partial",
+            "reason": "temp三步交换结构与main整体结构正确，但内外双重循环全量交换（未限制j>i）会使元素被换回原位，转置结果错误；按单数组交换有误酌情给少量分"
+          }
+        ],
+        "total_score": 9
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.5,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        2.5,
+        3.0,
+        3.0
+      ],
+      "step_3": [
+        3.0,
+        2.5,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.5,
+      "step_2": 0.05555555555555556,
+      "step_3": 0.7222222222222222
+    },
+    "max_item_variance": 0.7222222222222222,
+    "avg_item_variance": 0.4259259259259259
+  },
+  {
+    "file": "ANS_CPL_414.jpg",
+    "facts": "{\"step_1\": \"int main(){int a[5][5];int x,y;for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\\\"%d\\\",&a[x][y]);}}  (未书写printf输出矩阵元素的循环，仅书写了scanf输入循环)\", \"step_2\": \"fopen(matrix.,\\\"w\\\")  (文件名写作 matrix.，未书写写入数据语句fprintf/fwrite，未书写fclose关闭文件语句)\", \"step_3\": \"int positionchange(int a[5][5]){ int i=0,j=0,b[5][5]）for( ；i<5;i++){ for( ；j<5;j++){ b[i][j] = a[j][i];}}return b[5][5];}  整体结构：int main(){ ... int arr[5][5]; arr = positionchange(a[5][5]); ...}\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T00:41:40.281176",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_7/ANS_CPL_414.jpg",
+      "image_sha256": "31ff229cdcff7954742f98cffba25abe214ec070b90ffabf06fdf74328ae8e10",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "#include <stdio.h>#include <string.h>#include <stdlib.h>int positionchange(int a[5][5]){ int i=0,j=0,b[5][5]）for( ；i<5;i++){ for( ；j<5;j++){ b[i][j] = a[j][i];}}return b[5][5];}int main(){int a[5][5];int x,y;for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\"%d\",&a[x][y]);}}int arr[5][5];arr = positionchange(a[5][5]);fopen(matrix.,\"w\")",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_414",
+        "question_id": "CPL_7",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "int main(){int a[5][5];int x,y;for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\"%d\",&a[x][y]);}}  (未书写printf输出矩阵元素的循环，仅书写了scanf输入循环)",
+        "step_2": "fopen(matrix.,\"w\")  (文件名写作 matrix.，未书写写入数据语句fprintf/fwrite，未书写fclose关闭文件语句)",
+        "step_3": "int positionchange(int a[5][5]){ int i=0,j=0,b[5][5]）for( ；i<5;i++){ for( ；j<5;j++){ b[i][j] = a[j][i];}}return b[5][5];}  整体结构：int main(){ ... int arr[5][5]; arr = positionchange(a[5][5]); ...}"
+      }
+    },
+    "scores": [
+      5.5,
+      6,
+      7
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\"%d\",&a[x][y]);}}  (未书写printf输出矩阵元素的循环，仅书写了scanf输入循环)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入和输出矩阵元素的循环",
+            "dependency_status": "partial",
+            "reason": "读入循环完全正确，但完全缺失输出循环，满足一半要求，给一半分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "fopen(matrix.,\"w\")  (文件名写作 matrix.，未书写写入数据语句fprintf/fwrite，未书写fclose关闭文件语句)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "failed",
+            "reason": "打开文件意图正确但文件名不完整，写入数据和关闭文件均缺失，仅给少量分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int positionchange(int a[5][5]){ int i=0,j=0,b[5][5]）for( ；i<5;i++){ for( ；j<5;j++){ b[i][j] = a[j][i];}}return b[5][5];} ... arr = positionchange(a[5][5]);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "partial",
+            "reason": "转置核心关系b[i][j]=a[j][i]正确，但内层j未在行间重置导致后续行不执行，return b[5][5]返回值错误，数组传参arr=a[5][5]及arr=函数返回值均错误，结构缺陷较多，酌情给部分分"
+          }
+        ],
+        "total_score": 5.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\"%d\",&a[x][y]);}}  (未书写printf输出矩阵元素的循环，仅书写了scanf输入循环)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出读入和输出矩阵元素的循环",
+            "dependency_status": "satisfied",
+            "reason": "输入双重循环完全正确，但输出循环完全缺失，仅满足一半要求"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "fopen(matrix.,\"w\")  (文件名写作 matrix.，未书写写入数据语句fprintf/fwrite，未书写fclose关闭文件语句)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "insufficient",
+            "reason": "有fopen调用意图（\"w\"模式正确）但文件名残缺，且写数据和fclose均缺失，仅得少量分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "int positionchange(int a[5][5]){ int i=0,j=0,b[5][5]）for( ；i<5;i++){ for( ；j<5;j++){ b[i][j] = a[j][i];}}return b[5][5];}  整体结构：int main(){ ... arr = positionchange(a[5][5]); ...}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确，以及程序的其他结构",
+            "dependency_status": "failed",
+            "reason": "转置核心关系 b[i][j]=a[j][i] 正确，但内层j未重置导致循环错误，return b[5][5]返回值错误，且arr=a[5][5]传参及arr=函数返回值赋值给数组均不合法，结构性错误较多，酌情给一半"
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "for(x=0;x<5;x++){ for(y=0;y<5;y++){ scanf(\"%d\",&a[x][y]);}}  (未书写printf输出矩阵元素的循环，仅书写了scanf输入循环)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读入和输出矩阵元素的循环均正确写出",
+            "dependency_status": "satisfied",
+            "reason": "输入循环完整正确，但完全缺失输出循环，只满足一半要求，按比例给3分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "fopen(matrix.,\"w\")  (文件名写作 matrix.，未书写写入数据语句fprintf/fwrite，未书写fclose关闭文件语句)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确写出打开文件、向文件写数据、关闭文件",
+            "dependency_status": "insufficient",
+            "reason": "仅体现fopen意图（文件名不完整，未赋值给fp），写数据和关闭文件均缺失，约三分之一工作量，给1.5分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "b[i][j] = a[j][i]; ... return b[5][5]; arr = positionchange(a[5][5]);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "元素转置正确及程序其他结构正确",
+            "dependency_status": "failed",
+            "reason": "转置核心关系b[i][j]=a[j][i]正确，但j未在内层循环重新初始化、函数不能返回数组、arr=a[5][5]传参与赋值用法错误，转置对一半、结构有多处错误，给一半分"
+          }
+        ],
+        "total_score": 7
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.5,
+        2.5,
+        3.0
+      ],
+      "step_2": [
+        1.0,
+        1.0,
+        1.5
+      ],
+      "step_3": [
+        2.0,
+        2.5,
+        2.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555556,
+      "step_2": 0.05555555555555556,
+      "step_3": 0.05555555555555556
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.05555555555555556
+  }
+]

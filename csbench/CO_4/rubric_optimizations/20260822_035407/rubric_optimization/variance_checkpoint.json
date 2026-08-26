@@ -1,0 +1,2478 @@
+[
+  {
+    "file": "ANS_CO_647.jpg",
+    "facts": "{\"step_1\": \"8MB=2²³B 共2³位（注：原文如此，结合“标记：23-11-4=8”可见学生实际按23位地址计算）\", \"step_2\": \"2kB=2¹¹B 块内地址11位（注：地址格式处另写“块内地址 12位”，前后不一致，均按原文保留）\", \"step_3\": \"组号：32/2=16=2⁴ 有4位（其中32为Cache总块数，除以每组2块得16组）\", \"step_4\": \"主存地址 标记 8位 组号 4位 块内地址 12位；标记：23-11-4=8\", \"step_5\": \"Cache地址 组号 4位 块内地址 1位（原文如此）\", \"step_6\": \"2D07FFH: 标记：01011010 命中Cache块2. （判定词：命中；未写出组号字段值的提取过程和比较细节，仅给出标记与命中结论）\", \"step_7\": \"7F0057H: 标记：11111110 命中Cache块3. （判定词：命中；未写出所检查Cache块的标记及比较细节，仅给出标记与命中结论）\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T23:16:24.933804",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_647.jpg",
+      "image_sha256": "1dd99502518085752205f1a1f650482a7b08e8251964ef554a19595ca8711e41",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_647.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 20,
+        "accepted_token_count": 20,
+        "mean_confidence": 0.873763,
+        "min_confidence": 0.5,
+        "joined_text": "2. )主存地址标记\n组号\n块内地址\n8位\n4位\ncache地址\n+5 11位\n组号\n块内地\n8MB=223B共23位\n4位\n2kB=2∥B. 块内地11位\n15\n组号：32\n=16=24.有4位 标记：23-11-4=8.\n2\n(2). 207FH： 标记： 010110\n命中(ache块三.\n7F0057H: 标记：1111110\n命中lache块3.",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.073112,
+          "very_dark_pixel_ratio": 0.051182,
+          "lower_region_dark_pixel_ratio": 0.065983,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "主存地址 标记 8位 组号 4位 块内地址 12位 \nCache地址 组号 4位 块内地址 1位 \n8MB=2²³B 共2³位 2kB=2¹¹B 块内地址11位 组号：32/2=16=2⁴ 有4位 标记：23-11-4=8.\n(2)2D07FFH: 标记：01011010 命中Cache块2. 7F0057H: 标记：11111110 命中Cache块3.",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_647",
+        "question_id": "CO_4",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "table_parser_used": true,
+      "table_facts": {
+        "step_3": {
+          "set_index_bits": "4位",
+          "intermediate_values": "组号：32 / 2 =16 =2^4，有4位；Cache地址：组号 4位，块内地址 11位（2kB=2^11B，块内地11位）"
+        },
+        "step_4": {
+          "format": "主存地址：标记（8位）| 组号（4位）| 块内地址（11位）",
+          "details": "8MB=2^23B 共23位；2kB=2^11B，块内地11位；组号 4位；标记：23-11-4=8位"
+        },
+        "step_5": {
+          "format": "cache地址：组号（4位）| 块内地址（11位）",
+          "details": "另见 “组号 4位、块内地11位” 的重复书写（含模糊片段 “15/11位”）"
+        },
+        "step_6": {
+          "address": "2D07FFH（OCR识别为“207FH”）",
+          "judgement": "命中",
+          "reasoning": "标记：010110；命中(cache块三)——块号部分字迹模糊"
+        },
+        "step_7": {
+          "address": "7F0057H",
+          "judgement": "命中",
+          "reasoning": "标记：1111110；命中(cache块3)"
+        }
+      },
+      "table_checklist": [
+        {
+          "id": "step_3",
+          "instruction": "Extract the number of Cache set index bits the student wrote, along with any intermediate values such as total block count, associativity, or number of sets shown in the student's computation; preserve exponents and notation exactly."
+        },
+        {
+          "id": "step_4",
+          "instruction": "Extract the main memory address format the student wrote, listing each field and its bit width in the order shown; preserve bit counts, field names, separators, bars, and grouping exactly as written."
+        },
+        {
+          "id": "step_5",
+          "instruction": "Extract the Cache address format the student wrote, listing each field and its bit width in the order shown; preserve bit counts, field names, separators, bars, and grouping exactly as written."
+        },
+        {
+          "id": "step_6",
+          "instruction": "Extract the student's hit-or-miss judgement word for this address and the full reasoning they wrote: any extracted tag bits, set index field values, cache block numbers compared, and comparison conclusion; preserve binary strings with leading zeros, hexadecimal suffixes (e.g., H), grouping, and separators exactly as written."
+        },
+        {
+          "id": "step_7",
+          "instruction": "Extract the student's hit-or-miss judgement word for this address and the full reasoning they wrote: any extracted tag bits, set index field values, the cache blocks checked and their tags, and the matching conclusion; preserve binary strings with leading zeros, hexadecimal suffixes (e.g., H), grouping, and separators exactly as written."
+        }
+      ],
+      "table_view": {
+        "rows": [
+          {
+            "row": 1,
+            "y_center": 97.57,
+            "cells_left_to_right": [
+              {
+                "text": "cache地址",
+                "x_center": 163.0,
+                "confidence": 0.7773348093032837
+              },
+              {
+                "text": "2. )主存地址标记",
+                "x_center": 172.5,
+                "confidence": 0.7953370213508606
+              },
+              {
+                "text": "8位",
+                "x_center": 351.5,
+                "confidence": 0.9954116344451904
+              },
+              {
+                "text": "组号",
+                "x_center": 523.0,
+                "confidence": 0.9369224309921265
+              },
+              {
+                "text": "4位",
+                "x_center": 556.5,
+                "confidence": 0.9438614845275879
+              },
+              {
+                "text": "+5 11位",
+                "x_center": 689.5,
+                "confidence": 0.8701229691505432
+              },
+              {
+                "text": "块内地址",
+                "x_center": 711.5,
+                "confidence": 0.9312925934791565
+              }
+            ]
+          },
+          {
+            "row": 2,
+            "y_center": 181.7,
+            "cells_left_to_right": [
+              {
+                "text": "8MB=223B共23位",
+                "x_center": 206.0,
+                "confidence": 0.9353201985359192
+              },
+              {
+                "text": "组号",
+                "x_center": 540.5,
+                "confidence": 0.7168240547180176
+              },
+              {
+                "text": "4位",
+                "x_center": 550.0,
+                "confidence": 0.8028479814529419
+              },
+              {
+                "text": "块内地",
+                "x_center": 695.5,
+                "confidence": 0.9959697127342224
+              },
+              {
+                "text": "15",
+                "x_center": 702.5,
+                "confidence": 0.7327607870101929
+              }
+            ]
+          },
+          {
+            "row": 3,
+            "y_center": 244.75,
+            "cells_left_to_right": [
+              {
+                "text": "组号：32",
+                "x_center": 126.0,
+                "confidence": 0.9830896258354187
+              },
+              {
+                "text": "2kB=2∥B. 块内地11位",
+                "x_center": 678.5,
+                "confidence": 0.7467042803764343
+              }
+            ]
+          },
+          {
+            "row": 4,
+            "y_center": 292.25,
+            "cells_left_to_right": [
+              {
+                "text": "2",
+                "x_center": 210.0,
+                "confidence": 0.9963288903236389
+              },
+              {
+                "text": "=16=24.有4位 标记：23-11-4=8.",
+                "x_center": 595.0,
+                "confidence": 0.934005081653595
+              }
+            ]
+          },
+          {
+            "row": 5,
+            "y_center": 396.75,
+            "cells_left_to_right": [
+              {
+                "text": "(2). 207FH： 标记： 010110",
+                "x_center": 244.5,
+                "confidence": 0.8585121035575867
+              },
+              {
+                "text": "命中(ache块三.",
+                "x_center": 682.5,
+                "confidence": 0.7481582164764404
+              }
+            ]
+          },
+          {
+            "row": 6,
+            "y_center": 504.75,
+            "cells_left_to_right": [
+              {
+                "text": "7F0057H: 标记：1111110",
+                "x_center": 263.5,
+                "confidence": 0.8822611570358276
+              },
+              {
+                "text": "命中lache块3.",
+                "x_center": 654.0,
+                "confidence": 0.8921856880187988
+              }
+            ]
+          }
+        ],
+        "unpositioned_tokens": [],
+        "plain_text": "Row 1: x=163.0: cache地址 | x=172.5: 2. )主存地址标记 | x=351.5: 8位 | x=523.0: 组号 | x=556.5: 4位 | x=689.5: +5 11位 | x=711.5: 块内地址\nRow 2: x=206.0: 8MB=223B共23位 | x=540.5: 组号 | x=550.0: 4位 | x=695.5: 块内地 | x=702.5: 15\nRow 3: x=126.0: 组号：32 | x=678.5: 2kB=2∥B. 块内地11位\nRow 4: x=210.0: 2 | x=595.0: =16=24.有4位 标记：23-11-4=8.\nRow 5: x=244.5: (2). 207FH： 标记： 010110 | x=682.5: 命中(ache块三.\nRow 6: x=263.5: 7F0057H: 标记：1111110 | x=654.0: 命中lache块3."
+      },
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5",
+        "step_6",
+        "step_7"
+      ],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {
+        "step_1": "8MB = 2²³B 共23位",
+        "step_2": "2KB = 2¹¹B. 块内地址11位",
+        "step_3": "组号：32/2 = 16 = 2⁴. 有4位",
+        "step_4": "主存地址 标记 8位 | 组号 4位 | 块内地址 11位",
+        "step_5": "Cache地址 组号 4位 | 块内地址 11位",
+        "step_6": "2D07FFH: 标记: 01011010 命中Cache块2.",
+        "step_7": "7F0057H: 标记: 11111110 命中Cache块3."
+      },
+      "facts": {
+        "step_1": "8MB=2²³B 共2³位（注：原文如此，结合“标记：23-11-4=8”可见学生实际按23位地址计算）",
+        "step_2": "2kB=2¹¹B 块内地址11位（注：地址格式处另写“块内地址 12位”，前后不一致，均按原文保留）",
+        "step_3": "组号：32/2=16=2⁴ 有4位（其中32为Cache总块数，除以每组2块得16组）",
+        "step_4": "主存地址 标记 8位 组号 4位 块内地址 12位；标记：23-11-4=8",
+        "step_5": "Cache地址 组号 4位 块内地址 1位（原文如此）",
+        "step_6": "2D07FFH: 标记：01011010 命中Cache块2. （判定词：命中；未写出组号字段值的提取过程和比较细节，仅给出标记与命中结论）",
+        "step_7": "7F0057H: 标记：11111110 命中Cache块3. （判定词：命中；未写出所检查Cache块的标记及比较细节，仅给出标记与命中结论）"
+      }
+    },
+    "scores": [
+      8.0,
+      11.0,
+      12.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "8MB=2²³B 共2³位（注：原文如此，结合“标记：23-11-4=8”可见学生实际按23位地址计算）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存8MB=2^23B，物理地址23位",
+            "dependency_status": "satisfied",
+            "reason": "8MB=2^23B conversion is correct and downstream expression 23-11-4=8 explicitly entails the student used a 23-bit physical address; the '2³位' appears to be a typo, leniently treated as FORMAT-level, full credit."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "2kB=2¹¹B 块内地址11位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块2KB=2^11B，块内偏移11位",
+            "dependency_status": "satisfied",
+            "reason": "Explicit correct statement 2KB=2^11B and 11-bit block offset; the stray '12位' elsewhere is an inconsistency but the required value 11 is explicitly present."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "组号：32/2=16=2⁴ 有4位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "32块，2路组相联，16组=2^4，组号4位",
+            "dependency_status": "satisfied",
+            "reason": "Correct computation 32 blocks / 2-way = 16 groups = 2^4, 4-bit group number."
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "主存地址 标记 8位 组号 4位 块内地址 12位；标记：23-11-4=8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "标记8位 | 组号4位 | 块内偏移11位",
+            "dependency_status": "partial",
+            "reason": "Tag computation 23-11-4=8 is correct and tag 8 bits / group 4 bits are right, but the declared format states 块内地址 12位, contradicting the correct 11 bits used in the calculation; partial credit for two of three fields."
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Cache地址 组号 4位 块内地址 1位（原文如此）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "组号4位 | 组内块号1位 | 块内偏移11位",
+            "dependency_status": "partial",
+            "reason": "Group number 4 bits is correct, but the 1-bit field is the intra-group block number, not the block offset; the 11-bit block offset field is missing. Correct only one structural field."
+          },
+          {
+            "id": "step_6",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "2D07FFH: 标记：01011010 命中Cache块2.（未写出组号字段值的提取过程和比较细节）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "组号0000对应块应为0或1，块2不属于该组，故未命中",
+            "dependency_status": "failed",
+            "reason": "Correct tag 01011010 but wrong conclusion: standard answer is a miss; student claims hit on block 2 without any group-number extraction or comparison evidence. Conceptual conclusion error.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "7F0057H: 标记：11111110 命中Cache块3.（未写出所检查Cache块的标记及比较细节）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "组0中块1标记11111110匹配，命中Cache块1",
+            "dependency_status": "failed",
+            "reason": "Correct tag extraction 11111110 but wrong hit block (block 3 instead of block 1) with no comparison process; the final result contradicts the standard answer.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 8.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "8MB=2²³B 共2³位（注：原文如此，结合“标记：23-11-4=8”可见学生实际按23位地址计算）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "明确指出物理地址为23位",
+            "dependency_status": "satisfied",
+            "reason": "2²³B换算正确，且下游计算23-11-4=8证明实际按23位使用，但总位数书写为2³位存在错误，酌情扣分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "2kB=2¹¹B 块内地址11位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块大小2KB=2^11B，块内偏移11位",
+            "dependency_status": "satisfied",
+            "reason": "换算和11位结论均正确，且在主存地址计算中被实际使用（23-11-4=8）；地址格式处的12位为笔误，不影响本项"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "组号：32/2=16=2⁴ 有4位（其中32为Cache总块数，除以每组2块得16组）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "32块2路组相联，16组=2⁴，组号4位",
+            "dependency_status": "satisfied",
+            "reason": "组数计算过程和4位结论完全正确"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "主存地址 标记 8位 组号 4位 块内地址 12位；标记：23-11-4=8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "标记8位 | 组号4位 | 块内偏移11位",
+            "dependency_status": "partial",
+            "reason": "标记8位（含推导23-11-4=8）和组号4位正确，但块内地址写为12位，与11位不符，三字段之一错误"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Cache地址 组号 4位 块内地址 1位（原文如此）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache组号4位 | 组内块号1位 | 块内偏移11位",
+            "dependency_status": "partial",
+            "reason": "组号4位正确，1位应为组内块号但被标注为块内地址，且缺失11位块内偏移字段，格式不完整"
+          },
+          {
+            "id": "step_6",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "2D07FFH: 标记：01011010 命中Cache块2.（判定词：命中；未写出组号字段值的提取过程和比较细节）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "组号0000应对应块0或块1，块2处tag匹配但结论应为未命中",
+            "dependency_status": "failed",
+            "reason": "字块标记01011010提取正确，但命中判定与标准答案（未命中）相反，且无组号比较推理，仅给标记提取的分",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "7F0057H: 标记：11111110 命中Cache块3.（判定词：命中；未写出所检查Cache块的标记及比较细节）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "标记11111110，检查组0块0/块1，块1标记匹配，命中Cache块1",
+            "dependency_status": "partial",
+            "reason": "标记11111110正确且命中判定正确，但命中块号错误（应为块1而非块3），且缺少组号检查与标记比较过程",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 11.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 1.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "8MB=2²³B；标记：23-11-4=8 可见按23位地址计算",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "物理地址23位",
+            "dependency_status": "satisfied",
+            "reason": "8MB=2^23B 明确给出，后续标记计算也按23位使用"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "2kB=2¹¹B 块内地址11位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块内偏移11位",
+            "dependency_status": "satisfied",
+            "reason": "2KB=2^11B、11位明确；地址格式处“12位”为笔误，主结论正确（FORMAT级别不影响）"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "组号：32/2=16=2⁴ 有4位（32为Cache总块数，每组2块）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "16组=2^4，组号4位",
+            "dependency_status": "satisfied",
+            "reason": "完整正确的推导与结论"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "主存地址 标记8位 组号4位 块内地址12位；标记：23-11-4=8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "标记8位|组号4位|块内偏移11位",
+            "dependency_status": "partial",
+            "reason": "标记8位、组号4位正确（且23-11-4=8推导正确），但格式中块内地址写为12位，与正确值11位不符，属部分满足"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Cache地址 组号 4位 块内地址 1位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "组号4位|组内块号1位|块内偏移11位",
+            "dependency_status": "partial",
+            "reason": "组号4位正确，但“块内地址1位”实为组内块号1位，且缺失块内偏移11位字段，结构不完整"
+          },
+          {
+            "id": "step_6",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "2D07FFH: 标记：01011010 命中Cache块2.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "标记01011010B正确，但组号0000对应的应为块0/块1，应判未命中",
+            "dependency_status": "partial",
+            "reason": "标记提取01011010正确，但命中结论错误（应为未命中）且无比较过程；结论与过程均不全，给部分过程分",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "7F0057H: 标记：11111110 命中Cache块3.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "标记11111110B正确，检查组0的块0/块1，命中Cache块1",
+            "dependency_status": "partial",
+            "reason": "标记提取11111110正确，命中方向正确，但命中块号错误（块3 vs 块1）且无检查比较过程；给部分分",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 12.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 2.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 2.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        1.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        1.0,
+        1.0,
+        1.5
+      ],
+      "step_5": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "step_6": [
+        0.0,
+        1.0,
+        2.0
+      ],
+      "step_7": [
+        0.0,
+        3.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "FORMAT_MINOR",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_5": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_6": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_7": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.2222222222222222,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.05555555555555556,
+      "step_5": 0.0,
+      "step_6": 0.6666666666666666,
+      "step_7": 1.5555555555555554
+    },
+    "max_item_variance": 1.5555555555555554,
+    "avg_item_variance": 0.35714285714285715
+  },
+  {
+    "file": "ANS_CO_687.jpg",
+    "facts": "{\"step_1\": \"主存字块标记为8M=2^23即23-11-11=1\", \"step_2\": \"字块内地址为2^k=2^11即11\", \"step_3\": \"组地址为8M÷2K÷2=2^11即11\", \"step_4\": \"即主存字块标记 与组地址 字块内地址\\n     1           11       11\", \"step_5\": \"未书写\", \"step_6\": \"(2D07FF)_16=(0010 1101 0000 0111 1111 1111)_2 \\n经对照，若CPU送出的地址为2D07FFH时，未能在Cache中访问到该单元的数据\", \"step_7\": \"(7FD057)_16=(0111 1111 0000 0000 0101 0111)_2 \\n经对照，∵块标记为1111 1110 ∴若CPU送出的地址为7F0057H时，能在Cache中访问到该单元的数据\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T23:18:01.536931",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_687.jpg",
+      "image_sha256": "9b0e201603efe9257668342320589873268bd586208d415ad88f4f7ce33b9cc0",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解:(1)字块内地址为2^k=2^11即11\n组地址为8M÷2K÷2=2^11即11 \n主存字块标记为8M=2^23即23-11-11=1 \n即主存字块标记 与组地址 字块内地址 \n     1           11       11 \n(2)(2D07FF)_16=(0010 1101 0000 0111 1111 1111)_2 \n经对照，若CPU送出的地址为2D07FFH时，未能在Cache中访问到该\n单元的数据\n(7FD057)_16=(0111 1111 0000 0000 0101 0111)_2 \n经对照，∵块标记为1111 1110 ∴若CPU送出的地址为7F0057H\n时，能在Cache中访问到该单元的数据",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_687",
+        "question_id": "CO_4",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "主存字块标记为8M=2^23即23-11-11=1",
+        "step_2": "字块内地址为2^k=2^11即11",
+        "step_3": "组地址为8M÷2K÷2=2^11即11",
+        "step_4": "即主存字块标记 与组地址 字块内地址\n     1           11       11",
+        "step_5": "未书写",
+        "step_6": "(2D07FF)_16=(0010 1101 0000 0111 1111 1111)_2 \n经对照，若CPU送出的地址为2D07FFH时，未能在Cache中访问到该单元的数据",
+        "step_7": "(7FD057)_16=(0111 1111 0000 0000 0101 0111)_2 \n经对照，∵块标记为1111 1110 ∴若CPU送出的地址为7F0057H时，能在Cache中访问到该单元的数据"
+      }
+    },
+    "scores": [
+      9.5,
+      13.0,
+      10.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "主存字块标记为8M=2^23即23-11-11=1",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存容量 8MB = 2^23 B，物理地址为 23 位",
+            "dependency_status": "satisfied",
+            "reason": "学生明确写出 8M = 2^23，即物理地址 23 位，满足该项要求（tag位数的计算错误在 step_4 项中处理）"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "字块内地址为2^k=2^11即11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块大小 2KB = 2^11 B，块内偏移为 11 位",
+            "dependency_status": "satisfied",
+            "reason": "块内偏移 11 位正确"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "组地址为8M÷2K÷2=2^11即11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache 32块，2路组相联，16组=2^4，组号 4 位",
+            "dependency_status": "failed",
+            "reason": "学生用主存块数除以相联度2而非Cache组数16，得到组地址11位，概念性错误（混淆主存块数与Cache组数），应为 4 位"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "即主存字块标记 与组地址 字块内地址 1 11 11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "字块标记 8 位 | Cache组号 4 位 | 块内偏移 11 位",
+            "dependency_status": "failed",
+            "reason": "地址格式 1|11|11 错误，正确应为 8|4|11，源于上游组号位数概念错误"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "Cache组号 4 位 | 组内块号 1 位 | 块内偏移 11 位",
+            "dependency_status": "failed",
+            "reason": "未书写Cache地址格式，无内容可评"
+          },
+          {
+            "id": "step_6",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(2D07FF)_16=(0010 1101 0000 0111 1111 1111)_2 经对照，若CPU送出的地址为2D07FFH时，未能在Cache中访问到该单元的数据",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "tag=0101 1010B 应在组0（块0/块1），存放为块2，故未命中",
+            "dependency_status": "insufficient",
+            "reason": "十六进制转二进制正确，最终结论“未命中”正确；但基于错误的地址划分（1|11|11），“经对照”缺少正确的tag/组号字段比较过程，只给结论加转换的部分分",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(7FD057)_16=(0111 1111 0000 0000 0101 0111)_2 经对照，∵块标记为1111 1110 ∴若CPU送出的地址为7F0057H时，能在Cache中访问到该单元的数据",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "tag=1111 1110B 匹配组0中块1的标记，命中",
+            "dependency_status": "insufficient",
+            "reason": "结论“命中”正确，且正确提取出tag=1111 1110（与标准答案一致）；但组号字段划分错误、未说明命中块1的完整比较过程，给部分分",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 9.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 2.5,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "主存字块标记为8M=2^23即23-11-11=1",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "8MB = 2^23B，物理地址23位",
+            "dependency_status": "satisfied",
+            "reason": "学生明确写出 8M=2^23，即物理地址总位数为23位，满足该独立参数项。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "字块内地址为2^k=2^11即11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块大小2KB=2^11B，块内偏移11位",
+            "dependency_status": "satisfied",
+            "reason": "块内偏移11位，正确。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "组地址为8M÷2K÷2=2^11即11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache 32块，2路组相联，16组=2^4，组号4位",
+            "dependency_status": "failed",
+            "reason": "组号位数应由Cache容量（32块/2路=16组=2^4）计算得4位；学生用主存容量8M计算得11位，对象错误，属概念性错误。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "即主存字块标记 与组地址 字块内地址 1 11 11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "字块标记8位 | 组号4位 | 块内偏移11位",
+            "dependency_status": "insufficient",
+            "reason": "地址划分结构（标记|组号|块内偏移）正确，块内偏移11位正确，但标记1位、组号11位均由step_3错误传播而来，仅部分正确。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "Cache地址格式：组号4位|组内块号1位|块内偏移11位",
+            "dependency_status": "failed",
+            "reason": "提取事实明确为'未书写'，无内容可评。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(2D07FF)_16=(0010 1101 0000 0111 1111 1111)_2 经对照，若CPU送出的地址为2D07FFH时，未能在Cache中访问到该单元的数据",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "tag=0101 1010B，组号为0000，应为块0/1，判断未命中",
+            "dependency_status": "insufficient",
+            "reason": "二进制转换正确，最终结论'未命中'正确；但比对依据的地址划分（1位标记/11位组号）错误，未按正确的8位tag与4位组号论证，过程证据有缺陷，给部分分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "(7FD057)_16=(0111 1111 0000 0000 0101 0111)_2 经对照，∵块标记为1111 1110 ∴若CPU送出的地址为7F0057H时，能在Cache中访问到该单元的数据",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "tag=1111 1110B，组0块1标记匹配，命中",
+            "dependency_status": "satisfied",
+            "reason": "二进制转换正确，所引用块标记1111 1110与标准答案一致，且结论命中正确，符合该评分项。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 13.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "主存字块标记为8M=2^23即23-11-11=1",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存容量 8MB = 2^23 B，物理地址为 23 位",
+            "dependency_status": "satisfied",
+            "reason": "学生明确写出 8M = 2^23，即物理地址共 23 位，满足本项要求（其后减法是标记位计算，不影响本项）。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "字块内地址为2^k=2^11即11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块内偏移为 11 位",
+            "dependency_status": "satisfied",
+            "reason": "块内偏移 11 位，与标准答案一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "组地址为8M÷2K÷2=2^11即11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache 32块、2路组相联，16组=2^4，组号 4 位",
+            "dependency_status": "failed",
+            "reason": "组号位数按主存容量除以块大小再除以2计算（11位），方法错误；应为Cache块数/路数=4位。数值与方法均与标准答案矛盾。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "即主存字块标记 与组地址 字块内地址 1 11 11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "字块标记 8 位 | Cache组号 4 位 | 块内偏移 11 位",
+            "dependency_status": "failed",
+            "reason": "地址格式为 1|11|11，仅块内偏移正确；标记位与组号位数均为错误值，格式整体错误。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "Cache组号 4 位 | 组内块号 1 位 | 块内偏移 11 位",
+            "dependency_status": "failed",
+            "reason": "学生未书写 Cache 地址格式。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(2D07FF)_16=(0010 1101 0000 0111 1111 1111)_2 经对照，若CPU送出的地址为2D07FFH时，未能在Cache中访问到该单元的数据",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断 2D07FFH 未命中并说明理由（组号0000对应块0/块1，tag为0101 1010对应块2，不匹配）",
+            "dependency_status": "insufficient",
+            "reason": "二进制展开正确，最终结论“未命中”正确；但理由基于错误的地址划分（1/11/11），缺少正确的tag与组号对照过程，过程证据部分有效。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(7FD057)_16=(0111 1111 0000 0000 0101 0111)_2 经对照，∵块标记为1111 1110 ∴若CPU送出的地址为7F0057H时，能在Cache中访问到该单元的数据",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "判断 7F0057H 命中并说明理由（tag 1111 1110 与组0中块1标记匹配）",
+            "dependency_status": "insufficient",
+            "reason": "结论“命中”正确，且正确提取块标记 1111 1110，说明进行了tag对照；但依据错误的地址划分（组号11位），十六进制抄写亦有笔误（7FD057），过程仅部分正确。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 10.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 3.5,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_6": [
+        2.5,
+        3.0,
+        3.0
+      ],
+      "step_7": [
+        3.0,
+        5.0,
+        3.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ],
+      "step_5": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_6": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_7": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.22222222222222224,
+      "step_5": 0.0,
+      "step_6": 0.05555555555555556,
+      "step_7": 0.7222222222222222
+    },
+    "max_item_variance": 0.7222222222222222,
+    "avg_item_variance": 0.14285714285714285
+  },
+  {
+    "file": "ANS_CO_693.jpg",
+    "facts": "{\"step_1\": \"主存能存放 8MB 2^23\", \"step_2\": \"cache 每组仅 2kB 2^11\", \"step_3\": \"cache 有 32/ 2 = 16 组=2^4组；23 ≡3(mod4)；cache 有 4位组组\", \"step_4\": \"主存中 4位组标记,可存块标记 放在内容\", \"step_5\": \"cache 有 4位组组 7位块标记\", \"step_6\": \"2D07FF H = 0010 1101 0000 0111 1111 1111 (=)\\n不能在cache中访问（未书写tag提取与比较过程）\", \"step_7\": \"7F0057H = 0111 1111 0000 0000 0101 1111\\n能在cache中访问（未书写tag提取、比较过程及命中块号）\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T23:19:35.349568",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_693.jpg",
+      "image_sha256": "44aa6cbf9c4589f89ddace91560c48f05c7cf4e4b6474f3b7fcf9b8561a34550",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解:(1)主存能存放 8MB 2^23\ncache 有 32/ 2 = 16 组=2^4组\n23 ≡3(mod4)\ncache 每组仅 2kB 2^11\n主存中 4位组标记,可存块标记 放在内容\ncache 有 4位组组 7位块标记\n(2)2D07FF H = 0010 1101 0000 0111 1111 1111 (=)\n不能在cache中访问\n7F0057H = 0111 1111 0000 0000 0101 1111\n能在cache中访问",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_693",
+        "question_id": "CO_4",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "主存能存放 8MB 2^23",
+        "step_2": "cache 每组仅 2kB 2^11",
+        "step_3": "cache 有 32/ 2 = 16 组=2^4组；23 ≡3(mod4)；cache 有 4位组组",
+        "step_4": "主存中 4位组标记,可存块标记 放在内容",
+        "step_5": "cache 有 4位组组 7位块标记",
+        "step_6": "2D07FF H = 0010 1101 0000 0111 1111 1111 (=)\n不能在cache中访问（未书写tag提取与比较过程）",
+        "step_7": "7F0057H = 0111 1111 0000 0000 0101 1111\n能在cache中访问（未书写tag提取、比较过程及命中块号）"
+      }
+    },
+    "scores": [
+      15.0,
+      14.0,
+      14.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "主存能存放 8MB 2^23",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存8MB=2^23B，物理地址23位",
+            "dependency_status": "satisfied",
+            "reason": "明确给出主存容量2^23，即23位物理地址。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "cache 每组仅 2kB 2^11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块大小2KB=2^11B，块内偏移11位",
+            "dependency_status": "satisfied",
+            "reason": "明确给出块2^11，即11位块内偏移。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "cache 有 32/ 2 = 16 组=2^4组；23 ≡3(mod4)；cache 有 4位组",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "16组=2^4，组号4位",
+            "dependency_status": "satisfied",
+            "reason": "正确计算32块/2路=16组=2^4，组号4位。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "主存中 4位组标记,可存块标记 放在内容",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "字块标记8位|Cache组号4位|块内偏移11位",
+            "dependency_status": "insufficient",
+            "reason": "提到4位组号且暗示存在块标记字段，但未给出完整地址格式，字块标记8位未明确且表述混乱。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "cache 有 4位组组 7位块标记",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache组号4位|组内块号1位|块内偏移11位",
+            "dependency_status": "insufficient",
+            "reason": "组号4位正确，但7位块标记与标准8位字块标记不符，且未给出Cache地址格式（组内块号1位、偏移11位）。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "2D07FF H = 0010 1101 0000 0111 1111 1111 (=) 不能在cache中访问（未书写tag提取与比较过程）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断2D07FFH未命中并说明tag/组号比较理由",
+            "dependency_status": "insufficient",
+            "reason": "二进制展开正确且结论（未命中）正确，但缺少tag提取与比较的关键推理过程，按过程主导扣分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "7F0057H = 0111 1111 0000 0000 0101 1111 能在cache中访问（未书写tag提取、比较过程及命中块号）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "判断7F0057H命中（块1）并说明tag匹配理由",
+            "dependency_status": "insufficient",
+            "reason": "二进制展开正确且命中结论正确，但缺少tag比较过程及命中块号，过程证据不足。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 15.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 3.5,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 3.5,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "主存能存放 8MB 2^23",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存 8MB = 2^23B，地址 23 位",
+            "dependency_status": "satisfied",
+            "reason": "正确给出 2^23，即 23 位物理地址"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "cache 每组仅 2kB 2^11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块大小 2KB = 2^11B，块内偏移 11 位",
+            "dependency_status": "satisfied",
+            "reason": "正确给出块内偏移 11 位"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "cache 有 32/ 2 = 16 组=2^4组；23 ≡3(mod4)；cache 有 4位组组",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "16 组 = 2^4，组号 4 位",
+            "dependency_status": "satisfied",
+            "reason": "正确由 32 块 2 路组相联得出 16 组、4 位组号"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "主存中 4位组标记,可存块标记 放在内容",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "字块标记 8 位 | 组号 4 位 | 块内偏移 11 位",
+            "dependency_status": "insufficient",
+            "reason": "给出了组号 4 位并提到字块标记，但未明确标记为 8 位，格式不完整"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "cache 有 4位组组 7位块标记",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache地址：组号 4 位 | 组内块号 1 位 | 偏移 11 位",
+            "dependency_status": "insufficient",
+            "reason": "组号 4 位正确，但写成 7 位块标记（应为 8 位）且未给出组内块号 1 位"
+          },
+          {
+            "id": "step_6",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "2D07FF H = 0010 1101 0000 0111 1111 1111 (=) 不能在cache中访问（未书写tag提取与比较过程）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断未命中并说明 tag 比较、组号 0000 与块 0/1 的理由",
+            "dependency_status": "insufficient",
+            "reason": "二进制展开正确，结论（未命中）正确，但缺少 tag 提取与比较过程，属过程缺失，按比例给分",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "7F0057H = 0111 1111 0000 0000 0101 1111 能在cache中访问（未书写tag提取、比较过程及命中块号）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "判断命中并说明 tag=11111110 与块1标记匹配",
+            "dependency_status": "insufficient",
+            "reason": "二进制展开正确，结论（命中）正确，但缺少 tag 比较、命中块号等过程证据，按比例给分",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 14.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "主存能存放 8MB 2^23",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存容量 8MB = 2^23 B，物理地址 23 位",
+            "dependency_status": "satisfied",
+            "reason": "正确给出 8MB = 2^23，即 23 位物理地址"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "cache 每组仅 2kB 2^11",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块大小 2KB = 2^11 B，块内偏移 11 位",
+            "dependency_status": "satisfied",
+            "reason": "正确给出 2KB = 2^11，即 11 位块内偏移"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "cache 有 32/ 2 = 16 组=2^4组；cache 有 4位组组",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "32块、2路组相联，16组 = 2^4，组号 4 位",
+            "dependency_status": "satisfied",
+            "reason": "正确计算 32/2=16 组 = 2^4，组号 4 位"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "主存中 4位组标记,可存块标记 放在内容",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存地址格式：字块标记 8 位 | 组号 4 位 | 块内偏移 11 位",
+            "dependency_status": "insufficient",
+            "reason": "组号 4 位正确，但字块标记位数（8位）未明确写出，表述混乱，仅部分满足"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "cache 有 4位组组 7位块标记",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache地址格式：组号 4 位 | 组内块号 1 位 | 块内偏移 11 位",
+            "dependency_status": "failed",
+            "reason": "组号 4 位正确，但给出的是 7 位块标记而非 Cache 地址所需的组内块号 1 位 + 偏移格式，概念混淆，部分得分"
+          },
+          {
+            "id": "step_6",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "2D07FF H = 0010 1101 0000 0111 1111 1111 (=) 不能在cache中访问",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "提取 tag 并比较，判断 2D07FFH 未命中并说明理由",
+            "dependency_status": "insufficient",
+            "reason": "结论正确且给出了十六进制转二进制的转换过程，但缺少 tag 提取与比较的关键推理，按过程分扣减",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "7F0057H = 0111 1111 0000 0000 0101 1111 能在cache中访问",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "提取 tag 1111 1110B 与组内块标记比较，判断命中块 1",
+            "dependency_status": "insufficient",
+            "reason": "命中结论正确且给出二进制展开，但缺少 tag 提取、比较过程及命中块号，过程分不足",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 14.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "step_5": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "step_6": [
+        3.5,
+        3.0,
+        3.0
+      ],
+      "step_7": [
+        3.5,
+        3.0,
+        3.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_5": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_6": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_7": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.05555555555555556,
+      "step_7": 0.05555555555555556
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.015873015873015876
+  },
+  {
+    "file": "ANS_CO_696.jpg",
+    "facts": "{\"step_1\": \"主存容量8MB，即2²³B，所以有23位；Cache容量2⁵·2KB，即2¹⁶B，有16位\", \"step_2\": \"块内地址2KB→2¹¹，占11位\", \"step_3\": \"cache组号，2⁵/2=2⁴=16组，占4位\", \"step_4\": \"主存：字块标记 组号 块内地址  8位  4位  11位；字块标记23-4-11=8\", \"step_5\": \"Cache：组号 标记 块内地址  4位  1位  11位\", \"step_6\": \"送2D07FFH：后11位为块内地址，去掉后再取后4位。为0000，对应Cache.0组，块0和块1，剩余位转为二进制 1011010，未命中。\", \"step_7\": \"送7F0057H：去掉后11位块内地址，再取后4位为0000，对应Cache0组，块0和块1，剩余11111110，对应块1，命中\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T23:20:57.735485",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_696.jpg",
+      "image_sha256": "1ffba8ab79c6d335201e006b753a6a4aa95c34066737eb48936864a4431bd869",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1)主存容量8MB，即2²³B，所以有23位\nCache容量2⁵·2KB，即2¹⁶B，有16位\ncache组号，2⁵/2=2⁴=16组，占4位。\n块内地址2KB→2¹¹，占11位，字块标记23-4-11=8\n则主存：字块标记 组号 块内地址  8位  4位  11位\nCache：组号 标记 块内地址  4位  1位  11位\n(2) 送2D07FFH：\n后11位为块内地址，去掉后再取后4位。\n为0000，对应Cache.0组，块0和块1，\n剩余位转为二进制 1011010，未命中。\n送7F0057H：去掉后11位块内地址，再取后4位\n为0000，对应Cache0组，块0和块1，\n剩余11111110，对应块1，命中",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_696",
+        "question_id": "CO_4",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "主存容量8MB，即2²³B，所以有23位；Cache容量2⁵·2KB，即2¹⁶B，有16位",
+        "step_2": "块内地址2KB→2¹¹，占11位",
+        "step_3": "cache组号，2⁵/2=2⁴=16组，占4位",
+        "step_4": "主存：字块标记 组号 块内地址  8位  4位  11位；字块标记23-4-11=8",
+        "step_5": "Cache：组号 标记 块内地址  4位  1位  11位",
+        "step_6": "送2D07FFH：后11位为块内地址，去掉后再取后4位。为0000，对应Cache.0组，块0和块1，剩余位转为二进制 1011010，未命中。",
+        "step_7": "送7F0057H：去掉后11位块内地址，再取后4位为0000，对应Cache0组，块0和块1，剩余11111110，对应块1，命中"
+      }
+    },
+    "scores": [
+      20.0,
+      20.0,
+      18.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "主存容量8MB，即2²³B，所以有23位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "物理地址23位",
+            "dependency_status": "satisfied",
+            "reason": "正确得出2^23对应23位物理地址"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "块内地址2KB→2¹¹，占11位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块内偏移11位",
+            "dependency_status": "satisfied",
+            "reason": "正确得出块内偏移11位"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "cache组号，2⁵/2=2⁴=16组，占4位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "2路组相联16组，组号4位",
+            "dependency_status": "satisfied",
+            "reason": "正确计算32块/2路=16组，组号4位"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "主存：字块标记 组号 块内地址 8位 4位 11位；字块标记23-4-11=8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "标记8位|组号4位|块内11位",
+            "dependency_status": "satisfied",
+            "reason": "主存地址格式与标准答案一致"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "Cache：组号 标记 块内地址 4位 1位 11位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "组号4位|组内块号1位|块内11位",
+            "dependency_status": "satisfied",
+            "reason": "Cache地址格式正确"
+          },
+          {
+            "id": "step_6",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "送2D07FFH：后11位为块内地址，去掉后再取后4位。为0000，对应Cache.0组，块0和块1，剩余位转为二进制 1011010，未命中",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "组号0000，应比对块0/块1，判断未命中",
+            "dependency_status": "satisfied",
+            "reason": "正确分离字段、识别组0、检查块0和块1，结论未命中正确（标记1011010仅省略前导0，非实质错误）",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "送7F0057H：去掉后11位块内地址，再取后4位为0000，对应Cache0组，块0和块1，剩余11111110，对应块1，命中",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "标记11111110匹配组0块1，命中",
+            "dependency_status": "satisfied",
+            "reason": "标记位、组号、命中判断与标准答案完全一致",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 20.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "主存容量8MB，即2²³B，所以有23位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存容量 8MB = 2^23 B，物理地址为 23 位",
+            "dependency_status": "satisfied",
+            "reason": "23位计算正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "块内地址2KB→2¹¹，占11位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块内偏移 11 位",
+            "dependency_status": "satisfied",
+            "reason": "11位正确"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "cache组号，2⁵/2=2⁴=16组，占4位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "16组 = 2^4，组号 4 位",
+            "dependency_status": "satisfied",
+            "reason": "组号位数推导正确"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "主存：字块标记 组号 块内地址 8位 4位 11位；字块标记23-4-11=8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "标记8位|组号4位|块内11位",
+            "dependency_status": "satisfied",
+            "reason": "主存地址格式完全正确"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "Cache：组号 标记 块内地址 4位 1位 11位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Cache组号4位|组内块号1位|块内偏移11位",
+            "dependency_status": "satisfied",
+            "reason": "Cache地址格式正确（'标记'即组内块号，语义等价）"
+          },
+          {
+            "id": "step_6",
+            "score_given": 5.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "送2D07FFH：后11位为块内地址，去掉后再取后4位。为0000，对应Cache.0组，块0和块1，剩余位转为二进制 1011010，未命中。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "组号0000，标记0101 1010B，未命中",
+            "dependency_status": "satisfied",
+            "reason": "组号0000、检查组0的块0/块1、结论未命中均正确；tag写作1011010仅为省略前导0（0101 1010），非实质性错误",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "送7F0057H：去掉后11位块内地址，再取后4位为0000，对应Cache0组，块0和块1，剩余11111110，对应块1，命中",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "标记1111 1110B匹配块1，命中",
+            "dependency_status": "satisfied",
+            "reason": "组号、tag匹配、命中Cache块1全部正确",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 20.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "主存容量8MB，即2²³B，所以有23位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "8MB = 2^23B，物理地址23位",
+            "dependency_status": "satisfied",
+            "reason": "正确算出主存地址23位"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "块内地址2KB→2¹¹，占11位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块大小2KB = 2^11B，块内偏移11位",
+            "dependency_status": "satisfied",
+            "reason": "块内偏移11位正确"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "cache组号，2⁵/2=2⁴=16组，占4位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "32块、2路组相联、16组，组号4位",
+            "dependency_status": "satisfied",
+            "reason": "正确由32块/2路得出16组、4位组号"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "主存：字块标记 组号 块内地址 8位 4位 11位；字块标记23-4-11=8",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "字块标记8位 | 组号4位 | 块内偏移11位",
+            "dependency_status": "satisfied",
+            "reason": "主存地址格式完全正确"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "Cache：组号 标记 块内地址 4位 1位 11位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "组号4位 | 组内块号1位 | 块内偏移11位",
+            "dependency_status": "satisfied",
+            "reason": "Cache地址格式正确（'标记'即组内块号）"
+          },
+          {
+            "id": "step_6",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "后11位为块内地址，去掉后再取后4位。为0000，对应Cache.0组，块0和块1，剩余位转为二进制 1011010，未命中",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "tag为0101 1010，组内现存块2，不在块0/1，故未命中",
+            "dependency_status": "partial",
+            "reason": "正确去偏移、取组号0000、限定组内块0/1，结论未命中正确；但提取的tag为7位1011010（应为8位），且未说明现存块为块2这一关键比对依据，理由不完整",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "去掉后11位块内地址，再取后4位为0000，对应Cache0组，块0和块1，剩余11111110，对应块1，命中",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "tag 1111 1110，组号0000，与块1标记匹配，命中Cache块1",
+            "dependency_status": "satisfied",
+            "reason": "组号0000、检查块0/1、tag=11111110与块1匹配、命中结论均与标准一致",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 18.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 3.5,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_6": [
+        5.0,
+        5.0,
+        3.5
+      ],
+      "step_7": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_6": [
+        "MATCH",
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH"
+      ],
+      "step_7": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.5,
+      "step_7": 0.0
+    },
+    "max_item_variance": 0.5,
+    "avg_item_variance": 0.07142857142857142
+  },
+  {
+    "file": "ANS_CO_701.png",
+    "facts": "{\"step_1\": \"8MB=1.2×10²³B.  主存共23位\", \"step_2\": \"2KB=2×10¹¹B . cache共11位.\", \"step_3\": \"未书写\", \"step_4\": \"主存：\", \"step_5\": \"未书写\", \"step_6\": \"未书写\", \"step_7\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T23:22:12.617169",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_701.png",
+      "image_sha256": "2eba30572b0ab2f313d320ddb26cb96d86c89a95062c0fa995e305e9d1cc77fe",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1). 8MB=1.2×10²³B.  主存共23位\n2KB=2×10¹¹B . cache共11位.\n主存：",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_701",
+        "question_id": "CO_4",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "8MB=1.2×10²³B.  主存共23位",
+        "step_2": "2KB=2×10¹¹B . cache共11位.",
+        "step_3": "未书写",
+        "step_4": "主存：",
+        "step_5": "未书写",
+        "step_6": "未书写",
+        "step_7": "未书写"
+      }
+    },
+    "scores": [
+      4.0,
+      2.0,
+      4.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "8MB=1.2×10²³B. 主存共23位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存容量 8MB = 2^23 B，物理地址为 23 位",
+            "dependency_status": "satisfied",
+            "reason": "The required deliverable—the physical address is 23 bits—is explicitly stated; the intermediate power notation is garbled but the conclusion is correct."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "2KB=2×10¹¹B . cache共11位.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块大小 2KB = 2^11 B，块内偏移为 11 位",
+            "dependency_status": "satisfied",
+            "reason": "The block offset of 11 bits is explicitly stated and correct."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "Cache组号需要 4 位",
+            "dependency_status": "failed",
+            "reason": "No content written for the Cache group index bits."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "主存：",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "字块标记 8 位 | Cache组号 4 位 | 块内偏移 11 位",
+            "dependency_status": "failed",
+            "reason": "Only the label '主存：' appears with no address format content."
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "Cache组号 4 位 | 组内块号 1 位 | 块内偏移 11 位",
+            "dependency_status": "failed",
+            "reason": "No content written."
+          },
+          {
+            "id": "step_6",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "判断 2D07FFH 未命中并说明理由",
+            "dependency_status": "failed",
+            "reason": "No content written for this hit/miss judgment.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "判断 7F0057H 命中并说明理由",
+            "dependency_status": "failed",
+            "reason": "No content written for this hit/miss judgment.",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 4.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "8MB=1.2×10²³B. 主存共23位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "8MB = 2^23 B，物理地址为 23 位",
+            "dependency_status": "satisfied",
+            "reason": "最终结论“主存共23位”正确，但容量换算式“8MB=1.2×10²³B”概念错误（应为2^23B），方法表述有误，给部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "2KB=2×10¹¹B . cache共11位.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "2KB = 2^11 B，块内偏移为 11 位",
+            "dependency_status": "satisfied",
+            "reason": "结论11位正确，但换算式“2KB=2×10¹¹B”将幂写为10的指数，换算表述错误，给部分分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "Cache组号需要 4 位",
+            "dependency_status": "failed",
+            "reason": "未书写，无任何证据。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "主存：",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "字块标记8位 | Cache组号4位 | 块内偏移11位",
+            "dependency_status": "failed",
+            "reason": "仅写了“主存：”标签，未给出任何地址格式内容。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "Cache组号4位 | 组内块号1位 | 块内偏移11位",
+            "dependency_status": "failed",
+            "reason": "未书写。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "判断2D07FFH未命中并说明理由",
+            "dependency_status": "failed",
+            "reason": "未书写，无结论也无过程。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "判断7F0057H命中并说明理由",
+            "dependency_status": "failed",
+            "reason": "未书写。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 2.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "8MB=1.2×10²³B. 主存共23位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主存容量 8MB = 2^23 B，物理地址为 23 位。",
+            "dependency_status": "satisfied",
+            "reason": "OCR乱码 '1.2×10²³' 即 2^23，学生得出主存共23位，与标准答案一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "2KB=2×10¹¹B . cache共11位.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "块大小 2KB = 2^11 B，块内偏移为 11 位。",
+            "dependency_status": "satisfied",
+            "reason": "2^11 位偏移计算正确，结论 11 位正确。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "Cache组号需要 4 位。",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何相关内容。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "主存：",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "字块标记 8 位 | Cache组号 4 位 | 块内偏移 11 位。",
+            "dependency_status": "failed",
+            "reason": "仅写下标签'主存：'，无任何地址格式内容。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "Cache组号 4 位 | 组内块号 1 位 | 块内偏移 11 位。",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何相关内容。"
+          },
+          {
+            "id": "step_6",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "判断 2D07FFH 未命中并说明理由。",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何判断或理由。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_7",
+            "score_given": 0.0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "判断 7F0057H 命中并说明理由。",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何判断或理由。",
+            "scoring_role": null
+          }
+        ],
+        "total_score": 4.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_6",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          },
+          {
+            "parent_id": "step_7",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        1.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        1.0,
+        2.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_6": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_7": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_4": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_5": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_6": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_7": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.2222222222222222,
+      "step_2": 0.2222222222222222,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.0,
+      "step_7": 0.0
+    },
+    "max_item_variance": 0.2222222222222222,
+    "avg_item_variance": 0.06349206349206349
+  }
+]
