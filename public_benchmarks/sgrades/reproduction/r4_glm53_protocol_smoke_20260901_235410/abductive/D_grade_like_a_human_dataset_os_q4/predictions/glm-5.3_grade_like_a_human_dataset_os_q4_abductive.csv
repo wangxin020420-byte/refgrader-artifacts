@@ -1,0 +1,7 @@
+ID,question_id,question,sample_answer,criteria,sample_criteria,full_points,id,answer,score_1,score_2,score_3,score_outlier
+2,4,"Now run with these 
+flags: -l 4:100,1:0. These 
+flags specify one process with 4 instructions (all to use the CPU), and one that simply issues an I/O and waits for it to be done. How long does it take to complete both processes? Use -c and -p to 
+find out if you were right.","9 (or 10) time units. 
+Process 0 (4:100) uses four time units for running regular CPU instructions. 
+Process 1 (1:0) issues one I/O request, using five time units to complete. (It needs one more tick to switch to the DONE state.)",2 sub-questions: 8 points/each sub-question,2 sub-questions: 8 points/each sub-question,16,grading_7,It will take 10 ticks. Time PID: 0 PID: 1 CPU IOs 1 RUN:cpu READY 1 2 RUN:cpu READY 1 3 RUN:cpu READY 1 4 RUN:cpu READY 1 5 DONE RUN:io-start 1 6 DONE WAITING 1 7 DONE WAITING 1 1 CS3103 - Operating Systems 8 DONE WAITING 1 9 DONE WAITING 1 10* DONE DONE,90.0,,,
