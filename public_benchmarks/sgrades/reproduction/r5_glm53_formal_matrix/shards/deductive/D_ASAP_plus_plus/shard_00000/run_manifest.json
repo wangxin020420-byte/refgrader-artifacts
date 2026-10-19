@@ -1,7 +1,7 @@
 {
   "run_type": "sgrades_glm_protocol_unit",
   "status": "completed",
-  "created_at": "2026-09-03T02:21:28.463106+00:00",
+  "created_at": "2026-09-05T14:53:21.974418+00:00",
   "unit": "D_ASAP_plus_plus",
   "strategy": "deductive",
   "sample_count": 200,
@@ -25,12 +25,52 @@
     "protocol_temperature": 0.1,
     "upstream_requested_max_tokens": 50,
     "effective_minimum_completion_tokens": 256,
+    "label_space_projection": {
+      "rule": "2way_contradictory_to_incorrect",
+      "scope": "datasets whose protocol unit name contains 2way",
+      "mapping": {
+        "contradictory": "incorrect"
+      },
+      "rationale": "Contradictory is a negative correctness outcome in the binary label space; three-way protocol units retain it unchanged."
+    },
+    "score_range_override": {
+      "rule": "asap_plus_plus_attribute_sum_v1",
+      "scope": "D_ASAP_plus_plus essay sets 1 through 6",
+      "ranges": {
+        "1": [
+          5,
+          30
+        ],
+        "2": [
+          5,
+          30
+        ],
+        "3": [
+          0,
+          12
+        ],
+        "4": [
+          0,
+          12
+        ],
+        "5": [
+          0,
+          16
+        ],
+        "6": [
+          0,
+          16
+        ]
+      },
+      "rationale": "ASAP++ overall_score is the sum of attribute scores, not the ASAP-AES holistic score. The frozen training split confirms the same aggregate ranges for every labeled row."
+    },
     "compatibility_note": "The API request uses the configured Coding Plan alias in api_model. The reported model label is retained separately for experiment reporting. GLM completion capacity is raised because reasoning_content consumes the completion budget even when thinking is disabled."
   },
-  "finished_at": "2026-09-03T02:36:16.784291+00:00",
+  "finished_at": "2026-09-05T15:05:29.231403+00:00",
   "observed_response_models": [
     "glm-5.3"
   ],
   "valid_predictions": 200,
-  "invalid_predictions": 0
+  "invalid_predictions": 0,
+  "label_space_projection_counts": {}
 }
