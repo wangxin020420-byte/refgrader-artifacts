@@ -1,0 +1,2474 @@
+[
+  {
+    "file": "ANS_CO_1500.jpg",
+    "facts": "{\"step_1\": \"CPU中断存在优先级；完成一断路后会向应中断；跳转到中断程序，中断程序执行结束；会返回到中断前的程序，继续执行\", \"step_2\": \"可见学生手写的屏蔽字（标签:比特串，按行自上而下，均位于左侧，格式为『标签:比特串』）：\\nA: 0001\\nB: 1011\\n1: 1111（置信度较低0.798，标签『1』疑为『C』的误识，比特串1111可读）\\n0: 1001（标签『0』疑为『D』的误识，比特串1001可读）\\n上方另有表头行『A B C D』及行首『A』『C』字样，提示学生画了一个以A、B、C、D为列（或行）的屏蔽字表格，但表格其余单元格内容未被OCR识别到，表格整体结构不完整。\", \"step_3\": \"用户→C→B→D→A→用户\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T22:36:54.490983",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_13/ANS_CO_1500.jpg",
+      "image_sha256": "7762058987004eafa8c4ef873bcb22f58b4ea74268cda5b0100d6a4614e8b1cf",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_13/ANS_CO_1500.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 20,
+        "accepted_token_count": 19,
+        "mean_confidence": 0.966055,
+        "min_confidence": 0.5,
+        "joined_text": "6\n(1) (PU中断存在优先级\n完成一断指令后会，向应中断\n跳到中断程序，中断程序执行结\n会返回到中断前的程序，继续执行\n(2)\nA B C D\nA\nC\nA: 0001\nB:1011\n1:1111\n0:1001\n个\nD\nC\nB\nA\nABCD同时",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "multiple_confident_ocr_tokens",
+          "dark_pixel_ratio": 0.026617,
+          "very_dark_pixel_ratio": 0.017357,
+          "lower_region_dark_pixel_ratio": 0.015459,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "(1)CPU中断存在优先级\n完成一断路后会向应中断\n跳转到中断程序，中断程序执行结束\n会返回到中断前的程序，继续执行\n(2)如图所示",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1500",
+        "question_id": "CO_13",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "table_parser_used": true,
+      "table_facts": {
+        "step_2": "可见学生手写的屏蔽字（标签:比特串，按行自上而下，均位于左侧，格式为『标签:比特串』）：\nA: 0001\nB: 1011\n1: 1111（置信度较低0.798，标签『1』疑为『C』的误识，比特串1111可读）\n0: 1001（标签『0』疑为『D』的误识，比特串1001可读）\n上方另有表头行『A B C D』及行首『A』『C』字样，提示学生画了一个以A、B、C、D为列（或行）的屏蔽字表格，但表格其余单元格内容未被OCR识别到，表格整体结构不完整。"
+      },
+      "table_checklist": [
+        {
+          "id": "step_2",
+          "instruction": "Extract each mask word (bit vector) the student designed for sources A, B, C, and D. Transcribe each binary string exactly as handwritten, preserving leading zeros, bit order, grouping, separators, and any labels indicating which mask corresponds to which source. Record the source-to-bit-string mapping exactly as the student wrote it; do not judge correctness."
+        }
+      ],
+      "table_view": {
+        "rows": [
+          {
+            "row": 1,
+            "y_center": 50.25,
+            "cells_left_to_right": [
+              {
+                "text": "6",
+                "x_center": 22.5,
+                "confidence": 0.9997777342796326
+              },
+              {
+                "text": "(1) (PU中断存在优先级",
+                "x_center": 150.5,
+                "confidence": 0.9170010685920715
+              }
+            ]
+          },
+          {
+            "row": 2,
+            "y_center": 100.5,
+            "cells_left_to_right": [
+              {
+                "text": "完成一断指令后会，向应中断",
+                "x_center": 202.0,
+                "confidence": 0.9454882144927979
+              }
+            ]
+          },
+          {
+            "row": 3,
+            "y_center": 146.0,
+            "cells_left_to_right": [
+              {
+                "text": "跳到中断程序，中断程序执行结",
+                "x_center": 256.5,
+                "confidence": 0.9929926991462708
+              }
+            ]
+          },
+          {
+            "row": 4,
+            "y_center": 192.5,
+            "cells_left_to_right": [
+              {
+                "text": "会返回到中断前的程序，继续执行",
+                "x_center": 274.0,
+                "confidence": 0.9535514712333679
+              }
+            ]
+          },
+          {
+            "row": 5,
+            "y_center": 248.5,
+            "cells_left_to_right": [
+              {
+                "text": "(2)",
+                "x_center": 34.5,
+                "confidence": 0.997775137424469
+              }
+            ]
+          },
+          {
+            "row": 6,
+            "y_center": 284.0,
+            "cells_left_to_right": [
+              {
+                "text": "A B C D",
+                "x_center": 199.5,
+                "confidence": 0.8848817944526672
+              }
+            ]
+          },
+          {
+            "row": 7,
+            "y_center": 331.5,
+            "cells_left_to_right": [
+              {
+                "text": "A",
+                "x_center": 52.0,
+                "confidence": 0.9997517466545105
+              }
+            ]
+          },
+          {
+            "row": 8,
+            "y_center": 411.5,
+            "cells_left_to_right": [
+              {
+                "text": "C",
+                "x_center": 54.5,
+                "confidence": 0.993698239326477
+              }
+            ]
+          },
+          {
+            "row": 9,
+            "y_center": 524.5,
+            "cells_left_to_right": [
+              {
+                "text": "A: 0001",
+                "x_center": 102.5,
+                "confidence": 0.9522407650947571
+              }
+            ]
+          },
+          {
+            "row": 10,
+            "y_center": 567.0,
+            "cells_left_to_right": [
+              {
+                "text": "B:1011",
+                "x_center": 107.5,
+                "confidence": 0.9945039749145508
+              }
+            ]
+          },
+          {
+            "row": 11,
+            "y_center": 609.0,
+            "cells_left_to_right": [
+              {
+                "text": "1:1111",
+                "x_center": 112.0,
+                "confidence": 0.7977963089942932
+              }
+            ]
+          },
+          {
+            "row": 12,
+            "y_center": 659.5,
+            "cells_left_to_right": [
+              {
+                "text": "0:1001",
+                "x_center": 118.0,
+                "confidence": 0.9839300513267517
+              }
+            ]
+          },
+          {
+            "row": 13,
+            "y_center": 760.0,
+            "cells_left_to_right": [
+              {
+                "text": "个",
+                "x_center": 69.0,
+                "confidence": 0.9965213537216187
+              }
+            ]
+          },
+          {
+            "row": 14,
+            "y_center": 840.75,
+            "cells_left_to_right": [
+              {
+                "text": "C",
+                "x_center": 38.0,
+                "confidence": 0.9907488226890564
+              },
+              {
+                "text": "D",
+                "x_center": 41.5,
+                "confidence": 0.9994456171989441
+              }
+            ]
+          },
+          {
+            "row": 15,
+            "y_center": 896.25,
+            "cells_left_to_right": [
+              {
+                "text": "B",
+                "x_center": 35.5,
+                "confidence": 0.9991796612739563
+              },
+              {
+                "text": "A",
+                "x_center": 37.5,
+                "confidence": 0.9999001026153564
+              }
+            ]
+          },
+          {
+            "row": 16,
+            "y_center": 942.5,
+            "cells_left_to_right": [
+              {
+                "text": "用戶",
+                "x_center": 26.5,
+                "confidence": 0.40957483649253845
+              }
+            ]
+          },
+          {
+            "row": 17,
+            "y_center": 1003.5,
+            "cells_left_to_right": [
+              {
+                "text": "ABCD同时",
+                "x_center": 167.0,
+                "confidence": 0.9558577537536621
+              }
+            ]
+          }
+        ],
+        "unpositioned_tokens": [],
+        "plain_text": "Row 1: x=22.5: 6 | x=150.5: (1) (PU中断存在优先级\nRow 2: x=202.0: 完成一断指令后会，向应中断\nRow 3: x=256.5: 跳到中断程序，中断程序执行结\nRow 4: x=274.0: 会返回到中断前的程序，继续执行\nRow 5: x=34.5: (2)\nRow 6: x=199.5: A B C D\nRow 7: x=52.0: A\nRow 8: x=54.5: C\nRow 9: x=102.5: A: 0001\nRow 10: x=107.5: B:1011\nRow 11: x=112.0: 1:1111\nRow 12: x=118.0: 0:1001\nRow 13: x=69.0: 个\nRow 14: x=38.0: C | x=41.5: D\nRow 15: x=35.5: B | x=37.5: A\nRow 16: x=26.5: 用戶\nRow 17: x=167.0: ABCD同时"
+      },
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "用户→C→B→D→A→用户",
+      "diagram_facts": {
+        "step_3": "用户→C→B→D→A→用户"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_3",
+          "instruction": "Extract the student's hand-drawn CPU execution trajectory diagram: transcribe the sequence of program/interrupt labels and transitions shown, preserving arrows, dots, branching, and direction exactly as drawn. Record which blocks or symbols appear and in what order, and transcribe any text labels written on the diagram verbatim; do not judge correctness."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_2",
+        "step_3"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "vlm_fallback_reason": [
+        "table_ocr_recovered",
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "CPU中断存在优先级 完成一断指令后会响应中断 跳转到中断程序，中断程序执行结束 会收回到中断前的程序，继续执行。",
+        "step_2": "A: 0001\nB: 1011\nC: 1111\nD: 1001",
+        "step_3": "用户 → A → B → C → D （ABCD同时）"
+      },
+      "facts": {
+        "step_1": "CPU中断存在优先级；完成一断路后会向应中断；跳转到中断程序，中断程序执行结束；会返回到中断前的程序，继续执行",
+        "step_2": "可见学生手写的屏蔽字（标签:比特串，按行自上而下，均位于左侧，格式为『标签:比特串』）：\nA: 0001\nB: 1011\n1: 1111（置信度较低0.798，标签『1』疑为『C』的误识，比特串1111可读）\n0: 1001（标签『0』疑为『D』的误识，比特串1001可读）\n上方另有表头行『A B C D』及行首『A』『C』字样，提示学生画了一个以A、B、C、D为列（或行）的屏蔽字表格，但表格其余单元格内容未被OCR识别到，表格整体结构不完整。",
+        "step_3": "用户→C→B→D→A→用户"
+      }
+    },
+    "scores": [
+      15.5,
+      18,
+      18
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "CPU中断存在优先级；完成一断路后会向应中断；跳转到中断程序，中断程序执行结束；会返回到中断前的程序，继续执行",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "中断请求→判屏蔽/开中断→指令周期结束响应→关中断、保存断点、识别中断源、入口地址送PC→服务程序→恢复断点、开中断、返回",
+            "dependency_status": "insufficient",
+            "reason": "学生正确叙述了优先级、响应后跳转服务程序、执行结束返回原程序继续执行，但缺少关中断、保存断点、识别中断源、服务程序入口地址送PC等关键环节，属于部分满足"
+          },
+          {
+            "id": "step_2",
+            "score_given": 8,
+            "error_category": "MATCH",
+            "evidence_text": "A: 0001, B: 1011, 1(疑为C): 1111, 0(疑为D): 1001",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001, B=1011, C=1111, D=1001",
+            "dependency_status": "satisfied",
+            "reason": "四个屏蔽字与标准答案完全一致，标签『1』『0』为C、D的OCR误识，比特串本身可读且正确"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "用户→C→B→D→A→用户",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "画出CPU执行用户程序和处理中断的完整轨迹图（含嵌套与断点返回的执行轨迹）",
+            "dependency_status": "insufficient",
+            "reason": "处理顺序（优先级）C→B→D→A及首尾用户程序正确，体现了处理顺序主干；但仅给出线性序列，未画出轨迹图中断嵌套的断点位置与返回路径等关键结构信息"
+          }
+        ],
+        "total_score": 15.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "CPU中断存在优先级；完成一断路后会向应中断；跳转到中断程序，中断程序执行结束；会返回到中断前的程序，继续执行",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "中断请求未屏蔽且CPU允许时在指令周期末响应；关中断、保存断点、识别中断源、送入口地址转服务程序；服务后恢复断点、开中断并返回",
+            "dependency_status": "insufficient",
+            "reason": "学生正确给出优先级概念、响应后跳转服务程序、执行完返回原程序继续执行，但缺少保存断点、识别中断源、关中断/开中断等关键步骤，属于部分正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 8,
+            "error_category": "MATCH",
+            "evidence_text": "A: 0001, B: 1011, C(D?): 1111（标签疑为C误识，1111可读）, D(0?): 1001（标签疑为D误识，1001可读）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001, B=1011, C=1111, D=1001",
+            "dependency_status": "satisfied",
+            "reason": "四个屏蔽字比特串与标准答案完全一致，标签OCR误识仅是提取噪声，内容满足C>B>D>A处理次序设计"
+          },
+          {
+            "id": "step_3",
+            "score_given": 7,
+            "error_category": "MATCH",
+            "evidence_text": "用户→C→B→D→A→用户",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "轨迹应体现用户程序被中断后按优先级嵌套/顺序处理C、B、D、A，最后返回用户程序",
+            "dependency_status": "satisfied",
+            "reason": "学生给出完整执行轨迹：用户程序→C→B→D→A→返回用户，与标准轨迹的处理顺序和返回关系一致"
+          }
+        ],
+        "total_score": 18
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "CPU中断存在优先级；完成一断路后会向应中断；跳转到中断程序，中断程序执行结束；会返回到中断前的程序，继续执行",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "中断请求、判优/屏蔽判别、指令周期结束响应、关中断、保存断点、识别中断源、转服务程序、返回",
+            "dependency_status": "insufficient",
+            "reason": "学生正确给出优先级存在、响应后跳转中断服务程序、执行结束返回原程序继续执行的关键环节，但缺少屏蔽判别、关中断、保存断点、识别中断源等响应过程要点，给约60%分数"
+          },
+          {
+            "id": "step_2",
+            "score_given": 8,
+            "error_category": "MATCH",
+            "evidence_text": "A: 0001, B: 1011, 1/C: 1111, 0/D: 1001（标签疑为C、D误识，比特串清晰可读）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001，B=1011，C=1111，D=1001",
+            "dependency_status": "satisfied",
+            "reason": "四个屏蔽字比特串与标准答案完全一致，满足C>B>D>A处理顺序；标签OCR误识与表格结构不完整属非实质性格式问题"
+          },
+          {
+            "id": "step_3",
+            "score_given": 7,
+            "error_category": "MATCH",
+            "evidence_text": "用户→C→B→D→A→用户",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "CPU执行轨迹：用户程序被中断，按C→B→D→A顺序处理中断后返回用户程序",
+            "dependency_status": "satisfied",
+            "reason": "轨迹顺序与标准答案一致（用户→C→B→D→A→用户），箭头序列与图示形式等价"
+          }
+        ],
+        "total_score": 18
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        8.0,
+        8.0,
+        8.0
+      ],
+      "step_3": [
+        4.5,
+        7.0,
+        7.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 1.3888888888888886
+    },
+    "max_item_variance": 1.3888888888888886,
+    "avg_item_variance": 0.46296296296296285
+  },
+  {
+    "file": "ANS_CO_1510.jpg",
+    "facts": "{\"step_1\": [\"中断分析\", \"关中断\", \"保护现场\", \"记录PC,寄存器等数据,设备信息\", \"开中断\", \"执行中断服务\", \"关中断\", \"恢复断点\", \"开中断\"], \"step_2\": \"学生画出了中断源与 MD MC MB MA 为列头的表格（行11：列标签 'MD MC MB MA'，左列 '中断源'）。可见的行与位值（按原样记录）：行A：'0 0 01'（即类似 0 0 0 1 的4位，但位间分隔/后两位组合不清）；行B：仅可辨认最右侧（MA列附近）'1'，其余位缺失/不可读；行C与行D写在相邻两行（y≈855/897），可见零散位 '0'（x≈310，约对应MC列）和 'O'（疑似0，x≈403，约对应MB列），完整4位向量无法辨认。各行的完整4位屏蔽字大部分字迹模糊，无法完整读取，不做正确性判断。\", \"step_3\": \"用户程序→C→B→D→A→用户程序\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T22:40:41.085387",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_13/ANS_CO_1510.jpg",
+      "image_sha256": "e9e1346185efcc4c68c7ee9a780b12416f4a87373a0772bdc41ccf42f0e75ee2",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_13/ANS_CO_1510.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 33,
+        "accepted_token_count": 29,
+        "mean_confidence": 0.910807,
+        "min_confidence": 0.5,
+        "joined_text": "6. D\n外设申请中\n关中断\n保护现场\n记录PC，寄方器等类数据，记录点\n↓\n开中迷\n执行中断月务\n止\n关中逆\n恢复断点\n开中断\n(2)\n MD MC MB MA\n中断源\n0 0 01\nA\nB\n1\nC\nD\n0\n个\nD\nC\nB\nA\n用产\nABCD同时",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "multiple_confident_ocr_tokens",
+          "dark_pixel_ratio": 0.030559,
+          "very_dark_pixel_ratio": 0.020725,
+          "lower_region_dark_pixel_ratio": 0.028048,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "(1)中断分析\n↓\n关中断\n↓\n保护现场\n↓\n记录PC,寄存器等数据,设备信息\n↓\n开中断\n↓\n执行中断服务\n↓\n关中断\n↓\n恢复断点\n↓\n开中断\n(2)如图所示",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1510",
+        "question_id": "CO_13",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "table_parser_used": true,
+      "table_facts": {
+        "step_2": "学生画出了中断源与 MD MC MB MA 为列头的表格（行11：列标签 'MD MC MB MA'，左列 '中断源'）。可见的行与位值（按原样记录）：行A：'0 0 01'（即类似 0 0 0 1 的4位，但位间分隔/后两位组合不清）；行B：仅可辨认最右侧（MA列附近）'1'，其余位缺失/不可读；行C与行D写在相邻两行（y≈855/897），可见零散位 '0'（x≈310，约对应MC列）和 'O'（疑似0，x≈403，约对应MB列），完整4位向量无法辨认。各行的完整4位屏蔽字大部分字迹模糊，无法完整读取，不做正确性判断。"
+      },
+      "table_checklist": [
+        {
+          "id": "step_2",
+          "instruction": "Extract the student's handwritten mask words (bit vectors) for each interrupt source A, B, C, and D exactly as written, preserving leading zeros, bit order/direction, grouping, separators, and any labels. Record which mask value the student associated with each source label; do not evaluate whether the values are correct."
+        }
+      ],
+      "table_view": {
+        "rows": [
+          {
+            "row": 1,
+            "y_center": 47.25,
+            "cells_left_to_right": [
+              {
+                "text": "6. D",
+                "x_center": 44.5,
+                "confidence": 0.8128651976585388
+              },
+              {
+                "text": "外设申请中",
+                "x_center": 78.0,
+                "confidence": 0.9929354786872864
+              }
+            ]
+          },
+          {
+            "row": 2,
+            "y_center": 109.0,
+            "cells_left_to_right": [
+              {
+                "text": ".",
+                "x_center": 59.0,
+                "confidence": 0.16205528378486633
+              },
+              {
+                "text": "关中断",
+                "x_center": 77.0,
+                "confidence": 0.9985721111297607
+              }
+            ]
+          },
+          {
+            "row": 3,
+            "y_center": 174.5,
+            "cells_left_to_right": [
+              {
+                "text": "保护现场",
+                "x_center": 75.5,
+                "confidence": 0.9907418489456177
+              }
+            ]
+          },
+          {
+            "row": 4,
+            "y_center": 215.5,
+            "cells_left_to_right": [
+              {
+                "text": "记录PC，寄方器等类数据，记录点",
+                "x_center": 169.0,
+                "confidence": 0.8745165467262268
+              }
+            ]
+          },
+          {
+            "row": 5,
+            "y_center": 273.75,
+            "cells_left_to_right": [
+              {
+                "text": "↓",
+                "x_center": 62.5,
+                "confidence": 0.7732937335968018
+              },
+              {
+                "text": "开中迷",
+                "x_center": 70.0,
+                "confidence": 0.9072051048278809
+              }
+            ]
+          },
+          {
+            "row": 6,
+            "y_center": 341.5,
+            "cells_left_to_right": [
+              {
+                "text": "执行中断月务",
+                "x_center": 99.0,
+                "confidence": 0.8801713585853577
+              }
+            ]
+          },
+          {
+            "row": 7,
+            "y_center": 398.25,
+            "cells_left_to_right": [
+              {
+                "text": "止",
+                "x_center": 63.0,
+                "confidence": 0.5997791290283203
+              },
+              {
+                "text": "关中逆",
+                "x_center": 73.0,
+                "confidence": 0.7102575898170471
+              }
+            ]
+          },
+          {
+            "row": 8,
+            "y_center": 485.25,
+            "cells_left_to_right": [
+              {
+                "text": "√",
+                "x_center": 66.5,
+                "confidence": 0.4154435992240906
+              },
+              {
+                "text": "恢复断点",
+                "x_center": 78.0,
+                "confidence": 0.8649086952209473
+              }
+            ]
+          },
+          {
+            "row": 9,
+            "y_center": 532.0,
+            "cells_left_to_right": [
+              {
+                "text": "开中断",
+                "x_center": 70.0,
+                "confidence": 0.9500192999839783
+              }
+            ]
+          },
+          {
+            "row": 10,
+            "y_center": 588.5,
+            "cells_left_to_right": [
+              {
+                "text": "(2)",
+                "x_center": 26.0,
+                "confidence": 0.9496369361877441
+              }
+            ]
+          },
+          {
+            "row": 11,
+            "y_center": 654.67,
+            "cells_left_to_right": [
+              {
+                "text": "4",
+                "x_center": 39.0,
+                "confidence": 0.4243108630180359
+              },
+              {
+                "text": "中断源",
+                "x_center": 76.0,
+                "confidence": 0.6914566159248352
+              },
+              {
+                "text": "MD MC MB MA",
+                "x_center": 295.5,
+                "confidence": 0.9170913696289062
+              }
+            ]
+          },
+          {
+            "row": 12,
+            "y_center": 728.25,
+            "cells_left_to_right": [
+              {
+                "text": "A",
+                "x_center": 87.5,
+                "confidence": 0.9999510049819946
+              },
+              {
+                "text": "0 0 01",
+                "x_center": 346.5,
+                "confidence": 0.85795658826828
+              }
+            ]
+          },
+          {
+            "row": 13,
+            "y_center": 819.5,
+            "cells_left_to_right": [
+              {
+                "text": "B",
+                "x_center": 88.0,
+                "confidence": 0.9999569654464722
+              },
+              {
+                "text": "1",
+                "x_center": 475.0,
+                "confidence": 0.9952849745750427
+              }
+            ]
+          },
+          {
+            "row": 14,
+            "y_center": 895.88,
+            "cells_left_to_right": [
+              {
+                "text": "C",
+                "x_center": 89.0,
+                "confidence": 0.9997580647468567
+              },
+              {
+                "text": "D",
+                "x_center": 89.5,
+                "confidence": 0.9998770952224731
+              },
+              {
+                "text": "0",
+                "x_center": 310.0,
+                "confidence": 0.862164318561554
+              },
+              {
+                "text": "O",
+                "x_center": 403.0,
+                "confidence": 0.49891066551208496
+              }
+            ]
+          },
+          {
+            "row": 15,
+            "y_center": 974.5,
+            "cells_left_to_right": [
+              {
+                "text": "个",
+                "x_center": 78.5,
+                "confidence": 0.9988700747489929
+              }
+            ]
+          },
+          {
+            "row": 16,
+            "y_center": 1023.0,
+            "cells_left_to_right": [
+              {
+                "text": "D",
+                "x_center": 58.5,
+                "confidence": 0.9994775652885437
+              }
+            ]
+          },
+          {
+            "row": 17,
+            "y_center": 1064.5,
+            "cells_left_to_right": [
+              {
+                "text": "C",
+                "x_center": 55.0,
+                "confidence": 0.9991853833198547
+              }
+            ]
+          },
+          {
+            "row": 18,
+            "y_center": 1105.5,
+            "cells_left_to_right": [
+              {
+                "text": "B",
+                "x_center": 56.5,
+                "confidence": 0.9998738765716553
+              }
+            ]
+          },
+          {
+            "row": 19,
+            "y_center": 1153.0,
+            "cells_left_to_right": [
+              {
+                "text": "A",
+                "x_center": 49.5,
+                "confidence": 0.9979889392852783
+              }
+            ]
+          },
+          {
+            "row": 20,
+            "y_center": 1216.25,
+            "cells_left_to_right": [
+              {
+                "text": "用产",
+                "x_center": 28.0,
+                "confidence": 0.847331166267395
+              },
+              {
+                "text": "ABCD同时",
+                "x_center": 182.5,
+                "confidence": 0.9422706961631775
+              }
+            ]
+          }
+        ],
+        "unpositioned_tokens": [],
+        "plain_text": "Row 1: x=44.5: 6. D | x=78.0: 外设申请中\nRow 2: x=59.0: . | x=77.0: 关中断\nRow 3: x=75.5: 保护现场\nRow 4: x=169.0: 记录PC，寄方器等类数据，记录点\nRow 5: x=62.5: ↓ | x=70.0: 开中迷\nRow 6: x=99.0: 执行中断月务\nRow 7: x=63.0: 止 | x=73.0: 关中逆\nRow 8: x=66.5: √ | x=78.0: 恢复断点\nRow 9: x=70.0: 开中断\nRow 10: x=26.0: (2)\nRow 11: x=39.0: 4 | x=76.0: 中断源 | x=295.5: MD MC MB MA\nRow 12: x=87.5: A | x=346.5: 0 0 01\nRow 13: x=88.0: B | x=475.0: 1\nRow 14: x=89.0: C | x=89.5: D | x=310.0: 0 | x=403.0: O\nRow 15: x=78.5: 个\nRow 16: x=58.5: D\nRow 17: x=55.0: C\nRow 18: x=56.5: B\nRow 19: x=49.5: A\nRow 20: x=28.0: 用产 | x=182.5: ABCD同时"
+      },
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "用户程序→C→B→D→A→用户程序",
+      "diagram_facts": {
+        "step_3": "用户程序→C→B→D→A→用户程序"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_3",
+          "instruction": "Extract the student's handwritten or drawn trajectory showing CPU execution flow between the user program and interrupt service routines: capture the sequence of program/service segments written, any arrows, dots, branches, and labels indicating processing order and returns, preserving order and direction exactly as drawn. Do not assess whether the trajectory is correct."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_2",
+        "step_3"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "vlm_fallback_reason": [
+        "table_ocr_recovered",
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "关中断\n保护现场\n记录PC,寄存器等数据,设备信息\n开中断\n执行中断服务\n关中断\n恢复断点\n开中断",
+        "step_2": "A: 0001\nB: 1011\nC: 1111\nD: 1001",
+        "step_3": "用户程序→A→B→C→D"
+      },
+      "facts": {
+        "step_1": [
+          "中断分析",
+          "关中断",
+          "保护现场",
+          "记录PC,寄存器等数据,设备信息",
+          "开中断",
+          "执行中断服务",
+          "关中断",
+          "恢复断点",
+          "开中断"
+        ],
+        "step_2": "学生画出了中断源与 MD MC MB MA 为列头的表格（行11：列标签 'MD MC MB MA'，左列 '中断源'）。可见的行与位值（按原样记录）：行A：'0 0 01'（即类似 0 0 0 1 的4位，但位间分隔/后两位组合不清）；行B：仅可辨认最右侧（MA列附近）'1'，其余位缺失/不可读；行C与行D写在相邻两行（y≈855/897），可见零散位 '0'（x≈310，约对应MC列）和 'O'（疑似0，x≈403，约对应MB列），完整4位向量无法辨认。各行的完整4位屏蔽字大部分字迹模糊，无法完整读取，不做正确性判断。",
+        "step_3": "用户程序→C→B→D→A→用户程序"
+      }
+    },
+    "scores": [
+      12,
+      12,
+      11.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "关中断, 保护现场, 记录PC/寄存器等数据/设备信息, 开中断, 执行中断服务, 关中断, 恢复断点, 开中断",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "中断响应基本过程：关中断、保存断点/现场、识别中断源、转入服务程序、可开中断嵌套、恢复断点、开中断返回",
+            "dependency_status": "satisfied",
+            "reason": "学生完整列出关中断—保护现场（含PC/寄存器）—开中断—执行服务—关中断—恢复断点—开中断的正确流程，与标准过程语义等价。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "INSUFFICIENT_INFO",
+            "evidence_text": "各行完整4位屏蔽字大部分字迹模糊，无法完整读取，不做正确性判断",
+            "evidence_status": "not_comparable",
+            "score_layer": "core",
+            "expected_condition": "A=0001, B=1011, C=1111, D=1001 的完整屏蔽字表",
+            "dependency_status": "insufficient",
+            "reason": "表格结构存在但各行4位屏蔽字无法辨认，仅有零散可读位（如行A疑似0001、行B最右为1），不足以确认任何完整屏蔽字正确，按不可判读处理不给分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 7,
+            "error_category": "MATCH",
+            "evidence_text": "用户程序→C→B→D→A→用户程序",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "CPU执行轨迹：用户程序→C→B→D→A→用户程序",
+            "dependency_status": "satisfied",
+            "reason": "轨迹顺序与C、B、D、A的处理优先级完全一致，符合标准参考图的轨迹逻辑。"
+          }
+        ],
+        "total_score": 12
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "关中断、保护现场、记录PC/寄存器等数据、开中断、执行中断服务、关中断、恢复断点、开中断",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "简述CPU响应中断的基本过程：关中断、保存断点、转服务程序、（可开中断嵌套）、恢复断点、开中断返回",
+            "dependency_status": "satisfied",
+            "reason": "学生完整列出中断响应与返回的核心步骤序列，与标准流程语义等价"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "INSUFFICIENT_INFO",
+            "evidence_text": "行A：'0 0 01'，行B仅可辨认MA列'1'，行C/D仅零散'0'，完整4位向量无法辨认",
+            "evidence_status": "not_comparable",
+            "score_layer": "core",
+            "expected_condition": "屏蔽字 A=0001, B=1011, C=1111, D=1001",
+            "dependency_status": "insufficient",
+            "reason": "屏蔽字位值大部分字迹模糊，无法辨认完整向量，既不能确认也不能否定正确性"
+          },
+          {
+            "id": "step_3",
+            "score_given": 7,
+            "error_category": "MATCH",
+            "evidence_text": "用户程序→C→B→D→A→用户程序",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "CPU执行轨迹：用户程序→C→B→D→A→返回用户程序（按C、B、D、A优先级顺序处理）",
+            "dependency_status": "satisfied",
+            "reason": "轨迹顺序与C>B>D>A的处理顺序完全一致"
+          }
+        ],
+        "total_score": 12
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "关中断、保护现场、记录PC,寄存器等数据,设备信息、开中断、执行中断服务、关中断、恢复断点、开中断",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "中断请求→CPU在指令结束时响应→关中断、保存断点、识别中断源、送入口地址→服务程序（可开中断嵌套）→恢复断点、开中断、返回",
+            "dependency_status": "satisfied",
+            "reason": "完整覆盖关中断-保护现场-开中断-服务-关中断-恢复断点-开中断的核心流程，但缺少中断源识别和入口地址送PC的环节，且'中断分析'表述含混，扣少量分数"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "各行的完整4位屏蔽字大部分字迹模糊，无法完整读取，不做正确性判断",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "A=0001, B=1011, C=1111, D=1001 的完整可读屏蔽字表",
+            "dependency_status": "insufficient",
+            "reason": "表格结构存在但位值模糊不可辨认，无法与标准答案进行任何位级比对，无可给分的具体内容"
+          },
+          {
+            "id": "step_3",
+            "score_given": 7,
+            "error_category": "MATCH",
+            "evidence_text": "用户程序→C→B→D→A→用户程序",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "CPU执行轨迹：用户程序进入并按优先级C→B→D→A处理中断后返回用户程序",
+            "dependency_status": "satisfied",
+            "reason": "轨迹顺序与处理顺序C、B、D、A完全一致，起点终点均为用户程序，满足轨迹图要求"
+          }
+        ],
+        "total_score": 11.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        4.5
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        7.0,
+        7.0,
+        7.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "INSUFFICIENT_INFO",
+        "INSUFFICIENT_INFO",
+        "BLANK"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555555,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.05555555555555555,
+    "avg_item_variance": 0.018518518518518517
+  },
+  {
+    "file": "ANS_CO_1513.jpg",
+    "facts": "{\"step_1\": \"中断发生时 优先级响应等级高的 但优先级完成 希望完成；根据中断请求硬件优先级决定先处理哪个外设；根据希望CPU处理中断顺序决定完成哪个外设的任务；等级高的 完成次序一定和希望完成次序一致的\", \"step_2\": {\"found\": true, \"mask_words\": [{\"source\": \"A\", \"label_verbatim\": \"MA = 1000\", \"bit_string\": \"1000\"}, {\"source\": \"B\", \"label_verbatim\": \"MB=1101\", \"bit_string\": \"1101\"}, {\"source\": \"C\", \"label_verbatim\": \"MC =1111\", \"bit_string\": \"1111\"}, {\"source\": \"D\", \"label_verbatim\": \"MD=1001.\", \"bit_string\": \"1001\"}], \"mapping_context\": \"学生以 'MA=1000 MC=1111' 与 'MB=1101 MD=1001.' 两行形式写出各中断源到屏蔽字的映射；另有疑似表格/分栏区域可见行：'A' 对应 '1000'，一行孤立 '101'（归属不明确，可能为某屏蔽字的一部分或字迹模糊），'D' 对应 '1 〇 〇 1'（其中〇可能为0，即1001，置信度低，字迹部分模糊）\", \"notes\": \"屏蔽字均为4位二进制且按 A、B、C、D 顺序给出映射；行 '101' 无明确源标签，无法确定归属；'1 〇 〇 1' 中〇推断为0但按原样记录\"}, \"step_3\": \"用户→C→B→D→A\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T22:43:23.924831",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_13/ANS_CO_1513.jpg",
+      "image_sha256": "ef5b5515c4f3fe518095f57893bceb02768b9e80f8de7c83e56c9b133952a5f7",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_13/ANS_CO_1513.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 20,
+        "accepted_token_count": 20,
+        "mean_confidence": 0.939272,
+        "min_confidence": 0.5,
+        "joined_text": "6.\nb.根据中断请求硬件优先级决定先处理哪个外设。\n根据希望CPU处理中断顺序决定先完成哪那个外设的任务\n中断交生时,先处理响应等级高的,但优完成希望完成\n等级高的，完成次序一定和希望完成次序一致的\nD\nC\nB\nA\nL\n用户\nB C D\nA\nA\n1000\n101\nD\n1 〇 〇 1\nMA = 1000 MC =1111\nMB=1101 MD=1001.",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "multiple_confident_ocr_tokens",
+          "dark_pixel_ratio": 0.034533,
+          "very_dark_pixel_ratio": 0.019986,
+          "lower_region_dark_pixel_ratio": 0.022245,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "(1)根据 中断请求及件优先级决定先处理哪个外设\n根据希望CPU处理中断顺序决定完成哪个外设的任务\n中断发生时 优先级响应等级高的 但优先级完成 希望完成\n等级高的 完成次序一定和希望完成次序一致的\n(2)如图所示",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1513",
+        "question_id": "CO_13",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "table_parser_used": true,
+      "table_facts": {
+        "step_2": {
+          "found": true,
+          "mask_words": [
+            {
+              "source": "A",
+              "label_verbatim": "MA = 1000",
+              "bit_string": "1000"
+            },
+            {
+              "source": "B",
+              "label_verbatim": "MB=1101",
+              "bit_string": "1101"
+            },
+            {
+              "source": "C",
+              "label_verbatim": "MC =1111",
+              "bit_string": "1111"
+            },
+            {
+              "source": "D",
+              "label_verbatim": "MD=1001.",
+              "bit_string": "1001"
+            }
+          ],
+          "mapping_context": "学生以 'MA=1000 MC=1111' 与 'MB=1101 MD=1001.' 两行形式写出各中断源到屏蔽字的映射；另有疑似表格/分栏区域可见行：'A' 对应 '1000'，一行孤立 '101'（归属不明确，可能为某屏蔽字的一部分或字迹模糊），'D' 对应 '1 〇 〇 1'（其中〇可能为0，即1001，置信度低，字迹部分模糊）",
+          "notes": "屏蔽字均为4位二进制且按 A、B、C、D 顺序给出映射；行 '101' 无明确源标签，无法确定归属；'1 〇 〇 1' 中〇推断为0但按原样记录"
+        }
+      },
+      "table_checklist": [
+        {
+          "id": "step_2",
+          "instruction": "Extract the student's handwritten interrupt mask words (bit vectors) for each source (A, B, C, D): record each binary string exactly as written, preserving leading zeros, bit order, grouping, separators, and any labels. If the student showed a mapping from each source to its mask value, record that mapping verbatim."
+        }
+      ],
+      "table_view": {
+        "rows": [
+          {
+            "row": 1,
+            "y_center": 41.0,
+            "cells_left_to_right": [
+              {
+                "text": "6.",
+                "x_center": 19.5,
+                "confidence": 0.9991499185562134
+              }
+            ]
+          },
+          {
+            "row": 2,
+            "y_center": 86.0,
+            "cells_left_to_right": [
+              {
+                "text": "b.根据中断请求硬件优先级决定先处理哪个外设。",
+                "x_center": 364.5,
+                "confidence": 0.9570282101631165
+              }
+            ]
+          },
+          {
+            "row": 3,
+            "y_center": 153.5,
+            "cells_left_to_right": [
+              {
+                "text": "根据希望CPU处理中断顺序决定先完成哪那个外设的任务",
+                "x_center": 453.5,
+                "confidence": 0.9647608995437622
+              }
+            ]
+          },
+          {
+            "row": 4,
+            "y_center": 213.0,
+            "cells_left_to_right": [
+              {
+                "text": "中断交生时,先处理响应等级高的,但优完成希望完成",
+                "x_center": 443.0,
+                "confidence": 0.9393348693847656
+              }
+            ]
+          },
+          {
+            "row": 5,
+            "y_center": 281.0,
+            "cells_left_to_right": [
+              {
+                "text": "等级高的，完成次序一定和希望完成次序一致的",
+                "x_center": 369.5,
+                "confidence": 0.9805108904838562
+              }
+            ]
+          },
+          {
+            "row": 6,
+            "y_center": 592.25,
+            "cells_left_to_right": [
+              {
+                "text": "D",
+                "x_center": 75.0,
+                "confidence": 0.9996091723442078
+              },
+              {
+                "text": "C",
+                "x_center": 75.0,
+                "confidence": 0.9992734789848328
+              }
+            ]
+          },
+          {
+            "row": 7,
+            "y_center": 677.5,
+            "cells_left_to_right": [
+              {
+                "text": "A",
+                "x_center": 70.0,
+                "confidence": 0.999911904335022
+              },
+              {
+                "text": "B",
+                "x_center": 74.0,
+                "confidence": 0.9618569016456604
+              },
+              {
+                "text": "L",
+                "x_center": 258.0,
+                "confidence": 0.6947274804115295
+              }
+            ]
+          },
+          {
+            "row": 8,
+            "y_center": 730.5,
+            "cells_left_to_right": [
+              {
+                "text": "用户",
+                "x_center": 51.0,
+                "confidence": 0.98976069688797
+              }
+            ]
+          },
+          {
+            "row": 9,
+            "y_center": 827.5,
+            "cells_left_to_right": [
+              {
+                "text": "A",
+                "x_center": 142.5,
+                "confidence": 0.9989715814590454
+              },
+              {
+                "text": "B C D",
+                "x_center": 315.0,
+                "confidence": 0.9162470698356628
+              }
+            ]
+          },
+          {
+            "row": 10,
+            "y_center": 885.75,
+            "cells_left_to_right": [
+              {
+                "text": "A",
+                "x_center": 61.0,
+                "confidence": 0.9997804760932922
+              },
+              {
+                "text": "1000",
+                "x_center": 267.0,
+                "confidence": 0.9360048770904541
+              }
+            ]
+          },
+          {
+            "row": 11,
+            "y_center": 946.5,
+            "cells_left_to_right": [
+              {
+                "text": "101",
+                "x_center": 280.5,
+                "confidence": 0.9892786145210266
+              }
+            ]
+          },
+          {
+            "row": 12,
+            "y_center": 1086.5,
+            "cells_left_to_right": [
+              {
+                "text": "D",
+                "x_center": 53.0,
+                "confidence": 0.9996562004089355
+              },
+              {
+                "text": "1 〇 〇 1",
+                "x_center": 266.0,
+                "confidence": 0.5979641079902649
+              }
+            ]
+          },
+          {
+            "row": 13,
+            "y_center": 1155.5,
+            "cells_left_to_right": [
+              {
+                "text": "MA = 1000 MC =1111",
+                "x_center": 237.0,
+                "confidence": 0.8731662034988403
+              }
+            ]
+          },
+          {
+            "row": 14,
+            "y_center": 1207.0,
+            "cells_left_to_right": [
+              {
+                "text": "MB=1101 MD=1001.",
+                "x_center": 249.0,
+                "confidence": 0.9884383678436279
+              }
+            ]
+          }
+        ],
+        "unpositioned_tokens": [],
+        "plain_text": "Row 1: x=19.5: 6.\nRow 2: x=364.5: b.根据中断请求硬件优先级决定先处理哪个外设。\nRow 3: x=453.5: 根据希望CPU处理中断顺序决定先完成哪那个外设的任务\nRow 4: x=443.0: 中断交生时,先处理响应等级高的,但优完成希望完成\nRow 5: x=369.5: 等级高的，完成次序一定和希望完成次序一致的\nRow 6: x=75.0: D | x=75.0: C\nRow 7: x=70.0: A | x=74.0: B | x=258.0: L\nRow 8: x=51.0: 用户\nRow 9: x=142.5: A | x=315.0: B C D\nRow 10: x=61.0: A | x=267.0: 1000\nRow 11: x=280.5: 101\nRow 12: x=53.0: D | x=266.0: 1 〇 〇 1\nRow 13: x=237.0: MA = 1000 MC =1111\nRow 14: x=249.0: MB=1101 MD=1001."
+      },
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "用户→C→B→D→A",
+      "diagram_facts": {
+        "step_3": "用户→C→B→D→A"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_3",
+          "instruction": "Extract the student's hand-drawn CPU execution/trajectory diagram: transcribe the labels, program or interrupt names, and the transition arrows with their exact order and direction as drawn; if the student annotated the sequence of execution or return points, record those sequences and annotations exactly as written."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_2",
+        "step_3"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "vlm_fallback_reason": [
+        "table_ocr_recovered",
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "根据中断请求硬件优先级决定先处理哪个外设。根据希望CPU处理中断顺序决定先完成哪个外设的任务。中断发生时，先处理响应等级高的，但依次完成希望完成等级高的，完成次序一次和希望完成次序一致的",
+        "step_2": "A 1 0 0 0\nB 1 1 0 1\nC 1 1 1 1\nD 1 0 0 1\nMA = 1000  MB = 1101  MC = 1111  MD = 1001",
+        "step_3": "用户程序 -> A -> B -> C -> D"
+      },
+      "facts": {
+        "step_1": "中断发生时 优先级响应等级高的 但优先级完成 希望完成；根据中断请求硬件优先级决定先处理哪个外设；根据希望CPU处理中断顺序决定完成哪个外设的任务；等级高的 完成次序一定和希望完成次序一致的",
+        "step_2": {
+          "found": true,
+          "mask_words": [
+            {
+              "source": "A",
+              "label_verbatim": "MA = 1000",
+              "bit_string": "1000"
+            },
+            {
+              "source": "B",
+              "label_verbatim": "MB=1101",
+              "bit_string": "1101"
+            },
+            {
+              "source": "C",
+              "label_verbatim": "MC =1111",
+              "bit_string": "1111"
+            },
+            {
+              "source": "D",
+              "label_verbatim": "MD=1001.",
+              "bit_string": "1001"
+            }
+          ],
+          "mapping_context": "学生以 'MA=1000 MC=1111' 与 'MB=1101 MD=1001.' 两行形式写出各中断源到屏蔽字的映射；另有疑似表格/分栏区域可见行：'A' 对应 '1000'，一行孤立 '101'（归属不明确，可能为某屏蔽字的一部分或字迹模糊），'D' 对应 '1 〇 〇 1'（其中〇可能为0，即1001，置信度低，字迹部分模糊）",
+          "notes": "屏蔽字均为4位二进制且按 A、B、C、D 顺序给出映射；行 '101' 无明确源标签，无法确定归属；'1 〇 〇 1' 中〇推断为0但按原样记录"
+        },
+        "step_3": "用户→C→B→D→A"
+      }
+    },
+    "scores": [
+      13,
+      10,
+      8
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "中断发生时 优先级响应等级高的 但优先级完成 希望完成；根据中断请求硬件优先级决定先处理哪个外设；根据希望CPU处理中断顺序决定完成哪个外设的任务",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "简述CPU响应中断的基本过程：指令执行结束时响应、关中断、保存断点、识别中断源、入口地址送PC、开中断嵌套、恢复断点返回",
+            "dependency_status": "insufficient",
+            "reason": "学生只讨论了响应优先级与完成优先级的区分概念，未叙述中断响应的标准流程（关中断、保存断点、识别中断源、转服务程序等），仅体现对优先级概念的初步理解，给予少量支持分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 8,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "MA = 1000; MB=1101; MC =1111; MD=1001. 屏蔽字均为4位二进制且按 A、B、C、D 顺序给出映射",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001，B=1011，C=1111，D=1001（按MDMCMBMA顺序）",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 A=1000、B=1101、C=1111、D=1001 与标准答案逐位逆序一致，即采用相反的位序书写约定（MAMBMCMC vs MDMCMBMA），四个屏蔽字的相对关系与优先级次序C>B>D>A完全正确，属非实质性书写约定差异，按等价形式给满分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "用户→C→B→D→A",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "画出CPU执行用户程序和处理中断的轨迹图（嵌套执行轨迹：用户程序被A打断、服务A时被D打断、依此类推，体现C→B→D→A的嵌套与返回过程）",
+            "dependency_status": "insufficient",
+            "reason": "处理顺序C→B→D→A正确，但仅写出顺序序列，缺少轨迹图所要求的嵌套打断与返回结构的图示信息，只能给部分分。"
+          }
+        ],
+        "total_score": 13
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "中断发生时 优先级响应等级高的 但优先级完成 希望完成；根据中断请求硬件优先级决定先处理哪个外设；根据希望CPU处理中断顺序决定完成哪个外设的任务",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "描述中断响应过程：指令执行结束响应、关中断、保存断点、识别中断源、送入口地址、返回等",
+            "dependency_status": "insufficient",
+            "reason": "学生仅陈述响应优先级与完成次序的区别，未描述中断响应的基本过程（保存断点、关中断、入口地址等核心环节），仅体现对优先级响应概念的部分理解。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "MA = 1000; MB=1101; MC =1111; MD=1001.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001，B=1011，C=1111，D=1001",
+            "dependency_status": "failed",
+            "reason": "C=1111 与 D=1001 与标准答案一致（2/4 正确）；A=1000、B=1101 与标准不符，疑似位序颠倒导致，故给一半分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "用户→C→B→D→A",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "画出CPU执行用户程序和处理中断的轨迹图（处理顺序C、B、D、A，含嵌套与返回轨迹）",
+            "dependency_status": "insufficient",
+            "reason": "处理顺序C→B→D→A正确，但仅给出顺序序列，缺少轨迹图所需的嵌套、返回用户程序等结构信息，故部分给分。"
+          }
+        ],
+        "total_score": 10
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "中断发生时 优先级响应等级高的 但优先级完成 希望完成；根据中断请求硬件优先级决定先处理哪个外设；根据希望CPU处理中断顺序决定完成哪个外设的任务；等级高的 完成次序一定和希望完成次序一致的",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "简述CPU响应中断的基本过程（关中断、保存断点、识别中断源、送入口地址、开中断、返回等）",
+            "dependency_status": "failed",
+            "reason": "学生只讨论了优先级响应次序与完成次序的关系（属于屏蔽字设计原理），完全没有描述CPU响应中断的基本过程（响应时机、保存断点、识别中断源、转服务程序、返回），属于答非所问的概念性偏移。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "MA = 1000, MB=1101, MC =1111, MD=1001",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001，B=1011，C=1111，D=1001",
+            "dependency_status": "failed",
+            "reason": "四个屏蔽字中 C=1111 与 D=1001 正确，各得2分；A=1000 与 B=1101 错误（A应为0001，B应为1011），各0分；共8分中得4分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "用户→C→B→D→A",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "画出CPU执行用户程序与处理中断的轨迹图（含嵌套/返回轨迹）",
+            "dependency_status": "insufficient",
+            "reason": "处理次序 用户→C→B→D→A 与参考答案的处理顺序一致，体现了核心执行顺序；但仅有线性序列，缺少轨迹图所要求的中断嵌套与返回路径结构，按比例给约一半分。"
+          }
+        ],
+        "total_score": 8
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        1.0,
+        0.0
+      ],
+      "step_2": [
+        8.0,
+        4.0,
+        4.0
+      ],
+      "step_3": [
+        3.0,
+        5.0,
+        4.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.6666666666666666,
+      "step_2": 3.5555555555555554,
+      "step_3": 0.6666666666666666
+    },
+    "max_item_variance": 3.5555555555555554,
+    "avg_item_variance": 1.6296296296296298
+  },
+  {
+    "file": "ANS_CO_1542.jpg",
+    "facts": "{\"step_1\": \"先进行中断请求,后对中断源进行中断判优,优先级高的先进行中断响应,响应过程内应先关中断、存取断电,进行中断响应服务,服务中还可进行多层中断.\", \"step_2\": \"学生以四行形式写出A、B、C、D的屏蔽字，格式为「标签: 4位二进制位串」，位与位之间以空格分隔，无前导零标注、无MD/MC/MB/MA后缀。逐行转录如下：A: 0 0 0 1；B行的OCR证据为「B10」（置信度0.59），仅可确认标签B及其后以「1」开头的位串，但其余各位无法可靠读出，该行字迹模糊；C: 1 1 1 1；D: 1 0 0 1。四行按A、B、C、D顺序纵向排列（y坐标约370/419/467/513），行首标签与位串的行-单元格关系清晰。\", \"step_3\": \"用户程序→C→B→D→A的阶梯轨迹；完整可见路径：用户程序 → C → B → D → A\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T22:46:25.226496",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_13/ANS_CO_1542.jpg",
+      "image_sha256": "c8f15ced40ec4a7a5e1f08f361a0a3debbca367beae9c34d2445ce4f89c8a581",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_13/ANS_CO_1542.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 23,
+        "accepted_token_count": 22,
+        "mean_confidence": 0.930698,
+        "min_confidence": 0.5,
+        "joined_text": "6. 解：\n(小) 先进行中断请求,后对中断源进行中断判优，优先级高的先进行\n中断响应，响应过程内应先关中断、保持存取断点，进行中断响应\n服务，服务中还可进行多层中断。\n(2) 由分析得：\nA.B、C.D 的屏蔽字如下：\nA: 0 0 0 1\nB10\nC: 1 1 1 1\nD: 1 0 0 1\n轨迹图如下：\n个\nD\nC\nB\nA\n用户程序\nABCD\nC完成\nB完成\nA完成\n同时到来",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.036291,
+          "very_dark_pixel_ratio": 0.023764,
+          "lower_region_dark_pixel_ratio": 0.023853,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "(1)先进行中断请求,后对中断源进行中断判优,优先级高的先进行中断响应,响应过程内应先关中断、存取断电,进行中断响应服务,服务中还可进行多层中断.\n(2)如图所示",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1542",
+        "question_id": "CO_13",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "table_parser_used": true,
+      "table_facts": {
+        "step_2": "学生以四行形式写出A、B、C、D的屏蔽字，格式为「标签: 4位二进制位串」，位与位之间以空格分隔，无前导零标注、无MD/MC/MB/MA后缀。逐行转录如下：A: 0 0 0 1；B行的OCR证据为「B10」（置信度0.59），仅可确认标签B及其后以「1」开头的位串，但其余各位无法可靠读出，该行字迹模糊；C: 1 1 1 1；D: 1 0 0 1。四行按A、B、C、D顺序纵向排列（y坐标约370/419/467/513），行首标签与位串的行-单元格关系清晰。"
+      },
+      "table_checklist": [
+        {
+          "id": "step_2",
+          "instruction": "Extract the student's handwritten mask words (bit vectors) for interrupts A, B, C, D: transcribe each binary string exactly as written, preserving leading zeros, bit order, grouping, separators, and any labels or suffixes (e.g., M_A, MD/MC/MB/MA notation) the student used."
+        }
+      ],
+      "table_view": {
+        "rows": [
+          {
+            "row": 1,
+            "y_center": 45.0,
+            "cells_left_to_right": [
+              {
+                "text": "6. 解：",
+                "x_center": 47.5,
+                "confidence": 0.9205328226089478
+              }
+            ]
+          },
+          {
+            "row": 2,
+            "y_center": 91.5,
+            "cells_left_to_right": [
+              {
+                "text": "(小) 先进行中断请求,后对中断源进行中断判优，优先级高的先进行",
+                "x_center": 473.5,
+                "confidence": 0.9571601152420044
+              }
+            ]
+          },
+          {
+            "row": 3,
+            "y_center": 150.5,
+            "cells_left_to_right": [
+              {
+                "text": "中断响应，响应过程内应先关中断、保持存取断点，进行中断响应",
+                "x_center": 472.0,
+                "confidence": 0.916593611240387
+              }
+            ]
+          },
+          {
+            "row": 4,
+            "y_center": 199.0,
+            "cells_left_to_right": [
+              {
+                "text": "服务，服务中还可进行多层中断。",
+                "x_center": 250.5,
+                "confidence": 0.9947271943092346
+              }
+            ]
+          },
+          {
+            "row": 5,
+            "y_center": 266.5,
+            "cells_left_to_right": [
+              {
+                "text": "(2) 由分析得：",
+                "x_center": 103.5,
+                "confidence": 0.9870898723602295
+              }
+            ]
+          },
+          {
+            "row": 6,
+            "y_center": 311.5,
+            "cells_left_to_right": [
+              {
+                "text": "A.B、C.D 的屏蔽字如下：",
+                "x_center": 214.0,
+                "confidence": 0.8994235396385193
+              }
+            ]
+          },
+          {
+            "row": 7,
+            "y_center": 370.0,
+            "cells_left_to_right": [
+              {
+                "text": "A: 0 0 0 1",
+                "x_center": 135.5,
+                "confidence": 0.858149528503418
+              }
+            ]
+          },
+          {
+            "row": 8,
+            "y_center": 419.0,
+            "cells_left_to_right": [
+              {
+                "text": "B10",
+                "x_center": 206.5,
+                "confidence": 0.5931548476219177
+              }
+            ]
+          },
+          {
+            "row": 9,
+            "y_center": 467.5,
+            "cells_left_to_right": [
+              {
+                "text": "C: 1 1 1 1",
+                "x_center": 139.5,
+                "confidence": 0.9068639874458313
+              }
+            ]
+          },
+          {
+            "row": 10,
+            "y_center": 513.0,
+            "cells_left_to_right": [
+              {
+                "text": "D: 1 0 0 1",
+                "x_center": 140.0,
+                "confidence": 0.8221146464347839
+              }
+            ]
+          },
+          {
+            "row": 11,
+            "y_center": 576.5,
+            "cells_left_to_right": [
+              {
+                "text": "轨迹图如下：",
+                "x_center": 129.0,
+                "confidence": 0.987648069858551
+              }
+            ]
+          },
+          {
+            "row": 12,
+            "y_center": 627.0,
+            "cells_left_to_right": [
+              {
+                "text": "个",
+                "x_center": 91.0,
+                "confidence": 0.9941556453704834
+              }
+            ]
+          },
+          {
+            "row": 13,
+            "y_center": 680.5,
+            "cells_left_to_right": [
+              {
+                "text": "D",
+                "x_center": 51.5,
+                "confidence": 0.9996223449707031
+              }
+            ]
+          },
+          {
+            "row": 14,
+            "y_center": 732.5,
+            "cells_left_to_right": [
+              {
+                "text": "C",
+                "x_center": 45.5,
+                "confidence": 0.9996042847633362
+              }
+            ]
+          },
+          {
+            "row": 15,
+            "y_center": 789.5,
+            "cells_left_to_right": [
+              {
+                "text": "B",
+                "x_center": 45.5,
+                "confidence": 0.9997908473014832
+              }
+            ]
+          },
+          {
+            "row": 16,
+            "y_center": 845.0,
+            "cells_left_to_right": [
+              {
+                "text": "A",
+                "x_center": 42.5,
+                "confidence": 0.9998592138290405
+              }
+            ]
+          },
+          {
+            "row": 17,
+            "y_center": 899.5,
+            "cells_left_to_right": [
+              {
+                "text": "用户程序",
+                "x_center": 46.0,
+                "confidence": 0.9328276515007019
+              }
+            ]
+          },
+          {
+            "row": 18,
+            "y_center": 1011.5,
+            "cells_left_to_right": [
+              {
+                "text": "ABCD",
+                "x_center": 220.0,
+                "confidence": 0.9885674118995667
+              },
+              {
+                "text": "同时到来",
+                "x_center": 224.5,
+                "confidence": 0.9870036840438843
+              },
+              {
+                "text": "C完成",
+                "x_center": 327.5,
+                "confidence": 0.8917152285575867
+              },
+              {
+                "text": "B完成",
+                "x_center": 427.5,
+                "confidence": 0.8414357304573059
+              },
+              {
+                "text": "口成",
+                "x_center": 515.5,
+                "confidence": 0.49777722358703613
+              },
+              {
+                "text": "A完成",
+                "x_center": 595.5,
+                "confidence": 0.9973248839378357
+              }
+            ]
+          }
+        ],
+        "unpositioned_tokens": [],
+        "plain_text": "Row 1: x=47.5: 6. 解：\nRow 2: x=473.5: (小) 先进行中断请求,后对中断源进行中断判优，优先级高的先进行\nRow 3: x=472.0: 中断响应，响应过程内应先关中断、保持存取断点，进行中断响应\nRow 4: x=250.5: 服务，服务中还可进行多层中断。\nRow 5: x=103.5: (2) 由分析得：\nRow 6: x=214.0: A.B、C.D 的屏蔽字如下：\nRow 7: x=135.5: A: 0 0 0 1\nRow 8: x=206.5: B10\nRow 9: x=139.5: C: 1 1 1 1\nRow 10: x=140.0: D: 1 0 0 1\nRow 11: x=129.0: 轨迹图如下：\nRow 12: x=91.0: 个\nRow 13: x=51.5: D\nRow 14: x=45.5: C\nRow 15: x=45.5: B\nRow 16: x=42.5: A\nRow 17: x=46.0: 用户程序\nRow 18: x=220.0: ABCD | x=224.5: 同时到来 | x=327.5: C完成 | x=427.5: B完成 | x=515.5: 口成 | x=595.5: A完成"
+      },
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "用户程序 → C → B → D → A",
+      "diagram_facts": {
+        "step_3": "用户程序→C→B→D→A的阶梯轨迹；完整可见路径：用户程序 → C → B → D → A"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_3",
+          "instruction": "Extract the student's hand-drawn CPU execution/interrupt trajectory diagram: transcribe the sequence of program and interrupt-service labels the student drew along the timeline, preserving arrows, order, direction, nesting indentation, and any time-axis markings exactly as written."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_2",
+        "step_3"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "vlm_fallback_reason": [
+        "table_ocr_recovered",
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "首先进行中断请求，后对中断源进行中断判优，优先级高的先进行中断响应，响应过程内应先关中断、保存存取断点，进行中断响应服务，服务中还可进行多层中断。",
+        "step_2": "A: 0001\nB: 1011\nC: 1111\nD: 1001",
+        "step_3": "用户程序 → ABCD同时到来 → C完成 → B完成 → D完成 → A完成"
+      },
+      "facts": {
+        "step_1": "先进行中断请求,后对中断源进行中断判优,优先级高的先进行中断响应,响应过程内应先关中断、存取断电,进行中断响应服务,服务中还可进行多层中断.",
+        "step_2": "学生以四行形式写出A、B、C、D的屏蔽字，格式为「标签: 4位二进制位串」，位与位之间以空格分隔，无前导零标注、无MD/MC/MB/MA后缀。逐行转录如下：A: 0 0 0 1；B行的OCR证据为「B10」（置信度0.59），仅可确认标签B及其后以「1」开头的位串，但其余各位无法可靠读出，该行字迹模糊；C: 1 1 1 1；D: 1 0 0 1。四行按A、B、C、D顺序纵向排列（y坐标约370/419/467/513），行首标签与位串的行-单元格关系清晰。",
+        "step_3": "用户程序→C→B→D→A的阶梯轨迹；完整可见路径：用户程序 → C → B → D → A"
+      }
+    },
+    "scores": [
+      16.5,
+      16,
+      16.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "先进行中断请求,后对中断源进行中断判优,优先级高的先进行中断响应,响应过程内应先关中断、存取断电,进行中断响应服务,服务中还可进行多层中断.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "中断请求→条件满足后响应→关中断、保存断点、识别中断源并转服务程序→服务中可嵌套→恢复断点开中断返回",
+            "dependency_status": "satisfied",
+            "reason": "覆盖请求、判优、关中断、保存断点（'存取断电'为笔误但意思可辨）、服务与嵌套；缺少识别中断源/入口地址送PC、恢复断点与返回的环节，属要点不全的实质部分满足。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 6.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "A: 0 0 0 1；C: 1 1 1 1；D: 1 0 0 1；B行OCR仅可确认'B10'，其余位无法读出。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001，B=1011，C=1111，D=1001",
+            "dependency_status": "partial",
+            "reason": "A、C、D三个屏蔽字与标准答案完全一致（每个2分）；B行字迹模糊无法可靠判读，只能看到首位为1与标准1011首字母一致但不能据此给分，B项0分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 7.0,
+            "error_category": "MATCH",
+            "evidence_text": "用户程序→C→B→D→A的阶梯轨迹；完整可见路径：用户程序 → C → B → D → A",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "CPU执行轨迹为用户程序→C→B→D→A的嵌套处理顺序",
+            "dependency_status": "satisfied",
+            "reason": "轨迹顺序与C、B、D、A的处理优先级完全一致，阶梯轨迹形式正确，满足绘图题核心要求。"
+          }
+        ],
+        "total_score": 16.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "先进行中断请求,后对中断源进行中断判优,优先级高的先进行中断响应,响应过程内应先关中断、存取断电,进行中断响应服务,服务中还可进行多层中断.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "中断请求、判优、响应条件、关中断、保存断点、识别中断源、送入口地址转服务程序、嵌套、恢复断点开中断返回",
+            "dependency_status": "satisfied",
+            "reason": "涵盖了请求、判优、关中断、保存断点（存取断电为OCR讹误但仍可辨认）与中断嵌套等要点，但缺少指令执行结束才响应、中断服务程序入口地址送PC、以及恢复断点并返回原程序等关键环节，故给部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 6,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "A: 0 0 0 1；C: 1 1 1 1；D: 1 0 0 1；B行OCR仅可确认以「1」开头的位串，其余各位无法可靠读出",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001，B=1011，C=1111，D=1001",
+            "dependency_status": "insufficient",
+            "reason": "A、C、D三个屏蔽字与标准答案完全一致；B行字迹模糊无法判读（首位置1与正确答案1011首位一致但不充分），按比例扣B对应部分分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 7,
+            "error_category": "MATCH",
+            "evidence_text": "用户程序→C→B→D→A的阶梯轨迹；完整可见路径：用户程序 → C → B → D → A",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "CPU执行轨迹为用户程序被C打断，C被B打断，B被D打断，D被A打断的阶梯轨迹",
+            "dependency_status": "satisfied",
+            "reason": "轨迹顺序用户程序→C→B→D→A与标准参考图的处理顺序一致，为阶梯式轨迹，满足要求。"
+          }
+        ],
+        "total_score": 16
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "先进行中断请求,后对中断源进行中断判优,优先级高的先进行中断响应,响应过程内应先关中断、存取断电,进行中断响应服务,服务中还可进行多层中断.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "中断请求→条件满足后响应→关中断、保存断点、识别中断源、送服务程序入口→可嵌套→恢复断点、开中断、返回",
+            "dependency_status": "satisfied",
+            "reason": "覆盖中断请求、判优、关中断、保存断点、服务、多重中断嵌套等主要环节，但缺少“指令执行结束响应/识别中断源/送入口地址”及“恢复断点、开中断、返回”等要素。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 6,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "A: 0 0 0 1；B行OCR证据为「B10」(置信度0.59)无法可靠读出；C: 1 1 1 1；D: 1 0 0 1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001，B=1011，C=1111，D=1001",
+            "dependency_status": "insufficient",
+            "reason": "A、C、D三个屏蔽字完全正确（各2分）；B行字迹模糊无法可靠判定，按缺失处理（0/2），不给分也不判错。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 7,
+            "error_category": "MATCH",
+            "evidence_text": "用户程序→C→B→D→A的阶梯轨迹；完整可见路径：用户程序 → C → B → D → A",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "轨迹为用户程序→C→B→D→A的嵌套处理顺序",
+            "dependency_status": "satisfied",
+            "reason": "轨迹顺序与标准答案一致，完全满足要求。"
+          }
+        ],
+        "total_score": 16.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.5,
+        3.0,
+        3.5
+      ],
+      "step_2": [
+        6.0,
+        6.0,
+        6.0
+      ],
+      "step_3": [
+        7.0,
+        7.0,
+        7.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555556,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.01851851851851852
+  },
+  {
+    "file": "ANS_CO_1546.jpg",
+    "facts": "{\"step_1\": \"A.B.C.D四个中断源同时发出中断信号。CPU按优先级依次响应屏闭字为不屏闭的信号并开始执行；若在执行中断过程中有优先级更高的信号被识别出来，则中断正在执行的信号并优先处理该信号；在该信号处理完毕之后处理原信号，以次类推直到完成所有信号。\", \"step_2\": \"A 1001\\nB 1011\\nC 1111\\nD 1001（学生另注明：D为1001）\", \"step_3\": \"用户程序 → C → B → D → A → 用户程序\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-21T22:48:29.507645",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_13/ANS_CO_1546.jpg",
+      "image_sha256": "ac4fb5398e1cb423b241f87a579b9fba1bd9ab1586b9294fe2d1280baf1526fe",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_13/ANS_CO_1546.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 20,
+        "accepted_token_count": 19,
+        "mean_confidence": 0.915641,
+        "min_confidence": 0.5,
+        "joined_text": "6. 17. A. B. C.  四个中断源同时发出中断信号\nCPU按优先级依次响应的屏闭字为不漏闭\n的信号并开始执行，若在执行中断过程中。\n有优先级更高的信号被识别出来.则中断\n正在执行的信号并优先处理说信号在该信\n号处理之后处理原信号以次类推直到\n完成所有信号\n屏蔽子为\nA 1001\nB 1011\nC 1111\n↑\nD为1001\nD\n1001.\nC\nB\nA\nABCD同7时C充 B元 O气 A执行元",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.05117,
+          "very_dark_pixel_ratio": 0.033502,
+          "lower_region_dark_pixel_ratio": 0.039283,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "1)A.B.C.D四个中断源同时发出中断信号\nCPU按优先级依次响应屏闭字为不屏闭\n的信号并开始执行；若在执行中断过程中\n有优先级更高的信号被识别出来，则中断\n正在执行的信号并优先处理该信号；在该信\n号处理完毕之后处理原信号，以次类推直到\n完成所有信号\n2）屏蔽字为\nA 1001\nB 1011\nC 1111\nD 1001 D为1001\n程序轨迹图如图所示",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1546",
+        "question_id": "CO_13",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "table_parser_used": true,
+      "table_facts": {
+        "step_2": "学生以“屏蔽子为”引出各中断源屏蔽字，标签-位串映射为：A 1001；B 1011；C 1111；D 1001（OCR中另有一处'1001.'紧邻D行，'D为1001'在右侧重复标注）。位串均为4位无分隔符、无前导零、无进制后缀，按 A、B、C、D 顺序书写。另外左下竖排出现 C、B、A 及一个无法辨认的字符（'护'，字迹模糊），疑似屏蔽字位串竖排书写：C 1111、B 1011、A 1001，与横排记录一致，但竖排结构部分模糊，无法完全确认。"
+      },
+      "table_checklist": [
+        {
+          "id": "step_2",
+          "instruction": "Extract the interrupt mask words (bit vectors) the student wrote for each level A, B, C, and D. Record the label-to-bit-string mapping exactly as handwritten, preserving leading zeros, bit grouping, separators (e.g., spaces or commas), and any suffixes or base notation. If the student wrote bit strings without labels, preserve their written order and any association marks."
+        }
+      ],
+      "table_view": {
+        "rows": [
+          {
+            "row": 1,
+            "y_center": 34.5,
+            "cells_left_to_right": [
+              {
+                "text": "6. 17. A. B. C.  四个中断源同时发出中断信号",
+                "x_center": 394.0,
+                "confidence": 0.827120840549469
+              }
+            ]
+          },
+          {
+            "row": 2,
+            "y_center": 98.5,
+            "cells_left_to_right": [
+              {
+                "text": "CPU按优先级依次响应的屏闭字为不漏闭",
+                "x_center": 511.5,
+                "confidence": 0.9186282753944397
+              }
+            ]
+          },
+          {
+            "row": 3,
+            "y_center": 180.0,
+            "cells_left_to_right": [
+              {
+                "text": "的信号并开始执行，若在执行中断过程中。",
+                "x_center": 425.5,
+                "confidence": 0.9470420479774475
+              }
+            ]
+          },
+          {
+            "row": 4,
+            "y_center": 263.5,
+            "cells_left_to_right": [
+              {
+                "text": "有优先级更高的信号被识别出来.则中断",
+                "x_center": 419.5,
+                "confidence": 0.9576326012611389
+              }
+            ]
+          },
+          {
+            "row": 5,
+            "y_center": 328.5,
+            "cells_left_to_right": [
+              {
+                "text": "正在执行的信号并优先处理说信号在该信",
+                "x_center": 417.5,
+                "confidence": 0.9895836710929871
+              }
+            ]
+          },
+          {
+            "row": 6,
+            "y_center": 397.5,
+            "cells_left_to_right": [
+              {
+                "text": "号处理之后处理原信号以次类推直到",
+                "x_center": 454.0,
+                "confidence": 0.9886947870254517
+              }
+            ]
+          },
+          {
+            "row": 7,
+            "y_center": 458.0,
+            "cells_left_to_right": [
+              {
+                "text": "完成所有信号",
+                "x_center": 156.5,
+                "confidence": 0.996091365814209
+              }
+            ]
+          },
+          {
+            "row": 8,
+            "y_center": 574.33,
+            "cells_left_to_right": [
+              {
+                "text": "屏蔽子为",
+                "x_center": 151.5,
+                "confidence": 0.8852155208587646
+              },
+              {
+                "text": "B 1011",
+                "x_center": 350.0,
+                "confidence": 0.9751265645027161
+              },
+              {
+                "text": "A 1001",
+                "x_center": 359.5,
+                "confidence": 0.9970786571502686
+              }
+            ]
+          },
+          {
+            "row": 9,
+            "y_center": 671.75,
+            "cells_left_to_right": [
+              {
+                "text": "↑",
+                "x_center": 147.5,
+                "confidence": 0.5504772067070007
+              },
+              {
+                "text": "C 1111",
+                "x_center": 346.5,
+                "confidence": 0.900479257106781
+              }
+            ]
+          },
+          {
+            "row": 10,
+            "y_center": 737.5,
+            "cells_left_to_right": [
+              {
+                "text": "C",
+                "x_center": 92.5,
+                "confidence": 0.99895179271698
+              },
+              {
+                "text": "D",
+                "x_center": 97.0,
+                "confidence": 0.9744488000869751
+              },
+              {
+                "text": "1001.",
+                "x_center": 376.5,
+                "confidence": 0.8731875419616699
+              },
+              {
+                "text": "D为1001",
+                "x_center": 586.5,
+                "confidence": 0.9954356551170349
+              }
+            ]
+          },
+          {
+            "row": 11,
+            "y_center": 833.75,
+            "cells_left_to_right": [
+              {
+                "text": "A",
+                "x_center": 89.0,
+                "confidence": 0.9706751704216003
+              },
+              {
+                "text": "B",
+                "x_center": 91.0,
+                "confidence": 0.9999632835388184
+              }
+            ]
+          },
+          {
+            "row": 12,
+            "y_center": 904.0,
+            "cells_left_to_right": [
+              {
+                "text": "护",
+                "x_center": 91.0,
+                "confidence": 0.15690189599990845
+              }
+            ]
+          },
+          {
+            "row": 13,
+            "y_center": 977.5,
+            "cells_left_to_right": [
+              {
+                "text": "ABCD同7时C充 B元 O气 A执行元",
+                "x_center": 316.5,
+                "confidence": 0.6513474583625793
+              }
+            ]
+          }
+        ],
+        "unpositioned_tokens": [],
+        "plain_text": "Row 1: x=394.0: 6. 17. A. B. C.  四个中断源同时发出中断信号\nRow 2: x=511.5: CPU按优先级依次响应的屏闭字为不漏闭\nRow 3: x=425.5: 的信号并开始执行，若在执行中断过程中。\nRow 4: x=419.5: 有优先级更高的信号被识别出来.则中断\nRow 5: x=417.5: 正在执行的信号并优先处理说信号在该信\nRow 6: x=454.0: 号处理之后处理原信号以次类推直到\nRow 7: x=156.5: 完成所有信号\nRow 8: x=151.5: 屏蔽子为 | x=350.0: B 1011 | x=359.5: A 1001\nRow 9: x=147.5: ↑ | x=346.5: C 1111\nRow 10: x=92.5: C | x=97.0: D | x=376.5: 1001. | x=586.5: D为1001\nRow 11: x=89.0: A | x=91.0: B\nRow 12: x=91.0: 护\nRow 13: x=316.5: ABCD同7时C充 B元 O气 A执行元"
+      },
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "用户程序 → C → B → D → A → 用户程序",
+      "diagram_facts": {
+        "step_3": "用户程序 → C → B → D → A → 用户程序"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_3",
+          "instruction": "Extract the student's hand-drawn CPU execution/interrupt trajectory diagram: transcribe the sequence of program segments and interrupt-handling segments shown, preserving any arrows, direction, branching, and return paths exactly as drawn, including labels written at each node or along each path. If the student also wrote an accompanying trace table or step list, extract its entries in the written order."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_3"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "CPU按优先级依次响应较有优先的 屏闭字为确间的 信号并开始执行.若在执行中断过程中. 有优先级更高的信号被识别出来.则中断 正在执行的信号并优先处理该信号.在该信 号处理完毕之后 处理原信号 以此类推直到 完成所有信号",
+        "step_2": "A 1001\nB 1011\nc 1111\nD为 1001",
+        "step_3": "ABCD同时C完B完D A执行完"
+      },
+      "facts": {
+        "step_1": "A.B.C.D四个中断源同时发出中断信号。CPU按优先级依次响应屏闭字为不屏闭的信号并开始执行；若在执行中断过程中有优先级更高的信号被识别出来，则中断正在执行的信号并优先处理该信号；在该信号处理完毕之后处理原信号，以次类推直到完成所有信号。",
+        "step_2": "A 1001\nB 1011\nC 1111\nD 1001（学生另注明：D为1001）",
+        "step_3": "用户程序 → C → B → D → A → 用户程序"
+      }
+    },
+    "scores": [
+      15.5,
+      16,
+      15.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "CPU按优先级依次响应屏闭字为不屏闭的信号并开始执行；若在执行中断过程中有优先级更高的信号被识别出来，则中断正在执行的信号并优先处理该信号；在该信号处理完毕之后处理原信号",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "中断请求未被屏蔽且CPU允许中断时在指令周期结束响应；关中断、保存断点、识别中断源、服务程序入口送PC；嵌套开中断；恢复断点并返回",
+            "dependency_status": "insufficient",
+            "reason": "正确描述了屏蔽判断、优先级响应和中断嵌套的核心机制，但缺少关中断/保存断点/入口地址送PC/恢复断点等中断周期关键步骤，部分得分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 6,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "A 1001\nB 1011\nC 1111\nD 1001（学生另注明：D为1001）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001，B=1011，C=1111，D=1001",
+            "dependency_status": "satisfied",
+            "reason": "B、C、D三个屏蔽字完全正确（3/4），A应为0001（A为最低优先级，不应屏蔽B），A错误，按比例给6/8分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 7,
+            "error_category": "MATCH",
+            "evidence_text": "用户程序 → C → B → D → A → 用户程序",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "CPU执行轨迹：用户程序被打断，按优先级嵌套处理中断后返回用户程序，处理顺序为C→B→D→A",
+            "dependency_status": "satisfied",
+            "reason": "轨迹顺序与标准答案一致：用户程序进入后按C、B、D、A顺序处理各中断源并返回用户程序，轨迹正确"
+          }
+        ],
+        "total_score": 15.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "CPU按优先级依次响应屏闭字为不屏闭的信号并开始执行；若在执行中断过程中有优先级更高的信号被识别出来，则中断正在执行的信号并优先处理该信号；在该信号处理完毕之后处理原信号",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "完整描述中断响应过程：响应条件、关中断、保存断点、识别中断源、送入口地址、中断嵌套、恢复断点并返回",
+            "dependency_status": "insufficient",
+            "reason": "正确给出了响应优先级、屏蔽判别与中断嵌套（更高优先级抢占、处理完返回原信号）的核心机制，但缺少保存断点、关中断、识别中断源、入口地址送PC等基本步骤，属于部分满足。3/5"
+          },
+          {
+            "id": "step_2",
+            "score_given": 6,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "A 1001\nB 1011\nC 1111\nD 1001（学生另注明：D为1001）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001，B=1011，C=1111，D=1001",
+            "dependency_status": "satisfied",
+            "reason": "B、C、D三个屏蔽字与标准答案完全一致（3/4正确），仅A写成1001（标准为0001，A应为最低优先级需屏蔽自身之外不对——实际A=0001表示A不能屏蔽任何更高级源）。按四项等分，每项2分，得6/8。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 7,
+            "error_category": "MATCH",
+            "evidence_text": "用户程序 → C → B → D → A → 用户程序",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "轨迹应体现C→B→D→A的优先级处理顺序，且从用户程序进入并返回用户程序",
+            "dependency_status": "satisfied",
+            "reason": "轨迹顺序C→B→D→A与屏蔽字设计的优先级一致，起点终点均为用户程序，结论正确。箭头表示属等价形式，给满分。7/7"
+          }
+        ],
+        "total_score": 16
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "若在执行中断过程中有优先级更高的信号被识别出来，则中断正在执行的信号并优先处理该信号；在该信号处理完毕之后处理原信号",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "中断响应基本过程：指令执行结束响应、关中断、保存断点、识别中断源、入口地址送PC、开中断嵌套、恢复断点返回",
+            "dependency_status": "insufficient",
+            "reason": "正确描述了优先级响应与中断嵌套机制，但缺少关中断、保存断点、中断服务程序入口地址送PC等基本过程要点"
+          },
+          {
+            "id": "step_2",
+            "score_given": 6,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "A 1001\nB 1011\nC 1111\nD 1001",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A=0001，B=1011，C=1111，D=1001",
+            "dependency_status": "failed",
+            "reason": "B、C、D三个屏蔽字完全正确（6/8分量），但A应为0001，学生写1001，A未屏蔽自身，破坏A最低优先级的语义"
+          },
+          {
+            "id": "step_3",
+            "score_given": 7,
+            "error_category": "MATCH",
+            "evidence_text": "用户程序 → C → B → D → A → 用户程序",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "执行轨迹按用户程序→C→B→D→A→用户程序",
+            "dependency_status": "satisfied",
+            "reason": "轨迹顺序与标准答案一致，C→B→D→A优先级顺序正确"
+          }
+        ],
+        "total_score": 15.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.5,
+        3.0,
+        2.5
+      ],
+      "step_2": [
+        6.0,
+        6.0,
+        6.0
+      ],
+      "step_3": [
+        7.0,
+        7.0,
+        7.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555556,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.01851851851851852
+  }
+]

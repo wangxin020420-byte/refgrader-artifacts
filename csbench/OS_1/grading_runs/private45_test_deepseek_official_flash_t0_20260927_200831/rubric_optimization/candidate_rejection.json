@@ -1,0 +1,93 @@
+{
+  "question_id": "OS_1",
+  "status": "candidate_rejected_baseline_selected",
+  "fallback_reason": "candidate_noninferiority_rejected:severe_sample_regression",
+  "mandatory_split_targets": [
+    {
+      "parent_id": "step_1",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    },
+    {
+      "parent_id": "step_2",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    },
+    {
+      "parent_id": "step_3",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    },
+    {
+      "parent_id": "step_4",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    }
+  ],
+  "candidate_replay": {
+    "method": "paired_teacher_score_noninferiority",
+    "expected": 5,
+    "paired": 5,
+    "required": 4,
+    "coverage": 1.0,
+    "mae_margin": 0.4,
+    "severe_regression_margin": 4.0,
+    "accepted": false,
+    "reason": "severe_sample_regression",
+    "baseline_mae": 2.366667,
+    "candidate_mae": 2.5,
+    "mae_delta": 0.133333,
+    "improved": 3,
+    "unchanged": 0,
+    "worsened": 2,
+    "severe_regressions": 1,
+    "records": [
+      {
+        "answer_id": "ANS_OS_02",
+        "baseline_score": 17.666666666666668,
+        "candidate_score": 20.0,
+        "teacher_score": 19.0
+      },
+      {
+        "answer_id": "ANS_OS_06",
+        "baseline_score": 18.666666666666668,
+        "candidate_score": 20.0,
+        "teacher_score": 20.0
+      },
+      {
+        "answer_id": "ANS_OS_21",
+        "baseline_score": 6.333333333333333,
+        "candidate_score": 11.25,
+        "teacher_score": 10.0
+      },
+      {
+        "answer_id": "ANS_OS_37",
+        "baseline_score": 12.833333333333334,
+        "candidate_score": 8.75,
+        "teacher_score": 17.0
+      },
+      {
+        "answer_id": "ANS_OS_49",
+        "baseline_score": 19.333333333333332,
+        "candidate_score": 20.0,
+        "teacher_score": 18.0
+      }
+    ]
+  },
+  "baseline_semantic_errors": [
+    "additive parent step_1 must contain at least 2 scoring items, got 1",
+    "additive parent step_2 must contain at least 2 scoring items, got 1",
+    "additive parent step_3 must contain at least 2 scoring items, got 1",
+    "additive parent step_4 must contain at least 2 scoring items, got 1"
+  ],
+  "active_rubric_preserved": false,
+  "created_at": "2026-08-22T02:53:36"
+}

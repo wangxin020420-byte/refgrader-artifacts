@@ -1,0 +1,871 @@
+[
+  {
+    "file": "ANS_ISC_122.jpg",
+    "facts": "{\"step_1\": \"小数部分乘2连乘过程：0.625 × 2 = 1.25 … 1；1.25 × 2 = 6.5 … 0（原文如此）；× 2 … 1。另写有\\\"整数 210/10 … 0\\\"。未写出最终合并的二进制结果\", \"step_2\": \"(10.001)₂；完整可见路径：小数部分乘2取整的阶梯式过程：0.625×2→1.25（取1），0.25×2→0.5（取0），0.5×2→1（取1）；0.125×2→0.25（取0），0.25×2→0.5（取0），0.5×2→1（取1）\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T01:44:25.050064",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_6/ANS_ISC_122.jpg",
+      "image_sha256": "851c8464c14c15453a8743cc691b7ae2bf59c4b0f9889d99de1d483de9fd6d94",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "整数 210/10 … 0 小数 0.625 × 2 1.25 … 1 × 2 6.5 … 0 × 2 … 1",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": true,
+      "ocr_error": "OCR evidence not found or invalid: C:\\Users\\wx\\Desktop\\refgrader-main\\ocr_cache\\csbench\\ISC_6\\ANS_ISC_122.json",
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_122",
+        "question_id": "ISC_6",
+        "subject": "ISC",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "小数部分乘2取整的阶梯式过程：0.625×2→1.25（取1），0.25×2→0.5（取0），0.5×2→1（取1）；0.125×2→0.25（取0），0.25×2→0.5（取0），0.5×2→1（取1）",
+      "diagram_facts": {
+        "step_1": "(0.101)₂；完整可见路径：小数部分乘2取整的阶梯式过程：0.625×2→1.25（取1），0.25×2→0.5（取0），0.5×2→1（取1）；0.125×2→0.25（取0），0.25×2→0.5（取0），0.5×2→1（取1）",
+        "step_2": "(10.001)₂；完整可见路径：小数部分乘2取整的阶梯式过程：0.625×2→1.25（取1），0.25×2→0.5（取0），0.5×2→1（取1）；0.125×2→0.25（取0），0.25×2→0.5（取0），0.5×2→1（取1）"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_1",
+          "instruction": "Extract the binary number the student wrote as the final conversion result for the decimal 0.625, including any shown integer part and fractional part. Preserve leading zeros, the binary point, grouping, separators, and any subscript (e.g., base notation) exactly as written. If the student showed a step-by-step multiplication trace for the fractional conversion, record that sequence in order."
+        },
+        {
+          "id": "step_2",
+          "instruction": "Extract the binary number the student wrote as the final conversion result for the decimal 2.125, including any shown integer part and fractional part. Preserve leading zeros, the binary point, grouping, separators, and any subscript (e.g., base notation) exactly as written. If the student showed division or multiplication work traces, record them in the order written."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_2"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "(0.625)₁₀ = (0.101)₂",
+        "step_2": "(2.125)₁₀ = (10.001)₂"
+      },
+      "facts": {
+        "step_1": "小数部分乘2连乘过程：0.625 × 2 = 1.25 … 1；1.25 × 2 = 6.5 … 0（原文如此）；× 2 … 1。另写有\"整数 210/10 … 0\"。未写出最终合并的二进制结果",
+        "step_2": "(10.001)₂；完整可见路径：小数部分乘2取整的阶梯式过程：0.625×2→1.25（取1），0.25×2→0.5（取0），0.5×2→1（取1）；0.125×2→0.25（取0），0.25×2→0.5（取0），0.5×2→1（取1）"
+      }
+    },
+    "scores": [
+      4.5,
+      4.5,
+      4
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "0.625 × 2 = 1.25 … 1；1.25 × 2 = 6.5 … 0（原文如此）；× 2 … 1。未写出最终合并的二进制结果",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "十进制0.625转换为二进制0.101",
+            "dependency_status": "insufficient",
+            "reason": "乘2取整方法正确且第一步正确（取1），但后续算式有误（1.25×2=6.5），且未写出最终结果0.101；方法分给予部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(10.001)₂；完整可见路径：0.625×2→1.25（取1），0.25×2→0.5（取0），0.5×2→1（取1）；0.125×2→0.25（取0），0.25×2→0.5（取0），0.5×2→1（取1）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "十进制2.125转换为二进制10.001",
+            "dependency_status": "satisfied",
+            "reason": "最终结果(10.001)₂正确且有小数部分乘2取整的完整过程。"
+          }
+        ],
+        "total_score": 4.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "0.625 × 2 = 1.25 … 1；× 2 … 1。未写出最终合并的二进制结果",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "将0.625转换为二进制0.101，需正确的乘2取整过程及最终结果",
+            "dependency_status": "insufficient",
+            "reason": "乘2取整方法正确且首步取1正确（有有效计算痕迹），但后续步骤记录混乱（1.25×2=6.5…0）且未写出最终结果0.101，故给部分分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(10.001)₂；0.125×2→0.25（取0），0.25×2→0.5（取0），0.5×2→1（取1）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "将2.125转换为二进制10.001",
+            "dependency_status": "satisfied",
+            "reason": "最终结果(10.001)₂正确，且小数部分乘2取整阶梯过程（0→0→1）与标准答案一致，满分"
+          }
+        ],
+        "total_score": 4.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "0.625 × 2 = 1.25 … 1；1.25 × 2 = 6.5 … 0（原文如此）；× 2 … 1。未写出最终合并的二进制结果",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "0.625 转换为二进制 0.101，含乘2取整过程",
+            "dependency_status": "insufficient",
+            "reason": "方法正确（乘2取整），首步正确并取出位1，但后续出现算术错误（1.25×2=6.5）且未写出最终结果0.101，只能给部分过程分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(10.001)₂；完整可见路径：0.625×2→1.25（取1），0.25×2→0.5（取0），0.5×2→1（取1）；0.125×2→0.25（取0），0.25×2→0.5（取0），0.5×2→1（取1）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "2.125 转换为二进制 10.001，整数10、小数0.001",
+            "dependency_status": "satisfied",
+            "reason": "最终结果10.001正确，且有小数部分乘2取整的完整计算痕迹，满足题目要求"
+          }
+        ],
+        "total_score": 4
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        1.5,
+        1.5,
+        1.0
+      ],
+      "step_2": [
+        3.0,
+        3.0,
+        3.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555556,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.02777777777777778
+  },
+  {
+    "file": "ANS_ISC_135.jpg",
+    "facts": "{\"step_1\": \"0为0，.625为.101，所以0.625转为0.101\", \"step_2\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T01:45:12.433145",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_6/ANS_ISC_135.jpg",
+      "image_sha256": "7c0b13edb6aa3d920356ec67c291af4861e465c570702cf8f17d8005e08ef10a",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "0为0 .625为.101 所以0.625转为 0.101",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_135",
+        "question_id": "ISC_6",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "0为0，.625为.101，所以0.625转为0.101",
+        "step_2": "未书写"
+      }
+    },
+    "scores": [
+      3,
+      3,
+      3.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "0为0，.625为.101，所以0.625转为0.101",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "将十进制0.625转换为二进制，结果为0.101",
+            "dependency_status": "satisfied",
+            "reason": "正确给出整数部分0和小数部分0.101，最终答案0.101与标准答案一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "将十进制2.125转换为二进制，结果为10.001",
+            "dependency_status": "failed",
+            "reason": "该题学生未作答，无任何提取事实可评分。"
+          }
+        ],
+        "total_score": 3
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "0为0，.625为.101，所以0.625转为0.101",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "将十进制0.625转换为二进制0.101",
+            "dependency_status": "satisfied",
+            "reason": "正确给出0.625的二进制0.101，且展示了整数部分0与小数部分.101的转换关系"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "将十进制2.125转换为二进制10.001",
+            "dependency_status": "failed",
+            "reason": "学生未作答该小题"
+          }
+        ],
+        "total_score": 3
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "0为0，.625为.101，所以0.625转为0.101",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "0.625的十进制转二进制结果为0.101",
+            "dependency_status": "satisfied",
+            "reason": "整数部分0与小数部分0.101均正确，最终答案0.101与标准答案一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "2.125的十进制转二进制结果为10.001",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何相关内容，无法给分。"
+          }
+        ],
+        "total_score": 3.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_ISC_145.jpg",
+    "facts": "{\"step_1\": \"(0.101)2\", \"step_2\": \"(10.001)2\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T01:45:57.372177",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_6/ANS_ISC_145.jpg",
+      "image_sha256": "00e49260415671c87d9e76040b585328adea8d103a3d16dff9b3861ab2da4a6a",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(0.625)10=(0.101)2 (2.125)10=(10.001)2",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_145",
+        "question_id": "ISC_6",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "(0.101)2",
+        "step_2": "(10.001)2"
+      }
+    },
+    "scores": [
+      6,
+      6,
+      6
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(0.101)2",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "0.625 converted to binary: 0.101",
+            "dependency_status": "not_applicable",
+            "reason": "Extracted value (0.101)2 exactly matches the standard answer 0.101."
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(10.001)2",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "2.125 converted to binary: 10.001",
+            "dependency_status": "not_applicable",
+            "reason": "Extracted value (10.001)2 exactly matches the standard answer 10.001."
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(0.101)2",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "0.625 converted to binary = 0.101",
+            "dependency_status": "not_applicable",
+            "reason": "Final binary value exactly matches the standard answer 0.101."
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(10.001)2",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "2.125 converted to binary = 10.001",
+            "dependency_status": "not_applicable",
+            "reason": "Final binary value exactly matches the standard answer 10.001."
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(0.101)2",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "0.625 converted to binary 0.101",
+            "dependency_status": "satisfied",
+            "reason": "Student's (0.101)2 exactly matches the standard answer 0.101."
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(10.001)2",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "2.125 converted to binary 10.001",
+            "dependency_status": "satisfied",
+            "reason": "Student's (10.001)2 exactly matches the standard answer 10.001."
+          }
+        ],
+        "total_score": 6
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        3.0,
+        3.0,
+        3.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_ISC_150.jpg",
+    "facts": "{\"step_1\": \"(0.625)₁₀ -> (0.101)₂ (24/16) -> (0001)₂ (0.125)₁₀ -> (0.001)₂\", \"step_2\": \"(2.125)₁₀ -> (0001.0010)₂/(1.00)₂\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T01:46:42.053582",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_6/ANS_ISC_150.jpg",
+      "image_sha256": "e3ee56ec2db5f774a2a51d14657660e06fd06c9fa4f771bb3e9f6b32ff8f1382",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(0.625)₁₀ -> (0.101)₂ (24/16) -> (0001)₂ (0.125)₁₀ -> (0.001)₂. (2.125)₁₀ -> (0001.0010)₂/(1.00)₂.",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_150",
+        "question_id": "ISC_6",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "(0.625)₁₀ -> (0.101)₂ (24/16) -> (0001)₂ (0.125)₁₀ -> (0.001)₂",
+        "step_2": "(2.125)₁₀ -> (0001.0010)₂/(1.00)₂"
+      }
+    },
+    "scores": [
+      3,
+      4.5,
+      3.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(0.625)₁₀ -> (0.101)₂",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "0.625 converted to binary 0.101",
+            "dependency_status": "satisfied",
+            "reason": "0.625 -> 0.101 matches the standard answer exactly."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(2.125)₁₀ -> (0001.0010)₂/(1.00)₂",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "2.125 converted to binary 10.001",
+            "dependency_status": "failed",
+            "reason": "Correct answer is 10.001; student wrote 0001.0010 / 1.00, which are numerically wrong (1.001 or 1.0), a core numeric contradiction."
+          }
+        ],
+        "total_score": 3
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(0.625)₁₀ -> (0.101)₂",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "0.625 converts to binary 0.101",
+            "dependency_status": "satisfied",
+            "reason": "Conversion 0.625 -> 0.101 is exactly correct."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(2.125)₁₀ -> (0001.0010)₂/(1.00)₂",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "2.125 converts to binary 10.001 (integer 10, fraction 0.001)",
+            "dependency_status": "insufficient",
+            "reason": "Fractional part 0.0010 (=0.125) is correct, but the integer part is written as 0001/1 instead of 10, so the final value is wrong (1.125/1.00 instead of 10.001); half credit for correct fractional conversion."
+          }
+        ],
+        "total_score": 4.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "(0.625)₁₀ -> (0.101)₂",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "0.625 converted to binary 0.101",
+            "dependency_status": "satisfied",
+            "reason": "Student explicitly writes 0.625 -> 0.101, exactly matching the standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "(2.125)₁₀ -> (0001.0010)₂/(1.00)₂",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "2.125 converted to binary 10.001",
+            "dependency_status": "failed",
+            "reason": "Correct answer is 10.001; student gives 0001.0010 or 1.00, both numerically wrong (integer part 2 should be 10, fraction 0.125 should be 0.001). No correct final value present."
+          }
+        ],
+        "total_score": 3.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        0.0,
+        1.5,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.5
+    },
+    "max_item_variance": 0.5,
+    "avg_item_variance": 0.25
+  },
+  {
+    "file": "ANS_ISC_152.jpg",
+    "facts": "{\"step_1\": \"整数(0)_10→(0)_2；小数：0.625 × 1.2 → 1.250 × 1.2 → 0.50 × 1.2 → 0.50 0；结论：(0.625)_10→(0.101)_2\", \"step_2\": \"(10.001)₂；完整可见路径：左侧：小数0.625经乘2得1.250(1)→0.500(0)→1.000(1)；右侧：整数2经除2得10（2|2→1 0），小数0.125经乘2得0.250(0)→0.500(0)→1.000(1)\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T01:49:59.124699",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_6/ANS_ISC_152.jpg",
+      "image_sha256": "a71bde3bf4aa7dfa386319e853aac25fee93a40d09d871a83e50d70301a85eab",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "整数(0)_10→(0)_2 小数：0.625 × 1.2 1.250 × 1.2 0.50 × 1.2 0.50 0 ∴(0.625)_10→(0.101)_2",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": true,
+      "ocr_error": "OCR evidence not found or invalid: C:\\Users\\wx\\Desktop\\refgrader-main\\ocr_cache\\csbench\\ISC_6\\ANS_ISC_152.json",
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_152",
+        "question_id": "ISC_6",
+        "subject": "ISC",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "左侧：小数0.625经乘2得1.250(1)→0.500(0)→1.000(1)；右侧：整数2经除2得10（2|2→1 0），小数0.125经乘2得0.250(0)→0.500(0)→1.000(1)",
+      "diagram_facts": {
+        "step_1": "(0.101)₂；完整可见路径：左侧：小数0.625经乘2得1.250(1)→0.500(0)→1.000(1)；右侧：整数2经除2得10（2|2→1 0），小数0.125经乘2得0.250(0)→0.500(0)→1.000(1)",
+        "step_2": "(10.001)₂；完整可见路径：左侧：小数0.625经乘2得1.250(1)→0.500(0)→1.000(1)；右侧：整数2经除2得10（2|2→1 0），小数0.125经乘2得0.250(0)→0.500(0)→1.000(1)"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_1",
+          "instruction": "Extract the binary number the student wrote as the conversion result for the decimal 0.625. Record the binary string exactly as written, preserving any leading zeros before the point, the radix point, grouping, separators, and suffixes. Also capture any intermediate computation traces (e.g., repeated multiplication steps) the student actually wrote."
+        },
+        {
+          "id": "step_2",
+          "instruction": "Extract the binary number the student wrote as the conversion result for the decimal 2.125. Record the binary string exactly as written, preserving any leading zeros, the radix point, grouping, separators, and suffixes. Also capture any intermediate computation traces (e.g., integer and fractional part conversion steps) the student actually wrote."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_2"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "2.①0.625\n整数(0)₁₀→(10)₂\n小数:0.625\n×2\n1.250  1\n×2\n0.50   0\n×2\n1.0    1\n∴(0.625)₁₀→(0.101)₂",
+        "step_2": "②2.125\n整数:212\n小数:0.125\n×2\n0.250  0\n×2\n0.50   0\n×2\n1.0    1\n∴(2.125)₁₀→(10.001)₂"
+      },
+      "facts": {
+        "step_1": "整数(0)_10→(0)_2；小数：0.625 × 1.2 → 1.250 × 1.2 → 0.50 × 1.2 → 0.50 0；结论：(0.625)_10→(0.101)_2",
+        "step_2": "(10.001)₂；完整可见路径：左侧：小数0.625经乘2得1.250(1)→0.500(0)→1.000(1)；右侧：整数2经除2得10（2|2→1 0），小数0.125经乘2得0.250(0)→0.500(0)→1.000(1)"
+      }
+    },
+    "scores": [
+      6.0,
+      6,
+      6
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "小数：0.625 × 1.2 → 1.250 × 1.2 → 0.50 × 1.2 → 0.50 0；结论：(0.625)_10→(0.101)_2",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "将0.625转换为二进制，结果0.101",
+            "dependency_status": "satisfied",
+            "reason": "最终答案(0.101)₂正确，且乘2取整的转换过程轨迹明确，完全符合要求。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "(10.001)₂；整数2经除2得10（2|2→1 0），小数0.125经乘2得0.250(0)→0.500(0)→1.000(1)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "将2.125转换为二进制，结果10.001",
+            "dependency_status": "satisfied",
+            "reason": "最终答案(10.001)₂正确，且整数除2、小数乘2的完整过程均有明确记录。"
+          }
+        ],
+        "total_score": 6.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "小数：0.625 × 1.2 → 1.250 × 1.2 → 0.50 × 1.2 → 0.50 0；结论：(0.625)_10→(0.101)_2",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "0.625转换为二进制0.101",
+            "dependency_status": "satisfied",
+            "reason": "最终答案0.101正确，且有乘2取整的过程痕迹，符合标准答案"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(10.001)₂；整数2经除2得10，小数0.125经乘2得0.250(0)→0.500(0)→1.000(1)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "2.125转换为二进制10.001",
+            "dependency_status": "satisfied",
+            "reason": "最终答案10.001正确，整数部分除2、小数部分乘2取整过程完整，与标准答案一致"
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "结论：(0.625)_10→(0.101)_2；小数：0.625经乘2得1.250(1)→0.500(0)→1.000(1)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "0.625转换为二进制0.101",
+            "dependency_status": "satisfied",
+            "reason": "最终答案0.101正确，且有乘2取整的转换过程记录"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "(10.001)₂；整数2经除2得10，小数0.125经乘2得0.250(0)→0.500(0)→1.000(1)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "2.125转换为二进制10.001",
+            "dependency_status": "satisfied",
+            "reason": "最终答案10.001正确，且整数除2、小数乘2过程完整"
+          }
+        ],
+        "total_score": 6
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        3.0,
+        3.0,
+        3.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

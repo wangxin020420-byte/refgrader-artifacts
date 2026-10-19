@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "rubric_semantic_contract_version": 6,
+  "question_id": "POC_4",
+  "rubric_group": "POC",
+  "source_rubric": "${CSBENCH_ROOT}/rubrics/source/POC/POC_4.json",
+  "initial_rubric": "${CSBENCH_ROOT}/rubrics/initial/POC/POC_4_rubric_standard.json",
+  "optimized_rubric": "${PREPARED_CSBENCH_ROOT}/rubrics/optimized/POC/POC_4_rubric_standard.json",
+  "calibration_answer_ids": [
+    "ANS_POC_106",
+    "ANS_POC_111",
+    "ANS_POC_116",
+    "ANS_POC_73",
+    "ANS_POC_84"
+  ],
+  "requested_sample_size": 5,
+  "completed_sample_size": 5,
+  "extraction_backend": "csbench_hybrid",
+  "model_config": {
+    "text_provider": "glm5",
+    "text_model": "glm-5.2",
+    "text_thinking": "disabled",
+    "vlm_model": "glm-4.6v"
+  },
+  "question_total_score": 5.0,
+  "initial_total_score": 5.0,
+  "optimized_total_score": 5.0,
+  "average_score_variance": 0.3555555555555555,
+  "average_item_variance": 0.3555555555555555,
+  "maximum_item_variance": 1.5555555555555554,
+  "high_value_split_threshold": 4.0,
+  "mandatory_split_targets": [
+    {
+      "parent_id": "step_1",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    }
+  ],
+  "refinement_attempted": true,
+  "refinement_applied": false,
+  "structural_refinement_applied": false,
+  "metadata_enriched": false,
+  "semantic_policy_validated": true,
+  "semantic_validation_mode": "calibrated_noninferior_baseline_selected",
+  "selected_variant": "baseline",
+  "semantic_validation_errors": [],
+  "fallback_reason": "candidate_noninferiority_rejected:candidate_mae_exceeds_margin",
+  "decomposition_deferred": true,
+  "deferred_semantic_errors": [
+    "additive parent step_1 must contain at least 2 scoring items, got 1"
+  ],
+  "candidate_replay": {
+    "method": "paired_teacher_score_noninferiority",
+    "expected": 5,
+    "paired": 5,
+    "required": 4,
+    "coverage": 1.0,
+    "mae_margin": 0.1,
+    "severe_regression_margin": 1.0,
+    "accepted": false,
+    "reason": "candidate_mae_exceeds_margin",
+    "baseline_mae": 0.466667,
+    "candidate_mae": 0.6,
+    "mae_delta": 0.133333,
+    "improved": 0,
+    "unchanged": 3,
+    "worsened": 2,
+    "severe_regressions": 0,
+    "records": [
+      {
+        "answer_id": "ANS_POC_106",
+        "baseline_score": 3.6666666666666665,
+        "candidate_score": 4.0,
+        "teacher_score": 2.0
+      },
+      {
+        "answer_id": "ANS_POC_111",
+        "baseline_score": 2.6666666666666665,
+        "candidate_score": 3.0,
+        "teacher_score": 2.0
+      },
+      {
+        "answer_id": "ANS_POC_116",
+        "baseline_score": 5.0,
+        "candidate_score": 5.0,
+        "teacher_score": 5.0
+      },
+      {
+        "answer_id": "ANS_POC_73",
+        "baseline_score": 5.0,
+        "candidate_score": 5.0,
+        "teacher_score": 5.0
+      },
+      {
+        "answer_id": "ANS_POC_84",
+        "baseline_score": 0.0,
+        "candidate_score": 0.0,
+        "teacher_score": 0.0
+      }
+    ]
+  },
+  "scoring_policies": [
+    "additive_split"
+  ],
+  "source_sha256": "1a7fc02091256cb2c509e338972a8bf9846fcacb05a698b8b7c4d48b143142ae",
+  "initial_sha256": "0b58d82aab9babf7089f5865bc7a885e34363e54532792fbf665f732bcac611c",
+  "optimized_sha256": "86efee3c73eb051e0059e19abd0da0ea6cac6021276e9073d6a0252d57dcb31b",
+  "optimization_results_dir": "${REFGRADER_ROOT}/results_runs/csbench_q45_12039bfe25ca4168_rubric_opt",
+  "variance_checkpoint": "${REFGRADER_ROOT}/results_runs/csbench_q45_12039bfe25ca4168_rubric_opt/POC_4_variance_checkpoint.json",
+  "variance_checkpoint_sha256": "e459349ef56e30651772239f36298cfccb6efd90768bfd05e631f585565d1f6c",
+  "created_at": "2026-08-22T03:23:44",
+  "path_format": "refgrader_placeholders_v1"
+}

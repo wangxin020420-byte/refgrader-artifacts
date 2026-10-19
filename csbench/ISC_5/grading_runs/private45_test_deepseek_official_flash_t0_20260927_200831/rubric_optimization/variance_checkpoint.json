@@ -1,0 +1,827 @@
+[
+  {
+    "file": "ANS_ISC_24.jpg",
+    "facts": "{\"step_1\": \"Hello AHU!\", \"step_2\": \"学生通过逐个十六进制转二进制并映射ASCII字符，明确写出：(2C)₁₆ ⇒ ,（标点逗号）、(20)₁₆ ⇒ SPACE（空格）、(21)₁₀=(00101001)₂ ⇒ !（标点感叹号）；字母包括 H, e, l, l, o, A, H, U。学生未书写任何数字字符的分类说明。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T01:37:02.169637",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_5/ANS_ISC_24.jpg",
+      "image_sha256": "4c91fbc15ab50c78c367150b21e54abca701265a11ef08164243fb6976373f8b",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(48)₁₆=(01001000)₂=(72)₁₀ ⇒ H\n(65)₁₆=(01100101)₂ ⇒ e\n(6C)₁₆=(01101100)₂ ⇒ l\n(6C)₁₆=(01101100)₂ ⇒ l\n(6F)₁₆=(01101111)₂ ⇒ o\n(2C)₁₆=(00101100)₂ ⇒ ,\n(20)₁₆=(00100000)₂ ⇒ SPACE\n(41)₁₆=(01000001)₂ ⇒ A\n(48)₁₆=(01001000)₂ ⇒ H\n(55)₁₆=(01010101)₂ ⇒ U\n(21)₁₀=(00101001)₂ ⇒ !\n⇒Hello AHU!",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_24",
+        "question_id": "ISC_5",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "Hello AHU!",
+        "step_2": "学生通过逐个十六进制转二进制并映射ASCII字符，明确写出：(2C)₁₆ ⇒ ,（标点逗号）、(20)₁₆ ⇒ SPACE（空格）、(21)₁₀=(00101001)₂ ⇒ !（标点感叹号）；字母包括 H, e, l, l, o, A, H, U。学生未书写任何数字字符的分类说明。"
+      }
+    },
+    "scores": [
+      4.5,
+      4.5,
+      5.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Hello AHU!",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "解码字符串应为 Hello, AHU!",
+            "dependency_status": "satisfied",
+            "reason": "所有字母及顺序正确，但最终字符串遗漏了逗号（2C→,）及空格未体现在输出中，属于多部分条件缺失一部分，给部分分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(2C)₁₆ ⇒ ,（标点逗号）、(20)₁₆ ⇒ SPACE（空格）、(21)₁₆=(00101001)₂ ⇒ !（标点感叹号）；字母包括 H, e, l, l, o, A, H, U。学生未书写任何数字字符的分类说明。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "字母：H,e,l,l,o,A,H,U；标点：, !；空格；数字：无",
+            "dependency_status": "satisfied",
+            "reason": "字母、标点（逗号、感叹号）、空格均明确正确，仅缺少“数字：无”的说明，属轻微不完整，扣少量分"
+          }
+        ],
+        "total_score": 4.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "\"Hello AHU!\"",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "解码字符串 Hello, AHU!",
+            "dependency_status": "satisfied",
+            "reason": "字符串基本正确（Hello AHU!），但漏掉了标点逗号，未完整复现标准答案 Hello, AHU!，属于字符级遗漏，给部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(2C)₁₆ ⇒ ,（标点逗号）、(20)₁₆ ⇒ SPACE（空格）、(21)₁₆ ⇒ !（感叹号）；字母 H, e, l, l, o, A, H, U；学生未书写任何数字字符的分类说明。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "字母：H,e,l,l,o,A,H,U；标点：, !；空格；数字：无",
+            "dependency_status": "satisfied",
+            "reason": "字母、标点（, 和 !）、空格三类均正确指出且依据充分；仅缺少'数字：无'的分类说明，属于多部分条件中缺失一小部分，扣少量分。"
+          }
+        ],
+        "total_score": 4.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "Hello AHU!",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出解码后的字符串 Hello, AHU!",
+            "dependency_status": "satisfied",
+            "reason": "解码结果与标准答案一致（'Hello, AHU!'），抽取文本中的缺失逗号仅是转写层面的空格/标点小差异，且 step_2 中学生明确写出 (2C)16 对应逗号，表明解码本身正确。按宽容评分视为等价。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "(2C)₁₆ ⇒ ,（标点逗号）、(20)₁₆ ⇒ SPACE（空格）、(21)₁₀=(00101001)₂ ⇒ !（标点感叹号）；字母包括 H, e, l, l, o, A, H, U。学生未书写任何数字字符的分类说明。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "字母：H,e,l,l,o,A,H,U；标点：, !；空格；数字：无",
+            "dependency_status": "satisfied",
+            "reason": "字母、标点（, 和 !）和空格均正确识别，但未说明数字字符为空，缺失多部分条件中的一小部分，扣少量分。"
+          }
+        ],
+        "total_score": 5.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        3.0
+      ],
+      "step_2": [
+        2.5,
+        2.5,
+        2.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.22222222222222224,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.11111111111111112
+  },
+  {
+    "file": "ANS_ISC_53.jpg",
+    "facts": "{\"step_1\": \"Hello， AH - !\", \"step_2\": \"其中十六进制序列 48. 65. 6 C. 6 C. 6 F. 4l. 48代表字母\\n2C. 21代表标点\\n20 7f代表数字字符\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T01:37:51.118581",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_5/ANS_ISC_53.jpg",
+      "image_sha256": "42aee7a9664ea2edba522c563cffc4fe069b58ee68b56ad31838259591d42bc3",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "Hello， AH - !\n其中十六进制序列 48. 65. 6 C. 6 C. 6 F. 4l. 48代表字母\n2C. 21代表标点\n20 7f代表数字字符",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_53",
+        "question_id": "ISC_5",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "Hello， AH - !",
+        "step_2": "其中十六进制序列 48. 65. 6 C. 6 C. 6 F. 4l. 48代表字母\n2C. 21代表标点\n20 7f代表数字字符"
+      }
+    },
+    "scores": [
+      3.5,
+      3,
+      3
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Hello， AH - !",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出解码后的字符串 Hello, AHU!",
+            "dependency_status": "satisfied",
+            "reason": "学生写出了 Hello 开头并保留了 AH 与感叹号的结构，可辨认主要字符串，但缺失 U（写成\"-\"）、逗号写为中文全角，属于部分正确的最终答案，按宽松标准给部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_status": "explicit",
+            "evidence_text": "其中十六进制序列 48. 65. 6 C. 6 C. 6 F. 4l. 48代表字母 2C. 21代表标点 20 7f代表数字字符",
+            "score_layer": "core",
+            "expected_condition": "字母：H,e,l,l,o,A,H,U；标点：, !；空格；数字：无",
+            "dependency_status": "partial",
+            "reason": "字母类判断基本正确（48等代表字母），标点 2C、21 判断正确；但将 20 7f 归为数字字符是概念错误（20 是空格，标准答案数字为无），三部分中仅两部分正确，给一半分。"
+          }
+        ],
+        "total_score": 3.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Hello， AH - !",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "解码后的字符串应为 Hello, AHU!",
+            "dependency_status": "satisfied",
+            "reason": "学生给出了大部分正确的解码字符串，但 AHU 被写成 'AH -'，缺少字母 U 且出现错误字符；标点和 Hello 部分正确，属于部分匹配。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "其中十六进制序列 48. 65. 6 C. 6 C. 6 F. 4l. 48代表字母 2C. 21代表标点 20 7f代表数字字符",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "字母：H,e,l,l,o,A,H,U；标点：, !；空格；数字：无",
+            "dependency_status": "insufficient",
+            "reason": "标点映射（2C, 21）正确，字母映射部分正确（48, 65, 6C, 6F 属于字母），但把 20 7f 说成数字字符属概念错误（20 是空格，7f 非可见字符，且标准答案数字为无），仅得少量分数。"
+          }
+        ],
+        "total_score": 3
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Hello， AH - !",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "解码后的字符串 Hello, AHU!",
+            "dependency_status": "satisfied",
+            "reason": "学生写出了 'Hello， AH - !'，大部分字符正确（Hello 及标点、空格结构），但缺少字母 'U'，未完整还原 'Hello, AHU!'，属于部分正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "其中十六进制序列 48. 65. 6 C. 6 C. 6 F. 4l. 48代表字母 2C. 21代表标点 20 7f代表数字字符",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "字母：H,e,l,l,o,A,H,U；标点：, !；空格；数字：无",
+            "dependency_status": "insufficient",
+            "reason": "字母归类（48-6F 系列代表字母）和标点归类（2C、21 代表标点）正确，但声称 20、7f 代表数字字符属于概念错误（20 为空格，7f 为 DEL，且本题无数字字符），仅部分满足。"
+          }
+        ],
+        "total_score": 3
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        1.5,
+        1.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.05555555555555556
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.02777777777777778
+  },
+  {
+    "file": "ANS_ISC_56.jpg",
+    "facts": "{\"step_1\": \"\\\"H\\\" \\\"e\\\" \\\"l\\\" \\\"l\\\" \\\"o\\\" \\\",\\\" ↓ \\\"A\\\" \\\"H\\\" \\\"U\\\" \\\"SPACE\\\" \\\"!\\\" (student also wrote the hex sequence (48 65 6c 6c 6F 2c 20 41 48 55 21) and decimal conversion (72 101 108 108 111 44 32 65 72 85 33))\", \"step_2\": \"所以对应字母有：48.65.6c.6c.6F,41.48.55\\n标点有：2c.21 数字：无\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T01:38:43.571587",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_5/ANS_ISC_56.jpg",
+      "image_sha256": "a240e8262c8091e5dbd0f806d49e8904a64f807672463818035e6fb1baaf7131",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：\n(48 65 6c 6c 6F 2c 20 41 48 55 21)\n(72 101 108 108 111 44 32 65 72 85 33),\n\"H\" \"e\" \"l\" \"l\" \"o\" \",\" ↓ \"A\" \"H\" \"U\"\n\"SPACE\" \"!\"\n所以对应字母有：48.65.6c.6c.6F,41.48.55\n标点有：2c.21 数字：无",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_56",
+        "question_id": "ISC_5",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "\"H\" \"e\" \"l\" \"l\" \"o\" \",\" ↓ \"A\" \"H\" \"U\" \"SPACE\" \"!\" (student also wrote the hex sequence (48 65 6c 6c 6F 2c 20 41 48 55 21) and decimal conversion (72 101 108 108 111 44 32 65 72 85 33))",
+        "step_2": "所以对应字母有：48.65.6c.6c.6F,41.48.55\n标点有：2c.21 数字：无"
+      }
+    },
+    "scores": [
+      5.5,
+      6,
+      6
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "\"H\" \"e\" \"l\" \"l\" \"o\" \",\" ↓ \"A\" \"H\" \"U\" \"SPACE\" \"!\" (hex 48 65 6c 6c 6F 2c 20 41 48 55 21, decimal 72 101 108 108 111 44 32 65 72 85 33)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Decoded string Hello, AHU!",
+            "dependency_status": "satisfied",
+            "reason": "Decoded string 'Hello, AHU!' fully correct, with supporting hex/decimal conversion trace."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "字母有：48.65.6c.6c.6F,41.48.55；标点有：2c.21；数字：无",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Letters H,e,l,l,o,A,H,U; punctuation , !; space; no digits",
+            "dependency_status": "insufficient",
+            "reason": "Letters, punctuation, and 'no digits' are correct, but the space character (20/SPACE) is omitted, losing part of the multi-part condition."
+          }
+        ],
+        "total_score": 5.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "\"H\" \"e\" \"l\" \"l\" \"o\" \",\" ↓ \"A\" \"H\" \"U\" \"SPACE\" \"!\" (student also wrote the hex sequence (48 65 6c 6c 6F 2c 20 41 48 55 21) and decimal conversion (72 101 108 108 111 44 32 65 72 85 33))",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出解码后的字符串 Hello, AHU!",
+            "dependency_status": "satisfied",
+            "reason": "学生逐字符解码为 H e l l o , (空格) A H U !，即 \"Hello, AHU!\"，并附上正确的十六进制和十进制转换，与标准答案一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "MATCH",
+            "evidence_text": "所以对应字母有：48.65.6c.6c.6F,41.48.55\n标点有：2c.21 数字：无",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "指出字母：H,e,l,l,o,A,H,U；标点：, !；空格；数字：无",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的十六进制 48,65,6c,6c,6F,41,48,55 恰好对应全部八个字母 H,e,l,l,o,A,H,U；标点 2c(,)、21(!) 正确；数字：无 正确。未单列空格属轻微细节，不构成实质错误，按宽松标准给满分。"
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "MATCH",
+            "evidence_text": "\"H\" \"e\" \"l\" \"l\" \"o\" \",\" ↓ \"A\" \"H\" \"U\" \"SPACE\" \"!\" (hex 48 65 6c 6c 6F 2c 20 41 48 55 21)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Decode to the string Hello, AHU!",
+            "dependency_status": "satisfied",
+            "reason": "Decoded characters spell exactly 'Hello, AHU!' with the space explicitly marked; hex/decimal conversions also correct."
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "所以对应字母有：48.65.6c.6c.6F,41.48.55 标点有：2c.21 数字：无",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Identify letters (H,e,l,l,o,A,H,U), punctuation (,, !), space, and no digits",
+            "dependency_status": "satisfied",
+            "reason": "Classification is fully correct: letter bytes (48 65 6c 6c 6F 41 48 55), punctuation bytes (2c 21), no digits; only presented in hex rather than decoded characters — a non-substantive notation issue."
+          }
+        ],
+        "total_score": 6
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        2.5,
+        3.0,
+        3.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "FORMAT_MINOR"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.05555555555555556
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.02777777777777778
+  },
+  {
+    "file": "ANS_ISC_60.jpg",
+    "facts": "{\"step_1\": \"HelloFSSPACEAHU!\", \"step_2\": \"字母:48,65,6C,6C,6F,41,48,55. 标点:21. 数字符:2C\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T01:39:54.555560",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_5/ANS_ISC_60.jpg",
+      "image_sha256": "d44c1de9187dc54bc76c6917351f1c5ec2d0b1e17a2e1eccf59cc0e606a598cf",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "HelloFSSPACEAHU! 字母:48,65,6C,6C,6F,41,48,55. 标点:21. 数字符:2C",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_60",
+        "question_id": "ISC_5",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "HelloFSSPACEAHU!",
+        "step_2": "字母:48,65,6C,6C,6F,41,48,55. 标点:21. 数字符:2C"
+      }
+    },
+    "scores": [
+      4,
+      5,
+      3.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "HelloFSSPACEAHU!",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Decoded string \"Hello, AHU!\"",
+            "dependency_status": "satisfied",
+            "reason": "Letters H,e,l,l,o and A,H,U and the exclamation mark are correctly decoded, and the student indicates a space (FSSPACE) in the right position; however the comma is missing, so the string is not fully correct."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "字母:48,65,6C,6C,6F,41,48,55. 标点:21. 数字符:2C",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Letters H,e,l,l,o,A,H,U; punctuation: comma and exclamation mark; space; no digits",
+            "dependency_status": "partial",
+            "reason": "Letter hex codes are all correct and '!' (21) correctly identified as punctuation; but the comma (2C) is misclassified as a digit character and the exclamation/comma punctuation set is incomplete (space also omitted)."
+          }
+        ],
+        "total_score": 4
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "HelloFSSPACEAHU!",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "解码后字符串为 Hello, AHU!",
+            "dependency_status": "satisfied",
+            "reason": "包含 Hello、空格标记与 AHU!，仅缺少逗号及以字面标签替代空格，属非实质性格式差异"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "字母:48,65,6C,6C,6F,41,48,55. 标点:21. 数字符:2C",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "字母 H,e,l,l,o,A,H,U；标点 , 与 !；数字：无",
+            "dependency_status": "partial",
+            "reason": "字母部分完全正确(48,65,6C,6C,6F,41,48,55)；感叹号(21)正确但漏掉逗号；且把 2C(逗号)错误归类为数字字符，与标准答案“数字：无”矛盾"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "HelloFSSPACEAHU!",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "解码后的字符串应为 Hello, AHU!",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的字符串包含 Hello、空格（FSSPACE）、AHU!，但缺少逗号字符，字符串不完全等于标准答案，属于丢失部分字符的部分正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "字母:48,65,6C,6C,6F,41,48,55. 标点:21. 数字符:2C",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "字母：H,e,l,l,o,A,H,U；标点：, !；空格；数字：无",
+            "dependency_status": "satisfied",
+            "reason": "字母的十六进制列表 48,65,6C,6C,6F,41,48,55 完全对应 H,e,l,l,o,A,H,U，标点列出 21(!) 正确但遗漏 2C(,)，且把 2C 错误归类为数字字符（标准答案数字为无），多部分中仅部分正确。"
+          }
+        ],
+        "total_score": 3.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        3.0,
+        1.5
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        1.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.38888888888888884,
+      "step_2": 0.05555555555555556
+    },
+    "max_item_variance": 0.38888888888888884,
+    "avg_item_variance": 0.2222222222222222
+  },
+  {
+    "file": "ANS_ISC_68.jpg",
+    "facts": "{\"step_1\": \"Hello, SPACEAHV!\", \"step_2\": \"字母有 H、e、L、o、S、P、A、C、E、V. 标点有 ，！\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T01:40:48.977694",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_5/ANS_ISC_68.jpg",
+      "image_sha256": "a3b829c0e31467d9d0274a2b8d516edef3c67c3751f6bfe52bb20ba186793778",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "相应字符串为 Hello, SPACEAHV!\n字母有 H、e、L、o、S、P、A、C、E、V.\n标点有 ，！",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_68",
+        "question_id": "ISC_5",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "Hello, SPACEAHV!",
+        "step_2": "字母有 H、e、L、o、S、P、A、C、E、V. 标点有 ，！"
+      }
+    },
+    "scores": [
+      1,
+      1.5,
+      1.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "Hello, SPACEAHV!",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "解码后的字符串应为 Hello, AHU!",
+            "dependency_status": "failed",
+            "reason": "学生给出的最终字符串为 'Hello, SPACEAHV!'，与标准答案 'Hello, AHU!' 明显不符，属于结论错误；仅 'Hello, ' 前缀部分正确，但最终答案核心错误，不能给分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "字母有 H、e、L、o、S、P、A、C、E、V. 标点有 ，！",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "字母：H, e, l, l, o, A, H, U；标点符号：, !；空格；数字：无",
+            "dependency_status": "insufficient",
+            "reason": "学生正确识别了部分字母（H、e、o、A），并识别出有两个标点，但混入了大量错误字符（S、P、C、E、V），未指出空格和数字为无；由于基于错误的解码结果，仅部分满足要求，酌情给 1 分（共 3 分）。"
+          }
+        ],
+        "total_score": 1
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "Hello, SPACEAHV!",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "解码后的字符串应为 Hello, AHU!",
+            "dependency_status": "failed",
+            "reason": "最终解码字符串错误：输出为 'Hello, SPACEAHV!' 而非 'Hello, AHU!'，属于结论性错误。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "字母有 H、e、L、o、S、P、A、C、E、V. 标点有 ，！",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "字母：H, e, l, l, o, A, H, U；标点符号：, !；空格；数字：无",
+            "dependency_status": "insufficient",
+            "reason": "字母部分基于错误的解码结果（含 S,P,C,E,V 等多余字母，且缺少部分正确字母），感叹号正确但逗号写成全角'，'，未提及空格和数字；属于基于上游错误的部分正确，给一半分。"
+          }
+        ],
+        "total_score": 1.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "Hello, SPACEAHV!",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "解码后的字符串应为 Hello, AHU!",
+            "dependency_status": "not_applicable",
+            "reason": "解码结果错误：输出 Hello, SPACEAHV! 而非 Hello, AHU!，属于结论性错误，不能给分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "字母有 H、e、L、o、S、P、A、C、E、V. 标点有 ，！",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "字母：H, e, l, l, o, A, H, U；标点：, !；空格；数字：无",
+            "dependency_status": "failed",
+            "reason": "标点部分正确（逗号和感叹号），且部分字母 H、e、L、o、A 正确；但混入了 S、P、C、E、V 等错误字母，遗漏重复的 l 和 H、U，且未说明空格和数字情况，故给一半分。"
+          }
+        ],
+        "total_score": 1.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        1.0,
+        1.5,
+        1.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.05555555555555556
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.02777777777777778
+  }
+]

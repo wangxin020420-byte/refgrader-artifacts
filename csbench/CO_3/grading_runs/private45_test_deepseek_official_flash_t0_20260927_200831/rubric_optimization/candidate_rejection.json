@@ -1,0 +1,77 @@
+{
+  "question_id": "CO_3",
+  "status": "candidate_rejected_baseline_selected",
+  "fallback_reason": "candidate_noninferiority_rejected:severe_sample_regression",
+  "mandatory_split_targets": [
+    {
+      "parent_id": "step_1",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    },
+    {
+      "parent_id": "step_2",
+      "parent_points": 5.0,
+      "current_scoring_children": 1,
+      "minimum_scoring_children": 2,
+      "weighting_policy": "equal_atomic"
+    }
+  ],
+  "candidate_replay": {
+    "method": "paired_teacher_score_noninferiority",
+    "expected": 5,
+    "paired": 5,
+    "required": 4,
+    "coverage": 1.0,
+    "mae_margin": 0.2,
+    "severe_regression_margin": 2.0,
+    "accepted": false,
+    "reason": "severe_sample_regression",
+    "baseline_mae": 1.433333,
+    "candidate_mae": 2.55,
+    "mae_delta": 1.116667,
+    "improved": 1,
+    "unchanged": 1,
+    "worsened": 3,
+    "severe_regressions": 2,
+    "records": [
+      {
+        "answer_id": "ANS_CO_140",
+        "baseline_score": 5.166666666666667,
+        "candidate_score": 2.5,
+        "teacher_score": 6.0
+      },
+      {
+        "answer_id": "ANS_CO_154",
+        "baseline_score": 8.666666666666666,
+        "candidate_score": 7.5,
+        "teacher_score": 9.0
+      },
+      {
+        "answer_id": "ANS_CO_173",
+        "baseline_score": 2.1666666666666665,
+        "candidate_score": 0.0,
+        "teacher_score": 6.0
+      },
+      {
+        "answer_id": "ANS_CO_174",
+        "baseline_score": 8.333333333333334,
+        "candidate_score": 8.75,
+        "teacher_score": 9.0
+      },
+      {
+        "answer_id": "ANS_CO_186",
+        "baseline_score": 7.5,
+        "candidate_score": 7.5,
+        "teacher_score": 9.0
+      }
+    ]
+  },
+  "baseline_semantic_errors": [
+    "additive parent step_1 must contain at least 2 scoring items, got 1",
+    "additive parent step_2 must contain at least 2 scoring items, got 1"
+  ],
+  "active_rubric_preserved": false,
+  "created_at": "2026-08-21T23:15:12"
+}

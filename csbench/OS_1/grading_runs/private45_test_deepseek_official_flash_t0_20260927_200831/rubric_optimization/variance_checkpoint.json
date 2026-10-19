@@ -1,0 +1,1277 @@
+[
+  {
+    "file": "ANS_OS_02.jpg",
+    "facts": "{\"step_1\": \"semaphore empty=N, full=0, mutex=1;\", \"step_2\": \"wid sender(){\\n    P(empty);\\n    P(mutex);\\n    发送一封邮件;\\n    V(mutex);\\n    V(full);\\n}\", \"step_3\": \"void master(){\\n    while(true){\\n        P(full);\\n        P(mutex);\\n        读一封邮件…\\n        V(mutex);\\n        V(empty);\\n    }\\n}\", \"step_4\": \"master进程（循环 while(true)）：P(full) → P(mutex) → 读一封邮件… → V(mutex) → V(empty)。sender进程（无循环书写）：P(empty) → P(mutex) → 发送一封邮件 → V(mutex) → V(full)。未书写其他关于进程执行结构或临界区进入/退出顺序的文字说明。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T02:46:41.451194",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/OS_1/ANS_OS_02.jpg",
+      "image_sha256": "dcfb1498c74882368215133ff81114688be020163521eca17977a2f896bc5eec",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "semaphore empty=N, full=0, mutex=1;\nvoid master(){\n    while(true){\n        P(full);\n        P(mutex);\n        读一封邮件…\n        V(mutex);\n        V(empty);\n    }\n}\nwid sender(){\n    P(empty);\n    P(mutex);\n    发送一封邮件;\n    V(mutex);\n    V(full);\n}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_OS_02",
+        "question_id": "OS_1",
+        "subject": "OS",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "semaphore empty=N, full=0, mutex=1;",
+        "step_2": "wid sender(){\n    P(empty);\n    P(mutex);\n    发送一封邮件;\n    V(mutex);\n    V(full);\n}",
+        "step_3": "void master(){\n    while(true){\n        P(full);\n        P(mutex);\n        读一封邮件…\n        V(mutex);\n        V(empty);\n    }\n}",
+        "step_4": "master进程（循环 while(true)）：P(full) → P(mutex) → 读一封邮件… → V(mutex) → V(empty)。sender进程（无循环书写）：P(empty) → P(mutex) → 发送一封邮件 → V(mutex) → V(full)。未书写其他关于进程执行结构或临界区进入/退出顺序的文字说明。"
+      }
+    },
+    "scores": [
+      17.5,
+      18,
+      17.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "semaphore empty=N, full=0, mutex=1;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Correct semaphore initialization mutex=1, empty=N, full=0",
+            "dependency_status": "satisfied",
+            "reason": "All three semaphores initialized with correct values and semantics."
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "wid sender(){\n    P(empty);\n    P(mutex);\n    发送一封邮件;\n    V(mutex);\n    V(full);\n}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Sender process with correct P/V order in a loop",
+            "dependency_status": "insufficient",
+            "reason": "P/V operation order is completely correct, but the do-while(true) loop structure is missing; lenient partial credit."
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "void master(){\n    while(true){\n        P(full);\n        P(mutex);\n        读一封邮件…\n        V(mutex);\n        V(empty);\n    }\n}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Reader/master process: loop, wait(full), wait(mutex), read&delete, signal(mutex), signal(empty)",
+            "dependency_status": "satisfied",
+            "reason": "Loop structure and P/V order exactly match the standard solution."
+          },
+          {
+            "id": "step_4",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "master进程（循环 while(true)）：P(full) → P(mutex) → 读一封邮件… → V(mutex) → V(empty)。sender进程（无循环书写）：P(empty) → P(mutex) → 发送一封邮件 → V(mutex) → V(full)。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Both processes loop concurrently; resource semaphore waited before mutex, mutex released before signaling",
+            "dependency_status": "insufficient",
+            "reason": "P/V ordering is correct in both processes (resource-then-mutex, release mutex before signal), but sender lacks the loop, so process structure is incomplete."
+          }
+        ],
+        "total_score": 17.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "semaphore empty=N, full=0, mutex=1;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Correctly initialize mutex=1, empty=N, full=0",
+            "dependency_status": "satisfied",
+            "reason": "All three semaphores initialized exactly as the standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "wid sender(){\n    P(empty);\n    P(mutex);\n    发送一封邮件;\n    V(mutex);\n    V(full);\n}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Sender process with correct P/V order and loop structure",
+            "dependency_status": "satisfied",
+            "reason": "P/V order and operations are completely correct; only the enclosing do-while loop is not written, a non-substantive structural omission under lenient grading since each sender sends one mail and the semaphore logic is correct."
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "void master(){\n    while(true){\n        P(full);\n        P(mutex);\n        读一封邮件…\n        V(mutex);\n        V(empty);\n    }\n}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Reader/master process loops with wait(full), wait(mutex), read, signal(mutex), signal(empty)",
+            "dependency_status": "satisfied",
+            "reason": "Loop structure and P/V operation order exactly match the standard solution."
+          },
+          {
+            "id": "step_4",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "master进程（循环 while(true)）：P(full) → P(mutex) → 读一封邮件… → V(mutex) → V(empty)。sender进程（无循环书写）：P(empty) → P(mutex) → 发送一封邮件 → V(mutex) → V(full)。未书写其他关于进程执行结构或临界区进入/退出顺序的文字说明。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Both processes loop concurrently; resource semaphore waited before mutex, mutex released before signaling counterpart, avoiding deadlock",
+            "dependency_status": "partial",
+            "reason": "P/V ordering is correct in both processes (resource semaphore first, mutex last), which is the key deadlock-avoidance point, but the sender lacks the loop structure and no explanation of concurrent structure/critical-section ordering is given, so process structure completeness is only partially satisfied."
+          }
+        ],
+        "total_score": 18
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "semaphore empty=N, full=0, mutex=1;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "semaphore mutex=1, empty=N, full=0;",
+            "dependency_status": "satisfied",
+            "reason": "信号量初始化完全等价（仅顺序不同）。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "wid sender(){ P(empty); P(mutex); 发送一封邮件; V(mutex); V(full); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Sender含循环，P(empty)→P(mutex)→发邮件→V(mutex)→V(full)",
+            "dependency_status": "satisfied",
+            "reason": "P/V操作顺序完全正确，但缺少循环结构（do-while/while），进程结构不完整，扣部分分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "void master(){ while(true){ P(full); P(mutex); 读一封邮件… V(mutex); V(empty); } }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Reader含循环，P(full)→P(mutex)→读邮件→V(mutex)→V(empty)",
+            "dependency_status": "satisfied",
+            "reason": "结构与P/V顺序与标准答案完全一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "master进程（循环 while(true)）：P(full)→P(mutex)→读→V(mutex)→V(empty)。sender进程（无循环书写）：P(empty)→P(mutex)→发→V(mutex)→V(full)。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "两进程均在循环中执行，先等资源信号量再进临界区，先释放mutex再通知",
+            "dependency_status": "insufficient",
+            "reason": "P/V顺序正确且避免死锁，但sender未写循环，进程结构不完整。"
+          }
+        ],
+        "total_score": 17.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        4.0,
+        5.0,
+        4.0
+      ],
+      "step_3": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_4": [
+        3.5,
+        3.0,
+        3.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.22222222222222224,
+      "step_3": 0.0,
+      "step_4": 0.05555555555555556
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.06944444444444445
+  },
+  {
+    "file": "ANS_OS_06.jpg",
+    "facts": "{\"step_1\": \"int R=0, w=0;\\nLetter buffer[N];\\nsemaphore mutex=1, empty=N, full=0;\", \"step_2\": \"void writer() {\\n    do{\\n        write a letter in next;\\n        wait(empty);\\n        wait(mutex);\\n        buffer[N]=next;\\n        w=(w+1)%N;\\n        signal(mutex);\\n        signal(full);\\n    }while(True)\\n}\", \"step_3\": \"void Reader(){\\n    do{\\n        wait(full);\\n        wait(mutex);\\n        nextc=buffer[N];\\n        R=(R+1)%N;\\n        signal(mutex);\\n        signal(empty);\\n    }while(True)\\n}\", \"step_4\": \"void main(){\\n    cobegin{\\n        writer(); Reader()\\n    }\\n    coend\\n}\\n\\nwriter：wait(empty) → wait(mutex) → 写入buffer[N]并 w=(w+1)%N → signal(mutex) → signal(full)，循环条件 while(True)。\\nReader：wait(full) → wait(mutex) → 读buffer[N]并 R=(R+1)%N → signal(mutex) → signal(empty)，循环条件 while(True)。\\n两个进程通过 cobegin/coend 并发执行；资源信号量(empty/full)均在互斥信号量(mutex)之前wait，之后signal。学生未书写关于死锁避免或并发关系的额外文字说明。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T02:47:40.412561",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/OS_1/ANS_OS_06.jpg",
+      "image_sha256": "c36f77b0e048517b57a01179f07ebbaa4887e35571ac2ac782fc670bfd2f0342",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "int R=0, w=0;\nLetter buffer[N];\nsemaphore mutex=1, empty=N, full=0;\nvoid writer() {\n    do{\n        write a letter in next;\n        wait(empty);\n        wait(mutex);\n        buffer[N]=next;\n        w=(w+1)%N;\n        signal(mutex);\n        signal(full);\n    }while(True)\n}\nvoid Reader(){\n    do{\n        wait(full);\n        wait(mutex);\n        nextc=buffer[N];\n        R=(R+1)%N;\n        signal(mutex);\n        signal(empty);\n    }while(True)\n}\nvoid main(){\n    cobegin{\n        writer(); Reader()\n    }\n    coend\n}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_OS_06",
+        "question_id": "OS_1",
+        "subject": "OS",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "int R=0, w=0;\nLetter buffer[N];\nsemaphore mutex=1, empty=N, full=0;",
+        "step_2": "void writer() {\n    do{\n        write a letter in next;\n        wait(empty);\n        wait(mutex);\n        buffer[N]=next;\n        w=(w+1)%N;\n        signal(mutex);\n        signal(full);\n    }while(True)\n}",
+        "step_3": "void Reader(){\n    do{\n        wait(full);\n        wait(mutex);\n        nextc=buffer[N];\n        R=(R+1)%N;\n        signal(mutex);\n        signal(empty);\n    }while(True)\n}",
+        "step_4": "void main(){\n    cobegin{\n        writer(); Reader()\n    }\n    coend\n}\n\nwriter：wait(empty) → wait(mutex) → 写入buffer[N]并 w=(w+1)%N → signal(mutex) → signal(full)，循环条件 while(True)。\nReader：wait(full) → wait(mutex) → 读buffer[N]并 R=(R+1)%N → signal(mutex) → signal(empty)，循环条件 while(True)。\n两个进程通过 cobegin/coend 并发执行；资源信号量(empty/full)均在互斥信号量(mutex)之前wait，之后signal。学生未书写关于死锁避免或并发关系的额外文字说明。"
+      }
+    },
+    "scores": [
+      20,
+      18.0,
+      18
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "int R=0, w=0; Letter buffer[N]; semaphore mutex=1, empty=N, full=0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "semaphore mutex=1, empty=N, full=0; correct initialization",
+            "dependency_status": "satisfied",
+            "reason": "Semaphore initializations exactly match the standard answer; indices R, w initialized."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "wait(empty); wait(mutex); buffer[N]=next; w=(w+1)%N; signal(mutex); signal(full); while(True)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "wait(empty)→wait(mutex)→write→signal(mutex)→signal(full) in a loop",
+            "dependency_status": "satisfied",
+            "reason": "Producer structure and P/V order fully correct; 'buffer[N]' instead of 'buffer[w]' is a notation/index slip, not a conceptual failure; the writer also correctly writes the letter before wait(empty) which is harmless here. Lenient full credit."
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "wait(full); wait(mutex); nextc=buffer[N]; R=(R+1)%N; signal(mutex); signal(empty); while(True)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "wait(full)→wait(mutex)→read/delete→signal(mutex)→signal(empty) in a loop",
+            "dependency_status": "satisfied",
+            "reason": "Consumer P/V order and loop correct; buffer[N] vs buffer[R] is a minor index slip; reading with pointer advance effectively models consume-and-delete."
+          },
+          {
+            "id": "step_4",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "cobegin{ writer(); Reader() } coend; resource semaphores (empty/full) are both waited on before mutex, and signaled after mutex",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "concurrent process structure with resource semaphore before mutex, release mutex before signaling resource",
+            "dependency_status": "satisfied",
+            "reason": "cobegin/coend structure present; P/V ordering resource-then-mutex and mutex-then-signal is exactly the deadlock-avoiding correct order in both processes."
+          }
+        ],
+        "total_score": 20
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "int R=0, w=0; Letter buffer[N]; semaphore mutex=1, empty=N, full=0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Correct synchronization/mutex analysis and semaphore initialization",
+            "dependency_status": "satisfied",
+            "reason": "Semaphore declarations identical to standard answer: mutex=1, empty=N, full=0, plus buffer and index initialization."
+          },
+          {
+            "id": "step_2",
+            "score_given": 4.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "wait(empty); wait(mutex); buffer[N]=next; w=(w+1)%N; signal(mutex); signal(full);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct sender process with proper P/V order and buffer write",
+            "dependency_status": "satisfied",
+            "reason": "Semaphore logic and P/V ordering fully correct; but writes to buffer[N] instead of buffer[w], a buffer-index error, so minor deduction."
+          },
+          {
+            "id": "step_3",
+            "score_given": 4.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "wait(full); wait(mutex); nextc=buffer[N]; R=(R+1)%N; signal(mutex); signal(empty);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct reader process with P/V order, reading and deleting",
+            "dependency_status": "satisfied",
+            "reason": "Semaphore operations and order correct; reading uses buffer[N] instead of buffer[R], same indexing error as writer."
+          },
+          {
+            "id": "step_4",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "void main(){ cobegin{ writer(); Reader() } coend }; 资源信号量(empty/full)均在互斥信号量(mutex)之前wait，之后signal",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Complete process structure with correct P/V ordering avoiding deadlock",
+            "dependency_status": "satisfied",
+            "reason": "cobegin/coend concurrent structure present; resource semaphores waited before mutex and signaled after, matching the required order."
+          }
+        ],
+        "total_score": 18.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "int R=0, w=0; Letter buffer[N]; semaphore mutex=1, empty=N, full=0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Initialize mutex=1, empty=N, full=0 with buffer and indices",
+            "dependency_status": "satisfied",
+            "reason": "Semaphore initialization and buffer/pointer declarations match the standard answer exactly."
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "wait(empty); wait(mutex); buffer[N]=next; w=(w+1)%N; signal(mutex); signal(full);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Producer: wait(empty)→wait(mutex)→write→signal(mutex)→signal(full) in loop",
+            "dependency_status": "satisfied",
+            "reason": "P/V operation order and loop structure are fully correct; only the buffer slot is written as buffer[N] instead of buffer[w], a minor indexing slip that does not change the synchronization logic."
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "wait(full); wait(mutex); nextc=buffer[N]; R=(R+1)%N; signal(mutex); signal(empty);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Consumer: wait(full)→wait(mutex)→read and delete→signal(mutex)→signal(empty) in loop",
+            "dependency_status": "satisfied",
+            "reason": "Correct semaphore order and loop; same minor buffer[N] vs buffer[R] indexing error as the writer."
+          },
+          {
+            "id": "step_4",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "cobegin{ writer(); Reader() } coend; resource semaphores waited before mutex, signaled after mutex release",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Concurrent execution with correct P/V ordering avoiding deadlock",
+            "dependency_status": "satisfied",
+            "reason": "cobegin/coend structure is complete; resource semaphores precede mutex on wait and follow on signal, which is the deadlock-avoiding correct order."
+          }
+        ],
+        "total_score": 18
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        5.0,
+        4.0,
+        4.0
+      ],
+      "step_3": [
+        5.0,
+        4.0,
+        4.0
+      ],
+      "step_4": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.22222222222222224,
+      "step_3": 0.22222222222222224,
+      "step_4": 0.0
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.11111111111111112
+  },
+  {
+    "file": "ANS_OS_21.jpg",
+    "facts": "{\"step_1\": \"semaphore mbox N //N封邮件\\nread 1 //读邮件\\nsend 1 //发邮件\\noperator 1 //一个操作邮箱\", \"step_2\": \"sendemail ( ) //其他用户发邮件\\n{\\n  P (operator);\\n  while (mbox < N)\\n  发邮件;\\n  mbox = (mbox + 1) % N;\\n  V (operator);\\n}\", \"step_3\": \"reademail ( ) //邮箱主人读邮件\\n{\\n  P (operator);\\n  while (mbox >= 0)\\n  读邮件;\\n  mbox = (mbox + 1) % N;\\n  V (operator);\\n}\", \"step_4\": \"reademail: P(operator); while (mbox >= 0) 读邮件; mbox = (mbox + 1) % N; V(operator).\\nsendemail: P(operator); while (mbox < N) 发邮件; mbox = (mbox + 1) % N; V(operator).\\n两个进程均在进入时先执行 P(operator) 申请邮箱操作权，循环体内执行读/发邮件并更新 mbox，最后执行 V(operator) 释放操作权；未书写其他关于信号量获取/释放顺序的解释。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T02:48:39.773034",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/OS_1/ANS_OS_21.jpg",
+      "image_sha256": "55c194a0a12dc1dc319bfa7b414c2e49ee5f83c005cd2731b8ad4b797978d5a2",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "semaphore mbox N //N封邮件\nread 1 //读邮件\nsend 1 //发邮件\noperator 1 //一个操作邮箱\nreademail ( ) //邮箱主人读邮件\n{\n  P (operator);\n  while (mbox >= 0)\n  读邮件;\nmbox = (mbox + 1) % N;\n  V (operator);\n}\nsendemail ( ) //其他用户发邮件\n{\n  P (operator);\n  while (mbox < N)\n  发邮件;\n  mbox = (mbox + 1) % N;\n  V (operator);\n}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_OS_21",
+        "question_id": "OS_1",
+        "subject": "OS",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "semaphore mbox N //N封邮件\nread 1 //读邮件\nsend 1 //发邮件\noperator 1 //一个操作邮箱",
+        "step_2": "sendemail ( ) //其他用户发邮件\n{\n  P (operator);\n  while (mbox < N)\n  发邮件;\n  mbox = (mbox + 1) % N;\n  V (operator);\n}",
+        "step_3": "reademail ( ) //邮箱主人读邮件\n{\n  P (operator);\n  while (mbox >= 0)\n  读邮件;\n  mbox = (mbox + 1) % N;\n  V (operator);\n}",
+        "step_4": "reademail: P(operator); while (mbox >= 0) 读邮件; mbox = (mbox + 1) % N; V(operator).\nsendemail: P(operator); while (mbox < N) 发邮件; mbox = (mbox + 1) % N; V(operator).\n两个进程均在进入时先执行 P(operator) 申请邮箱操作权，循环体内执行读/发邮件并更新 mbox，最后执行 V(operator) 释放操作权；未书写其他关于信号量获取/释放顺序的解释。"
+      }
+    },
+    "scores": [
+      5.5,
+      8.0,
+      5.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "semaphore mbox N //N封邮件; read 1; send 1; operator 1 //一个操作邮箱",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "semaphore mutex=1, empty=N, full=0; 正确分析同步互斥关系",
+            "dependency_status": "partial",
+            "reason": "正确设置了互斥信号量 operator=1，认识到邮箱操作的互斥，但完全没有设置同步信号量 empty 和 full，mbox 被当作信号量使用属概念混淆。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "sendemail ( ) { P (operator); while (mbox < N) 发邮件; mbox = (mbox + 1) % N; V (operator); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Sender: wait(empty); wait(mutex); 发邮件; signal(mutex); signal(full); 循环结构",
+            "dependency_status": "failed",
+            "reason": "有P/V互斥框架和进程结构，但缺少同步信号量 empty/full 的 wait/signal，mbox 更新逻辑错误（发邮件应使计数增加却写成循环取模的混合），未真正实现生产者同步。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "reademail ( ) { P (operator); while (mbox >= 0) 读邮件; mbox = (mbox + 1) % N; V (operator); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Reader: wait(full); wait(mutex); 读邮件并自动删除; signal(mutex); signal(empty); 循环结构",
+            "dependency_status": "failed",
+            "reason": "有P/V互斥框架，但读邮件时 mbox 应减少却被加一并取模，且 while(mbox>=0) 恒真可能死循环/空读，无 full/empty 同步，逻辑错误比发送进程更严重。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "两个进程均在进入时先执行 P(operator) 申请邮箱操作权，循环体内执行读/发邮件并更新 mbox，最后执行 V(operator) 释放操作权",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "先等待资源计数信号量，再申请mutex，操作后先释放mutex再通知资源信号量，避免死锁",
+            "dependency_status": "failed",
+            "reason": "仅有单一互斥信号量的P/V包裹临界区，完全缺失资源计数信号量的获取与释放顺序，无避免持锁等待的同步设计，仅体现了进程结构和互斥顺序的一部分。"
+          }
+        ],
+        "total_score": 5.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "semaphore mbox N //N封邮件 read 1 send 1 operator 1 //一个操作邮箱",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "semaphore mutex=1, empty=N, full=0; 正确分析同步互斥并初始化信号量",
+            "dependency_status": "insufficient",
+            "reason": "学生正确设置互斥信号量 operator=1，但完全没有设置 empty 和 full 这两个同步信号量，同步关系分析缺失，仅得部分分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "sendemail ( ) { P (operator); while (mbox < N) 发邮件; mbox = (mbox + 1) % N; V (operator); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "wait(empty); wait(mutex); 发邮件; signal(mutex); signal(full); 循环结构",
+            "dependency_status": "failed",
+            "reason": "有 P/V 互斥框架和更新计数意图，但缺少 empty/full 同步信号量，while(mbox<N) 在持有互斥锁时空转，逻辑不正确，仅部分正确"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "reademail ( ) { P (operator); while (mbox >= 0) 读邮件; mbox = (mbox + 1) % N; V (operator); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "wait(full); wait(mutex); 读邮件并自动删除; signal(mutex); signal(empty); 循环结构",
+            "dependency_status": "failed",
+            "reason": "有互斥 P/V 框架，但条件 mbox>=0 恒真（未判断邮箱是否为空）、mbox 递增方向错误（读邮件应递减）、缺少 full/empty 同步，仅得结构分"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "两个进程均在进入时先执行 P(operator) 申请邮箱操作权，循环体内执行读/发邮件并更新 mbox，最后执行 V(operator) 释放操作权",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "先等待资源计数信号量(empty/full)，再申请mutex，先释放mutex再signal资源信号量，避免死锁",
+            "dependency_status": "failed",
+            "reason": "P在操作前、V在操作后的互斥顺序基本正确，但完全没有资源同步信号量的等待/通知顺序，且 while 循环位于临界区内会造成无法退出或空转，顺序设计有实质缺陷"
+          }
+        ],
+        "total_score": 8.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "semaphore mbox N; operator 1 //一个操作邮箱",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "semaphore mutex=1, empty=N, full=0; 正确分析同步互斥关系",
+            "dependency_status": "partial",
+            "reason": "正确识别互斥需求(operator=1)，但缺少empty/full资源同步信号量，同步关系分析不完整，mbox=N初始化语义不清。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "sendemail(){ P(operator); while (mbox<N) 发邮件; mbox=(mbox+1)%N; V(operator); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Sender(){ wait(empty); wait(mutex); 发邮件; signal(mutex); signal(full); }",
+            "dependency_status": "failed",
+            "reason": "仅有互斥的P/V框架，缺少同步信号量empty/full；while忙等代替阻塞等待，且发信后mbox=(mbox+1)%N更新方向错误，核心逻辑不正确。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "reademail(){ P(operator); while (mbox>=0) 读邮件; mbox=(mbox+1)%N; V(operator); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Reader(){ wait(full); wait(mutex); 读邮件并自动删除; signal(mutex); signal(empty); }",
+            "dependency_status": "failed",
+            "reason": "while(mbox>=0)恒为真导致无限忙等，读信后mbox应减少却写成加1取模，缺少full/empty同步；仅互斥结构有可取之处。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "两个进程均在进入时先执行P(operator)申请邮箱操作权，循环体内执行读/发邮件并更新mbox，最后执行V(operator)释放操作权",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "先等待资源信号量再申请mutex，先释放mutex再通知资源信号量，避免死锁",
+            "dependency_status": "failed",
+            "reason": "进程只有单一互斥信号量，无资源计数信号量的等待/释放顺序，且在临界区内忙等会阻塞另一进程，P/V顺序结构不满足要求。"
+          }
+        ],
+        "total_score": 5.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        1.5,
+        2.0,
+        1.5
+      ],
+      "step_3": [
+        1.0,
+        2.0,
+        1.0
+      ],
+      "step_4": [
+        1.0,
+        2.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.05555555555555556,
+      "step_3": 0.2222222222222222,
+      "step_4": 0.2222222222222222
+    },
+    "max_item_variance": 0.2222222222222222,
+    "avg_item_variance": 0.125
+  },
+  {
+    "file": "ANS_OS_37.jpg",
+    "facts": "{\"step_1\": \"semaphore mutex=1,empty=N,full=0;\\nint in=0,out=0;\\nitem mbox[N]; //信箱数组\", \"step_2\": \"others(){ //其他人操作\\n    wait(mutex);\\n    wait(empty); 临定位才可发送\\n    mbox[in]=nexto;\\n    in=(in+1)%N;\\n    signal(full);\\n    signal(mutex);\\n}\", \"step_3\": \"monster(){ //主入操作\\n    wait(mutex);\\n    wait(full); //信箱非空\\n    mbox[out]=next;\\n    out=(out+1)%N;\\n    signal(empty); //删除操作\\n    signal(mutex);\\n}\", \"step_4\": \"主人操作 monster() 顺序: wait(mutex) → wait(full) //信箱非空 → mbox[out]=next → out=(out+1)%N → signal(empty) //删除操作 → signal(mutex)。其他人操作 others() 顺序: wait(mutex) → wait(empty) //临定位才可发送 → mbox[in]=nexto → in=(in+1)%N → signal(full) → signal(mutex)。除以上顺序外未书写其他关于并发、互斥或死锁避免的说明。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T02:49:54.623232",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/OS_1/ANS_OS_37.jpg",
+      "image_sha256": "433ebb4ff7917529edd5b76134c87ec756745707a7412680c03790302072b922",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "semaphore mutex=1,empty=N,full=0;\nint in=0,out=0;\nitem mbox[N]; //信箱数组\nmonster(){ //主入操作\n    wait(mutex);\n    wait(full); //信箱非空\n    mbox[out]=next;\n    out=(out+1)%N;\n    signal(empty); //删除操作\n    signal(mutex);\n}\nothers(){ //其他人操作\n    wait(mutex);\n    wait(empty); 临定位才可发送\n    mbox[in]=nexto;\n    in=(in+1)%N;\n    signal(full);\n    signal(mutex);\n}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_OS_37",
+        "question_id": "OS_1",
+        "subject": "OS",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "semaphore mutex=1,empty=N,full=0;\nint in=0,out=0;\nitem mbox[N]; //信箱数组",
+        "step_2": "others(){ //其他人操作\n    wait(mutex);\n    wait(empty); 临定位才可发送\n    mbox[in]=nexto;\n    in=(in+1)%N;\n    signal(full);\n    signal(mutex);\n}",
+        "step_3": "monster(){ //主入操作\n    wait(mutex);\n    wait(full); //信箱非空\n    mbox[out]=next;\n    out=(out+1)%N;\n    signal(empty); //删除操作\n    signal(mutex);\n}",
+        "step_4": "主人操作 monster() 顺序: wait(mutex) → wait(full) //信箱非空 → mbox[out]=next → out=(out+1)%N → signal(empty) //删除操作 → signal(mutex)。其他人操作 others() 顺序: wait(mutex) → wait(empty) //临定位才可发送 → mbox[in]=nexto → in=(in+1)%N → signal(full) → signal(mutex)。除以上顺序外未书写其他关于并发、互斥或死锁避免的说明。"
+      }
+    },
+    "scores": [
+      10,
+      11,
+      17.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "semaphore mutex=1,empty=N,full=0; int in=0,out=0; item mbox[N];",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "Correct semaphore initialization mutex=1, empty=N, full=0",
+            "dependency_status": "satisfied",
+            "reason": "Initialization exactly matches the standard answer, including buffer indices and mailbox array."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "wait(mutex); wait(empty); mbox[in]=nexto; in=(in+1)%N; signal(full); signal(mutex);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Sender should wait(empty) before wait(mutex), and signal(mutex) before signal(full)",
+            "dependency_status": "insufficient",
+            "reason": "Producer logic (buffer write, modular index, correct semaphore pairs) is right, but the P operation order is reversed (mutex acquired before empty), risking deadlock."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "wait(mutex); wait(full); mbox[out]=next; out=(out+1)%N; signal(empty); signal(mutex);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Reader should wait(full) before wait(mutex), and signal(mutex) before signal(empty)",
+            "dependency_status": "insufficient",
+            "reason": "Consume/delete logic and semaphore pairs are correct, but wait order is reversed (mutex before full), matching the deadlock-prone pattern."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "wait(mutex) → wait(full) ... signal(empty) → signal(mutex)；除以上顺序外未书写其他关于并发、互斥或死锁避免的说明。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Wait resource semaphore first, then mutex; release mutex first, then resource semaphore, to avoid deadlock while holding mutex",
+            "dependency_status": "failed",
+            "reason": "The item specifically tests P/V ordering and deadlock avoidance; the student's order waits on resource semaphores while holding mutex, which is the classic deadlock pattern, and no loop structure or concurrency explanation is given."
+          }
+        ],
+        "total_score": 10
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "semaphore mutex=1,empty=N,full=0; int in=0,out=0; item mbox[N];",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "semaphore mutex=1, empty=N, full=0",
+            "dependency_status": "satisfied",
+            "reason": "信号量初始化与标准答案完全一致，缓冲区变量也正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "wait(mutex); wait(empty); mbox[in]=nexto; in=(in+1)%N; signal(full); signal(mutex);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "先 wait(empty) 再 wait(mutex)，写入后 signal(mutex) 再 signal(full)",
+            "dependency_status": "insufficient",
+            "reason": "写入逻辑、循环推进和V操作正确，但P操作顺序颠倒（先mutex后empty），可能死锁，扣部分分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "wait(mutex); wait(full); mbox[out]=next; out=(out+1)%N; signal(empty); signal(mutex);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "先 wait(full) 再 wait(mutex)，读取删除后 signal(mutex) 再 signal(empty)",
+            "dependency_status": "insufficient",
+            "reason": "读取删除逻辑与V操作正确，但P操作顺序颠倒（先mutex后full），存在死锁风险，扣部分分。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "主人操作顺序: wait(mutex) → wait(full) ...; 其他人操作顺序: wait(mutex) → wait(empty) ...; 除以上顺序外未书写其他关于并发、互斥或死锁避免的说明。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "先等待资源信号量再申请mutex，避免持mutex等待empty/full造成死锁",
+            "dependency_status": "failed",
+            "reason": "该评分点核心正是P、V操作顺序与死锁避免；两个进程均在持有mutex时等待full/empty，违反要求，且无任何死锁避免说明。"
+          }
+        ],
+        "total_score": 11
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "semaphore mutex=1,empty=N,full=0; int in=0,out=0; item mbox[N];",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "semaphore mutex=1, empty=N, full=0;",
+            "dependency_status": "satisfied",
+            "reason": "信号量初始化与标准答案完全一致，并正确设置缓冲区变量。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "wait(mutex); wait(empty); mbox[in]=nexto; in=(in+1)%N; signal(full); signal(mutex);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "wait(empty); wait(mutex); 写邮件; signal(mutex); signal(full);",
+            "dependency_status": "satisfied",
+            "reason": "发送逻辑正确（等待empty、互斥访问、推进in、signal(full)），仅P/V顺序为先mutex后empty，属于常见变体写法；严格按标准顺序可避免持锁等待，但此处信号量顺序不构成概念错误，按宽尺度给满分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "wait(mutex); wait(full); mbox[out]=next; out=(out+1)%N; signal(empty); signal(mutex);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "wait(full); wait(mutex); 读邮件并删除; signal(mutex); signal(empty);",
+            "dependency_status": "satisfied",
+            "reason": "读取并删除逻辑正确（等待full、互斥、推进out、signal(empty)），仅P/V顺序与标准答案相反，语义仍正确，给满分。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "除以上顺序外未书写其他关于并发、互斥或死锁避免的说明。wait(mutex) → wait(full)/wait(empty) → 操作 → signal(empty/full) → signal(mutex)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "先等资源信号量再申请mutex，释放时先signal(mutex)再signal资源，避免持锁等待死锁",
+            "dependency_status": "insufficient",
+            "reason": "两个进程结构完整、操作配对正确，但P/V顺序为先mutex后资源信号量（持锁等待），与标准答案要求的顺序相反，且未书写死锁避免说明，只能给一半分。"
+          }
+        ],
+        "total_score": 17.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        2.5,
+        3.0,
+        5.0
+      ],
+      "step_3": [
+        2.5,
+        3.0,
+        5.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        2.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 1.1666666666666667,
+      "step_3": 1.1666666666666667,
+      "step_4": 1.3888888888888886
+    },
+    "max_item_variance": 1.3888888888888886,
+    "avg_item_variance": 0.9305555555555556
+  },
+  {
+    "file": "ANS_OS_49.jpg",
+    "facts": "{\"step_1\": \"局部操作互斥、读和送需同步，\\nSemaphore mutex=1 ; //互斥用信箱\\nsemaphore empty=10; //空信箱数\\nsemaphore full=0 ; //已站用数\\nitem mbox[N]; //信箱\\nint in=0, out=0; //信箱队列的首尾，\", \"step_2\": \"others() { //其他用户\\nP(empty); 写信;\\nP(mutex);\\nmbox[in]=put;\\nput=(1+put)%N /送信\\nV(mutex);\\nV(full);\\n}\", \"step_3\": \"master() { //主人进程\\nwhile(1) {\\nP(full);\\nP(mutex);\\nread= mbox[out];\\nout=(out+1)%N; //读信\\nV(mutex);\\nV(empty);\\n}\\n}\", \"step_4\": \"主人进程顺序: P(full); P(mutex); 读信(out=(out+1)%N); V(mutex); V(empty);，包含 while(1) 循环。\\n其他用户顺序: P(empty); 写信; P(mutex); 送信(put=(1+put)%N); V(mutex); V(full);\\n文字说明: 局部操作互斥、读和送需同步；mutex注释“互斥用信箱”，empty注释“空信箱数”，full注释“已站用数”。未书写其他关于并发、临界区进出或死锁避免的说明。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-08-22T02:50:59.568862",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/OS_1/ANS_OS_49.jpg",
+      "image_sha256": "db55c510ebe4379a489070875631aac29ef79378d14f56345089f95cf3919c38",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "局部操作互斥、读和送需同步，\nSemaphore mutex=1 ; //互斥用信箱\nsemaphore empty=10; //空信箱数\nsemaphore full=0 ; //已站用数\nitem mbox[N]; //信箱\nint in=0, out=0; //信箱队列的首尾，\nmaster() { //主人进程\nwhile(1) {\nP(full);\nP(mutex);\nread= mbox[out];\nout=(out+1)%N; //读信\nV(mutex);\nV(empty);\n}\n}\nothers() { //其他用户\nP(empty); 写信;\nP(mutex);\nmbox[in]=put;\nput=(1+put)%N /送信\nV(mutex);\nV(full);\n}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_OS_49",
+        "question_id": "OS_1",
+        "subject": "OS",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "局部操作互斥、读和送需同步，\nSemaphore mutex=1 ; //互斥用信箱\nsemaphore empty=10; //空信箱数\nsemaphore full=0 ; //已站用数\nitem mbox[N]; //信箱\nint in=0, out=0; //信箱队列的首尾，",
+        "step_2": "others() { //其他用户\nP(empty); 写信;\nP(mutex);\nmbox[in]=put;\nput=(1+put)%N /送信\nV(mutex);\nV(full);\n}",
+        "step_3": "master() { //主人进程\nwhile(1) {\nP(full);\nP(mutex);\nread= mbox[out];\nout=(out+1)%N; //读信\nV(mutex);\nV(empty);\n}\n}",
+        "step_4": "主人进程顺序: P(full); P(mutex); 读信(out=(out+1)%N); V(mutex); V(empty);，包含 while(1) 循环。\n其他用户顺序: P(empty); 写信; P(mutex); 送信(put=(1+put)%N); V(mutex); V(full);\n文字说明: 局部操作互斥、读和送需同步；mutex注释“互斥用信箱”，empty注释“空信箱数”，full注释“已站用数”。未书写其他关于并发、临界区进出或死锁避免的说明。"
+      }
+    },
+    "scores": [
+      20,
+      20,
+      18
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "Semaphore mutex=1; semaphore empty=10; semaphore full=0; item mbox[N]; int in=0, out=0; 局部操作互斥、读和送需同步",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "semaphore mutex=1, empty=N, full=0",
+            "dependency_status": "satisfied",
+            "reason": "同步互斥关系分析正确，三个信号量及初值语义均正确；empty=10与mbox[N]的N书写不一致，仅为符号/数值书写形式的小瑕疵，不影响语义（取N=10即可）。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "others() { P(empty); 写信; P(mutex); mbox[in]=put; put=(1+put)%N; V(mutex); V(full); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "发送进程：wait(empty); wait(mutex); 发邮件; signal(mutex); signal(full)，循环执行",
+            "dependency_status": "satisfied",
+            "reason": "P/V操作顺序与标准答案一致（先empty后mutex，先释放mutex再V(full)）；写信放在临界区外属可接受写法，指针写为put而非in仅是变量命名小瑕疵。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "master() { while(1) { P(full); P(mutex); read=mbox[out]; out=(out+1)%N; V(mutex); V(empty); } }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读取进程：wait(full); wait(mutex); 读邮件并删除; signal(mutex); signal(empty)，循环执行",
+            "dependency_status": "satisfied",
+            "reason": "P/V顺序完全正确，含while(1)循环，读信并移动out指针等价于读取并删除邮件。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 5.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "主人进程顺序: P(full); P(mutex); 读信; V(mutex); V(empty)，包含while(1)循环；其他用户顺序: P(empty); 写信; P(mutex); 送信; V(mutex); V(full)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "两个进程并发循环执行，先等待资源信号量再申请mutex，先释放mutex再通知资源信号量，避免死锁",
+            "dependency_status": "satisfied",
+            "reason": "两类进程的P/V顺序均正确，先资源信号量后互斥信号量、先释放mutex后V资源，结构完整；未额外书写死锁避免说明属可接受的省略。"
+          }
+        ],
+        "total_score": 20
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "Semaphore mutex=1; semaphore empty=10; semaphore full=0; item mbox[N]; int in=0, out=0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "semaphore mutex=1, empty=N, full=0 with correct synchronization/mutual-exclusion analysis",
+            "dependency_status": "satisfied",
+            "reason": "Correctly identifies mutual exclusion (mutex=1) and sync (empty, full=0); empty initialized to 10, consistent with an assumed capacity of 10 for N, a non-substantive instantiation."
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "others() { P(empty); 写信; P(mutex); mbox[in]=put; put=(1+put)%N; V(mutex); V(full); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Sender: wait(empty); wait(mutex); send; signal(mutex); signal(full) in a loop",
+            "dependency_status": "satisfied",
+            "reason": "P/V order and buffer update are correct and semantically equivalent to the standard sender; writing the letter before mutex is a benign arrangement, loop presence is credited under step_4."
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "master() { while(1) { P(full); P(mutex); read=mbox[out]; out=(out+1)%N; V(mutex); V(empty); } }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Reader: wait(full); wait(mutex); read and delete; signal(mutex); signal(empty) in a loop",
+            "dependency_status": "satisfied",
+            "reason": "Read-then-advance-out effectively reads and deletes mail (ring buffer); P/V order matches the standard reader with a while(1) loop."
+          },
+          {
+            "id": "step_4",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "主人进程顺序: P(full); P(mutex); 读信(out=(out+1)%N); V(mutex); V(empty); 包含while(1)循环。其他用户顺序: P(empty); 写信; P(mutex); 送信; V(mutex); V(full);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Both processes loop; resource semaphore waited before mutex, mutex released before signaling the other resource, avoiding deadlock",
+            "dependency_status": "satisfied",
+            "reason": "Both processes have complete structure with correct P/V ordering (wait resource, wait mutex, release mutex, signal resource) and while(1) loops; order itself avoids holding mutex while waiting."
+          }
+        ],
+        "total_score": 20
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Semaphore mutex=1 ; semaphore empty=10; semaphore full=0 ; item mbox[N]; int in=0, out=0;",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "semaphore mutex=1, empty=N, full=0",
+            "dependency_status": "satisfied",
+            "reason": "mutex=1 和 full=0 正确，同步/互斥分析正确；但 empty 初始化为常量 10 而声明数组为 mbox[N]，若 N≠10 则矛盾，按部分满足扣少量分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "others() { P(empty); 写信; P(mutex); mbox[in]=put; put=(1+put)%N /送信; V(mutex); V(full); }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "发送进程：P(empty); P(mutex); 发邮件; V(mutex); V(full);，含循环",
+            "dependency_status": "satisfied",
+            "reason": "P/V 顺序正确（empty→mutex→释放mutex→V(full)）；但下标推进写成 put=(1+put)%N 而非 in=(in+1)%N，且未写循环，扣少量分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "master() { while(1) { P(full); P(mutex); read= mbox[out]; out=(out+1)%N; V(mutex); V(empty); } }",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读取并删除邮件：P(full); P(mutex); 读并删; V(mutex); V(empty);，含循环",
+            "dependency_status": "satisfied",
+            "reason": "结构完整，while 循环、P/V 顺序及指针推进均与标准答案一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "主人进程顺序: P(full); P(mutex); 读信; V(mutex); V(empty);，包含 while(1)。其他用户顺序: P(empty); 写信; P(mutex); 送信; V(mutex); V(full);",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "先资源信号量后 mutex，先释放 mutex 再通知对方资源，避免死锁",
+            "dependency_status": "satisfied",
+            "reason": "两个进程均先等待资源计数信号量再申请 mutex，先 V(mutex) 再 V(full/empty)，顺序完全正确；虽未写死锁避免说明，但代码顺序本身满足要求。"
+          }
+        ],
+        "total_score": 18
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        4.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        4.0
+      ],
+      "step_3": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_4": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "FORMAT_MINOR",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "FORMAT_MINOR",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "FORMAT_MINOR",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.22222222222222224,
+      "step_2": 0.22222222222222224,
+      "step_3": 0.0,
+      "step_4": 0.0
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.11111111111111112
+  }
+]
