@@ -1,0 +1,1074 @@
+[
+  {
+    "file": "ANS_CO_268.jpg",
+    "facts": "{\"step_1\": \"1b bit = 2Byte；设一地址指令有m条，零地址指令n条，n≥1；2^6 -12 = 52条；52×2^6 -m = 3328 -m 条；(3328 -m)×2^6 - n =\", \"step_2\": \"(3328 -m)×2^6 - n =（未得出具体数值，最终结果未书写）\", \"step_3\": \"2^6 -12 = 52条；52×2^6 - 254 = 3074条；最终结论为3074条\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T00:09:13.205166",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_5/ANS_CO_268.jpg",
+      "image_sha256": "60aacab0b12891afa488b3fb190b90e4919be5ec1826cbe676e56e0f560159df",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解：1) 1b bit = 2Byte\n设一地址指令有m条，零地址指令n条，n≥1\n2^6 -12 = 52条\n52×2^6 -m = 3328 -m 条\n(3328 -m)×2^6 - n =\n(2) 2^6 -12 = 52条\n52×2^6 - 254 = 3074条",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_268",
+        "question_id": "CO_5",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "1b bit = 2Byte；设一地址指令有m条，零地址指令n条，n≥1；2^6 -12 = 52条；52×2^6 -m = 3328 -m 条；(3328 -m)×2^6 - n =",
+        "step_2": "(3328 -m)×2^6 - n =（未得出具体数值，最终结果未书写）",
+        "step_3": "2^6 -12 = 52条；52×2^6 - 254 = 3074条；最终结论为3074条"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "2^6 -12 = 52条；52×2^6 -m = 3328 -m 条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码 2^4=16，一地址总名额 = (16-12)×2^6 = 256",
+            "dependency_status": "failed",
+            "reason": "学生用 2^6 作主操作码总数，得到 52 和 3328，与标准的 4/256 完全不符，属方法/数值错误。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "(3328 -m)×2^6 - n =（未得出具体数值，最终结果未书写）",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "一地址指令最多 255 条",
+            "dependency_status": "failed",
+            "reason": "第一问最终结果未写出，且上游参数已错，无正确结论。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "52×2^6 - 254 = 3074条；最终结论为3074条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "剩余 2 条位置，零地址指令最多 2×2^6 = 128 条",
+            "dependency_status": "failed",
+            "reason": "最终结果 3074 与标准答案 128 矛盾，计算方向与剩余名额关系均错误。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "2^6 -12 = 52条；52×2^6 -m = 3328 -m 条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码 2^4=16，16-12=4，一地址总名额 4×2^6=256",
+            "dependency_status": "failed",
+            "reason": "学生用 2^6 作为主操作码空间得出 52，而正确的主操作码空间为 2^4=16、剩余 4，名额应为 256；基础前提错误，属概念性错误而非仅缺展开。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "(3328 -m)×2^6 - n =（未得出具体数值，最终结果未书写）",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "一地址指令最多 255 条",
+            "dependency_status": "failed",
+            "reason": "第一问最终结果未书写，且表达式基于错误前提，无有效数值结论。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "52×2^6 - 254 = 3074条；最终结论为3074条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "剩余 256-254=2 个位置，零地址指令最多 2×2^6=128 条",
+            "dependency_status": "failed",
+            "reason": "最终结论 3074 与正确答案 128 矛盾，且方法基础（52 条剩余名额）本身错误，属结论与概念错误。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "2^6 -12 = 52条；52×2^6 -m = 3328 -m 条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码2^4=16，剩4条，一地址总名额4×2^6=256",
+            "dependency_status": "failed",
+            "reason": "学生从2^6（64）中减12而非从主操作码空间2^4=16中减12，方法概念性错误，得出52和3328名额，与标准的4和256矛盾。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "（未得出具体数值，最终结果未书写）",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "一地址指令最多255条",
+            "dependency_status": "failed",
+            "reason": "第一问最终结果未书写，无任何数值结论。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "52×2^6 - 254 = 3074条；最终结论为3074条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "剩余2个位置，零地址指令最多2×2^6=128条",
+            "dependency_status": "failed",
+            "reason": "第二问结论3074条与正确答案128条矛盾，且基于错误的上游名额计算方法。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_285.jpg",
+    "facts": "{\"step_1\": \"二地址：4 6 6\\n一地址：10 6 6\\n零地址：16\\n二地址前缀→+0000\\n一地址从1011开始\\n→1100 0000 00\\n零地址从1111 1111 10开始\\n∴此时一地址条数最多有：2⁷+2⁶+2⁴+2³+2²+1条\", \"step_2\": \"∴此时一地址条数最多 有：2^7+2^6+2^5+2^4+2^3+2^2+1条 共：255条\", \"step_3\": \"二地址前四位：00001011；一地址从前四位1110开始 ⇒1100 0000 00 ～ 1111 1111 10；零地址从前10位1111 1111 10开始；∴有2×2^6=2^7=128条\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T00:11:20.683850",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_5/ANS_CO_285.jpg",
+      "image_sha256": "12641994b02dc91a59ae3f3cbe45524a8d5e1759db4e50e8bb70c341f43b8512",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": " (1)\n如图所示\n则二地址前缀→00001011\n则一地址从10111开始\n⇒1100 0000 00\n    1111 1111 10\n零地址有从1111 1111 11…开始\n∴此时一地址条数最多\n有：2^7+2^6+2^5+2^4+2^3+2^2+1条\n共：255条\n(2)问二地址前四位：00001011\n问一地址从前四位1110开始\n⇒1100 0000 00\n    1111 1111 10\n则零地址从前10位1111 1111 10\n开始\n∴有2×2^6=2^7=128条.",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_285",
+        "question_id": "CO_5",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [
+        "step_1"
+      ],
+      "visual_fallback_recovered": [
+        "step_1"
+      ],
+      "visual_fallback_conflicts": [
+        "step_2",
+        "step_3"
+      ],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {
+        "step_1": "二地址：4 6 6\n一地址：10 6 6\n零地址：16\n二地址前缀→+0000\n一地址从1011开始\n→1100 0000 00\n零地址从1111 1111 10开始\n∴此时一地址条数最多有：2⁷+2⁶+2⁴+2³+2²+1条",
+        "step_2": "共：255条",
+        "step_3": "∴有2×2⁶=2⁷=128条"
+      },
+      "facts": {
+        "step_1": "二地址：4 6 6\n一地址：10 6 6\n零地址：16\n二地址前缀→+0000\n一地址从1011开始\n→1100 0000 00\n零地址从1111 1111 10开始\n∴此时一地址条数最多有：2⁷+2⁶+2⁴+2³+2²+1条",
+        "step_2": "∴此时一地址条数最多 有：2^7+2^6+2^5+2^4+2^3+2^2+1条 共：255条",
+        "step_3": "二地址前四位：00001011；一地址从前四位1110开始 ⇒1100 0000 00 ～ 1111 1111 10；零地址从前10位1111 1111 10开始；∴有2×2^6=2^7=128条"
+      }
+    },
+    "scores": [
+      12.5,
+      12.5,
+      13
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "二地址前缀→+0000；一地址从1011开始→1100 0000 00；零地址从1111 1111 10开始",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码总数 2^4=16，剩 16-12=4，一地址总名额 4×2^6=256",
+            "dependency_status": "insufficient",
+            "reason": "学生给出了正确的前缀扩展划分（二地址占用后留 4 个前缀给一/零地址扩展），体现了名额划分思想，但未显式写出 2^4=16、16-12=4 及总名额 4×2^6=256 这些关键中间量，只获得部分过程分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "∴此时一地址条数最多 有：2^7+2^6+2^5+2^4+2^3+2^2+1条 共：255条",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "一地址指令最多为 255 条（让出 1 条用于扩展）",
+            "dependency_status": "satisfied",
+            "reason": "最终结果 255 条正确，且给出了计数表达式（其中 +1 项与让出 1 条扩展位置的结论一致），符合满分锚点。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "∴有2×2^6=2^7=128条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "剩下 2 条一地址位置可让出，零地址指令最多 2×2^6=128 条",
+            "dependency_status": "satisfied",
+            "reason": "学生得出 2×2^6=128 条，公式与结果均与标准答案一致，第二问最终结果正确。"
+          }
+        ],
+        "total_score": 12.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "二地址前缀→+0000；一地址从1011开始→1100 0000 00；零地址从1111 1111 10开始；2⁷+2⁶+2⁴+2³+2²+1条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码总数2^4=16，剩4个，一地址总名额4×2^6=256",
+            "dependency_status": "insufficient",
+            "reason": "扩展操作码前缀分配思路正确（二地址/一地址/零地址前缀划分及1100 0000 00～1111 1111 10范围），体现了映射方法，但未得出16、4、256等名额数值，且条数展开式与标准名额关系不一致，仅部分满足"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "一地址条数最多有…共：255条",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "一地址指令最多255条",
+            "dependency_status": "satisfied",
+            "reason": "最终数值255与标准答案一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "零地址从前10位1111 1111 10开始；∴有2×2^6=2^7=128条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "剩余2条一地址位置，零地址最多2×2^6=128条",
+            "dependency_status": "satisfied",
+            "reason": "公式2×2^6=128与标准答案完全一致"
+          }
+        ],
+        "total_score": 12.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "一地址从1011开始 →1100 0000 00；零地址从1111 1111 10开始；一地址条数最多有：2⁷+2⁶+2⁴+2³+2²+1条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码总数2^4=16，剩4条给一/零地址，一地址总名额=4×2^6=256",
+            "dependency_status": "insufficient",
+            "reason": "学生给出了地址扩展区间与按前缀分块的求和计算痕迹，体现了名额划分思路，但未明确写出总数16与总名额256这一关键参数，仅部分满足。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "∴此时一地址条数最多 有：2^7+2^6+2^5+2^4+2^3+2^2+1条 共：255条",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "一地址指令最多255条",
+            "dependency_status": "satisfied",
+            "reason": "最终结果255条正确，且附带按前缀分块的求和过程，符合满分标准。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "一地址从前四位1110开始 ⇒1100 0000 00 ～ 1111 1111 10；零地址从前10位1111 1111 10开始；∴有2×2^6=2^7=128条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "零地址指令最多为2×2^6=128条",
+            "dependency_status": "satisfied",
+            "reason": "明确写出2×2^6=2^7=128条，与标准答案的核心公式和结果一致。"
+          }
+        ],
+        "total_score": 13
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.5,
+        2.5,
+        3.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_3": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.05555555555555556,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.01851851851851852
+  },
+  {
+    "file": "ANS_CO_301.jpg",
+    "facts": "{\"step_1\": \"二地址指令全占 12×6=72；零地址指令占 0×1=0；一地址指令 6×16-72=24\", \"step_2\": \"一地址指令 6×16-72=24；24÷6=4\", \"step_3\": \"12×6=72；254×6=1524（最终零地址指令最多条数未书写）\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T00:12:31.075560",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_5/ANS_CO_301.jpg",
+      "image_sha256": "df03bfed46f5ca2854b850a72fccdae1277dbb68480f4d34bb05643e3cf2f42d",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) 二地址指令全占 12×6=72\n零地址指令占 0×1=0\n一地址指令 6×16-72=24\n24÷6=4\n(2) 12×6=72\n254×6=1524",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_301",
+        "question_id": "CO_5",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "二地址指令全占 12×6=72；零地址指令占 0×1=0；一地址指令 6×16-72=24",
+        "step_2": "一地址指令 6×16-72=24；24÷6=4",
+        "step_3": "12×6=72；254×6=1524（最终零地址指令最多条数未书写）"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "二地址指令全占 12×6=72；零地址指令占 0×1=0；一地址指令 6×16-72=24",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码 2^4=16，剩 16-12=4，一地址总名额 4×2^6=256",
+            "dependency_status": "failed",
+            "reason": "方法对象错误：学生用指令条数×地址位数（12×6）混合计算，未建立操作码空间分配关系，得出 24 而非 256，属概念性错误而非细节缺失。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "24÷6=4",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "一地址指令最多 255 条（留 1 条位置扩展）",
+            "dependency_status": "failed",
+            "reason": "最终结果为 4，与标准答案 255 矛盾，且未体现“至少让出 1 条位置”的关键关系。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "12×6=72；254×6=1524（最终零地址指令最多条数未书写）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "剩余 256-254=2 条位置，零地址最多 2×2^6=128 条",
+            "dependency_status": "failed",
+            "reason": "用 254×6=1524 计算零地址条数，方法对象错误；最终结果也未写出，与标准 128 条不符。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "二地址指令全占 12×6=72；零地址指令占 0×1=0；一地址指令 6×16-72=24",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码总数 2^4=16，剩 16-12=4，一地址总名额 = 4×2^6 = 256",
+            "dependency_status": "failed",
+            "reason": "学生用 12×6=72 计算二地址占用名额，操作码扩展的基本关系（每条让出位置扩展 2^6）被写成 ×6，属核心方法错误，与标准答案的 256 无任何对应。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "一地址指令 6×16-72=24；24÷6=4",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "一地址指令最多为 255 条（让出 1 条供扩展）",
+            "dependency_status": "failed",
+            "reason": "最终结果 4 与 255 完全不符，且推导关系错误，结论错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "12×6=72；254×6=1524（最终零地址指令最多条数未书写）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "剩 256-254=2 个位置，零地址指令最多 2×2^6=128 条",
+            "dependency_status": "failed",
+            "reason": "使用 254×6=1524 的错误扩展关系（应为 ×2^6），且最终零地址条数未写出，无正确结果也无正确方法。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "二地址指令全占 12×6=72；零地址指令占 0×1=0；一地址指令 6×16-72=24",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码总数 2^4=16，剩 16-12=4，一地址总名额 = 4×2^6 = 256",
+            "dependency_status": "failed",
+            "reason": "方法根本错误：应为 4×2^6=256 个一地址名额，学生用 12×6=72 及 6×16-72=24，计算对象和关系均错，非细节缺失。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "一地址指令 6×16-72=24；24÷6=4",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "留出 1 条扩展位，一地址指令最多 255 条",
+            "dependency_status": "failed",
+            "reason": "第一问结果为 24÷6=4，与标准答案 255 矛盾，且建立在错误方法之上。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "12×6=72；254×6=1524（最终零地址指令最多条数未书写）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "剩余 2 条位置，零地址最多 2×2^6=128 条",
+            "dependency_status": "failed",
+            "reason": "用了 254×6=1524 的错误映射（应为剩余名额×2^6），最终条数未写出，方向与关系均错。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_302.jpg",
+    "facts": "{\"step_1\": \"2⁴=16  16-12=4.  2⁶=.64  64×4-1=255.\", \"step_2\": \"64×4-1=255.  ∴一地址指令最多255条\", \"step_3\": \"64×4-254=2\\n2⁶×2=64×2=128条\\n∴零地址指令最多128条\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T00:13:48.910407",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_5/ANS_CO_302.jpg",
+      "image_sha256": "ef0108117228427d3608d577546e2bbc72778343432b577248b10c628b170ec2",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解:(1) 如左右图所示\n2⁴=16  16-12=4.  2⁶=.64  64×4-1=255.  ∴一地址指令最多255条\n(2) 64×4-254=2.  零地址 ：如图所示.  2⁶×2=64×2=128条.  \n∴零地址指令最多128条",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_302",
+        "question_id": "CO_5",
+        "subject": "CO",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [
+        "step_3"
+      ],
+      "visual_fallback_recovered": [
+        "step_3"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2"
+      ],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {
+        "step_1": "2⁴=16\n16-12=4\n2⁶=64\n64×4-1=255",
+        "step_2": "∴一地址指令最多255条",
+        "step_3": "64×4-254=2\n2⁶×2=64×2=128条\n∴零地址指令最多128条"
+      },
+      "facts": {
+        "step_1": "2⁴=16  16-12=4.  2⁶=.64  64×4-1=255.",
+        "step_2": "64×4-1=255.  ∴一地址指令最多255条",
+        "step_3": "64×4-254=2\n2⁶×2=64×2=128条\n∴零地址指令最多128条"
+      }
+    },
+    "scores": [
+      15,
+      15,
+      15
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "2⁴=16  16-12=4.  2⁶=.64  64×4-1=255.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码总数2^4=16，16-12=4，一地址总名额=4×2^6=256",
+            "dependency_status": "satisfied",
+            "reason": "学生明确给出2⁴=16、16-12=4、2⁶=64并计算64×4，与标准的4×2⁶=256名额计算等价，中间量全部正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "64×4-1=255.  ∴一地址指令最多255条",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "让出1条一地址位置，一地址指令最多255条",
+            "dependency_status": "satisfied",
+            "reason": "64×4-1=255并明确结论'一地址指令最多255条'，与标准答案255条完全一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "64×4-254=2\n2⁶×2=64×2=128条\n∴零地址指令最多128条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "256-254=2条剩余位置，零地址指令最多2×2⁶=128条",
+            "dependency_status": "satisfied",
+            "reason": "学生用64×4-254=2求剩余位置，再用2⁶×2=128，公式与结论均与标准答案一致"
+          }
+        ],
+        "total_score": 15
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "2⁴=16 16-12=4. 2⁶=64 64×4-1=255.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码 2^4=16，剩 16-12=4，一地址总名额 4×2^6=256",
+            "dependency_status": "satisfied",
+            "reason": "学生明确给出 2⁴=16、16-12=4、2⁶=64、64×4=256（在 64×4-1=255 中体现），参数与名额计算均正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "64×4-1=255. ∴一地址指令最多255条",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "一地址指令最多 255 条（让出1个扩展位）",
+            "dependency_status": "satisfied",
+            "reason": "最终数值 255 与标准答案一致，且计算式 64×4-1 体现了让出1条的逻辑。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "64×4-254=2\n2⁶×2=64×2=128条\n∴零地址指令最多128条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "剩余 256-254=2 个位置，零地址最多 2×2⁶=128 条",
+            "dependency_status": "satisfied",
+            "reason": "学生用 64×4-254=2 求剩余名额（64×4=256 等价），再乘 2⁶ 得 128，方法与结果均正确。"
+          }
+        ],
+        "total_score": 15
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "2⁴=16  16-12=4.  2⁶=.64  64×4-1=255.",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码总数 2^4=16，剩 16-12=4，一地址总名额 = 4×2^6 = 256",
+            "dependency_status": "satisfied",
+            "reason": "学生明确给出 2^4=16、16-12=4，且 64×4 即 4×2^6=256（随后减1得255），一地址总名额256被下游表达式确定性蕴含；'2⁶=.64'仅为笔误，64×4 计算迹正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "64×4-1=255.  ∴一地址指令最多255条",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "让出1条一地址位置，一地址指令最多255条",
+            "dependency_status": "satisfied",
+            "reason": "计算迹 64×4-1=255 体现让出1条（256-1），最终结论255与标准答案完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "64×4-254=2\n2⁶×2=64×2=128条\n∴零地址指令最多128条",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "256-254=2条位置让出，零地址最多 2×2^6 = 128 条",
+            "dependency_status": "satisfied",
+            "reason": "剩余位置计算(256-254=2)与零地址扩展计算(2×2^6=128)及最终结论128均与标准答案一致。"
+          }
+        ],
+        "total_score": 15
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_3": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_307.jpg",
+    "facts": "{\"step_1\": \"学生写出：'可知地址码有6位.即最多有2^6=64条指令.'（总操作码容量以 2^6=64 表达）。但未书写 64−12 之类显示剩余操作码数量的减法算式，也未书写一地址指令总数配额的乘法或指数公式（如 (2^6−12)×2^6 之类），该减法与配额公式部分未书写。\", \"step_2\": \"学生写出的最终结论为：'当只有一条零地址时此时一地址指令是最多的.' 及 '则一地址指令最多有 51条.'。未明确写出让出（或留出）的一地址指令条数的算式（如 64−12−1 之类），该让出条数算式未书写。\", \"step_3\": \"学生写出：'一地址指令有254条.'，'一共有266条.'（254+12=266），'零地址指令最多有246条.'。未书写显示剩余槽位的减法算式，也未书写零地址指令条数的乘法或指数计算式（如 (2^6×2^6−12×2^6−254) 或 64×64−266 之类），该减法与乘法/指数计算式部分未书写。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T00:14:53.657117",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_5/ANS_CO_307.jpg",
+      "image_sha256": "0b17e6eede5a315fd67ac83b73e0b0e9a9f9838598faf6c0e0bffa0ec56841cf",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解.\n(1)若二地址指令有12条. 当只有一条零地址时此时一地址指令是最多的.\n可知地址码有6位.即最多有2^6=64条指令.则一地址指令最多有 51条.\n(2)若二地址指令有12条. 一地址指令有254条. 一共有266条. 零地址指令\n最多有246条.",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_307",
+        "question_id": "CO_5",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "学生写出：'可知地址码有6位.即最多有2^6=64条指令.'（总操作码容量以 2^6=64 表达）。但未书写 64−12 之类显示剩余操作码数量的减法算式，也未书写一地址指令总数配额的乘法或指数公式（如 (2^6−12)×2^6 之类），该减法与配额公式部分未书写。",
+        "step_2": "学生写出的最终结论为：'当只有一条零地址时此时一地址指令是最多的.' 及 '则一地址指令最多有 51条.'。未明确写出让出（或留出）的一地址指令条数的算式（如 64−12−1 之类），该让出条数算式未书写。",
+        "step_3": "学生写出：'一地址指令有254条.'，'一共有266条.'（254+12=266），'零地址指令最多有246条.'。未书写显示剩余槽位的减法算式，也未书写零地址指令条数的乘法或指数计算式（如 (2^6×2^6−12×2^6−254) 或 64×64−266 之类），该减法与乘法/指数计算式部分未书写。"
+      }
+    },
+    "scores": [
+      0,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生写出：'可知地址码有6位.即最多有2^6=64条指令.'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码总数 2^4=16，剩给一/零地址操作码数 16-12=4，一地址总名额 = 4×2^6 = 256",
+            "dependency_status": "failed",
+            "reason": "学生把主操作码容量算成 2^6=64，与标准 2^4=16 矛盾，后续名额推导全部基于错误前提"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生写出：'则一地址指令最多有 51条.'",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "至少让出 1 条一地址位置，一地址指令最多 255 条",
+            "dependency_status": "failed",
+            "reason": "最终数值 51 与标准 255 矛盾，源于错误的操作码位数前提，结论错误"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生写出：'零地址指令最多有246条.'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "剩下 256-254=2 条位置可让出，零地址指令最多 2×2^6 = 128 条",
+            "dependency_status": "failed",
+            "reason": "零地址指令最多 246 与标准 128 矛盾，方法与结论均错误"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生写出：'可知地址码有6位.即最多有2^6=64条指令.'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码总数 2^4=16，剩给一/零地址操作码数 16-12=4，一地址总名额 = 4×2^6 = 256",
+            "dependency_status": "failed",
+            "reason": "学生将操作码空间当作 2^6=64（地址码位数误用为操作码容量），与标准答案的 2^4=16 及一地址总名额 256 矛盾，属于核心参数性概念错误。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "'当只有一条零地址时此时一地址指令是最多的.' 及 '则一地址指令最多有 51条.'",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "至少让出 1 条一地址位置提供扩展，一地址指令最多为 255 条",
+            "dependency_status": "failed",
+            "reason": "最终数值 51 与标准答案 255 明显不符，且建立在错误的 2^6=64 前提上，结论性数值错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "'一地址指令有254条.', '一共有266条.'，'零地址指令最多有246条.'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "剩 256-254=2 条位置，零地址指令最多为 2×2^6=128 条",
+            "dependency_status": "failed",
+            "reason": "零地址指令最多 246 条与标准答案 128 条矛盾；数量级与计算关系（×2^6 扩展）均未正确体现，结论错误。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "学生写出：'可知地址码有6位.即最多有2^6=64条指令.'（总操作码容量以 2^6=64 表达）。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "主操作码总数 2^4=16，剩 16-12=4，一地址总名额 4×2^6=256",
+            "dependency_status": "failed",
+            "reason": "学生将操作码容量当作 2^6=64，与标准 2^4=16 及一地址总名额 256 相矛盾，属方法性错误；且未写出减法与配额算式。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "'当只有一条零地址时此时一地址指令是最多的.' 及 '则一地址指令最多有 51条.'",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "一地址指令最多为 255 条",
+            "dependency_status": "failed",
+            "reason": "最终数值 51 与标准答案 255 不符，结论错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "'一地址指令有254条.'，'一共有266条.'，'零地址指令最多有246条.'",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "零地址指令最多为 2×2^6=128 条",
+            "dependency_status": "failed",
+            "reason": "零地址最多 246 条与标准答案 128 条矛盾，且配套数值（254/266）亦错，属结论性错误。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

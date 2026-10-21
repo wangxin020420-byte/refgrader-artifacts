@@ -1,0 +1,479 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T07:18:47.794964",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ML_4/ANS_ML_219.jpg",
+  "image_sha256": "df96eb6fad88fb00a3e31d8b4a81c2b7b3bbc402d0e8224027d997307ca3c3da",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/ML_4/ANS_ML_219.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 45,
+    "accepted_token_count": 45,
+    "mean_confidence": 0.87295,
+    "min_confidence": 0.5,
+    "joined_text": "现态\n次态/输出\n1. 能：So: 始状态\n1/0\n0/0\nx=0\nx=1\nS7: 接到0\n010\n1/0\nS0\nS110\nSo/0\nS2: 接到01\nSo\nSi\n1/0\nS1\nS110\nS2/0\nS2\nS3: 接收到010\n111010\nS2\nS3/0\n50/0\n010\nL010\nS\n1/0\nS4接及y0101\nS3\nS3\nS{110\nS410\n011\nS4\n.10\n55寸接数到01010\nS4.\nS5/1\nS0/0\nS5\nS110\nS5/1",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.08072,
+      "very_dark_pixel_ratio": 0.051011,
+      "lower_region_dark_pixel_ratio": 0.076286,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1.解：S0:初始状态 S1:接收到0 S2:接收到01 S3:接收到010 S4:接收到0101 S5:接收到01010",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_ML_219",
+    "question_id": "ML_4",
+    "subject": "ML",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": {
+      "state_table": {
+        "columns": [
+          "现态",
+          "次态/输出",
+          "x=0",
+          "x=1"
+        ],
+        "rows": [
+          {
+            "现态": "S0",
+            "x=0": "S110",
+            "x=1": "So/0"
+          },
+          {
+            "现态": "S1",
+            "x=0": "S110",
+            "x=1": "S2/0"
+          },
+          {
+            "现态": "S2",
+            "x=0": "S3/0",
+            "x=1": "50/0"
+          },
+          {
+            "现态": "S3",
+            "x=0": "S{110",
+            "x=1": "S410"
+          },
+          {
+            "现态": "S4.",
+            "x=0": "S5/1",
+            "x=1": "S0/0"
+          },
+          {
+            "现态": "S5",
+            "x=0": "S110",
+            "x=1": "S5/1"
+          }
+        ]
+      },
+      "state_diagram": {
+        "states": [
+          "So",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        "transitions": [
+          {
+            "from": "So",
+            "to": "S1",
+            "input": "1",
+            "output": "0"
+          },
+          {
+            "from": "So",
+            "to": "S2",
+            "input": "0",
+            "output": "0"
+          },
+          {
+            "from": "S1",
+            "to": "S2",
+            "input": "1",
+            "output": "0"
+          },
+          {
+            "from": "S1",
+            "to": "S3",
+            "input": "0",
+            "output": "0"
+          },
+          {
+            "from": "S2",
+            "to": "S3",
+            "input": "1",
+            "output": "0"
+          },
+          {
+            "from": "S2",
+            "to": "S4",
+            "input": "0",
+            "output": "0"
+          },
+          {
+            "from": "S3",
+            "to": "S4",
+            "input": "1",
+            "output": "0"
+          },
+          {
+            "from": "S3",
+            "to": "S5",
+            "input": "0",
+            "output": "0"
+          },
+          {
+            "from": "S4",
+            "to": "S5",
+            "input": "1",
+            "output": "1"
+          },
+          {
+            "from": "S4",
+            "to": "S0",
+            "input": "0",
+            "output": "0"
+          },
+          {
+            "from": "S5",
+            "to": "S5",
+            "input": "1",
+            "output": "1"
+          },
+          {
+            "from": "S5",
+            "to": "S0",
+            "input": "0",
+            "output": "0"
+          }
+        ],
+        "labels": [
+          "1. 能：So: 始状态",
+          "S7: 接到0",
+          "S2: 接到01",
+          "S3: 接收到010",
+          "S4接及y0101",
+          "55寸接数到01010"
+        ]
+      },
+      "notes": "表格结构不清晰；部分状态名和转移标签字迹模糊。"
+    }
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten content for this item: the original state diagram and original state table they drew or wrote. For the state table, capture every row and column exactly as written, including state names, next-state entries, output values, and any separators or grouping. For the state diagram, transcribe all states, transitions, arrows, direction, labels, and input/output annotations exactly as drawn, preserving order and layout relations. Do not infer or correct anything; report only what the student actually wrote or drew."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 63.75,
+        "cells_left_to_right": [
+          {
+            "text": "1. 能：So: 始状态",
+            "x_center": 120.0,
+            "confidence": 0.7759523987770081
+          },
+          {
+            "text": "S7: 接到0",
+            "x_center": 139.0,
+            "confidence": 0.7631390690803528
+          },
+          {
+            "text": "1/0",
+            "x_center": 275.0,
+            "confidence": 0.8887805938720703
+          },
+          {
+            "text": "0/0",
+            "x_center": 340.5,
+            "confidence": 0.916903018951416
+          },
+          {
+            "text": "现态",
+            "x_center": 522.0,
+            "confidence": 0.9184063673019409
+          },
+          {
+            "text": "x=0",
+            "x_center": 623.5,
+            "confidence": 0.9897800087928772
+          },
+          {
+            "text": "次态/输出",
+            "x_center": 688.5,
+            "confidence": 0.9894094467163086
+          },
+          {
+            "text": "x=1",
+            "x_center": 726.0,
+            "confidence": 0.998203456401825
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 121.23,
+        "cells_left_to_right": [
+          {
+            "text": "S2: 接到01",
+            "x_center": 132.5,
+            "confidence": 0.8418104648590088
+          },
+          {
+            "text": "So",
+            "x_center": 254.5,
+            "confidence": 0.9527022838592529
+          },
+          {
+            "text": "010",
+            "x_center": 300.5,
+            "confidence": 0.9998323321342468
+          },
+          {
+            "text": "Si",
+            "x_center": 333.0,
+            "confidence": 0.6621332168579102
+          },
+          {
+            "text": "1/0",
+            "x_center": 343.5,
+            "confidence": 0.9557949900627136
+          },
+          {
+            "text": "1/0",
+            "x_center": 375.0,
+            "confidence": 0.9929447174072266
+          },
+          {
+            "text": "S2",
+            "x_center": 375.0,
+            "confidence": 0.9620269536972046
+          },
+          {
+            "text": "S1",
+            "x_center": 522.5,
+            "confidence": 0.9791248440742493
+          },
+          {
+            "text": "S0",
+            "x_center": 524.0,
+            "confidence": 0.5586509108543396
+          },
+          {
+            "text": "S110",
+            "x_center": 625.0,
+            "confidence": 0.8785784244537354
+          },
+          {
+            "text": "S110",
+            "x_center": 626.0,
+            "confidence": 0.8765392303466797
+          },
+          {
+            "text": "So/0",
+            "x_center": 728.0,
+            "confidence": 0.7991196513175964
+          },
+          {
+            "text": "S2/0",
+            "x_center": 731.5,
+            "confidence": 0.9186111688613892
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 187.96,
+        "cells_left_to_right": [
+          {
+            "text": "S3: 接收到010",
+            "x_center": 131.5,
+            "confidence": 0.8870130777359009
+          },
+          {
+            "text": "S4接及y0101",
+            "x_center": 136.0,
+            "confidence": 0.7986034154891968
+          },
+          {
+            "text": "S",
+            "x_center": 242.5,
+            "confidence": 0.5834934115409851
+          },
+          {
+            "text": "111010",
+            "x_center": 244.0,
+            "confidence": 0.8621244430541992
+          },
+          {
+            "text": "1/0",
+            "x_center": 293.0,
+            "confidence": 0.862455427646637
+          },
+          {
+            "text": "010",
+            "x_center": 337.0,
+            "confidence": 0.6369805932044983
+          },
+          {
+            "text": "S3",
+            "x_center": 343.0,
+            "confidence": 0.9367163777351379
+          },
+          {
+            "text": "L010",
+            "x_center": 372.5,
+            "confidence": 0.8035111427307129
+          },
+          {
+            "text": "S2",
+            "x_center": 521.5,
+            "confidence": 0.995847225189209
+          },
+          {
+            "text": "S3",
+            "x_center": 522.0,
+            "confidence": 0.9914010763168335
+          },
+          {
+            "text": "S3/0",
+            "x_center": 623.5,
+            "confidence": 0.9126185178756714
+          },
+          {
+            "text": "S{110",
+            "x_center": 625.0,
+            "confidence": 0.887265682220459
+          },
+          {
+            "text": "50/0",
+            "x_center": 731.0,
+            "confidence": 0.7819243669509888
+          },
+          {
+            "text": "S410",
+            "x_center": 733.5,
+            "confidence": 0.9049334526062012
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 246.93,
+        "cells_left_to_right": [
+          {
+            "text": "55寸接数到01010",
+            "x_center": 132.0,
+            "confidence": 0.7894548773765564
+          },
+          {
+            "text": "011",
+            "x_center": 247.0,
+            "confidence": 0.925438404083252
+          },
+          {
+            "text": "S4",
+            "x_center": 278.0,
+            "confidence": 0.9822998642921448
+          },
+          {
+            "text": ".10",
+            "x_center": 322.0,
+            "confidence": 0.9035463929176331
+          },
+          {
+            "text": "S4.",
+            "x_center": 526.5,
+            "confidence": 0.7190026640892029
+          },
+          {
+            "text": "S5/1",
+            "x_center": 626.0,
+            "confidence": 0.9035118222236633
+          },
+          {
+            "text": "S0/0",
+            "x_center": 730.0,
+            "confidence": 0.8699882626533508
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 309.83,
+        "cells_left_to_right": [
+          {
+            "text": "S5",
+            "x_center": 528.5,
+            "confidence": 0.8082436323165894
+          },
+          {
+            "text": "S110",
+            "x_center": 627.0,
+            "confidence": 0.9919639825820923
+          },
+          {
+            "text": "S5/1",
+            "x_center": 733.5,
+            "confidence": 0.9259560108184814
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=120.0: 1. 能：So: 始状态 | x=139.0: S7: 接到0 | x=275.0: 1/0 | x=340.5: 0/0 | x=522.0: 现态 | x=623.5: x=0 | x=688.5: 次态/输出 | x=726.0: x=1\nRow 2: x=132.5: S2: 接到01 | x=254.5: So | x=300.5: 010 | x=333.0: Si | x=343.5: 1/0 | x=375.0: 1/0 | x=375.0: S2 | x=522.5: S1 | x=524.0: S0 | x=625.0: S110 | x=626.0: S110 | x=728.0: So/0 | x=731.5: S2/0\nRow 3: x=131.5: S3: 接收到010 | x=136.0: S4接及y0101 | x=242.5: S | x=244.0: 111010 | x=293.0: 1/0 | x=337.0: 010 | x=343.0: S3 | x=372.5: L010 | x=521.5: S2 | x=522.0: S3 | x=623.5: S3/0 | x=625.0: S{110 | x=731.0: 50/0 | x=733.5: S410\nRow 4: x=132.0: 55寸接数到01010 | x=247.0: 011 | x=278.0: S4 | x=322.0: .10 | x=526.5: S4. | x=626.0: S5/1 | x=730.0: S0/0\nRow 5: x=528.5: S5 | x=627.0: S110 | x=733.5: S5/1"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "状态图呈现S0、S1、S2、S3、S4、S5为节点，通过带输入/输出标注的箭头连接形成转移关系；状态表为6行3列（含表头），行对应现态S0至S5，列对应x=0和x=1的次态/输出",
+  "diagram_facts": {
+    "step_1": "状态图：节点有S0、S1、S2、S3、S4、S5，转移箭头带输入/输出标注（如S0到S1标注0/0、S0到S0标注1/0等）；状态表：表头“现态”“次态/输出”下分“x=0”“x=1”列，行内容为S0行x=0列S1/0、x=1列S0/0；S1行x=0列S1/0、x=1列S2/0；S2行x=0列S3/0、x=1列S0/0；S3行x=0列S1/0、x=1列S4/0；S4行x=0列S5/1、x=1列S0/0；S5行x=0列S1/0、x=1列S5/1；完整可见路径：状态图呈现S0、S1、S2、S3、S4、S5为节点，通过带输入/输出标注的箭头连接形成转移关系；状态表为6行3列（含表头），行对应现态S0至S5，列对应x=0和x=1的次态/输出"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten content for this item: the original state diagram and original state table they drew or wrote. For the state table, capture every row and column exactly as written, including state names, next-state entries, output values, and any separators or grouping. For the state diagram, transcribe all states, transitions, arrows, direction, labels, and input/output annotations exactly as drawn, preserving order and layout relations. Do not infer or correct anything; report only what the student actually wrote or drew."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "S0: 初始状态\nS1: 接收到0\nS2: 接收到01\nS3: 接收到010\nS4: 接收到0101\nS5: 接收到01010\n\n状态 | 次态/输出\nx=0 | x=1\nS0 | S1/0 | S0/0\nS1 | S1/0 | S2/0\nS2 | S3/0 | S0/0\nS3 | S1/0 | S4/0\nS4 | S5/1 | S0/0\nS5 | S1/0 | S5/1"
+  },
+  "facts": {
+    "step_1": "S0:初始状态 S1:接收到0 S2:接收到01 S3:接收到010 S4:接收到0101 S5:接收到01010"
+  }
+}

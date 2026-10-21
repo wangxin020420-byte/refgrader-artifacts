@@ -1,0 +1,94 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T04:59:38.922760",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_14.jpg",
+  "image_sha256": "b5cd69001891d41f8d0474b6dc59ca092bff2f4263d92c29391f17821ce53c3e",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_14.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 12,
+    "accepted_token_count": 12,
+    "mean_confidence": 0.937993,
+    "min_confidence": 0.5,
+    "joined_text": "24\n54\n16. 解：(1)口合其图：\n9\n09\n4\n3\n2\n(2) A的极大元为24,54,极小元为1.\n(3)A的最大元不存在，因为24不整除54.\nA的最小元为1.\n(4) B的最小上界为36，最大小界为1.",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.037374,
+      "very_dark_pixel_ratio": 0.023171,
+      "lower_region_dark_pixel_ratio": 0.03399,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解:(1)哈斯图: 如图所示\n(2)A的极大元为24,54,极小元为1\n(3)A的最大元不存在,因为24不整除54. A的最小元为1.\n(4)B的最小上界为36,最大下界为1.",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_14",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "分层结构：1（最底层）→2、3、4（中间层）→6、9（上层）→24、54（顶层），节点间通过线段连接表示覆盖关系",
+  "diagram_facts": {
+    "step_1": "哈斯图包含节点24、54、6、9、4、2、3、1，节点间有连接线表示覆盖关系；完整可见路径：分层结构：1（最底层）→2、3、4（中间层）→6、9（上层）→24、54（顶层），节点间通过线段连接表示覆盖关系",
+    "step_4": "B的最小上界为36，最大小界为1；完整可见路径：分层结构：1（最底层）→2、3、4（中间层）→6、9（上层）→24、54（顶层），节点间通过线段连接表示覆盖关系"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's hand-drawn Hasse diagram for the poset exactly as drawn, including all nodes, labels, edges, and their directions or connections, without revealing the expected diagram."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's written least upper bound and greatest lower bound of subset B exactly as written, preserving order, labels, separators, and any indication that a bound does not exist."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "手绘的哈斯图，节点包括1、2、3、4、6、9、24、54，边连接关系为：1连接2、3；2连接4、6；3连接9、6；4连接24；6连接24、54；9连接54",
+    "step_2": "A的极大元为24,54,极小元为1",
+    "step_3": "A的最大元不存在,因为24不整除54. A的最小元为1.",
+    "step_4": "B的最小上界为36,最大小界为1."
+  },
+  "facts": {
+    "step_1": "哈斯图包含节点24、54、6、9、4、2、3、1，节点间有连接线表示覆盖关系；完整可见路径：分层结构：1（最底层）→2、3、4（中间层）→6、9（上层）→24、54（顶层），节点间通过线段连接表示覆盖关系",
+    "step_2": "A的极大元为24,54,极小元为1",
+    "step_3": "A的最大元不存在,因为24不整除54. A的最小元为1.",
+    "step_4": "B的最小上界为36,最大下界为1."
+  }
+}

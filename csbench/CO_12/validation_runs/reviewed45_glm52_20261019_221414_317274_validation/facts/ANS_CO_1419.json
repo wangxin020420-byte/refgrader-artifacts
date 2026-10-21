@@ -1,0 +1,450 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T00:17:26.243605",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1419.jpg",
+  "image_sha256": "03d005e840960254131c724ba68c0df4e87c5de9921b749b57b737de27351fb1",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1419.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 33,
+    "accepted_token_count": 33,
+    "mean_confidence": 0.910872,
+    "min_confidence": 0.5,
+    "joined_text": "a:数据\n3: 1) 图:个奇存器的名称：a: Ax,b: Bx，C: Cx, d: Dx\n(2) 指令从主存储器 M → a → b→ 操作控制器，缓冲奇\n存器\n此为数据通路。\nbcd:通用\n(3)数据在运算器：和主存之间进行存/取访问的数据通路：\n奇器\n存：ALU(运算器)→ AC(累加寄存器) →a\n→ 主存储器M\n②\n7 ALL (运算器)\n取：主存储器从→a\n(4) ADD Ax,OD： 主存诸器M取出数据0D→ a(通用寄存器AX) → ALU运\n算器→AC(累加)→a(通用寄存器)→主存储器\n24\n-=3B\n2个硬类：包含5个\n(5) 控制存储器的容量应为\n8\n和3个命公用\n2 条做指令表示，\n(6) 主存\n下址学段\n下址字段\n其余22个干教命令\n转移\n用22人指令\n表\n4个互斥类字段直接编译法\n24\n30个教命令正好被24\n位表示。",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.103387,
+      "very_dark_pixel_ratio": 0.069435,
+      "lower_region_dark_pixel_ratio": 0.102927,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)图中4个寄存器的名称：a:AX, b：BX, c：CX， d：DX a：数据缓冲寄存器 bcd：通用寄存器\n(2)指令从主存储器M -> a-> b ->操作控制器，此为数据通路\n(3) 数据在运算器和主存之间进行存/取访问的数据通路：\n1.存：ALU(运算器)→ AC(累加寄存器) → a → 主存储器M 2.\n2.取：主存储器M → a → ALU(运算器) \n(4) ADD AX,0D ：主存储器M 取出数据0D→ a(通用寄存器AX)→ ALU运算器→ AC(累加)→ a(通用寄存器)→ 主存储器M \n(5) 控制存储器的容量应为 24/8 = 3B \n(6) 格式如图所示\n2个互斥类：包含5个和3个微命令用2条微指令表示，其余22个微命令用22条微指令表示。30个微命令正好被24位表示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1419",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "下址字段；下址学段；下址字段",
+    "step_5_core_compute": "24 8 -=3B；24",
+    "step_6_group12": "2个硬类：包含5个；和3个命公用",
+    "step_6_group34": "4个互斥类字段直接编译法；30个教命令正好被24；位表示。",
+    "step_6_test_field": "转移；表",
+    "step_6_addr_field": "下址字段；下址学段",
+    "step_6_layout": "下址字段；转移；表；4个互斥类字段直接编译法；24；30个教命令正好被24；位表示。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 27.25,
+        "cells_left_to_right": [
+          {
+            "text": "3: 1) 图:个奇存器的名称：a: Ax,b: Bx，C: Cx, d: Dx",
+            "x_center": 390.0,
+            "confidence": 0.8143510818481445
+          },
+          {
+            "text": "a:数据",
+            "x_center": 887.0,
+            "confidence": 0.913101315498352
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 87.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 指令从主存储器 M → a → b→ 操作控制器，缓冲奇",
+            "x_center": 481.0,
+            "confidence": 0.9056006073951721
+          },
+          {
+            "text": "存器",
+            "x_center": 873.0,
+            "confidence": 0.9872901439666748
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 131.25,
+        "cells_left_to_right": [
+          {
+            "text": "此为数据通路。",
+            "x_center": 177.5,
+            "confidence": 0.9995928406715393
+          },
+          {
+            "text": "bcd:通用",
+            "x_center": 872.5,
+            "confidence": 0.9754465222358704
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 178.25,
+        "cells_left_to_right": [
+          {
+            "text": "(3)数据在运算器：和主存之间进行存/取访问的数据通路：",
+            "x_center": 390.5,
+            "confidence": 0.9437704086303711
+          },
+          {
+            "text": "奇器",
+            "x_center": 861.5,
+            "confidence": 0.9015122652053833
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 231.0,
+        "cells_left_to_right": [
+          {
+            "text": "存：ALU(运算器)→ AC(累加寄存器) →a",
+            "x_center": 306.5,
+            "confidence": 0.8882656693458557
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 285.0,
+        "cells_left_to_right": [
+          {
+            "text": "→ 主存储器M",
+            "x_center": 171.5,
+            "confidence": 0.9192975163459778
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 343.67,
+        "cells_left_to_right": [
+          {
+            "text": "②",
+            "x_center": 21.0,
+            "confidence": 0.6820906400680542
+          },
+          {
+            "text": "取：主存储器从→a",
+            "x_center": 153.5,
+            "confidence": 0.9499257206916809
+          },
+          {
+            "text": "7 ALL (运算器)",
+            "x_center": 623.5,
+            "confidence": 0.8597503304481506
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 416.5,
+        "cells_left_to_right": [
+          {
+            "text": "(4) ADD Ax,OD： 主存诸器M取出数据0D→ a(通用寄存器AX) → ALU运",
+            "x_center": 473.0,
+            "confidence": 0.8539664149284363
+          },
+          {
+            "text": "算器→AC(累加)→a(通用寄存器)→主存储器",
+            "x_center": 597.5,
+            "confidence": 0.911111056804657
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 509.0,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 控制存储器的容量应为",
+            "x_center": 190.5,
+            "confidence": 0.9773241877555847
+          },
+          {
+            "text": "24",
+            "x_center": 406.5,
+            "confidence": 0.9999009370803833
+          },
+          {
+            "text": "8",
+            "x_center": 415.0,
+            "confidence": 0.9998763799667358
+          },
+          {
+            "text": "-=3B",
+            "x_center": 477.5,
+            "confidence": 0.8772921562194824
+          },
+          {
+            "text": "和3个命公用",
+            "x_center": 846.0,
+            "confidence": 0.8765254616737366
+          },
+          {
+            "text": "2个硬类：包含5个",
+            "x_center": 847.0,
+            "confidence": 0.9097352623939514
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 573.5,
+        "cells_left_to_right": [
+          {
+            "text": "(6) 主存",
+            "x_center": 81.5,
+            "confidence": 0.9212327003479004
+          },
+          {
+            "text": "下址学段",
+            "x_center": 306.5,
+            "confidence": 0.9615612030029297
+          },
+          {
+            "text": "下址字段",
+            "x_center": 685.5,
+            "confidence": 0.946103572845459
+          },
+          {
+            "text": "2 条做指令表示，",
+            "x_center": 853.5,
+            "confidence": 0.8235222101211548
+          },
+          {
+            "text": "其余22个干教命令",
+            "x_center": 854.5,
+            "confidence": 0.910302996635437
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 632.83,
+        "cells_left_to_right": [
+          {
+            "text": "转移",
+            "x_center": 223.0,
+            "confidence": 0.9449642896652222
+          },
+          {
+            "text": "表",
+            "x_center": 801.5,
+            "confidence": 0.6244710087776184
+          },
+          {
+            "text": "用22人指令",
+            "x_center": 856.0,
+            "confidence": 0.9157754778862
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 688.38,
+        "cells_left_to_right": [
+          {
+            "text": "4个互斥类字段直接编译法",
+            "x_center": 254.5,
+            "confidence": 0.9571699500083923
+          },
+          {
+            "text": "24",
+            "x_center": 597.5,
+            "confidence": 0.9998447895050049
+          },
+          {
+            "text": "30个教命令正好被24",
+            "x_center": 851.0,
+            "confidence": 0.9217453002929688
+          },
+          {
+            "text": "位表示。",
+            "x_center": 895.0,
+            "confidence": 0.9863719344139099
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=390.0: 3: 1) 图:个奇存器的名称：a: Ax,b: Bx，C: Cx, d: Dx | x=887.0: a:数据\nRow 2: x=481.0: (2) 指令从主存储器 M → a → b→ 操作控制器，缓冲奇 | x=873.0: 存器\nRow 3: x=177.5: 此为数据通路。 | x=872.5: bcd:通用\nRow 4: x=390.5: (3)数据在运算器：和主存之间进行存/取访问的数据通路： | x=861.5: 奇器\nRow 5: x=306.5: 存：ALU(运算器)→ AC(累加寄存器) →a\nRow 6: x=171.5: → 主存储器M\nRow 7: x=21.0: ② | x=153.5: 取：主存储器从→a | x=623.5: 7 ALL (运算器)\nRow 8: x=473.0: (4) ADD Ax,OD： 主存诸器M取出数据0D→ a(通用寄存器AX) → ALU运 | x=597.5: 算器→AC(累加)→a(通用寄存器)→主存储器\nRow 9: x=190.5: (5) 控制存储器的容量应为 | x=406.5: 24 | x=415.0: 8 | x=477.5: -=3B | x=846.0: 和3个命公用 | x=847.0: 2个硬类：包含5个\nRow 10: x=81.5: (6) 主存 | x=306.5: 下址学段 | x=685.5: 下址字段 | x=853.5: 2 条做指令表示， | x=854.5: 其余22个干教命令\nRow 11: x=223.0: 转移 | x=801.5: 表 | x=856.0: 用22人指令\nRow 12: x=254.5: 4个互斥类字段直接编译法 | x=597.5: 24 | x=851.0: 30个教命令正好被24 | x=895.0: 位表示。"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_6_addr_field",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "visual_fallback_conflicts": [
+    "step_2_p1",
+    "step_2_p2",
+    "step_3_read",
+    "step_3_write",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "未书写",
+    "step_1_b": "未书写",
+    "step_1_c": "未书写",
+    "step_1_d": "未书写",
+    "step_2_p1": "指令从主存储器M → a → b → 操作控制器，此为数据通路。",
+    "step_2_p2": "a → b → 操作控制器",
+    "step_3_read": "存：ALU(运算器) → AC(累加寄存器) → a → 主存储器M",
+    "step_3_write": "取：主存储器M → a → ALU(运算器)",
+    "step_4_operands": "主存储器M 取出数据OD → a(通用寄存器AX) → ALU运算器",
+    "step_4_result": "→ AC(累加) → a(通用寄存器) → 主存储器M",
+    "step_5_core_field": "控制存储器的容量应由下址字段决定",
+    "step_5_core_compute": "24/8 = 3B",
+    "step_5_final": "3B",
+    "step_6_group12": "5个:3位, 8个:4位",
+    "step_6_group34": "14个:4位, 3个:2位",
+    "step_6_test_field": "2位",
+    "step_6_addr_field": "8位",
+    "step_6_layout": "[互斥组1:3位][互斥组2:4位][互斥组3:4位][互斥组4:2位][测试字段:2位][下址字段:8位] 24位"
+  },
+  "facts": {
+    "step_1_a": "a:AX",
+    "step_1_b": "b：BX",
+    "step_1_c": "c：CX",
+    "step_1_d": "d：DX",
+    "step_2_p1": "主存储器M -> a-> b",
+    "step_2_p2": "b ->操作控制器",
+    "step_3_read": "取：主存储器M → a → ALU(运算器)",
+    "step_3_write": "存：ALU(运算器)→ AC(累加寄存器) → a → 主存储器M",
+    "step_4_operands": "主存储器M 取出数据0D→ a(通用寄存器AX)→ ALU运算器",
+    "step_4_result": "ALU运算器→ AC(累加)→ a(通用寄存器)→ 主存储器M",
+    "step_5_core_field": "下址字段；下址学段；下址字段",
+    "step_5_core_compute": "24 8 -=3B；24",
+    "step_5_final": "24/8 = 3B",
+    "step_6_group12": "2个互斥类：包含5个和3个微命令用2条微指令表示",
+    "step_6_group34": "其余22个微命令用22条微指令表示",
+    "step_6_test_field": "转移；表",
+    "step_6_addr_field": "下址字段；下址学段",
+    "step_6_layout": "下址字段；转移；表；4个互斥类字段直接编译法；24；30个教命令正好被24；位表示。"
+  }
+}

@@ -1,0 +1,477 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T00:08:50.221050",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1394.jpg",
+  "image_sha256": "58831fcfefbeabea1887610501b13558a17ab490ce3c50a0821b44be43dbbc29",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1394.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 35,
+    "accepted_token_count": 34,
+    "mean_confidence": 0.876249,
+    "min_confidence": 0.5,
+    "joined_text": "b：R指令害存器\nSDR数据缓冲等存器\nc：R地址寄存器\nd: PC 程序计数器\n(2) PC→NR 下-条指令地址送AR AR→ AB R送地地总线\nAOS，1u/元=1，R/W=1，内存读控制信号 DBDR 指令送DR\nDR→IR 指令送IR\nP< +I IR.OPC作控制\n(3) AC→OR 数据送R DR于DB 送数据总线(存）\nACU\nIR.OD→AR 存/取地地送AR R→AB 送地址总线\nDRAC(取)\n控制信号\nAD5，M/方=1，R/W=110，内存存/取控制信号 DB→DR\n(4) 0D→AR 地址送AR AR+OB 送地址总线 ADS,M/=1,R/=1 内存读\nDB→OR 数据送DR DR→ACU，AC于ACU，两个加数造ACU\n+ ACU相加 ALU→ AC 结果送AC\n(5)字段直接编译，控制位数n=T_2(m+1)7.5,8、14.3个微命令分别要\n3、4.4.2位编译：控制字段共3+4+4+2+3=16位∴下址字段24-16=8位\n∴控制存储器容量28x24位\n下址字段\n(6)\n5个\n8个14个 3个微命令外部条件\n个\n个\n个\n↑\n3位\n44元\n4倍\n2位\n3伦\n8位",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.111342,
+      "very_dark_pixel_ratio": 0.073994,
+      "lower_region_dark_pixel_ratio": 0.116252,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "（1）a：DR 数据缓冲寄存器\nb：IR 指令寄存器\nc：AR 地址寄存器\nd：PC 程序计数器\n\n（2）PC→AR 下一条指令地址送AR\nAR→AB 送地址总线\nADS，M/IO=1，R/W=1，内存读控制信号\nDB→DR 指令送DR\nDR→IR 指令送IR\nPC+1 IR，OPC 操作控制器\n\n（3）AC→DR 数据送DR\nDR→DB 送数据总线（左）\nIR，OD→AR 存/取地址送AR\nAR→AB 送地址总线\nADS，M/IO=1，R/W=110，内存存/取控制信号\nDB→DR\nDR→ALU→AC（取） 控制信号\n\n（4）OD→AR 地址送AR\nAR→AB 送地址总线\nADS，M/IO=1，R/W=1，内存读控制信号\nDB→DR 数据送DR\nDR→ALU，AC→ALU，两个加数送ALU\n+ ALU相加\nALU→AC 结果送AC\n\n（5）分段直接编译，控制位数 n=[log₂(m+1)]，5，8，14，3个微命令分别要3、4、4、2位编码，控制字段共3+4+4+2+3=16位，∴下址字段24-16=8位，控制存储器容量 2^8×24位\n\n（6）微指令格式图如图所示。",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1394",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "下址字段24-16=8位；控制存储器容量28x24位",
+    "step_5_core_compute": "控制字段共3+4+4+2+3=16位∴下址字段24-16=8位",
+    "step_6_group12": "3位；44元",
+    "step_6_group34": "4倍；2位",
+    "step_6_test_field": "3伦",
+    "step_6_addr_field": "8位",
+    "step_6_layout": "5个 8个14个 3个微命令外部条件 ↑ 下址字段 3位 44元 4倍 2位 3伦 8位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 28.5,
+        "cells_left_to_right": [
+          {
+            "text": "SDR数据缓冲等存器",
+            "x_center": 199.5,
+            "confidence": 0.7966402173042297
+          },
+          {
+            "text": "b：R指令害存器",
+            "x_center": 575.5,
+            "confidence": 0.8000733256340027
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 75.5,
+        "cells_left_to_right": [
+          {
+            "text": "c：R地址寄存器",
+            "x_center": 221.0,
+            "confidence": 0.8439666032791138
+          },
+          {
+            "text": "d: PC 程序计数器",
+            "x_center": 577.5,
+            "confidence": 0.925203263759613
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 123.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2) PC→NR 下-条指令地址送AR AR→ AB R送地地总线",
+            "x_center": 422.0,
+            "confidence": 0.8502791523933411
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 166.5,
+        "cells_left_to_right": [
+          {
+            "text": "AOS，1u/元=1，R/W=1，内存读控制信号 DBDR 指令送DR",
+            "x_center": 467.0,
+            "confidence": 0.8175891041755676
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 211.25,
+        "cells_left_to_right": [
+          {
+            "text": "DR→IR 指令送IR",
+            "x_center": 206.5,
+            "confidence": 0.9434763193130493
+          },
+          {
+            "text": "P< +I IR.OPC作控制",
+            "x_center": 549.0,
+            "confidence": 0.8942955136299133
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 276.75,
+        "cells_left_to_right": [
+          {
+            "text": "(3) AC→OR 数据送R DR于DB 送数据总线(存）",
+            "x_center": 354.5,
+            "confidence": 0.8660125732421875
+          },
+          {
+            "text": "IR.OD→AR 存/取地地送AR R→AB 送地址总线",
+            "x_center": 399.0,
+            "confidence": 0.8874027132987976
+          },
+          {
+            "text": "ACU",
+            "x_center": 806.0,
+            "confidence": 0.6310025453567505
+          },
+          {
+            "text": "DRAC(取)",
+            "x_center": 817.0,
+            "confidence": 0.9692422151565552
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 327.75,
+        "cells_left_to_right": [
+          {
+            "text": "AD5，M/方=1，R/W=110，内存存/取控制信号 DB→DR",
+            "x_center": 421.5,
+            "confidence": 0.8021029233932495
+          },
+          {
+            "text": "控制信号",
+            "x_center": 897.0,
+            "confidence": 0.9705663919448853
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 377.5,
+        "cells_left_to_right": [
+          {
+            "text": "(4) 0D→AR 地址送AR AR+OB 送地址总线 ADS,M/=1,R/=1 内存读",
+            "x_center": 483.5,
+            "confidence": 0.7811498641967773
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 422.0,
+        "cells_left_to_right": [
+          {
+            "text": "DB→OR 数据送DR DR→ACU，AC于ACU，两个加数造ACU",
+            "x_center": 460.0,
+            "confidence": 0.829866886138916
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 483.5,
+        "cells_left_to_right": [
+          {
+            "text": "+ ACU相加 ALU→ AC 结果送AC",
+            "x_center": 319.5,
+            "confidence": 0.8676707744598389
+          },
+          {
+            "text": "(5)字段直接编译，控制位数n=T_2(m+1)7.5,8、14.3个微命令分别要",
+            "x_center": 474.5,
+            "confidence": 0.8500253558158875
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 541.5,
+        "cells_left_to_right": [
+          {
+            "text": "3、4.4.2位编译：控制字段共3+4+4+2+3=16位∴下址字段24-16=8位",
+            "x_center": 484.5,
+            "confidence": 0.9709831476211548
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 630.8,
+        "cells_left_to_right": [
+          {
+            "text": "(6)",
+            "x_center": 35.0,
+            "confidence": 0.9926400184631348
+          },
+          {
+            "text": "5个",
+            "x_center": 141.0,
+            "confidence": 0.9986149072647095
+          },
+          {
+            "text": "个",
+            "x_center": 146.5,
+            "confidence": 0.9477322101593018
+          },
+          {
+            "text": "个",
+            "x_center": 218.0,
+            "confidence": 0.9870420694351196
+          },
+          {
+            "text": "∴控制存储器容量28x24位",
+            "x_center": 226.0,
+            "confidence": 0.8805670142173767
+          },
+          {
+            "text": "个",
+            "x_center": 288.0,
+            "confidence": 0.9984311461448669
+          },
+          {
+            "text": "8个14个 3个微命令外部条件",
+            "x_center": 359.0,
+            "confidence": 0.9172537922859192
+          },
+          {
+            "text": "个",
+            "x_center": 360.0,
+            "confidence": 0.48038920760154724
+          },
+          {
+            "text": "↑",
+            "x_center": 448.0,
+            "confidence": 0.8165920972824097
+          },
+          {
+            "text": "下址字段",
+            "x_center": 579.0,
+            "confidence": 0.9467720985412598
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 677.08,
+        "cells_left_to_right": [
+          {
+            "text": "3位",
+            "x_center": 141.5,
+            "confidence": 0.9824007749557495
+          },
+          {
+            "text": "44元",
+            "x_center": 221.0,
+            "confidence": 0.6192418932914734
+          },
+          {
+            "text": "4倍",
+            "x_center": 294.0,
+            "confidence": 0.6124251484870911
+          },
+          {
+            "text": "2位",
+            "x_center": 360.5,
+            "confidence": 0.9793552756309509
+          },
+          {
+            "text": "3伦",
+            "x_center": 434.5,
+            "confidence": 0.8448964357376099
+          },
+          {
+            "text": "8位",
+            "x_center": 516.5,
+            "confidence": 0.970963716506958
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=199.5: SDR数据缓冲等存器 | x=575.5: b：R指令害存器\nRow 2: x=221.0: c：R地址寄存器 | x=577.5: d: PC 程序计数器\nRow 3: x=422.0: (2) PC→NR 下-条指令地址送AR AR→ AB R送地地总线\nRow 4: x=467.0: AOS，1u/元=1，R/W=1，内存读控制信号 DBDR 指令送DR\nRow 5: x=206.5: DR→IR 指令送IR | x=549.0: P< +I IR.OPC作控制\nRow 6: x=354.5: (3) AC→OR 数据送R DR于DB 送数据总线(存） | x=399.0: IR.OD→AR 存/取地地送AR R→AB 送地址总线 | x=806.0: ACU | x=817.0: DRAC(取)\nRow 7: x=421.5: AD5，M/方=1，R/W=110，内存存/取控制信号 DB→DR | x=897.0: 控制信号\nRow 8: x=483.5: (4) 0D→AR 地址送AR AR+OB 送地址总线 ADS,M/=1,R/=1 内存读\nRow 9: x=460.0: DB→OR 数据送DR DR→ACU，AC于ACU，两个加数造ACU\nRow 10: x=319.5: + ACU相加 ALU→ AC 结果送AC | x=474.5: (5)字段直接编译，控制位数n=T_2(m+1)7.5,8、14.3个微命令分别要\nRow 11: x=484.5: 3、4.4.2位编译：控制字段共3+4+4+2+3=16位∴下址字段24-16=8位\nRow 12: x=35.0: (6) | x=141.0: 5个 | x=146.5: 个 | x=218.0: 个 | x=226.0: ∴控制存储器容量28x24位 | x=288.0: 个 | x=359.0: 8个14个 3个微命令外部条件 | x=360.0: 个 | x=448.0: ↑ | x=579.0: 下址字段\nRow 13: x=141.5: 3位 | x=221.0: 44元 | x=294.0: 4倍 | x=360.5: 2位 | x=434.5: 3伦 | x=516.5: 8位"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "DR数据缓冲寄存器",
+    "step_1_b": "IR指令寄存器",
+    "step_1_c": "AR地址寄存器",
+    "step_1_d": "PC程序计数器",
+    "step_2_p1": "PC→AR 下一条指令地址送AR AR→AB 送地址总线 ADS, M/方=1, R/W=1, 内存读控制信号 DB→DR 指令送DR",
+    "step_2_p2": "DR→IR 指令送IR PC+1 IR.OPC作控制",
+    "step_3_read": "AC→DR 数据送DR DR→DB 送数据总线（存）",
+    "step_3_write": "图中未明确显示",
+    "step_4_operands": "0D→AR 地址送AR AR→AB 送地址总线 DB→DR 数据送DR DR→ALU, AC→ALU, 两个加数送ALU",
+    "step_4_result": "+ ALU相加 ALU→AC 结果送AC",
+    "step_6_layout": "5个 8个 14个 3个微命令 外部条件 下址字段 3位 4位 4位 2位 3位 8位"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_6_layout"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_1_c",
+    "step_1_d",
+    "step_2_p1",
+    "step_2_p2",
+    "step_3_read",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "DR 数据缓冲寄存器",
+    "step_1_b": "IR 指令寄存器",
+    "step_1_c": "AR 地址寄存器",
+    "step_1_d": "PC 程序计数器",
+    "step_2_p1": "PC→AR 下一条指令地址送AR AR→AB IR送地址总线 ADS, M/画=1, R/画=1, 内存读控制信号 DB→DR 指令送DR DR→IR 指令送IR",
+    "step_2_p2": "PC+1 IR.OPC→操作控制器",
+    "step_3_read": "AC→DR 数据送DR DR→DB 送数据总线（右） IR.OD→AR 存/取地址送AR AR→AB 送地址总线 ADS, M/画=1, R/画=110, 内存存/取控制信号 DB→DR DR→AC(取) 控制信号",
+    "step_3_write": "未书写",
+    "step_4_operands": "OD→AR 地址送AR AR→AB 送地址总线 ADS, M/画=1, R/画=1 内存读 DB→DR 数据送DR DR→ALU, AC→ALU, 两个加数送ALU",
+    "step_4_result": "+ ALU相加 ALU→AC 结果送AC",
+    "step_5_core_field": "控制存储器容量 = 2^x ×24位，控制位n=⌈log₂(m+1)⌉，5,8,14,3个微命令分别要3,4,4,2位编译，控制字段共3+4+4+2=16位 ∴下址字段24-16=8位",
+    "step_5_core_compute": "控制位n=⌈log₂(m+1)⌉，5,8,14,3个微命令分别要3,4,4,2位编译，控制字段共3+4+4+2=16位 ∴下址字段24-16=8位",
+    "step_5_final": "2^8 ×24位",
+    "step_6_group12": "5个 8个 3位 4位",
+    "step_6_group34": "14个 3个 4位 2位",
+    "step_6_test_field": "3位",
+    "step_6_addr_field": "8位",
+    "step_6_layout": "5个 8个 14个 3个微命令 下址字段\n3位 4位 4位 2位 3位 8位"
+  },
+  "facts": {
+    "step_1_a": "a：DR 数据缓冲寄存器",
+    "step_1_b": "b：IR 指令寄存器",
+    "step_1_c": "c：AR 地址寄存器",
+    "step_1_d": "d：PC 程序计数器",
+    "step_2_p1": "PC→AR 下一条指令地址送AR；AR→AB 送地址总线；ADS，M/IO=1，R/W=1，内存读控制信号；DB→DR 指令送DR；DR→IR 指令送IR",
+    "step_2_p2": "PC+1 IR，OPC 操作控制器",
+    "step_3_read": "AC→DR 数据送DR；DR→DB 送数据总线（左）；IR，OD→AR 存/取地址送AR；AR→AB 送地址总线；ADS，M/IO=1，R/W=110，内存存/取控制信号；DB→DR；DR→ALU→AC（取） 控制信号",
+    "step_3_write": "AC→DR 数据送DR；DR→DB 送数据总线（左）；IR，OD→AR 存/取地址送AR；AR→AB 送地址总线；ADS，M/IO=1，R/W=110，内存存/取控制信号；DB→DR；DR→ALU→AC（取） 控制信号",
+    "step_4_operands": "OD→AR 地址送AR；AR→AB 送地址总线；ADS，M/IO=1，R/W=1，内存读控制信号；DB→DR 数据送DR；DR→ALU，AC→ALU，两个加数送ALU",
+    "step_4_result": "+ ALU相加；ALU→AC 结果送AC",
+    "step_5_core_field": "下址字段24-16=8位，控制存储器容量 2^8×24位",
+    "step_5_core_compute": "控制字段共3+4+4+2+3=16位，∴下址字段24-16=8位",
+    "step_5_final": "控制存储器容量 2^8×24位",
+    "step_6_group12": "5，8，14，3个微命令分别要3、4、4、2位编码",
+    "step_6_group34": "5，8，14，3个微命令分别要3、4、4、2位编码",
+    "step_6_test_field": "3",
+    "step_6_addr_field": "下址字段24-16=8位",
+    "step_6_layout": "5个 8个14个 3个微命令外部条件 ↑ 下址字段 3位 44元 4倍 2位 3伦 8位"
+  }
+}

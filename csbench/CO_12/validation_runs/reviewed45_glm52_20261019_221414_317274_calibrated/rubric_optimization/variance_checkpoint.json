@@ -1,0 +1,1888 @@
+[
+  {
+    "file": "ANS_CO_1328.jpg",
+    "facts": "{\"step_1\": \"a: 数据缓冲寄存器DR；b: 地址寄存器AR；c: 指令寄存器IR；d: 程序计数器PC\", \"step_2\": \"CPU发出读命令，从主存取出相应指令代码送给数据寄存器，判断其是指令后将其地址送给地址寄存器，控制器取出地址得到指令。\", \"step_3\": \"CPU从主存中调出数据送入DR，ALU从DR中取出数据运算后将结果送回AC，AC再通过DR送给主存，完成存取访问。\", \"step_4\": \"首先CPU控制器发出ADD命令，向主存取出0D送到DR，之后AX通过AC与0D做ALU运算。\", \"step_5\": \"由于要考虑1个不发出命令指令，4个互斥类应各包含6个，9个，15个，4个微命令，所以格式后续偏移地址为24-3-4-4-2-3=8位（2^3>6,2^4>9,2^4>15,2^2=4）故容量为2^8×24位。\", \"step_6\": \"格式[OP1 OP2 OP3 OP4 外部条件 后继偏移地址] 3位 4位 4位 2位 3位 8位\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-19T22:56:38.714531",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1328.jpg",
+      "image_sha256": "84d981aade0d8bbeb7b3d07ab410c174052f3542ae8dfb93088dea629cc3a5ee",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "a: 数据缓冲寄存器DR\nb: 地址寄存器AR\nc: 指令寄存器IR\nd: 程序计数器PC\nCPU发出读命令，从主存取出相应指令代码送给数据寄存器，判断其是指令后将其地址送给地址寄存器，控制器取出地址得到指令。\nCPU从主存中调出数据送入DR，ALU从DR中取出数据运算后将结果送回AC，AC再通过DR送给主存，完成存取访问。\n首先CPU控制器发出ADD命令，向主存取出0D送到DR，之后AX通过AC与0D做ALU运算。\n由于要考虑1个不发出命令指令，4个互斥类应各包含6个，9个，15个，4个微命令，所以格式后续偏移地址为24-3-4-4-2-3=8位（2^3>6,2^4>9,2^4>15,2^2=4）故容量为2^8×24位。\n格式[OP1 OP2 OP3 OP4 外部条件 后继偏移地址] 3位 4位 4位 2位 3位 8位",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1328",
+        "question_id": "CO_12",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "a: 数据缓冲寄存器DR；b: 地址寄存器AR；c: 指令寄存器IR；d: 程序计数器PC",
+        "step_2": "CPU发出读命令，从主存取出相应指令代码送给数据寄存器，判断其是指令后将其地址送给地址寄存器，控制器取出地址得到指令。",
+        "step_3": "CPU从主存中调出数据送入DR，ALU从DR中取出数据运算后将结果送回AC，AC再通过DR送给主存，完成存取访问。",
+        "step_4": "首先CPU控制器发出ADD命令，向主存取出0D送到DR，之后AX通过AC与0D做ALU运算。",
+        "step_5": "由于要考虑1个不发出命令指令，4个互斥类应各包含6个，9个，15个，4个微命令，所以格式后续偏移地址为24-3-4-4-2-3=8位（2^3>6,2^4>9,2^4>15,2^2=4）故容量为2^8×24位。",
+        "step_6": "格式[OP1 OP2 OP3 OP4 外部条件 后继偏移地址] 3位 4位 4位 2位 3位 8位"
+      }
+    },
+    "scores": [
+      18.0,
+      18.0,
+      18.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a: 数据缓冲寄存器DR；b: 地址寄存器AR；c: 指令寄存器IR；d: 程序计数器PC",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a=DR，b=IR，c=AR，d=PC",
+            "dependency_status": "satisfied",
+            "reason": "a和d正确，但b与c的IR/AR标注互换，四项中两项正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "CPU发出读命令，从主存取出相应指令代码送给数据寄存器，判断其是指令后将其地址送给地址寄存器，控制器取出地址得到指令。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "主存M -> DR -> IR -> 操作控制器",
+            "dependency_status": "insufficient",
+            "reason": "仅体现主存→DR这一段，后续通路描述混乱（地址送AR再取指令），缺少M→DR→IR→控制器的正确序列"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "CPU从主存中调出数据送入DR，ALU从DR中取出数据运算后将结果送回AC，AC再通过DR送给主存",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读：M->DR->ALU->AC；写：AC->DR->M",
+            "dependency_status": "satisfied",
+            "reason": "存取两条通路均与标准答案等价：M→DR→ALU→AC 及 AC→DR→M"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "首先CPU控制器发出ADD命令，向主存取出0D送到DR，之后AX通过AC与0D做ALU运算。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "AC -> ALU，DR -> ALU，'+' -> ALU，ALU -> AC",
+            "dependency_status": "insufficient",
+            "reason": "体现取操作数至DR和ALU运算两个要素，但通路表达不清，未明确AC→ALU、ALU→AC的完整数据流"
+          },
+          {
+            "id": "step_5",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "24-3-4-4-2-3=8位（2^3>6,2^4>9,2^4>15,2^2=4）故容量为2^8×24位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "下址字段8位，控制存储器容量256×24位",
+            "dependency_status": "satisfied",
+            "reason": "字段位数推导正确（含留一个不发出编码），下址8位，容量2^8×24=256×24位，与标准一致",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "格式[OP1 OP2 OP3 OP4 外部条件 后继偏移地址] 3位 4位 4位 2位 3位 8位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段4组：3位、4位、4位、2位；判断测试字段3位；下地址字段8位",
+            "dependency_status": "satisfied",
+            "reason": "各字段位数与标准答案完全一致，总长24位"
+          }
+        ],
+        "total_score": 18.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a: 数据缓冲寄存器DR；b: 地址寄存器AR；c: 指令寄存器IR；d: 程序计数器PC",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a=DR, b=IR, c=AR, d=PC (each register 1 point)",
+            "dependency_status": "satisfied",
+            "reason": "a(DR) and d(PC) correct; b and c are swapped (b should be IR, c should be AR). 2 of 4 atoms correct."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "CPU发出读命令，从主存取出相应指令代码送给数据寄存器，判断其是指令后将其地址送给地址寄存器，控制器取出地址得到指令。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "主存M -> DR -> IR -> 操作控制器",
+            "dependency_status": "insufficient",
+            "reason": "M->DR segment correct, but path through IR to 操作控制器 is garbled/missing (describes sending address to AR instead of instruction to IR/controller). Only one valid segment."
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "CPU从主存中调出数据送入DR，ALU从DR中取出数据运算后将结果送回AC，AC再通过DR送给主存，完成存取访问。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读：M -> DR -> ALU -> AC；写：AC -> DR -> M",
+            "dependency_status": "satisfied",
+            "reason": "Both read path M->DR->ALU->AC and write path AC->DR->M correctly stated."
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "首先CPU控制器发出ADD命令，向主存取出0D送到DR，之后AX通过AC与0D做ALU运算。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "AC -> ALU，DR -> ALU，'+' -> ALU，ALU -> AC",
+            "dependency_status": "insufficient",
+            "reason": "Operand fetch to DR and an ALU add operation involving AC are indicated, but explicit data paths (DR->ALU, ALU->AC) are not clearly given; notation AX/AC confused."
+          },
+          {
+            "id": "step_5",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "4个互斥类应各包含6个，9个，15个，4个微命令，所以格式后续偏移地址为24-3-4-4-2-3=8位（2^3>6,...）故容量为2^8×24位。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "下址字段8位，可寻址2^8=256条微指令，容量256×24位",
+            "dependency_status": "satisfied",
+            "reason": "Field-width derivation with explicit computation trace yields 8-bit next-address field and 2^8×24位 capacity, matching the standard answer.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "格式[OP1 OP2 OP3 OP4 外部条件 后继偏移地址] 3位 4位 4位 2位 3位 8位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "4组操作字段3/4/4/2位，判断测试字段3位，下地址字段8位",
+            "dependency_status": "satisfied",
+            "reason": "All field widths (3,4,4,2,3,8) exactly match the standard microinstruction format."
+          }
+        ],
+        "total_score": 18.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a: 数据缓冲寄存器DR；b: 地址寄存器AR；c: 指令寄存器IR；d: 程序计数器PC",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a=DR，b=IR，c=AR，d=PC",
+            "dependency_status": "partial",
+            "reason": "a和d正确；b和c（IR与AR）互换，4个中2个正确，按比例给一半分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "CPU发出读命令，从主存取出相应指令代码送给数据寄存器，判断其是指令后将其地址送给地址寄存器，控制器取出地址得到指令。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "主存M -> DR -> IR -> 操作控制器",
+            "dependency_status": "partial",
+            "reason": "正确给出主存→DR段，但后续通路概念错误（未写DR→IR→控制器，且'地址送地址寄存器取指令'表述矛盾），仅得少量核心通路分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "CPU从主存中调出数据送入DR，ALU从DR中取出数据运算后将结果送回AC，AC再通过DR送给主存，完成存取访问。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读：M->DR->ALU->AC；写：AC->DR->M",
+            "dependency_status": "satisfied",
+            "reason": "读、写两条通路均与标准一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "首先CPU控制器发出ADD命令，向主存取出0D送到DR，之后AX通过AC与0D做ALU运算。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "AC->ALU，DR->ALU，'+'->ALU，ALU->AC",
+            "dependency_status": "partial",
+            "reason": "正确体现操作数经DR进入ALU做加法及AC参与，但通路方向表述含混，未明确ALU->AC结果回路，给一半。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "格式后续偏移地址为24-3-4-4-2-3=8位…故容量为2^8×24位",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "下址字段8位，控制存储器容量256×24位",
+            "dependency_status": "satisfied",
+            "reason": "下址位数8位与容量2^8×24位均正确，且展示了字段划分推导过程。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "格式[OP1 OP2 OP3 OP4 外部条件 后继偏移地址] 3位 4位 4位 2位 3位 8位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "4组操作字段3/4/4/2位，判断测试字段3位，下地址字段8位",
+            "dependency_status": "satisfied",
+            "reason": "各字段位数与标准完全一致，仅记法不同（外部条件即判断测试字段）。"
+          }
+        ],
+        "total_score": 18.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "step_3": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "step_6": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_6": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_1342.jpg",
+    "facts": "{\"step_1\": \"a:数据寄存器\\nb:控制寄存器\\nc:地址寄存器\\nd:指令寄存器\", \"step_2\": \"未书写\", \"step_3\": \"未书写\", \"step_4\": \"未书写\", \"step_5\": \"5 3\\n8 4\\n14 4\\n3 2\\n容量:2^9×24\\n地址:3+4+4+2=13\\n控制位:3-1=2\\n下地址:24-13-2=9.\", \"step_6\": \"直接编译  控制位  下地址\\n13位    2位    9位\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-19T22:58:10.612894",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1342.jpg",
+      "image_sha256": "ac1f40463f19385d889a5cf95ba8c473c9f7b03c9ab59fb1d037a9b7c3d6e476",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) a:数据寄存器\nb:控制寄存器\nc:地址寄存器\nd:指令寄存器\n(2)(3)(4)\n(5) 5 3\n8 4\n14 4\n3 2\n容量:2^9×24\n地址:3+4+4+2=13\n控制位:3-1=2\n下地址:24-13-2=9.\n(6) 直接编译  控制位  下地址\n13位    2位    9位\n",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1342",
+        "question_id": "CO_12",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "a:数据寄存器\nb:控制寄存器\nc:地址寄存器\nd:指令寄存器",
+        "step_2": "未书写",
+        "step_3": "未书写",
+        "step_4": "未书写",
+        "step_5": "5 3\n8 4\n14 4\n3 2\n容量:2^9×24\n地址:3+4+4+2=13\n控制位:3-1=2\n下地址:24-13-2=9.",
+        "step_6": "直接编译  控制位  下地址\n13位    2位    9位"
+      }
+    },
+    "scores": [
+      6.5,
+      7.5,
+      4.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a:数据寄存器 b:控制寄存器 c:地址寄存器 d:指令寄存器",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a=DR, b=IR, c=AR, d=PC",
+            "dependency_status": "not_applicable",
+            "reason": "a and c correct; b labeled 控制寄存器 instead of IR and d labeled IR instead of PC — half of the four register names correct."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "M -> DR -> IR -> 操作控制器",
+            "dependency_status": "failed",
+            "reason": "No content written."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "读: M->DR->ALU->AC；写: AC->DR->M",
+            "dependency_status": "failed",
+            "reason": "No content written."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "AC->ALU, DR->ALU, '+'->ALU, ALU->AC",
+            "dependency_status": "failed",
+            "reason": "No content written."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "5 3 8 4 14 4 3 2 容量:2^9×24 地址:3+4+4+2=13 控制位:3-1=2 下地址:24-13-2=9",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "微指令字长24位，下址8位，容量256×24位",
+            "dependency_status": "insufficient",
+            "reason": "Control field encoding counts (5→3, 8→4, 14→4, 3→2, sum 13) are correct and the capacity formula 2^下址×字长 is applied, but 判断字段 miscounted as 2 (should be 3), giving 下址9 instead of 8 and final capacity 2^9×24 instead of 2^8×24. Process credit kept; final result wrong.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "直接编译 控制位 下地址 13位 2位 9位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段3+4+4+2位；判断测试字段3位；下地址字段8位",
+            "dependency_status": "insufficient",
+            "reason": "Direct encoding structure and operation field total 13 bits are correct, but 判断字段 given as 2 (should be 3) and 下地址字段 as 9 (should be 8), propagated from step_5 error; half the field assignments correct."
+          }
+        ],
+        "total_score": 6.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 2.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a:数据寄存器 b:指令寄存器 c:地址寄存器 d:指令寄存器",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a=DR, b=IR, c=AR, d=PC",
+            "dependency_status": "satisfied",
+            "reason": "Three of four registers correctly identified; d labeled 指令寄存器 instead of 程序计数器PC."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "M -> DR -> IR -> 操作控制器",
+            "dependency_status": "failed",
+            "reason": "No answer written."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "读: M -> DR -> ALU -> AC; 写: AC -> DR -> M",
+            "dependency_status": "failed",
+            "reason": "No answer written."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "AC->ALU, DR->ALU, '+'->ALU, ALU->AC",
+            "dependency_status": "failed",
+            "reason": "No answer written."
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "5 3 8 4 14 4 3 2 容量:2^9×24 地址:3+4+4+2=13 控制位:3-1=2 下地址:24-13-2=9",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "下址字段8位, 容量 2^8×24 = 256×24位",
+            "dependency_status": "failed",
+            "reason": "Field-bit group encoding (5→3, 8→4, 14→4, 3→2) correct and computation trace present, but判断测试字段应为3位 (P字段含隐含默认分支); 得到下地址9位、容量2^9×24, final capacity wrong.",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "直接编译 控制位 2位 下地址 13位 2位 9位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段4组: 3/4/4/2位; 判断测试字段3位; 下地址字段8位",
+            "dependency_status": "failed",
+            "reason": "Field-decoding method and operation field bits 3/4/4/2 correct, but判断测试字段2位 and 下地址字段9位 are wrong (should be 3 and 8)."
+          }
+        ],
+        "total_score": 7.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 1.5,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a:数据寄存器 b:控制寄存器 c:地址寄存器 d:指令寄存器",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a=DR, b=IR, c=AR, d=PC",
+            "dependency_status": "not_applicable",
+            "reason": "a和c标注正确(各1分)；b应为指令寄存器IR却写控制寄存器，d应为程序计数器PC却写指令寄存器，两处错误"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "M -> DR -> IR -> 操作控制器",
+            "dependency_status": "failed",
+            "reason": "未作答"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "读：M->DR->ALU->AC；写：AC->DR->M",
+            "dependency_status": "failed",
+            "reason": "未作答"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "AC->ALU, DR->ALU, '+'->ALU, ALU->AC",
+            "dependency_status": "failed",
+            "reason": "未作答"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "5 3 8 4 14 4 3 2 容量:2^9×24 地址:3+4+4+2=13 控制位:3-1=2 下地址:24-13-2=9",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "下址字段8位，容量256×24位",
+            "dependency_status": "insufficient",
+            "reason": "各微命令组位数字段(3,4,4,2)及求和13位的计算过程正确；但判断测试字段误为2位（应为3位），下址9位（应为8位），最终容量2^9×24错误。仅过程分1分",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "直接编译 控制位 2位 下地址 13位 9位",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段3+4+4+2=13位，判断测试字段3位，下址字段8位",
+            "dependency_status": "insufficient",
+            "reason": "操作字段总位数13位正确；判断测试字段2位、下址字段9位均错误（应为3位和8位），三字段中仅一个正确，按1.5/5给分"
+          }
+        ],
+        "total_score": 4.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 1.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        3.0,
+        2.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        2.0,
+        1.5,
+        1.0
+      ],
+      "step_6": [
+        2.5,
+        3.0,
+        1.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_3": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_4": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_5": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_6": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.22222222222222224,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.16666666666666666,
+      "step_6": 0.38888888888888884
+    },
+    "max_item_variance": 0.38888888888888884,
+    "avg_item_variance": 0.12962962962962962
+  },
+  {
+    "file": "ANS_CO_1364.jpg",
+    "facts": "{\"step_1\": \"a:数据寄存器(DR)\\nb:指令寄存器(IR)\\nc:地址寄存器(AR)\\nd:程序计数器(PC)\", \"step_2\": \"PC→AB\\nADS, M/IO#, W/R#=1,1,0.\\nDB→IR\\nPC+1.\\nIR:OPC→ID\\nID→控制器(μPC)\", \"step_3\": \"读（取）: ADS, M/IO#, W/R#=1,1,0\\nDB→DR\\nDR→ALU\\n或写（存）:\\nALU→DR\\nDR→DB.\\n终端主存地址→AB\\nADS, M/IO#, W/R#=1,1,1.\", \"step_4\": \"①取指: PC→AB.\\nADS, M/IO#, W/R#=1,1,0\\nDB→IR\\nPC+1.\\n②取数: OD→AR\\nAR→AB\\nADS, M/IO#, W/R#=1,1,0\\nDB→DR.\\n③计算: DR→ALU, AX→ALU\\n+\\nALU→AX\", \"step_5\": \"各互斥微命令需要字段位数:\\n5个:3位\\n8个:4位\\n14个:4位\\n3个:2位\\n所以下址字段为:\\n24-3-4-4-2-3=8位\\n所以控制存储器容量为:\\n2⁸×24\", \"step_6\": \"3位 4位 4位 2位| 3位   | 8位\\n互斥微命令组   |外部条件| 下址字段\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-19T23:00:25.725981",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1364.jpg",
+      "image_sha256": "028674c125161d5c27fbe0fd0f8b67d8acc6e82bd1034656ab18297412a7ba95",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1)\na:数据寄存器(DR)\nb:指令寄存器(IR)\nc:地址寄存器(AR)\nd:程序计数器(PC)\n(2).\nPC→AB\nADS, M/IO#, W/R#=1,1,0.\nDB→IR\nPC+1.\nIR:OPC→ID\nID→控制器(μPC)\n(3).ADS, M/IO#, W/R#=1,1,0\nDB→DR\nDR→ALU\n或写:\nALU→DR\nDR→DB.\n终端主存地址→AB\nADS, M/IO#, W/R#=1,1,1.\n(4).\n①取指: PC→AB.\nADS, M/IO#, W/R#=1,1,0\nDB→IR\nPC+1.\n②取数: OD→AR\nAR→AB\nADS, M/IO#, W/R#=1,1,0\nDB→DR.\n③计算: DR→ALU, AX→ALU\n+\nALU→AX\n(5).\n各互斥微命令需要字段位数:\n5个:3位\n8个:4位\n14个:4位\n3个:2位\n所以下址字段为:\n24-3-4-4-2-3=8位\n所以控制存储器容量为:\n2⁸×24\n(6).\n3位 4位 4位 2位| 3位   | 8位\n互斥微命令组   |外部条件| 下址字段",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1364",
+        "question_id": "CO_12",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "a:数据寄存器(DR)\nb:指令寄存器(IR)\nc:地址寄存器(AR)\nd:程序计数器(PC)",
+        "step_2": "PC→AB\nADS, M/IO#, W/R#=1,1,0.\nDB→IR\nPC+1.\nIR:OPC→ID\nID→控制器(μPC)",
+        "step_3": "读（取）: ADS, M/IO#, W/R#=1,1,0\nDB→DR\nDR→ALU\n或写（存）:\nALU→DR\nDR→DB.\n终端主存地址→AB\nADS, M/IO#, W/R#=1,1,1.",
+        "step_4": "①取指: PC→AB.\nADS, M/IO#, W/R#=1,1,0\nDB→IR\nPC+1.\n②取数: OD→AR\nAR→AB\nADS, M/IO#, W/R#=1,1,0\nDB→DR.\n③计算: DR→ALU, AX→ALU\n+\nALU→AX",
+        "step_5": "各互斥微命令需要字段位数:\n5个:3位\n8个:4位\n14个:4位\n3个:2位\n所以下址字段为:\n24-3-4-4-2-3=8位\n所以控制存储器容量为:\n2⁸×24",
+        "step_6": "3位 4位 4位 2位| 3位   | 8位\n互斥微命令组   |外部条件| 下址字段"
+      }
+    },
+    "scores": [
+      25.0,
+      25.0,
+      24.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "a:数据寄存器(DR) b:指令寄存器(IR) c:地址寄存器(AR) d:程序计数器(PC)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "四个寄存器名称全部标对",
+            "dependency_status": "satisfied",
+            "reason": "四个寄存器名称与标准答案完全一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "PC→AB; ADS, M/IO#, W/R#=1,1,0; DB→IR; PC+1; IR:OPC→ID; ID→控制器(μPC)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "主存→DR→IR→控制器 的取指数据通路",
+            "dependency_status": "satisfied",
+            "reason": "完整给出取指通路：PC送地址、经DB取指令入IR、操作码送ID再到控制器，含控制信号，语义等价"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "读（取）: ADS,M/IO#,W/R#=1,1,0; DB→DR; DR→ALU; 写: ALU→DR; DR→DB; 地址→AB; W/R#=1,1,1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读：M→DR→ALU→AC；写：AC→DR→M",
+            "dependency_status": "satisfied",
+            "reason": "读、写两条通路方向均正确，含读写控制信号，语义等价"
+          },
+          {
+            "id": "step_4",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "③计算: DR→ALU, AX→ALU, +, ALU→AX（另含取指、取数步骤）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "AC→ALU, DR→ALU, '+'→ALU, ALU→AC",
+            "dependency_status": "satisfied",
+            "reason": "两操作数送ALU、执行加法、结果回送累加寄存器，与标准通路一致（AX即累加寄存器），且补充了完整执行过程"
+          },
+          {
+            "id": "step_5",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "下址字段为: 24-3-4-4-2-3=8位; 控制存储器容量为: 2⁸×24",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "下址字段8位，控存容量256×24位",
+            "dependency_status": "satisfied",
+            "reason": "字段位数计算正确，容量结论2⁸×24与标准256×24等价，含计算过程",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "3位 4位 4位 2位 | 3位 | 8位：互斥微命令组 | 外部条件 | 下址字段",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段4组(3,4,4,2位)、判断测试字段3位、下址字段8位",
+            "dependency_status": "satisfied",
+            "reason": "微指令格式各字段位数全部与标准答案一致"
+          }
+        ],
+        "total_score": 25.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "a:数据寄存器(DR) b:指令寄存器(IR) c:地址寄存器(AR) d:程序计数器(PC)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "标明a=DR, b=IR, c=AR, d=PC",
+            "dependency_status": "satisfied",
+            "reason": "四个寄存器名称与标准答案完全一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "PC→AB; ADS, M/IO#, W/R#=1,1,0; DB→IR; PC+1; IR:OPC→ID; ID→控制器(μPC)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "主存M→DR→IR→操作控制器的取指数据通路",
+            "dependency_status": "satisfied",
+            "reason": "完整给出取指通路（含控制信号），指令经IR→译码器送控制器，语义与标准一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "读: DB→DR; DR→ALU; 写: ALU→DR; DR→DB; 地址→AB, ADS,M/IO#,W/R#=1,1,1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读: M→DR→ALU→AC; 写: AC→DR→M",
+            "dependency_status": "satisfied",
+            "reason": "读写两方向通路均正确，等价于标准答案（DR经DB与主存交换）"
+          },
+          {
+            "id": "step_4",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "③计算: DR→ALU, AX→ALU, +, ALU→AX（且含取指、取数阶段通路）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "AC→ALU, DR→ALU, '+'→ALU, ALU→AC",
+            "dependency_status": "satisfied",
+            "reason": "执行阶段通路正确，AX即累加寄存器（题目为ADD AX,OD），与标准等价"
+          },
+          {
+            "id": "step_5",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "字段位数3,4,4,2; 下址 24-3-4-4-2-3=8位; 容量 2⁸×24",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "下址字段8位，容量256×24位",
+            "dependency_status": "satisfied",
+            "reason": "计算过程与最终结果2^8×24均正确",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "3位 4位 4位 2位 | 3位 | 8位; 互斥微命令组 | 外部条件 | 下址字段",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段4组(3,4,4,2位)，判断测试字段3位，下址字段8位",
+            "dependency_status": "satisfied",
+            "reason": "微指令格式各字段位数与标准答案完全一致"
+          }
+        ],
+        "total_score": 25.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "a:数据寄存器(DR) b:指令寄存器(IR) c:地址寄存器(AR) d:程序计数器(PC)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "四个寄存器名称正确",
+            "dependency_status": "satisfied",
+            "reason": "四项对应全部正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "PC→AB ADS,M/IO#,W/R#=1,1,0 DB→IR PC+1 IR:OPC→ID ID→控制器(μPC)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "主存M→DR→IR→操作控制器",
+            "dependency_status": "insufficient",
+            "reason": "含DB→IR→ID→控制器主干，但标准通路需经DR，未写M→DR环节；扣该部分"
+          },
+          {
+            "id": "step_3",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "读: DB→DR, DR→ALU; 写: ALU→DR, DR→DB; 地址→AB, 写控制信号1,1,1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读：M→DR→ALU→AC；写：AC→DR→M",
+            "dependency_status": "satisfied",
+            "reason": "读写通路方向与中转寄存器均正确，含控制信号，语义等价"
+          },
+          {
+            "id": "step_4",
+            "score_given": 4,
+            "error_category": "MATCH",
+            "evidence_text": "①取指PC→AB, DB→IR, PC+1 ②取数OD→AR→AB, DB→DR ③计算DR→ALU, AX→ALU, +, ALU→AX",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "DR→ALU, AC→ALU, '+'→ALU, ALU→AC",
+            "dependency_status": "satisfied",
+            "reason": "取指、取数、执行阶段通路完整且正确（AX作累加器等价）"
+          },
+          {
+            "id": "step_5",
+            "score_given": 4.0,
+            "error_category": "MATCH",
+            "evidence_text": "字段3,4,4,2位, 下址=24-3-4-4-2-3=8位, 容量2⁸×24",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "下址8位，容量256×24位",
+            "dependency_status": "satisfied",
+            "reason": "计算过程与结果均正确",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "3位 4位 4位 2位 | 3位 | 8位：互斥微命令组 | 外部条件 | 下址字段",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段3,4,4,2位；判断测试3位；下址8位",
+            "dependency_status": "satisfied",
+            "reason": "各字段位数划分与标准答案一致"
+          }
+        ],
+        "total_score": 24.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 4.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "step_2": [
+        4.0,
+        4.0,
+        3.0
+      ],
+      "step_3": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "step_4": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "step_5": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "step_6": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_6": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.22222222222222224,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.0,
+      "step_6": 0.0
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.03703703703703704
+  },
+  {
+    "file": "ANS_CO_1382.jpg",
+    "facts": "{\"step_1\": \"a:指令寄存器 b:地址寄存器 c:存储寄存器 d:计数寄存器\", \"step_2\": \"指令→指令寄存器→地址寄存器→操作数控制器\", \"step_3\": \"未书写\", \"step_4\": \"未书写\", \"step_5\": \"4个互斥类微命令所对应的字段数为3,4,4,2，共有3+4+4+2=13位，所以控制存储器容量为2^16\", \"step_6\": \"指令字长中，操作码字段长24位，下址字段长为13+3=16位。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-19T23:01:47.636609",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1382.jpg",
+      "image_sha256": "eb588292c0947cab09f0d8fbe1dc6fcbb02ad333d497a29683ebf39dba68c18a",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) a:指令寄存器 b:地址寄存器 c:存储寄存器 d:计数寄存器\n(2) 指令→指令寄存器→地址寄存器→操作数控制器\n(3)\n(4)\n(5)4个互斥类微命令所对应的字段数为3,4,4,2，共有3+4+4+2=13位，所以控制存储器容量为2^16\n(6)指令字长中，操作码字段长24位，下址字段长为13+3=16位。",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1382",
+        "question_id": "CO_12",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "a:指令寄存器 b:地址寄存器 c:存储寄存器 d:计数寄存器",
+        "step_2": "指令→指令寄存器→地址寄存器→操作数控制器",
+        "step_3": "未书写",
+        "step_4": "未书写",
+        "step_5": "4个互斥类微命令所对应的字段数为3,4,4,2，共有3+4+4+2=13位，所以控制存储器容量为2^16",
+        "step_6": "指令字长中，操作码字段长24位，下址字段长为13+3=16位。"
+      }
+    },
+    "scores": [
+      5.0,
+      3.0,
+      6.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a:指令寄存器 b:地址寄存器 c:存储寄存器 d:计数寄存器",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a为DR，b为IR，c为AR，d为PC",
+            "dependency_status": "satisfied",
+            "reason": "仅d(计数寄存器≈PC)与标准相符；a、b、c的标注错位（指令寄存器应为b，地址寄存器应为c，存储/数据寄存器应为a），4项中约1项正确，按比例给1分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "指令→指令寄存器→地址寄存器→操作数控制器",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "主存M -> 数据寄存器DR -> 指令寄存器IR -> 操作控制器",
+            "dependency_status": "failed",
+            "reason": "数据通路方向与节点错误：缺少数据寄存器DR，多出地址寄存器且顺序颠倒，终点写成操作数控制器，核心通路被推翻。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "读：M->DR->ALU->AC；写：AC->DR->M",
+            "dependency_status": "insufficient",
+            "reason": "学生未作答。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "AC->ALU，DR->ALU，'+'->ALU，ALU->AC",
+            "dependency_status": "insufficient",
+            "reason": "学生未作答。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "4个互斥类微命令所对应的字段数为3,4,4,2，共有3+4+4+2=13位，所以控制存储器容量为2^16",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "微指令字长24位，下址字段8位，可寻址2^8=256条，容量256×24位",
+            "dependency_status": "partial",
+            "reason": "字段位数3,4,4,2及控制字段合计13位的编码过程正确，但最终结论2^16错误（应为256×24位），结果分不给，保留过程分约一半。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "指令字长中，操作码字段长24位，下址字段长为13+3=16位。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段13位（3+4+4+2）、判断测试字段3位、下地址字段8位，共24位",
+            "dependency_status": "partial",
+            "reason": "13位控制字段与3位测试字段的数值隐含体现（13+3=16），但字段语义错位：把24位标成操作码、下址字段写成16位（应为8位），总体格式设计结论错误，给部分过程分。"
+          }
+        ],
+        "total_score": 5.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 2.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "a:指令寄存器 b:地址寄存器 c:存储寄存器 d:计数寄存器",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a为数据寄存器DR，b为指令寄存器IR，c为地址寄存器AR，d为程序计数器PC",
+            "dependency_status": "failed",
+            "reason": "四个寄存器映射全部错误，属于核心概念性错误，无部分正确成分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "指令→指令寄存器→地址寄存器→操作数控制器",
+            "evidence_text_note": null,
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "主存M -> 数据寄存器DR -> 指令寄存器IR -> 操作控制器",
+            "dependency_status": "failed",
+            "reason": "数据通路顺序错误，起点与中间寄存器均不符合标准通路，属概念性错误。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "存储器读：M -> DR -> ALU -> AC；存储器写：AC -> DR -> M",
+            "dependency_status": "not_applicable",
+            "reason": "学生未作答。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "AC -> ALU，DR -> ALU，'+' -> ALU，ALU -> AC",
+            "dependency_status": "not_applicable",
+            "reason": "学生未作答。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "4个互斥类微命令所对应的字段数为3,4,4,2，共有3+4+4+2=13位，所以控制存储器容量为2^16",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "微指令字长24位，下址字段8位，可寻址2^8=256条微指令，容量为256×24位",
+            "dependency_status": "insufficient",
+            "reason": "字段编码思想及各组位数字段(3,4,4,2)有一定过程分，但最终容量结论2^16错误（应为256×24位），方法与结论均偏离标准。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "指令字长中，操作码字段长24位，下址字段长为13+3=16位。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段4组分别为3,4,4,2位；判断测试字段3位；下址字段8位",
+            "dependency_status": "insufficient",
+            "reason": "分组编码思路及3+4+4+2=13位的操作字段划分部分正确（对应字段位宽3,4,4,2与标准一致），但下址字段16位及总体字段划分错误。"
+          }
+        ],
+        "total_score": 3.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 1.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a:指令寄存器 b:地址寄存器 c:存储寄存器 d:计数寄存器",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a=数据寄存器DR，b=指令寄存器IR，c=地址寄存器AR，d=程序计数器PC",
+            "dependency_status": "satisfied",
+            "reason": "标注基本错位：a误标为指令寄存器、b误标为地址寄存器、c误标为存储寄存器；仅d的'计数寄存器'可勉强对应程序计数器PC，按等分原子给约1/4分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "指令→指令寄存器→地址寄存器→操作数控制器",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "主存M -> 数据寄存器DR -> 指令寄存器IR -> 操作控制器",
+            "dependency_status": "satisfied",
+            "reason": "包含指令寄存器IR且终点为操作控制器，方向正确；但起点缺少主存→DR，且误插入地址寄存器，通路结构部分正确，给一半分。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "core",
+            "expected_condition": "存储器读：M->DR->ALU->AC；存储器写：AC->DR->M",
+            "dependency_status": "failed",
+            "reason": "学生未作答。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "AC->ALU，DR->ALU，'+'->ALU，ALU->AC",
+            "dependency_status": "failed",
+            "reason": "学生未作答。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "4个互斥类微命令所对应的字段数为3,4,4,2，共有3+4+4+2=13位，所以控制存储器容量为2^16",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "微指令字长24位，下址字段8位，可寻址2^8=256条微指令，容量为256×24位",
+            "dependency_status": "failed",
+            "reason": "结论2^16错误且未给出256×24位的正确容量；但存在正确的字段位数求和(3+4+4+2=13)这一过程痕迹，按角色加权给少量过程分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "指令字长中，操作码字段长24位，下址字段长为13+3=16位。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段4组3/4/4/2位；判断测试字段3位；下地址字段8位",
+            "dependency_status": "satisfied",
+            "reason": "控制字段3,4,4,2位（13位）及判断字段3位隐含正确；但下址字段误为16位（应为8位），指令字长24位的归属表述错误，按等分原子约得一半分。"
+          }
+        ],
+        "total_score": 6.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 1.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "step_6": [
+        2.0,
+        2.0,
+        2.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_4": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ],
+      "step_5": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_6": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.22222222222222224,
+      "step_2": 0.888888888888889,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.2222222222222222,
+      "step_6": 0.05555555555555556
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.2314814814814815
+  },
+  {
+    "file": "ANS_CO_1392.jpg",
+    "facts": "{\"step_1\": \"a:AR    b:IR    c:MAR    d:PC\", \"step_2\": \"PC→AB    AB→AR    ADS, M/IO, W/R    PC+1.\", \"step_3\": \"主存通过寄存器将数据送入ALU，ALU完成计算再返回\\nDR→ALU     ALU→DR.\", \"step_4\": \"先址先取出指令 PC→AB    AB→AR    ADS, M/IO=1, W/R=0    PC+1.\\n再进行取数操作 OP→AB    AB→AR\", \"step_5\": \"∵对50个微命令全采用字段直接编码法，且外部条件有3个\\n共字段位数为 3+3+4+2+3 =15位\\n下位地址位数 24-15=9位.\\n控制存储器的容量为 24×2⁹\", \"step_6\": \"微指令的具体格式为 [3][3][4][2][3][9]   9→下位地址\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-19T23:03:16.967023",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1392.jpg",
+      "image_sha256": "4167dc891e72a1bb7b2ee620831c0d3520240d4aa41e4e8de02b12eafe440ad4",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1) a:AR    b:IR    c:MAR    d:PC\n\n(2) 主存到控制器的数据通路为：\nPC→AB    AB→AR    ADS, M/IO, W/R    PC+1.\n\n(3) 主存通过寄存器将数据送入ALU，ALU完成计算再返回\nDR→ALU     ALU→DR.\n\n(4) 先址先取出指令 PC→AB    AB→AR    ADS, M/IO=1, W/R=0    PC+1.\n再进行取数操作 OP→AB    AB→AR\n\n(5) ∵对50个微命令全采用字段直接编码法，且外部条件有3个\n共字段位数为 3+3+4+2+3 =15位\n下位地址位数 24-15=9位.\n控制存储器的容量为 24×2⁹\n\n(6) 微指令的具体格式为 [3][3][4][2][3][9]   9→下位地址",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_1392",
+        "question_id": "CO_12",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "a:AR    b:IR    c:MAR    d:PC",
+        "step_2": "PC→AB    AB→AR    ADS, M/IO, W/R    PC+1.",
+        "step_3": "主存通过寄存器将数据送入ALU，ALU完成计算再返回\nDR→ALU     ALU→DR.",
+        "step_4": "先址先取出指令 PC→AB    AB→AR    ADS, M/IO=1, W/R=0    PC+1.\n再进行取数操作 OP→AB    AB→AR",
+        "step_5": "∵对50个微命令全采用字段直接编码法，且外部条件有3个\n共字段位数为 3+3+4+2+3 =15位\n下位地址位数 24-15=9位.\n控制存储器的容量为 24×2⁹",
+        "step_6": "微指令的具体格式为 [3][3][4][2][3][9]   9→下位地址"
+      }
+    },
+    "scores": [
+      13.5,
+      11.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a:AR    b:IR    c:MAR    d:PC",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a为DR，b为IR，c为AR，d为PC",
+            "dependency_status": "not_applicable",
+            "reason": "b:IR, c:MAR(=AR), d:PC均正确；仅a错标为AR，应为DR，得3/4"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "PC→AB    AB→AR    ADS, M/IO, W/R    PC+1.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "主存M -> DR -> IR -> 操作控制器",
+            "dependency_status": "insufficient",
+            "reason": "学生写的是取指的地址通路(PC→AB→AR)，而非题目要求的数据通路M→DR→IR→控制器；取指地址形成部分正确，但核心数据通路缺失"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "主存通过寄存器将数据送入ALU，ALU完成计算再返回 DR→ALU     ALU→DR.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读：M->DR->ALU->AC；写：AC->DR->M",
+            "dependency_status": "insufficient",
+            "reason": "读通路M→(DR)→ALU基本正确；写通路仅写ALU→DR，缺少AC及M的写入方向，返回路径不完整"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "先址先取出指令 PC→AB    AB→AR    ADS, M/IO=1, W/R=0    PC+1. 再进行取数操作 OP→AB    AB→AR",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "AC→ALU，DR→ALU，'+'→ALU，ALU→AC",
+            "dependency_status": "insufficient",
+            "reason": "取指与取操作数地址阶段正确，但完全缺少执行阶段的数据通路(AC/DR→ALU→AC)"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "共字段位数为 3+3+4+2+3 =15位 下位地址位数 24-15=9位. 控制存储器的容量为 24×2⁹",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "下址字段8位，容量256×24位",
+            "dependency_status": "failed",
+            "reason": "字段直接编码思想及容量=字长×2^下址位数的计算方法正确，但把外部条件3位计入控制字段导致下址9位、容量512×24，最终结果错",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "微指令的具体格式为 [3][3][4][2][3][9]   9→下位地址",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段3,4,4,2位，判断测试字段3位，下地址字段8位",
+            "dependency_status": "failed",
+            "reason": "给出了完整字段化格式且总长24位，判断字段3位正确，但字段划分与下址9位与标准答案不符"
+          }
+        ],
+        "total_score": 13.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 2.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a:AR    b:IR    c:MAR    d:PC",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a为DR，b为IR，c为AR，d为PC",
+            "dependency_status": "satisfied",
+            "reason": "b(IR)和d(PC)正确，但a标为AR（应为DR）、c标为MAR（应为AR），四项中两项正确，按等分给一半。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_status": "explicit",
+            "evidence_text": "PC→AB    AB→AR    ADS, M/IO, W/R    PC+1.",
+            "score_layer": "core",
+            "dependency_status": "insufficient",
+            "reason": "只写了取指令阶段的地址形成通路（PC→AB→AR），未给出题目要求的数据通路 主存M→DR→IR→操作控制器，仅有取指阶段的正确控制信号，属于部分正确。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读：M→DR→ALU→AC；写：AC→DR→M",
+            "dependency_status": "insufficient",
+            "reason": "读通路方面描述了主存经寄存器(DR)送ALU并返回，与M→DR→ALU方向一致；但未区分存/取两条通路，写通路AC→DR→M未明确写出，AC亦未提及，给一半分。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "AC→ALU，DR→ALU，'+'→ALU，ALU→AC",
+            "dependency_status": "insufficient",
+            "reason": "正确写出取指（PC→AB→AR，PC+1）及取操作数（OP→AB→AR）的前序通路，但缺少执行加法的核心通路 AC→ALU、DR→ALU、ALU→AC，仅得过程性部分分。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "下址字段8位，容量为256×24位",
+            "dependency_status": "failed",
+            "reason": "方法正确（字段位数求和、24减去得下址位数、容量=2^n×字长），但字段位数合计算成15位、下址算成9位（应为8位），最终容量24×2⁹错误，按过程主导给过程分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "操作字段4组（3/4/4/2位），判断测试字段3位，下地址字段8位",
+            "dependency_status": "insufficient",
+            "reason": "给出了完整的字段化微指令格式设计并含判断测试3位与下址字段，格式结构合理；但第1组多了3位测试字段重复计入、第2组位数及下址9位与标准（3,4,4,2,3,8）不一致，给一半分。"
+          }
+        ],
+        "total_score": 11.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 2.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a:AR    b:IR    c:MAR    d:PC",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "a为DR，b为IR，c为AR，d为PC",
+            "dependency_status": "satisfied",
+            "reason": "b和d标注正确（IR、PC）；a应为DR却写AR，c应为AR却写MAR，4个中对了2个。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "PC→AB    AB→AR    ADS, M/IO, W/R    PC+1.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "主存M -> DR -> IR -> 操作控制器",
+            "dependency_status": "insufficient",
+            "reason": "学生只写了取指阶段的送地址通路（PC→AR），未给出M→DR→IR→控制器的取指令数据通路主体。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "主存通过寄存器将数据送入ALU，ALU完成计算再返回 DR→ALU  ALU→DR.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "读：M->DR->ALU->AC；写：AC->DR->M",
+            "dependency_status": "partial",
+            "reason": "描述了M经寄存器到ALU及返回的读/写方向，但未明确AC及完整的M→DR→ALU→AC、AC→DR→M通路。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "先址先取出指令 PC→AB AB→AR ADS, M/IO=1, W/R=0 PC+1. 再进行取数操作 OP→AB AB→AR",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "AC->ALU，DR->ALU，'+'->ALU，ALU->AC",
+            "dependency_status": "failed",
+            "reason": "仅给出取指与取操作数地址通路，缺少关键的加法执行通路（AC→ALU、DR→ALU、+→ALU、ALU→AC）。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "共字段位数为 3+3+4+2+3=15位 下位地址位数 24-15=9位. 控制存储器的容量为 24×2⁹",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "下址字段8位，容量256×24位",
+            "dependency_status": "insufficient",
+            "reason": "计算方法正确（控制字段+判断字段，24减去得下址位，容量=字数×字长），但字段位数划分错误导致下址9位而非8位，最终容量24×2⁹错误。方法分部分保留。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_6",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "微指令的具体格式为 [3][3][4][2][3][9]   9→下位地址",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "字段划分3,4,4,2位，判断测试3位，下地址8位",
+            "dependency_status": "partial",
+            "reason": "格式结构（字段直接编码+判断字段+下址字段）正确，但各字段位数与标准（3,4,4,2；判测3；下址8）不符，下址9位错误。"
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_5",
+            "effective_score": 2.0,
+            "parent_points": 4.0,
+            "process_complexity": "short",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "step_3": [
+        2.5,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        1.5,
+        1.0
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_6": [
+        2.0,
+        2.5,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_5": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_6": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.22222222222222224,
+      "step_2": 0.2222222222222222,
+      "step_3": 0.05555555555555556,
+      "step_4": 0.16666666666666666,
+      "step_5": 0.0,
+      "step_6": 0.05555555555555556
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.12037037037037036
+  }
+]

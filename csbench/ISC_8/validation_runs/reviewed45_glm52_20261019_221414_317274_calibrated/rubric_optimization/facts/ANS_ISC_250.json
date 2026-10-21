@@ -1,0 +1,60 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-10-20T02:34:17.466470",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_8/ANS_ISC_250.jpg",
+  "image_sha256": "33a1a203cc744bbfce9756518832a642645c4d4020548c7b519f52298ac8512b",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "      X=-15     Y=+10 \n原码：10001111 00001010 \n反码：11110000 00001010 \n补码：11110001 00001010 \n-Y补码：11110110\nX-Y=(X)补+(-Y)补 =11110001+11110110 =10011001",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": "OCR evidence not found or invalid: C:\\Users\\wx\\Desktop\\refgrader-main\\ocr_cache\\csbench\\ISC_8\\ANS_ISC_250.json",
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_ISC_250",
+    "question_id": "ISC_8",
+    "subject": "ISC",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {},
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten representations for X and Y as bit vectors. For each of X and Y, transcribe exactly what the student wrote for the original code, inverse code, and complement code as binary strings, preserving leading zeros, bit lengths, signs, any prefixes or suffixes, grouping, and separators exactly as written. Do not evaluate correctness."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's handwritten computation of X minus Y using complement arithmetic: transcribe any intermediate addition steps, carry handling, and the final result bit vector the student wrote, preserving leading zeros, bit lengths, grouping, and separators exactly as written. Do not evaluate correctness."
+    }
+  ],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_unavailable"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "X原码：10001111\nX反码：11110000\nX补码：11110001\nY原码：00001010\nY反码：00001010\nY补码：00001010",
+    "step_2": "X-Y = (X)补 + [-Y]补\n= 11110001 + 11110110\n= 1 11100111\n10010111"
+  },
+  "facts": {
+    "step_1": "X=-15, Y=+10\n原码：10001111 00001010\n反码：11110000 00001010\n补码：11110001 00001010\n-Y补码：11110110",
+    "step_2": "X-Y=(X)补+(-Y)补 =11110001+11110110 =10011001"
+  }
+}

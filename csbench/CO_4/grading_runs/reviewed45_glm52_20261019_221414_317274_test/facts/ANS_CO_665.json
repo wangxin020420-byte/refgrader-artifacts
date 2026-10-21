@@ -1,0 +1,107 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T03:19:28.183574",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_665.jpg",
+  "image_sha256": "8c7dbee47e5a8737c814e6082f808b154ccd1ad8a2d7c458626ce59714d8614d",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：(1)8MB=8×2²⁰B=2²³B 则主存中共有23块\nCache中最多放32个主存块则Cache块内地地址共5块\n又有Cache每组2块则Cache中组号1位 组索引由2KB可知共11块\n主存中tag段有23-11-5=7块\n如图：主存：7    4       5\n           tag Cache组 块内地址\nCache：11      1     5\n       组索引 组号 块内地址\n(2)\n2D07FFH对应为0010110110000001111111111111 对应tag位为0101101\n7F0057H对应为011111111000000000101010111 tag位为1111111\n由表可知\n则2D07FFH可以访问到\n7F0057H因为对应32个块所以不能访问到",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": "OCR evidence not found or invalid: C:\\Users\\wx\\Desktop\\refgrader-main\\ocr_cache\\csbench\\CO_4\\ANS_CO_665.json",
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_665",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": false
+  },
+  "table_parser_used": true,
+  "table_facts": {},
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content for the Cache group number bit count. Ask for the number of bits, any table entry, formula, or substitution relation written (such as total blocks, associativity, number of groups, or power-of-two relation), and any computation trace. Preserve all numbers, units, exponents, and separators exactly as written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content for the main memory address format. Ask for the field names, their bit widths, and the order in which they are written. Preserve all separators, arrows, vertical bars, and grouping exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content for the Cache address format. Ask for the field names, their bit widths, and the order in which they are written. Preserve all separators, arrows, vertical bars, and grouping exactly as written."
+    },
+    {
+      "id": "step_6a",
+      "instruction": "Extract the student's concrete handwritten content for the group number field extracted from the given address. Ask for the group number value, any binary or hexadecimal representation, and any written description of the extraction step (such as removing low bits and taking the next bits). Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_6b",
+      "instruction": "Extract the student's concrete handwritten content for the tag field extracted from the given address and the in-group comparison. Ask for the tag value in binary or hexadecimal, any written comparison of which blocks in the group are checked, and any statement about matching or not matching with stored blocks. Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_7a",
+      "instruction": "Extract the student's concrete handwritten content for the group number field extracted from the given address. Ask for the group number value, any binary or hexadecimal representation, and any written description of the extraction step (such as removing low bits and taking the next bits). Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_7b",
+      "instruction": "Extract the student's concrete handwritten content for the tag field extracted from the given address and the in-group comparison. Ask for the tag value in binary or hexadecimal, any written comparison of which blocks in the group are checked, and any statement about matching or not matching with stored blocks. Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    }
+  ],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6a",
+    "step_6b",
+    "step_6c",
+    "step_7a",
+    "step_7b",
+    "step_7c"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_unavailable"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "23位",
+    "step_2": "11位",
+    "step_3": "1位",
+    "step_4": "主存：7 | 11 | 5 （tag, Cache组, 块内地址）",
+    "step_5": "Cache：11 | 1 | 5 （组索引, 组内块号, 块内地址）",
+    "step_6a": "001011010000001111111111",
+    "step_6b": "tag位为00101101",
+    "step_6c": "可以访问到",
+    "step_7a": "011111110000000001010111",
+    "step_7b": "tag位为01111111",
+    "step_7c": "不能访问到"
+  },
+  "facts": {
+    "step_1": "8MB=8×2²⁰B=2²³B 则主存中共有23块",
+    "step_2": "Cache中最多放32个主存块则Cache块内地地址共5块",
+    "step_3": "又有Cache每组2块则Cache中组号1位 组索引由2KB可知共11块",
+    "step_4": "主存：7    4       5\ntag Cache组 块内地址",
+    "step_5": "Cache：11      1     5\n组索引 组号 块内地址",
+    "step_6a": "2D07FFH对应为0010110110000001111111111111",
+    "step_6b": "对应tag位为0101101",
+    "step_6c": "则2D07FFH可以访问到",
+    "step_7a": "7F0057H对应为011111111000000000101010111",
+    "step_7b": "tag位为1111111",
+    "step_7c": "7F0057H因为对应32个块所以不能访问到"
+  }
+}

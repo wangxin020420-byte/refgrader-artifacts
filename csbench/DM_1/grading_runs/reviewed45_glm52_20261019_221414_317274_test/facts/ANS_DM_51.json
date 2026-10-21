@@ -1,0 +1,96 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T05:20:45.357047",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_51.jpg",
+  "image_sha256": "84eb39258090158ec83d4c139a4ec895af50bdab009b6586d67fc0124546faa7",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_51.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 16,
+    "accepted_token_count": 16,
+    "mean_confidence": 0.956485,
+    "min_confidence": 0.5,
+    "joined_text": "16. 解：(1)由题意，可画出此偏序集\n(2)田偏序图可以看出，\n的哈斯图为\nA的极大元为24,54\n54\nA的极小元为1\n4\n6\n9\n(3) 由偏序图可以看出.\n2\n3\nA的最大元不存在\nA的最小元为1\n(4) 集合A的子集B=[4.6,93的最小上界为36\n最大下界为！",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.053528,
+      "very_dark_pixel_ratio": 0.037457,
+      "lower_region_dark_pixel_ratio": 0.045444,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1)如图所示\n2)由偏序图可以看出，\nA的极大元为24,54\nA的极小元为1\n3)由偏序图可以看出，\nA的最大元不存在\nA的最小元为1\n4)由集与A的子集B=[4,6,9]的最小上界为36\n最大下界为1",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_51",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "节点1在最底层，向上连接2和3；2向上连接4和6；3向上连接6和9；6向上连接24和54；9向上连接54（分层结构，1为最底层，24、54为最上层）",
+  "diagram_facts": {
+    "step_1": "节点1、2、3、4、6、9、24、54，边1-2、1-3、2-4、2-6、3-6、3-9、6-24、6-54、9-54；完整可见路径：节点1在最底层，向上连接2和3；2向上连接4和6；3向上连接6和9；6向上连接24和54；9向上连接54（分层结构，1为最底层，24、54为最上层）",
+    "step_4": "最小上界为36，最大下界为1；完整可见路径：节点1在最底层，向上连接2和3；2向上连接4和6；3向上连接6和9；6向上连接24和54；9向上连接54（分层结构，1为最底层，24、54为最上层）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's hand-drawn Hasse diagram for the poset exactly as drawn, including all nodes, labels, edges, and their directions or connections, without revealing the expected diagram."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's written least upper bound and greatest lower bound of subset B exactly as written, preserving order, labels, separators, and any indication that a bound does not exist."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "哈斯图包含节点1、2、3、4、6、9、24、54，连接关系为：1连接2和3；2连接4和6；3连接6和9；4连接24；6连接24和54；9连接54",
+    "step_2": "A的极大元为24,54；A的极小元为1",
+    "step_3": "A的最大元不存在；A的最小元为1",
+    "step_4": "集合A的子集B={4,6,9}的最小上界为36；最大下界为1"
+  },
+  "facts": {
+    "step_1": "节点1、2、3、4、6、9、24、54，边1-2、1-3、2-4、2-6、3-6、3-9、6-24、6-54、9-54；完整可见路径：节点1在最底层，向上连接2和3；2向上连接4和6；3向上连接6和9；6向上连接24和54；9向上连接54（分层结构，1为最底层，24、54为最上层）",
+    "step_2": "A的极大元为24,54\nA的极小元为1",
+    "step_3": "A的最大元不存在\nA的最小元为1",
+    "step_4": "由集与A的子集B=[4,6,9]的最小上界为36\n最大下界为1"
+  }
+}

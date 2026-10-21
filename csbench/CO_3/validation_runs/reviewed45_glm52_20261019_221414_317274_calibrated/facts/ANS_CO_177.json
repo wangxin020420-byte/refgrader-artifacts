@@ -1,0 +1,49 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T03:09:07.876281",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_177.jpg",
+  "image_sha256": "b53bdcec2af5916cc9c1b3490152948d0058353dfd88de57448611224ce74c21",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "8位补码整数 1位符号 7位数值\n[x补]=36H=00110110H 为正数 [x原]=00110110H\n[y补]=54H=01010100H 正数 [y原]=01010100H\n[z补]=D5H=11010101H 负数 [z原]=10100111H\n\n①x-2y:\n[2y]补=10101000H 溢出，采用双符号位 [-2y]补=01010100H\n[x-2y]补=[x]补+[-2y]补=00110110+01010100H=110001110H,\n11表示结果为负数且没有溢出 OF为0. 补码结果为-72H\n\n②(x÷4)+2^z\n(4)_b=(0100)_2^1\n*[4]补=0100\n[-4]补=1100\n(x÷4)=8*(13)10\n=(1101)2\n计算如题所示\n余数是10 OF为0,未溢出",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_177",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "① x-2y：\n[2Y]补=10101000H [ -2Y]补=01010100H\n[X-2Y]补=[X]补+[-2Y]补=00110110+01010100H=110001110H，\n11表示结果为负数且没有溢出 OF为0. 补码结果为-72H",
+    "step_2": "② (x÷4)+2z\n(4)₁₆=(0100)₂\n000110110\n+ 1100\n00 000010\n←01 0000100\n+ 1100\n01 0010000\n+ 10 0010000\n+ 1100\n10 0010110\n←00 1011000\n+ 0100\n100 101100\n←00 1011100\n+ 0100\n100 101100\n01 011000\n+ 1100\n01 1000000\n←11 0001000\n+ 1100\n11 0010100\n←11 0010110\n+ 1100\n11 0011010\n+ 1100\n11 0011110\n110101010\n+ 100000110\n110110111\n(73)₁₀ 2Z=11 1010101[×?]\n1100 (24)₂+2Z=11 D101010\n=110110111\n00001101 + 2×Z\n←01 0111000\n00 0 110101 + 2×Z 为10110111\nOF为0,未溢出"
+  },
+  "facts": {
+    "step_1": "①x-2y: [2y]补=10101000H 溢出，采用双符号位 [-2y]补=01010100H；[x-2y]补=[x]补+[-2y]补=00110110+01010100H=110001110H，11表示结果为负数且没有溢出 OF为0. 补码结果为-72H",
+    "step_2": "②(x÷4)+2^z；(4)_b=(0100)_2^1；*[4]补=0100；[-4]补=1100；(x÷4)=8*(13)10=(1101)2；计算如题所示；余数是10 OF为0,未溢出"
+  }
+}

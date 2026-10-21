@@ -1,0 +1,404 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T00:15:23.563597",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1414.jpg",
+  "image_sha256": "f6d0f95a7413cc902414a1b8ed72a0f2090bc154ed4fa9d5d7a20a14f51752d6",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1414.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 19,
+    "accepted_token_count": 18,
+    "mean_confidence": 0.894724,
+    "min_confidence": 0.5,
+    "joined_text": "5.) (. 句仔器 b: 于指含奇存 C: MAR d: PC\n(2) 通过地址寄存器从地址总线上进行读操作取到指令的地址\n再交给指令寄存器，通过其向控制器发出信号，完成指令对应操作\n(3) 通过地址寄存器以地址总址上取得数据的地址，再由控制器发出信号\n把主存中数据存入ALU的数据缓存寄存器中或从ALU的\n数据缓存寄存器中取出数据存入主存中\n(4) (PO→MAR (PU+1→PC) (1→R\nM(MAR)→IR IR→CU =R井=O(低电于有效)\nADDL#)=1 (AX1OPOD→(AX)\n储\n(5) 由于 2{75228 2714 2{273 故存器控制字段为3+3+4+2\n=12\n故其下址字址为2412=12⇒控制存储器容量为22个字节\n(6) 具体格式为\n9\n控制字段\n——下址字段\n3个bit 3个bit 4个bit 2个bt",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.129853,
+      "very_dark_pixel_ratio": 0.093778,
+      "lower_region_dark_pixel_ratio": 0.126793,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)a:数据寄存器 b:指令寄存器 c:MAR d:PC\n(2) 通过地址寄存器从地址总线上进行读操作取到指令的地址 再发给指令寄存器 通过其向控制器发出信号 完成指令对应操作\n(3)通过地址寄存器从地址总线上取得数据的地址,再由控制器发出信号把主存中数据存入ALU的数据缓存寄存器中或从ALU的数据缓存寄存器中取出数据存入主存中 \n(4) (PC)→MAR (PC+1)→(PC) 1→R \nM(MAR)→IR IR→CU R#=0(低电平有效)\nADD(#)=1 (AX),OP,OD→(AX) \n(5) 由于2³>5 2³>8 2⁴>14 2⁷>3 故存储器控制字段为3+3+4+2=12 故其下址字段为24-12=12 控制存储器容量为2¹²个单元 \n(6) 具体格式为如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1414",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "故其下址字址为2412=12⇒控制存储器容量为22个字节",
+    "step_5_core_compute": "由于 2{75228 2714 2{273 故存器控制字段为3+3+4+2 =12；故其下址字址为2412=12⇒控制存储器容量为22个字节",
+    "step_6_group12": "3个bit 3个bit",
+    "step_6_group34": "4个bit 2个bt",
+    "step_6_test_field": "字迹模糊",
+    "step_6_addr_field": "——下址字段",
+    "step_6_layout": "控制字段：3个bit 3个bit 4个bit 2个bt；——下址字段"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 25.0,
+        "cells_left_to_right": [
+          {
+            "text": "5.) (. 句仔器 b: 于指含奇存 C: MAR d: PC",
+            "x_center": 356.5,
+            "confidence": 0.8111189603805542
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 72.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 通过地址寄存器从地址总线上进行读操作取到指令的地址",
+            "x_center": 416.0,
+            "confidence": 0.9459432363510132
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 121.5,
+        "cells_left_to_right": [
+          {
+            "text": "再交给指令寄存器，通过其向控制器发出信号，完成指令对应操作",
+            "x_center": 451.5,
+            "confidence": 0.9462431073188782
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 180.0,
+        "cells_left_to_right": [
+          {
+            "text": "(3) 通过地址寄存器以地址总址上取得数据的地址，再由控制器发出信号",
+            "x_center": 459.5,
+            "confidence": 0.9341591596603394
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 225.5,
+        "cells_left_to_right": [
+          {
+            "text": "把主存中数据存入ALU的数据缓存寄存器中或从ALU的",
+            "x_center": 462.5,
+            "confidence": 0.933580756187439
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 274.0,
+        "cells_left_to_right": [
+          {
+            "text": "数据缓存寄存器中取出数据存入主存中",
+            "x_center": 275.0,
+            "confidence": 0.9950677156448364
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 329.0,
+        "cells_left_to_right": [
+          {
+            "text": "(4) (PO→MAR (PU+1→PC) (1→R",
+            "x_center": 242.0,
+            "confidence": 0.8154261112213135
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 376.5,
+        "cells_left_to_right": [
+          {
+            "text": "M(MAR)→IR IR→CU =R井=O(低电于有效)",
+            "x_center": 455.5,
+            "confidence": 0.8959794044494629
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 426.0,
+        "cells_left_to_right": [
+          {
+            "text": "ADDL#)=1 (AX1OPOD→(AX)",
+            "x_center": 323.5,
+            "confidence": 0.9067926406860352
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 458.0,
+        "cells_left_to_right": [
+          {
+            "text": "储",
+            "x_center": 607.5,
+            "confidence": 0.9178275465965271
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 506.25,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 由于 2{75228 2714 2{273 故存器控制字段为3+3+4+2",
+            "x_center": 470.0,
+            "confidence": 0.849024772644043
+          },
+          {
+            "text": "=12",
+            "x_center": 890.0,
+            "confidence": 0.9967268109321594
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 549.0,
+        "cells_left_to_right": [
+          {
+            "text": "故其下址字址为2412=12⇒控制存储器容量为22个字节",
+            "x_center": 488.0,
+            "confidence": 0.9241639971733093
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 603.5,
+        "cells_left_to_right": [
+          {
+            "text": "(6) 具体格式为",
+            "x_center": 133.0,
+            "confidence": 0.9761243462562561
+          },
+          {
+            "text": "9",
+            "x_center": 311.5,
+            "confidence": 0.6053382158279419
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 635.0,
+        "cells_left_to_right": [
+          {
+            "text": "控制字段",
+            "x_center": 378.5,
+            "confidence": 0.988674521446228
+          }
+        ]
+      },
+      {
+        "row": 15,
+        "y_center": 683.5,
+        "cells_left_to_right": [
+          {
+            "text": "3个bit 3个bit 4个bit 2个bt",
+            "x_center": 379.0,
+            "confidence": 0.877337634563446
+          },
+          {
+            "text": "——下址字段",
+            "x_center": 638.5,
+            "confidence": 0.7855088114738464
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=356.5: 5.) (. 句仔器 b: 于指含奇存 C: MAR d: PC\nRow 2: x=416.0: (2) 通过地址寄存器从地址总线上进行读操作取到指令的地址\nRow 3: x=451.5: 再交给指令寄存器，通过其向控制器发出信号，完成指令对应操作\nRow 4: x=459.5: (3) 通过地址寄存器以地址总址上取得数据的地址，再由控制器发出信号\nRow 5: x=462.5: 把主存中数据存入ALU的数据缓存寄存器中或从ALU的\nRow 6: x=275.0: 数据缓存寄存器中取出数据存入主存中\nRow 7: x=242.0: (4) (PO→MAR (PU+1→PC) (1→R\nRow 8: x=455.5: M(MAR)→IR IR→CU =R井=O(低电于有效)\nRow 9: x=323.5: ADDL#)=1 (AX1OPOD→(AX)\nRow 10: x=607.5: 储\nRow 11: x=470.0: (5) 由于 2{75228 2714 2{273 故存器控制字段为3+3+4+2 | x=890.0: =12\nRow 12: x=488.0: 故其下址字址为2412=12⇒控制存储器容量为22个字节\nRow 13: x=133.0: (6) 具体格式为 | x=311.5: 9\nRow 14: x=378.5: 控制字段\nRow 15: x=379.0: 3个bit 3个bit 4个bit 2个bt | x=638.5: ——下址字段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "a: 数据缓冲寄存器",
+    "step_1_b": "b: 指令寄存器",
+    "step_1_c": "C: MAR",
+    "step_1_d": "d: PC",
+    "step_2_p1": "通过地址寄存器从地址总线上进行读操作取到指令的地址 再交给指令寄存器，通过其向控制器发出信号，完成指令对应操作",
+    "step_2_p2": "IR→CU",
+    "step_3_read": "通过地址寄存器以地址总址上取得数据的地址，再由控制器发出信号 把主存中数据存入ALU的数据缓存寄存器中或从ALU的 数据缓存寄存器中取出数据存入主存中",
+    "step_3_write": "通过地址寄存器以地址总址上取得数据的地址，再由控制器发出信号 把主存中数据存入ALU的数据缓存寄存器中或从ALU的 数据缓存寄存器中取出数据存入主存中",
+    "step_4_operands": "(AX,OP OD→(AX)",
+    "step_4_result": "ADDL#)=1 (AX,OP OD→(AX)",
+    "step_6_layout": "控制字段——下址字段 3个bit 3个bit 4个bit 2个bit"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_6_layout"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_1_c",
+    "step_1_d",
+    "step_2_p1",
+    "step_2_p2",
+    "step_3_read",
+    "step_3_write",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "a: 累加寄存器",
+    "step_1_b": "b: 指令寄存器",
+    "step_1_c": "c: MAR",
+    "step_1_d": "d: PC",
+    "step_2_p1": "通过地址寄存器从地址总线上进行读操作取到指令的地址再发指令寄存器",
+    "step_2_p2": "通过其向控制器发出信号，完成指令对应操作",
+    "step_3_read": "通过地址寄存器从地址总线上取得数据的地址，再由控制器发出信号，把主存中数据存入ALU的数据缓存寄存器中",
+    "step_3_write": "或从ALU的数据缓存寄存器中取出数据存入主存中",
+    "step_4_operands": "AX,OD→ALU",
+    "step_4_result": "ADD(AX,OD)→(AX)",
+    "step_5_core_field": "由于2³>5 2³>8 2⁴>14 2²>3 故微命令控制字段为3+3+4+2=12",
+    "step_5_core_compute": "故其下址字地址为24-12=12",
+    "step_5_final": "控制存储器容量为2¹²个字",
+    "step_6_group12": "3bit 3bit",
+    "step_6_group34": "4bit 2bit",
+    "step_6_test_field": "未书写",
+    "step_6_addr_field": "12bit",
+    "step_6_layout": "控制字段 下址字段 3bit 3bit 4bit 2bit 12bit"
+  },
+  "facts": {
+    "step_1_a": "数据寄存器",
+    "step_1_b": "指令寄存器",
+    "step_1_c": "MAR",
+    "step_1_d": "PC",
+    "step_2_p1": "通过地址寄存器从地址总线上进行读操作取到指令的地址 再发给指令寄存器",
+    "step_2_p2": "通过其向控制器发出信号 完成指令对应操作",
+    "step_3_read": "通过地址寄存器从地址总线上取得数据的地址,再由控制器发出信号把主存中数据存入ALU的数据缓存寄存器中",
+    "step_3_write": "从ALU的数据缓存寄存器中取出数据存入主存中",
+    "step_4_operands": "(PC)→MAR (PC+1)→(PC) 1→R M(MAR)→IR IR→CU R#=0(低电平有效) ADD(#)=1 (AX),OP,OD→(AX)",
+    "step_4_result": "ADD(#)=1 (AX),OP,OD→(AX)",
+    "step_5_core_field": "故其下址字段为24-12=12 控制存储器容量为2¹²个单元",
+    "step_5_core_compute": "由于2³>5 2³>8 2⁴>14 2⁷>3 故存储器控制字段为3+3+4+2=12 故其下址字段为24-12=12",
+    "step_5_final": "控制存储器容量为2¹²个单元",
+    "step_6_group12": "3+3",
+    "step_6_group34": "4+2",
+    "step_6_test_field": "未书写",
+    "step_6_addr_field": "12",
+    "step_6_layout": "控制字段：3个bit 3个bit 4个bit 2个bt；——下址字段"
+  }
+}

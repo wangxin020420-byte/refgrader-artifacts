@@ -1,0 +1,403 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T23:40:29.444795",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1330.jpg",
+  "image_sha256": "723aba5510cae8c57ffc61cf9423effeccd6f4a95f808b89121701e59ea298c7",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1330.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 24,
+    "accepted_token_count": 23,
+    "mean_confidence": 0.912565,
+    "min_confidence": 0.5,
+    "joined_text": "5.\n(d) a: 数据缓冲写存器\nb:指今寄存器1R地址寄有器\nDR\nAR\nd! pc程序it数\n(2). PC将地址存入AR,主存取指后放入a,然后放入1尺,进进入控制器\n然后\n(3)AR给出地址，主存取出后放入数据缓冲等存器，然后进入ALU，运算结束后\n回到数据缓冲寄存器中A给出地址后存入田立存\n(4) PC将地址给AR,AR给主存,取指放入nR,然后放入IR,进入操作控\n制器。此时R中的地址,部分进AAR,取出明所存内容,放入以中,再将AX中数\n据放入AC中，一同进入ALU中运算，运算结果存A入AC，然后传回Ax。\n(5) 共四个字段分别应有5+1=6,8+1=9 14+1:15 3+1=4种状态，即3.4.4.2位\n共13位\nop\n工址\n16)\n3\n4\n4\n2\n11",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.08087,
+      "very_dark_pixel_ratio": 0.046067,
+      "lower_region_dark_pixel_ratio": 0.080989,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a：数据缓冲寄存器 DR\nb：指令寄存器 IR\nc：地址寄存器 AR\nd：PC 程序计数\n\n(2) PC将地址存入AR，主存取指后放入DR，然后放入IR，然后送入控制器\n\n(3) PC的AR给出地址，主存取出后放入数据缓冲寄存器，然后进入ALU，运算结果返回到数据缓冲寄存器中，AR给出地址后存入主存\n\n(4) PC将地址给AR，AR给主存，取指，放入DR，然后放入IR，进入操作控制器。此时DR中的地址部分送入AR，取出D所存内容，放入DR中，再将AX中数据放入AC中，也一同进入ALU中运算，运算结果存入AC，然后传回AX\n\n(5) 共同字段 分别应有 5+1=6，8+1=9，14+1=15，3+1=4种状态，即3，4，4，2位\n共13位\n\n(6) 字段划分如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1330",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "共13位",
+    "step_5_core_compute": "共四个字段分别应有5+1=6,8+1=9 14+1:15 3+1=4种状态，即3.4.4.2位；共13位",
+    "step_6_group12": "3 4",
+    "step_6_group34": "4 2",
+    "step_6_test_field": "未写出",
+    "step_6_addr_field": "11",
+    "step_6_layout": "op 3 4 4 2 11；共13位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 65.0,
+        "cells_left_to_right": [
+          {
+            "text": "5.",
+            "x_center": 20.5,
+            "confidence": 0.9846197366714478
+          },
+          {
+            "text": "(d) a: 数据缓冲写存器",
+            "x_center": 193.5,
+            "confidence": 0.8854796290397644
+          },
+          {
+            "text": "DR",
+            "x_center": 362.0,
+            "confidence": 0.8639988303184509
+          },
+          {
+            "text": "b:指今寄存器1R地址寄有器",
+            "x_center": 668.5,
+            "confidence": 0.8489030003547668
+          },
+          {
+            "text": "AR",
+            "x_center": 842.0,
+            "confidence": 0.8705048561096191
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 118.0,
+        "cells_left_to_right": [
+          {
+            "text": "d! pc程序it数",
+            "x_center": 178.0,
+            "confidence": 0.7771710157394409
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 180.75,
+        "cells_left_to_right": [
+          {
+            "text": "(2). PC将地址存入AR,主存取指后放入a,然后放入1尺,进进入控制器",
+            "x_center": 443.5,
+            "confidence": 0.9163418412208557
+          },
+          {
+            "text": "然后",
+            "x_center": 713.0,
+            "confidence": 0.9994384050369263
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 250.25,
+        "cells_left_to_right": [
+          {
+            "text": "1c",
+            "x_center": 39.0,
+            "confidence": 0.33512023091316223
+          },
+          {
+            "text": "(3)AR给出地址，主存取出后放入数据缓冲等存器，然后进入ALU，运算结束后",
+            "x_center": 458.5,
+            "confidence": 0.8979641795158386
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 295.0,
+        "cells_left_to_right": [
+          {
+            "text": "回到数据缓冲寄存器中A给出地址后存入田立存",
+            "x_center": 350.0,
+            "confidence": 0.9217745661735535
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 356.5,
+        "cells_left_to_right": [
+          {
+            "text": "(4) PC将地址给AR,AR给主存,取指放入nR,然后放入IR,进入操作控",
+            "x_center": 482.5,
+            "confidence": 0.90060955286026
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 413.0,
+        "cells_left_to_right": [
+          {
+            "text": "制器。此时R中的地址,部分进AAR,取出明所存内容,放入以中,再将AX中数",
+            "x_center": 487.5,
+            "confidence": 0.9056207537651062
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 467.0,
+        "cells_left_to_right": [
+          {
+            "text": "据放入AC中，一同进入ALU中运算，运算结果存A入AC，然后传回Ax。",
+            "x_center": 428.5,
+            "confidence": 0.8962846994400024
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 533.0,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 共四个字段分别应有5+1=6,8+1=9 14+1:15 3+1=4种状态，即3.4.4.2位",
+            "x_center": 472.0,
+            "confidence": 0.9309589862823486
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 583.17,
+        "cells_left_to_right": [
+          {
+            "text": "共13位",
+            "x_center": 142.5,
+            "confidence": 0.9551237225532532
+          },
+          {
+            "text": "op",
+            "x_center": 261.0,
+            "confidence": 0.8980684280395508
+          },
+          {
+            "text": "工址",
+            "x_center": 508.0,
+            "confidence": 0.6417235732078552
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 648.17,
+        "cells_left_to_right": [
+          {
+            "text": "16)",
+            "x_center": 52.0,
+            "confidence": 0.9095420837402344
+          },
+          {
+            "text": "3",
+            "x_center": 144.5,
+            "confidence": 0.9950510859489441
+          },
+          {
+            "text": "4",
+            "x_center": 234.0,
+            "confidence": 0.9999222755432129
+          },
+          {
+            "text": "4",
+            "x_center": 308.5,
+            "confidence": 0.9998927116394043
+          },
+          {
+            "text": "2",
+            "x_center": 398.5,
+            "confidence": 0.999468982219696
+          },
+          {
+            "text": "11",
+            "x_center": 499.5,
+            "confidence": 0.9905205965042114
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=20.5: 5. | x=193.5: (d) a: 数据缓冲写存器 | x=362.0: DR | x=668.5: b:指今寄存器1R地址寄有器 | x=842.0: AR\nRow 2: x=178.0: d! pc程序it数\nRow 3: x=443.5: (2). PC将地址存入AR,主存取指后放入a,然后放入1尺,进进入控制器 | x=713.0: 然后\nRow 4: x=39.0: 1c | x=458.5: (3)AR给出地址，主存取出后放入数据缓冲等存器，然后进入ALU，运算结束后\nRow 5: x=350.0: 回到数据缓冲寄存器中A给出地址后存入田立存\nRow 6: x=482.5: (4) PC将地址给AR,AR给主存,取指放入nR,然后放入IR,进入操作控\nRow 7: x=487.5: 制器。此时R中的地址,部分进AAR,取出明所存内容,放入以中,再将AX中数\nRow 8: x=428.5: 据放入AC中，一同进入ALU中运算，运算结果存A入AC，然后传回Ax。\nRow 9: x=472.0: (5) 共四个字段分别应有5+1=6,8+1=9 14+1:15 3+1=4种状态，即3.4.4.2位\nRow 10: x=142.5: 共13位 | x=261.0: op | x=508.0: 工址\nRow 11: x=52.0: 16) | x=144.5: 3 | x=234.0: 4 | x=308.5: 4 | x=398.5: 2 | x=499.5: 11"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_5_final"
+  ],
+  "visual_fallback_recovered": [
+    "step_5_core_compute",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_1_c",
+    "step_1_d",
+    "step_2_p1",
+    "step_2_p2",
+    "step_3_read",
+    "step_3_write",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "数据缓冲寄存器 DR",
+    "step_1_b": "指令寄存器 IR",
+    "step_1_c": "地址寄存器 AR",
+    "step_1_d": "程序计数器 PC",
+    "step_2_p1": "PC将地址存入AR，主存取指放入数a，然后放入IR，进入操作控制器",
+    "step_2_p2": "IR→操作控制器",
+    "step_3_read": "AR给出地址，主存取出后放入数据缓冲寄存器，然后送入ALU，运算结果回到数据缓冲寄存器中",
+    "step_3_write": "AR给出地址后存入主存",
+    "step_4_operands": "PC将地址给AR，AR给主存，取出数入a，然后放入IR，进入操作控制器。此时DR中的地址部分送入AR，取出OD所在内容，放入DR中，再将AX中数据放入AC中，且一同进入ALU中运算",
+    "step_4_result": "运算结果存入AC，然后传回AX。",
+    "step_5_core_field": "下址字段由24位减去操作控制字段和判别测试字段",
+    "step_5_core_compute": "24 - (3+4+4+2) - 3 = 8",
+    "step_5_final": "2^8",
+    "step_6_group12": "3、4",
+    "step_6_group34": "4、2",
+    "step_6_test_field": "3",
+    "step_6_addr_field": "11",
+    "step_6_layout": "3 | 4 | 4 | 2 | 11"
+  },
+  "facts": {
+    "step_1_a": "a：数据缓冲寄存器 DR",
+    "step_1_b": "b：指令寄存器 IR",
+    "step_1_c": "c：地址寄存器 AR",
+    "step_1_d": "d：PC 程序计数",
+    "step_2_p1": "PC将地址存入AR，主存取指后放入DR，然后放入IR",
+    "step_2_p2": "然后送入控制器",
+    "step_3_read": "PC的AR给出地址，主存取出后放入数据缓冲寄存器，然后进入ALU",
+    "step_3_write": "运算结果返回到数据缓冲寄存器中，AR给出地址后存入主存",
+    "step_4_operands": "此时DR中的地址部分送入AR，取出D所存内容，放入DR中，再将AX中数据放入AC中，也一同进入ALU中运算",
+    "step_4_result": "运算结果存入AC，然后传回AX",
+    "step_5_core_field": "共同字段 分别应有 5+1=6，8+1=9，14+1=15，3+1=4种状态，即3，4，4，2位 共13位",
+    "step_5_core_compute": "共四个字段分别应有5+1=6,8+1=9 14+1:15 3+1=4种状态，即3.4.4.2位；共13位",
+    "step_5_final": "2^8",
+    "step_6_group12": "5+1=6，8+1=9，即3，4位",
+    "step_6_group34": "14+1=15，3+1=4种状态，即4，2位",
+    "step_6_test_field": "未写出",
+    "step_6_addr_field": "11",
+    "step_6_layout": "op 3 4 4 2 11；共13位"
+  }
+}

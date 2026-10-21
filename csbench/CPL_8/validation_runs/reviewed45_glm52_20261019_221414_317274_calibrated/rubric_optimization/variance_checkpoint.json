@@ -1,0 +1,1502 @@
+[
+  {
+    "file": "ANS_CPL_425.jpg",
+    "facts": "{\"step_1\": \"sum+=*(score+i)\", \"step_2\": \"*( *(score+i)+j ) < *( *(score+i)+min)\", \"step_3\": \"score,5\", \"step_4\": \"player[100]\", \"step_5\": \"*(player+i)[j]\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T01:25:09.601697",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_8/ANS_CPL_425.jpg",
+      "image_sha256": "3b7d32858cb73afbe66ee7c9b2ed9cfbd85ea536b17ad2280baf3098cd1f7fa6",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "【6】sum+=*(score+i) | 【7】*( *(score+i)+j ) < *( *(score+i)+min) | 【8】score,5 | 【9】player[100] | 【10】*(player+i)[j]",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_425",
+        "question_id": "CPL_8",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "sum+=*(score+i)",
+        "step_2": "*( *(score+i)+j ) < *( *(score+i)+min)",
+        "step_3": "score,5",
+        "step_4": "player[100]",
+        "step_5": "*(player+i)[j]"
+      }
+    },
+    "scores": [
+      6.5,
+      6.5,
+      6
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "sum+=*(score+i)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches the standard pointer-form accumulation formula."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*( *(score+i)+j ) < *( *(score+i)+min)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min) 或 score[i][j]<score[i][min]",
+            "dependency_status": "satisfied",
+            "reason": "Equivalent pointer comparison for finding the minimum element in a row."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "score,5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "dependency_status": "failed",
+            "reason": "Must pass the current row's address (*(score+i)/score[i]); bare 'score' is a fixed base pointer, not the per-row argument, a wrong argument not covered by the &-penalty note."
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "player[100]",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "insufficient",
+            "reason": "Captures the 100-element count but omits the per-element size (5*sizeof(float)); per rubric note such partial expressions warrant a 0.5–1 point deduction, here 1 point."
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "*(player+i)[j]",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "insufficient",
+            "reason": "Intended element player[i][j] is identifiable, but the expression yields a value rather than the required address; rubric note: missing & deducts 0.5."
+          }
+        ],
+        "total_score": 6.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "sum+=*(score+i)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全等价（指针形式）"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*( *(score+i)+j ) < *( *(score+i)+min)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min) 或 score[i][j]<score[i][min]",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案指针形式一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "score,5",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "dependency_status": "partial",
+            "reason": "元素个数5正确，但实参写score而非*(score+i)/score[i]，缺行指针部分，给一半分"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "player[100]",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000（fwrite 的字节数）",
+            "dependency_status": "failed",
+            "reason": "填写的是数组元素而非字节数，量纲/目标量错误"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "*(player+i)[j]",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "dependency_status": "partial",
+            "reason": "写出目标元素位置但缺地址符（等价于缺&情形），按评分注记扣0.5分"
+          }
+        ],
+        "total_score": 6.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "sum+=*(score+i)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案逐字等价，累加当前学生分数的指针写法完全正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*( *(score+i)+j ) < *( *(score+i)+min)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min)",
+            "dependency_status": "satisfied",
+            "reason": "比较相邻元素以选择最小值下标的关系与标准答案完全一致（仅空格差异）。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "score,5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "dependency_status": "failed",
+            "reason": "应传第i行首地址 *(score+i)，学生只写了数组名 score，指向类型 float(*)[5] 与函数参数不匹配，属于地址层级错误而非多余&的格式问题。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "player[100]",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "partial",
+            "reason": "未给出总字节数，只写了 player[100]；按评分注酌情扣分，给1分。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "*(player+i)[j]",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "partial",
+            "reason": "目标应是地址 *(player+i)+j；学生写法因优先级解析为 *(*(player+i)+j)，取到的是元素值而非地址，按评分注类缺失&问题扣0.5，再因取值符导致歧义扣分，给1分。"
+          }
+        ],
+        "total_score": 6
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "step_4": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "step_5": [
+        1.5,
+        1.5,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ],
+      "step_5": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.22222222222222224,
+      "step_4": 0.22222222222222224,
+      "step_5": 0.05555555555555556
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.1
+  },
+  {
+    "file": "ANS_CPL_431.jpg",
+    "facts": "{\"step_1\": \"sum += *score\", \"step_2\": \"*(*（score + i) + j）< *(*score + i) + min）\", \"step_3\": \"score,3\", \"step_4\": \"5 * sizeof(float)\", \"step_5\": \"*(player + i) + j\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T01:26:23.571982",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_8/ANS_CPL_431.jpg",
+      "image_sha256": "02583f747df54c5c8d3221eb7c79bbbc96a172bd7ff8d6e36522669a13fd92e4",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "【6】sum += *score | 【7】*(*（score + i) + j）< *(*score + i) + min） | 【8】score,3 | 【9】5 * sizeof(float) | 【10】*(player + i) + j",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_431",
+        "question_id": "CPL_8",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "sum += *score",
+        "step_2": "*(*（score + i) + j）< *(*score + i) + min）",
+        "step_3": "score,3",
+        "step_4": "5 * sizeof(float)",
+        "step_5": "*(player + i) + j"
+      }
+    },
+    "scores": [
+      7,
+      5,
+      6.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "sum += *score",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "partial",
+            "reason": "累加形式正确但缺少下标偏移 +i，仅累加首元素，部分正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(*（score + i) + j）< *(*score + i) + min）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min)",
+            "dependency_status": "satisfied",
+            "reason": "比较关系与标准答案语义一致（*(*score+i)+min 按上下文理解为 *( *(score+i)+min )），比较方向和结构正确"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "score,3",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "dependency_status": "partial",
+            "reason": "传递数组起始地址与列数的结构正确，但缺少解引用形式且计数 3 与标准 5 不符，部分正确"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "5 * sizeof(float)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "partial",
+            "reason": "评分注明确列出 5*sizeof(float) 属可酌情扣 0.5-1 分的情形，遗漏 100 行的容量"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(player + i) + j",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致"
+          }
+        ],
+        "total_score": 7
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "sum += *score",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "failed",
+            "reason": "累加形式正确但缺少下标偏移 +i，语义上只累加了首元素，属部分正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "*(*（score + i) + j）< *(*score + i) + min）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min)",
+            "dependency_status": "failed",
+            "reason": "比较关系与左侧 *(*(score+i)+j) 正确，但右侧 *(*score+i)+min 括号缺失导致解引用层次错误，未构成 *(*(score+i)+min)"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "score,3",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "dependency_status": "failed",
+            "reason": "缺少解引用且列数 3 错误（应为 5），概念性错误"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "5 * sizeof(float)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "failed",
+            "reason": "遗漏了 100（学生数）维度；按评分注可酌情扣 0.5-1 分，此处给一半"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(player + i) + j",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案 *(player+i)+j 完全等价"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "sum += *score",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "failed",
+            "reason": "Correct accumulator form but missing the '+i' index, so it would only add the first element; a substantive but recoverable omission."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(*（score + i) + j）< *(*score + i) + min）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min)",
+            "dependency_status": "satisfied",
+            "reason": "Comparison relation identical to standard answer (full-width parentheses are mere notation issues; likely OCR of *(score+i) in second term)."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "score,3",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5",
+            "dependency_status": "failed",
+            "reason": "Both arguments wrong: passes base pointer instead of *(score+i) and 3 instead of 5; incorrect row pointer and column count."
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "5 * sizeof(float)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float) 等表示整块内存大小",
+            "dependency_status": "failed",
+            "reason": "Rubric explicitly lists 5*sizeof(float) as an acceptable partial form with 0.5-1 point deduction; deduct 0.5."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(player + i) + j",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "satisfied",
+            "reason": "Exactly the standard address expression."
+          }
+        ],
+        "total_score": 6.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "step_2": [
+        2.0,
+        1.0,
+        2.0
+      ],
+      "step_3": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        1.0,
+        1.0,
+        1.5
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.2222222222222222,
+      "step_3": 0.22222222222222224,
+      "step_4": 0.05555555555555556,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.1
+  },
+  {
+    "file": "ANS_CPL_465.jpg",
+    "facts": "{\"step_1\": \"sum+ = *(score+i)\", \"step_2\": \"*(*(score+i)+j) < *(*(score+i)+min)\", \"step_3\": \"score,5\", \"step_4\": \"5\", \"step_5\": \"player\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T01:27:24.300790",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_8/ANS_CPL_465.jpg",
+      "image_sha256": "10193a602d60588067c7e5f810d1e2b182fbddbfec48bd7c0e586c88fcd04f0d",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "【6】sum+ = *(score+i) | 【7】*(*(score+i)+j) < *(*(score+i)+min) | 【8】score,5 | 【9】5 | 【10】player",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_465",
+        "question_id": "CPL_8",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "sum+ = *(score+i)",
+        "step_2": "*(*(score+i)+j) < *(*(score+i)+min)",
+        "step_3": "score,5",
+        "step_4": "5",
+        "step_5": "player"
+      }
+    },
+    "scores": [
+      8.0,
+      7,
+      6.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "sum+ = *(score+i)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "satisfied",
+            "reason": "等价于标准答案 sum += *(score+i)，仅空格差异，语义完全正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "*(*(score+i)+j) < *(*(score+i)+min)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min)",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案逐字符一致，比较方向和目标均正确"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "score,5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "dependency_status": "satisfied",
+            "reason": "按注：score 等价于 *(score+0)，此处作为首地址传参等价于 *(score+i) 的标准形式；无多余的 &，不扣分"
+          },
+          {
+            "id": "step_4",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "insufficient",
+            "reason": "仅写出 5，缺少 100 与 sizeof(float) 因子，未构成完整字节数计算；按评分注酌情扣 1 分"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "player",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "insufficient",
+            "reason": "仅写数组名 player，缺少偏移 (*(player+i)+j)，地址指向错误；体现了正确数组但元素地址表达式不完整，酌情给一半分"
+          }
+        ],
+        "total_score": 8.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "sum+ = *(score+i)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "satisfied",
+            "reason": "Extracted 'sum+ = *(score+i)' is the standard accumulation expression; apparent missing '=' is a non-substantive extraction/notation artifact of the compound assignment, which the rubric explicitly permits writing without the compound operator."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(*(score+i)+j) < *(*(score+i)+min)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min)",
+            "dependency_status": "satisfied",
+            "reason": "Identical to the standard comparison condition for finding the row minimum."
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "score,5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "dependency_status": "partially satisfied",
+            "reason": "The count argument 5 is correct and no spurious '&' was added, but 'score' lacks the row offset '*(score+i)', so it passes the wrong pointer for i>0; partial credit."
+          },
+          {
+            "id": "step_4",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "failed",
+            "reason": "Only the count 5 is given; the byte size (100*sizeof(float)) is missing. Rubric notes answers like 5*sizeof(float) lose 0.5–1 points; a bare 5 is even less complete, so 1 of 2 points."
+          },
+          {
+            "id": "step_5",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "player",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "partially satisfied",
+            "reason": "Student names the correct array but omits the element address expression (*(player+i)+j). The rubric deducts 0.5 for missing '&'; this is a further omission of indexing, so 1 of 2 points under lenient grading."
+          }
+        ],
+        "total_score": 7
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "sum+ = *(score+i)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "satisfied",
+            "reason": "Extraction shows sum plus assignment of *(score+i); treated as 'sum += *(score+i)' with extraction/notation loss of '='. Semantically equivalent to the standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(*(score+i)+j) < *(*(score+i)+min)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min) 或 score[i][j]<score[i][min]",
+            "dependency_status": "satisfied",
+            "reason": "Exact pointer-expression match with the standard comparison."
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "score,5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "dependency_status": "insufficient",
+            "reason": "Second argument 5 is correct, but 'score' passes the base pointer instead of *(score+i)/score[i], which changes the row being processed; half credit for the correct argument count/value."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "failed",
+            "reason": "Byte-count answer should be 2000 (or equivalent expression); '5' omits the row count and element size entirely — wrong quantity/value."
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "player",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "insufficient",
+            "reason": "Targets the correct array's address (scanf into player), but lacks the +i+j offset. Lenient reading treats it as the intended element address with missing address arithmetic/dereference detail; apply the rubric's 0.5 deduction."
+          }
+        ],
+        "total_score": 6.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "step_4": [
+        1.0,
+        1.0,
+        0.0
+      ],
+      "step_5": [
+        1.0,
+        1.0,
+        1.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_4": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ],
+      "step_5": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.2222222222222222,
+      "step_4": 0.22222222222222224,
+      "step_5": 0.05555555555555556
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.1
+  },
+  {
+    "file": "ANS_CPL_470.jpg",
+    "facts": "{\"step_1\": \"sum = sum + *(score + i)\", \"step_2\": \"*( *(score + i) + j ) < *( *(score + i) + min )\", \"step_3\": \"*score,5\", \"step_4\": \"sizeof( float ) * 500\", \"step_5\": \"*(player + i) + j\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T01:28:34.719605",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_8/ANS_CPL_470.jpg",
+      "image_sha256": "c138246ec41310f6c8ecd6f2781fd668b783ad31cf8dda96c72d8334767094d3",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "【6】sum = sum + *(score + i) | 【7】*( *(score + i) + j ) < *( *(score + i) + min ) | 【8】*score,5 | 【9】sizeof( float ) * 500 | 【10】*(player + i) + j",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_470",
+        "question_id": "CPL_8",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "sum = sum + *(score + i)",
+        "step_2": "*( *(score + i) + j ) < *( *(score + i) + min )",
+        "step_3": "*score,5",
+        "step_4": "sizeof( float ) * 500",
+        "step_5": "*(player + i) + j"
+      }
+    },
+    "scores": [
+      9.5,
+      10.0,
+      10
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "sum = sum + *(score + i)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]（不用复合赋值亦可）",
+            "dependency_status": "satisfied",
+            "reason": "等价于 sum += *(score+i)，未用复合赋值运算符，符合题注允许。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*( *(score + i) + j ) < *( *(score + i) + min )",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min)",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全等价。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "*score,5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "dependency_status": "partial",
+            "reason": "写了5正确，但 *score 缺少 +i，指向的对象不正确，按酌情扣分扣0.5。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "sizeof( float ) * 500",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000均正确",
+            "dependency_status": "satisfied",
+            "reason": "sizeof(float)*500 = 2000，与标准答案数值一致，等价形式。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(player + i) + j",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          }
+        ],
+        "total_score": 9.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "sum = sum + *(score + i)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]（不用复合赋值亦可）",
+            "dependency_status": "satisfied",
+            "reason": "等价于标准答案 sum += *(score+i)，非复合赋值形式被明确允许"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "*( *(score + i) + j ) < *( *(score + i) + min )",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min)",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案逐项等价的比较表达式"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "*score,5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5（多写&扣0.5）",
+            "dependency_status": "satisfied",
+            "reason": "score为二级指针/数组首地址，*score 即 score[0]，等价于 *(score+0)，且未多写&，不扣分"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "sizeof( float ) * 500",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "satisfied",
+            "reason": "500 = 100*5，与 100*5*sizeof(float) 数值完全等价"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "*(player + i) + j",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]（缺&扣0.5）",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致，地址表达正确"
+          }
+        ],
+        "total_score": 10.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "sum = sum + sum + *(score + i)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或等价形式（不用复合赋值亦可）",
+            "dependency_status": "satisfied",
+            "reason": "学生使用非复合赋值形式，语义完全等价，题目明确允许。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*( *(score + i) + j ) < *( *(score + i) + min )",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min) 或等价形式",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案逐字等价的指针表示比较表达式。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*score,5",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5（多写&扣0.5）",
+            "dependency_status": "satisfied",
+            "reason": "学生写 *score（即 score[0]，i=0 时等价），未多写 &，可给满分。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "sizeof( float ) * 500",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "satisfied",
+            "reason": "500*sizeof(float) 与 100*5*sizeof(float) 数值完全相同，等价于 2000，给满分。"
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(player + i) + j",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          }
+        ],
+        "total_score": 10
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        1.5,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_5": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_5": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.05555555555555556,
+      "step_4": 0.0,
+      "step_5": 0.0
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.011111111111111112
+  },
+  {
+    "file": "ANS_CPL_471.jpg",
+    "facts": "{\"step_1\": \"sum+ = *score[i]\", \"step_2\": \"*(*(score+i)+j) < *(*(score+i)+min))\", \"step_3\": \"*score[5],98\", \"step_4\": \"score , 4\", \"step_5\": \"*(player[i]+j)\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T01:29:30.910232",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CPL_8/ANS_CPL_471.jpg",
+      "image_sha256": "998507237a90932de09a680a624cf25566bcb500522a734e2d86b113817ff139",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "【6】sum+ = *score[i] | 【7】*(*(score+i)+j) < *(*(score+i)+min)) | 【8】*score[5],98 | 【9】score , 4 | 【10】*(player[i]+j)",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CPL_471",
+        "question_id": "CPL_8",
+        "subject": "CPL",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "sum+ = *score[i]",
+        "step_2": "*(*(score+i)+j) < *(*(score+i)+min))",
+        "step_3": "*score[5],98",
+        "step_4": "score , 4",
+        "step_5": "*(player[i]+j)"
+      }
+    },
+    "scores": [
+      5,
+      4.5,
+      4
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "sum+ = *score[i]",
+            "evidence_status": "not_comparable",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "insufficient",
+            "reason": "Student appears to intend sum += score[i], an accepted form, but the leading '*' (*score[i]) adds an extra dereference that changes the referenced object; partial credit for the nearly correct assignment form."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "*(*(score+i)+j) < *(*(score+i)+min))",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min) 或 score[i][j]<score[i][min]",
+            "dependency_status": "satisfied",
+            "reason": "Expression is identical to the standard answer; the trailing extra ')' is a purely typographical issue."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "*score[5],98",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "dependency_status": "failed",
+            "reason": "Neither the pointer expression (*score[5] instead of *(score+i)/score[i]) nor the count (98 instead of 5) matches the required arguments."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "score , 4",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "failed",
+            "reason": "The blank requires a byte-size argument; 'score, 4' is unrelated to the required size expression and is not one of the leniently acceptable variants."
+          },
+          {
+            "id": "step_5",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(player[i]+j)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "satisfied",
+            "reason": "player[i]+j is exactly equivalent to *(player+i)+j, yielding the address of element [i][j] as required."
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "sum+ = *score[i]",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "satisfied",
+            "reason": "索引形式 score[i] 正确，但多写了外层解引用 *（*score[i] 对 float 再解引用），扣1分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(*(score+i)+j) < *(*(score+i)+min))",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min)",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "*score[5],98",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "dependency_status": "failed",
+            "reason": "使用了错误的索引（5/98）且多写了*，与要求的 *(score+i),5 概念不符"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "score , 4",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "failed",
+            "reason": "应填写字节数表达式，学生填写 score,4 与要求无关"
+          },
+          {
+            "id": "step_5",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "*(player[i]+j)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "satisfied",
+            "reason": "指针形式基本正确但缺少地址含义（缺&等价形式），按注释扣0.5分"
+          }
+        ],
+        "total_score": 4.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "sum+ = *score[i]",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "sum += *(score+i) 或 sum+=score[i]",
+            "dependency_status": "partial",
+            "reason": "Student uses score[i] indexing with correct sum-accumulation intent, but writes an extra dereference (*score[i] dereferences a row element instead of using the row pointer), so the expression is not fully equivalent."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "*(*(score+i)+j) < *(*(score+i)+min))",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(*(score+i)+j)<*(*(score+i)+min) 或 score[i][j]<score[i][min]",
+            "dependency_status": "satisfied",
+            "reason": "Exactly matches the standard pointer-comparison formula (extra trailing parenthesis is typographical only)."
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "*score[5],98",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(score+i), 5 或 score[i], 5",
+            "dependency_status": "failed",
+            "reason": "Expected the row pointer with count 5; student writes *score[5] with value 98, which is an unrelated expression and count."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "score , 4",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "100*5*sizeof(float)、100*5*4 或 2000",
+            "dependency_status": "failed",
+            "reason": "The blank requires a byte count (2000 or equivalent); student writes the array name and 4, which is unrelated to the required size computation."
+          },
+          {
+            "id": "step_5",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "*(player[i]+j)",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "*(player+i)+j 或 &player[i][j]",
+            "dependency_status": "partial",
+            "reason": "Student correctly locates element player[i][j] but writes the element value instead of its address (extra dereference); correct row/column indexing intent earns partial credit per the rubric's spirit of a 0.5 deduction for missing &, with slightly more deducted here for the wrong dereference."
+          }
+        ],
+        "total_score": 4
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_5": [
+        2.0,
+        1.5,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "FORMAT_MINOR",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_5": [
+        "MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0,
+      "step_5": 0.16666666666666666
+    },
+    "max_item_variance": 0.16666666666666666,
+    "avg_item_variance": 0.03333333333333333
+  }
+]

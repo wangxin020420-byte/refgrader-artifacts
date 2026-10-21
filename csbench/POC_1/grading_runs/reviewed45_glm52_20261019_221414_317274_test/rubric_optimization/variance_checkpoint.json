@@ -1,0 +1,602 @@
+[
+  {
+    "file": "ANS_POC_293.jpg",
+    "facts": "{\"step_1\": \"S={a^m b^n c^p | m=n+p, m,n,p≥0}\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:25:20.232135",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_293.jpg",
+      "image_sha256": "29ef69486276c5a33095850ff5ee26fd17849a65b5c8633f30147f0cd8bdc203",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_293",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "S={a^m b^n c^p | m=n+p, m,n,p≥0}"
+      }
+    },
+    "scores": [
+      3,
+      0,
+      2.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "L(G1) = {a^n w | w∈{b,c}*, |w|=n}，即 n 个 a 后跟 n 个由 b 或 c 组成的字符（顺序不限）",
+            "dependency_status": "satisfied",
+            "reason": "学生正确抓住了核心数量关系（a 的个数 = 后接 b、c 字符总个数），且 a 在前的结构正确；但将尾部限制为 b 全在 c 之前（b^n c^p），而标准语言允许 b、c 任意排列（βi∈{b,c}），故所描述语言是标准语言的真子集，核心结构部分匹配，按宽容评分给部分分 3/5。"
+          }
+        ],
+        "total_score": 3
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Language with n leading a's followed by exactly n characters each freely chosen from b or c, i.e., {a^n β1…βn | βi∈{b,c}}",
+            "dependency_status": "failed",
+            "reason": "The student's set {a^m b^n c^p | m=n+p} requires all b's to precede all c's, a proper subset of the required language where the n trailing characters can be any mix of b and c. This is a core conceptual mismatch of the language itself, not a notation issue."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S={a^m b^n c^p | m=n+p, m,n,p≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "语言为 a^n 后跟 n 个 b 或 c 组成的字符（βi∈{b,c} 任意排列），n≥0",
+            "dependency_status": "insufficient",
+            "reason": "学生写出了形式化集合表述且计数关系（a 的个数 = b、c 总数）与标准答案的核心计数条件一致，但要求所有 b 在所有 c 之前（b^n c^p），而标准答案允许 b/c 任意排列（βi∈{b,c}），语义上是标准语言的真子集，属部分正确的表述。"
+          }
+        ],
+        "total_score": 2.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        0.0,
+        2.5
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 1.7222222222222223
+    },
+    "max_item_variance": 1.7222222222222223,
+    "avg_item_variance": 1.7222222222222223
+  },
+  {
+    "file": "ANS_POC_297.jpg",
+    "facts": "{\"step_1\": \"{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:26:06.364024",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_297.jpg",
+      "image_sha256": "0ec660233e313cad94db59a99da470cb202f9dca5f6d6ad2f96e276701d69d53",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. {a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_297",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}"
+      }
+    },
+    "scores": [
+      2,
+      0,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "{a^n w | w∈{b,c}* ∧ |w|=n}，即前面 n 个 a，后面恰好 n 个由 b 或 c 组成的字符（n≥0）",
+            "dependency_status": "failed",
+            "reason": "学生正确抓住了 a 在前、后接 b/c 且 a 的个数约束后随字符个数的核心结构（m≥n, m≥x），但用不等式约束而非等量关系：标准语言要求 b/c 总数恰好等于 a 的个数，学生的表达式允许 m 大于 n+x 且未约束 n+x 与 m 相等。结构方向正确但语言集合不同，给部分分。"
+          }
+        ],
+        "total_score": 2
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "L(G1) = {a^n w | w∈{b,c}*, |w|=n}, i.e., the total number of b/c characters must exactly equal the number of leading a's, with b and c freely interleaved",
+            "dependency_status": "failed",
+            "reason": "The correct language requires the total count of b's and c's to exactly equal the number of a's (n+x = m), but the student writes inequalities m≥n and m≥x, which permits n+x ≠ m (e.g., aab, abb). Also, the student restricts order to all b's before all c's, whereas b and c may be arbitrary. This is a wrong language characterization, a core conceptual error."
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "{a^m b^n C^x | m≥0, n≥0, x≥0, m≥n, m≥x}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Language L = {a^n w | w ∈ {b,c}*, |w| = n, n ≥ 0}, i.e., n leading a's followed by exactly n characters each being b or c",
+            "dependency_status": "failed",
+            "reason": "The student's set requires only m ≥ n and m ≥ x with b's strictly before c's, which is a different language: it permits any numbers of b's and c's with only inequality constraints, rather than exactly n b/c-characters (in any interleaving) matching exactly n a's. This is a conceptual contradiction of the required language, so no credit."
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.888888888888889
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.888888888888889
+  },
+  {
+    "file": "ANS_POC_306.jpg",
+    "facts": "{\"step_1\": \"a*(b|c)*\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:26:49.123570",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_306.jpg",
+      "image_sha256": "b3d8b33d3303a89e312181c75ada8ae8488c6dfe3adf72c24231cbf87ce3ea8c",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "a*(b|c)*",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_306",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "a*(b|c)*"
+      }
+    },
+    "scores": [
+      0,
+      2.5,
+      0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "a*(b|c)*",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "语言应为 {a^n w | w∈{b,c}* 且 |w|=n}（n 个 a 后跟 n 个 b/c 字符，n≥0）",
+            "dependency_status": "failed",
+            "reason": "学生答案 a*(b|c)* 去掉了关键约束：b/c 的个数必须等于 a 的个数。该正则描述的是任意多个 a 后跟任意多个 b/c，与文法 G1 描述的语言在核心语义上矛盾，属概念性错误。"
+          }
+        ],
+        "total_score": 0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a*(b|c)*",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Language L(G1) = {a^n w | w∈{b,c}*, |w|=n} (or equivalent verbal/iterative description): n leading a's followed by exactly n characters of b or c",
+            "dependency_status": "failed",
+            "reason": "The student correctly captures the overall structure (some number of a's followed by a string of b's/c's), but the regex a*(b|c)* drops the essential equinumerosity constraint |w|=n between the a's and the b/c characters. Under a lenient policy this is a genuine partial satisfaction of the required language description, not merely missing detail, so half credit is awarded."
+          }
+        ],
+        "total_score": 2.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "a*(b|c)*",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "L(G1) = {a^n w | w∈{b,c}*, |w|=n}，即 n 个 a 后跟恰好 n 个 b/c 组成的串",
+            "dependency_status": "failed",
+            "reason": "学生答案 a*(b|c)* 中 a 的个数与后面 b/c 串长度无约束关系，丢掉了关键的相等数量条件 n=n，语言描述概念性错误，核心结论错误。"
+          }
+        ],
+        "total_score": 0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        2.5,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 1.3888888888888886
+    },
+    "max_item_variance": 1.3888888888888886,
+    "avg_item_variance": 1.3888888888888886
+  },
+  {
+    "file": "ANS_POC_318.jpg",
+    "facts": "{\"step_1\": \"将s转换为aSb.aSc.ε三种不同情况\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:27:29.951498",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_318.jpg",
+      "image_sha256": "81da6f6a83557c967193bed324d16ff2f9316c1e0ecb20cbe55689fa344dbed0",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. 将s转换为aSb.aSc.ε三种不同情况",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_318",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "将s转换为aSb.aSc.ε三种不同情况"
+      }
+    },
+    "scores": [
+      2,
+      1,
+      2
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "将s转换为aSb.aSc.ε三种不同情况",
+            "evidence_status": "not_comparable",
+            "score_layer": "core",
+            "expected_condition": "写出文法G1描述的语言，如 {aⁿw | w∈{b,c}* 且 |w|=n} 或等价文字描述",
+            "dependency_status": "insufficient",
+            "reason": "学生仅列出了产生式 S→aSb|aSc|ε 的三种情况，展示了文法结构，但未写出所描述的语言（a 的个数等于后续 b/c 字符个数这一关键关系未表达）。属于有部分正确的过程性内容但缺少最终语言描述，给予部分分。"
+          }
+        ],
+        "total_score": 2
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "将s转换为aSb.aSc.ε三种不同情况",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出文法G1描述的语言，如 {a^n w | w∈{b,c}*, |w|=n, n>=0} 或等价表述之一",
+            "dependency_status": "insufficient",
+            "reason": "学生仅列举了产生式的三种情况（aSb、aSc、ε），正确反映了文法结构，但未写出语言本身的描述（n个a后跟n个b/c组成的串），核心结论缺失，酌情给少量过程分。"
+          }
+        ],
+        "total_score": 1
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "将s转换为aSb.aSc.ε三种不同情况",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "写出文法G1描述的语言，如 {a^n w | w∈{b,c}* 且 |w|=n} 或等价文字描述",
+            "dependency_status": "insufficient",
+            "reason": "学生正确列出了产生式 S→aSb|aSc|ε 的三种情况，说明对文法结构有正确理解，但未写出最终语言描述（n个a后跟n个b/c字符），属核心结论缺失的部分得分"
+          }
+        ],
+        "total_score": 2
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        1.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.2222222222222222
+    },
+    "max_item_variance": 0.2222222222222222,
+    "avg_item_variance": 0.2222222222222222
+  },
+  {
+    "file": "ANS_POC_336.jpg",
+    "facts": "{\"step_1\": \"L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:28:10.801898",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_1/ANS_POC_336.jpg",
+      "image_sha256": "2e98c2fea96e9a27ba64f1033b96c853c828acddd4f041a10a66fd9c16e4a5ae",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "4. L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_336",
+        "question_id": "POC_1",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}"
+      }
+    },
+    "scores": [
+      5,
+      2.5,
+      5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "{a^n w | w∈{b,c}* ∧ |w|=n} 或前面有 n 个 a，后面紧跟着 n 个由 b 或 c 组成的字符（n>=0）",
+            "dependency_status": "satisfied",
+            "reason": "学生给出 a^t 后跟 m 个 b 和 n 个 c 且 t=m+n（m,n≥0），这与标准答案 {a^n β1…βn | βi∈{b,c}} 语义等价：a 的个数等于后面 b/c 字符总数。仅有花括号、逗号位置等排版小错误，属 FORMAT_MINOR，按从宽政策给满分。"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "{a^n w | w∈{b,c}* ∧ |w|=n}: n leading a's followed by n characters of b or c (any of three equivalent statements)",
+            "dependency_status": "satisfied",
+            "reason": "The student captures the correct core counting relation t = m + n with m,n≥0, matching the required 'number of a's equals number of following b/c symbols', showing conceptual understanding. However, the set-builder notation is badly malformed ({a^t c, b^m|c^n} is not a well-formed language description and does not clearly express that the b/c characters follow the a's), creating real structural ambiguity, so only partial credit is appropriate under a lenient rubric."
+          }
+        ],
+        "total_score": 2.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "L(G[S]})={a^t c, b^m|c^n} | t = m + n, m≥0, n≥0}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Describe the language: n a's followed by n characters each of which is b or c (n>=0), e.g. {a^n w | w∈{b,c}*, |w|=n}",
+            "dependency_status": "satisfied",
+            "reason": "Despite garbled bracket/brace notation, the intended meaning is clear: a^t followed by a string of m b's and n c's with t = m + n, m,n >= 0, which exactly matches the standard answer {a^n β1...βn | βi∈{b,c}} since the number of a's equals the number of following b/c characters. The relation t = m + n is the core semantic condition and is correct; only set-notation punctuation is malformed, so under the lenient policy full credit is given."
+          }
+        ],
+        "total_score": 5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        2.5,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "FORMAT_MINOR",
+        "PARTIAL_MATCH",
+        "FORMAT_MINOR"
+      ]
+    },
+    "item_variance": {
+      "step_1": 1.3888888888888886
+    },
+    "max_item_variance": 1.3888888888888886,
+    "avg_item_variance": 1.3888888888888886
+  }
+]

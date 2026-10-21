@@ -1,0 +1,363 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T03:26:05.148308",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_692.jpg",
+  "image_sha256": "3a2eef5fe2ca838a56bde146df507ec52533706b2c8a9b90ab6443aa30f07ccd",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_692.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 29,
+    "accepted_token_count": 29,
+    "mean_confidence": 0.948306,
+    "min_confidence": 0.5,
+    "joined_text": "一\n一\n一\n一\n2. (20分) 主存地地址：\n主存块号标记\ncache字块号标记\n块内地址\n(1)\n位数\n8位\n4位\n11位\ncache 地址:\ncache块号组内\n块内地址\n组\n号\n位数\n45位\n1位\n11位\n(2)\n2D07FFH不能在Cache中访问到∵块标记=01011010\n组号为 0000\n∴其只能在块与块中找，∵块05块中不存在tag与之匹乙：找到\n7F0057H能在Cache中访问到\n:块标3=11111110Cache 组号:0000\n∴即为块",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.074355,
+      "very_dark_pixel_ratio": 0.049448,
+      "lower_region_dark_pixel_ratio": 0.066002,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)主存地址：主存块号标记 8位 cache块号标记 4位 块内地址 11位 cache地址：cache块号（组号）4位 块内地址 11位 \n（2）2007FFH不能在Cache中访问到 \n∵ 块标记=01011010 组号为0000 ∴ 其只能在块05与块1中找，\n∵ 块0与块1中不存在tag 52 匹配 \n∴找不到\n 7F0057H能在Cache中访问到 \n∵ 块标记=11111110，Cache组号：0000 \n∴ 即为块1",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_692",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "cache地址行中写有“cache块号组内 组 号”，其下“位数”行对应写有“45位”“1位”“11位”；未清晰写出Cache组号位数的独立计算式或组数关系。",
+    "step_4": "主存地址格式写为：“主存地地址： 主存块号标记 cache字块号标记 块内地址”；对应“位数”行写为：“8位”“4位”“11位”。",
+    "step_5": "Cache地址格式写为：“cache 地址: cache块号组内 组 号 块内地址”；对应“位数”行写为：“45位”“1位”“11位”。",
+    "step_6a": "2D07FFH对应写有：“组号为 0000”。",
+    "step_6b": "2D07FFH对应写有：“2D07FFH不能在Cache中访问到∵块标记=01011010”；又写有：“∴其只能在块与块中找，∵块05块中不存在tag与之匹乙：找到”。",
+    "step_7a": "7F0057H对应写有：“Cache 组号:0000”。",
+    "step_7b": "7F0057H对应写有：“7F0057H能在Cache中访问到”；又写有：“:块标3=11111110Cache 组号:0000”；又写有：“∴即为块”。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content for the Cache group number bit count. Ask for the number of bits, any table entry, formula, or substitution relation written (such as total blocks, associativity, number of groups, or power-of-two relation), and any computation trace. Preserve all numbers, units, exponents, and separators exactly as written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content for the main memory address format. Ask for the field names, their bit widths, and the order in which they are written. Preserve all separators, arrows, vertical bars, and grouping exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content for the Cache address format. Ask for the field names, their bit widths, and the order in which they are written. Preserve all separators, arrows, vertical bars, and grouping exactly as written."
+    },
+    {
+      "id": "step_6a",
+      "instruction": "Extract the student's concrete handwritten content for the group number field extracted from the given address. Ask for the group number value, any binary or hexadecimal representation, and any written description of the extraction step (such as removing low bits and taking the next bits). Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_6b",
+      "instruction": "Extract the student's concrete handwritten content for the tag field extracted from the given address and the in-group comparison. Ask for the tag value in binary or hexadecimal, any written comparison of which blocks in the group are checked, and any statement about matching or not matching with stored blocks. Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_7a",
+      "instruction": "Extract the student's concrete handwritten content for the group number field extracted from the given address. Ask for the group number value, any binary or hexadecimal representation, and any written description of the extraction step (such as removing low bits and taking the next bits). Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_7b",
+      "instruction": "Extract the student's concrete handwritten content for the tag field extracted from the given address and the in-group comparison. Ask for the tag value in binary or hexadecimal, any written comparison of which blocks in the group are checked, and any statement about matching or not matching with stored blocks. Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 12.25,
+        "cells_left_to_right": [
+          {
+            "text": "一",
+            "x_center": 78.5,
+            "confidence": 0.8419689536094666
+          },
+          {
+            "text": "一",
+            "x_center": 138.5,
+            "confidence": 0.972307026386261
+          },
+          {
+            "text": "一",
+            "x_center": 222.5,
+            "confidence": 0.9862339496612549
+          },
+          {
+            "text": "一",
+            "x_center": 282.5,
+            "confidence": 0.9434486627578735
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 64.2,
+        "cells_left_to_right": [
+          {
+            "text": "(1)",
+            "x_center": 58.0,
+            "confidence": 0.9881417751312256
+          },
+          {
+            "text": "2. (20分) 主存地地址：",
+            "x_center": 153.0,
+            "confidence": 0.9326130747795105
+          },
+          {
+            "text": "主存块号标记",
+            "x_center": 397.5,
+            "confidence": 0.9979262351989746
+          },
+          {
+            "text": "cache字块号标记",
+            "x_center": 609.0,
+            "confidence": 0.8742456436157227
+          },
+          {
+            "text": "块内地址",
+            "x_center": 803.5,
+            "confidence": 0.9973517060279846
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 119.5,
+        "cells_left_to_right": [
+          {
+            "text": "位数",
+            "x_center": 196.0,
+            "confidence": 0.9952768087387085
+          },
+          {
+            "text": "8位",
+            "x_center": 401.5,
+            "confidence": 0.9952194094657898
+          },
+          {
+            "text": "4位",
+            "x_center": 602.5,
+            "confidence": 0.9929319024085999
+          },
+          {
+            "text": "11位",
+            "x_center": 787.5,
+            "confidence": 0.9960541725158691
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 192.1,
+        "cells_left_to_right": [
+          {
+            "text": "cache 地址:",
+            "x_center": 205.5,
+            "confidence": 0.914732813835144
+          },
+          {
+            "text": "cache块号组内",
+            "x_center": 611.5,
+            "confidence": 0.9119916558265686
+          },
+          {
+            "text": "组",
+            "x_center": 621.5,
+            "confidence": 0.994040310382843
+          },
+          {
+            "text": "号",
+            "x_center": 687.0,
+            "confidence": 0.8967780470848083
+          },
+          {
+            "text": "块内地址",
+            "x_center": 792.0,
+            "confidence": 0.9968219995498657
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 239.75,
+        "cells_left_to_right": [
+          {
+            "text": "位数",
+            "x_center": 197.5,
+            "confidence": 0.9991388320922852
+          },
+          {
+            "text": "45位",
+            "x_center": 581.0,
+            "confidence": 0.7843185067176819
+          },
+          {
+            "text": "1位",
+            "x_center": 669.5,
+            "confidence": 0.9848641157150269
+          },
+          {
+            "text": "11位",
+            "x_center": 790.5,
+            "confidence": 0.8777385354042053
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 296.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2)",
+            "x_center": 61.0,
+            "confidence": 0.9997677803039551
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 332.0,
+        "cells_left_to_right": [
+          {
+            "text": "2D07FFH不能在Cache中访问到∵块标记=01011010",
+            "x_center": 431.0,
+            "confidence": 0.9250713586807251
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 365.5,
+        "cells_left_to_right": [
+          {
+            "text": "组号为 0000",
+            "x_center": 660.0,
+            "confidence": 0.9595783948898315
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 399.5,
+        "cells_left_to_right": [
+          {
+            "text": "∴其只能在块与块中找，∵块05块中不存在tag与之匹乙：找到",
+            "x_center": 493.5,
+            "confidence": 0.8749487996101379
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 453.0,
+        "cells_left_to_right": [
+          {
+            "text": "7F0057H能在Cache中访问到",
+            "x_center": 217.0,
+            "confidence": 0.9764665961265564
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 496.0,
+        "cells_left_to_right": [
+          {
+            "text": ":块标3=11111110Cache 组号:0000",
+            "x_center": 348.5,
+            "confidence": 0.895544707775116
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 547.0,
+        "cells_left_to_right": [
+          {
+            "text": "∴即为块",
+            "x_center": 148.5,
+            "confidence": 0.9953477382659912
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=78.5: 一 | x=138.5: 一 | x=222.5: 一 | x=282.5: 一\nRow 2: x=58.0: (1) | x=153.0: 2. (20分) 主存地地址： | x=397.5: 主存块号标记 | x=609.0: cache字块号标记 | x=803.5: 块内地址\nRow 3: x=196.0: 位数 | x=401.5: 8位 | x=602.5: 4位 | x=787.5: 11位\nRow 4: x=205.5: cache 地址: | x=611.5: cache块号组内 | x=621.5: 组 | x=687.0: 号 | x=792.0: 块内地址\nRow 5: x=197.5: 位数 | x=581.0: 45位 | x=669.5: 1位 | x=790.5: 11位\nRow 6: x=61.0: (2)\nRow 7: x=431.0: 2D07FFH不能在Cache中访问到∵块标记=01011010\nRow 8: x=660.0: 组号为 0000\nRow 9: x=493.5: ∴其只能在块与块中找，∵块05块中不存在tag与之匹乙：找到\nRow 10: x=217.0: 7F0057H能在Cache中访问到\nRow 11: x=348.5: :块标3=11111110Cache 组号:0000\nRow 12: x=148.5: ∴即为块"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_1"
+  ],
+  "visual_fallback_recovered": [
+    "step_1"
+  ],
+  "visual_fallback_conflicts": [
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6a",
+    "step_6b",
+    "step_6c",
+    "step_7a",
+    "step_7b",
+    "step_7c"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "23位",
+    "step_2": "11位",
+    "step_3": "4位",
+    "step_4": "主存块号标记 8位 | cache块号标记 4位 | 块内地址 11位",
+    "step_5": "cache块号（组号）4位 | 组内块号 1位 | 块内地址 11位",
+    "step_6a": "组号为0000",
+    "step_6b": "块标记=01011010，组号为0000，∴只能在块0与块1中找，∵块0与块1中不存在tag 5之匹配∴未命中",
+    "step_6c": "不能在Cache中访问到",
+    "step_7a": "Cache组号：0000",
+    "step_7b": "∵块标记=1111110，Cache组号：0000 ∴即为块1",
+    "step_7c": "能在Cache中访问到"
+  },
+  "facts": {
+    "step_1": "23位",
+    "step_2": "块内地址 11位",
+    "step_3": "cache块号（组号）4位",
+    "step_4": "主存地址：主存块号标记 8位 cache块号标记 4位 块内地址 11位",
+    "step_5": "cache地址：cache块号（组号）4位 块内地址 11位",
+    "step_6a": "组号为0000",
+    "step_6b": "块标记=01011010；其只能在块05与块1中找，∵ 块0与块1中不存在tag 52 匹配",
+    "step_6c": "2007FFH不能在Cache中访问到；∴找不到",
+    "step_7a": "Cache组号：0000",
+    "step_7b": "块标记=11111110",
+    "step_7c": "7F0057H能在Cache中访问到；∴ 即为块1"
+  }
+}

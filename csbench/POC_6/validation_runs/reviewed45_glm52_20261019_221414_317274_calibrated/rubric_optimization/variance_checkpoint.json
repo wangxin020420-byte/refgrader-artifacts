@@ -1,0 +1,1201 @@
+[
+  {
+    "file": "ANS_POC_192.jpg",
+    "facts": "{\"step_1\": \"是，S-属性文法\", \"step_2\": \"树结构中，根节点S（S.x=A.x+1）有子节点a、A、b；A节点（A.x=A1.x+S.x）的子节点包含A1和S；S节点（x=S.x）的子节点为a、b；标注x=0的S节点子节点为c；叶节点c标注x=0。节点间连线表示父子关系，属性值标注在节点旁（如S.x=A.x+1、A.x=A1.x+S.x、x=S.x、x=0等）。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:58:09.047100",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_192.jpg",
+      "image_sha256": "fc7164458db1d7cd6a2ff99700c986476ebdbf356ea8f1d503b23fbffe3515eb",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_192.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 15,
+        "accepted_token_count": 13,
+        "mean_confidence": 0.903256,
+        "min_confidence": 0.5,
+        "joined_text": "5-x=A.x+1\n1. \n2.\n4\n是了一属性文法\nx=A,}x+S.x\nx=S.x\nx=0.\nb.\n1\n$-x20\nC\nC",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.037114,
+          "very_dark_pixel_ratio": 0.026313,
+          "lower_region_dark_pixel_ratio": 0.026861,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "是，S-属性文法 | 如图所示",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_192",
+        "question_id": "POC_6",
+        "subject": "POC_25",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": null,
+      "diagram_facts": {
+        "step_2": "树结构中，根节点S（S.x=A.x+1）有子节点a、A、b；A节点（A.x=A1.x+S.x）的子节点包含A1和S；S节点（x=S.x）的子节点为a、b；标注x=0的S节点子节点为c；叶节点c标注x=0。节点间连线表示父子关系，属性值标注在节点旁（如S.x=A.x+1、A.x=A1.x+S.x、x=S.x、x=0等）。"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_2",
+          "instruction": "Extract the student's handwritten annotated parse tree for the string acacbb: record the tree structure (parent-child node relations, node order for children) and the exact attribute values the student wrote at each node (e.g., attribute-name=value labels such as S.x=…, A.x=…). Preserve arrows, brackets, node order, and any equivalent bracketed/linear notation the student used to express the tree and its annotations, exactly as written. Do not assess whether values are correct."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_2"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "是S-属性文法",
+        "step_2": "S\n├─a\n├─A\n│  ├─A1\n│  │  └─S\n│  │     └─c (x=0)\n│  └─S\n│     ├─a\n│     ├─A\n│     │  └─S\n│     │     └─c (x=0)\n│     └─b\n└─b\nS.x = A.x +1\nA.x = A1.x + S.x\nS.x = S.x"
+      },
+      "facts": {
+        "step_1": "是，S-属性文法",
+        "step_2": "树结构中，根节点S（S.x=A.x+1）有子节点a、A、b；A节点（A.x=A1.x+S.x）的子节点包含A1和S；S节点（x=S.x）的子节点为a、b；标注x=0的S节点子节点为c；叶节点c标注x=0。节点间连线表示父子关系，属性值标注在节点旁（如S.x=A.x+1、A.x=A1.x+S.x、x=S.x、x=0等）。"
+      }
+    },
+    "scores": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "是，S-属性文法",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断 G5 为 S 属性文法并说明理由（属性均为综合属性，语义动作仅用右部符号属性或常数）",
+            "dependency_status": "insufficient",
+            "reason": "结论正确（S-属性文法），但未给出任何理由（如综合属性、无继承属性），缺少说明部分，给予部分分",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "树结构中，根节点S（S.x=A.x+1）有子节点a、A、b；A节点（A.x=A1.x+S.x）的子节点包含A1和S；S节点（x=S.x）的子节点为a、b；标注x=0的S节点子节点为c；叶节点c标注x=0",
+            "evidence_status": "not_comparable",
+            "score_layer": "core",
+            "expected_condition": "给出 acacbb 的标注语法树并正确标注各结点属性值（根 S.x=2，A.x=1，中层 S.x=1，底层 S.x=0/A.x=0）",
+            "dependency_status": "failed",
+            "reason": "树结构（S→aAb、A→A1S、S→c）与叶节点 x=0 基本正确，但节点旁标注的是语义规则而非计算出的属性值，缺少 S.x=2、A.x=1 等具体属性值标注，属于明显部分正确"
+          }
+        ],
+        "total_score": 5.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "是，S-属性文法",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判定 G5 为 S-属性文法并说明理由（属性均为综合属性，语义动作仅用右部符号属性计算左部属性）",
+            "dependency_status": "insufficient",
+            "reason": "结论正确（S-属性文法），但未给出理由（未说明均为综合属性、无继承属性），属于结论对而论证缺失。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "树结构中，根节点S（S.x=A.x+1）有子节点a、A、b；A节点（A.x=A1.x+S.x）的子节点包含A1和S；S节点（x=S.x）的子节点为a、b；标注x=0的S节点子节点为c；叶节点c标注x=0",
+            "evidence_status": "not_comparable",
+            "score_layer": "core",
+            "expected_condition": "给出 acacbb 的标注语法树并正确标注各结点属性值（根 S.x=2，A.x=1 等）",
+            "dependency_status": "insufficient",
+            "reason": "学生给出了语法树骨架并标注了部分语义规则，且标注了底层 x=0，但未见根节点 S.x=2、A.x=1 等关键属性值的完整计算结果，结构描述也与标准树不完全一致，只能给部分分。"
+          }
+        ],
+        "total_score": 5.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "是，S-属性文法",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断G5为S-属性文法并说明理由（综合属性、语义动作仅用右部符号属性计算左部属性）",
+            "dependency_status": "insufficient",
+            "reason": "结论正确（S-属性文法），但未说明理由，缺少综合属性等论证证据，属结论对而过程证据缺失",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "根节点S（S.x=A.x+1）有子节点a、A、b；A节点（A.x=A1.x+S.x）的子节点包含A1和S；S节点（x=S.x）的子节点为a、b；标注x=0的S节点子节点为c；叶节点c标注x=0",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出acacbb的标注语法树并正确标注各结点属性值（S.x=2, A.x=1, S.x=1, A.x=0, S.x=0等）",
+            "dependency_status": "insufficient",
+            "reason": "树结构与属性计算规则（S.x=A.x+1, A.x=A1.x+S.x, x=0）正确，但未给出各结点的具体计算属性值（如根S.x=2、A.x=1、S.x=1等），属性值标注不完整，仅叶节点x=0"
+          }
+        ],
+        "total_score": 5.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_198.jpg",
+    "facts": "{\"step_1\": \"G5只有综合属性S.X.A.X ∴G5是S-属性文法.\", \"step_2\": \"根节点S（s.x=2）有子节点a、A、b；A（A.x=1）有子节点A（A.x=0）和S（s.x=0），S（s.x=0）的子节点为C；S（s.x=1）有子节点a、A、b，A（A.x=0）的子节点为S（s.x=0），S（s.x=0）的子节点为C。；完整可见路径：S→a, S→A, S→b; A→A, A→S; S→a, S→A, S→b; A→S; S→C（层级分支关系）\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:59:40.374044",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_198.jpg",
+      "image_sha256": "ae2fe6fbb0779f2cf98a31a7a5e3824e4bc40bc2cf357e11ab9763b5732df2f6",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_198.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 17,
+        "accepted_token_count": 17,
+        "mean_confidence": 0.95573,
+        "min_confidence": 0.5,
+        "joined_text": "2. Ss.x=2\n1. G5只有综合属性S.X.A.X2.\n∴G5是S-属性文法.\naAA.x=1\nb\nS\nA A.X=0\nS.X=1\n1\nSs.x=0\naAA.x=0\nb\n1\nS\n5.X=0\nC\nC",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.043786,
+          "very_dark_pixel_ratio": 0.030191,
+          "lower_region_dark_pixel_ratio": 0.03498,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "1.G5只有综合属性S.X.A.X ∴G5是S-属性文法.\n2.如图所示",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_198",
+        "question_id": "POC_6",
+        "subject": "POC_25",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "S→a, S→A, S→b; A→A, A→S; S→a, S→A, S→b; A→S; S→C（层级分支关系）",
+      "diagram_facts": {
+        "step_2": "根节点S（s.x=2）有子节点a、A、b；A（A.x=1）有子节点A（A.x=0）和S（s.x=0），S（s.x=0）的子节点为C；S（s.x=1）有子节点a、A、b，A（A.x=0）的子节点为S（s.x=0），S（s.x=0）的子节点为C。；完整可见路径：S→a, S→A, S→b; A→A, A→S; S→a, S→A, S→b; A→S; S→C（层级分支关系）"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_2",
+          "instruction": "Extract the student's handwritten annotated parse tree for the string acacbb: transcribe the tree structure (parent-child node relations, arrows or branches as drawn, node order and direction exactly as written) and every attribute value label written at each node (e.g., attribute names with numeric values). Preserve any bracketed notation, arrows, dots, or separators the student used. Do not judge correctness; record exactly what was drawn and labeled."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_2"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "1. G5只有综合属性S.x、A.x2. ∴G5是S-属性文法.",
+        "step_2": "S s.x=2\n├─ a\n├─ A A.x=1\n│  ├─ A A.x=0\n│  │  └─ S s.x=0\n│  │     └─ c\n│  └─ S s.x=1\n│     ├─ a\n│     ├─ A A.x=0\n│     │  └─ S s.x=0\n│     │     └─ c\n│     └─ b\n└─ b"
+      },
+      "facts": {
+        "step_1": "G5只有综合属性S.X.A.X ∴G5是S-属性文法.",
+        "step_2": "根节点S（s.x=2）有子节点a、A、b；A（A.x=1）有子节点A（A.x=0）和S（s.x=0），S（s.x=0）的子节点为C；S（s.x=1）有子节点a、A、b，A（A.x=0）的子节点为S（s.x=0），S（s.x=0）的子节点为C。；完整可见路径：S→a, S→A, S→b; A→A, A→S; S→a, S→A, S→b; A→S; S→C（层级分支关系）"
+      }
+    },
+    "scores": [
+      10.0,
+      10.0,
+      10.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "G5只有综合属性S.X.A.X ∴G5是S-属性文法.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判定G5为S属性文法并给出综合属性理由",
+            "dependency_status": "satisfied",
+            "reason": "结论正确（S-属性文法），并给出核心理由：S.x与A.x均为综合属性，满足标准答案要点。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "根节点S（s.x=2）有子节点a、A、b；A（A.x=1）有子节点A（A.x=0）和S（s.x=0）……S→a, S→A, S→b; A→A, A→S; S→C",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出acacbb的标注语法树并正确标注属性值",
+            "dependency_status": "satisfied",
+            "reason": "树的父子结构与属性值（S.x=2, A.x=1, 内层S.x=1, 各A.x=0/S.x=0）与标准答案 S[2](a, A[1](A[0](S[0](c)), S[1](a, A[0](S[0](c)), b)), b) 一致，等价表示形式。"
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "G5只有综合属性S.X.A.X ∴G5是S-属性文法.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断G5为S属性文法并说明理由（属性均为综合属性）",
+            "dependency_status": "satisfied",
+            "reason": "结论正确且给出核心理由：所有属性均为综合属性，故为S-属性文法；缺少的展开说明属于细节省略，不影响得分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "根节点S（s.x=2）有子节点a、A、b；A（A.x=1）有子节点A（A.x=0）和S（s.x=0），S（s.x=0）的子节点为C；S（s.x=1）有子节点a、A、b，A（A.x=0）的子节点为S（s.x=0），S（s.x=0）的子节点为C。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出acacbb的标注语法树并正确标注各结点属性值",
+            "dependency_status": "satisfied",
+            "reason": "树结构与标准答案一致：根S(x=2)→a,A(1),b；A(1)→A(0),S(1)；A(0)→S(0)→c；S(1)→a,A(0),b；A(0)→S(0)→c，各属性值均正确。"
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "G5只有综合属性S.X.A.X ∴G5是S-属性文法.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断G5为S属性文法并说明理由（属性均为综合属性）",
+            "dependency_status": "satisfied",
+            "reason": "学生正确判断G5是S-属性文法，理由是S.x和A.x均为综合属性，与标准答案语义一致，仅记号大小写（S.X）属细节问题。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "根节点S（s.x=2）有子节点a、A、b；A（A.x=1）有子节点A（A.x=0）和S（s.x=0），S（s.x=0）的子节点为C；S（s.x=1）有子节点a、A、b，A（A.x=0）的子节点为S（s.x=0），S（s.x=0）的子节点为C",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出acacbb的标注语法树并正确标注各结点属性值",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的树结构和各结点属性值（S=2，A=1，内部S=1，A=0，S=0）与标准答案的括号表示完全对应，路径与层级关系完整正确。"
+          }
+        ],
+        "total_score": 10.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 5.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_202.jpg",
+    "facts": "{\"step_1\": \"G5为2型文法 其产生式左部均属于VN 且右部不全是A→aA|a的形式\", \"step_2\": \"根节点S（x=2），子节点a、A（x=1）、b；A的子节点A（x=0）和S（x=1）；A（x=0）的子节点S（x=0）和a；S（x=0）的子节点c；S（x=1）的子节点a、A（x=0）、b；A（x=0）的子节点S（x=0）；S（x=0）的子节点c。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T04:04:34.741642",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_202.jpg",
+      "image_sha256": "756bce213ba5086562df1797c3af5122f10c01678d219493bc2d043bfbdd6eec",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_202.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 19,
+        "accepted_token_count": 19,
+        "mean_confidence": 0.961248,
+        "min_confidence": 0.5,
+        "joined_text": "1. G5为2型文法\nS\nx=\n2.\n其产生式左部均属于Vn\nAx=1\nb\na\n且右部不不全是\nAxx=0\nSx=1\n+1A→aAla\n白形式\nAx=0\nb\nSx=0 a\nSx=0\nC\nC",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.044854,
+          "very_dark_pixel_ratio": 0.028953,
+          "lower_region_dark_pixel_ratio": 0.0419,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "1.G5为2型文法 其产生式左部均属于VN 且右部不全是A→aA|a的形式 | 2.如图所示",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_202",
+        "question_id": "POC_6",
+        "subject": "POC_25",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": null,
+      "diagram_facts": {
+        "step_2": "根节点S（x=2），子节点a、A（x=1）、b；A的子节点A（x=0）和S（x=1）；A（x=0）的子节点S（x=0）和a；S（x=0）的子节点c；S（x=1）的子节点a、A（x=0）、b；A（x=0）的子节点S（x=0）；S（x=0）的子节点c。"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_2",
+          "instruction": "Extract the student's handwritten annotated parse tree for the string acacbb: record the tree structure (parent-child relations among S, A, terminal symbols a, b, c) and the attribute values labeled at each node. Preserve arrows, brackets, nesting order, and any notation like 'S.x=' or 'S[...]' exactly as written; do not normalize or omit any node labels."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_2"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "G5为2型文法\n其产生式右部均属于V_N\n且右部不全空\n例外A→aA|a\n自明发",
+        "step_2": "S x=2\n/   \\\na    b\nA x=1\n/   \\\nA x=0  S x=1\n/   |   / | \\\nS x=0 a A x=0 b\n|       |\nc       S x=0\n        |\n        c"
+      },
+      "facts": {
+        "step_1": "G5为2型文法 其产生式左部均属于VN 且右部不全是A→aA|a的形式",
+        "step_2": "根节点S（x=2），子节点a、A（x=1）、b；A的子节点A（x=0）和S（x=1）；A（x=0）的子节点S（x=0）和a；S（x=0）的子节点c；S（x=1）的子节点a、A（x=0）、b；A（x=0）的子节点S（x=0）；S（x=0）的子节点c。"
+      }
+    },
+    "scores": [
+      4.0,
+      5.0,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "G5为2型文法 其产生式左部均属于VN 且右部不全是A→aA|a的形式",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断属性文法类型：应为S属性文法（综合属性），并说明理由",
+            "dependency_status": "failed",
+            "reason": "题目问的是属性文法的属性类型（S属性/综合属性），学生回答的是Chomsky 2型（上下文无关）文法判断，属于概念性答非所问，未涉及属性类型判断，核心结论错误。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "根节点S（x=2），子节点a、A（x=1）、b；A的子节点A（x=0）和S（x=1）；A（x=0）的子节点S（x=0）和a；S（x=0）的子节点c；S（x=1）的子节点a、A（x=0）、b；A（x=0）的子节点S（x=0）；S（x=0）的子节点c。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "acacbb的标注语法树，各结点属性值正确（根S.x=2，A.x=1，A.x=0/S.x=0，S.x=1，A.x=0，S.x=0）",
+            "dependency_status": "satisfied",
+            "reason": "树的整体结构和全部属性值（S=2、A=1、A=0/S=0、S=1、A=0、S=0）与标准答案一致，但在左侧内层A（x=0）处多标了一个子结点a（标准为A→S，S→c），存在局部结构错误，故给予部分分。"
+          }
+        ],
+        "total_score": 4.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "G5为2型文法 其产生式左部均属于VN 且右部不全是A→aA|a的形式",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断G5是S属性文法，理由为S.x与A.x均为综合属性且语义动作仅用右部符号属性计算左部属性",
+            "dependency_status": "failed",
+            "reason": "题目要求判断属性文法的类型（S属性/综合属性），学生回答的是乔姆斯基文法类型（2型文法），概念对象错误，未涉及综合/继承属性分析，属核心概念错误。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "根节点S（x=2），子节点a、A（x=1）、b；A的子节点A（x=0）和S（x=1）；A（x=0）的子节点S（x=0）和a；S（x=0）的子节点c；S（x=1）的子节点a、A（x=0）、b；A（x=0）的子节点S（x=0）；S（x=0）的子节点c",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出acacbb的标注语法树，各结点属性值与标准一致：S[2](a,A[1](A[0](S[0](c)),S[1](a,A[0](S[0](c)),b)),b)",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的树结构与各结点属性值（S=2, A=1, 内层S=1, A=0, S=0）均与标准答案一致，句法结构推导正确，属性标注完整；个别叶子终端符号的转录描述不构成语义歧义。"
+          }
+        ],
+        "total_score": 5.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "G5为2型文法 其产生式左部均属于VN 且右部不全是A→aA|a的形式",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断G5是S属性文法并说明理由（属性均为综合属性）",
+            "dependency_status": "failed",
+            "reason": "题目要求判断属性文法类型（S属性文法），学生回答为2型文法（上下文无关文法），概念错误且理由答非所问。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "根节点S（x=2），子节点a、A（x=1）、b；A的子节点A（x=0）和S（x=1）；A（x=0）的子节点S（x=0）和a；S（x=0）的子节点c；S（x=1）的子节点a、A（x=0）、b；A（x=0）的子节点S（x=0）；S（x=0）的子节点c",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出acacbb的标注语法树，S[2](a, A[1](A[0](S[0](c)), S[1](a, A[0](S[0](c)), b)), b)",
+            "dependency_status": "satisfied",
+            "reason": "树结构与各结点属性值（S=2、A=1、A=0、S=1、S=0、A=0、S=0）与标准答案完全一致。"
+          }
+        ],
+        "total_score": 5.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_2": [
+        4.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.22222222222222224
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.11111111111111112
+  },
+  {
+    "file": "ANS_POC_204.jpg",
+    "facts": "{\"step_1\": \"S-属性文法\", \"step_2\": \"根节点S(S.x:=A.x+1)，子节点a和A(A.x:=A1.x + S.x)；A的子节点A1(A.x:=xA1)和S(S.x:=A.x+1)；S的子节点a、A(A.x:=S.x)、b；A的子节点S(S.x:=0)；S的子节点c；完整可见路径：树结构：根节点S，子节点a和A；A子节点A1和S；S子节点a、A、b；A子节点S；S子节点c\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T04:06:31.243786",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_204.jpg",
+      "image_sha256": "44d31c3941fde148422a7c870ec51095cd1524ff07c21706c71f4d1dd2eb392c",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_204.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 13,
+        "accepted_token_count": 13,
+        "mean_confidence": 0.852608,
+        "min_confidence": 0.5,
+        "joined_text": "S(S:x:=AaT)\n1. S一属性文法\n2.\na\nAXx+Sx\n(Ax=xA\nSSx=Ax+1)\nSx=0\na Ab\n1A×5=S.x\nS\nSx=0\nC",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.040494,
+          "very_dark_pixel_ratio": 0.028638,
+          "lower_region_dark_pixel_ratio": 0.037165,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "S-属性文法 | 如图所示",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_204",
+        "question_id": "POC_6",
+        "subject": "POC_25",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "树结构：根节点S，子节点a和A；A子节点A1和S；S子节点a、A、b；A子节点S；S子节点c",
+      "diagram_facts": {
+        "step_2": "根节点S(S.x:=A.x+1)，子节点a和A(A.x:=A1.x + S.x)；A的子节点A1(A.x:=xA1)和S(S.x:=A.x+1)；S的子节点a、A(A.x:=S.x)、b；A的子节点S(S.x:=0)；S的子节点c；完整可见路径：树结构：根节点S，子节点a和A；A子节点A1和S；S子节点a、A、b；A子节点S；S子节点c"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_2",
+          "instruction": "Extract the student's handwritten annotated parse tree for the string acacbb: transcribe the tree structure (parent-child relations, branching order as drawn) and every node label with its attribute value exactly as written, preserving arrows, brackets, dot notation, order, and direction. If the student also wrote an equivalent bracketed/parenthesized notation or a list of node attribute values, transcribe those verbatim, preserving symbols, separators, and grouping."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_2"
+      ],
+      "visual_fallback_conflicts": [
+        "step_2"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "S-属性文法",
+        "step_2": "S(S.x:=A.x+1)\n├─a\n└─A(A.x:=A1.x+S.x)\n   ├─(A.x:=A1.x)\n   │  └─S(S.x:=0)\n   │     └─c\n   └─S(S.x:=A.x+1)\n      ├─a\n      ├─A(A.x:=S.x)\n      │  └─S(S.x:=0)\n      │     └─c\n      └─b"
+      },
+      "facts": {
+        "step_1": "S-属性文法",
+        "step_2": "根节点S(S.x:=A.x+1)，子节点a和A(A.x:=A1.x + S.x)；A的子节点A1(A.x:=xA1)和S(S.x:=A.x+1)；S的子节点a、A(A.x:=S.x)、b；A的子节点S(S.x:=0)；S的子节点c；完整可见路径：树结构：根节点S，子节点a和A；A子节点A1和S；S子节点a、A、b；A子节点S；S子节点c"
+      }
+    },
+    "scores": [
+      5.5,
+      5.0,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S-属性文法",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断 G5 为 S 属性文法并说明理由（所有属性均为综合属性，语义动作只用右部符号属性或常数计算左部属性）",
+            "dependency_status": "insufficient",
+            "reason": "结论正确（G5 是 S 属性文法），但未给出理由（未说明综合属性、无继承属性等），缺少说明部分，按比例扣分",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "根节点S，子节点a和A；A子节点A1和S；S子节点a、A、b；A子节点S；S子节点c",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出 acacbb 的标注语法树并正确标注各结点属性值（S.x=2, A.x=1, S.x=1, A.x=0, S.x=0 等）",
+            "dependency_status": "insufficient",
+            "reason": "语法树结构正确（S→aAb, A→A1S, S→c 的派生结构无误），但只写出了属性计算规则，未标注各结点的具体属性值，缺少一半得分点"
+          }
+        ],
+        "total_score": 5.5,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S-属性文法",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断 G5 为 S 属性文法并说明理由（属性均为综合属性，语义动作只用右部符号属性或常数）",
+            "dependency_status": "satisfied",
+            "reason": "结论正确（S-属性文法），但未说明理由（综合属性、无继承属性），扣理由分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "根节点S(S.x:=A.x+1)，子节点a和A；A子节点A1和S；S子节点a、A、b；A子节点S；S子节点c；完整可见路径：树结构",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出 acacbb 的标注语法树并标注各结点属性值（S.x=2, A.x=1, A.x=0, S.x=1, S.x=0 等）",
+            "dependency_status": "insufficient",
+            "reason": "树结构与产生式应用正确，但未给出任何结点的具体属性数值，且部分动作记录（A.x:=S.x）与文法定义不一致，只能得部分分。"
+          }
+        ],
+        "total_score": 5.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 3.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "S-属性文法",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断 G5 为 S 属性文法并说明综合属性、无继承属性的理由",
+            "dependency_status": "satisfied",
+            "reason": "结论正确（S-属性文法），但未说明理由（综合属性计算、无继承属性），只给出结论缺论证，按 lenient 政策给部分分 3/5。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "根节点S，子节点a和A；A子节点A1和S；S子节点a、A、b；A子节点S；S子节点c；附带 S.x:=A.x+1、A.x:=A1.x+S.x 等属性计算式",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出 acacbb 的标注语法树并正确标注各结点属性值（S[2](a, A[1](A[0](S[0](c)), S[1](a, A[0](S[0](c)), b)), b)）",
+            "dependency_status": "insufficient",
+            "reason": "语法树结构完全正确且写出部分属性计算规则，但未给出任何结点的具体数值标注（如 S.x=2、A.x=1），且 A.x:=xA1 记法混乱，属部分正确，给 2/5。"
+          }
+        ],
+        "total_score": 5.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 3.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "step_2": [
+        2.5,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.05555555555555556
+    },
+    "max_item_variance": 0.05555555555555556,
+    "avg_item_variance": 0.02777777777777778
+  },
+  {
+    "file": "ANS_POC_205.jpg",
+    "facts": "{\"step_1\": \"Follow(s)={#,b,a,c} Follow(A)={b,a,c} 故为SAL(1)文法.\", \"step_2\": \"S (S-x:=2)\\n├─ a\\n├─ A (A-x:=1)\\n│  ├─ X:=0-A\\n│  │  ├─ X:=0-S\\n│  │  │  └─ C\\n│  └─ S (S-x:=1)\\n│     ├─ a\\n│     ├─ A (A-x:=b)\\n│     │  └─ S (S-x:=0)\\n│     │     └─ C\\n│     └─ b\\n└─ b；完整可见路径：树形层级结构：根节点S（标注S-x:=2）的子节点为a、A、b；A节点（标注A-x:=1）的子节点为X:=0-A和S；X:=0-A的子节点为X:=0-S，X:=0-S的子节点为C；S节点（A的子节点，标注S-x:=1）的子节点为a、A、b；A节点（S的子节点，标注A-x:=b）的子节点为S；S节点（A的子节点，标注S-x:=0）的子节点为C\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T04:08:34.289086",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_205.jpg",
+      "image_sha256": "5962a3cb757c52ed514d524f3b724c0592ded26f330f483a3e6c21011d332447",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_205.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 16,
+        "accepted_token_count": 16,
+        "mean_confidence": 0.949106,
+        "min_confidence": 0.5,
+        "joined_text": "1.\n2.\nS-x:=2\nFollow(s)=}#，b,a,c}\nA-x:=1b\na\nFollow(A)={b,a,c}\nx:=0-A\nS-x:=1\n故为SAL(1)文法\nx:=0.5\nAx0b\na\nC\nS-x:=0\nC",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.04113,
+          "very_dark_pixel_ratio": 0.025447,
+          "lower_region_dark_pixel_ratio": 0.042647,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "1. Follow(s)={#,b,a,c} Follow(A)={b,a,c} 故为SAL(1)文法. | 2. 如图所示",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_205",
+        "question_id": "POC_6",
+        "subject": "POC_25",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "树形层级结构：根节点S（标注S-x:=2）的子节点为a、A、b；A节点（标注A-x:=1）的子节点为X:=0-A和S；X:=0-A的子节点为X:=0-S，X:=0-S的子节点为C；S节点（A的子节点，标注S-x:=1）的子节点为a、A、b；A节点（S的子节点，标注A-x:=b）的子节点为S；S节点（A的子节点，标注S-x:=0）的子节点为C",
+      "diagram_facts": {
+        "step_2": "S (S-x:=2)\n├─ a\n├─ A (A-x:=1)\n│  ├─ X:=0-A\n│  │  ├─ X:=0-S\n│  │  │  └─ C\n│  └─ S (S-x:=1)\n│     ├─ a\n│     ├─ A (A-x:=b)\n│     │  └─ S (S-x:=0)\n│     │     └─ C\n│     └─ b\n└─ b；完整可见路径：树形层级结构：根节点S（标注S-x:=2）的子节点为a、A、b；A节点（标注A-x:=1）的子节点为X:=0-A和S；X:=0-A的子节点为X:=0-S，X:=0-S的子节点为C；S节点（A的子节点，标注S-x:=1）的子节点为a、A、b；A节点（S的子节点，标注A-x:=b）的子节点为S；S节点（A的子节点，标注S-x:=0）的子节点为C"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_2",
+          "instruction": "Extract the student's handwritten annotated parse tree for the string acacbb, including the tree structure (parent-child edges or bracket nesting exactly as drawn) and every attribute value label the student wrote next to each node (e.g., node name plus attribute value pairs). Preserve arrows, nesting order, node order, and any separators exactly as written. If the student also wrote a bracket/parenthesized equivalent representation or a step-by-step derivation of attribute values, transcribe those in full order as written."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_2"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "Follow(S)={#,b,a,c} Follow(A)={b,a,c} 故为SAL(1)文法。",
+        "step_2": "S -x:=2\n├─a\n└─A -x:=1\n   ├─X:=0 -A\n   │  ├─X:=0 -S\n   │  │  └─c\n   │  └─S -x:=1\n   │     ├─a\n   │     └─A x:=b\n   │        └─S -x:=0\n   │           └─c"
+      },
+      "facts": {
+        "step_1": "Follow(s)={#,b,a,c} Follow(A)={b,a,c} 故为SAL(1)文法.",
+        "step_2": "S (S-x:=2)\n├─ a\n├─ A (A-x:=1)\n│  ├─ X:=0-A\n│  │  ├─ X:=0-S\n│  │  │  └─ C\n│  └─ S (S-x:=1)\n│     ├─ a\n│     ├─ A (A-x:=b)\n│     │  └─ S (S-x:=0)\n│     │     └─ C\n│     └─ b\n└─ b；完整可见路径：树形层级结构：根节点S（标注S-x:=2）的子节点为a、A、b；A节点（标注A-x:=1）的子节点为X:=0-A和S；X:=0-A的子节点为X:=0-S，X:=0-S的子节点为C；S节点（A的子节点，标注S-x:=1）的子节点为a、A、b；A节点（S的子节点，标注A-x:=b）的子节点为S；S节点（A的子节点，标注S-x:=0）的子节点为C"
+      }
+    },
+    "scores": [
+      3.0,
+      4.0,
+      6.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "Follow(s)={#,b,a,c} Follow(A)={b,a,c} 故为SAL(1)文法.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断 G5 为 S 属性文法，理由：S.x 与 A.x 均为综合属性，语义动作只用右部符号属性或常数",
+            "dependency_status": "failed",
+            "reason": "学生用 FOLLOW 集判定文法类型并得出 'SAL(1)文法'，方法与结论均错误；未指出综合属性/S属性文法这一正确判断与理由。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "根节点S（标注S-x:=2）的子节点为a、A、b；A节点（标注A-x:=1）…S节点（标注S-x:=1）…A节点（S的子节点，标注A-x:=b）…S节点（标注S-x:=0）的子节点为C",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "给出 acacbb 的标注语法树，各结点属性值正确（S[2](a, A[1](A[0](S[0](c)), S[1](a, A[0](S[0](c)), b)), b)）",
+            "dependency_status": "insufficient",
+            "reason": "树的结构（根S→aAb，A→A S，S→aAb，内层S→c）与大部分属性值（2,1,1,0）正确，但内层A标注为 x:=b 而非 x:=0，属性标注有实质错误，故给部分分。"
+          }
+        ],
+        "total_score": 3.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 0.0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "Follow(s)={#,b,a,c} Follow(A)={b,a,c} 故为SAL(1)文法.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断 G5 为 S 属性文法，理由：S.x 与 A.x 均为综合属性，语义动作仅用右部符号属性计算左部属性",
+            "dependency_status": "failed",
+            "reason": "学生结论为 'SAL(1)文法'（LL(1)/SLR 类判断），与要求的 S 属性文法结论矛盾；所用理由是 Follow 集，属概念性错误方法，未涉及综合/继承属性分析。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "根节点S（标注S-x:=2）的子节点为a、A、b；A节点（标注A-x:=1）的子节点为X:=0-A和S；S节点（A的子节点，标注S-x:=1）的子节点为a、A、b；A节点（S的子节点，标注A-x:=b）的子节点为S；S节点（A的子节点，标注S-x:=0）的子节点为C",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "acacbb 的标注语法树 S[2](a, A[1](A[0](S[0](c)), S[1](a, A[0](S[0](c)), b)), b)",
+            "dependency_status": "satisfied",
+            "reason": "树结构与大部分属性值正确（根 S.x=2，外层 A.x=1，中间 S.x=1，最内层 S.x=0），仅中间层 A 的属性标注为 'A-x:=b'（应为 0），属一处属性值错误，扣 1 分。"
+          }
+        ],
+        "total_score": 4.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 0.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "Follow(s)={#,b,a,c} Follow(A)={b,a,c} 故为SAL(1)文法.",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "判断 G5 为 S 属性文法，并说明 S.x/A.x 均为综合属性、语义动作只用右部符号属性或常数",
+            "dependency_status": "insufficient",
+            "reason": "结论方向上接近 S 属性文法（'SAL(1)'可视为笔误），但理由使用 Follow 集进行判断，与综合属性/继承属性的判定方法无关，缺少综合属性的关键论证，仅结论部分可得部分分。",
+            "scoring_role": null
+          },
+          {
+            "id": "step_2",
+            "score_given": 4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "根节点S（标注S-x:=2）的子节点为a、A、b；A节点（标注A-x:=1）…S节点（A的子节点，标注S-x:=1）的子节点为a、A、b；A节点（S的子节点，标注A-x:=b）的子节点为S；S节点（A的子节点，标注S-x:=0）的子节点为C",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "acacbb 的标注语法树，各结点属性值 S.x=2, A.x=1, A.x=0, S.x=1, A.x=0, S.x=0",
+            "dependency_status": "satisfied",
+            "reason": "树形结构与多数属性值正确（S.x=2、A.x=1、内层S.x=1、最内层S.x=0），但内层A的属性被标注为 'x:=b' 而非 0，出现两处属性标注错误，扣部分分。"
+          }
+        ],
+        "total_score": 6.0,
+        "role_weighted_scoring": [
+          {
+            "parent_id": "step_1",
+            "effective_score": 2.0,
+            "parent_points": 5.0,
+            "process_complexity": "complex",
+            "dependency_mode": "independent",
+            "dependency_applied": false
+          }
+        ]
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "step_2": [
+        3.0,
+        4.0,
+        4.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.888888888888889,
+      "step_2": 0.22222222222222224
+    },
+    "max_item_variance": 0.888888888888889,
+    "avg_item_variance": 0.5555555555555556
+  }
+]

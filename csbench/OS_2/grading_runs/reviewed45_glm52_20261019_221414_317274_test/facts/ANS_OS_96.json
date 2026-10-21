@@ -1,0 +1,108 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T07:32:12.879014",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/OS_2/ANS_OS_96.jpg",
+  "image_sha256": "70157aaf2c1b2905adc74c45970aadaee07cc4148533375b77b95b7645bbddad",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/OS_2/ANS_OS_96.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 91,
+    "accepted_token_count": 87,
+    "mean_confidence": 0.905188,
+    "min_confidence": 0.5,
+    "joined_text": "6. (4) 短作业优先调度\n① 7:00-8:25. 作业1， 同转的间 S5min，事权同转的间1\n105\n45\n带权同转归间\n45\n② 8:25-8:45 作业3. 周转的间\n式\n45 min\n20\n20\n③ 8:45-9:15 作4 同转时间 +55m带权同转时间\n1心5\n55\n55min\n30\n30\n带权同转的间\n④ 9:15-9:55 作业2 同转归间 65\n125min\n85+45+55+125\n77.5\n45\n125\n85+104+14+165=+22.5平均权同转时间：(1+\n165\n平均同转归间：\n30\n4014=\n4\n≈2.0514.875\n服务的间+子结为问\n(2)高响应比优先调度算法\nR=\n=1+\n服务好间\n服务\n①7:00-8:25 作业1.\n同转 85min 带权同转1\n35\n25\n9\nR4=1+\n7\n15\n2\n②8:25:R2=1+\nR3=1+\n2\n4\n20\n30\n6\n40\n8\n105\n45\n20\n20\n55\n11\nR4=1+\n=1+#\n5\nR4}xR_{2}选作业2\n③ 8:45\nR2=1+\n=1t\n40\n8\n30\n95\n 8:45-9:25，作业2. 同转 95min 带权同转\n40\n95\n④ 9:25-9:55. 作业4. 周转 95min 带权同转\n30\n95\n顺方1→3→2-→4.平均用转85+45+95+45\n80平均带权：(1+\n45\n+\n=8\n20\n3\n4\n≈2.2.",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.114848,
+      "very_dark_pixel_ratio": 0.077871,
+      "lower_region_dark_pixel_ratio": 0.121813,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)起作比优先调度\n①7:00-8:25. 作业1. 周转时间85min，带权周转时间1\n②8:25-8:45 作业4. 周转时间45min 带权周转时间45/20\n③8:45-9:15 作业4 周转时间+55min 带权周转时间55/30\n④9:15-9:55 作业2 周转时间+65min 带权周转时间125/40\n平均周转时间：(85+45+55+65)/4=77.5 平均带权周转时间：(1+45/20+55/30+125/40)/4≈2.05\n(2)高响应比优先调度算法 R=(周转时间+等待时间)/服务时间=1+等待/服务\n①7:00-8:25 作业1. 周转85min 带权周转1\n②8:25: R2=1+35/40=15/8 R3=1+25/20=9/4 R4=1+5/30=7/6 选取作业3 即8:25-8:45. 作业3. 周转45 带权周转45/20\n③8:45 R2=1+55/40=11+11/8 R4=1+25/30=1/6. R4<R2 选取作业2\n④8:45-9:25，作业2. 周转95min 带权周转95/40\n⑤9:25-9:55. 作业4. 周转95min 带权周转95/30\n顺序1→3→2→4. 平均周转(65+45+95+45)/4=80 平均带权：(1+45/20+95/40+45/30)/4≈2.2",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_OS_96",
+    "question_id": "OS_2",
+    "subject": "OS",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's written content about which job is scheduled first at time 7:00 and the completion time of that job. Capture any text, table entry, or Gantt chart annotation showing the scheduling start and the completion time, preserving the exact time notation used (e.g., 8:25, 8时25分, or relative minutes)."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's written complete scheduling sequence for SJF. Preserve the exact order, separators (commas, arrows, dots, numbering), and direction as written."
+    },
+    {
+      "id": "step_3_b",
+      "instruction": "Extract the student's written complete scheduling sequence for HRRN. Preserve the exact order, separators (commas, arrows, dots, numbering), and direction as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_1_b"
+  ],
+  "visual_fallback_recovered": [
+    "step_1_b"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_2_a",
+    "step_2_b",
+    "step_3_a",
+    "step_3_b",
+    "step_4_a",
+    "step_4_b"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1_a": "7:00-8:25，作业1",
+    "step_1_b": "1→3→4→2",
+    "step_2_a": "作业1：周转时间85min，带权周转时间1；作业3：周转时间45min，带权周转时间9/4；作业4：周转时间55min，带权周转时间11/6；作业2：周转时间125min，带权周转时间25/8",
+    "step_2_b": "平均周转时间：(85+45+55+125)/4=77.5；平均带权周转时间：(1+9/4+11/6+25/8)/4≈2.05",
+    "step_3_a": "R=(等待时间+服务时间)/服务时间=1+等待/服务；R₂=1+35/40=15/8，R₃=1+25/20=7/4，R₄=1+5/30=7/6，选R₃；R₂=1+55/40=11/8，R₄=1+25/30=11/6，选R₂",
+    "step_3_b": "1→3→2→4",
+    "step_4_a": "作业1：周转时间65min，带权周转时间1；作业3：周转时间45min，带权周转时间9/4；作业2：周转时间95min，带权周转时间19/8；作业4：周转时间95min，带权周转时间19/6",
+    "step_4_b": "平均周转时间：(65+45+95+95)/4=80；平均带权周转时间：(1+9/4+19/8+19/6)/4≈2.2"
+  },
+  "facts": {
+    "step_1_a": "①7:00-8:25. 作业1. 周转时间85min，带权周转时间1",
+    "step_1_b": "1→3→4→2",
+    "step_2_a": "作业1：周转时间85min，带权周转时间1；作业4：周转时间45min 带权周转时间45/20；作业4：周转时间+55min 带权周转时间55/30；作业2：周转时间+65min 带权周转时间125/40",
+    "step_2_b": "平均周转时间：(85+45+55+65)/4=77.5 平均带权周转时间：(1+45/20+55/30+125/40)/4≈2.05",
+    "step_3_a": "R=(周转时间+等待时间)/服务时间=1+等待/服务；②8:25: R2=1+35/40=15/8 R3=1+25/20=9/4 R4=1+5/30=7/6 选取作业3；③8:45 R2=1+55/40=11+11/8 R4=1+25/30=1/6. R4<R2 选取作业2",
+    "step_3_b": "顺序1→3→2→4",
+    "step_4_a": "作业1：周转85min 带权周转1；作业3：周转45 带权周转45/20；作业2：周转95min 带权周转95/40；作业4：周转95min 带权周转95/30",
+    "step_4_b": "平均周转(65+45+95+45)/4=80 平均带权：(1+45/20+95/40+45/30)/4≈2.2"
+  }
+}

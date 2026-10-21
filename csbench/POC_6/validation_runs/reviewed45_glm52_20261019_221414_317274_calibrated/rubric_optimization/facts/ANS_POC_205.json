@@ -1,0 +1,85 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-10-20T04:08:34.289086",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_205.jpg",
+  "image_sha256": "5962a3cb757c52ed514d524f3b724c0592ded26f330f483a3e6c21011d332447",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_205.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 16,
+    "accepted_token_count": 16,
+    "mean_confidence": 0.949106,
+    "min_confidence": 0.5,
+    "joined_text": "1.\n2.\nS-x:=2\nFollow(s)=}#，b,a,c}\nA-x:=1b\na\nFollow(A)={b,a,c}\nx:=0-A\nS-x:=1\n故为SAL(1)文法\nx:=0.5\nAx0b\na\nC\nS-x:=0\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.04113,
+      "very_dark_pixel_ratio": 0.025447,
+      "lower_region_dark_pixel_ratio": 0.042647,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1. Follow(s)={#,b,a,c} Follow(A)={b,a,c} 故为SAL(1)文法. | 2. 如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_205",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "树形层级结构：根节点S（标注S-x:=2）的子节点为a、A、b；A节点（标注A-x:=1）的子节点为X:=0-A和S；X:=0-A的子节点为X:=0-S，X:=0-S的子节点为C；S节点（A的子节点，标注S-x:=1）的子节点为a、A、b；A节点（S的子节点，标注A-x:=b）的子节点为S；S节点（A的子节点，标注S-x:=0）的子节点为C",
+  "diagram_facts": {
+    "step_2": "S (S-x:=2)\n├─ a\n├─ A (A-x:=1)\n│  ├─ X:=0-A\n│  │  ├─ X:=0-S\n│  │  │  └─ C\n│  └─ S (S-x:=1)\n│     ├─ a\n│     ├─ A (A-x:=b)\n│     │  └─ S (S-x:=0)\n│     │     └─ C\n│     └─ b\n└─ b；完整可见路径：树形层级结构：根节点S（标注S-x:=2）的子节点为a、A、b；A节点（标注A-x:=1）的子节点为X:=0-A和S；X:=0-A的子节点为X:=0-S，X:=0-S的子节点为C；S节点（A的子节点，标注S-x:=1）的子节点为a、A、b；A节点（S的子节点，标注A-x:=b）的子节点为S；S节点（A的子节点，标注S-x:=0）的子节点为C"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's handwritten annotated parse tree for the string acacbb, including the tree structure (parent-child edges or bracket nesting exactly as drawn) and every attribute value label the student wrote next to each node (e.g., node name plus attribute value pairs). Preserve arrows, nesting order, node order, and any separators exactly as written. If the student also wrote a bracket/parenthesized equivalent representation or a step-by-step derivation of attribute values, transcribe those in full order as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "Follow(S)={#,b,a,c} Follow(A)={b,a,c} 故为SAL(1)文法。",
+    "step_2": "S -x:=2\n├─a\n└─A -x:=1\n   ├─X:=0 -A\n   │  ├─X:=0 -S\n   │  │  └─c\n   │  └─S -x:=1\n   │     ├─a\n   │     └─A x:=b\n   │        └─S -x:=0\n   │           └─c"
+  },
+  "facts": {
+    "step_1": "Follow(s)={#,b,a,c} Follow(A)={b,a,c} 故为SAL(1)文法.",
+    "step_2": "S (S-x:=2)\n├─ a\n├─ A (A-x:=1)\n│  ├─ X:=0-A\n│  │  ├─ X:=0-S\n│  │  │  └─ C\n│  └─ S (S-x:=1)\n│     ├─ a\n│     ├─ A (A-x:=b)\n│     │  └─ S (S-x:=0)\n│     │     └─ C\n│     └─ b\n└─ b；完整可见路径：树形层级结构：根节点S（标注S-x:=2）的子节点为a、A、b；A节点（标注A-x:=1）的子节点为X:=0-A和S；X:=0-A的子节点为X:=0-S，X:=0-S的子节点为C；S节点（A的子节点，标注S-x:=1）的子节点为a、A、b；A节点（S的子节点，标注A-x:=b）的子节点为S；S节点（A的子节点，标注S-x:=0）的子节点为C"
+  }
+}

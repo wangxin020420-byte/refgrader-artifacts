@@ -1,0 +1,408 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T00:27:14.677453",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1467.jpg",
+  "image_sha256": "f959d67ed5c1107dcedec2798c530331fd0716fbf44e1d7bffca95c82ca0fae0",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1467.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 26,
+    "accepted_token_count": 26,
+    "mean_confidence": 0.913046,
+    "min_confidence": 0.5,
+    "joined_text": "=11，0.=数据奇存溶CR；b=相交事字器；C：地址寄存器；d：PC\ni2) PC →MAR; MAR→MDR;MDR→DR:PC+1;\n(3) M→DR\nALU→AC\nDR→M;\nDR→ALU;\nAC→DR\nPC→DX;\nDx→AlU;\nAC→DR;\n(4) PC→MAR;\nALU→AC;\nMAR→MOR\nDR→DX;\nMDR→ALU;\n(5) 根据直接编译法：3+3+4+2=13个\n故控制字段为13/位\n判别位为3位，故下址字段=24-13-3=8(位)\n故谷王为2×24比特\n(6) 见题(5)，有：\n下址字段\n判别法\n控制学段\n(8法)\n(3位)\n(13位)",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.065533,
+      "very_dark_pixel_ratio": 0.046046,
+      "lower_region_dark_pixel_ratio": 0.062563,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)a:数据寄存器DR b：指令寄存器 c：地址寄存器 d：PC\n(2) PC→MAR; MAR→MDR, MDR→DR; PC+1;\n(3) M→DR ALU→AC DR→M;\nDR→ALU; AC→DR \n(4) PC→MAR;PC→DX; DX→ALU\nMAR→MDR; ALU→AC; AC→DR;DR→DX;\nMDR→ALU;\n(5)根据直接编译法：3+3+4+2=13个\n故控制字段为13位\n判别位为3位，故下址字段=24-13-3=8(位)\n故右主为2^8×24比特\n(6)见题(5),存的结构为如图所示:",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1467",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "判别位为3位，故下址字段=24-13-3=8(位)",
+    "step_5_core_compute": "判别位为3位，故下址字段=24-13-3=8(位)",
+    "step_6_group12": "根据直接编译法：3+3+4+2=13个",
+    "step_6_group34": "根据直接编译法：3+3+4+2=13个",
+    "step_6_test_field": "判别法 (3位)",
+    "step_6_addr_field": "下址字段 (8法)",
+    "step_6_layout": "控制学段 (13位) 下址字段 (8法) 判别法 (3位)"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 33.0,
+        "cells_left_to_right": [
+          {
+            "text": "=11，0.=数据奇存溶CR；b=相交事字器；C：地址寄存器；d：PC",
+            "x_center": 460.5,
+            "confidence": 0.7722164392471313
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 82.5,
+        "cells_left_to_right": [
+          {
+            "text": "i2) PC →MAR; MAR→MDR;MDR→DR:PC+1;",
+            "x_center": 355.0,
+            "confidence": 0.910142719745636
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 187.5,
+        "cells_left_to_right": [
+          {
+            "text": "(3) M→DR",
+            "x_center": 109.0,
+            "confidence": 0.9445754289627075
+          },
+          {
+            "text": "DR→ALU;",
+            "x_center": 159.5,
+            "confidence": 0.935343861579895
+          },
+          {
+            "text": "ALU→AC",
+            "x_center": 332.5,
+            "confidence": 0.9939830899238586
+          },
+          {
+            "text": "AC→DR",
+            "x_center": 339.5,
+            "confidence": 0.9902043342590332
+          },
+          {
+            "text": "DR→M;",
+            "x_center": 486.0,
+            "confidence": 0.9685438275337219
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 262.0,
+        "cells_left_to_right": [
+          {
+            "text": "(4) PC→MAR;",
+            "x_center": 132.5,
+            "confidence": 0.985982358455658
+          },
+          {
+            "text": "PC→DX;",
+            "x_center": 370.0,
+            "confidence": 0.8139366507530212
+          },
+          {
+            "text": "Dx→AlU;",
+            "x_center": 377.5,
+            "confidence": 0.8322564363479614
+          },
+          {
+            "text": "AC→DR;",
+            "x_center": 590.0,
+            "confidence": 0.9862157702445984
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 315.38,
+        "cells_left_to_right": [
+          {
+            "text": "MDR→ALU;",
+            "x_center": 165.0,
+            "confidence": 0.9711887240409851
+          },
+          {
+            "text": "MAR→MOR",
+            "x_center": 167.0,
+            "confidence": 0.9518513083457947
+          },
+          {
+            "text": "ALU→AC;",
+            "x_center": 389.5,
+            "confidence": 0.973427951335907
+          },
+          {
+            "text": "DR→DX;",
+            "x_center": 605.5,
+            "confidence": 0.9208903908729553
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 377.5,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 根据直接编译法：3+3+4+2=13个",
+            "x_center": 314.5,
+            "confidence": 0.9746685028076172
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 440.25,
+        "cells_left_to_right": [
+          {
+            "text": "故控制字段为13/位",
+            "x_center": 166.0,
+            "confidence": 0.852955162525177
+          },
+          {
+            "text": "判别位为3位，故下址字段=24-13-3=8(位)",
+            "x_center": 373.5,
+            "confidence": 0.9362946152687073
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 511.5,
+        "cells_left_to_right": [
+          {
+            "text": "故谷王为2×24比特",
+            "x_center": 171.0,
+            "confidence": 0.9345071911811829
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 610.36,
+        "cells_left_to_right": [
+          {
+            "text": "(6) 见题(5)，有：",
+            "x_center": 115.0,
+            "confidence": 0.9510963559150696
+          },
+          {
+            "text": "控制学段",
+            "x_center": 116.0,
+            "confidence": 0.768277645111084
+          },
+          {
+            "text": "(13位)",
+            "x_center": 118.0,
+            "confidence": 0.917262852191925
+          },
+          {
+            "text": "下址字段",
+            "x_center": 259.5,
+            "confidence": 0.9922345280647278
+          },
+          {
+            "text": "(8法)",
+            "x_center": 273.5,
+            "confidence": 0.7866833209991455
+          },
+          {
+            "text": "判别法",
+            "x_center": 379.0,
+            "confidence": 0.8332968354225159
+          },
+          {
+            "text": "(3位)",
+            "x_center": 400.0,
+            "confidence": 0.8411572575569153
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=460.5: =11，0.=数据奇存溶CR；b=相交事字器；C：地址寄存器；d：PC\nRow 2: x=355.0: i2) PC →MAR; MAR→MDR;MDR→DR:PC+1;\nRow 3: x=109.0: (3) M→DR | x=159.5: DR→ALU; | x=332.5: ALU→AC | x=339.5: AC→DR | x=486.0: DR→M;\nRow 4: x=132.5: (4) PC→MAR; | x=370.0: PC→DX; | x=377.5: Dx→AlU; | x=590.0: AC→DR;\nRow 5: x=165.0: MDR→ALU; | x=167.0: MAR→MOR | x=389.5: ALU→AC; | x=605.5: DR→DX;\nRow 6: x=314.5: (5) 根据直接编译法：3+3+4+2=13个\nRow 7: x=166.0: 故控制字段为13/位 | x=373.5: 判别位为3位，故下址字段=24-13-3=8(位)\nRow 8: x=171.0: 故谷王为2×24比特\nRow 9: x=115.0: (6) 见题(5)，有： | x=116.0: 控制学段 | x=118.0: (13位) | x=259.5: 下址字段 | x=273.5: (8法) | x=379.0: 判别法 | x=400.0: (3位)"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "数据奇存溶CR",
+    "step_1_b": "相交事字器",
+    "step_1_c": "地址寄存器",
+    "step_1_d": "PC",
+    "step_2_p1": "PC→MAR; MAR→MDR; MDR→DR; PC+1;",
+    "step_2_p2": "图中未明确显示",
+    "step_3_read": "M→DR",
+    "step_3_write": "DR→M;",
+    "step_4_operands": "PC→MAR; MAR→MDR; MDR→ALU; DX→ALU;",
+    "step_4_result": "ALU→AC;",
+    "step_6_layout": "控制字段(13位) | 下址字段(8位) | 判别位(3位)"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_6_layout"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_1_c",
+    "step_1_d",
+    "step_2_p1",
+    "step_3_read",
+    "step_3_write",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "数据寄存器IR",
+    "step_1_b": "指令寄存器",
+    "step_1_c": "地址寄存器",
+    "step_1_d": "PC",
+    "step_2_p1": "PC→MAR；MAR→MDR；MDR→DR；PC+1;",
+    "step_2_p2": "未书写",
+    "step_3_read": "M→DR  ALU→AC  DR→M; DR→ALU;  AC→DR",
+    "step_3_write": "未书写",
+    "step_4_operands": "PC→MAR； DX→ALU； AC→DR; MAR→MDR； ALU→AC； DR→DX; MDR→ALU;",
+    "step_4_result": "ALU→AC；AC→DR; DR→DX;",
+    "step_5_core_field": "根据直接编译法：3+3+4+2=13个 故控制字段为13位",
+    "step_5_core_compute": "判别位为3位，故下址字段=24-13-3=8(位)",
+    "step_5_final": "故容量为2^8×24比特",
+    "step_6_group12": "3位 3位",
+    "step_6_group34": "4位 2位",
+    "step_6_test_field": "3位",
+    "step_6_addr_field": "8位",
+    "step_6_layout": "控制字段(13位) 下址字段(8位) 判别位(3位)"
+  },
+  "facts": {
+    "step_1_a": "a:数据寄存器DR",
+    "step_1_b": "b：指令寄存器",
+    "step_1_c": "c：地址寄存器",
+    "step_1_d": "d：PC",
+    "step_2_p1": "PC→MAR; MAR→MDR, MDR→DR; PC+1;",
+    "step_2_p2": "未书写",
+    "step_3_read": "M→DR ALU→AC DR→M; DR→ALU; AC→DR",
+    "step_3_write": "M→DR ALU→AC DR→M; DR→ALU; AC→DR",
+    "step_4_operands": "PC→MAR;PC→DX; DX→ALU MAR→MDR; ALU→AC; AC→DR;DR→DX; MDR→ALU;",
+    "step_4_result": "PC→MAR;PC→DX; DX→ALU MAR→MDR; ALU→AC; AC→DR;DR→DX; MDR→ALU;",
+    "step_5_core_field": "根据直接编译法：3+3+4+2=13个 故控制字段为13位 判别位为3位，故下址字段=24-13-3=8(位) 故右主为2^8×24比特",
+    "step_5_core_compute": "下址字段=24-13-3=8(位)",
+    "step_5_final": "2^8×24比特",
+    "step_6_group12": "3+3+4+2=13个",
+    "step_6_group34": "3+3+4+2=13个",
+    "step_6_test_field": "判别位为3位",
+    "step_6_addr_field": "下址字段=24-13-3=8(位)",
+    "step_6_layout": "控制学段 (13位) 下址字段 (8法) 判别法 (3位)"
+  }
+}

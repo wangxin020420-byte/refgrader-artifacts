@@ -1,0 +1,406 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T03:34:06.388467",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_754.png",
+  "image_sha256": "0c71d977da527639d5eaed81d47dabc2119ec2056dea9e0955ea7fae480ba7f8",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_754.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 36,
+    "accepted_token_count": 35,
+    "mean_confidence": 0.918062,
+    "min_confidence": 0.5,
+    "joined_text": "(2) 当CPU送出地址为2D07FFH时\n2. （20分）\n解：“由题意得\n2D07 FF4= d010 1101 10000 011 111 1111\n①块内地址为1111111111)\n∴主存为8mB∴主有地址线个数为23位\n②第117到第14位为对应的(ache组号=0000 即对应Cache\n∵每块2KB，按安节编址\n的第0组，因为每组有2块，所以可以有放在块0和块\n∴块内地地位数为11位\n②主标记=01011010与块0的块标记不一样，与\n又: Cache中最多放32个主有块，每组2块\n块0的标记也不一样，所以不能在Cache中访问到该单\n∴共有32/2=16组，q=4.r=1\n元的数据\n∴主有标记位数=23-11-4=8位\n当CPU送出地址为7F0057H时\n∴主存\n7F0057H=5d)11 111 2000 0000 0101 0111\n主存标记字段\n(ache组紫引同) 块内地址\n①块内地址为00001010111\n87位\n4T位\n1位\n②对应(ache组号=0000，即对应Cache的第0块\nCache\n③主存标记=11111110与块Cache块1的th标记一致\nCache组索引(9) Cache块索引\n块内地址\n所以能在(ache中访问到该单元的数据\n4位\n(r)\n位\n11T位",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.110282,
+      "very_dark_pixel_ratio": 0.071536,
+      "lower_region_dark_pixel_ratio": 0.116801,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解：(1)由题意得 \n∵主存为8MB ∴主存地址线个数为23位 ∵每块2kB，块内字编址 \n∴块内地址位数为11位 又∵Cache中最多放32个主存块，每组2块 ∴共有32/2=16组，q=4,t=1 ∴主存标记位数=23-11-4=8位\n主存地址图如图所示\ncache地址图如图所示\n(2)当CPU送出地址为2D07FFH时 \n2D07FFH= 0010 1101 0000 0111 1111 ①块内地址为11111111111 ②第11位到第14位为对应(cache组号=0000)即对应Cache\n的第0组，因为每组有2块，所以可以存放在块0和块1 ③主存标记=01011010与块0的块标记不一样，与\n块0的块标记也不一样，所以不能在Cache中访问到该单\n元的数据 \n当CPU送出地址为7F0057H时 \n7F0057H= 0111 1111 0000 0000 0101 0111 ①块内地址为00001010111 ②对应Cache组号=0000，即对应Cache的第0块 ③主存标记=01111110与块Cache块1的块标记一致 所以能在Cache中访问到该单元的数据.",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_754",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "共有32/2=16组，q=4.r=1；主有标记位数=23-11-4=8位",
+    "step_4": "主存标记字段 8位 | Cache组索引(9) 4位 | 块内地址 11位",
+    "step_5": "Cache组索引(9) 4位 | Cache块索引(r) 位 | 块内地址 11位",
+    "step_6a": "第117到第14位为对应的Cache组号=0000 即对应Cache的第0组；对应Cache组号=0000，即对应Cache的第0块",
+    "step_6b": "主标记=01011010与块0的块标记不一样，与块0的标记也不一样，所以不能在Cache中访问到该单元的数据",
+    "step_7a": "对应Cache组号=0000，即对应Cache的第0块",
+    "step_7b": "主存标记=11111110与块Cache块1的th标记一致；所以能在Cache中访问到该单元的数据"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content for the Cache group number bit count. Ask for the number of bits, any table entry, formula, or substitution relation written (such as total blocks, associativity, number of groups, or power-of-two relation), and any computation trace. Preserve all numbers, units, exponents, and separators exactly as written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content for the main memory address format. Ask for the field names, their bit widths, and the order in which they are written. Preserve all separators, arrows, vertical bars, and grouping exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content for the Cache address format. Ask for the field names, their bit widths, and the order in which they are written. Preserve all separators, arrows, vertical bars, and grouping exactly as written."
+    },
+    {
+      "id": "step_6a",
+      "instruction": "Extract the student's concrete handwritten content for the group number field extracted from the given address. Ask for the group number value, any binary or hexadecimal representation, and any written description of the extraction step (such as removing low bits and taking the next bits). Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_6b",
+      "instruction": "Extract the student's concrete handwritten content for the tag field extracted from the given address and the in-group comparison. Ask for the tag value in binary or hexadecimal, any written comparison of which blocks in the group are checked, and any statement about matching or not matching with stored blocks. Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_7a",
+      "instruction": "Extract the student's concrete handwritten content for the group number field extracted from the given address. Ask for the group number value, any binary or hexadecimal representation, and any written description of the extraction step (such as removing low bits and taking the next bits). Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_7b",
+      "instruction": "Extract the student's concrete handwritten content for the tag field extracted from the given address and the in-group comparison. Ask for the tag value in binary or hexadecimal, any written comparison of which blocks in the group are checked, and any statement about matching or not matching with stored blocks. Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 41.75,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 57.0,
+            "confidence": 0.9075950980186462
+          },
+          {
+            "text": "(2) 当CPU送出地址为2D07FFH时",
+            "x_center": 564.0,
+            "confidence": 0.8562026023864746
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 78.75,
+        "cells_left_to_right": [
+          {
+            "text": "解：“由题意得",
+            "x_center": 93.0,
+            "confidence": 0.8583298325538635
+          },
+          {
+            "text": "2D07 FF4= d010 1101 10000 011 111 1111",
+            "x_center": 625.0,
+            "confidence": 0.9054824709892273
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 118.25,
+        "cells_left_to_right": [
+          {
+            "text": "∴主存为8mB∴主有地址线个数为23位",
+            "x_center": 203.0,
+            "confidence": 0.9143681526184082
+          },
+          {
+            "text": "①块内地址为1111111111)",
+            "x_center": 532.0,
+            "confidence": 0.9067093729972839
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 157.5,
+        "cells_left_to_right": [
+          {
+            "text": "∵每块2KB，按安节编址",
+            "x_center": 158.0,
+            "confidence": 0.8787207007408142
+          },
+          {
+            "text": "②第117到第14位为对应的(ache组号=0000 即对应Cache",
+            "x_center": 679.5,
+            "confidence": 0.9505236744880676
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 194.75,
+        "cells_left_to_right": [
+          {
+            "text": "∴块内地地位数为11位",
+            "x_center": 163.5,
+            "confidence": 0.9454430937767029
+          },
+          {
+            "text": "的第0组，因为每组有2块，所以可以有放在块0和块",
+            "x_center": 690.5,
+            "confidence": 0.925004243850708
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 234.0,
+        "cells_left_to_right": [
+          {
+            "text": "又: Cache中最多放32个主有块，每组2块",
+            "x_center": 225.5,
+            "confidence": 0.9144057631492615
+          },
+          {
+            "text": "②主标记=01011010与块0的块标记不一样，与",
+            "x_center": 658.0,
+            "confidence": 0.9481542706489563
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 281.67,
+        "cells_left_to_right": [
+          {
+            "text": "∴共有32/2=16组，q=4.r=1",
+            "x_center": 212.5,
+            "confidence": 0.9658733010292053
+          },
+          {
+            "text": "元的数据",
+            "x_center": 494.0,
+            "confidence": 0.9994558691978455
+          },
+          {
+            "text": "块0的标记也不一样，所以不能在Cache中访问到该单",
+            "x_center": 681.0,
+            "confidence": 0.9371566772460938
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 340.83,
+        "cells_left_to_right": [
+          {
+            "text": "企",
+            "x_center": 175.0,
+            "confidence": 0.3521057963371277
+          },
+          {
+            "text": "∴主有标记位数=23-11-4=8位",
+            "x_center": 216.0,
+            "confidence": 0.9504125118255615
+          },
+          {
+            "text": "当CPU送出地址为7F0057H时",
+            "x_center": 579.0,
+            "confidence": 0.9308309555053711
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 388.5,
+        "cells_left_to_right": [
+          {
+            "text": "∴主存",
+            "x_center": 57.0,
+            "confidence": 0.9786656498908997
+          },
+          {
+            "text": "主存标记字段",
+            "x_center": 155.5,
+            "confidence": 0.9325998425483704
+          },
+          {
+            "text": "(ache组紫引同) 块内地址",
+            "x_center": 325.5,
+            "confidence": 0.8196070790290833
+          },
+          {
+            "text": "①块内地址为00001010111",
+            "x_center": 556.0,
+            "confidence": 0.9879530668258667
+          },
+          {
+            "text": "7F0057H=5d)11 111 2000 0000 0101 0111",
+            "x_center": 645.5,
+            "confidence": 0.849799394607544
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 433.12,
+        "cells_left_to_right": [
+          {
+            "text": "87位",
+            "x_center": 157.5,
+            "confidence": 0.7797136306762695
+          },
+          {
+            "text": "4T位",
+            "x_center": 280.0,
+            "confidence": 0.8273125290870667
+          },
+          {
+            "text": "1位",
+            "x_center": 385.0,
+            "confidence": 0.9805485010147095
+          },
+          {
+            "text": "②对应(ache组号=0000，即对应Cache的第0块",
+            "x_center": 641.0,
+            "confidence": 0.952685534954071
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 479.75,
+        "cells_left_to_right": [
+          {
+            "text": "Cache",
+            "x_center": 66.5,
+            "confidence": 0.9963207244873047
+          },
+          {
+            "text": "③主存标记=11111110与块Cache块1的th标记一致",
+            "x_center": 682.0,
+            "confidence": 0.8669938445091248
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 518.12,
+        "cells_left_to_right": [
+          {
+            "text": "Cache组索引(9) Cache块索引",
+            "x_center": 213.0,
+            "confidence": 0.9071670770645142
+          },
+          {
+            "text": "(r)",
+            "x_center": 307.0,
+            "confidence": 0.9479852318763733
+          },
+          {
+            "text": "块内地址",
+            "x_center": 378.0,
+            "confidence": 0.9871789813041687
+          },
+          {
+            "text": "所以能在(ache中访问到该单元的数据",
+            "x_center": 655.0,
+            "confidence": 0.9561971426010132
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 547.0,
+        "cells_left_to_right": [
+          {
+            "text": "4位",
+            "x_center": 157.5,
+            "confidence": 0.9501248598098755
+          },
+          {
+            "text": "位",
+            "x_center": 285.5,
+            "confidence": 0.9829244017601013
+          },
+          {
+            "text": "11T位",
+            "x_center": 390.5,
+            "confidence": 0.7337243556976318
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=57.0: 2. （20分） | x=564.0: (2) 当CPU送出地址为2D07FFH时\nRow 2: x=93.0: 解：“由题意得 | x=625.0: 2D07 FF4= d010 1101 10000 011 111 1111\nRow 3: x=203.0: ∴主存为8mB∴主有地址线个数为23位 | x=532.0: ①块内地址为1111111111)\nRow 4: x=158.0: ∵每块2KB，按安节编址 | x=679.5: ②第117到第14位为对应的(ache组号=0000 即对应Cache\nRow 5: x=163.5: ∴块内地地位数为11位 | x=690.5: 的第0组，因为每组有2块，所以可以有放在块0和块\nRow 6: x=225.5: 又: Cache中最多放32个主有块，每组2块 | x=658.0: ②主标记=01011010与块0的块标记不一样，与\nRow 7: x=212.5: ∴共有32/2=16组，q=4.r=1 | x=494.0: 元的数据 | x=681.0: 块0的标记也不一样，所以不能在Cache中访问到该单\nRow 8: x=175.0: 企 | x=216.0: ∴主有标记位数=23-11-4=8位 | x=579.0: 当CPU送出地址为7F0057H时\nRow 9: x=57.0: ∴主存 | x=155.5: 主存标记字段 | x=325.5: (ache组紫引同) 块内地址 | x=556.0: ①块内地址为00001010111 | x=645.5: 7F0057H=5d)11 111 2000 0000 0101 0111\nRow 10: x=157.5: 87位 | x=280.0: 4T位 | x=385.0: 1位 | x=641.0: ②对应(ache组号=0000，即对应Cache的第0块\nRow 11: x=66.5: Cache | x=682.0: ③主存标记=11111110与块Cache块1的th标记一致\nRow 12: x=213.0: Cache组索引(9) Cache块索引 | x=307.0: (r) | x=378.0: 块内地址 | x=655.0: 所以能在(ache中访问到该单元的数据\nRow 13: x=157.5: 4位 | x=285.5: 位 | x=390.5: 11T位"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_4",
+    "step_5"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6a",
+    "step_6b",
+    "step_6c",
+    "step_7a",
+    "step_7b",
+    "step_7c"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "23位",
+    "step_2": "11位",
+    "step_3": "4位",
+    "step_4": "主存标记字段 8位 | Cache组索引 4位 | 块内地址 11位",
+    "step_5": "Cache组索引 4位 | Cache块索引 1位 | 块内地址 11位",
+    "step_6a": "0000",
+    "step_6b": "主存标记=01011010 与块0的块标记不一样，与块0的块标记也不一样",
+    "step_6c": "不能在Cache中访问到该单元的数据",
+    "step_7a": "0000",
+    "step_7b": "主存标记=11111110 与块Cache块1的块标记一致",
+    "step_7c": "所以能在Cache中访问到该单元的数据"
+  },
+  "facts": {
+    "step_1": "主存为8MB ∴主存地址线个数为23位",
+    "step_2": "每块2kB，块内字编址 ∴块内地址位数为11位",
+    "step_3": "Cache中最多放32个主存块，每组2块 ∴共有32/2=16组，q=4,t=1",
+    "step_4": "主存标记字段 8位 | Cache组索引(9) 4位 | 块内地址 11位",
+    "step_5": "Cache组索引(9) 4位 | Cache块索引(r) 位 | 块内地址 11位",
+    "step_6a": "2D07FFH= 0010 1101 0000 0111 1111 ①块内地址为11111111111 ②第11位到第14位为对应(cache组号=0000)即对应Cache的第0组，因为每组有2块，所以可以存放在块0和块1",
+    "step_6b": "③主存标记=01011010与块0的块标记不一样，与块0的块标记也不一样",
+    "step_6c": "所以不能在Cache中访问到该单元的数据",
+    "step_7a": "7F0057H= 0111 1111 0000 0000 0101 0111 ①块内地址为00001010111 ②对应Cache组号=0000，即对应Cache的第0块",
+    "step_7b": "③主存标记=01111110与块Cache块1的块标记一致",
+    "step_7c": "所以能在Cache中访问到该单元的数据."
+  }
+}

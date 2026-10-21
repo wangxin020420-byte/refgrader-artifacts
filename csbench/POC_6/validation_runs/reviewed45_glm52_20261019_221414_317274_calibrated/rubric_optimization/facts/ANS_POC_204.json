@@ -1,0 +1,84 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-10-20T04:06:31.243786",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_204.jpg",
+  "image_sha256": "44d31c3941fde148422a7c870ec51095cd1524ff07c21706c71f4d1dd2eb392c",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_204.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 13,
+    "accepted_token_count": 13,
+    "mean_confidence": 0.852608,
+    "min_confidence": 0.5,
+    "joined_text": "S(S:x:=AaT)\n1. S一属性文法\n2.\na\nAXx+Sx\n(Ax=xA\nSSx=Ax+1)\nSx=0\na Ab\n1A×5=S.x\nS\nSx=0\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.040494,
+      "very_dark_pixel_ratio": 0.028638,
+      "lower_region_dark_pixel_ratio": 0.037165,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "S-属性文法 | 如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_204",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "树结构：根节点S，子节点a和A；A子节点A1和S；S子节点a、A、b；A子节点S；S子节点c",
+  "diagram_facts": {
+    "step_2": "根节点S(S.x:=A.x+1)，子节点a和A(A.x:=A1.x + S.x)；A的子节点A1(A.x:=xA1)和S(S.x:=A.x+1)；S的子节点a、A(A.x:=S.x)、b；A的子节点S(S.x:=0)；S的子节点c；完整可见路径：树结构：根节点S，子节点a和A；A子节点A1和S；S子节点a、A、b；A子节点S；S子节点c"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's handwritten annotated parse tree for the string acacbb: transcribe the tree structure (parent-child relations, branching order as drawn) and every node label with its attribute value exactly as written, preserving arrows, brackets, dot notation, order, and direction. If the student also wrote an equivalent bracketed/parenthesized notation or a list of node attribute values, transcribe those verbatim, preserving symbols, separators, and grouping."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "S-属性文法",
+    "step_2": "S(S.x:=A.x+1)\n├─a\n└─A(A.x:=A1.x+S.x)\n   ├─(A.x:=A1.x)\n   │  └─S(S.x:=0)\n   │     └─c\n   └─S(S.x:=A.x+1)\n      ├─a\n      ├─A(A.x:=S.x)\n      │  └─S(S.x:=0)\n      │     └─c\n      └─b"
+  },
+  "facts": {
+    "step_1": "S-属性文法",
+    "step_2": "根节点S(S.x:=A.x+1)，子节点a和A(A.x:=A1.x + S.x)；A的子节点A1(A.x:=xA1)和S(S.x:=A.x+1)；S的子节点a、A(A.x:=S.x)、b；A的子节点S(S.x:=0)；S的子节点c；完整可见路径：树结构：根节点S，子节点a和A；A子节点A1和S；S子节点a、A、b；A子节点S；S子节点c"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T21:05:09.718905",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_34.jpg",
+  "image_sha256": "11b23e34f513e526adeb4519cc7183a238e7eb5497c8391e3c260e7a5b35e49c",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_34.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 14,
+    "accepted_token_count": 14,
+    "mean_confidence": 0.939839,
+    "min_confidence": 0.5,
+    "joined_text": "16. (1) 哈斯图\n24\n54\nb\n4\n0\n0\n3\n2\n12) 极大元：24,54\n极小元：1\n(4) 最小上界：4 最大下界：9\n(3) 最大元：54\n最小元：1",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "multiple_confident_ocr_tokens",
+      "dark_pixel_ratio": 0.027569,
+      "very_dark_pixel_ratio": 0.017017,
+      "lower_region_dark_pixel_ratio": 0.026267,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)如图所示\n（2）\n极大元：24, 54\n极小元：1\n（3）\n最大元：54\n最小元：1\n（4）\n最小上界：4 最大下界：9",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_34",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "哈斯图呈现分层结构，底层为节点1，中间层为节点2、3，上一层为节点4、6，顶层为节点24、54、9；节点间通过线段连接，形成1→2、1→3、2→4、2→6、3→6、3→9、4→24、6→24、6→54、9→54的层级关系（线段方向为从下到上，表示整除偏序关系）",
+  "diagram_facts": {
+    "step_1": "节点：1、2、3、4、6、24、54、9；边：1-2、1-3、2-4、2-6、3-6、3-9、4-24、6-24、6-54、9-54（线段连接表示整除关系）；完整可见路径：哈斯图呈现分层结构，底层为节点1，中间层为节点2、3，上一层为节点4、6，顶层为节点24、54、9；节点间通过线段连接，形成1→2、1→3、2→4、2→6、3→6、3→9、4→24、6→24、6→54、9→54的层级关系（线段方向为从下到上，表示整除偏序关系）",
+    "step_4": "最小上界：4；最大下界：9；完整可见路径：哈斯图呈现分层结构，底层为节点1，中间层为节点2、3，上一层为节点4、6，顶层为节点24、54、9；节点间通过线段连接，形成1→2、1→3、2→4、2→6、3→6、3→9、4→24、6→24、6→54、9→54的层级关系（线段方向为从下到上，表示整除偏序关系）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's drawn Hasse diagram for the poset exactly as written, including all nodes, labels, edges, line segments, and their directions or connections."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's written least upper bound and greatest lower bound of subset B exactly as written, preserving all numbers, labels, order, and any statements about existence or nonexistence."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "哈斯图（节点：24、54、4、6、2、3、1；边：24-4, 24-6, 54-6, 54-9, 4-2, 6-2, 6-3, 2-1, 3-1）",
+    "step_2": "极大元：24, 54 极小元：1",
+    "step_3": "最大元：54 最小元：1",
+    "step_4": "最小上界：4 最大下界：9"
+  },
+  "facts": {
+    "step_1": "节点：1、2、3、4、6、24、54、9；边：1-2、1-3、2-4、2-6、3-6、3-9、4-24、6-24、6-54、9-54（线段连接表示整除关系）；完整可见路径：哈斯图呈现分层结构，底层为节点1，中间层为节点2、3，上一层为节点4、6，顶层为节点24、54、9；节点间通过线段连接，形成1→2、1→3、2→4、2→6、3→6、3→9、4→24、6→24、6→54、9→54的层级关系（线段方向为从下到上，表示整除偏序关系）",
+    "step_2": "极大元：24, 54\n极小元：1",
+    "step_3": "最大元：54\n最小元：1",
+    "step_4": "最小上界：4 最大下界：9"
+  }
+}

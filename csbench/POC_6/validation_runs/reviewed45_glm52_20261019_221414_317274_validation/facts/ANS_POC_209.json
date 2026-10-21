@@ -1,0 +1,100 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T08:29:30.670875",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_209.jpg",
+  "image_sha256": "667fa85ecf423ba5021f22e5586704ca0e74393e9bfd73eac292dd0c331e20f0",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_209.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 12,
+    "accepted_token_count": 12,
+    "mean_confidence": 0.894819,
+    "min_confidence": 0.5,
+    "joined_text": "1. 2型文法\n2. S→aAb=aA,sb=asSb=acaAbb=acaSbb\n=acacbb\n左侧只有1个非终结符\nS\n且非左/右线性\na. A b,\nA1 S1}\nSza2A{2b_2\n53\nc,\nC2",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.040502,
+      "very_dark_pixel_ratio": 0.025972,
+      "lower_region_dark_pixel_ratio": 0.029679,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "2型文法，左侧只有1个非终结符且非左/右线性 | 如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_209",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_2_component_1": "根节点S，子节点a、A、b；A的子节点A₁、S₁；S₁的子节点S₂、a₂、A₂、b₂；S₂的子节点c；S₃的子节点c₂。节点标签包含S、a、A、b、A₁、S₁、S₂、a₂、A₂、b₂、c、S₃、c₂，按树形结构连接。",
+    "step_2_component_2": "节点属性标注包含S₂、a₂、A₂、b₂、c、S₃、c₂，书写形式如S₂、a₂、A₂、b₂、c、S₃、c₂（按图中呈现）。"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's representation of the syntax tree structure for the given string, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact node labels, ordering, and nesting as written, including any attribute annotations if present."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node in the syntax tree, including any values for root S.x, outer A.x, inner S.x, inner A.x, and leaf S.x nodes. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and numerical values as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_1_support_1"
+  ],
+  "visual_fallback_recovered": [
+    "step_1_support_1",
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_core_1",
+    "step_2_component_1"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "左侧只有1个非终结符",
+    "step_1_core_1": "左侧只有1个非终结符 且非左/右线性",
+    "step_1_final_1": "2型文法",
+    "step_2_component_1": "S\n/ | \\\na  A  b\n  / \\\n A1 S1\n   / \\\n  S2 A2 b2\n   / \\\n  c  S3\n      /\n     c2",
+    "step_2_component_2": "未书写"
+  },
+  "facts": {
+    "step_1_support_1": "左侧只有1个非终结符",
+    "step_1_core_1": "2型文法，左侧只有1个非终结符且非左/右线性",
+    "step_1_final_1": "2型文法",
+    "step_2_component_1": "根节点S，子节点a、A、b；A的子节点A₁、S₁；S₁的子节点S₂、a₂、A₂、b₂；S₂的子节点c；S₃的子节点c₂。节点标签包含S、a、A、b、A₁、S₁、S₂、a₂、A₂、b₂、c、S₃、c₂，按树形结构连接。",
+    "step_2_component_2": "节点属性标注包含S₂、a₂、A₂、b₂、c、S₃、c₂，书写形式如S₂、a₂、A₂、b₂、c、S₃、c₂（按图中呈现）。"
+  }
+}

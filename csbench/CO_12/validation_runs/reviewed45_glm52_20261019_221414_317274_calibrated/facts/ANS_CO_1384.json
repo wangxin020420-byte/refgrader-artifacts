@@ -1,0 +1,429 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T00:03:30.264916",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1384.jpg",
+  "image_sha256": "546be4eae2ad0ac241e4c5fa92f187ae6b092b6cfebba14543224d1017c22558",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1384.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 26,
+    "accepted_token_count": 26,
+    "mean_confidence": 0.932129,
+    "min_confidence": 0.5,
+    "joined_text": "5: (1) U: DR b: IR C: AR d: PC\n(2) PC→AB ADS,M/2O=1,W/R=0,\nDB→2R PC+1 完成取指操作\nOD→AR AR→AB GR→DB\nOD→AR AR→AB ADS,M/20\n(3)\n(存)\n=1,\nM/IO=1 W/R=1 DB→DR\nDB→DR\nw/R=0\n(取)\n(4) PC→AB ADS，M/I0=1, W/R=0\nDB→IR PC+1\nOD→AR AR→AB ADS,M/20=1,W/R=0\nDB→DR\nDR→ ALU GR→ALU + ALU→GR\n(5) 5个微命令需要 3位\n8个需要千位14个需要4位3个要2位共13位\n外部条件3个共2位24-2-13=9位.(下址字段)\n故容量为29×24\n(6)\n3位4位4位2位2位19位\n→下址字段\n4个互斥类\n外部条件",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.069379,
+      "very_dark_pixel_ratio": 0.038643,
+      "lower_region_dark_pixel_ratio": 0.074413,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a: DR    b: IR    c: AR    d: PC\n(2) PC→AB  ADS, M/IO=1, W/R=0\nDB→IR  PC+1  完成取指操作\n(3)(存) OD→AR  AR→AB  GR→DB  \nM/IO=1  W/R=1  DB→DR\n(取) OD→AR  AR→AB  ADS, M/IO=1\nDB→DR  W/R=0  \n(4) PC→AB  ADS, M/IO=1, W/R=0\nDB→IR  PC+1\nOD→AR  AR→AB  ADS, M/IO=1, W/R=0\nDB→DR\nDR→ALU  GR→ALU  +  ALU→GR\n(5) 5个微命令需要3位\n8个需要4位  14个需要4位  3个需要2位  共13位\n外部条件5个共2位  24-2-13=9位（下址字段）\n故容量为2^9×24\n(6) 字段划分如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1384",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "下址字段",
+    "step_5_core_compute": "24-2-13=9位.(下址字段)",
+    "step_6_group12": "3位4位",
+    "step_6_group34": "4位2位",
+    "step_6_test_field": "2位 外部条件",
+    "step_6_addr_field": "9位 →下址字段",
+    "step_6_layout": "4个互斥类 3位4位4位2位 外部条件 2位 下址字段 9位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 45.0,
+        "cells_left_to_right": [
+          {
+            "text": "5: (1) U: DR b: IR C: AR d: PC",
+            "x_center": 309.0,
+            "confidence": 0.8964745402336121
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 106.75,
+        "cells_left_to_right": [
+          {
+            "text": "(2) PC→AB ADS,M/2O=1,W/R=0,",
+            "x_center": 296.0,
+            "confidence": 0.8890357613563538
+          },
+          {
+            "text": "DB→2R PC+1 完成取指操作",
+            "x_center": 329.0,
+            "confidence": 0.887364387512207
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 182.81,
+        "cells_left_to_right": [
+          {
+            "text": "(3)",
+            "x_center": 66.0,
+            "confidence": 0.9084897041320801
+          },
+          {
+            "text": "OD→AR AR→AB GR→DB",
+            "x_center": 282.5,
+            "confidence": 0.9715402126312256
+          },
+          {
+            "text": "M/IO=1 W/R=1 DB→DR",
+            "x_center": 284.5,
+            "confidence": 0.9071329832077026
+          },
+          {
+            "text": "(存)",
+            "x_center": 510.5,
+            "confidence": 0.7453495860099792
+          },
+          {
+            "text": "DB→DR",
+            "x_center": 646.5,
+            "confidence": 0.9871962666511536
+          },
+          {
+            "text": "OD→AR AR→AB ADS,M/20",
+            "x_center": 742.0,
+            "confidence": 0.9304900169372559
+          },
+          {
+            "text": "w/R=0",
+            "x_center": 888.0,
+            "confidence": 0.9469947814941406
+          },
+          {
+            "text": "=1,",
+            "x_center": 922.0,
+            "confidence": 0.8441746830940247
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 264.0,
+        "cells_left_to_right": [
+          {
+            "text": "(4) PC→AB ADS，M/I0=1, W/R=0",
+            "x_center": 298.0,
+            "confidence": 0.8525465726852417
+          },
+          {
+            "text": "(取)",
+            "x_center": 855.5,
+            "confidence": 0.9683046340942383
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 311.5,
+        "cells_left_to_right": [
+          {
+            "text": "DB→IR PC+1",
+            "x_center": 206.5,
+            "confidence": 0.9250308871269226
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 374.25,
+        "cells_left_to_right": [
+          {
+            "text": "DB→DR",
+            "x_center": 165.0,
+            "confidence": 0.9927420616149902
+          },
+          {
+            "text": "OD→AR AR→AB ADS,M/20=1,W/R=0",
+            "x_center": 382.0,
+            "confidence": 0.9219127297401428
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 428.5,
+        "cells_left_to_right": [
+          {
+            "text": "DR→ ALU GR→ALU + ALU→GR",
+            "x_center": 360.5,
+            "confidence": 0.9535709023475647
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 486.0,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 5个微命令需要 3位",
+            "x_center": 225.5,
+            "confidence": 0.9560631513595581
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 528.5,
+        "cells_left_to_right": [
+          {
+            "text": "8个需要千位14个需要4位3个要2位共13位",
+            "x_center": 458.0,
+            "confidence": 0.96478271484375
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 576.5,
+        "cells_left_to_right": [
+          {
+            "text": "外部条件3个共2位24-2-13=9位.(下址字段)",
+            "x_center": 500.5,
+            "confidence": 0.9613221883773804
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 616.0,
+        "cells_left_to_right": [
+          {
+            "text": "故容量为29×24",
+            "x_center": 233.0,
+            "confidence": 0.9472463130950928
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 679.5,
+        "cells_left_to_right": [
+          {
+            "text": "(6)",
+            "x_center": 42.5,
+            "confidence": 0.961778461933136
+          },
+          {
+            "text": "4个互斥类",
+            "x_center": 186.5,
+            "confidence": 0.9901648759841919
+          },
+          {
+            "text": "3位4位4位2位2位19位",
+            "x_center": 256.5,
+            "confidence": 0.9905186891555786
+          },
+          {
+            "text": "外部条件",
+            "x_center": 364.0,
+            "confidence": 0.9972467422485352
+          },
+          {
+            "text": "→下址字段",
+            "x_center": 527.5,
+            "confidence": 0.9378732442855835
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=309.0: 5: (1) U: DR b: IR C: AR d: PC\nRow 2: x=296.0: (2) PC→AB ADS,M/2O=1,W/R=0, | x=329.0: DB→2R PC+1 完成取指操作\nRow 3: x=66.0: (3) | x=282.5: OD→AR AR→AB GR→DB | x=284.5: M/IO=1 W/R=1 DB→DR | x=510.5: (存) | x=646.5: DB→DR | x=742.0: OD→AR AR→AB ADS,M/20 | x=888.0: w/R=0 | x=922.0: =1,\nRow 4: x=298.0: (4) PC→AB ADS，M/I0=1, W/R=0 | x=855.5: (取)\nRow 5: x=206.5: DB→IR PC+1\nRow 6: x=165.0: DB→DR | x=382.0: OD→AR AR→AB ADS,M/20=1,W/R=0\nRow 7: x=360.5: DR→ ALU GR→ALU + ALU→GR\nRow 8: x=225.5: (5) 5个微命令需要 3位\nRow 9: x=458.0: 8个需要千位14个需要4位3个要2位共13位\nRow 10: x=500.5: 外部条件3个共2位24-2-13=9位.(下址字段)\nRow 11: x=233.0: 故容量为29×24\nRow 12: x=42.5: (6) | x=186.5: 4个互斥类 | x=256.5: 3位4位4位2位2位19位 | x=364.0: 外部条件 | x=527.5: →下址字段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "a: DR",
+    "step_1_b": "b: IR",
+    "step_1_c": "c: AR",
+    "step_1_d": "d: PC",
+    "step_2_p1": "PC→AB ADS,M/IO=1,W/R=0, DB→IR PC+1 完成取指操作",
+    "step_2_p2": "图中未明确显示",
+    "step_3_read": "OD→AR AR→AB GR→DB M/IO=1 W/R=1 DB→DR",
+    "step_3_write": "M/IO=1 W/R=1 DB→DR",
+    "step_4_operands": "DR→ALU GR→ALU + ALU→GR",
+    "step_4_result": "DR→ALU GR→ALU + ALU→GR",
+    "step_6_layout": "3位|4位|4位|2位|2位|9位 →下址字段（4个互斥类、外部条件）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_2_p2"
+  ],
+  "visual_fallback_recovered": [
+    "step_2_p2",
+    "step_6_layout"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_1_c",
+    "step_1_d",
+    "step_2_p1",
+    "step_3_read",
+    "step_3_write",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "DR",
+    "step_1_b": "IR",
+    "step_1_c": "AR",
+    "step_1_d": "Pc",
+    "step_2_p1": "PC→AB ADS, M/IO=1, W/R=0, DB→2R PC+1 完成取指操作",
+    "step_2_p2": "DB→IR PC+1 完成取指操作",
+    "step_3_read": "OD→AR AR→AB ADS, M/IO=1, W/R=0 DB→DR (读)",
+    "step_3_write": "OD→AR AR→AB ADS, M/IO=1, W/R=1 DB→DR (写)",
+    "step_4_operands": "DR→ALU GR→ALU +",
+    "step_4_result": "ALU→GR",
+    "step_5_core_field": "5个微命令需要3位",
+    "step_5_core_compute": "24 - 2 - 13 = 9位 (下址字段)",
+    "step_5_final": "故容量为 2^9 × 24",
+    "step_6_group12": "3位 4位 4位",
+    "step_6_group34": "2位 2位 9位",
+    "step_6_test_field": "2位",
+    "step_6_addr_field": "9位",
+    "step_6_layout": "3位 4位 4位 | 2位 2位 9位 → 下址字段\n4个互斥类 9位地址"
+  },
+  "facts": {
+    "step_1_a": "DR",
+    "step_1_b": "IR",
+    "step_1_c": "AR",
+    "step_1_d": "PC",
+    "step_2_p1": "PC→AB  ADS, M/IO=1, W/R=0\nDB→IR  PC+1  完成取指操作",
+    "step_2_p2": "DB→IR PC+1 完成取指操作",
+    "step_3_read": "(取) OD→AR  AR→AB  ADS, M/IO=1\nDB→DR  W/R=0",
+    "step_3_write": "(存) OD→AR  AR→AB  GR→DB  \nM/IO=1  W/R=1  DB→DR",
+    "step_4_operands": "DR→ALU  GR→ALU",
+    "step_4_result": "+  ALU→GR",
+    "step_5_core_field": "24-2-13=9位（下址字段）\n故容量为2^9×24",
+    "step_5_core_compute": "24-2-13=9位（下址字段）",
+    "step_5_final": "2^9×24",
+    "step_6_group12": "5个微命令需要3位\n8个需要4位",
+    "step_6_group34": "14个需要4位  3个需要2位",
+    "step_6_test_field": "外部条件5个共2位",
+    "step_6_addr_field": "9位（下址字段）",
+    "step_6_layout": "4个互斥类 3位4位4位2位 外部条件 2位 下址字段 9位"
+  }
+}

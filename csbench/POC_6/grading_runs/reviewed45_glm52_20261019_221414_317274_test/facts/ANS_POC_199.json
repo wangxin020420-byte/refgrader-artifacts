@@ -1,0 +1,97 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T08:25:02.058984",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_199.jpg",
+  "image_sha256": "7b77051a9f6e16c6d218f0f06a0091ea111567ed1fa78aac161059e827d4dc3c",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_199.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 27,
+    "accepted_token_count": 27,
+    "mean_confidence": 0.92733,
+    "min_confidence": 0.5,
+    "joined_text": "x=2\n1.\n2.\ns'→'s\nS→a.Ab\na\nS→aAb\nA>.AS\na\nA\nb\nA→.S\nx=1\nS>.c\nx20A\nSx=1\n存在移进一归约冲突\n1. 不是LR(0)文法\nX=0S\na\nx20\n1\n5x=0\n是SLR(1)文法\nC\n1\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.043272,
+      "very_dark_pixel_ratio": 0.027392,
+      "lower_region_dark_pixel_ratio": 0.043547,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1.如图所示。存在移进-归约冲突∴不是LR(0)文法∴是SLR(1)文法  \n2. 如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_199",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_2_component_1": "根节点S，子节点a、A、b；A的子节点S（x=0）和A；S（x=1）的子节点a、A（x=0）、b；A（x=0）的子节点S（x=0），S（x=0）的子节点c",
+    "step_2_component_2": "S.x=2, A.x=1, S.x=1, A.x=0, S.x=0"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's representation of the syntax tree structure for the given string, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact node labels, ordering, and nesting as written, including any attribute annotations if present."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node in the syntax tree, including any values for root S.x, outer A.x, inner S.x, inner A.x, and leaf S.x nodes. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and numerical values as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "未书写",
+    "step_1_final_1": "未书写",
+    "step_2_component_1": "S (x=2)\n├─ a\n├─ A (x=1)\n│  ├─ x=0 S (x=0)\n│  │  └─ c\n│  └─ a\n│     └─ A (x=0)\n│        └─ x=0 S (x=0)\n│           └─ c\n└─ b",
+    "step_2_component_2": "S.x=2, A.x=1, S.x=0, A.x=0, S.x=0"
+  },
+  "facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "未书写",
+    "step_1_final_1": "未书写",
+    "step_2_component_1": "根节点S，子节点a、A、b；A的子节点S（x=0）和A；S（x=1）的子节点a、A（x=0）、b；A（x=0）的子节点S（x=0），S（x=0）的子节点c",
+    "step_2_component_2": "S.x=2, A.x=1, S.x=1, A.x=0, S.x=0"
+  }
+}

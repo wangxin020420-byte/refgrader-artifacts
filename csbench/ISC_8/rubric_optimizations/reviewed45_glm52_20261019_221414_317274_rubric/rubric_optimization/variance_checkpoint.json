@@ -1,0 +1,845 @@
+[
+  {
+    "file": "ANS_ISC_238.jpg",
+    "facts": "{\"step_1\": \"X原: 1000111；X反: 11110000；X补: 11110001；Y原: 00001010；Y反: 1000010；Y补: 00001010。注意：X的原码按学生书写为7位 '1000111'，Y的反码按学生书写为7位 '1000010'，其余为8位，均按原文保留。\", \"step_2\": \"学生写出：X补·Y补=11100111（仅一个中间/结果字符串，未展示逐位加法或进位步骤），并写“所以结果的原码为10011001”。最终二进制结果：补码形式 11100111，原码形式 10011001，均按原文保留。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T02:30:51.760847",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_8/ANS_ISC_238.jpg",
+      "image_sha256": "9d5d3dd1dff4f2dca1102ead4cc1ce0e3b7bbbade8836d1144dc33d0987978f1",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "X原 1000111 反 11110000  补 11110001 \nY原 00001010 反 1000010 补 00001010 \nX补·Y补=11100111\n所以结果的原码为10011001",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_238",
+        "question_id": "ISC_8",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "X原: 1000111；X反: 11110000；X补: 11110001；Y原: 00001010；Y反: 1000010；Y补: 00001010。注意：X的原码按学生书写为7位 '1000111'，Y的反码按学生书写为7位 '1000010'，其余为8位，均按原文保留。",
+        "step_2": "学生写出：X补·Y补=11100111（仅一个中间/结果字符串，未展示逐位加法或进位步骤），并写“所以结果的原码为10011001”。最终二进制结果：补码形式 11100111，原码形式 10011001，均按原文保留。"
+      }
+    },
+    "scores": [
+      3.5,
+      3.5,
+      3.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X原: 1000111；X反: 11110000；X补: 11110001；Y原: 00001010；Y反: 1000010；Y补: 00001010",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X=-15：原码10001111，反码11110000，补码11110001；Y=+10：原码00001010，反码00001010，补码00001010",
+            "dependency_status": "satisfied",
+            "reason": "4 of 6 codes correct (X反, X补, Y原, Y补). X原 missing a bit (1000111 vs 10001111) and Y反 is wrong (1000010 vs 00001010, positive number's complement should equal itself). Half credit for partial correctness of the multi-part condition."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "X补·Y补=11100111 ... 所以结果的原码为10011001",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X-Y的结果（补码）：11100111",
+            "dependency_status": "satisfied",
+            "reason": "Complement result 11100111 exactly matches the standard answer (-25); the derived original code 10011001 is also correct. Missing bitwise expansion is only a detail issue, full credit per lenient policy."
+          }
+        ],
+        "total_score": 3.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X原: 1000111；X反: 11110000；X补: 11110001；Y原: 00001010；Y反: 1000010；Y补: 00001010",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X: 原码10001111，反码11110000，补码11110001；Y: 原码00001010，反码00001010，补码00001010",
+            "dependency_status": "satisfied",
+            "reason": "X的反码/补码和Y的原码/补码均正确；X原码少写一位（1000111，格式/位数问题，值实质正确），但Y的反码1000010与正确值00001010不符，属实质错误，扣除部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "X补·Y补=11100111……所以结果的原码为10011001",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X-Y的结果（补码）：11100111",
+            "dependency_status": "satisfied",
+            "reason": "最终补码结果11100111与标准答案完全一致，且给出对应原码10011001也正确；缺少中间加法展开按政策视为细节省略，不影响得分。"
+          }
+        ],
+        "total_score": 3.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X反: 11110000；X补: 11110001；Y原: 00001010；Y补: 00001010 正确。X原: 1000111（7位，缺位）；Y反: 1000010（错误，应为00001010）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X和Y的原码、反码、补码共六个值全部正确",
+            "dependency_status": "satisfied",
+            "reason": "六个码中四个完全正确（X反、X补、Y原、Y补）。X原码写为7位'1000111'，但学生的X反码/X补码证实其幅值理解正确，属书写缺位的格式问题，可从宽。Y的反码'1000010'与Y=+10（反码应与原码相同00001010）相矛盾，是实质性错误，扣除该部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "学生写出：X补·Y补=11100111……所以结果的原码为10011001",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X-Y的结果（补码）：11100111",
+            "dependency_status": "satisfied",
+            "reason": "最终补码11100111与标准答案完全一致；原码10011001（即-25）也正确。题目考察'使用补码计算并写出结果'，补码结果正确即满足核心要求，未展示逐位加法属DETAIL_MISSING，不扣分。"
+          }
+        ],
+        "total_score": 3.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_ISC_239.jpg",
+    "facts": "{\"step_1\": \"X原：1000111；X反：11110000；X补：11110001。Y补码：00001010；-Y补码：11110110。（Y的原码与反码未书写）\", \"step_2\": \"X-Y=11110001+11110110=11100111，对应十进制-25补码。中间步骤未另行书写，仅给出最终结果位向量 11100111。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T02:31:47.761538",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_8/ANS_ISC_239.jpg",
+      "image_sha256": "1059ed8c8b16cfb802935ed0bbfa44865d79ee9b93210a08b065e48675c10102",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "X原：1000111 反：11110000 补：11110001 \nY补码：00001010 -Y补码：11110110 \nX-Y=11110001+11110110=11100111 对应十进制-25补码",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_239",
+        "question_id": "ISC_8",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "X原：1000111；X反：11110000；X补：11110001。Y补码：00001010；-Y补码：11110110。（Y的原码与反码未书写）",
+        "step_2": "X-Y=11110001+11110110=11100111，对应十进制-25补码。中间步骤未另行书写，仅给出最终结果位向量 11100111。"
+      }
+    },
+    "scores": [
+      3.0,
+      3.4,
+      3.5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X原：1000111；X反：11110000；X补：11110001。Y补码：00001010；-Y补码：11110110。（Y的原码与反码未书写）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X=-15：原码10001111，反码11110000，补码11110001；Y=+10：原码00001010，反码00001010，补码00001010",
+            "dependency_status": "satisfied",
+            "reason": "X的反码、补码正确，X原码少写一位（1000111 vs 10001111）；Y的补码与-Y补码正确但Y原码、反码缺失，仅部分满足"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "X-Y=11110001+11110110=11100111，对应十进制-25补码",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X-Y的结果（补码）：11100111",
+            "dependency_status": "satisfied",
+            "reason": "补码加法算式正确（含两个操作数与结果），结果11100111与标准答案一致，且-25验证正确；缺少中间展开按宽容政策不影响满分"
+          }
+        ],
+        "total_score": 3.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.4,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X原：1000111；X反：11110000；X补：11110001。Y补码：00001010；-Y补码：11110110。（Y的原码与反码未书写）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X原码10001111、反码11110000、补码11110001；Y原码/反码/补码均为00001010",
+            "dependency_status": "insufficient",
+            "reason": "X反码与X补码完全正确；Y补码正确；但X原码写成7位1000111（应为10001111），Y的原码与反码未书写，属多条件部分缺失"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "X-Y=11110001+11110110=11100111，对应十进制-25补码",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "补码相加得X-Y结果11100111",
+            "dependency_status": "satisfied",
+            "reason": "补码加法式与最终结果11100111均正确，且正确给出十进制-25解释；缺中间展开属DETAIL不影响"
+          }
+        ],
+        "total_score": 3.4
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X原：1000111；X反：11110000；X补：11110001。Y补码：00001010；-Y补码：11110110。（Y的原码与反码未书写）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X和Y的原码、反码、补码共六个值",
+            "dependency_status": "satisfied",
+            "reason": "X反码、X补码、Y补码均正确；X原码1000111疑似漏写一位（应为10001111），按FORMAT_MINOR从宽处理；Y的原码与反码（00001010）未书写，属部分遗漏，扣少量分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "X-Y=11110001+11110110=11100111，对应十进制-25补码。中间步骤未另行书写，仅给出最终结果位向量 11100111。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "使用补码计算X-Y，结果补码为11100111",
+            "dependency_status": "satisfied",
+            "reason": "正确写出补码加法算式11110001+11110110并得出11100111，结果与标准答案一致，且正确解释为-25；缺少算术展开仅为DETAIL_MISSING，不影响满分。"
+          }
+        ],
+        "total_score": 3.5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        1.0,
+        1.4,
+        1.5
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.04666666666666666,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.04666666666666666,
+    "avg_item_variance": 0.02333333333333333
+  },
+  {
+    "file": "ANS_ISC_241.jpg",
+    "facts": "{\"step_1\": \"X原码:10001111B  反码:11110000B 补码:11110001B\\nY原码:00001010B 反码:00001010B 补码00001010B\", \"step_2\": \"[-Y]补=11110110B\\n[X-Y]补=[X]补+[-Y]补=11100111B\\n∴X-Y=10011001B\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T02:32:39.663310",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_8/ANS_ISC_241.jpg",
+      "image_sha256": "f7be488d752ad902563a9c4c0cdd50c4233d4e98e237bdcf89075d3ac3cbe72c",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "X原码:10001111B  反码:11110000B 补码:11110001B\nY原码:00001010B 反码:00001010B 补码00001010B \n[-Y]补=11110110B\n[X-Y]补=[X]补+[-Y]补=11100111B \n∴X-Y=10011001B  ",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_241",
+        "question_id": "ISC_8",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "X原码:10001111B  反码:11110000B 补码:11110001B\nY原码:00001010B 反码:00001010B 补码00001010B",
+        "step_2": "[-Y]补=11110110B\n[X-Y]补=[X]补+[-Y]补=11100111B\n∴X-Y=10011001B"
+      }
+    },
+    "scores": [
+      4,
+      4,
+      4
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "X原码:10001111B 反码:11110000B 补码:11110001B Y原码:00001010B 反码:00001010B 补码00001010B",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X和Y的原码、反码、补码全部正确",
+            "dependency_status": "satisfied",
+            "reason": "All six codes match the standard answer exactly."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "[-Y]补=11110110B [X-Y]补=[X]补+[-Y]补=11100111B ∴X-Y=10011001B",
+            "evidence_text_note": null,
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "补码运算得到11100111，结果为-25（原码10011001）",
+            "dependency_status": "satisfied",
+            "reason": "[-Y]补 and [X-Y]补=11100111 are correct; 10011001 is the correct sign-magnitude representation of the result −25, shown with full computation trace."
+          }
+        ],
+        "total_score": 4
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "X原码:10001111B 反码:11110000B 补码:11110001B；Y原码:00001010B 反码:00001010B 补码00001010B",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X和Y的原码、反码、补码全部正确",
+            "dependency_status": "satisfied",
+            "reason": "六个位向量与标准答案完全一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "[-Y]补=11110110B；[X-Y]补=[X]补+[-Y]补=11100111B；∴X-Y=10011001B",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "用补码计算X-Y，结果补码11100111",
+            "dependency_status": "satisfied",
+            "reason": "补码加减法方法正确，[X-Y]补=11100111与标准一致，且正确还原出真值-25（原码10011001）"
+          }
+        ],
+        "total_score": 4
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "X原码:10001111B 反码:11110000B 补码:11110001B Y原码:00001010B 反码:00001010B 补码00001010B",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X和Y的原码、反码、补码全部正确",
+            "dependency_status": "satisfied",
+            "reason": "All six representations match the standard answer exactly."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "[-Y]补=11110110B [X-Y]补=[X]补+[-Y]补=11100111B ∴X-Y=10011001B",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "使用补码计算X-Y，补码结果为11100111",
+            "dependency_status": "satisfied",
+            "reason": "[-Y]补 and [X-Y]补=11100111 are correct; the final line 10011001B is the correct true form of the same value (-25), an equivalent representation."
+          }
+        ],
+        "total_score": 4
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_ISC_250.jpg",
+    "facts": "{\"step_1\": \"X=-15, Y=+10\\n原码：10001111 00001010\\n反码：11110000 00001010\\n补码：11110001 00001010\\n-Y补码：11110110\", \"step_2\": \"X-Y=(X)补+(-Y)补 =11110001+11110110 =10011001\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T02:34:17.466470",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_8/ANS_ISC_250.jpg",
+      "image_sha256": "33a1a203cc744bbfce9756518832a642645c4d4020548c7b519f52298ac8512b",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "      X=-15     Y=+10 \n原码：10001111 00001010 \n反码：11110000 00001010 \n补码：11110001 00001010 \n-Y补码：11110110\nX-Y=(X)补+(-Y)补 =11110001+11110110 =10011001",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": true,
+      "ocr_error": "OCR evidence not found or invalid: C:\\Users\\wx\\Desktop\\refgrader-main\\ocr_cache\\csbench\\ISC_8\\ANS_ISC_250.json",
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_250",
+        "question_id": "ISC_8",
+        "subject": "ISC",
+        "isimagine": true
+      },
+      "table_parser_used": true,
+      "table_facts": {},
+      "table_checklist": [
+        {
+          "id": "step_1",
+          "instruction": "Extract the student's handwritten representations for X and Y as bit vectors. For each of X and Y, transcribe exactly what the student wrote for the original code, inverse code, and complement code as binary strings, preserving leading zeros, bit lengths, signs, any prefixes or suffixes, grouping, and separators exactly as written. Do not evaluate correctness."
+        },
+        {
+          "id": "step_2",
+          "instruction": "Extract the student's handwritten computation of X minus Y using complement arithmetic: transcribe any intermediate addition steps, carry handling, and the final result bit vector the student wrote, preserving leading zeros, bit lengths, grouping, and separators exactly as written. Do not evaluate correctness."
+        }
+      ],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2"
+      ],
+      "vlm_fallback_reason": [
+        "table_ocr_unavailable"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "X原码：10001111\nX反码：11110000\nX补码：11110001\nY原码：00001010\nY反码：00001010\nY补码：00001010",
+        "step_2": "X-Y = (X)补 + [-Y]补\n= 11110001 + 11110110\n= 1 11100111\n10010111"
+      },
+      "facts": {
+        "step_1": "X=-15, Y=+10\n原码：10001111 00001010\n反码：11110000 00001010\n补码：11110001 00001010\n-Y补码：11110110",
+        "step_2": "X-Y=(X)补+(-Y)补 =11110001+11110110 =10011001"
+      }
+    },
+    "scores": [
+      3,
+      3,
+      2
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "原码：10001111 00001010；反码：11110000 00001010；补码：11110001 00001010；-Y补码：11110110",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X=-15和Y=+10的原码、反码、补码全部正确",
+            "dependency_status": "satisfied",
+            "reason": "X与Y的原码、反码、补码均与标准答案完全一致，且-Y的补码11110110也正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X-Y=(X)补+(-Y)补 =11110001+11110110 =10011001",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "用补码相加计算X-Y，结果补码为11100111",
+            "dependency_status": "failed",
+            "reason": "方法正确（补码相加），两个操作数（X补码11110001与-Y补码11110110）均正确，但加法结果算错：11110001+11110110应为11100111，学生得10011001，最终结果错误"
+          }
+        ],
+        "total_score": 3
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "原码：10001111 00001010 反码：11110000 00001010 补码：11110001 00001010 -Y补码：11110110",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "dependency_status": "satisfied",
+            "expected_condition": "X=-15：原码 10001111，反码 11110000，补码 11110001；Y=+10：原码/反码/补码 00001010",
+            "reason": "All sign-magnitude, one's-complement, and two's-complement codes for X and Y are correct; -Y补码 11110110 is also correct."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "X-Y=(X)补+(-Y)补 =11110001+11110110 =10011001",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "dependency_status": "failed",
+            "expected_condition": "X-Y的结果（补码）：11100111",
+            "reason": "Method (two's-complement addition of (X)补 and (-Y)补 with correct operands) is correct, but the final sum is wrong: 11110001+11110110 = 11100111 (discarding carry), not 10011001. Process credit preserved, result credit withheld."
+          }
+        ],
+        "total_score": 3
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "原码：10001111 00001010 反码：11110000 00001010 补码：11110001 00001010 -Y补码：11110110",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X=-15：原码 10001111，反码 11110000，补码 11110001；Y=+10：原码 00001010，反码 00001010，补码 00001010",
+            "dependency_status": "satisfied",
+            "reason": "All six codes for X=-15 and Y=+10 are exactly correct; the additional -Y two's complement 11110110 is also correct."
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "X-Y=(X)补+(-Y)补 =11110001+11110110 =10011001",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X-Y的结果（补码）：11100111",
+            "dependency_status": "failed",
+            "reason": "The method (two's-complement addition of 11110001 and 11110110) is set up correctly, but the computed result 10011001 is arithmetically wrong (correct sum is 11100111). The single strict-atomic final-result item requires the correct bit vector, so no credit."
+          }
+        ],
+        "total_score": 2
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.22222222222222224
+    },
+    "max_item_variance": 0.22222222222222224,
+    "avg_item_variance": 0.11111111111111112
+  },
+  {
+    "file": "ANS_ISC_264.jpg",
+    "facts": "{\"step_1\": \"X的原码：10001111；X的反码：11110000；X的补码：11110001。Y的原码：00001010；Y的反码：00001010；Y的补码：00001010。\", \"step_2\": \"学生书写：[y]补=11110001 - 00001010 = 11101111；∴ X-Y=(10010001)₂。未显示进位/借位过程；标注了最终结果的二进制下标₂；无溢出或符号注释。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T02:35:09.624378",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ISC_8/ANS_ISC_264.jpg",
+      "image_sha256": "c625239e66f9d8b8a4f291f26d7b0d95ee662a03c1a19ec01db0613144c61f48",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "X的原码：10001111\n反码：11110000\n补码：11110001\nY的原码：00001010\n反码：00001010\n补码：00001010\n[y]补=11110001 - 00001010 = 11101111\n∴ X-Y=(10010001)₂",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_ISC_264",
+        "question_id": "ISC_8",
+        "subject": "ISC",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "X的原码：10001111；X的反码：11110000；X的补码：11110001。Y的原码：00001010；Y的反码：00001010；Y的补码：00001010。",
+        "step_2": "学生书写：[y]补=11110001 - 00001010 = 11101111；∴ X-Y=(10010001)₂。未显示进位/借位过程；标注了最终结果的二进制下标₂；无溢出或符号注释。"
+      }
+    },
+    "scores": [
+      3.0,
+      3.0,
+      3
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "X的原码：10001111；X的反码：11110000；X的补码：11110001。Y的原码：00001010；Y的反码：00001010；Y的补码：00001010。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X和Y的原码、反码、补码全部正确（X=-15, Y=+10）",
+            "dependency_status": "satisfied",
+            "reason": "所有六个码值均与标准答案一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "[y]补=11110001 - 00001010 = 11101111；∴ X-Y=(10010001)₂",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "使用补码计算X-Y，结果补码为11100111",
+            "dependency_status": "failed",
+            "reason": "学生正确写出用[X]补=11110001减[Y]补=00001010的补码运算思路（有计算痕迹），但算术执行错误：11110001-00001010应为11110111，学生写成11101111，最终结果10010001与标准11100171不符；方法有效但数值错误，属部分得分。"
+          }
+        ],
+        "total_score": 3.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "X的原码：10001111；X的反码：11110000；X的补码：11110001。Y的原码：00001010；Y的反码：00001010；Y的补码：00001010。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X=-15: 原码10001111, 反码11110000, 补码11110001; Y=+10: 原码00001010, 反码00001010, 补码00001010",
+            "dependency_status": "satisfied",
+            "reason": "All three representations for both X and Y exactly match the standard answer."
+          },
+          {
+            "id": "step_2",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "学生书写：[y]补=11110001 - 00001010 = 11101111；∴ X-Y=(10010001)₂",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X-Y的结果（补码）：11100111",
+            "dependency_status": "failed",
+            "reason": "Student used the correct complement operands (11110001 and 00001010) and performed the required complement computation, showing a computation trace. However, the arithmetic result 11101111 and final answer (10010001)₂ are both wrong (standard: 11100111), so the final-result condition fails while correct method/setup receives partial credit."
+          }
+        ],
+        "total_score": 3.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "X的原码：10001111；X的反码：11110000；X的补码：11110001。Y的原码：00001010；Y的反码：00001010；Y的补码：00001010。",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X和Y的原码、反码、补码全部正确",
+            "dependency_status": "satisfied",
+            "reason": "六个码值与标准答案完全一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "[y]补=11110001 - 00001010 = 11101111；∴ X-Y=(10010001)₂",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "X-Y的补码结果 11100111",
+            "dependency_status": "failed",
+            "reason": "使用了正确的[X]补=11110001并尝试减法运算，有计算痕迹，但算术结果错误（11110001-00001010=11100111），最终结果11101111及10010001均不正确；给予方法过程的部分分。"
+          }
+        ],
+        "total_score": 3
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

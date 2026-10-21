@@ -1,0 +1,414 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T00:32:48.979184",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1478.jpg",
+  "image_sha256": "cb94bb6397dc3f7ede74ea306d7e5f70fe4babd8a3a1ee22705d41fb6638428a",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1478.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 23,
+    "accepted_token_count": 23,
+    "mean_confidence": 0.935662,
+    "min_confidence": 0.5,
+    "joined_text": "3. J: u: DR b: LK C: AR d: PC\n(2) 取指①将PC中的指今地址传入地址总线：PC→AB\n②向总线发出读的信号\n③. 读出的指令存放在寄存器IR中\n④) PC海存器指向下一个指令地址\n⑤通过偏译得出取得指令的内容\n(3) 取数：①数据地址送往地址等存器：AR\n②地址寄存器将地址送往总线\n③向总线发出续信号\n④数据通过总线送往DR\n⑤通过DR将数据送往运算器\n(4) 程序先进行取指操作 将取到的指令送入指令寄存器IR中\n再进行取数据操作，将数据送入运算器中\n最后执行，运算器得到的结果送入寄存器AX中\n(5) 控制存储器的容量应为：24×30=720.\n做指令编码\n下址学段\n(6) 4个互斥类采用字段直接编择比，各否3位，4位，4位 2位。微指令。\n格式为\n外部条件采用直接控制注，占3位\n13位\n3位\n8位",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.118608,
+      "very_dark_pixel_ratio": 0.083927,
+      "lower_region_dark_pixel_ratio": 0.123995,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a:DR  b:IR  c:AR  d:PC\n(2)取指: ①将PC中的指令地址传入地址总线: PC→AB.\n②向总线发出读的信号. \n③读出的指令存放在寄存器IR中. \n④PC寄存器指向下一个指令地址. \n⑤通过编译得出取得指令的内容. \n(3)取数: ①数据地址送往地址寄存器AR. \n②地址寄存器将地址送往总线. \n③向总线发出读信号 \n④数据通过总线送往DR. \n⑤通过DR将数据送往运算器. 、\n(4) 程序先进行取指操作. 将取到的指令送入指令寄存器IR中 再进行取数据操作, 将数据送入运算器中, 最后执行. 运算器得到的结果送入寄存器AX中. \n(5) 控制存储器的容量应为:24×30=720. \n(6)4个互斥类采用字段直接编译法,各占3位,4位,4位,2位.外部条件采用直接控制法，占3位\n微指令格式如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1478",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "未书写",
+    "step_5_core_compute": "未书写",
+    "step_6_group12": "各否3位，4位",
+    "step_6_group34": "4位 2位",
+    "step_6_test_field": "外部条件采用直接控制注，占3位",
+    "step_6_addr_field": "下址学段 8位",
+    "step_6_layout": "格式为 13位 做指令编码 3位 下址学段 8位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 26.5,
+        "cells_left_to_right": [
+          {
+            "text": "3. J: u: DR b: LK C: AR d: PC",
+            "x_center": 300.0,
+            "confidence": 0.8227473497390747
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 72.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 取指①将PC中的指今地址传入地址总线：PC→AB",
+            "x_center": 319.5,
+            "confidence": 0.9789639115333557
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 112.0,
+        "cells_left_to_right": [
+          {
+            "text": "②向总线发出读的信号",
+            "x_center": 278.0,
+            "confidence": 0.9922199249267578
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 166.0,
+        "cells_left_to_right": [
+          {
+            "text": "③. 读出的指令存放在寄存器IR中",
+            "x_center": 289.5,
+            "confidence": 0.9572175145149231
+          },
+          {
+            "text": "④) PC海存器指向下一个指令地址",
+            "x_center": 290.0,
+            "confidence": 0.8974016904830933
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 217.5,
+        "cells_left_to_right": [
+          {
+            "text": "⑤通过偏译得出取得指令的内容",
+            "x_center": 312.0,
+            "confidence": 0.9728073477745056
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 276.25,
+        "cells_left_to_right": [
+          {
+            "text": "(3) 取数：①数据地址送往地址等存器：AR",
+            "x_center": 274.5,
+            "confidence": 0.9120264649391174
+          },
+          {
+            "text": "②地址寄存器将地址送往总线",
+            "x_center": 308.5,
+            "confidence": 0.9580936431884766
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 346.25,
+        "cells_left_to_right": [
+          {
+            "text": "③向总线发出续信号",
+            "x_center": 275.0,
+            "confidence": 0.9578084945678711
+          },
+          {
+            "text": "④数据通过总线送往DR",
+            "x_center": 286.0,
+            "confidence": 0.9826419949531555
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 395.0,
+        "cells_left_to_right": [
+          {
+            "text": "⑤通过DR将数据送往运算器",
+            "x_center": 305.0,
+            "confidence": 0.9586512446403503
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 443.5,
+        "cells_left_to_right": [
+          {
+            "text": "(4) 程序先进行取指操作 将取到的指令送入指令寄存器IR中",
+            "x_center": 397.5,
+            "confidence": 0.9684101939201355
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 490.5,
+        "cells_left_to_right": [
+          {
+            "text": "再进行取数据操作，将数据送入运算器中",
+            "x_center": 318.0,
+            "confidence": 0.984709620475769
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 534.0,
+        "cells_left_to_right": [
+          {
+            "text": "最后执行，运算器得到的结果送入寄存器AX中",
+            "x_center": 352.0,
+            "confidence": 0.9615136384963989
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 678.22,
+        "cells_left_to_right": [
+          {
+            "text": "外部条件采用直接控制注，占3位",
+            "x_center": 247.5,
+            "confidence": 0.8749873042106628
+          },
+          {
+            "text": "(5) 控制存储器的容量应为：24×30=720.",
+            "x_center": 256.5,
+            "confidence": 0.971107542514801
+          },
+          {
+            "text": "(6) 4个互斥类采用字段直接编择比，各否3位，4位，4位 2位。微指令。",
+            "x_center": 335.0,
+            "confidence": 0.8672393560409546
+          },
+          {
+            "text": "格式为",
+            "x_center": 605.0,
+            "confidence": 0.9653109908103943
+          },
+          {
+            "text": "13位",
+            "x_center": 706.0,
+            "confidence": 0.9954838156700134
+          },
+          {
+            "text": "做指令编码",
+            "x_center": 719.5,
+            "confidence": 0.8200091123580933
+          },
+          {
+            "text": "3位",
+            "x_center": 800.5,
+            "confidence": 0.9352266788482666
+          },
+          {
+            "text": "下址学段",
+            "x_center": 881.0,
+            "confidence": 0.796891450881958
+          },
+          {
+            "text": "8位",
+            "x_center": 883.5,
+            "confidence": 0.9887546300888062
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=300.0: 3. J: u: DR b: LK C: AR d: PC\nRow 2: x=319.5: (2) 取指①将PC中的指今地址传入地址总线：PC→AB\nRow 3: x=278.0: ②向总线发出读的信号\nRow 4: x=289.5: ③. 读出的指令存放在寄存器IR中 | x=290.0: ④) PC海存器指向下一个指令地址\nRow 5: x=312.0: ⑤通过偏译得出取得指令的内容\nRow 6: x=274.5: (3) 取数：①数据地址送往地址等存器：AR | x=308.5: ②地址寄存器将地址送往总线\nRow 7: x=275.0: ③向总线发出续信号 | x=286.0: ④数据通过总线送往DR\nRow 8: x=305.0: ⑤通过DR将数据送往运算器\nRow 9: x=397.5: (4) 程序先进行取指操作 将取到的指令送入指令寄存器IR中\nRow 10: x=318.0: 再进行取数据操作，将数据送入运算器中\nRow 11: x=352.0: 最后执行，运算器得到的结果送入寄存器AX中\nRow 12: x=247.5: 外部条件采用直接控制注，占3位 | x=256.5: (5) 控制存储器的容量应为：24×30=720. | x=335.0: (6) 4个互斥类采用字段直接编择比，各否3位，4位，4位 2位。微指令。 | x=605.0: 格式为 | x=706.0: 13位 | x=719.5: 做指令编码 | x=800.5: 3位 | x=881.0: 下址学段 | x=883.5: 8位"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "DR",
+    "step_1_b": "LK",
+    "step_1_c": "AR",
+    "step_1_d": "PC",
+    "step_2_p1": "PC→AB",
+    "step_2_p2": "图中未明确显示",
+    "step_3_read": "AR→总线→DR→运算器",
+    "step_3_write": "图中未明确显示",
+    "step_4_operands": "将数据送入运算器中",
+    "step_4_result": "运算器得到的结果送入寄存器AX中",
+    "step_6_layout": "微指令格式为：微指令编码字段（13位）控制字段（3位）下址字段（8位）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_2_p2",
+    "step_5_core_field"
+  ],
+  "visual_fallback_recovered": [
+    "step_2_p2",
+    "step_5_core_field",
+    "step_6_addr_field",
+    "step_6_layout"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_1_c",
+    "step_1_d",
+    "step_2_p1",
+    "step_3_read",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "DR",
+    "step_1_b": "LK",
+    "step_1_c": "AR",
+    "step_1_d": "PC",
+    "step_2_p1": "①将PC中的指令地址传入地址总线: PC→AB. ②向总线发出读的信号. ③读出的指令存放在寄存器IR中.",
+    "step_2_p2": "④PC寄存器指向下一个指令地址. ⑤通过编译得出提取指令的内容.",
+    "step_3_read": "①数据地址送往地址寄存器AR. ②地址寄存器将地址送往总线. ③向总线发出读信号 ④数据通过总线送往DR. ⑤通过DR将数据送往运算器.",
+    "step_3_write": "未书写",
+    "step_4_operands": "将数据送入运算器中",
+    "step_4_result": "最后执行，运算器得到的结果送入寄存器AX中.",
+    "step_5_core_field": "控制存储器的容量应由下址字段的位数决定",
+    "step_5_core_compute": "未书写",
+    "step_5_final": "24×30=720",
+    "step_6_group12": "3位，4位",
+    "step_6_group34": "4位，2位",
+    "step_6_test_field": "3位",
+    "step_6_addr_field": "8位",
+    "step_6_layout": "4个互斥类采用字段直接编译法，各占3位，4位，4位，2位。微指令：微指令编码字段 下址字段 格式为：13位 3位 8位"
+  },
+  "facts": {
+    "step_1_a": "a:DR",
+    "step_1_b": "b:IR",
+    "step_1_c": "c:AR",
+    "step_1_d": "d:PC",
+    "step_2_p1": "取指: ①将PC中的指令地址传入地址总线: PC→AB. ②向总线发出读的信号. ③读出的指令存放在寄存器IR中. ④PC寄存器指向下一个指令地址. ⑤通过编译得出取得指令的内容.",
+    "step_2_p2": "④PC寄存器指向下一个指令地址. ⑤通过编译得出提取指令的内容.",
+    "step_3_read": "取数: ①数据地址送往地址寄存器AR. ②地址寄存器将地址送往总线. ③向总线发出读信号 ④数据通过总线送往DR. ⑤通过DR将数据送往运算器.",
+    "step_3_write": "未书写",
+    "step_4_operands": "程序先进行取指操作. 将取到的指令送入指令寄存器IR中 再进行取数据操作, 将数据送入运算器中, 最后执行.",
+    "step_4_result": "运算器得到的结果送入寄存器AX中.",
+    "step_5_core_field": "控制存储器的容量应由下址字段的位数决定",
+    "step_5_core_compute": "未书写",
+    "step_5_final": "控制存储器的容量应为:24×30=720.",
+    "step_6_group12": "4个互斥类采用字段直接编译法,各占3位,4位,4位,2位.",
+    "step_6_group34": "4个互斥类采用字段直接编译法,各占3位,4位,4位,2位.",
+    "step_6_test_field": "外部条件采用直接控制法，占3位",
+    "step_6_addr_field": "下址学段 8位",
+    "step_6_layout": "格式为 13位 做指令编码 3位 下址学段 8位"
+  }
+}

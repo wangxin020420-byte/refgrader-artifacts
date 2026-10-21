@@ -1,0 +1,94 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T21:08:08.302286",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_72.jpg",
+  "image_sha256": "b7fd6ba899c0d6b9024c463e485c6b825c0ba4f9725f21bbea74e0a250a1d92a",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_72.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 15,
+    "accepted_token_count": 14,
+    "mean_confidence": 0.972674,
+    "min_confidence": 0.5,
+    "joined_text": "16解：+由题：\n54\n24\n6\n4\n3\n2\n() 极大元：24和54\n极小元：1\n(3) 无最大元，即最大元不存在\n最小元：1\n最小上界：36\n(4).\n最大下界：1",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.032185,
+      "very_dark_pixel_ratio": 0.020223,
+      "lower_region_dark_pixel_ratio": 0.032899,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1.如图所示\n2. 极大元：24和54\n极小元：1\n3. 无最大元，即最大元不存在\n最小元：1\n4. 最小上界：36\n最大下界：1",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_72",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "1连接2、3；2连接4、6；3连接6、9；6连接24、54",
+  "diagram_facts": {
+    "step_1": "节点1、2、3、4、6、9、24、54，连线1→2、1→3；2→4、2→6；3→6、3→9；6→24、6→54；完整可见路径：1连接2、3；2连接4、6；3连接6、9；6连接24、54",
+    "step_4": "最小上界：36，最大下界：1；完整可见路径：1连接2、3；2连接4、6；3连接6、9；6连接24、54"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's drawn Hasse diagram for the poset exactly as written, including all nodes, labels, edges, line segments, and their directions or connections."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's written least upper bound and greatest lower bound of subset B exactly as written, preserving all numbers, labels, order, and any statements about existence or nonexistence."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "图中有节点1、2、3、4、6、9、24、54，连线：1-3,1-2,3-9,3-6,2-4,2-6,6-24,6-54,9-54,4-24",
+    "step_2": "极大元：24和54\n极小元：1",
+    "step_3": "无最大元，即最大元不存在\n最小元：1",
+    "step_4": "最小上界：36\n最大下界：1"
+  },
+  "facts": {
+    "step_1": "节点1、2、3、4、6、9、24、54，连线1→2、1→3；2→4、2→6；3→6、3→9；6→24、6→54；完整可见路径：1连接2、3；2连接4、6；3连接6、9；6连接24、54",
+    "step_2": "极大元：24和54\n极小元：1",
+    "step_3": "无最大元，即最大元不存在\n最小元：1",
+    "step_4": "最小上界：36\n最大下界：1"
+  }
+}

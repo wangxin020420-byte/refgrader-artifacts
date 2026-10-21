@@ -1,0 +1,99 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T21:46:23.725218",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_218.jpg",
+  "image_sha256": "79623d0133ae37de8e25061d591388b9ccd5081ac3d0a80ef049547487dcc267",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_218.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 13,
+    "accepted_token_count": 12,
+    "mean_confidence": 0.854034,
+    "min_confidence": 0.5,
+    "joined_text": "1. : S. X, A. x 均为综合属性. 2.\nS5x=2\na\nAAx\nG5是5-属性文法\nSsx1\nA,A{x=0\nA\nSs.x=0\n-C\n5-x=0\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "multiple_confident_ocr_tokens",
+      "dark_pixel_ratio": 0.030988,
+      "very_dark_pixel_ratio": 0.019337,
+      "lower_region_dark_pixel_ratio": 0.023779,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1. ∵S.x、A.x均为综合属性. ∴G5是S-属性文法 | 2.如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_218",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_2_component_1": "根节点S，子节点a和A；A的子节点A₁和S；A₁的子节点S（S.x=0），S的子节点c；A的子节点S（S.x=1），S的子节点a、A、b；A的子节点S（S.x=0），S的子节点c",
+    "step_2_component_2": "S的S.x=2；A的A.x=1；A₁的A.x=0；S（A₁的子节点）的S.x=0；S（A的子节点）的S.x=1；A（S的子节点）的A.x=0；S（A的子节点）的S.x=0"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's written representation of the syntax tree structure for acacbb, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact nesting, node labels, ordering of children, and any symbols or separators used. Do not extract attribute values here; only the tree structure."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node of the syntax tree, including any labels such as S.x, A.x, or equivalent, and the numeric or symbolic values assigned. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and the values as written for each node."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_core_1",
+    "step_1_support_1",
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "∵ S.x, A.x均为综合属性.",
+    "step_1_core_1": "∵ S.x, A.x均为综合属性.",
+    "step_1_final_1": "G5是S-属性文法",
+    "step_2_component_1": "S\na\nA\n  A\n    S\n      c\n      S\n        a\n        A\n          S\n            c\n  b",
+    "step_2_component_2": "S.x=2\nA.x=1\nA.x=0\nS.x=1\nS.x=0\nA.x=0\nS.x=0"
+  },
+  "facts": {
+    "step_1_support_1": "S.x、A.x均为综合属性",
+    "step_1_core_1": "∵S.x、A.x均为综合属性",
+    "step_1_final_1": "G5是S-属性文法",
+    "step_2_component_1": "根节点S，子节点a和A；A的子节点A₁和S；A₁的子节点S（S.x=0），S的子节点c；A的子节点S（S.x=1），S的子节点a、A、b；A的子节点S（S.x=0），S的子节点c",
+    "step_2_component_2": "S的S.x=2；A的A.x=1；A₁的A.x=0；S（A₁的子节点）的S.x=0；S（A的子节点）的S.x=1；A（S的子节点）的A.x=0；S（A的子节点）的S.x=0"
+  }
+}

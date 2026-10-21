@@ -1,0 +1,109 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T08:06:08.480122",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_5/ANS_POC_168.jpg",
+  "image_sha256": "efcb3350a9441fdb0c98d538191d398778dd68f8a5177d059a0a8cc5d389fe78",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_5/ANS_POC_168.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 29,
+    "accepted_token_count": 29,
+    "mean_confidence": 0.891269,
+    "min_confidence": 0.5,
+    "joined_text": "5.\nI1\nI4\nI7\nS→6·B9\nB\nS→bB.9\na\nS→bBq.\nB5→.9\nI_0\nb\nI5\nS→·A9A\nI_2\na\n参9.\nS→.bBy\nS\nA→E.\nB→·9\nA I3\nI6\nI8\nS→A·9A.\na\nS→A9.A\nA\nS→A~A.",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.057646,
+      "very_dark_pixel_ratio": 0.035553,
+      "lower_region_dark_pixel_ratio": 0.066086,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_168",
+    "question_id": "POC_5",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "I0 → I1 (b), I0 → I2 (S), I0 → I3 (A); I1 → I4 (B), I1 → I5 (a); I4 → I7 (a); I3 → I6 (a); I6 → I8 (A)",
+  "diagram_facts": {
+    "step_1": "I0: S→·A9A; S→·bBy; B→·9；完整可见路径：I0 → I1 (b), I0 → I2 (S), I0 → I3 (A); I1 → I4 (B), I1 → I5 (a); I4 → I7 (a); I3 → I6 (a); I6 → I8 (A)",
+    "step_2": "I1: S→b·B9; B→·9; I2: A→ε·；完整可见路径：I0 → I1 (b), I0 → I2 (S), I0 → I3 (A); I1 → I4 (B), I1 → I5 (a); I4 → I7 (a); I3 → I6 (a); I6 → I8 (A)",
+    "step_3": "I3: S→A·9A·; I4: S→bB·9; I5: A→9·; I6: S→A9·A; I7: S→bB9·; I8: S→A^A·；完整可见路径：I0 → I1 (b), I0 → I2 (S), I0 → I3 (A); I1 → I4 (B), I1 → I5 (a); I4 → I7 (a); I3 → I6 (a); I6 → I8 (A)",
+    "step_4": "I0→I1 (b); I0→I2 (S); I0→I3 (A); I1→I4 (B); I1→I5 (a); I4→I7 (a); I3→I6 (a); I6→I8 (A)；完整可见路径：I0 → I1 (b), I0 → I2 (S), I0 → I3 (A); I1 → I4 (B), I1 → I5 (a); I4 → I7 (a); I3 → I6 (a); I6 → I8 (A)"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten augmented grammar and initial LR(1) item set I0 exactly as written, preserving all grammar productions, dot positions, lookahead symbols in braces, arrows, and line breaks."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's handwritten successor item sets constructed from I0 and I1 exactly as written, preserving all item set labels, grammar productions, dot positions, lookahead symbols in braces, arrows, and line breaks."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's handwritten remaining item sets exactly as written, preserving all item set labels, grammar productions, dot positions, lookahead symbols in braces, arrows, and line breaks, especially for any epsilon production lookaheads."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's handwritten state transition relations for the complete LR(1) canonical collection exactly as written, preserving all state labels, transition symbols, arrows, and direction."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "S→·AaA\nS→·bBa\nB→·a",
+    "step_2": "I1:\nS→b·Ba\nB→·a\nI2:\nA→ε·\nI3:\nS→A·aA ·\nI4:\nS→bB·a\nI5:\nA→ε·",
+    "step_3": "I6:\nS→Aa·A\nI7:\nS→bBa·\nI8:\nS→AaA·",
+    "step_4": "I0 → I1 (b)\nI0 → I2 (S)\nI0 → I3 (A)\nI1 → I4 (B)\nI1 → I5 (a)\nI3 → I6 (a)\nI6 → I8 (A)\nI4 → I7 (a)"
+  },
+  "facts": {
+    "step_1": "I0: S→·A9A; S→·bBy; B→·9；完整可见路径：I0 → I1 (b), I0 → I2 (S), I0 → I3 (A); I1 → I4 (B), I1 → I5 (a); I4 → I7 (a); I3 → I6 (a); I6 → I8 (A)",
+    "step_2": "I1: S→b·B9; B→·9; I2: A→ε·；完整可见路径：I0 → I1 (b), I0 → I2 (S), I0 → I3 (A); I1 → I4 (B), I1 → I5 (a); I4 → I7 (a); I3 → I6 (a); I6 → I8 (A)",
+    "step_3": "I3: S→A·9A·; I4: S→bB·9; I5: A→9·; I6: S→A9·A; I7: S→bB9·; I8: S→A^A·；完整可见路径：I0 → I1 (b), I0 → I2 (S), I0 → I3 (A); I1 → I4 (B), I1 → I5 (a); I4 → I7 (a); I3 → I6 (a); I6 → I8 (A)",
+    "step_4": "I0→I1 (b); I0→I2 (S); I0→I3 (A); I1→I4 (B); I1→I5 (a); I4→I7 (a); I3→I6 (a); I6→I8 (A)；完整可见路径：I0 → I1 (b), I0 → I2 (S), I0 → I3 (A); I1 → I4 (B), I1 → I5 (a); I4 → I7 (a); I3 → I6 (a); I6 → I8 (A)"
+  }
+}

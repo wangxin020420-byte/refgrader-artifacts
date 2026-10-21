@@ -1,0 +1,94 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T05:12:53.548712",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_36.jpg",
+  "image_sha256": "b296a00a7c14e7f89c48906fab1a62ace3ad44bb11c9df961253e2c3c71dd033",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_36.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 11,
+    "accepted_token_count": 11,
+    "mean_confidence": 0.833059,
+    "min_confidence": 0.5,
+    "joined_text": "77\n54\n16.\n9\n解(心\n极元为/\n(1)极大元为24和54.模\n(3) 最女没有最大元，最玩为\n(4) 没有最大下界、最丙4\n无上界\n为1",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.044424,
+      "very_dark_pixel_ratio": 0.027533,
+      "lower_region_dark_pixel_ratio": 0.045119,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)如图所示\n(2) 极大元为24和54. 极小元为1\n(3) 没有最大元，最小元为1\n(4) 最大下界为1，无最小上界",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_36",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "节点1（底部）→2、3（中间层）→4、6、9（上层）→54（最上层），通过上升线段连接形成层级",
+  "diagram_facts": {
+    "step_1": "手绘哈斯图包含节点1、2、3、4、6、9、54，节点1位于底部，通过上升线段连接到中间层的2和3；2连接到上层的4和6，3连接到上层的6和9；6连接到最上层的54，形成层级结构；完整可见路径：节点1（底部）→2、3（中间层）→4、6、9（上层）→54（最上层），通过上升线段连接形成层级",
+    "step_4": "没有最大下界，最小上界为1；完整可见路径：节点1（底部）→2、3（中间层）→4、6、9（上层）→54（最上层），通过上升线段连接形成层级"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's hand-drawn Hasse diagram for the poset exactly as drawn, including all nodes, labels, edges, and their directions or connections, without revealing the expected diagram."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's written least upper bound and greatest lower bound of subset B exactly as written, preserving order, labels, separators, and any indication that a bound does not exist."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "手绘的哈斯图，节点包括1、2、3、4、6、9、24、54，连接关系：1在底部，2和3在中间并连接到1；4连接到2；6连接到2和3；9连接到3；24连接到4和6；54连接到6和9",
+    "step_2": "极大元为24和54. 极小元为1",
+    "step_3": "没有最大元，最小元为1",
+    "step_4": "没有最大下界，最小上界为1 无最小上界"
+  },
+  "facts": {
+    "step_1": "手绘哈斯图包含节点1、2、3、4、6、9、54，节点1位于底部，通过上升线段连接到中间层的2和3；2连接到上层的4和6，3连接到上层的6和9；6连接到最上层的54，形成层级结构；完整可见路径：节点1（底部）→2、3（中间层）→4、6、9（上层）→54（最上层），通过上升线段连接形成层级",
+    "step_2": "极大元为24和54. 极小元为1",
+    "step_3": "没有最大元，最小元为1",
+    "step_4": "最大下界为1，无最小上界"
+  }
+}

@@ -1,0 +1,827 @@
+[
+  {
+    "file": "ANS_CO_784.jpg",
+    "facts": "{\"step_1\": \"T = 1/50M；t = 100T = 10²/(50×10⁶) = 0.2×10⁻⁵；t₁ = 32 bit / 1MB/s。（未书写每秒查询次数、总时钟周期数及CPU时间比率的最终计算，仅写出查询一次耗时及一次数据传输时间的表达式）\", \"step_2\": \"未书写\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T00:31:01.137519",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_8/ANS_CO_784.jpg",
+      "image_sha256": "8ac5efaf6c199e1d770e134dd8dc4e619ebb321152e7ddd300feefba55e7dd44",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "解 (1) T = 1/50M \nt = 100T = 10²/(50×10⁶) = 0.2×10⁻⁵ \nt₁ = 32 bit / 1MB/s",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_784",
+        "question_id": "CO_8",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "T = 1/50M；t = 100T = 10²/(50×10⁶) = 0.2×10⁻⁵；t₁ = 32 bit / 1MB/s。（未书写每秒查询次数、总时钟周期数及CPU时间比率的最终计算，仅写出查询一次耗时及一次数据传输时间的表达式）",
+        "step_2": "未书写"
+      }
+    },
+    "scores": [
+      2,
+      1,
+      2
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "T = 1/50M；t = 100T = 10²/(50×10⁶) = 0.2×10⁻⁵；t₁ = 32 bit / 1MB/s。（未书写每秒查询次数、总时钟周期数及CPU时间比率的最终计算）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "计算每秒查询次数(2.5×10^5)、总时钟周期数(2.5×10^7)和CPU时间比率(50%)",
+            "dependency_status": "insufficient",
+            "reason": "学生正确写出时钟周期、单次查询100个周期的耗时及单次数据传输时间的表达式，属于有效的中间过程，但缺少每秒查询次数、总时钟周期数和CPU时间比率这三个要求的最终结果，给予部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "计算DMA方式下每秒DMA次数(250)、CPU开销周期数(2000)和CPU时间比率(1%)",
+            "dependency_status": "failed",
+            "reason": "第二步完全未作答，无任何可评证据。"
+          }
+        ],
+        "total_score": 2
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "T = 1/50M；t = 100T = 10²/(50×10⁶) = 0.2×10⁻⁵；t₁ = 32 bit / 1MB/s。（未书写每秒查询次数、总时钟周期数及CPU时间比率）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每秒查询次数2.5×10^5、总时钟周期数2.5×10^7、CPU时间比率50%",
+            "dependency_status": "insufficient",
+            "reason": "时钟周期和单次查询开销表达式正确（有效的中间量），但缺少每秒查询次数、总周期数和CPU时间比率这三个要求的最终结果"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "每次DMA开销2000周期、每秒250次DMA、CPU时间比率1%",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何DMA相关内容"
+          }
+        ],
+        "total_score": 1
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "T = 1/50M；t = 100T = 10²/(50×10⁶) = 0.2×10⁻⁵；t₁ = 32 bit / 1MB/s（未书写每秒查询次数、总时钟周期数及CPU时间比率的最终计算）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每秒查询次数2.5×10⁵、总时钟周期数2.5×10⁷、CPU时间比率50%",
+            "dependency_status": "insufficient",
+            "reason": "时钟周期与每次查询耗时(100T)计算正确，并写出一次数据传输时间表达式，体现部分方法；但缺少每秒查询次数、总时钟周期数和CPU时间比率三个要求结果，仅得部分过程分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "BLANK",
+            "evidence_text": "未书写",
+            "evidence_status": "absent",
+            "score_layer": "support",
+            "expected_condition": "每次DMA开销2000周期、每秒DMA次数250、CPU时间比率1%",
+            "dependency_status": "failed",
+            "reason": "学生未书写任何DMA相关内容"
+          }
+        ],
+        "total_score": 2
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        1.0,
+        2.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "BLANK",
+        "BLANK",
+        "BLANK"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.2222222222222222,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.2222222222222222,
+    "avg_item_variance": 0.1111111111111111
+  },
+  {
+    "file": "ANS_CO_787.jpg",
+    "facts": "{\"step_1\": \"时间比率写成 2^32/(2^8×10^6) + 100×1/(50×10^6)) ×100% = 2^23/(2^23 + 1)×100%。查询次数按 2^32 位字、每次 2^8 位、速率 10^6 计算，查询操作 100 个时钟周期、CPU 频率 50×10^6。未单独写出每秒查询次数与每秒总时钟数的中间量。\", \"step_2\": \"时间比率写成 (1500 + 500)×1/(50×10^6) / ( (2^32/(4×10^3×2^8) + (1500 + 500)×1/(50×10^6))) ×100% =（未算出最终数值）。每次传输 CPU 开销为 1500+500=2000 个时钟周期，平均传输长度取 4×10^3，每秒 DMA 传输次数以 2^32/(4×10^3×2^8) 形式出现在式中。\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T00:31:52.440668",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_8/ANS_CO_787.jpg",
+      "image_sha256": "06a2afb18f63aea0123f8106ed76b9c4c1423059b344cacbcecf32680a6b5b62",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1)时间比率为 2^32/(2^8×10^6) + 100×1/(50×10^6)) ×100% = 2^23/(2^23 + 1)×100% \n(2) 时间比率为 (1500 + 500)×1/(50×10^6) /( (2^32/(4×10^3× 2^8) + (1500 + 500)×1/(50×10^6))) ×100% =",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_787",
+        "question_id": "CO_8",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "时间比率写成 2^32/(2^8×10^6) + 100×1/(50×10^6)) ×100% = 2^23/(2^23 + 1)×100%。查询次数按 2^32 位字、每次 2^8 位、速率 10^6 计算，查询操作 100 个时钟周期、CPU 频率 50×10^6。未单独写出每秒查询次数与每秒总时钟数的中间量。",
+        "step_2": "时间比率写成 (1500 + 500)×1/(50×10^6) / ( (2^32/(4×10^3×2^8) + (1500 + 500)×1/(50×10^6))) ×100% =（未算出最终数值）。每次传输 CPU 开销为 1500+500=2000 个时钟周期，平均传输长度取 4×10^3，每秒 DMA 传输次数以 2^32/(4×10^3×2^8) 形式出现在式中。"
+      }
+    },
+    "scores": [
+      5.5,
+      4,
+      5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "时间比率写成 2^32/(2^8×10^6) + 100×1/(50×10^6)) ×100% = 2^23/(2^23 + 1)×100%。查询次数按 2^32 位字、每次 2^8 位、速率 10^6 计算，查询操作 100 个时钟周期、CPU 频率 50×10^6。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每秒查询次数 2.5×10^5，总时钟 2.5×10^7，时间比率 50%",
+            "dependency_status": "insufficient",
+            "reason": "正确使用了每次查询100周期和50MHz频率的关系，但查询速率换算错误（应为1MB/4B=2.5×10^5次/秒），导致结果≈100%而非50%；方法结构部分正确，中间量未单独列出。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3.5,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "时间比率写成 (1500 + 500)×1/(50×10^6) / ( (2^32/(4×10^3×2^8) + (1500 + 500)×1/(50×10^6))) ×100%。每次传输 CPU 开销为 1500+500=2000 个时钟周期，平均传输长度取 4×10^3。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每次DMA开销2000周期，每秒250次DMA，时间比率1%",
+            "dependency_status": "satisfied",
+            "reason": "CPU开销2000周期正确，平均传输长度4×10^3正确，比率公式结构正确；但分母错误地包含了DMA传输时间（应仅比较CPU开销/总时钟），且最终数值未算出。"
+          }
+        ],
+        "total_score": 5.5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "时间比率写成 2^32/(2^8×10^6) + 100×1/(50×10^6)) ×100% = 2^23/(2^23 + 1)×100%。查询次数按 2^32 位字、每次 2^8 位、速率 10^6 计算，查询操作 100 个时钟周期、CPU 频率 50×10^6。未单独写出每秒查询次数与每秒总时钟数的中间量。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每秒查询次数 2.5×10^5，总时钟数 2.5×10^7，时间比率 50%",
+            "dependency_status": "failed",
+            "reason": "方法框架（每秒查询次数×100周期 / 50MHz 求比率）方向正确，且正确使用100时钟周期和50MHz；但字长按位(2^8位)而非字节(4B)换算，导致每秒查询次数错（2^24 vs 2.5×10^5），最终比率≈100%而非50%，结果错误；中间量未单独写出。方法部分正确，结果错误。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "每次传输 CPU 开销为 1500+500=2000 个时钟周期，平均传输长度取 4×10^3，每秒 DMA 传输次数以 2^32/(4×10^3×2^8) 形式出现在式中。（未算出最终数值）",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "开销2000周期正确；每秒DMA次数250；比率1%",
+            "dependency_status": "failed",
+            "reason": "CPU开销2000时钟周期正确，平均传输长度4×10^3正确，比率公式结构正确（开销×次数/50MHz）；但每秒DMA次数表达式量纲换算错误（应为250次），且最终数值未算出，无法确认1%。过程部分正确，结果缺失/错误。"
+          }
+        ],
+        "total_score": 4
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "时间比率写成 2^32/(2^8×10^6) + 100×1/(50×10^6)) ×100% = 2^23/(2^23 + 1)×100%。查询操作 100 个时钟周期、CPU 频率 50×10^6。",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每秒查询次数=1MB/4B=2.5×10^5；总周期=2.5×10^7；时间比率=2.5×10^7/5×10^7=50%",
+            "dependency_status": "insufficient",
+            "reason": "总体框架（查询次数×100周期÷50MHz时钟）方向正确，且正确使用了每次查询100周期与50MHz；但每秒查询次数按位而非字节计算（2^32/2^8/10^6≈16.7M，远大于2.5×10^5），且比率分母写成查询开销加单次查询时间而非全部时钟，导致结果≈100%而非50%，属上游数值错误但方法关系部分正确，给部分分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 3,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "每次传输CPU开销为1500+500=2000个时钟周期，平均传输长度取4×10^3，每秒DMA传输次数以2^32/(4×10^3×2^8)形式出现在式中，比率=(1500+500)×1/(50×10^6)/((2^32/(4×10^3×2^8)+(1500+500)×1/(50×10^6)))×100%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每次DMA开销2000周期；每秒DMA次数=1MB/4KB=250；比率=2000×250/50M=1%",
+            "dependency_status": "insufficient",
+            "reason": "CPU开销1500+500=2000周期正确，平均传输长度4×10^3正确，时间比率结构（开销×次数÷50MHz）正确；但每秒DMA次数用2^32位除以字节长度得到≈4096次而非标准250次，且最终数值未算出，比率表达式结构也与标准的2000×250/50M不同，给部分分。"
+          }
+        ],
+        "total_score": 5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        3.5,
+        2.0,
+        3.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.38888888888888884
+    },
+    "max_item_variance": 0.38888888888888884,
+    "avg_item_variance": 0.19444444444444442
+  },
+  {
+    "file": "ANS_CO_792.jpg",
+    "facts": "{\"step_1\": \"CPU每秒钟有50x10^6个时钟周期；查询次数1MB/4B=2.5x10^5次；所需时钟周期数2.5x10^5x100=2.5x10^7个；时间比率(2.5x10^7x100%)/(50x10^6)=50%\", \"step_2\": \"传输次数4KB/4B=10^3次；所需时钟周期数10^3x(1500+500)=2x10^6个；时间比率(2x10^6)/(50x10^6)x100%=4%\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T00:33:10.219171",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_8/ANS_CO_792.jpg",
+      "image_sha256": "3e7424ad8a9cfd4c66c66157f89ff3f6242b71388f02f66f96946843353c4758",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "1)可知CPU每秒钟有50x10^6个时钟周期\n查询次数1MB/4B=2.5x10^5次\n所需时钟周期数2.5x10^5x100=2.5x10^7个\n则时间比率(2.5x10^7x100%)/(50x10^6)=50%\n2)传输次数4KB/4B=10^3次\n所需时钟周期数10^3x(1500+500)=2x10^6个\n则时间比率(2x10^6)/(50x10^6)x100%=4%",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_792",
+        "question_id": "CO_8",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "CPU每秒钟有50x10^6个时钟周期；查询次数1MB/4B=2.5x10^5次；所需时钟周期数2.5x10^5x100=2.5x10^7个；时间比率(2.5x10^7x100%)/(50x10^6)=50%",
+        "step_2": "传输次数4KB/4B=10^3次；所需时钟周期数10^3x(1500+500)=2x10^6个；时间比率(2x10^6)/(50x10^6)x100%=4%"
+      }
+    },
+    "scores": [
+      7,
+      6,
+      7.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "查询次数1MB/4B=2.5x10^5次；所需时钟周期数2.5x10^5x100=2.5x10^7个；时间比率(2.5x10^7x100%)/(50x10^6)=50%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "查询次数2.5×10^5，总周期2.5×10^7，时间比率50%",
+            "dependency_status": "satisfied",
+            "reason": "每秒查询次数、总时钟周期数和CPU时间比率均与标准答案一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "传输次数4KB/4B=10^3次；所需时钟周期数10^3x(1500+500)=2x10^6个；时间比率(2x10^6)/(50x10^6)x100%=4%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "DMA次数250次，开销2000周期，CPU时间比率1%",
+            "dependency_status": "failed",
+            "reason": "每次DMA开销1500+500=2000周期及比率计算方法正确，但DMA次数用4KB/4B=1000次计算，方法错误（应为1MB/4KB=250次），导致最终比率4%错误"
+          }
+        ],
+        "total_score": 7
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "查询次数1MB/4B=2.5x10^5次；所需时钟周期数2.5x10^5x100=2.5x10^7个；时间比率(2.5x10^7x100%)/(50x10^6)=50%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每秒查询次数2.5×10^5，总周期2.5×10^7，时间比率50%",
+            "dependency_status": "satisfied",
+            "reason": "查询次数、总周期数和50%时间比率均与标准答案一致，方法与结果完整正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 1,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "传输次数4KB/4B=10^3次；所需时钟周期数10^3x(1500+500)=2x10^6个；时间比率(2x10^6)/(50x10^6)x100%=4%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每次DMA开销1500+500=2000周期；每秒DMA次数1MB/4KB=250次；时间比率2000×250/50M=1%",
+            "dependency_status": "failed",
+            "reason": "每次DMA开销2000周期(1500+500)正确，但每秒DMA次数应为1MB/4KB=250次，学生误用4KB/4B=10^3次，导致时间比率4%错误（正确为1%）；仅保留开销计算的过程分"
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "查询次数1MB/4B=2.5x10^5次；所需时钟周期数2.5x10^5x100=2.5x10^7个；时间比率(2.5x10^7x100%)/(50x10^6)=50%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每秒查询次数2.5×10^5、总周期数2.5×10^7、CPU时间比率50%",
+            "dependency_status": "satisfied",
+            "reason": "查询次数、总时钟周期数与时间比率均与标准答案一致，计算过程完整正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "传输次数4KB/4D=10^3次；所需时钟周期数10^3x(1500+500)=2x10^6个；时间比率(2x10^6)/(50x10^6)x100%=4%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每秒DMA次数250次（1MB/4KB），每次CPU开销1500+500=2000周期，时间比率1%",
+            "dependency_status": "failed",
+            "reason": "CPU开销1500+500=2000周期的关系正确，但每秒DMA次数误用4KB/4B=10^3（应为1MB/4KB=250），导致周期数2×10^6与比率4%错误（正确为1%），属方法部分错误的上游传播。"
+          }
+        ],
+        "total_score": 7.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        2.0,
+        1.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH",
+        "PARTIAL_MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.2222222222222222
+    },
+    "max_item_variance": 0.2222222222222222,
+    "avg_item_variance": 0.1111111111111111
+  },
+  {
+    "file": "ANS_CO_795.jpg",
+    "facts": "{\"step_1\": \"1s时间内，CPU查询次数：1MB/4B = 2.5×10⁵次；用时：2.5×10⁵×100 = 2.5×10⁷(T)；查询时间比：(2.5×10⁷)/(50×10⁶) = 50%\", \"step_2\": \"DMA启动次数：1MB/4KB = 250次；DMA前、后处理用时：250×(1500+500) = 5×10⁵(T)；所用时间比：(5×10⁵)/50M = 1%\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T00:34:11.960415",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_8/ANS_CO_795.jpg",
+      "image_sha256": "8397cd411534197f33957b4d8b957616b9f028c5ed417a32844420cfbfeddadd",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "1) 1s时间内，CPU查询次数：1MB/4B = 2.5×10⁵次/ \n用时：2.5×10⁵×100 = 2.5×10⁷(T)\n 查询时间比：(2.5×10⁷)/(50×10⁶) = 50%\n 2) DMA启动次数：1MB/4KB = 250次 DMA前、后处理用时：250×(1500+500) = 5×10⁵(T) 所用时间比：(5×10⁵)/50M = 1%",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_795",
+        "question_id": "CO_8",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "1s时间内，CPU查询次数：1MB/4B = 2.5×10⁵次；用时：2.5×10⁵×100 = 2.5×10⁷(T)；查询时间比：(2.5×10⁷)/(50×10⁶) = 50%",
+        "step_2": "DMA启动次数：1MB/4KB = 250次；DMA前、后处理用时：250×(1500+500) = 5×10⁵(T)；所用时间比：(5×10⁵)/50M = 1%"
+      }
+    },
+    "scores": [
+      10,
+      10,
+      10
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "1MB/4B = 2.5×10⁵次；2.5×10⁵×100 = 2.5×10⁷(T)；(2.5×10⁷)/(50×10⁶) = 50%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "查询次数2.5×10⁵、总周期2.5×10⁷、CPU时间比率50%",
+            "dependency_status": "satisfied",
+            "reason": "查询次数、总时钟周期数及时间比率均与标准答案一致，过程完整正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "1MB/4KB = 250次；250×(1500+500) = 5×10⁵(T)；(5×10⁵)/50M = 1%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "DMA次数250、CPU开销2000周期/次、时间比率1%",
+            "dependency_status": "satisfied",
+            "reason": "DMA次数、每次开销、周期总数及比率均与标准答案一致"
+          }
+        ],
+        "total_score": 10
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "1MB/4B = 2.5×10⁵次；2.5×10⁵×100 = 2.5×10⁷(T)；(2.5×10⁷)/(50×10⁶) = 50%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "查询次数2.5×10⁵、总周期2.5×10⁷、CPU时间比率50%",
+            "dependency_status": "satisfied",
+            "reason": "查询次数、总时钟周期数及50%时间比率均正确，公式与计算轨迹完整"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "1MB/4KB = 250次；250×(1500+500) = 5×10⁵(T)；(5×10⁵)/50M = 1%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "DMA次数250、CPU开销2000周期/次、时间比率1%",
+            "dependency_status": "satisfied",
+            "reason": "DMA次数、前后处理开销与1%时间比率均与标准答案一致"
+          }
+        ],
+        "total_score": 10
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "1MB/4B = 2.5×10⁵次；2.5×10⁵×100 = 2.5×10⁷(T)；(2.5×10⁷)/(50×10⁶) = 50%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "查询次数2.5×10⁵，总周期2.5×10⁷，CPU时间比率50%",
+            "dependency_status": "satisfied",
+            "reason": "查询次数、总时钟周期数与CPU时间比率均与标准答案一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "1MB/4KB = 250次；250×(1500+500) = 5×10⁵(T)；(5×10⁵)/50M = 1%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "DMA次数250次，CPU开销2000周期/次，时间比率1%",
+            "dependency_status": "satisfied",
+            "reason": "DMA次数、CPU开销周期数与时间比率均与标准答案一致"
+          }
+        ],
+        "total_score": 10
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_CO_808.jpg",
+    "facts": "{\"step_1\": \"1S查询1MB/4B次；查询花费时间周期为：1MB/4B×100个；时间比率为 ((1MB/4B)×100)/50M ×100% = 50%\", \"step_2\": \"1S传送1MB/4KB次；时间比率：((1MB/4KB)×(1500+500))/50M ×100% = 1%\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T00:35:06.959655",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_8/ANS_CO_808.jpg",
+      "image_sha256": "5585aaab34b212f0c43c3eab044074f6f92bc0ba79f431852e4a5cbc1de7ed14",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "(1)1S查询1MB/4B次\n查询花费时间周期为：1MB/4B×100个\n时间比率为((1MB/4B)×100)/50M ×100% = 50%\n(2)1S传送1MB/4KB次\n时间比率：((1MB/4KB)×(1500+500))/50M ×100% = 1%",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_CO_808",
+        "question_id": "CO_8",
+        "subject": "CO",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "1S查询1MB/4B次；查询花费时间周期为：1MB/4B×100个；时间比率为 ((1MB/4B)×100)/50M ×100% = 50%",
+        "step_2": "1S传送1MB/4KB次；时间比率：((1MB/4KB)×(1500+500))/50M ×100% = 1%"
+      }
+    },
+    "scores": [
+      10,
+      10,
+      10
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "1S查询1MB/4B次；查询花费时间周期为：1MB/4B×100个；时间比率为 ((1MB/4B)×100)/50M ×100% = 50%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每秒查询次数2.5×10^5、总周期2.5×10^7、时间比率50%",
+            "dependency_status": "satisfied",
+            "reason": "公式、查询次数、周期数与最终50%比率均正确，未展开的中间算术不影响给分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "1S传送1MB/4KB次；时间比率：((1MB/4KB)×(1500+500))/50M ×100% = 1%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每秒DMA次数250、CPU开销2000周期、时间比率1%",
+            "dependency_status": "satisfied",
+            "reason": "正确给出开销1500+500、DMA次数1MB/4KB及最终1%比率，与标准答案一致"
+          }
+        ],
+        "total_score": 10
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "1S查询1MB/4B次；查询花费时间周期为：1MB/4B×100个；时间比率为 ((1MB/4B)×100)/50M ×100% = 50%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "查询次数1MB/4B=2.5×10^5，总周期2.5×10^7，CPU时间比率50%",
+            "dependency_status": "satisfied",
+            "reason": "查询次数、周期数表达式及最终比率50%均与标准答案一致，公式与结果完整正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5,
+            "error_category": "MATCH",
+            "evidence_text": "1S传送1MB/4KB次；时间比率：((1MB/4KB)×(1500+500))/50M ×100% = 1%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每次开销1500+500=2000周期，每秒250次DMA，比率2000×250/50M=1%",
+            "dependency_status": "satisfied",
+            "reason": "DMA次数、CPU开销周期(1500+500)及最终比率1%均正确，方法与结果符合标准答案"
+          }
+        ],
+        "total_score": 10
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "1S查询1MB/4B次；查询花费时间周期为：1MB/4B×100个；时间比率为 ((1MB/4B)×100)/50M ×100% = 50%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每秒查询次数2.5×10^5、总周期2.5×10^7、时间比率50%",
+            "dependency_status": "satisfied",
+            "reason": "查询次数、周期数计算式及50%时间比率均正确，方法与结果完整"
+          },
+          {
+            "id": "step_2",
+            "score_given": 5.0,
+            "error_category": "MATCH",
+            "evidence_text": "1S传送1MB/4KB次；时间比率：((1MB/4KB)×(1500+500))/50M ×100% = 1%",
+            "evidence_status": "explicit",
+            "score_layer": "support",
+            "expected_condition": "每次开销2000周期、每秒250次DMA、时间比率1%",
+            "dependency_status": "satisfied",
+            "reason": "DMA次数、CPU开销(1500+500)及1%时间比率均正确"
+          }
+        ],
+        "total_score": 10
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "step_2": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

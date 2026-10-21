@@ -1,0 +1,1544 @@
+[
+  {
+    "file": "ANS_DM_03.jpg",
+    "facts": "{\"step_1\": \"节点1→2, 1→3, 1→4, 2→6, 3→6, 3→9, 4→24, 6→24, 6→54, 9→54；完整可见路径：哈斯图呈现层级结构，底层节点为1，向上依次连接2、3、4；2连接6，3连接6和9；4连接24；6连接24和54；9连接54\", \"step_2\": \"A的极大元：24，54；极小元：1\", \"step_3\": \"A的最大元：不存在；最小元：1\", \"step_4\": \"最小上界为：9；最大下界为：4（上下界均于A中取）\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T01:32:55.432871",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_03.jpg",
+      "image_sha256": "53ec3f1ef49525678d769a7fa801b734c9c833726d211526996da9e18a12b361",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_03.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 19,
+        "accepted_token_count": 19,
+        "mean_confidence": 0.978533,
+        "min_confidence": 0.5,
+        "joined_text": "24\nρ54\n16.\n6\n解：(1) 哈斯图加(a)：\n9\n3\n4\n2\n0\n(a)\n(2) A的极大元：24，54\n极小元：1\n(3) A的最大元:不存在\n最小元：1\n(4) A的子B={4,6,9}\n上、下界均于A中取.\n其最小上界为：9\n最大下界为：4.",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "multiple_confident_ocr_tokens",
+          "dark_pixel_ratio": 0.028257,
+          "very_dark_pixel_ratio": 0.018713,
+          "lower_region_dark_pixel_ratio": 0.025107,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "(1) 如图所示\n(2) A的极大元：24，54\n    极小元：1\n(3) A的最大元：不存在\n    最小元：1\n(4) A的子集B={4,6,9}\n    上下界均于A中取. 其最小上界为：9\n    最大下界为：4.",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_03",
+        "question_id": "DM_1",
+        "subject": "DM",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "哈斯图呈现层级结构，底层节点为1，向上依次连接2、3、4；2连接6，3连接6和9；4连接24；6连接24和54；9连接54",
+      "diagram_facts": {
+        "step_1": "节点1→2, 1→3, 1→4, 2→6, 3→6, 3→9, 4→24, 6→24, 6→54, 9→54；完整可见路径：哈斯图呈现层级结构，底层节点为1，向上依次连接2、3、4；2连接6，3连接6和9；4连接24；6连接24和54；9连接54",
+        "step_4": "最小上界为：9，最大下界为：4；完整可见路径：哈斯图呈现层级结构，底层节点为1，向上依次连接2、3、4；2连接6，3连接6和9；4连接24；6连接24和54；9连接54"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_1",
+          "instruction": "Extract the student's handwritten Hasse diagram as a relation description: list every labeled node and every directed covering edge (from lower node to upper node) exactly as drawn, preserving node labels, arrow directions, and connection structure. Do not evaluate correctness."
+        },
+        {
+          "id": "step_4",
+          "instruction": "Extract the concrete element or judgement word the student wrote as the least upper bound and the greatest lower bound of subset B, preserving order of mention (upper bound first, lower bound second) and any existence/non-existence statements exactly as written."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_1"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "节点：1,2,3,4,6,9,24,54；边：1→2,1→3,2→4,2→6,3→6,3→9,6→24,6→54,4→24,9→54",
+        "step_2": "极大元：24，54；极小元：1",
+        "step_3": "最大元：不存在；最小元：1",
+        "step_4": "上下界均于A中取。其最小上界为：9；最大下界为：4"
+      },
+      "facts": {
+        "step_1": "节点1→2, 1→3, 1→4, 2→6, 3→6, 3→9, 4→24, 6→24, 6→54, 9→54；完整可见路径：哈斯图呈现层级结构，底层节点为1，向上依次连接2、3、4；2连接6，3连接6和9；4连接24；6连接24和54；9连接54",
+        "step_2": "A的极大元：24，54；极小元：1",
+        "step_3": "A的最大元：不存在；最小元：1",
+        "step_4": "最小上界为：9；最大下界为：4（上下界均于A中取）"
+      }
+    },
+    "scores": [
+      6,
+      6.0,
+      6
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "节点1→2, 1→3, 1→4, 2→6, 3→6, 3→9, 4→24, 6→24, 6→54, 9→54；哈斯图层级结构描述",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "哈斯图的覆盖关系正确",
+            "dependency_status": "satisfied",
+            "reason": "所有覆盖边与标准哈斯图一致（1覆盖2,3,4；2,3覆盖6；3覆盖9；4,6覆盖24；6,9覆盖54），完整正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "A的极大元：24，54；极小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元为24和54，极小元为1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "A的最大元：不存在；最小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "无最大元，最小元为1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "最小上界为：9；最大下界为：4（上下界均于A中取）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B={4,6,9}无最小上界，最大下界为1",
+            "dependency_status": "failed",
+            "reason": "9不是6的上界（9与6不可比），4不是6、9的下界（4与6、9不可比），两个结论均为概念性错误；正确答案为无最小上界、最大下界为1。"
+          }
+        ],
+        "total_score": 6
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "节点1→2, 1→3, 1→4, 2→6, 3→6, 3→9, 4→24, 6→24, 6→54, 9→54",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "哈斯图覆盖关系：1-2,1-3,1-4,2-6,3-6,3-9,4-24,6-24,6-54,9-54",
+            "dependency_status": "satisfied",
+            "reason": "所有覆盖边与标准哈斯图完全一致，层级描述也正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A的极大元：24，54；极小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元是24和54，极小元是1",
+            "dependency_status": "satisfied",
+            "reason": "极大元、极小元均与标准答案完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A的最大元：不存在；最小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "无最大元，最小元是1",
+            "dependency_status": "satisfied",
+            "reason": "结论与标准答案完全一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "最小上界为：9；最大下界为：4（上下界均于A中取）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B={4,6,9}无最小上界，最大下界是1",
+            "dependency_status": "failed",
+            "reason": "9不是4和6的上界，且4不整除6和9，不可能是下界；最小上界不存在、最大下界为1，学生结论完全错误，属概念性错误。"
+          }
+        ],
+        "total_score": 6.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "节点1→2, 1→3, 1→4, 2→6, 3→6, 3→9, 4→24, 6→24, 6→54, 9→54",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "Correct Hasse diagram edge relations",
+            "dependency_status": "satisfied",
+            "reason": "All cover edges of the divisibility Hasse diagram are correctly listed."
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "A的极大元：24，54；极小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元是24和54，极小元是1",
+            "dependency_status": "satisfied",
+            "reason": "Maximal and minimal elements exactly match standard answer."
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "A的最大元：不存在；最小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "无最大元，最小元是1",
+            "dependency_status": "satisfied",
+            "reason": "Greatest element nonexistent and least element 1 are correct."
+          },
+          {
+            "id": "step_4",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "最小上界为：9；最大下界为：4（上下界均于A中取）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B={4,6,9}无最小上界，最大下界是1",
+            "dependency_status": "failed",
+            "reason": "Both conclusions wrong: 9 is not an upper bound of B (does not dominate 4), and the greatest lower bound is 1, not 4."
+          }
+        ],
+        "total_score": 6
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_DM_11.jpg",
+    "facts": "{\"step_1\": \"节点：1、2、3、4、6、9、24、54；边：{1,2}, {1,3}, {2,4}, {2,6}, {3,6}, {3,9}, {4,24}, {6,24}, {6,54}, {9,54}；完整可见路径：1→2→4→24, 1→2→6→24, 1→2→6→54, 1→3→6→24, 1→3→6→54, 1→3→9→54\", \"step_2\": \"A的极大元为24.54\\nA的极小元为1\", \"step_3\": \"A的最大元为不存在\\nA的最小元为1\", \"step_4\": \"B的最大下界:1\\nB的最小上界:在A中不存在\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T01:34:48.867389",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_11.jpg",
+      "image_sha256": "212b03932fc8bfaa98547e7e8b9094bc14352724599ff914ea9431659aeaba7f",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_11.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 12,
+        "accepted_token_count": 12,
+        "mean_confidence": 0.974053,
+        "min_confidence": 0.5,
+        "joined_text": "16.(1/\n(2) A的极大元为24.54\nA的极小元为1\n24\n54\n(3) A的最大元为不存在\n4\n6\nA的最小元为1\n3\n(4) B的最大下界：1\nB的最小上界：在A中不存在",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "multiple_confident_ocr_tokens",
+          "dark_pixel_ratio": 0.030096,
+          "very_dark_pixel_ratio": 0.021007,
+          "lower_region_dark_pixel_ratio": 0.025979,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "(1)如图所示\n(2)A的极大元为24.54\nA的极小元为1\n(3)A的最大元为不存在\nA的最小元为1\n(4)B的最大下界:1\nB的最小上界:在A中不存在",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_11",
+        "question_id": "DM_1",
+        "subject": "DM",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "1→2→4→24, 1→2→6→24, 1→2→6→54, 1→3→6→24, 1→3→6→54, 1→3→9→54",
+      "diagram_facts": {
+        "step_1": "节点：1、2、3、4、6、9、24、54；边：{1,2}, {1,3}, {2,4}, {2,6}, {3,6}, {3,9}, {4,24}, {6,24}, {6,54}, {9,54}；完整可见路径：1→2→4→24, 1→2→6→24, 1→2→6→54, 1→3→6→24, 1→3→6→54, 1→3→9→54",
+        "step_4": "B的最大下界：1；B的最小上界：在A中不存在；完整可见路径：1→2→4→24, 1→2→6→24, 1→2→6→54, 1→3→6→24, 1→3→6→54, 1→3→9→54"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_1",
+          "instruction": "Extract the student's hand-drawn Hasse diagram exactly as drawn: list every labeled node (e.g., the numeric labels written inside or beside each circle), and record every drawn edge as an unordered node-label pair. Preserve the written element labels, any grouping or spacing, and the direction of edges (lower to upper) exactly as the student drew them. Do not add, remove, or normalize nodes or edges."
+        },
+        {
+          "id": "step_4",
+          "instruction": "Extract the concrete value or judgement word the student wrote for the least upper bound of the subset and for the greatest lower bound. Preserve numbers, nonexistence statements, symbols, and any set notation with separators exactly as written by the student."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_1"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2",
+        "step_4"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "节点：1, 2, 3, 4, 6, 9, 24, 54；边：1-2, 1-3, 2-4, 2-6, 3-6, 3-9, 6-24, 6-54, 4-24, 9-54",
+        "step_2": "A的极大元为24,54\nA的极小元为1",
+        "step_3": "A的最大元为不存在\nA的最小元为1",
+        "step_4": "B的最大下界：1\nB的最小上界：在A中不存在"
+      },
+      "facts": {
+        "step_1": "节点：1、2、3、4、6、9、24、54；边：{1,2}, {1,3}, {2,4}, {2,6}, {3,6}, {3,9}, {4,24}, {6,24}, {6,54}, {9,54}；完整可见路径：1→2→4→24, 1→2→6→24, 1→2→6→54, 1→3→6→24, 1→3→6→54, 1→3→9→54",
+        "step_2": "A的极大元为24.54\nA的极小元为1",
+        "step_3": "A的最大元为不存在\nA的最小元为1",
+        "step_4": "B的最大下界:1\nB的最小上界:在A中不存在"
+      }
+    },
+    "scores": [
+      8,
+      8,
+      8
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "节点：1、2、3、4、6、9、24、54；边：{1,2}, {1,3}, {2,4}, {2,6}, {3,6}, {3,9}, {4,24}, {6,24}, {6,54}, {9,54}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确的哈斯图节点与覆盖关系",
+            "dependency_status": "satisfied",
+            "reason": "节点集和全部10条覆盖边与标准哈斯图一致。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "A的极大元为24.54\nA的极小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元24和54，极小元1",
+            "dependency_status": "satisfied",
+            "reason": "结论正确，'.'仅是分隔符书写小瑕疵。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "A的最大元为不存在\nA的最小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "无最大元，最小元为1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "B的最大下界:1\nB的最小上界:在A中不存在",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B无最小上界，最大下界为1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案一致。"
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "节点：1、2、3、4、6、9、24、54；边：{1,2}, {1,3}, {2,4}, {2,6}, {3,6}, {3,9}, {4,24}, {6,24}, {6,54}, {9,54}；完整可见路径：1→2→4→24, 1→2→6→24, 1→2→6→54, 1→3→6→24, 1→3→6→54, 1→3→9→54",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确画出偏序集的哈斯图（节点与覆盖关系正确）",
+            "dependency_status": "satisfied",
+            "reason": "8个节点全部正确，列出的边覆盖了所有Hasse覆盖关系（1-2,1-3,2-4,2-6,3-6,3-9,4-24,6-24,6-54,9-54），与标准哈斯图等价，完整路径也印证了正确的偏序结构。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A的极大元为24.54\nA的极小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元为24和54，极小元为1",
+            "dependency_status": "satisfied",
+            "reason": "极大元24、54与极小元1均与标准答案一致（24.54仅是顿号/逗号书写差异，无语义影响）。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "A的最大元为不存在\nA的最小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "A没有最大元，最小元是1",
+            "dependency_status": "satisfied",
+            "reason": "结论与标准答案完全一致：无最大元（24与54不可比），最小元为1。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "B的最大下界:1\nB的最小上界:在A中不存在",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B的最小上界不存在，最大下界是1",
+            "dependency_status": "satisfied",
+            "reason": "最大下界1与最小上界不存在的结论均与标准答案一致。"
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "节点：1、2、3、4、6、9、24、54；边：{1,2}, {1,3}, {2,4}, {2,6}, {3,6}, {3,9}, {4,24}, {6,24}, {6,54}, {9,54}；完整可见路径：1→2→4→24, ...",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确的哈斯图覆盖关系",
+            "dependency_status": "satisfied",
+            "reason": "节点集合与所有覆盖边均与标准哈斯图一致，路径描述亦吻合。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "A的极大元为24.54\nA的极小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元为24和54，极小元为1",
+            "dependency_status": "satisfied",
+            "reason": "数值与结论完全正确，仅用'.'代替顿号，属非实质格式问题。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "A的最大元为不存在\nA的最小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "无最大元，最小元为1",
+            "dependency_status": "satisfied",
+            "reason": "结论与标准答案一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "B的最大下界:1\nB的最小上界:在A中不存在",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B无最小上界，最大下界为1",
+            "dependency_status": "satisfied",
+            "reason": "两项结论均与标准答案一致。"
+          }
+        ],
+        "total_score": 8
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "FORMAT_MINOR"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_DM_19.jpg",
+    "facts": "{\"step_1\": \"顶点：1,2,3,4,6,9,24,54；覆盖边：(1,2),(1,3),(2,4),(2,6),(3,6),(3,9),(4,24),(6,24),(6,54),(9,54)；完整可见路径：1 (底层) → 2,3 (中间层) → 4,6,9 (上层) → 24,54 (顶层)\", \"step_2\": {\"极大元\": [\"24\", \"54\"], \"极小元\": [\"1\"]}, \"step_3\": {\"最大元\": \"不存在\", \"最小元\": \"1\"}, \"step_4\": {\"最小上界\": \"不存在\", \"最大下界\": \"1\"}}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T01:36:53.149009",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_19.jpg",
+      "image_sha256": "407cbcc4005af2efa5fcfe24acc6ea1e70c04d501d8b3ef8ef925986339f3b1d",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_19.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 22,
+        "accepted_token_count": 22,
+        "mean_confidence": 0.940076,
+        "min_confidence": 0.5,
+        "joined_text": "16.\n(1)\n(2)\n极大元：24、54\n∵A=[1.2,3,4,6,9, 24,54]\n极小元：1\nR为A上整除关系\n<哈斯图为：\n(3)\n最大元：不存在\n24\n54\n最小元：1\n4\n1\n4\n(4)\nL\n3\n对于B={4.6.9]\n最↓上界为不存在\n最大下界为1",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "multiple_confident_ocr_tokens",
+          "dark_pixel_ratio": 0.026949,
+          "very_dark_pixel_ratio": 0.017095,
+          "lower_region_dark_pixel_ratio": 0.026242,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "（1）\n如图所示\n（2）\n极大元：24 、54\n极小元：1\n（3）\n最大元：不存在\n最小元：1\n（4）\n对于B={4,6,9}\n最小上界为不存在\n最大下界为 1",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_19",
+        "question_id": "DM_1",
+        "subject": "DM",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "1 (底层) → 2,3 (中间层) → 4,6,9 (上层) → 24,54 (顶层)",
+      "diagram_facts": {
+        "step_1": "顶点：1,2,3,4,6,9,24,54；覆盖边：(1,2),(1,3),(2,4),(2,6),(3,6),(3,9),(4,24),(6,24),(6,54),(9,54)；完整可见路径：1 (底层) → 2,3 (中间层) → 4,6,9 (上层) → 24,54 (顶层)",
+        "step_4": "最小上界为不存在，最大下界为1；完整可见路径：1 (底层) → 2,3 (中间层) → 4,6,9 (上层) → 24,54 (顶层)"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_1",
+          "instruction": "Extract from the student's handwritten answer the Hasse diagram they drew: record the set of labeled vertices and the covering edges (as ordered pairs of vertex labels) exactly as drawn, preserving upward direction implied by the drawing."
+        },
+        {
+          "id": "step_4",
+          "instruction": "Extract the student's handwritten conclusion for the least upper bound and the greatest lower bound of subset B: transcribe the exact element labels or negation phrases they wrote for each, preserving order as written."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_1"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "顶点：1, 2, 3, 4, 6, 9, 24, 54；边：(1,2), (1,3), (2,4), (2,6), (3,6), (3,9), (4,24), (6,24), (6,54), (9,54)",
+        "step_2": "极大元：24、54；极小元：1",
+        "step_3": "最大元：不存在；最小元：1",
+        "step_4": "对于B={4,6,9} 最小上界为不存在 最大下界为1"
+      },
+      "facts": {
+        "step_1": "顶点：1,2,3,4,6,9,24,54；覆盖边：(1,2),(1,3),(2,4),(2,6),(3,6),(3,9),(4,24),(6,24),(6,54),(9,54)；完整可见路径：1 (底层) → 2,3 (中间层) → 4,6,9 (上层) → 24,54 (顶层)",
+        "step_2": {
+          "极大元": [
+            "24",
+            "54"
+          ],
+          "极小元": [
+            "1"
+          ]
+        },
+        "step_3": {
+          "最大元": "不存在",
+          "最小元": "1"
+        },
+        "step_4": {
+          "最小上界": "不存在",
+          "最大下界": "1"
+        }
+      }
+    },
+    "scores": [
+      8,
+      8,
+      8
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "顶点：1,2,3,4,6,9,24,54；覆盖边：(1,2),(1,3),(2,4),(2,6),(3,6),(3,9),(4,24),(6,24),(6,54),(9,54)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "哈斯图的顶点集与覆盖边关系正确",
+            "dependency_status": "satisfied",
+            "reason": "顶点全集和全部10条覆盖边与标准哈斯图完全一致，分层结构也正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "极大元：24, 54；极小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元是24和54，极小元是1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "最大元：不存在，最小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "没有最大元，最小元是1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "最小上界：不存在，最大下界：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "子集B={4,6,9}没有最小上界，最大下界是1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "顶点：1,2,3,4,6,9,24,54；覆盖边：(1,2),(1,3),(2,4),(2,6),(3,6),(3,9),(4,24),(6,24),(6,54),(9,54)",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确的哈斯图（顶点集与覆盖关系）",
+            "dependency_status": "satisfied",
+            "reason": "顶点集和全部覆盖边与标准哈斯图一致，分层结构正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "极大元：24,54；极小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元是24和54，极小元是1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "最大元：不存在；最小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "没有最大元，最小元是1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "最小上界：不存在；最大下界：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B={4,6,9}的最小上界不存在，最大下界是1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致"
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "顶点：1,2,3,4,6,9,24,54；覆盖边：(1,2),(1,3),(2,4),(2,6),(3,6),(3,9),(4,24),(6,24),(6,54),(9,54)；完整可见路径：1 → 2,3 → 4,6,9 → 24,54",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "正确画出哈斯图的顶点与覆盖边",
+            "dependency_status": "satisfied",
+            "reason": "顶点集和全部覆盖边与标准哈斯图一致，层级结构正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "极大元：24, 54；极小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元为24和54，极小元为1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "最大元：不存在；最小元：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "无最大元，最小元为1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "最小上界：不存在；最大下界：1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B={4,6,9}无最小上界，最大下界为1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          }
+        ],
+        "total_score": 8
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_DM_21.jpg",
+    "facts": "{\"step_1\": \"节点：1、2、3、4、6、9、24、54；边：1-2、1-3、2-4、2-6、3-6、3-9、4-24、6-24、6-54、9-54（线段表示覆盖关系）；完整可见路径：1（底层）→2、3（中间层）→4、6、9（上层）→24、54（顶层），线段表示覆盖关系\", \"step_2\": \"极大元为24,54，极小元为1\", \"step_3\": \"最大元不存在，最小元为1（另写有“上界不存在，下界为1，故”，句子未写完整）\", \"step_4\": \"B={4,6,9}的最小上界不存在，最大下界为1\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T01:39:31.326311",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_21.jpg",
+      "image_sha256": "49fd05d6aa7071dd12437d8c03973f48a86823a30207176f42154b2d86bc6335",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_21.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 4,
+        "accepted_token_count": 4,
+        "mean_confidence": 0.95194,
+        "min_confidence": 0.5,
+        "joined_text": "16. 解：(1)\n(2) 极大元为24,54，极小元为1\n(3) 最大元不存在，最小元为 1<上界不存在，下界为1，故.\n(4)B={4,6,9}的最小上界不存在，最大下界为1",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.039484,
+          "very_dark_pixel_ratio": 0.024222,
+          "lower_region_dark_pixel_ratio": 0.039164,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "(1)如图所示\n(2)极大元为24,54，极小元为1\n(3)最大元不存在，最小元为1，上界不存在，下界为1，故\n(4)B={4,6,9}的最小上界不存在，最大下界为1",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_21",
+        "question_id": "DM_1",
+        "subject": "DM",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "1（底层）→2、3（中间层）→4、6、9（上层）→24、54（顶层），线段表示覆盖关系",
+      "diagram_facts": {
+        "step_1": "节点：1、2、3、4、6、9、24、54；边：1-2、1-3、2-4、2-6、3-6、3-9、4-24、6-24、6-54、9-54（线段表示覆盖关系）；完整可见路径：1（底层）→2、3（中间层）→4、6、9（上层）→24、54（顶层），线段表示覆盖关系",
+        "step_4": "B={4,6,9}的最小上界不存在，最大下界为1；完整可见路径：1（底层）→2、3（中间层）→4、6、9（上层）→24、54（顶层），线段表示覆盖关系"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_1",
+          "instruction": "Extract the Hasse diagram the student actually drew: record the set of labeled nodes/elements, and every edge (cover relation) between elements as written, preserving arrows, line directions, vertical placement, and any dashed or crossed-out lines exactly as they appear."
+        },
+        {
+          "id": "step_4",
+          "instruction": "Extract the student's stated least upper bound and greatest lower bound of subset B, including any explicit non-existence conclusion and the specific element(s) if given, preserving order and any symbols, arrows, or separators exactly as written."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_1"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_3",
+        "step_4"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "1,2,3,4,6,9,24,54；1→2,1→3,2→4,2→6,3→6,3→9,4→24,6→24,6→54,9→54",
+        "step_2": "极大元为24,54，极小元为1",
+        "step_3": "最大元不存在，最小元为1",
+        "step_4": "B={4,6,9}的最小上界不存在，最大下界为1"
+      },
+      "facts": {
+        "step_1": "节点：1、2、3、4、6、9、24、54；边：1-2、1-3、2-4、2-6、3-6、3-9、4-24、6-24、6-54、9-54（线段表示覆盖关系）；完整可见路径：1（底层）→2、3（中间层）→4、6、9（上层）→24、54（顶层），线段表示覆盖关系",
+        "step_2": "极大元为24,54，极小元为1",
+        "step_3": "最大元不存在，最小元为1（另写有“上界不存在，下界为1，故”，句子未写完整）",
+        "step_4": "B={4,6,9}的最小上界不存在，最大下界为1"
+      }
+    },
+    "scores": [
+      8,
+      8,
+      8
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "节点：1、2、3、4、6、9、24、54；边：1-2、1-3、2-4、2-6、3-6、3-9、4-24、6-24、6-54、9-54",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "哈斯图节点与覆盖关系正确",
+            "dependency_status": "satisfied",
+            "reason": "所有8个节点及全部10条覆盖边与标准哈斯图完全一致，分层描述也正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "极大元为24,54，极小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元是24和54，极小元是1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "最大元不存在，最小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "无最大元，最小元是1",
+            "dependency_status": "satisfied",
+            "reason": "结论与标准答案一致；未写完的句子不构成语义矛盾。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "B={4,6,9}的最小上界不存在，最大下界为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B的最小上界不存在，最大下界是1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致。"
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "节点：1、2、3、4、6、9、24、54；边：1-2、1-3、2-4、2-6、3-6、3-9、4-24、6-24、6-54、9-54",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "哈斯图节点与覆盖边正确",
+            "dependency_status": "satisfied",
+            "reason": "节点集合与全部覆盖关系均与标准哈斯图一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "极大元为24,54，极小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元24和54，极小元1",
+            "dependency_status": "satisfied",
+            "reason": "完全一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "最大元不存在，最小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "无最大元，最小元1",
+            "dependency_status": "satisfied",
+            "reason": "结论正确；未完成句子为抄录瑕疵不影响"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "B={4,6,9}的最小上界不存在，最大下界为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B无最小上界，最大下界为1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案一致"
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "节点：1、2、3、4、6、9、24、54；边：1-2、1-3、2-4、2-6、3-6、3-9、4-24、6-24、6-54、9-54（线段表示覆盖关系）",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "哈斯图覆盖关系：节点集和边集与标准答案一致",
+            "dependency_status": "satisfied",
+            "reason": "所有8个节点和10条覆盖边与标准哈斯图完全一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "极大元为24,54，极小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元是24和54，极小元是1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "最大元不存在，最小元为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "无最大元，最小元是1",
+            "dependency_status": "satisfied",
+            "reason": "结论与标准答案一致，未写完的旁注不影响结论"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "B={4,6,9}的最小上界不存在，最大下界为1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B={4,6,9}无最小上界，最大下界是1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致"
+          }
+        ],
+        "total_score": 8
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_DM_41.jpg",
+    "facts": "{\"step_1\": \"节点：1, 2, 3, 4, 6, 9, 24, 54；边：(1,2), (1,3), (2,4), (2,6), (3,6), (3,9), (4,24), (6,24), (6,54), (9,54)；完整可见路径：层级结构：1（底层）→2、3（第二层）→4、6、9（第三层）→24、54（第四层）；边连接上下层（覆盖关系）\", \"step_2\": \"极大元 24.54；极小元 1\", \"step_3\": \"最大元 不存在；最小元 1\", \"step_4\": \"4.6.9 等价；B={4,6,9}上界 24.54 最大上界无；下界 1,2,3 最小上界 1\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T01:41:47.056404",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_41.jpg",
+      "image_sha256": "268558902b22453d1e3c8ed8fe79efded0575db00ca4552ec64883175cf56818",
+      "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_41.json",
+      "ocr_engine": {
+        "name": "PaddleOCR",
+        "paddle_version": "3.3.1",
+        "paddleocr_version": "3.7.0",
+        "device": "cpu",
+        "mkldnn_enabled": false
+      },
+      "ocr_summary": {
+        "token_count": 10,
+        "accepted_token_count": 10,
+        "mean_confidence": 0.942067,
+        "min_confidence": 0.5,
+        "joined_text": "16. 解：哈斯图如下：\n4\n(2) 极大元 24.54\n极元\n(3) 最大元 不存在\n(4) 4.6.9 等所\nB=14.6.9最界上界24.54\n最大上界无\n下界1.2.3\n最小上界（",
+        "ocr_empty_candidate": false,
+        "blank_authenticity": {
+          "status": "confirmed_nonblank",
+          "reason": "substantial_visible_ink",
+          "dark_pixel_ratio": 0.034408,
+          "very_dark_pixel_ratio": 0.020277,
+          "lower_region_dark_pixel_ratio": 0.031585,
+          "thresholds": {
+            "dark_pixel": 210,
+            "very_dark_pixel": 120,
+            "lower_region_start_ratio": 0.18
+          }
+        }
+      },
+      "student_transcription": "(1)如图所示\n(2) 极大元 24.54\n极小元 1\n(3) 最大元 不存在\n最小元 1\n(4) 4.6.9 等价\nB={4,6,9}上界 24.54 最大上界无\n下界 1,2,3 最小上界 1",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": true,
+      "visual_fallback_needed": true,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_DM_41",
+        "question_id": "DM_1",
+        "subject": "DM",
+        "isimagine": true
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": true,
+      "diagram_model": "glm-4.6v",
+      "observed_execution_path": "层级结构：1（底层）→2、3（第二层）→4、6、9（第三层）→24、54（第四层）；边连接上下层（覆盖关系）",
+      "diagram_facts": {
+        "step_1": "节点：1, 2, 3, 4, 6, 9, 24, 54；边：(1,2), (1,3), (2,4), (2,6), (3,6), (3,9), (4,24), (6,24), (6,54), (9,54)；完整可见路径：层级结构：1（底层）→2、3（第二层）→4、6、9（第三层）→24、54（第四层）；边连接上下层（覆盖关系）",
+        "step_4": "B={4,6,9}的最小上界无，最大下界1，上界24、54，最大上界无，下界1、2、3，最小下界1；完整可见路径：层级结构：1（底层）→2、3（第二层）→4、6、9（第三层）→24、54（第四层）；边连接上下层（覆盖关系）"
+      },
+      "diagram_checklist": [
+        {
+          "id": "step_1",
+          "instruction": "Extract the student's handwritten Hasse diagram for the poset: list every node label exactly as written, and list every edge (covering relation) as an ordered pair of node labels in the direction drawn (lower element to upper element), preserving arrows, line direction, and layout order exactly as the student drew them."
+        },
+        {
+          "id": "step_4",
+          "instruction": "Extract the student's handwritten conclusion for the least upper bound and greatest lower bound of subset B, including the subset B they used, the exact bound values, and any statements of non-existence, preserving order and wording exactly as written."
+        }
+      ],
+      "vlm_fallback_used": true,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [
+        "step_1"
+      ],
+      "visual_fallback_conflicts": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "vlm_fallback_reason": [
+        "diagram_vlm_recovered"
+      ],
+      "vlm_fallback_facts": {
+        "step_1": "节点：1, 2, 3, 4, 6, 9, 24, 54；边：(1,2), (1,3), (2,4), (2,6), (3,6), (3,9), (4,24), (6,24), (6,54), (9,54)",
+        "step_2": "极大元 24.54\n极小元 1",
+        "step_3": "最大元 不存在\n最小元 1",
+        "step_4": "∵B={4,6,9}无最小上界 上界24,54 最大上界无 下界1,2,3 最小上界1"
+      },
+      "facts": {
+        "step_1": "节点：1, 2, 3, 4, 6, 9, 24, 54；边：(1,2), (1,3), (2,4), (2,6), (3,6), (3,9), (4,24), (6,24), (6,54), (9,54)；完整可见路径：层级结构：1（底层）→2、3（第二层）→4、6、9（第三层）→24、54（第四层）；边连接上下层（覆盖关系）",
+        "step_2": "极大元 24.54；极小元 1",
+        "step_3": "最大元 不存在；最小元 1",
+        "step_4": "4.6.9 等价；B={4,6,9}上界 24.54 最大上界无；下界 1,2,3 最小上界 1"
+      }
+    },
+    "scores": [
+      8,
+      8,
+      8.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "节点：1,2,3,4,6,9,24,54；边：(1,2),(1,3),(2,4),(2,6),(3,6),(3,9),(4,24),(6,24),(6,54),(9,54)；层级结构描述",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "画出偏序集的哈斯图",
+            "dependency_status": "satisfied",
+            "reason": "节点和覆盖边与标准哈斯图完全一致，层级描述正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "极大元 24.54；极小元 1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元是24和54，极小元是1",
+            "dependency_status": "satisfied",
+            "reason": "极大元与极小元均正确"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "最大元 不存在；最小元 1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "没有最大元，最小元是1",
+            "dependency_status": "satisfied",
+            "reason": "结论与标准答案一致"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "B={4,6,9}上界 24.54 最大上界无；下界 1,2,3 最小上界 1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "最小上界没有，最大下界是1",
+            "dependency_status": "satisfied",
+            "reason": "最小上界不存在与最大下界为1的结论实质正确；'最小上界1'系笔误（应为最大下界），属非实质性表述问题"
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "节点：1,2,3,4,6,9,24,54；边：(1,2),(1,3),(2,4),(2,6),(3,6),(3,9),(4,24),(6,24),(6,54),(9,54)；层级结构 1→2,3→4,6,9→24,54",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "哈斯图的节点与覆盖边关系",
+            "dependency_status": "satisfied",
+            "reason": "节点集合与全部10条覆盖边完全正确，层级结构等价于标准哈斯图。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "极大元 24.54；极小元 1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元为24和54，极小元为1",
+            "dependency_status": "satisfied",
+            "reason": "数值与结论完全正确，'.'为分隔符的格式小问题。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "最大元 不存在；最小元 1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "无最大元，最小元为1",
+            "dependency_status": "satisfied",
+            "reason": "结论与标准答案一致。"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "B={4,6,9}上界 24.54 最大上界无；下界 1,2,3 最小上界 1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B的最小上界不存在，最大下界为1",
+            "dependency_status": "satisfied",
+            "reason": "关键结论正确：最小上界无，最大下界为1（'最小上界1'为笔误，应为最大下界）。下界列举含2,3有误但下确界结论正确，按宽松评分给满分。"
+          }
+        ],
+        "total_score": 8
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "节点：1, 2, 3, 4, 6, 9, 24, 54；边：(1,2), (1,3), (2,4), (2,6), (3,6), (3,9), (4,24), (6,24), (6,54), (9,54)；层级结构：1→2、3→4、6、9→24、54",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "哈斯图节点与覆盖关系正确",
+            "dependency_status": "satisfied",
+            "reason": "节点集和全部覆盖边与标准哈斯图一致，层级结构描述正确"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "极大元 24.54；极小元 1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "极大元为24和54，极小元为1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案完全一致（句点为分隔符，非实质错误）"
+          },
+          {
+            "id": "step_3",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "最大元 不存在；最小元 1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "无最大元，最小元为1",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案一致"
+          },
+          {
+            "id": "step_4",
+            "score_given": 2.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "B={4,6,9}上界 24.54 最大上界无；下界 1,2,3 最小上界 1",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "B的最小上界不存在，最大下界为1",
+            "dependency_status": "satisfied",
+            "reason": "实质内容正确：最小上界不存在、最大下界为1；末尾“最小上界 1”应为“最小下界/最大下界 1”的标签笔误，非语义错误，从宽给满分"
+          }
+        ],
+        "total_score": 8.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_4": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_4": [
+        "FORMAT_MINOR",
+        "MATCH",
+        "FORMAT_MINOR"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0,
+      "step_4": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

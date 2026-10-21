@@ -1,0 +1,107 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T07:29:55.729629",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/OS_2/ANS_OS_83.jpg",
+  "image_sha256": "63c22504a475655cd3e1b4ad6b234e609518e3b5f13ca345eca1327c6abfd6f6",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/OS_2/ANS_OS_83.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 48,
+    "accepted_token_count": 46,
+    "mean_confidence": 0.908371,
+    "min_confidence": 0.5,
+    "joined_text": "6. 解，该系统是非抢式单通批处理.\n① 短作业优先：\nP4\n作出时间轴：\nP1\nP3\nP2\n7:00\np3\np4\n8:25\n8:45\n9.15\n9.55\nP进入\n进入\n进入\nPI络止.\nP3A\nPY终止\nP2\nP3开始 P4开始\nP2A\n调度顺序: P1(7:00-8:25),P3(8:25-8:45), P4(8:45-9:15),P2(9:15-9:55).\n平均周转时间：85+125+45+55)=\n×310=77.25(分钟).\n4\n平均带权周转时间：4×(\n85\n125\n45\n55\n) =\n197\n≈8.21\n85\n40\n+\n20\n30\n24\n② 高响应比优先：\n顺序2 P1→P4→P2>P3.\n平均同转时间\n×(85+35+105+115)=85()\n4",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.067271,
+      "very_dark_pixel_ratio": 0.046648,
+      "lower_region_dark_pixel_ratio": 0.067837,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解，该系统是非抢占式单道批处理。\n① 短作业优先：\n作业时间轴：\n如图所示下面位图的解释\n7:00 P2 P3 P4 8:25 8:45 9:15 9:55\nP2进入 P3进入 P4进入 P1结束 P4结束 P3结束 P2结束\n调度顺序：P1(7:00-8:25)，P3(8:25-8:45)，P4(8:45-9:15)，P2(9:15-9:55)。\n平均周转时间：1/4×(85+125+45+55)=1/4×310=77.25(分钟)。\n平均带权周转时间：1/4×(85/85 + 125/40 + 45/20 + 55/30)=197/24≈8.21。\n② 高响应比优先：\n顺序：P1→P4→P2→P3。\n平均周转时间：1/4×(85+35+105+115)=85(分钟)",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_OS_83",
+    "question_id": "OS_2",
+    "subject": "OS",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "P1→P3→P4→P2",
+  "diagram_facts": {
+    "step_1_a": "P1(7:00-8:25)；完整可见路径：P1→P3→P4→P2",
+    "step_1_b": "P1→P3→P4→P2",
+    "step_3_b": "P1→P4→P2→P3；完整可见路径：P1→P3→P4→P2"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's written content about which job is scheduled first at time 7:00 and the completion time of that job. Capture any text, table entry, or Gantt chart annotation showing the scheduling start and the completion time, preserving the exact time notation used (e.g., 8:25, 8时25分, or relative minutes)."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's written complete scheduling sequence for SJF. Preserve the exact order, separators (commas, arrows, dots, numbering), and direction as written."
+    },
+    {
+      "id": "step_3_b",
+      "instruction": "Extract the student's written complete scheduling sequence for HRRN. Preserve the exact order, separators (commas, arrows, dots, numbering), and direction as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_2_a",
+    "step_2_b",
+    "step_3_b",
+    "step_4_b"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1_a": "P1(7:00-8:25)",
+    "step_1_b": "P1, P3, P4, P2",
+    "step_2_a": "85, 25, 45, 55; 85/85, 125/40, 45/20, 55/30",
+    "step_2_b": "77.25(分钟), 197/24≈8.21",
+    "step_3_a": "未书写",
+    "step_3_b": "P1→P4→P2→P3",
+    "step_4_a": "未书写",
+    "step_4_b": "85(分钟), 未书写"
+  },
+  "facts": {
+    "step_1_a": "7:00 P2 P3 P4 8:25 8:45 9:15 9:55；P2进入 P3进入 P4进入 P1结束 P4结束 P3结束 P2结束；调度顺序：P1(7:00-8:25)",
+    "step_1_b": "P1(7:00-8:25)，P3(8:25-8:45)，P4(8:45-9:15)，P2(9:15-9:55)。",
+    "step_2_a": "平均周转时间：1/4×(85+125+45+55)=1/4×310=77.25(分钟)。平均带权周转时间：1/4×(85/85 + 125/40 + 45/20 + 55/30)=197/24≈8.21。",
+    "step_2_b": "平均周转时间：1/4×(85+125+45+55)=1/4×310=77.25(分钟)。平均带权周转时间：1/4×(85/85 + 125/40 + 45/20 + 55/30)=197/24≈8.21。",
+    "step_3_a": "未书写",
+    "step_3_b": "P1→P4→P2→P3。",
+    "step_4_a": "未书写",
+    "step_4_b": "平均周转时间：1/4×(85+35+105+115)=85(分钟)"
+  }
+}

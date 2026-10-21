@@ -1,0 +1,567 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T00:22:54.791578",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1456.jpg",
+  "image_sha256": "bb393cccb7aaa85b05d77f3d37be28be444234327e520dd60fc350e4df245cfe",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1456.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 48,
+    "accepted_token_count": 48,
+    "mean_confidence": 0.925635,
+    "min_confidence": 0.5,
+    "joined_text": "(一)取指\n 解:(1) G: 数据缓冲寄存器(DR)\n4)\nPC→AR\nb: 指令寄存器(IR)\nAR→主存储器M\nM→DR\n(: 地址寄存器(AR)\nDR→IR\n(二)取数\nd: 程序计数器(P()\nOD→AR\n(2)①主存储器M→数据缓冲寄存器DR\nAR→M\nM→DR\n先把指令从主存中取到数据寄存器中\n(三)执行\n② DR→IR\nDR→ACY\n再把指令从数据寄存器送到指令寄存器中\nAC→ALU\nAll进行加操作\n③IR→操作控制器\nALu→AC\n(5) 包含5个微命令的控制：5+1=6<2{3\n最后把指令从指令寄存器送到控制器中\n∴53位\n同理.其他3个互类分别54位、4位、2位\n(3) 数据存到生存中：① ALU→AC\n∴3+4+4+2=13位\n把ALu中的数据送到累加寄存器中\n外部条件占3位\n② AC→ DR 把累加寄存器中的数据送到数据寄存器中\n∴24-13-3=8位\n③ DR→M 把数据寄存器中的数据送到生存中\n∴下址字段占8位\n从主存中取数据：①M→DR 先送到数据寄存器中\n∴容量为28×24\n控制字段(B位)\n② DR→ALy 再从数据寄存器送到ALu中.\n=44bit\n3位\n4位\n4位\n23位\n8位\n互外类 斩炎\n互外炎列类外转移下址字段",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.131639,
+      "very_dark_pixel_ratio": 0.09358,
+      "lower_region_dark_pixel_ratio": 0.141338,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a: 数据缓冲寄存器（DR）\nb: 指令寄存器（IR）\nc: 地址寄存器（AR）\nd: 程序计数器（PC）\n\n(2) ① 主存储器M→数据缓冲寄存器DR\n把指令从主存中取到数据寄存器中\n② DR→IR\n再把指令从数据寄存器送到指令寄存器中\n③ IR→操作控制器\n最后把指令从指令寄存器送到控制器中\n\n(3) 数据存到主存中：① ALU→AC\n把ALU中的数据送到累加器中\n② AC→DR 把累加器中的数据送到数据寄存器中\n③ DR→M 把数据寄存器中的数据送到主存中\n从主存中取数据：① M→DR 送到数据寄存器中\n② DR→ALU 再从数据寄存器送到ALU中\n\n(4) （一）取指\nPC→AR\nAR→主存储器M\nM→DR\nDR→IR\n（二）取数\nOD→AR\nAR→M\nM→DR\n（三）执行\nDR→ALU\nAC→ALU\nALU进行加操作\nALU→AC\n\n(5) 包含5个微命令的控制表：5+1=6＜2³\n∴占3位\n同理，其他3个字段的16个信号，4位、4位\n∴3+4+4+2=13位\n外部条件3位\n∴24-13-3=8位\n下址字段8位\n∴容量为2^8×16=6144bit\n\n控制字段（6段）图如图所示。",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1456",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "∴下址字段占8位；∴容量为28×24；=44bit",
+    "step_5_core_compute": "∴24-13-3=8位",
+    "step_6_group12": "3位；4位",
+    "step_6_group34": "4位；23位",
+    "step_6_test_field": "外部条件占3位",
+    "step_6_addr_field": "∴下址字段占8位",
+    "step_6_layout": "控制字段(B位)；3位；4位；4位；23位；8位；互外类 斩炎；互外炎列类外转移下址字段"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 37.25,
+        "cells_left_to_right": [
+          {
+            "text": "解:(1) G: 数据缓冲寄存器(DR)",
+            "x_center": 196.5,
+            "confidence": 0.8446215391159058
+          },
+          {
+            "text": "4)",
+            "x_center": 575.0,
+            "confidence": 0.9743376970291138
+          },
+          {
+            "text": "(一)取指",
+            "x_center": 639.0,
+            "confidence": 0.9991152882575989
+          },
+          {
+            "text": "PC→AR",
+            "x_center": 650.5,
+            "confidence": 0.9211639165878296
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 84.83,
+        "cells_left_to_right": [
+          {
+            "text": "b: 指令寄存器(IR)",
+            "x_center": 235.0,
+            "confidence": 0.9305636286735535
+          },
+          {
+            "text": "M→DR",
+            "x_center": 645.0,
+            "confidence": 0.9977916479110718
+          },
+          {
+            "text": "AR→主存储器M",
+            "x_center": 679.0,
+            "confidence": 0.9778454899787903
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 130.5,
+        "cells_left_to_right": [
+          {
+            "text": "(: 地址寄存器(AR)",
+            "x_center": 245.0,
+            "confidence": 0.98569655418396
+          },
+          {
+            "text": "(二)取数",
+            "x_center": 630.5,
+            "confidence": 0.9959043264389038
+          },
+          {
+            "text": "DR→IR",
+            "x_center": 647.5,
+            "confidence": 0.9387452006340027
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 169.5,
+        "cells_left_to_right": [
+          {
+            "text": "d: 程序计数器(P()",
+            "x_center": 263.5,
+            "confidence": 0.920996367931366
+          },
+          {
+            "text": "OD→AR",
+            "x_center": 650.0,
+            "confidence": 0.9857050180435181
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 216.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2)①主存储器M→数据缓冲寄存器DR",
+            "x_center": 286.0,
+            "confidence": 0.9881994128227234
+          },
+          {
+            "text": "M→DR",
+            "x_center": 652.0,
+            "confidence": 0.9953526854515076
+          },
+          {
+            "text": "AR→M",
+            "x_center": 660.0,
+            "confidence": 0.9760506749153137
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 253.5,
+        "cells_left_to_right": [
+          {
+            "text": "先把指令从主存中取到数据寄存器中",
+            "x_center": 326.0,
+            "confidence": 0.9742810726165771
+          },
+          {
+            "text": "(三)执行",
+            "x_center": 632.5,
+            "confidence": 0.9962362051010132
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 297.0,
+        "cells_left_to_right": [
+          {
+            "text": "② DR→IR",
+            "x_center": 162.0,
+            "confidence": 0.8982539772987366
+          },
+          {
+            "text": "AC→ALU",
+            "x_center": 651.5,
+            "confidence": 0.9154086709022522
+          },
+          {
+            "text": "DR→ACY",
+            "x_center": 652.5,
+            "confidence": 0.7389342784881592
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 329.0,
+        "cells_left_to_right": [
+          {
+            "text": "再把指令从数据寄存器送到指令寄存器中",
+            "x_center": 342.0,
+            "confidence": 0.98921799659729
+          },
+          {
+            "text": "All进行加操作",
+            "x_center": 675.0,
+            "confidence": 0.8330217599868774
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 367.25,
+        "cells_left_to_right": [
+          {
+            "text": "③IR→操作控制器",
+            "x_center": 216.5,
+            "confidence": 0.98847895860672
+          },
+          {
+            "text": "ALu→AC",
+            "x_center": 660.5,
+            "confidence": 0.8475892543792725
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 413.33,
+        "cells_left_to_right": [
+          {
+            "text": "最后把指令从指令寄存器送到控制器中",
+            "x_center": 329.5,
+            "confidence": 0.9897637963294983
+          },
+          {
+            "text": "∴53位",
+            "x_center": 690.0,
+            "confidence": 0.9974743723869324
+          },
+          {
+            "text": "(5) 包含5个微命令的控制：5+1=6<2{3",
+            "x_center": 745.0,
+            "confidence": 0.9559162259101868
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 468.67,
+        "cells_left_to_right": [
+          {
+            "text": "(3) 数据存到生存中：① ALU→AC",
+            "x_center": 243.5,
+            "confidence": 0.9013435244560242
+          },
+          {
+            "text": "同理.其他3个互类分别54位、4位、2位",
+            "x_center": 761.5,
+            "confidence": 0.912995457649231
+          },
+          {
+            "text": "∴3+4+4+2=13位",
+            "x_center": 777.0,
+            "confidence": 0.9826603531837463
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 509.0,
+        "cells_left_to_right": [
+          {
+            "text": "把ALu中的数据送到累加寄存器中",
+            "x_center": 465.0,
+            "confidence": 0.8728334307670593
+          },
+          {
+            "text": "外部条件占3位",
+            "x_center": 831.5,
+            "confidence": 0.8138847351074219
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 538.75,
+        "cells_left_to_right": [
+          {
+            "text": "② AC→ DR 把累加寄存器中的数据送到数据寄存器中",
+            "x_center": 525.5,
+            "confidence": 0.9501063823699951
+          },
+          {
+            "text": "∴24-13-3=8位",
+            "x_center": 846.5,
+            "confidence": 0.9846420884132385
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 572.25,
+        "cells_left_to_right": [
+          {
+            "text": "③ DR→M 把数据寄存器中的数据送到生存中",
+            "x_center": 482.0,
+            "confidence": 0.9495871067047119
+          },
+          {
+            "text": "∴下址字段占8位",
+            "x_center": 837.0,
+            "confidence": 0.8732956051826477
+          }
+        ]
+      },
+      {
+        "row": 15,
+        "y_center": 614.5,
+        "cells_left_to_right": [
+          {
+            "text": "从主存中取数据：①M→DR 先送到数据寄存器中",
+            "x_center": 244.0,
+            "confidence": 0.965749979019165
+          },
+          {
+            "text": "控制字段(B位)",
+            "x_center": 673.5,
+            "confidence": 0.8515849113464355
+          },
+          {
+            "text": "∴容量为28×24",
+            "x_center": 841.5,
+            "confidence": 0.9792587757110596
+          },
+          {
+            "text": "=44bit",
+            "x_center": 878.0,
+            "confidence": 0.9967411160469055
+          }
+        ]
+      },
+      {
+        "row": 16,
+        "y_center": 665.58,
+        "cells_left_to_right": [
+          {
+            "text": "② DR→ALy 再从数据寄存器送到ALu中.",
+            "x_center": 351.5,
+            "confidence": 0.8877747654914856
+          },
+          {
+            "text": "3位",
+            "x_center": 580.5,
+            "confidence": 0.9633288383483887
+          },
+          {
+            "text": "4位",
+            "x_center": 629.5,
+            "confidence": 0.7627829909324646
+          },
+          {
+            "text": "4位",
+            "x_center": 685.0,
+            "confidence": 0.9905208349227905
+          },
+          {
+            "text": "23位",
+            "x_center": 745.5,
+            "confidence": 0.9871389269828796
+          },
+          {
+            "text": "8位",
+            "x_center": 834.5,
+            "confidence": 0.9913988709449768
+          }
+        ]
+      },
+      {
+        "row": 17,
+        "y_center": 699.0,
+        "cells_left_to_right": [
+          {
+            "text": "互外类 斩炎",
+            "x_center": 608.0,
+            "confidence": 0.5380305647850037
+          },
+          {
+            "text": "互外炎列类外转移下址字段",
+            "x_center": 763.5,
+            "confidence": 0.7181575894355774
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=196.5: 解:(1) G: 数据缓冲寄存器(DR) | x=575.0: 4) | x=639.0: (一)取指 | x=650.5: PC→AR\nRow 2: x=235.0: b: 指令寄存器(IR) | x=645.0: M→DR | x=679.0: AR→主存储器M\nRow 3: x=245.0: (: 地址寄存器(AR) | x=630.5: (二)取数 | x=647.5: DR→IR\nRow 4: x=263.5: d: 程序计数器(P() | x=650.0: OD→AR\nRow 5: x=286.0: (2)①主存储器M→数据缓冲寄存器DR | x=652.0: M→DR | x=660.0: AR→M\nRow 6: x=326.0: 先把指令从主存中取到数据寄存器中 | x=632.5: (三)执行\nRow 7: x=162.0: ② DR→IR | x=651.5: AC→ALU | x=652.5: DR→ACY\nRow 8: x=342.0: 再把指令从数据寄存器送到指令寄存器中 | x=675.0: All进行加操作\nRow 9: x=216.5: ③IR→操作控制器 | x=660.5: ALu→AC\nRow 10: x=329.5: 最后把指令从指令寄存器送到控制器中 | x=690.0: ∴53位 | x=745.0: (5) 包含5个微命令的控制：5+1=6<2{3\nRow 11: x=243.5: (3) 数据存到生存中：① ALU→AC | x=761.5: 同理.其他3个互类分别54位、4位、2位 | x=777.0: ∴3+4+4+2=13位\nRow 12: x=465.0: 把ALu中的数据送到累加寄存器中 | x=831.5: 外部条件占3位\nRow 13: x=525.5: ② AC→ DR 把累加寄存器中的数据送到数据寄存器中 | x=846.5: ∴24-13-3=8位\nRow 14: x=482.0: ③ DR→M 把数据寄存器中的数据送到生存中 | x=837.0: ∴下址字段占8位\nRow 15: x=244.0: 从主存中取数据：①M→DR 先送到数据寄存器中 | x=673.5: 控制字段(B位) | x=841.5: ∴容量为28×24 | x=878.0: =44bit\nRow 16: x=351.5: ② DR→ALy 再从数据寄存器送到ALu中. | x=580.5: 3位 | x=629.5: 4位 | x=685.0: 4位 | x=745.5: 23位 | x=834.5: 8位\nRow 17: x=608.0: 互外类 斩炎 | x=763.5: 互外炎列类外转移下址字段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "数据缓冲寄存器(DR)",
+    "step_1_b": "指令寄存器(IR)",
+    "step_1_c": "地址寄存器(AR)",
+    "step_1_d": "程序计数器(PC)",
+    "step_2_p1": "PC→AR, AR→主存储器M, M→DR, DR→IR",
+    "step_2_p2": "IR→操作控制器",
+    "step_3_read": "M→DR, DR→ALU",
+    "step_3_write": "ALU→AC, AC→DR, DR→M",
+    "step_4_operands": "DR→ALU, AC→ALU",
+    "step_4_result": "ALU进行加操作, ALU→AC",
+    "step_6_layout": "控制字段(13位)，字段划分：3位、4位、4位、2位、3位、8位（对应互斥类1、互斥类2、互斥类3、互斥类4、外部条件、下址字段）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_6_layout"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_1_c",
+    "step_1_d",
+    "step_2_p1",
+    "step_2_p2",
+    "step_3_read",
+    "step_3_write",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "数据缓冲寄存器(DR)",
+    "step_1_b": "指令寄存器(IR)",
+    "step_1_c": "地址寄存器(AR)",
+    "step_1_d": "程序计数器(PC)",
+    "step_2_p1": "主存储器M→数据缓冲寄存器DR 把指令从主存中取到数据寄存器中",
+    "step_2_p2": "IR→操作控制器 最后把指令从指令寄存器送到控制器中",
+    "step_3_read": "ALU→AC 把ALU中的数据送到累加寄存器中",
+    "step_3_write": "AC→DR 把累加寄存器中的数据送到数据寄存器中 DR→M 把数据寄存器中的数据送到主存中",
+    "step_4_operands": "AC→ALU DR→ALU",
+    "step_4_result": "ALU进行加操作 ALU→AC",
+    "step_5_core_field": "包含5个微命令的控制域：5+1=6<2³ ∴53位 同理，其他互斥类分别15位、4位、2位 ∴3+4+4+2=13位 外部条件3位 ∴2⁴-13-3=8位 下址字段8位",
+    "step_5_core_compute": "3+4+4+2=13位 外部条件3位 ∴2⁴-13-3=8位 下址字段8位",
+    "step_5_final": "容量为2⁸×24 = 6144bit",
+    "step_6_group12": "3位 4位 4位 3位 8位",
+    "step_6_group34": "4位 2位",
+    "step_6_test_field": "3位",
+    "step_6_addr_field": "8位",
+    "step_6_layout": "3位 4位 4位 3位 8位 5个微命令 8个微命令 14个微命令 3个微命令 下址字段"
+  },
+  "facts": {
+    "step_1_a": "数据缓冲寄存器（DR）",
+    "step_1_b": "指令寄存器（IR）",
+    "step_1_c": "地址寄存器（AR）",
+    "step_1_d": "程序计数器（PC）",
+    "step_2_p1": "① 主存储器M→数据缓冲寄存器DR；把指令从主存中取到数据寄存器中；② DR→IR；再把指令从数据寄存器送到指令寄存器中",
+    "step_2_p2": "③ IR→操作控制器；最后把指令从指令寄存器送到控制器中",
+    "step_3_read": "从主存中取数据：① M→DR 送到数据寄存器中；② DR→ALU 再从数据寄存器送到ALU中",
+    "step_3_write": "数据存到主存中：① ALU→AC；把ALU中的数据送到累加器中；② AC→DR 把累加器中的数据送到数据寄存器中；③ DR→M 把数据寄存器中的数据送到主存中",
+    "step_4_operands": "（三）执行；DR→ALU；AC→ALU",
+    "step_4_result": "ALU进行加操作；ALU→AC",
+    "step_5_core_field": "下址字段8位；∴容量为2^8×16=6144bit",
+    "step_5_core_compute": "包含5个微命令的控制表：5+1=6＜2³；∴占3位；同理，其他3个字段的16个信号，4位、4位；∴3+4+4+2=13位；外部条件3位；∴24-13-3=8位；下址字段8位",
+    "step_5_final": "容量为2^8×16=6144bit",
+    "step_6_group12": "包含5个微命令的控制表：5+1=6＜2³；∴占3位；同理，其他3个字段的16个信号，4位、4位",
+    "step_6_group34": "同理，其他3个字段的16个信号，4位、4位",
+    "step_6_test_field": "外部条件3位",
+    "step_6_addr_field": "下址字段8位",
+    "step_6_layout": "控制字段(B位)；3位；4位；4位；23位；8位；互外类 斩炎；互外炎列类外转移下址字段"
+  }
+}

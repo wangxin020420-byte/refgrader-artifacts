@@ -1,0 +1,97 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T08:47:29.795681",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_228.jpg",
+  "image_sha256": "01f04710c3ee07eccf06e7b7aa6d4578149ad82cddc5e4d1aef56cf2c31de911",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_228.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 26,
+    "accepted_token_count": 25,
+    "mean_confidence": 0.868944,
+    "min_confidence": 0.5,
+    "joined_text": "5\n4.ck.\n1. 乔母斯基|型文法\n2.\n个\nb\n{s.x:=A,x+1](1)\na\nA\n1A\nA1\nS\n{A.x: =A,,x+sx}(3)\naAb\nS\n1\n(4)3A.x=sx}{S,x:=A,x+1]\nC\nC\n↓\nJ\nCi)\n{5.x:=0}{s.x=0}\n(2)\n127",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.044345,
+      "very_dark_pixel_ratio": 0.030226,
+      "lower_region_dark_pixel_ratio": 0.036259,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1.乔姆斯基1型文法 | 2.如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_228",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "树形结构，根节点S，子节点a、A、b；A的子节点A1、S；A1的子节点S；S的子节点c；另一S（A的子节点）的子节点a、A、b",
+  "diagram_facts": {
+    "step_2_component_1": "语法树结构：根S，子节点a、A、b；A的子节点A1、S；A1的子节点S；S的子节点c；另一S（A的子节点）的子节点a、A、b（按手绘连线呈现）；完整可见路径：树形结构，根节点S，子节点a、A、b；A的子节点A1、S；A1的子节点S；S的子节点c；另一S（A的子节点）的子节点a、A、b",
+    "step_2_component_2": "属性值标注：S.x:=A.x+1 (1)，A.x:=A1.x+S.x (3)，A.x:=S.x (4)，S.x:=0 (2)，各节点旁对应标注；完整可见路径：树形结构，根节点S，子节点a、A、b；A的子节点A1、S；A1的子节点S；S的子节点c；另一S（A的子节点）的子节点a、A、b"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's representation of the syntax tree structure for the given string, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact node labels, ordering, and nesting as written, including any attribute annotations if present."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node in the syntax tree, including any values for root S.x, outer A.x, inner S.x, inner A.x, and leaf S.x nodes. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and numerical values as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_final_1",
+    "step_2_component_1"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "未书写",
+    "step_1_final_1": "S-属性文法",
+    "step_2_component_1": "S\na\nA\nA1\nS\na\nA\nS\nc\nc\nb\nb\nb",
+    "step_2_component_2": "未书写"
+  },
+  "facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "未书写",
+    "step_1_final_1": "乔姆斯基1型文法",
+    "step_2_component_1": "语法树结构：根S，子节点a、A、b；A的子节点A1、S；A1的子节点S；S的子节点c；另一S（A的子节点）的子节点a、A、b（按手绘连线呈现）；完整可见路径：树形结构，根节点S，子节点a、A、b；A的子节点A1、S；A1的子节点S；S的子节点c；另一S（A的子节点）的子节点a、A、b",
+    "step_2_component_2": "属性值标注：S.x:=A.x+1 (1)，A.x:=A1.x+S.x (3)，A.x:=S.x (4)，S.x:=0 (2)，各节点旁对应标注；完整可见路径：树形结构，根节点S，子节点a、A、b；A的子节点A1、S；A1的子节点S；S的子节点c；另一S（A的子节点）的子节点a、A、b"
+  }
+}

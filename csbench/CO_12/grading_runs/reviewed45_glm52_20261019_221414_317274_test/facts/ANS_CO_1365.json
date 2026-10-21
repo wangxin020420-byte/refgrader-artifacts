@@ -1,0 +1,400 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T20:15:50.190091",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1365.jpg",
+  "image_sha256": "663f3f5bfe347ddbb3c663e4b153e010bf4b75f44bd1f49fb0d11e7a569b4bcc",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1365.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 25,
+    "accepted_token_count": 25,
+    "mean_confidence": 0.871049,
+    "min_confidence": 0.5,
+    "joined_text": "5. J. DK，数据：6 LR白 C. AR地址寄存器\nd: PC程序计数\n2) 主存M→ DR→R→操作控制器\n3) 存入主存：AC→DR→M\n取：M→DR→ALu→AC\n4) ①M→ DR ② DR(OD) AR ③ M→DR([OD]) ④ DR→ALu ①ALu,AX [OD] ⑥ALU→AC\n①ALu→状态寄存器\n5) 微命令存储在控制存储器中\n而共有30个微命令，24<30<25.\n容量：位表系微指令\n∴5×30=150b容量为1506.\n已知微命令30个且下址字段司在\n先设计控制字段 已知共4个互斥类\n控制后下储器中跳转\n各分别为5个，8个14个，3个微命令\n故5位于下址给出，\n已知一用来表示无微命令产生\n11-5=6位用来利断是否进行跳转\n长实际数量为：66,9.15.4\n即\n即需位数：3，4,4,2(2)进制表).\n6 5 (位数)\n3442\n已知微命令字长：24位\n故下址字段位长24-(3+4+4+2)=11位：控制段",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.109203,
+      "very_dark_pixel_ratio": 0.070629,
+      "lower_region_dark_pixel_ratio": 0.114809,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "2) 主存 M→DR→IR→操作控制器\n3) 存入主存：AC→DR→M\n取：M→DR→ALU→AC\n4) ① M→DR ② DR→AR ③ M→DR[COD] ④ DR→ALU ⑤ ALU,AX,[OD] ⑥ ALU→AC\n⑦ ALU→状态寄存器\n5) 微命令全存储在控制存储器中\n而共有30个微命令，2^4<30<2^5\n容量为5位，5位寻址表示微指令\n∴ 5×30=150b 容量为150b\n6) 双字设计控制字段，已知共有11条条件转移微命令分别占5个，8个，14个，3个微命令\n已知一般用来表示无条件转移\n故实际字段为：6、8、14、6、9、15、4\n即需位数：3、4、4、2、(2进制数)\n故微命令字段长：24位\n故下址字段长 24-(3+4+4+2)=11位\n已知微命令 30个且 下地址段在控制后需器中跳转\n故 5位行 T-地址输出\n11-5=6位用来判断是否进行跳转\n即\n位数图如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1365",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "5) 微命令存储在控制存储器中；而共有30个微命令，24<30<25.；容量：位表系微指令；∴5×30=150b容量为1506.",
+    "step_5_core_compute": "已知微命令字长：24位；故下址字段位长24-(3+4+4+2)=11位：控制段",
+    "step_6_group12": "各分别为5个，8个14个，3个微命令；长实际数量为：66,9.15.4；即需位数：3，4,4,2(2)进制表).",
+    "step_6_group34": "各分别为5个，8个14个，3个微命令；长实际数量为：66,9.15.4；即需位数：3，4,4,2(2)进制表).",
+    "step_6_test_field": "11-5=6位用来利断是否进行跳转；6 5 (位数)",
+    "step_6_addr_field": "故下址字段位长24-(3+4+4+2)=11位：控制段",
+    "step_6_layout": "已知微命令字长：24位；故下址字段位长24-(3+4+4+2)=11位：控制段；3442"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or calculation regarding the control memory capacity determined by the next-address field bits. Include any numbers, powers, formulas, or textual statements exactly as written."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten derivation or formula relating the microinstruction word length to the field bit counts to obtain the next-address field bits. Include the formula, substitution relation, or computation trace exactly as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit counts for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying text or labels for each group."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit counts for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying text or labels for each group."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit count for the discrimination test or external condition field. Preserve the exact number and any accompanying text or labels."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit count for the next-address field. Preserve the exact number and any accompanying text or labels."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit counts for each field. Preserve any table, diagram, or textual description exactly as written, including sums or equations."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 44.75,
+        "cells_left_to_right": [
+          {
+            "text": "d: PC程序计数",
+            "x_center": 167.5,
+            "confidence": 0.8567566871643066
+          },
+          {
+            "text": "5. J. DK，数据：6 LR白 C. AR地址寄存器",
+            "x_center": 365.5,
+            "confidence": 0.6599274277687073
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 122.75,
+        "cells_left_to_right": [
+          {
+            "text": "3) 存入主存：AC→DR→M",
+            "x_center": 168.0,
+            "confidence": 0.895297110080719
+          },
+          {
+            "text": "2) 主存M→ DR→R→操作控制器",
+            "x_center": 201.0,
+            "confidence": 0.9018910527229309
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 209.5,
+        "cells_left_to_right": [
+          {
+            "text": "取：M→DR→ALu→AC",
+            "x_center": 196.0,
+            "confidence": 0.918708086013794
+          },
+          {
+            "text": "4) ①M→ DR ② DR(OD) AR ③ M→DR([OD]) ④ DR→ALu ①ALu,AX [OD] ⑥ALU→AC",
+            "x_center": 479.0,
+            "confidence": 0.8529237508773804
+          },
+          {
+            "text": "①ALu→状态寄存器",
+            "x_center": 739.0,
+            "confidence": 0.8833564519882202
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 283.0,
+        "cells_left_to_right": [
+          {
+            "text": "5) 微命令存储在控制存储器中",
+            "x_center": 206.0,
+            "confidence": 0.8831966519355774
+          },
+          {
+            "text": "而共有30个微命令，24<30<25.",
+            "x_center": 219.5,
+            "confidence": 0.8778872489929199
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 355.75,
+        "cells_left_to_right": [
+          {
+            "text": "容量：位表系微指令",
+            "x_center": 269.0,
+            "confidence": 0.7315298914909363
+          },
+          {
+            "text": "∴5×30=150b容量为1506.",
+            "x_center": 317.5,
+            "confidence": 0.9519875049591064
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 450.4,
+        "cells_left_to_right": [
+          {
+            "text": "各分别为5个，8个14个，3个微命令",
+            "x_center": 246.0,
+            "confidence": 0.9009242653846741
+          },
+          {
+            "text": "先设计控制字段 已知共4个互斥类",
+            "x_center": 280.0,
+            "confidence": 0.8270624279975891
+          },
+          {
+            "text": "控制后下储器中跳转",
+            "x_center": 630.5,
+            "confidence": 0.8539120554924011
+          },
+          {
+            "text": "故5位于下址给出，",
+            "x_center": 668.0,
+            "confidence": 0.7868573665618896
+          },
+          {
+            "text": "已知微命令30个且下址字段司在",
+            "x_center": 697.5,
+            "confidence": 0.8352171182632446
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 550.75,
+        "cells_left_to_right": [
+          {
+            "text": "已知一用来表示无微命令产生",
+            "x_center": 187.0,
+            "confidence": 0.9050282835960388
+          },
+          {
+            "text": "长实际数量为：66,9.15.4",
+            "x_center": 244.5,
+            "confidence": 0.7953331470489502
+          },
+          {
+            "text": "即需位数：3，4,4,2(2)进制表).",
+            "x_center": 294.5,
+            "confidence": 0.8131580352783203
+          },
+          {
+            "text": "即",
+            "x_center": 553.0,
+            "confidence": 0.9991313815116882
+          },
+          {
+            "text": "11-5=6位用来利断是否进行跳转",
+            "x_center": 746.5,
+            "confidence": 0.9622206091880798
+          },
+          {
+            "text": "6 5 (位数)",
+            "x_center": 768.5,
+            "confidence": 0.8623968362808228
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 632.17,
+        "cells_left_to_right": [
+          {
+            "text": "已知微命令字长：24位",
+            "x_center": 188.5,
+            "confidence": 0.9170317053794861
+          },
+          {
+            "text": "故下址字段位长24-(3+4+4+2)=11位：控制段",
+            "x_center": 359.5,
+            "confidence": 0.9045490026473999
+          },
+          {
+            "text": "3442",
+            "x_center": 628.0,
+            "confidence": 0.999950647354126
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=167.5: d: PC程序计数 | x=365.5: 5. J. DK，数据：6 LR白 C. AR地址寄存器\nRow 2: x=168.0: 3) 存入主存：AC→DR→M | x=201.0: 2) 主存M→ DR→R→操作控制器\nRow 3: x=196.0: 取：M→DR→ALu→AC | x=479.0: 4) ①M→ DR ② DR(OD) AR ③ M→DR([OD]) ④ DR→ALu ①ALu,AX [OD] ⑥ALU→AC | x=739.0: ①ALu→状态寄存器\nRow 4: x=206.0: 5) 微命令存储在控制存储器中 | x=219.5: 而共有30个微命令，24<30<25.\nRow 5: x=269.0: 容量：位表系微指令 | x=317.5: ∴5×30=150b容量为1506.\nRow 6: x=246.0: 各分别为5个，8个14个，3个微命令 | x=280.0: 先设计控制字段 已知共4个互斥类 | x=630.5: 控制后下储器中跳转 | x=668.0: 故5位于下址给出， | x=697.5: 已知微命令30个且下址字段司在\nRow 7: x=187.0: 已知一用来表示无微命令产生 | x=244.5: 长实际数量为：66,9.15.4 | x=294.5: 即需位数：3，4,4,2(2)进制表). | x=553.0: 即 | x=746.5: 11-5=6位用来利断是否进行跳转 | x=768.5: 6 5 (位数)\nRow 8: x=188.5: 已知微命令字长：24位 | x=359.5: 故下址字段位长24-(3+4+4+2)=11位：控制段 | x=628.0: 3442"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "DR数据寄存器",
+    "step_1_b": "IR指令寄存器",
+    "step_1_c": "AR地址寄存器",
+    "step_1_d": "PC程序计数器",
+    "step_2_p1": "主存M→DR→IR",
+    "step_2_p2": "IR→操作控制器",
+    "step_3_read": "M→DR→ALU→AC",
+    "step_3_write": "AC→DR→M",
+    "step_4_operands": "DR→ALU, AX[OD]",
+    "step_4_result": "ALU→AC",
+    "step_6_layout": "控制字段：3、4、4、2位；下址字段：11位；微指令字长24位"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a, including any register name, abbreviation, or alias written next to or for register a. Preserve the exact wording and any symbols."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b, including any register name, abbreviation, or alias written next to or for register b. Preserve the exact wording and any symbols."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c, including any register name, abbreviation, or alias written next to or for register c. Preserve the exact wording and any symbols."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d, including any register name, abbreviation, or alias written next to or for register d. Preserve the exact wording and any symbols."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction is read from main memory and sent to the instruction register. Preserve all arrows, dots, order, direction, and any text descriptions such as '送至' or '送入' exactly as written."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction or operation code is sent from the instruction register to the operation controller. Preserve all arrows, dots, order, direction, and any text descriptions exactly as written."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for memory read access between the arithmetic unit and main memory. Preserve all arrows, dots, order, direction, and any text descriptions exactly as written."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for memory write access between the arithmetic unit and main memory. Preserve all arrows, dots, order, direction, and any text descriptions exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence showing how the two operands are sent to the ALU. Preserve all arrows, dots, order, direction, and any text descriptions exactly as written."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence showing the addition operation and result return. Preserve all arrows, dots, order, direction, and any text descriptions exactly as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit counts for each field. Preserve any table, diagram, or textual description exactly as written, including sums or equations."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1_a",
+    "step_1_b",
+    "step_1_c",
+    "step_1_d",
+    "step_5_core_compute",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "visual_fallback_conflicts": [
+    "step_2_p1",
+    "step_3_read",
+    "step_3_write",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered",
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "DR数据寄存器",
+    "step_1_b": "IR指令寄存器",
+    "step_1_c": "AR地址寄存器",
+    "step_1_d": "PC程序计数器",
+    "step_2_p1": "主存M→DR→IR→操作控制器",
+    "step_2_p2": "未书写",
+    "step_3_read": "M→DR→ALU→AC",
+    "step_3_write": "AC→DR→M",
+    "step_4_operands": "①M→DR ②DR→AR ③M→DR[OD] ④DR→ALU ⑤ALU,AX[OD]",
+    "step_4_result": "⑥ALU→AC",
+    "step_5_core_field": "而共有30个微命令，2^4 < 30 < 2^5，故需5位寻址微指令",
+    "step_5_core_compute": "容量为2^5×30=100b",
+    "step_5_final": "容量为100b",
+    "step_6_group12": "3、4",
+    "step_6_group34": "4、2",
+    "step_6_test_field": "6",
+    "step_6_addr_field": "11",
+    "step_6_layout": "3|4|4|2|6|5 (位表) 控制字段"
+  },
+  "facts": {
+    "step_1_a": "DR数据寄存器",
+    "step_1_b": "IR指令寄存器",
+    "step_1_c": "AR地址寄存器",
+    "step_1_d": "PC程序计数器",
+    "step_2_p1": "主存 M→DR→IR",
+    "step_2_p2": "IR→操作控制器",
+    "step_3_read": "取：M→DR→ALU→AC",
+    "step_3_write": "存入主存：AC→DR→M",
+    "step_4_operands": "① M→DR ② DR→AR ③ M→DR[COD] ④ DR→ALU ⑤ ALU,AX,[OD]",
+    "step_4_result": "⑥ ALU→AC ⑦ ALU→状态寄存器",
+    "step_5_core_field": "微命令全存储在控制存储器中 而共有30个微命令，2^4<30<2^5 容量为5位，5位寻址表示微指令",
+    "step_5_core_compute": "已知微命令字长：24位；故下址字段位长24-(3+4+4+2)=11位：控制段",
+    "step_5_final": "∴ 5×30=150b 容量为150b",
+    "step_6_group12": "已知共有11条条件转移微命令分别占5个，8个，14个，3个微命令 已知一般用来表示无条件转移 故实际字段为：6、8、14、6、9、15、4 即需位数：3、4、4、2、(2进制数)",
+    "step_6_group34": "已知共有11条条件转移微命令分别占5个，8个，14个，3个微命令 已知一般用来表示无条件转移 故实际字段为：6、8、14、6、9、15、4 即需位数：3、4、4、2、(2进制数)",
+    "step_6_test_field": "11-5=6位用来利断是否进行跳转；6 5 (位数)",
+    "step_6_addr_field": "故下址字段长 24-(3+4+4+2)=11位 已知微命令 30个且 下地址段在控制后需器中跳转 故 5位行 T-地址输出 11-5=6位用来判断是否进行跳转",
+    "step_6_layout": "已知微命令字长：24位；故下址字段位长24-(3+4+4+2)=11位：控制段；3442"
+  }
+}

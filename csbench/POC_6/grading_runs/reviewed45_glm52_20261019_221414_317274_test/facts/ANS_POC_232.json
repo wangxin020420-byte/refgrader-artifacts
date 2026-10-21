@@ -1,0 +1,99 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T08:49:25.374670",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_232.jpg",
+  "image_sha256": "98f704ba5bd56c03b5e4a50832c206ec31bbee497845ea2544c7e1eefb8c8bdd",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_232.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 15,
+    "accepted_token_count": 15,
+    "mean_confidence": 0.965659,
+    "min_confidence": 0.5,
+    "joined_text": "Sx=2\n1. S. x 和A. x 都是综合属性\n2.\n且该文法中无继承属性\na\nA\nx=1 b\n所以G5为S一属性文法\nAx=0\nSx=1\nsx=0a Ax=0 b\nS\nx=0\nC\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "multiple_confident_ocr_tokens",
+      "dark_pixel_ratio": 0.033734,
+      "very_dark_pixel_ratio": 0.021892,
+      "lower_region_dark_pixel_ratio": 0.027192,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1.S.x和A.x都是综合属性且该文法中无继承属性所以G5为S-属性文法 | 2.如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_232",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "树形结构：根节点S x=2，子节点a、A x=1、b；A x=1的子节点A x=0和S x=1；A x=0的子节点S x=0（S x=0的子节点C）；S x=1的子节点a、A x=0、b；A x=0的子节点S x=0（S x=0的子节点C）",
+  "diagram_facts": {
+    "step_2_component_1": "根节点S，子节点a、A、b；A的子节点A、S；A的子节点S；S的子节点a、A、b；A的子节点S；完整可见路径：树形结构：根节点S x=2，子节点a、A x=1、b；A x=1的子节点A x=0和S x=1；A x=0的子节点S x=0（S x=0的子节点C）；S x=1的子节点a、A x=0、b；A x=0的子节点S x=0（S x=0的子节点C）",
+    "step_2_component_2": "S.x=2, A.x=1, A.x=0, S.x=1, S.x=0, A.x=0, S.x=0；完整可见路径：树形结构：根节点S x=2，子节点a、A x=1、b；A x=1的子节点A x=0和S x=1；A x=0的子节点S x=0（S x=0的子节点C）；S x=1的子节点a、A x=0、b；A x=0的子节点S x=0（S x=0的子节点C）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's representation of the syntax tree structure for the given string, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact node labels, ordering, and nesting as written, including any attribute annotations if present."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node in the syntax tree, including any values for root S.x, outer A.x, inner S.x, inner A.x, and leaf S.x nodes. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and numerical values as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_core_1",
+    "step_1_support_1",
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "S.x 和A.x都是原始属性 且该文法中无继承属性",
+    "step_1_core_1": "S.x 和A.x都是原始属性 且该文法中无继承属性",
+    "step_1_final_1": "S-属性文法",
+    "step_2_component_1": "S x=2\n/   \\\na    A x=1\n     / \\\n    A x=0  S x=1\n   / \\    / \\\n  S x=0 a A x=0 b\n  |       |\n  c       S x=0\n          |\n          c",
+    "step_2_component_2": "S x=2, A x=1, A x=0, S x=1, S x=0, A x=0, S x=0"
+  },
+  "facts": {
+    "step_1_support_1": "S.x和A.x都是综合属性且该文法中无继承属性",
+    "step_1_core_1": "S.x和A.x都是综合属性且该文法中无继承属性所以G5为S-属性文法",
+    "step_1_final_1": "S-属性文法",
+    "step_2_component_1": "根节点S，子节点a、A、b；A的子节点A、S；A的子节点S；S的子节点a、A、b；A的子节点S；完整可见路径：树形结构：根节点S x=2，子节点a、A x=1、b；A x=1的子节点A x=0和S x=1；A x=0的子节点S x=0（S x=0的子节点C）；S x=1的子节点a、A x=0、b；A x=0的子节点S x=0（S x=0的子节点C）",
+    "step_2_component_2": "S.x=2, A.x=1, A.x=0, S.x=1, S.x=0, A.x=0, S.x=0；完整可见路径：树形结构：根节点S x=2，子节点a、A x=1、b；A x=1的子节点A x=0和S x=1；A x=0的子节点S x=0（S x=0的子节点C）；S x=1的子节点a、A x=0、b；A x=0的子节点S x=0（S x=0的子节点C）"
+  }
+}

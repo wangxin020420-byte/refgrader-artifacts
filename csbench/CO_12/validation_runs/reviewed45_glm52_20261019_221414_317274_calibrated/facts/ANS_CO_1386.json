@@ -1,0 +1,461 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T00:05:05.688047",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1386.jpg",
+  "image_sha256": "aa1500857b0f0df8f1996a70a5b9481f114dd452aaeb20c04fce4c5438416613",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1386.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 29,
+    "accepted_token_count": 29,
+    "mean_confidence": 0.943887,
+    "min_confidence": 0.5,
+    "joined_text": "(1) a:DK寄存器\nb: IK等存器\nC:OR寄存器\nd: AR离存器\n(2)\n指令从主存取出进入a寄存器中暂存，\n再被传送至b寄存器中编译为微指令格式，最后\n被送入控制器中。\n(3) 首先数据从主存中被读出(读状态)被送入\na寄存器，进而被送入运算器进行相关运算\n算出结果后运算器向状态寄存器发出写指令，将\n运算结果通过AC写入主存中。\n(4)\n数据从主存中依据OD位置被取出，进而被送入ALU中\n与AX中的数据作运算，得出结果后改变AX中的值\n为运算结果。\n(5)\n5 3\n3+4+4+2=13\n外部条件3个⇒工位.\n8 4\n14 4\n24-13-2=9 控制器的容量=29×24位.\n3 2\n控制字段 外部条件 下址字段\n(6)\n13位\n2位\n9位",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.080183,
+      "very_dark_pixel_ratio": 0.052882,
+      "lower_region_dark_pixel_ratio": 0.090501,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "（1）\na：DR 寄存器\nb：IR 寄存器\nc：DR 寄存器\nd：AR 寄存器\n\n（2）\n指令从主存取出送入IR寄存器中暂存，\n再被传送至b寄存器中翻译为微指令格式，最后\n被送入控制器中。\n\n（3）\n首先数据从主存中被读出（读状态）被送入\na寄存器，进而被送入运算器进行相关运算，\n算出结果后运算器向状态寄存器发出写指令，将\n运算结果通过AC写入主存中。\n\n（4）\n数据从主存中依据OD位置被取出，进而被送入ALU中\n与AX中的数据作运算，得出结果后改变AX中的值\n为运算结果。\n\n（5）\n5  3\n8  4\n14 4\n3  2\n3+4+4+2=13      外部条件3个=>2位。\n24-13-2=9       控制器的容量=2^9×24位。\n（6）\n控制字段 | 外部条件 | 下址字段\n13位 | 2位 | 9位",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1386",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "24-13-2=9 控制器的容量=29×24位.",
+    "step_5_core_compute": "3+4+4+2=13；24-13-2=9",
+    "step_6_group12": "5 3；8 4",
+    "step_6_group34": "14 4；3 2",
+    "step_6_test_field": "2位",
+    "step_6_addr_field": "9位",
+    "step_6_layout": "控制字段 外部条件 下址字段；13位 2位 9位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 61.5,
+        "cells_left_to_right": [
+          {
+            "text": "(1) a:DK寄存器",
+            "x_center": 122.0,
+            "confidence": 0.8443082571029663
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 105.5,
+        "cells_left_to_right": [
+          {
+            "text": "b: IK等存器",
+            "x_center": 153.5,
+            "confidence": 0.7351930141448975
+          },
+          {
+            "text": "C:OR寄存器",
+            "x_center": 156.0,
+            "confidence": 0.8583819270133972
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 168.83,
+        "cells_left_to_right": [
+          {
+            "text": "(2)",
+            "x_center": 34.0,
+            "confidence": 0.9985325932502747
+          },
+          {
+            "text": "d: AR离存器",
+            "x_center": 160.5,
+            "confidence": 0.8563227653503418
+          },
+          {
+            "text": "指令从主存取出进入a寄存器中暂存，",
+            "x_center": 269.0,
+            "confidence": 0.9531586766242981
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 218.5,
+        "cells_left_to_right": [
+          {
+            "text": "再被传送至b寄存器中编译为微指令格式，最后",
+            "x_center": 333.0,
+            "confidence": 0.9629554748535156
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 254.0,
+        "cells_left_to_right": [
+          {
+            "text": "被送入控制器中。",
+            "x_center": 171.5,
+            "confidence": 0.9945685863494873
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 295.0,
+        "cells_left_to_right": [
+          {
+            "text": "(3) 首先数据从主存中被读出(读状态)被送入",
+            "x_center": 296.5,
+            "confidence": 0.9594171643257141
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 329.5,
+        "cells_left_to_right": [
+          {
+            "text": "a寄存器，进而被送入运算器进行相关运算",
+            "x_center": 335.0,
+            "confidence": 0.9801644682884216
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 363.0,
+        "cells_left_to_right": [
+          {
+            "text": "算出结果后运算器向状态寄存器发出写指令，将",
+            "x_center": 356.5,
+            "confidence": 0.9779741168022156
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 397.0,
+        "cells_left_to_right": [
+          {
+            "text": "运算结果通过AC写入主存中。",
+            "x_center": 251.5,
+            "confidence": 0.980195164680481
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 431.25,
+        "cells_left_to_right": [
+          {
+            "text": "(4)",
+            "x_center": 30.5,
+            "confidence": 0.9974375367164612
+          },
+          {
+            "text": "数据从主存中依据OD位置被取出，进而被送入ALU中",
+            "x_center": 378.0,
+            "confidence": 0.9689856171607971
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 469.0,
+        "cells_left_to_right": [
+          {
+            "text": "与AX中的数据作运算，得出结果后改变AX中的值",
+            "x_center": 383.0,
+            "confidence": 0.9516046047210693
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 506.5,
+        "cells_left_to_right": [
+          {
+            "text": "为运算结果。",
+            "x_center": 158.5,
+            "confidence": 0.992671012878418
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 550.9,
+        "cells_left_to_right": [
+          {
+            "text": "(5)",
+            "x_center": 30.0,
+            "confidence": 0.9541449546813965
+          },
+          {
+            "text": "5 3",
+            "x_center": 111.5,
+            "confidence": 0.9567015171051025
+          },
+          {
+            "text": "8 4",
+            "x_center": 113.5,
+            "confidence": 0.9938052296638489
+          },
+          {
+            "text": "3+4+4+2=13",
+            "x_center": 255.5,
+            "confidence": 0.9988548159599304
+          },
+          {
+            "text": "外部条件3个⇒工位.",
+            "x_center": 460.0,
+            "confidence": 0.8749629259109497
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 592.0,
+        "cells_left_to_right": [
+          {
+            "text": "14 4",
+            "x_center": 115.0,
+            "confidence": 0.9885495901107788
+          },
+          {
+            "text": "24-13-2=9 控制器的容量=29×24位.",
+            "x_center": 445.5,
+            "confidence": 0.9749442934989929
+          }
+        ]
+      },
+      {
+        "row": 15,
+        "y_center": 643.17,
+        "cells_left_to_right": [
+          {
+            "text": "(6)",
+            "x_center": 34.0,
+            "confidence": 0.8708269596099854
+          },
+          {
+            "text": "3 2",
+            "x_center": 117.0,
+            "confidence": 0.814382791519165
+          },
+          {
+            "text": "控制字段 外部条件 下址字段",
+            "x_center": 241.0,
+            "confidence": 0.9731585383415222
+          }
+        ]
+      },
+      {
+        "row": 16,
+        "y_center": 681.17,
+        "cells_left_to_right": [
+          {
+            "text": "13位",
+            "x_center": 158.0,
+            "confidence": 0.9863638877868652
+          },
+          {
+            "text": "2位",
+            "x_center": 232.5,
+            "confidence": 0.9908609390258789
+          },
+          {
+            "text": "9位",
+            "x_center": 341.0,
+            "confidence": 0.9833035469055176
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=122.0: (1) a:DK寄存器\nRow 2: x=153.5: b: IK等存器 | x=156.0: C:OR寄存器\nRow 3: x=34.0: (2) | x=160.5: d: AR离存器 | x=269.0: 指令从主存取出进入a寄存器中暂存，\nRow 4: x=333.0: 再被传送至b寄存器中编译为微指令格式，最后\nRow 5: x=171.5: 被送入控制器中。\nRow 6: x=296.5: (3) 首先数据从主存中被读出(读状态)被送入\nRow 7: x=335.0: a寄存器，进而被送入运算器进行相关运算\nRow 8: x=356.5: 算出结果后运算器向状态寄存器发出写指令，将\nRow 9: x=251.5: 运算结果通过AC写入主存中。\nRow 10: x=30.5: (4) | x=378.0: 数据从主存中依据OD位置被取出，进而被送入ALU中\nRow 11: x=383.0: 与AX中的数据作运算，得出结果后改变AX中的值\nRow 12: x=158.5: 为运算结果。\nRow 13: x=30.0: (5) | x=111.5: 5 3 | x=113.5: 8 4 | x=255.5: 3+4+4+2=13 | x=460.0: 外部条件3个⇒工位.\nRow 14: x=115.0: 14 4 | x=445.5: 24-13-2=9 控制器的容量=29×24位.\nRow 15: x=34.0: (6) | x=117.0: 3 2 | x=241.0: 控制字段 外部条件 下址字段\nRow 16: x=158.0: 13位 | x=232.5: 2位 | x=341.0: 9位"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "a: DK寄存器",
+    "step_1_b": "b: IK等存器",
+    "step_1_c": "C: OR寄存器",
+    "step_1_d": "d: AR离存器",
+    "step_2_p1": "指令从主存取出进入a寄存器中暂存，",
+    "step_2_p2": "再被传送至b寄存器中编译为微指令格式，最后被送入控制器中。",
+    "step_3_read": "首先数据从主存中被读出(读状态)被送入a寄存器，进而被送入运算器进行相关运算",
+    "step_3_write": "算出结果后运算器向状态寄存器发出写指令，将运算结果通过AC写入主存中。",
+    "step_4_operands": "数据从主存中依据OD位置被取出，进而被送入ALU中与AX中的数据作运算",
+    "step_4_result": "得出结果后改变AX中的值为运算结果。",
+    "step_6_layout": "控制字段 外部条件 下址字段，表格：13位 | 2位 | 9位"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_1_c",
+    "step_1_d",
+    "step_2_p1",
+    "step_2_p2",
+    "step_3_read",
+    "step_3_write",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_5_final",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1_a": "DR 寄存器",
+    "step_1_b": "IR 寄存器",
+    "step_1_c": "DR 寄存器",
+    "step_1_d": "AR 寄存器",
+    "step_2_p1": "指令从主存取出送入IR寄存器中暂存",
+    "step_2_p2": "再被传送至b寄存器中编译为微指令格式,最后被送入控制器中",
+    "step_3_read": "首先数据从主存中被读出(读状态)被送入a寄存器,进而被送入运算器进行相关运算",
+    "step_3_write": "算出结果后运算器向状态寄存器发出写指令,将运算结果通过AC写入主存中",
+    "step_4_operands": "数据从主存中依据OD位置被取出,进而被送入ALU中与AX中的数据作运算",
+    "step_4_result": "得出结果后改变AX中的值为运算结果",
+    "step_5_core_field": "3+4+4+2=13 外部条件3个→2位",
+    "step_5_core_compute": "24-13-2=9",
+    "step_5_final": "控制器的容量=2^9×24位",
+    "step_6_group12": "5 3；8 4",
+    "step_6_group34": "14 4；3 2",
+    "step_6_test_field": "2位",
+    "step_6_addr_field": "9位",
+    "step_6_layout": "控制字段 外部条件 下址字段\n13位 | 2位 | 9位"
+  },
+  "facts": {
+    "step_1_a": "a：DR 寄存器",
+    "step_1_b": "b：IR 寄存器",
+    "step_1_c": "c：DR 寄存器",
+    "step_1_d": "d：AR 寄存器",
+    "step_2_p1": "指令从主存取出送入IR寄存器中暂存",
+    "step_2_p2": "再被传送至b寄存器中翻译为微指令格式，最后被送入控制器中。",
+    "step_3_read": "首先数据从主存中被读出（读状态）被送入a寄存器，进而被送入运算器进行相关运算",
+    "step_3_write": "算出结果后运算器向状态寄存器发出写指令，将运算结果通过AC写入主存中。",
+    "step_4_operands": "数据从主存中依据OD位置被取出，进而被送入ALU中与AX中的数据作运算",
+    "step_4_result": "得出结果后改变AX中的值为运算结果。",
+    "step_5_core_field": "24-13-2=9       控制器的容量=2^9×24位。",
+    "step_5_core_compute": "3+4+4+2=13      外部条件3个=>2位。\n24-13-2=9",
+    "step_5_final": "控制器的容量=2^9×24位。",
+    "step_6_group12": "5  3\n8  4",
+    "step_6_group34": "14 4\n3  2",
+    "step_6_test_field": "外部条件3个=>2位。",
+    "step_6_addr_field": "9位",
+    "step_6_layout": "控制字段 | 外部条件 | 下址字段\n13位 | 2位 | 9位"
+  }
+}

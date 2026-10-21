@@ -1,0 +1,98 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T08:31:53.936815",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_210.jpg",
+  "image_sha256": "802dcf2aa016fdfcf8f89661144eb0f7bcab0a0068ec8d54c938a1e86895e582",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_210.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 21,
+    "accepted_token_count": 20,
+    "mean_confidence": 0.917775,
+    "min_confidence": 0.5,
+    "joined_text": "s\n1.\n没\n2.\n属性文法 G5 中，有\na\nA.\nx:=1\n继承属性只有综\nx=0\nS-x:=1\n合属性，故为S一型\nx1=0\nS\na\nA\nx=D\n属性文法\nS\n1x:=0",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.051784,
+      "very_dark_pixel_ratio": 0.034501,
+      "lower_region_dark_pixel_ratio": 0.054221,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "属性文法G5中，没有继承属性只有综合属性，故为S-型属性文法 | 如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_210",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_2_component_1": "根S，子节点a、A、b；A的子节点A1、S（X:=0，子c）；S（X:=1）的子节点a、A、b；A的子节点S（X=D）、S（X:=0，子c）",
+    "step_2_component_2": "根S属性...-1；A属性X:=1；S（X:=0）属性X:=0；S（X:=1）属性X:=1；A1属性X=0；S（X:=0）子c属性X:=0；S（X=D）属性X=D"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's representation of the syntax tree structure for the given string, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact node labels, ordering, and nesting as written, including any attribute annotations if present."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node in the syntax tree, including any values for root S.x, outer A.x, inner S.x, inner A.x, and leaf S.x nodes. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and numerical values as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_core_1",
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "没有继承属性只有综合属性",
+    "step_1_core_1": "属性文法G5中，没有继承属性只有综合属性，故为S-型属性文法",
+    "step_1_final_1": "S-型属性文法",
+    "step_2_component_1": "S\n├─a\n├─A\n│  ├─A1\n│  │  └─S\n│  │     └─c\n│  └─S\n│     ├─a\n│     ├─A\n│     │  └─S\n│     │     └─c\n│     └─b\n└─b",
+    "step_2_component_2": "S.x=1, A.x=1, A1.x=0, S.x=0, S.x=1, A.x=D, S.x=0"
+  },
+  "facts": {
+    "step_1_support_1": "没有继承属性只有综合属性",
+    "step_1_core_1": "属性文法G5中，没有继承属性只有综合属性",
+    "step_1_final_1": "S-型属性文法",
+    "step_2_component_1": "根S，子节点a、A、b；A的子节点A1、S（X:=0，子c）；S（X:=1）的子节点a、A、b；A的子节点S（X=D）、S（X:=0，子c）",
+    "step_2_component_2": "根S属性...-1；A属性X:=1；S（X:=0）属性X:=0；S（X:=1）属性X:=1；A1属性X=0；S（X:=0）子c属性X:=0；S（X=D）属性X=D"
+  }
+}

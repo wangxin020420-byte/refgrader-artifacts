@@ -1,0 +1,88 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-10-20T00:43:33.778578",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_9/ANS_CO_1041.jpg",
+  "image_sha256": "c60a294de1a5443c8879d26475a8030a1989d834b791cc19382e296b05deff28",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_9/ANS_CO_1041.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 26,
+    "accepted_token_count": 26,
+    "mean_confidence": 0.884961,
+    "min_confidence": 0.5,
+    "joined_text": "解：生存64K=26个字节=2^{5个字\n按字编址主存地址共15位.0000H~7FFFH(A.0~A14)\n8K*16\n=2(个)\nROM:\n41<*16\n215×16-8K×16\nRAM:\n=3(个)\n8k*16\n(2) (\nA=A14\n38\n将主存地址高两位和地线接入38译码器\nA14\n逻辑：CS1=A{1}A{14}A12}(AY}+A2)\nAN\nCS2=A{}A1{4 A{1L(Y0+A12})\n再将Y与A12和A2\nCS3 = AB A14\n(Pa.1)\n用或门相连\nCS4 = A{} A14\n(Y2)\nGS5= A13} A14\n(Y3)",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.073371,
+      "very_dark_pixel_ratio": 0.040141,
+      "lower_region_dark_pixel_ratio": 0.067635,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解:(1)生存64K=2^16个字节=2^5字\n按字编址主存地址共15位.0000H~7FFFH (A0~A14)\nROM: 8K*16 /(4K*16)=2(个)\nRAM: (2^15*16 -8K*16)/(8K*16)=3(个)\n(2) \n将主存地址高两位和地址接入38译码器，\n再将非Y0与A12和非A12用或门相连\n引脚示意图如图所示\nCS1=Ā13 Ā14 Ā12 (Ȳ0+A12)\nCS2=Ā13 Ā14 Ā12 (Ȳ0+Ā12)\nCS3=Ā13 Ā14 (Ȳ1)\nCS4=Ā13 Ā14 (Ȳ2)\nCS5=Ā13 Ā14 (Ȳ3)\n",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1041",
+    "question_id": "CO_9",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's handwritten content specifying the ROM-region chip-select signal or decoder output, such as any binary address code, decoder output label, chip-select logic expression, or chip-to-signal mapping relation. Preserve leading zeros, bit grouping, overbars/active-low notation, arrows, and direction exactly as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_3"
+  ],
+  "visual_fallback_recovered": [
+    "step_3"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "8K×16 / 4K×16 = 2（个）",
+    "step_2": "(2^15×16 - 8K×16) / 8K×16 = 3（个）",
+    "step_3": "CS1 = Ā15 Ā14 Ā12 (Ÿ0 + Ā12)  CS2 = Ā15 Ā14 A12 (Ÿ0 + A12)",
+    "step_4": "CS3 = A15 Ā14 (Ÿ1)  CS4 = A15 A14 (Ÿ2)  CS5 = A15 A14 (Ÿ3)"
+  },
+  "facts": {
+    "step_1": "ROM: 8K*16 /(4K*16)=2(个)",
+    "step_2": "RAM: (2^15*16 -8K*16)/(8K*16)=3(个)",
+    "step_3": "CS1 = Ā15 Ā14 Ā12 (Ÿ0 + Ā12)  CS2 = Ā15 Ā14 A12 (Ÿ0 + A12)",
+    "step_4": "CS3=Ā13 Ā14 (Ȳ1)\nCS4=Ā13 Ā14 (Ȳ2)\nCS5=Ā13 Ā14 (Ȳ3)"
+  }
+}

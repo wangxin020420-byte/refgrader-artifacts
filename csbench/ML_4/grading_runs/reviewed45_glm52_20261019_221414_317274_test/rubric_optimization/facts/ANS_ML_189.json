@@ -1,0 +1,261 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-10-20T03:00:22.983820",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ML_4/ANS_ML_189.jpg",
+  "image_sha256": "85aed786b00c3ac9dbdd90ab5a4b8c2ae30d13e5ed1e493b8f092f857514b6ac",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/ML_4/ANS_ML_189.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 27,
+    "accepted_token_count": 23,
+    "mean_confidence": 0.938631,
+    "min_confidence": 0.5,
+    "joined_text": "1/0\n1.\n0/0\n0/1\n/0\nAC\n0/0\nBC\nB\n10\n0\nA10\n110\n1/0\nD\nA10\nE10\n0\n0/0\nA/1\nA/0.\nE\n作出状态图为：",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.048882,
+      "very_dark_pixel_ratio": 0.033413,
+      "lower_region_dark_pixel_ratio": 0.043279,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "作出状态表：A B/0 x=1. B A/0 A/0 C/0 D/0 E/0 D A/0 E/0 E A/1 A/0. 作出状态图为：",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_ML_189",
+    "question_id": "ML_4",
+    "subject": "ML",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": "学生的可见内容包含一个手写状态表和一句说明文字。逐行转录如下（仅照录，不做判分或推断）：\n\n状态表区域（左侧状态列 + 转换/输出标注）：\n- 第1行：『1.』（题号）；右上区域有 『1/0』\n- 第2行：『/0』、『AC』（旁有低置信度符号『1』）、『B』、『0/0』、『0/0』、『い0』（字迹模糊，疑为箭头或圈注，无法确切读出）、『0/1』、『E』\n- 第3行：『BC』、『0』、『A10』、『110』、『10』、『1/0』\n- 第4行：『D』、『A10』、『E10』、『O』、『0/0』、『0』\n- 第5行：『E』、『A/1』、『A/0.』\n- 第6行：『作出状态图为：』\n\n补充说明：\n1. 表格结构不清晰：OCR行视图中未检测到清晰的表格线或列对齐关系，各单元格与『状态 | 输入X=0次态/输出 | 输入X=1次态/输出』等列的对应关系无法可靠重建；『AC』『BC』等可能为被斜线/箭头分割的状态标注（如 A/C），但分割方式无法确认。\n2. 字迹模糊项：『い0』（x≈511，置信度0.22）、单独的『1』（置信度0.33）、『O』（置信度0.46）、『E』（x≈542，置信度0.42）无法确切读出其本义。\n3. 状态图部分：仅有文字『作出状态图为：』，其后的图形（节点、有向边、自环、边上标注如 0/0、1/0 等）中的箭头方向与节点连接关系无法从OCR坐标中恢复，故不将其映射为任何拓扑/路径关系。\n4. 表内可见的输入/输出标注字符串（照录）：『1/0』『0/0』『0/1』『A10』『E10』『110』『10』『A/1』『A/0.』『0』，其中『A10』『E10』『110』『10』疑为『A/0』『E/0』『1/0』『1/0』的斜线被OCR粘连，但粘连/分割方式无法确认，故按原样保留。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten state diagram and state table content: transcribe each table cell exactly as written (state labels, next-state labels, and output values for each input column, including any slashes, zeros/ones, and leading/trailing symbols), and for the state diagram, record every directed edge exactly as drawn, preserving state labels, arrowheads, direction, self-loops, branch labels, and the order of nodes as the student wrote them. Preserve any notation, subscripts, separators, and grouping exactly as they appear."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 40.75,
+        "cells_left_to_right": [
+          {
+            "text": "1.",
+            "x_center": 25.0,
+            "confidence": 0.9997037053108215
+          },
+          {
+            "text": "1/0",
+            "x_center": 483.0,
+            "confidence": 0.9952750205993652
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 107.44,
+        "cells_left_to_right": [
+          {
+            "text": "/0",
+            "x_center": 135.5,
+            "confidence": 0.9116852283477783
+          },
+          {
+            "text": "AC",
+            "x_center": 189.5,
+            "confidence": 0.9952960014343262
+          },
+          {
+            "text": "1",
+            "x_center": 194.0,
+            "confidence": 0.3340427279472351
+          },
+          {
+            "text": "B",
+            "x_center": 404.0,
+            "confidence": 0.9696564078330994
+          },
+          {
+            "text": "0/0",
+            "x_center": 433.0,
+            "confidence": 0.9904016852378845
+          },
+          {
+            "text": "0/0",
+            "x_center": 454.0,
+            "confidence": 0.9861833453178406
+          },
+          {
+            "text": "い0",
+            "x_center": 511.0,
+            "confidence": 0.21729803085327148
+          },
+          {
+            "text": "0/1",
+            "x_center": 537.5,
+            "confidence": 0.995582103729248
+          },
+          {
+            "text": "E",
+            "x_center": 542.5,
+            "confidence": 0.41603636741638184
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 154.17,
+        "cells_left_to_right": [
+          {
+            "text": "BC",
+            "x_center": 42.0,
+            "confidence": 0.9831734895706177
+          },
+          {
+            "text": "0",
+            "x_center": 129.5,
+            "confidence": 0.9948897361755371
+          },
+          {
+            "text": "A10",
+            "x_center": 200.5,
+            "confidence": 0.9176098704338074
+          },
+          {
+            "text": "110",
+            "x_center": 427.0,
+            "confidence": 0.8364620208740234
+          },
+          {
+            "text": "10",
+            "x_center": 466.0,
+            "confidence": 0.8418101668357849
+          },
+          {
+            "text": "1/0",
+            "x_center": 559.5,
+            "confidence": 0.9244086742401123
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 201.17,
+        "cells_left_to_right": [
+          {
+            "text": "D",
+            "x_center": 43.0,
+            "confidence": 0.9992877840995789
+          },
+          {
+            "text": "A10",
+            "x_center": 114.0,
+            "confidence": 0.9147878289222717
+          },
+          {
+            "text": "E10",
+            "x_center": 201.0,
+            "confidence": 0.9535863399505615
+          },
+          {
+            "text": "O",
+            "x_center": 441.0,
+            "confidence": 0.46157217025756836
+          },
+          {
+            "text": "0/0",
+            "x_center": 479.0,
+            "confidence": 0.9894648194313049
+          },
+          {
+            "text": "0",
+            "x_center": 523.5,
+            "confidence": 0.5576946139335632
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 240.5,
+        "cells_left_to_right": [
+          {
+            "text": "E",
+            "x_center": 43.5,
+            "confidence": 0.9986795783042908
+          },
+          {
+            "text": "A/1",
+            "x_center": 113.5,
+            "confidence": 0.8941221833229065
+          },
+          {
+            "text": "A/0.",
+            "x_center": 200.5,
+            "confidence": 0.9395790100097656
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 284.0,
+        "cells_left_to_right": [
+          {
+            "text": "作出状态图为：",
+            "x_center": 106.0,
+            "confidence": 0.9991791844367981
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=25.0: 1. | x=483.0: 1/0\nRow 2: x=135.5: /0 | x=189.5: AC | x=194.0: 1 | x=404.0: B | x=433.0: 0/0 | x=454.0: 0/0 | x=511.0: い0 | x=537.5: 0/1 | x=542.5: E\nRow 3: x=42.0: BC | x=129.5: 0 | x=200.5: A10 | x=427.0: 110 | x=466.0: 10 | x=559.5: 1/0\nRow 4: x=43.0: D | x=114.0: A10 | x=201.0: E10 | x=441.0: O | x=479.0: 0/0 | x=523.5: 0\nRow 5: x=43.5: E | x=113.5: A/1 | x=200.5: A/0.\nRow 6: x=106.0: 作出状态图为："
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "State diagram edges: A→A (1/0), A→B (0/0), B→C (0/0), C→D (0/0), D→E (1/0), E→A (0/1); State table rows: A (0→B/0, 1→A/0), B (0→C/0, 1→A/0), C (0→D/0, 1→A/0), D (0→E/0, 1→A/0), E (0→A/1, 1→A/0)"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten state diagram and state table content: transcribe each table cell exactly as written (state labels, next-state labels, and output values for each input column, including any slashes, zeros/ones, and leading/trailing symbols), and for the state diagram, record every directed edge exactly as drawn, preserving state labels, arrowheads, direction, self-loops, branch labels, and the order of nodes as the student wrote them. Preserve any notation, subscripts, separators, and grouping exactly as they appear."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "状态表：\nA  B/0  A/1\nB  A/0  C/0\nC  D/0  A/0\nD  A/0  E/0\nE  A/1  A/0\n作出状态图为：\n（手绘状态图包含节点A、B、C、D、E，A有自环1/0，A到B边0/0、A到E边1/1；B到C边0/0、B到A边1/0；C到D边0/0、C到A边1/0；D到A边0/0、D到E边1/0；E到A边0/1、E到A边1/0）"
+  },
+  "facts": {
+    "step_1": "状态表内容（按学生书写原样转写）：状态 A：B/0（X=0 列），A/0（X=1 列）；状态 B：A/0，C/0；状态 C：D/0，E/0；状态 D：A/0，E/0；状态 E：A/1，A/0。状态图：学生书写\"作出状态图为：\"之后未包含任何状态图内容（无状态节点、箭头、边标注的转写），状态图未书写。"
+  }
+}

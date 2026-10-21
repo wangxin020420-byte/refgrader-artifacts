@@ -1,0 +1,58 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T04:19:19.575194",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_9/ANS_CO_966.jpg",
+  "image_sha256": "9385a746c3c15c21ca48cdc7b6e5d9c26c860358cfde7e161c86a761927f7e8d",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "（1）8KW/（4K×16）=2片，故需要2片ROM芯片 64K×16位 主存按字编址，一个字占16位，则主存有64K×16位大小，其余56K*16位 56K×16/（8K×16）=7片，故需要7片RAM芯片，需要1片38译码器。采用RAM\n（2）2^16=64k，故有16根地址线，对ROM和RAM编址为\n芯片编号 片选信号\nROM1 1110\nROM2 1111\nRAM1 000\nRAM2 001\nRAM3 010\nRAM4 011\nRAM5 100\nRAM6 101\nRAM7 110\n其中3位信号代表A13~A11，4位信号代表A10~A0\n芯片示意图如图所示\n得到的片选信号的逻辑表达式为\nCS1=AB'C+A11，CS2=ABC+A11\n（CS1，CS2为ROM1和ROM2芯片）\nCS3=ABC，CS4=A'BC\nCS5=ABC，CS6=A'BC\nCS7=ABC，CS8=A'BC\nCS9=AB'C\nCS3~CS9为RAM1~RAM7的片选信号",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_966",
+    "question_id": "CO_9",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4a",
+    "step_4b"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "4K×16/4K×16=2片，故需要2片ROM芯片",
+    "step_2": "56K×16/(8K×16)=7片，故需要7片RAM芯片",
+    "step_3": "ROM1: 1110, ROM2: 1111",
+    "step_4a": "RAM1: 000, RAM2: 001, RAM3: 010, RAM4: 011",
+    "step_4b": "RAM5: 100, RAM6: 101, RAM7: 110"
+  },
+  "facts": {
+    "step_1": "8KW/（4K×16）=2片，故需要2片ROM芯片",
+    "step_2": "其余56K*16位 56K×16/（8K×16）=7片，故需要7片RAM芯片，需要1片38译码器。采用RAM",
+    "step_3": "ROM1 1110\nROM2 1111",
+    "step_4a": "RAM1 000\nRAM2 001\nRAM3 010\nRAM4 011",
+    "step_4b": "RAM5 100\nRAM6 101\nRAM7 110"
+  }
+}

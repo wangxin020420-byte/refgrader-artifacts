@@ -1,0 +1,85 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-10-20T03:59:40.374044",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_198.jpg",
+  "image_sha256": "ae2fe6fbb0779f2cf98a31a7a5e3824e4bc40bc2cf357e11ab9763b5732df2f6",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_198.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 17,
+    "accepted_token_count": 17,
+    "mean_confidence": 0.95573,
+    "min_confidence": 0.5,
+    "joined_text": "2. Ss.x=2\n1. G5只有综合属性S.X.A.X2.\n∴G5是S-属性文法.\naAA.x=1\nb\nS\nA A.X=0\nS.X=1\n1\nSs.x=0\naAA.x=0\nb\n1\nS\n5.X=0\nC\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.043786,
+      "very_dark_pixel_ratio": 0.030191,
+      "lower_region_dark_pixel_ratio": 0.03498,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1.G5只有综合属性S.X.A.X ∴G5是S-属性文法.\n2.如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_198",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "S→a, S→A, S→b; A→A, A→S; S→a, S→A, S→b; A→S; S→C（层级分支关系）",
+  "diagram_facts": {
+    "step_2": "根节点S（s.x=2）有子节点a、A、b；A（A.x=1）有子节点A（A.x=0）和S（s.x=0），S（s.x=0）的子节点为C；S（s.x=1）有子节点a、A、b，A（A.x=0）的子节点为S（s.x=0），S（s.x=0）的子节点为C。；完整可见路径：S→a, S→A, S→b; A→A, A→S; S→a, S→A, S→b; A→S; S→C（层级分支关系）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's handwritten annotated parse tree for the string acacbb: transcribe the tree structure (parent-child node relations, arrows or branches as drawn, node order and direction exactly as written) and every attribute value label written at each node (e.g., attribute names with numeric values). Preserve any bracketed notation, arrows, dots, or separators the student used. Do not judge correctness; record exactly what was drawn and labeled."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "1. G5只有综合属性S.x、A.x2. ∴G5是S-属性文法.",
+    "step_2": "S s.x=2\n├─ a\n├─ A A.x=1\n│  ├─ A A.x=0\n│  │  └─ S s.x=0\n│  │     └─ c\n│  └─ S s.x=1\n│     ├─ a\n│     ├─ A A.x=0\n│     │  └─ S s.x=0\n│     │     └─ c\n│     └─ b\n└─ b"
+  },
+  "facts": {
+    "step_1": "G5只有综合属性S.X.A.X ∴G5是S-属性文法.",
+    "step_2": "根节点S（s.x=2）有子节点a、A、b；A（A.x=1）有子节点A（A.x=0）和S（s.x=0），S（s.x=0）的子节点为C；S（s.x=1）有子节点a、A、b，A（A.x=0）的子节点为S（s.x=0），S（s.x=0）的子节点为C。；完整可见路径：S→a, S→A, S→b; A→A, A→S; S→a, S→A, S→b; A→S; S→C（层级分支关系）"
+  }
+}

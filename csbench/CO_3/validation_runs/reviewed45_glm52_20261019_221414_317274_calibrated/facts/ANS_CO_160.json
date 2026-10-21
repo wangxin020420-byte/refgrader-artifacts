@@ -1,0 +1,66 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T20:40:15.224500",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_3/ANS_CO_160.jpg",
+  "image_sha256": "99840248baa21d2dda08a692345343f3297b86a3d77dc609a929e5f772145ba6",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "x的补码: 0011 0110\ny的补码: 0101 0100\nz的补码: 1101 0101\n\n计算x-2y\n首先计算2y. z的补码是0000 0010\n设y为被乘数,2为乘数. 采用Booth算法\n如图所示\n故[2y]补=1010 1000 [-2y]补=0101 1000\n∴[x-2y]补=[x]补+[2y]补=0000 1110 = 8E H OF=Cs⊕C6=1. ∴溢出\n\n计算[x÷4]补=[0000 1101]\n计算2z. 可视为[z]补+[z]补\n1101 0101\n+1101 0101\n10101010\n∴[2z]补=1010 1010\n∴[x÷4]补+[2z]补=0000 1101 + 1010 1010=10110111 = B7H\nOF=Cs⊕C6=0 ∴不溢出",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_160",
+    "question_id": "CO_3",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "x的补码：0011 0110  y的补码：0101 0100  z的补码：1101 0101\n计算x-2y  首先计算2y.  2的补码是0000 0010\n设y为被乘数. 2为乘数. 采用Booth算法\n  0000 0000          0010    0  辅即位\n+ 0000 0000\n----------\n  0000 0000\n移位. 0000 0000      0001    0\n----------\n  1010 1000          [-2y]补=0101 1000\n故[2y]补=1010 1000\n∴ [x-2y]补=[x]补+[-2y]补=0000 1110 = 8E H  OF=Cs⊕C6=1.  故∴溢出",
+    "step_2": "计算[x÷4]补=0000 0110\n计算2z. 可视为[z]补+[z]补.  [z]补=1101 0101  ∴[2z]补=1010 1010\n∴ [x÷4]补+[2z]补=0000 1101 + 1010 1010=1011 0111 = B7 H\nOF=Cs⊕C6=0  ∴不溢出"
+  },
+  "facts": {
+    "step_1": {
+      "x_hex_or_binary": "0011 0110",
+      "2y_hex_or_binary": "1010 1000",
+      "negative_2y_hex_or_binary": "0101 1000",
+      "operation": "[x-2y]补=[x]补+[2y]补",
+      "result_hex_or_binary": "0000 1110 = 8E H",
+      "decimal_value": "未书写",
+      "carry_or_borrow_flag": "OF=Cs⊕C6=1",
+      "overflow_conclusion": "∴溢出"
+    },
+    "step_2": {
+      "x_div_4_hex_or_binary": "[0000 1101]",
+      "2z_hex_or_binary": "1010 1010",
+      "operation": "[x÷4]补+[2z]补=0000 1101 + 1010 1010",
+      "result_hex_or_binary": "10110111 = B7H",
+      "decimal_value": "未书写",
+      "carry_or_borrow_flag": "OF=Cs⊕C6=0",
+      "overflow_conclusion": "∴不溢出"
+    }
+  }
+}

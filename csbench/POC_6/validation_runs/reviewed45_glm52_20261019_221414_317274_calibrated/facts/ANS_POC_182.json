@@ -1,0 +1,100 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T21:41:48.416250",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_182.jpg",
+  "image_sha256": "49a222647644458da4a9bd6be46aff39a6cb5b9e820498bfe43a931ce37dfd35",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_182.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 21,
+    "accepted_token_count": 20,
+    "mean_confidence": 0.894635,
+    "min_confidence": 0.5,
+    "joined_text": "Sx=2\n1. 解：\n2. 解：\nG5中每条产生式对应的\na\nAx=1\nb\n语户义动作中，都是对产生才左\nx=1\nAx=0\nS\n边非终结符的综合属性力，用产生\n式右边非终结符的属性或常数赋值\nSx=0\na\nAx=0\n故文法GS是 S一属性文法.\nS x=0\nC\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.052429,
+      "very_dark_pixel_ratio": 0.036405,
+      "lower_region_dark_pixel_ratio": 0.055368,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解：G5中每条产生式对应的语义动作中,都是对产生式左边非终结符的综合属性x,用产生式右边非终结符的属性或常数赋值,故文法G5是S-属性文法. | 如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_182",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_2_component_1": "根节点S x=2，子节点a、A x=1、b；A x=1的子节点A x=0、S x=1；A x=0的子节点S x=0；S x=0的子节点c；S x=1的子节点a、A x=0、b；A x=0的子节点S x=0；S x=0的子节点c",
+    "step_2_component_2": "S x=2；A x=1；S x=1；A x=0；S x=0；S x=0；a；b；c；a；A x=0；S x=0；c"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's written representation of the syntax tree structure for acacbb, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact nesting, node labels, ordering of children, and any symbols or separators used. Do not extract attribute values here; only the tree structure."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node of the syntax tree, including any labels such as S.x, A.x, or equivalent, and the numeric or symbolic values assigned. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and the values as written for each node."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_core_1",
+    "step_1_final_1",
+    "step_1_support_1",
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "在G5中每条产生式 对应的语义动作中，都是 对产生式左边 非终结符的 综合属性。用产生式右边 非终结符的属性来计算赋值。",
+    "step_1_core_1": "在G5中每条产生式 对应的语义动作中，都是 对产生式左边 非终结符的 综合属性。用产生式右边 非终结符的属性来计算赋值。",
+    "step_1_final_1": "故属性文法G5是 S-属性文法。",
+    "step_2_component_1": "S(a, A(A(S(c)), S(S(c), a, A(S(c)), b)), b)",
+    "step_2_component_2": "S.x=2, a, A.x=1, b, A.x=0, S.x=1, A.x=0, S.x=0, S.x=0, a, A.x=0, S.x=0, c, S.x=0, c"
+  },
+  "facts": {
+    "step_1_support_1": "产生式左边非终结符的综合属性x",
+    "step_1_core_1": "G5中每条产生式对应的语义动作中,都是对产生式左边非终结符的综合属性x,用产生式右边非终结符的属性或常数赋值",
+    "step_1_final_1": "S-属性文法",
+    "step_2_component_1": "根节点S x=2，子节点a、A x=1、b；A x=1的子节点A x=0、S x=1；A x=0的子节点S x=0；S x=0的子节点c；S x=1的子节点a、A x=0、b；A x=0的子节点S x=0；S x=0的子节点c",
+    "step_2_component_2": "S x=2；A x=1；S x=1；A x=0；S x=0；S x=0；a；b；c；a；A x=0；S x=0；c"
+  }
+}

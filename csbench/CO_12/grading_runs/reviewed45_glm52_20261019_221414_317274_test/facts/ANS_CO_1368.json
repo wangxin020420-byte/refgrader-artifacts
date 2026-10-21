@@ -1,0 +1,470 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T23:58:18.425095",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1368.jpg",
+  "image_sha256": "ebd4074e1abd0a28d438c029df623da691308ce8631a117dbde6e19fdafcfb18",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1368.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 33,
+    "accepted_token_count": 33,
+    "mean_confidence": 0.945603,
+    "min_confidence": 0.5,
+    "joined_text": "(4) M->DR\n5: (1) a: DR\nDR->ALU\nb:OR\nI10=1 WE#=0 ADS=0\nC: AR\nALU-→AC\nd:PC\nAC->DR\nC27M->DR\nDR->OR\nDR->OR\nPC+1\nOR→操作控制器\nOR→AR\nPC+1\nAR-→M\nC3)M->DR\n(5)30×24=720B\nDR-→ALU I10=1 WE#=1 ADS=0\n容量应为120B\nALU->AC\nC67\n外部条件\nAC->DR\n微文命令\n数据地址\nDR->M\n3位\n5位\n16位\nDR→OR\nPC+1",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.051757,
+      "very_dark_pixel_ratio": 0.035091,
+      "lower_region_dark_pixel_ratio": 0.051248,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)a: DR\nb: OR\nc: AR\nd: Pc\n(2) M->DR\nDR->OR\nOR->操作控制器\nPC+1\n(3) M->DR\nDR->ALU I/O=1 WE#=1 ADS=0\nALU->AC\nAC->DR\nDR->M\nDR->OR\nPC+1\n(4) M->DR\nDR->ALU\nI/O=1 WE#=0 ADS=0\nALU->AC\nAC->DR\nDR->OR\nPC+1\nOR->AR\nAR->M\n(5)30×24=720B\n容量应为720B\n(6)格式如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1368",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "容量应为120B",
+    "step_5_core_compute": "(5)30×24=720B",
+    "step_6_group12": "5位",
+    "step_6_group34": "字迹模糊",
+    "step_6_test_field": "3位",
+    "step_6_addr_field": "16位",
+    "step_6_layout": "外部条件 3位 | 微文命令 5位 | 数据地址 16位"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 44.0,
+        "cells_left_to_right": [
+          {
+            "text": "5: (1) a: DR",
+            "x_center": 117.0,
+            "confidence": 0.826968252658844
+          },
+          {
+            "text": "(4) M->DR",
+            "x_center": 552.0,
+            "confidence": 0.8835017085075378
+          },
+          {
+            "text": "DR->ALU",
+            "x_center": 586.0,
+            "confidence": 0.9971106648445129
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 98.17,
+        "cells_left_to_right": [
+          {
+            "text": "b:OR",
+            "x_center": 119.0,
+            "confidence": 0.9804847240447998
+          },
+          {
+            "text": "C: AR",
+            "x_center": 157.5,
+            "confidence": 0.9547803997993469
+          },
+          {
+            "text": "I10=1 WE#=0 ADS=0",
+            "x_center": 647.0,
+            "confidence": 0.9310634136199951
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 150.5,
+        "cells_left_to_right": [
+          {
+            "text": "d:PC",
+            "x_center": 126.5,
+            "confidence": 0.9291043281555176
+          },
+          {
+            "text": "AC->DR",
+            "x_center": 583.0,
+            "confidence": 0.9934556484222412
+          },
+          {
+            "text": "ALU-→AC",
+            "x_center": 589.5,
+            "confidence": 0.9595549702644348
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 198.5,
+        "cells_left_to_right": [
+          {
+            "text": "C27M->DR",
+            "x_center": 102.0,
+            "confidence": 0.9288733601570129
+          },
+          {
+            "text": "DR->OR",
+            "x_center": 582.5,
+            "confidence": 0.9771715998649597
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 234.0,
+        "cells_left_to_right": [
+          {
+            "text": "DR->OR",
+            "x_center": 138.0,
+            "confidence": 0.8927316069602966
+          },
+          {
+            "text": "PC+1",
+            "x_center": 575.5,
+            "confidence": 0.9810716509819031
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 269.25,
+        "cells_left_to_right": [
+          {
+            "text": "OR→操作控制器",
+            "x_center": 187.0,
+            "confidence": 0.974917471408844
+          },
+          {
+            "text": "OR→AR",
+            "x_center": 571.0,
+            "confidence": 0.9843969345092773
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 307.0,
+        "cells_left_to_right": [
+          {
+            "text": "PC+1",
+            "x_center": 123.5,
+            "confidence": 0.9926681518554688
+          },
+          {
+            "text": "AR-→M",
+            "x_center": 572.5,
+            "confidence": 0.8787983655929565
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 355.83,
+        "cells_left_to_right": [
+          {
+            "text": "C3)M->DR",
+            "x_center": 111.0,
+            "confidence": 0.9481251835823059
+          },
+          {
+            "text": "DR-→ALU I10=1 WE#=1 ADS=0",
+            "x_center": 268.5,
+            "confidence": 0.8974034190177917
+          },
+          {
+            "text": "(5)30×24=720B",
+            "x_center": 573.0,
+            "confidence": 0.9809125065803528
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 413.33,
+        "cells_left_to_right": [
+          {
+            "text": "ALU->AC",
+            "x_center": 141.5,
+            "confidence": 0.9820604920387268
+          },
+          {
+            "text": "C67",
+            "x_center": 507.0,
+            "confidence": 0.9755895137786865
+          },
+          {
+            "text": "容量应为120B",
+            "x_center": 616.5,
+            "confidence": 0.9939600229263306
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 451.25,
+        "cells_left_to_right": [
+          {
+            "text": "AC->DR",
+            "x_center": 136.0,
+            "confidence": 0.9651854038238525
+          },
+          {
+            "text": "外部条件",
+            "x_center": 594.0,
+            "confidence": 0.8326728940010071
+          },
+          {
+            "text": "微文命令",
+            "x_center": 687.0,
+            "confidence": 0.6870262622833252
+          },
+          {
+            "text": "数据地址",
+            "x_center": 832.0,
+            "confidence": 0.9990367293357849
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 491.38,
+        "cells_left_to_right": [
+          {
+            "text": "DR->M",
+            "x_center": 134.5,
+            "confidence": 0.8961095809936523
+          },
+          {
+            "text": "3位",
+            "x_center": 587.5,
+            "confidence": 0.9952493906021118
+          },
+          {
+            "text": "5位",
+            "x_center": 690.5,
+            "confidence": 0.9971196055412292
+          },
+          {
+            "text": "16位",
+            "x_center": 844.0,
+            "confidence": 0.9946915507316589
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 526.0,
+        "cells_left_to_right": [
+          {
+            "text": "DR→OR",
+            "x_center": 133.5,
+            "confidence": 0.9964262843132019
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 566.0,
+        "cells_left_to_right": [
+          {
+            "text": "PC+1",
+            "x_center": 124.5,
+            "confidence": 0.99668288230896
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=117.0: 5: (1) a: DR | x=552.0: (4) M->DR | x=586.0: DR->ALU\nRow 2: x=119.0: b:OR | x=157.5: C: AR | x=647.0: I10=1 WE#=0 ADS=0\nRow 3: x=126.5: d:PC | x=583.0: AC->DR | x=589.5: ALU-→AC\nRow 4: x=102.0: C27M->DR | x=582.5: DR->OR\nRow 5: x=138.0: DR->OR | x=575.5: PC+1\nRow 6: x=187.0: OR→操作控制器 | x=571.0: OR→AR\nRow 7: x=123.5: PC+1 | x=572.5: AR-→M\nRow 8: x=111.0: C3)M->DR | x=268.5: DR-→ALU I10=1 WE#=1 ADS=0 | x=573.0: (5)30×24=720B\nRow 9: x=141.5: ALU->AC | x=507.0: C67 | x=616.5: 容量应为120B\nRow 10: x=136.0: AC->DR | x=594.0: 外部条件 | x=687.0: 微文命令 | x=832.0: 数据地址\nRow 11: x=134.5: DR->M | x=587.5: 3位 | x=690.5: 5位 | x=844.0: 16位\nRow 12: x=133.5: DR→OR\nRow 13: x=124.5: PC+1"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "DR",
+    "step_1_b": "OR",
+    "step_1_c": "AR",
+    "step_1_d": "PC",
+    "step_2_p1": "M->DR ->OR ->操作控制器",
+    "step_2_p2": "图中未明确显示",
+    "step_3_read": "图中未明确显示",
+    "step_3_write": "图中未明确显示",
+    "step_4_operands": "图中未明确显示",
+    "step_4_result": "图中未明确显示",
+    "step_6_layout": "外部条件 3位 | 微命令 5位 | 数据地址 16位"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_6_group34"
+  ],
+  "visual_fallback_recovered": [
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_c",
+    "step_1_d",
+    "step_2_p1",
+    "step_2_p2",
+    "step_3_read",
+    "step_3_write",
+    "step_4_operands",
+    "step_5_core_compute",
+    "step_5_final",
+    "step_6_group12",
+    "step_6_layout"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "数据寄存器DR",
+    "step_1_b": "OR",
+    "step_1_c": "地址寄存器AR",
+    "step_1_d": "PC",
+    "step_2_p1": "M->DR DR->OR OR->操作控制器 PC+1",
+    "step_2_p2": "OR->操作控制器",
+    "step_3_read": "M->DR DR->ALU I/O=1 WE#=1 ADS=0 ALU->AC AC->DR DR->OR PC+1",
+    "step_3_write": "DR->M",
+    "step_4_operands": "M->DR DR->ALU I/O=1 WE#=0 ADS=0 ALU->AC AC->DR DR->OR PC+1 OR->AR AR->M",
+    "step_4_result": "未书写",
+    "step_5_core_field": "未书写",
+    "step_5_core_compute": "30×24=720B",
+    "step_5_final": "30×24=720B 容量应为720B",
+    "step_6_group12": "3位 5位",
+    "step_6_group34": "5位 16位",
+    "step_6_test_field": "3位",
+    "step_6_addr_field": "16位",
+    "step_6_layout": "外部条件 微命令 数据地址 3位 5位 16位"
+  },
+  "facts": {
+    "step_1_a": "DR",
+    "step_1_b": "OR",
+    "step_1_c": "AR",
+    "step_1_d": "Pc",
+    "step_2_p1": "M->DR",
+    "step_2_p2": "DR->OR\nOR->操作控制器",
+    "step_3_read": "M->DR\nDR->ALU I/O=1 WE#=1 ADS=0\nALU->AC",
+    "step_3_write": "AC->DR\nDR->M",
+    "step_4_operands": "M->DR\nDR->ALU\nI/O=1 WE#=0 ADS=0",
+    "step_4_result": "ALU->AC",
+    "step_5_core_field": "容量应为120B",
+    "step_5_core_compute": "(5)30×24=720B",
+    "step_5_final": "30×24=720B\n容量应为720B",
+    "step_6_group12": "5位",
+    "step_6_group34": "5位 16位",
+    "step_6_test_field": "3位",
+    "step_6_addr_field": "16位",
+    "step_6_layout": "外部条件 3位 | 微文命令 5位 | 数据地址 16位"
+  }
+}

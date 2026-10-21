@@ -1,0 +1,1098 @@
+[
+  {
+    "file": "ANS_POC_236.jpg",
+    "facts": "{\"step_1\": \"ac,aacb\", \"step_2\": \"ac\", \"step_3\": \"ac\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:34:35.165464",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_3/ANS_POC_236.jpg",
+      "image_sha256": "8bc205a01f49fb14781f8e3c4b76eb07aa4050d8cd57e03a5cc646de17f13a02",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "短语：ac,aacb | 直接短语：ac | 句柄：ac",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_236",
+        "question_id": "POC_3",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "ac,aacb",
+        "step_2": "ac",
+        "step_3": "ac"
+      }
+    },
+    "scores": [
+      2.0,
+      2.0,
+      2.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ac, aacb",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语应为 ε, ac, aacb 三个",
+            "dependency_status": "satisfied",
+            "reason": "规范化等价比较确认该项与标准答案等价；学生给出了 ac 和 aacb 两个正确短语，缺少 ε（空串短语），按等分原子计 2/3，给 1.5/2",
+            "canonical_override": true,
+            "canonical_comparison": {
+              "status": "match",
+              "match": true,
+              "student_items": [
+                "AC",
+                "AACB"
+              ],
+              "standard_items": [
+                "AC",
+                "AACB"
+              ],
+              "edge_overlap_ratio": 1.0
+            }
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "ac",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语应为 ε",
+            "dependency_status": "failed",
+            "reason": "学生答 ac，而 ac 并非直接短语，正确答案为 ε，属结论性错误"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "ac",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄应为 ε",
+            "dependency_status": "failed",
+            "reason": "学生答 ac，与正确句柄 ε 矛盾，结论错误"
+          }
+        ],
+        "total_score": 2.0,
+        "canonical_score_floor_applied": true
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ac, aacb",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语应为 ε, ac, aacb",
+            "dependency_status": "satisfied",
+            "reason": "规范化等价比较确认该项与标准答案等价；学生给出了 ac 和 aacb 两个正确短语，但遗漏了 ε，按比例给 2 分中的 1.5 分",
+            "canonical_override": true,
+            "canonical_comparison": {
+              "status": "match",
+              "match": true,
+              "student_items": [
+                "AC",
+                "AACB"
+              ],
+              "standard_items": [
+                "AC",
+                "AACB"
+              ],
+              "edge_overlap_ratio": 1.0
+            }
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "ac",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语应为 ε",
+            "dependency_status": "failed",
+            "reason": "学生回答 ac，与标准答案 ε 矛盾，属结论错误"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "ac",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄应为 ε",
+            "dependency_status": "failed",
+            "reason": "学生回答 ac，与标准答案 ε 矛盾，属结论错误"
+          }
+        ],
+        "total_score": 2.0,
+        "canonical_score_floor_applied": true
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ac,aacb",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语集合应为 ε, ac, aacb（三个短语）",
+            "dependency_status": "satisfied",
+            "reason": "规范化等价比较确认该项与标准答案等价；学生给出 ac 和 aacb 两个正确短语，但遗漏了 ε，按等权加性扣减缺失的一个原子分（2/3 × 2 ≈ 1.3）",
+            "canonical_override": true,
+            "canonical_comparison": {
+              "status": "match",
+              "match": true,
+              "student_items": [
+                "AC",
+                "AACB"
+              ],
+              "standard_items": [
+                "AC",
+                "AACB"
+              ],
+              "edge_overlap_ratio": 1.0
+            }
+          },
+          {
+            "id": "step_2",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "ac",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语应为 ε",
+            "dependency_status": "failed",
+            "reason": "学生给出的直接短语 ac 与标准答案 ε 矛盾，属结论性错误"
+          },
+          {
+            "id": "step_3",
+            "score_given": 0,
+            "error_category": "SEMANTIC_FATAL",
+            "evidence_text": "ac",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄应为 ε",
+            "dependency_status": "failed",
+            "reason": "学生给出的句柄 ac 与标准答案 ε 矛盾，属结论性错误"
+          }
+        ],
+        "total_score": 2.0,
+        "canonical_score_floor_applied": true
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "step_3": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ],
+      "step_3": [
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL",
+        "SEMANTIC_FATAL"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_238.jpg",
+    "facts": "{\"step_1\": \"a a c b . a c . ε\", \"step_2\": \"ε\", \"step_3\": \"ε\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:35:23.496169",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_3/ANS_POC_238.jpg",
+      "image_sha256": "b88a55e79fdee865852d0701d74d3dde47cd7866321ffbfd479866e738628a1d",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "短语：a a c b . a c . ε | 直接短语：ε | 句柄：ε",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_238",
+        "question_id": "POC_3",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "a a c b . a c . ε",
+        "step_2": "ε",
+        "step_3": "ε"
+      }
+    },
+    "scores": [
+      4.0,
+      5,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 1.0,
+            "error_category": "PARTIAL_MATCH",
+            "evidence_text": "a a c b . a c . ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语应为 ε, ac, aacb（三个短语）",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的集合包含 ε 和 ac，这两个短语正确，但缺少 aacb；其余内容为无关片段，属于部分正确，给一半分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案与标准答案 ε 完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案与标准答案 ε 完全一致。"
+          }
+        ],
+        "total_score": 4.0
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "a a c b . a c . ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语集合：ε, ac, aacb",
+            "dependency_status": "not_applicable",
+            "reason": "学生列出 aacb、ac、ε，与标准答案 ε, ac, aacb 完全一致（分隔符为空格/点，仅格式差异）"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语：ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 ε 与标准答案一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄：ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 ε 与标准答案一致"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "a a c b . a c . ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语集合应为 ε, ac, aacb",
+            "dependency_status": "satisfied",
+            "reason": "学生写出的序列在宽松解读下包含 aacb、ac、ε，与标准答案集合 {ε, ac, aacb} 一致，分隔符差异仅为格式问题。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 ε 与标准答案完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 ε 与标准答案完全一致。"
+          }
+        ],
+        "total_score": 5.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        1.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "PARTIAL_MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.2222222222222222,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.2222222222222222,
+    "avg_item_variance": 0.07407407407407407
+  },
+  {
+    "file": "ANS_POC_241.jpg",
+    "facts": "{\"step_1\": \"aacb ac ε\", \"step_2\": \"ε\", \"step_3\": \"ε\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:36:15.094961",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_3/ANS_POC_241.jpg",
+      "image_sha256": "8436de3e310d1294927ec173f74f9d2fbc2208f4d7bb49cc73c6b5afb3ac6898",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "短语：aacb ac ε | 直接短语：ε | 句柄：ε",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_241",
+        "question_id": "POC_3",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "aacb ac ε",
+        "step_2": "ε",
+        "step_3": "ε"
+      }
+    },
+    "scores": [
+      5,
+      5,
+      5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "aacb ac ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语集合：ε, ac, aacb",
+            "dependency_status": "satisfied",
+            "reason": "学生列出的短语集合 {aacb, ac, ε} 与标准答案 {ε, ac, aacb} 完全一致，仅顺序不同，集合等价。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语：ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 ε 与标准答案 ε 完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄：ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 ε 与标准答案 ε 完全一致。"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "aacb ac ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语集合应为 {ε, ac, aacb}",
+            "dependency_status": "satisfied",
+            "reason": "学生答案包含 ε、ac、aacb 三项，与标准集合完全一致，仅顺序不同，属于格式差异，不影响语义。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_text_note": null,
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 ε 与标准答案完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 ε 与标准答案完全一致。"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "aacb ac ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语集合应为 ε, ac, aacb",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的短语集合 {aacb, ac, ε} 与标准答案 {ε, ac, aacb} 完全一致，仅分隔/顺序不同，属于等价表示。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 ε 与标准答案一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 ε",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 ε 与标准答案一致。"
+          }
+        ],
+        "total_score": 5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_256.jpg",
+    "facts": "{\"step_1\": \"短语：ε，ac，aacb\", \"step_2\": \"直接短语：ε\", \"step_3\": \"句柄：ε\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:36:57.303886",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_3/ANS_POC_256.jpg",
+      "image_sha256": "0116131a37ec812d27bd73b88e2ec642a4aef4c40b6c85d581673e21f9d268f7",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "短语：ε，ac，aacb | 直接短语：ε | 句柄：ε",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_256",
+        "question_id": "POC_3",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "短语：ε，ac，aacb",
+        "step_2": "直接短语：ε",
+        "step_3": "句柄：ε"
+      }
+    },
+    "scores": [
+      5,
+      5,
+      5
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "短语：ε，ac，aacb",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语为 ε, ac, aacb",
+            "dependency_status": "not_applicable",
+            "reason": "学生给出的短语集合与标准答案完全一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "直接短语：ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 ε",
+            "dependency_status": "not_applicable",
+            "reason": "与标准答案一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "句柄：ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 ε",
+            "dependency_status": "not_applicable",
+            "reason": "与标准答案一致"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "短语：ε，ac，aacb",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语为 ε, ac, aacb",
+            "dependency_status": "satisfied",
+            "reason": "学生列出的短语与标准答案 ε, ac, aacb 完全一致"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "直接短语：ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 ε",
+            "dependency_status": "satisfied",
+            "reason": "直接短语与标准答案 ε 一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "句柄：ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 ε",
+            "dependency_status": "satisfied",
+            "reason": "句柄与标准答案 ε 一致"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "短语：ε，ac，aacb",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语为 ε, ac, aacb",
+            "dependency_status": "satisfied",
+            "reason": "短语集合与标准答案完全一致（ε, ac, aacb）。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "直接短语：ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 ε",
+            "dependency_status": "satisfied",
+            "reason": "直接短语与标准答案 ε 一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "句柄：ε",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 ε",
+            "dependency_status": "satisfied",
+            "reason": "句柄与标准答案 ε 一致。"
+          }
+        ],
+        "total_score": 5
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  },
+  {
+    "file": "ANS_POC_273.jpg",
+    "facts": "{\"step_1\": \"短语：{ε，aεc，aaεcb}\", \"step_2\": \"直接短语：{ε}\", \"step_3\": \"句柄：{ε}\"}",
+    "extraction_evidence": {
+      "schema_version": 4,
+      "created_at": "2026-10-20T03:37:37.194670",
+      "backend": "csbench_hybrid",
+      "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_3/ANS_POC_273.jpg",
+      "image_sha256": "a3af0770908776bcadb8e3e05513e6bfd0e4d4c1f568318a41f12c3ec7e92f4d",
+      "ocr_json_path": null,
+      "ocr_engine": {},
+      "ocr_summary": {},
+      "student_transcription": "3. aacb：短语：{ε，aεc，aaεcb} | 直接短语：{ε} | 句柄：{ε}",
+      "transcription_sha256": null,
+      "transcription_source": "csbench_human_transcription",
+      "visual_placeholder_detected": false,
+      "visual_fallback_needed": false,
+      "ocr_error": null,
+      "fact_mapping_degraded": false,
+      "fact_mapping_degraded_reason": null,
+      "answer_metadata": {
+        "answer_id": "ANS_POC_273",
+        "question_id": "POC_3",
+        "subject": "POC_26",
+        "isimagine": false
+      },
+      "table_parser_used": false,
+      "table_facts": {},
+      "table_checklist": [],
+      "table_view": {},
+      "diagram_parser_used": false,
+      "diagram_model": null,
+      "observed_execution_path": null,
+      "diagram_facts": {},
+      "diagram_checklist": [],
+      "vlm_fallback_used": false,
+      "vlm_fallback_recovered": [],
+      "visual_fallback_recovered": [],
+      "visual_fallback_conflicts": [],
+      "vlm_fallback_reason": [],
+      "vlm_fallback_facts": {},
+      "facts": {
+        "step_1": "短语：{ε，aεc，aaεcb}",
+        "step_2": "直接短语：{ε}",
+        "step_3": "句柄：{ε}"
+      }
+    },
+    "scores": [
+      5,
+      5,
+      5.0
+    ],
+    "strict_cots": [
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "短语：{ε，aεc，aaεcb}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语应为 ε, ac, aacb",
+            "dependency_status": "satisfied",
+            "reason": "学生给出了三个短语，与标准答案的三个元素一一对应；在 ac 和 aacb 中间显式写出了空串 ε，属于非实质性记号问题，语义上等价于标准答案，按宽容评分给满分。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "直接短语：{ε}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 ε",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案 ε 完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "句柄：{ε}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 ε",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案 ε 完全一致。"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "短语：{ε，aεc，aaεcb}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语集合为 ε, ac, aacb",
+            "dependency_status": "satisfied",
+            "reason": "学生答案 {ε, aεc, aaεcb} 中 ε 是空串占位，aεc ≡ ac，aaεcb ≡ aacb，与标准答案 ε, ac, aacb 逐项等价，仅为非实质的记号插入（FORMAT层面），核心结果正确。"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2,
+            "error_category": "MATCH",
+            "evidence_text": "直接短语：{ε}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 ε",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案 ε 完全一致。"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1,
+            "error_category": "MATCH",
+            "evidence_text": "句柄：{ε}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 ε",
+            "dependency_status": "satisfied",
+            "reason": "与标准答案 ε 完全一致。"
+          }
+        ],
+        "total_score": 5
+      },
+      {
+        "details": [
+          {
+            "id": "step_1",
+            "score_given": 2.0,
+            "error_category": "FORMAT_MINOR",
+            "evidence_text": "短语：{ε，aεc，aaεcb}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "短语应为 ε, ac, aacb",
+            "dependency_status": "satisfied",
+            "reason": "三个短语 ε、aεc、aaεcb 与标准答案 ε、ac、aacb 一一对应；显式写出空串 ε 仅是拼接表示上的非实质记法差异（aεc=ac），按宽松判分给满分"
+          },
+          {
+            "id": "step_2",
+            "score_given": 2.0,
+            "error_category": "MATCH",
+            "evidence_text": "直接短语：{ε}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "直接短语为 ε",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的直接短语 ε 与标准答案完全一致"
+          },
+          {
+            "id": "step_3",
+            "score_given": 1.0,
+            "error_category": "MATCH",
+            "evidence_text": "句柄：{ε}",
+            "evidence_status": "explicit",
+            "score_layer": "core",
+            "expected_condition": "句柄为 ε",
+            "dependency_status": "satisfied",
+            "reason": "学生给出的句柄 ε 与标准答案完全一致"
+          }
+        ],
+        "total_score": 5.0
+      }
+    ],
+    "item_scores_history": {
+      "step_1": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_2": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "step_3": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "item_category_history": {
+      "step_1": [
+        "FORMAT_MINOR",
+        "MATCH",
+        "FORMAT_MINOR"
+      ],
+      "step_2": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ],
+      "step_3": [
+        "MATCH",
+        "MATCH",
+        "MATCH"
+      ]
+    },
+    "item_variance": {
+      "step_1": 0.0,
+      "step_2": 0.0,
+      "step_3": 0.0
+    },
+    "max_item_variance": 0.0,
+    "avg_item_variance": 0.0
+  }
+]

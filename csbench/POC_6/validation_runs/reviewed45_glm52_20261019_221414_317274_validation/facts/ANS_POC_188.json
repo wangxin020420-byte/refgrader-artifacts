@@ -1,0 +1,101 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T08:18:04.916986",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_188.jpg",
+  "image_sha256": "8a8c8cfdf074c3aafd820a94913f671cb8fd4a064a9a642e3e11aa1ddacaa70d",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_188.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 17,
+    "accepted_token_count": 16,
+    "mean_confidence": 0.850026,
+    "min_confidence": 0.5,
+    "joined_text": "1S2\n1. 该文法为了型文法\n2.\nS,x=A,x+1b\na\nATA.x=A1,x4SX\nA,50\n0\n17A.x=5.x\n0\n1TA.x=S,x\n195,×20\nC\nS107\n1↑5.x=0\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.041732,
+      "very_dark_pixel_ratio": 0.026667,
+      "lower_region_dark_pixel_ratio": 0.035636,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1.该文法为S型文法 | 2.如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_188",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "根节点S，子节点a、A、b；A的子节点A1、S；S（作为A子节点）的子节点c；A（另一分支）的子节点S（标注S.x=0）",
+  "diagram_facts": {
+    "step_2_component_1": "根S，子节点a、A、b；A的子节点A1、S；S（A子节点）的子节点c；A（另一分支）的子节点S；完整可见路径：根节点S，子节点a、A、b；A的子节点A1、S；S（作为A子节点）的子节点c；A（另一分支）的子节点S（标注S.x=0）",
+    "step_2_component_2": "S.x=A.x+1；A.x=A1.x + S.x；S.x=0（c子节点）；A.x=S.x；完整可见路径：根节点S，子节点a、A、b；A的子节点A1、S；S（作为A子节点）的子节点c；A（另一分支）的子节点S（标注S.x=0）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's representation of the syntax tree structure for the given string, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact node labels, ordering, and nesting as written, including any attribute annotations if present."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node in the syntax tree, including any values for root S.x, outer A.x, inner S.x, inner A.x, and leaf S.x nodes. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and numerical values as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_1_core_1"
+  ],
+  "visual_fallback_recovered": [
+    "step_1_core_1",
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_final_1",
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "该文法为S-属性文法，因为所有属性都是综合属性，通过右部非终结符的属性计算左部非终结符的属性",
+    "step_1_final_1": "S-属性文法",
+    "step_2_component_1": "S\n├─a\n├─A\n│  ├─A1\n│  │  ├─A\n│  │  └─S\n│  └─S\n└─b",
+    "step_2_component_2": "S.x=2\nA.x=1\nA1.x=1\nS.x=0\nA.x=0\nS.x=0\nA.x=0\nS.x=0"
+  },
+  "facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "该文法为S-属性文法，因为所有属性都是综合属性，通过右部非终结符的属性计算左部非终结符的属性",
+    "step_1_final_1": "该文法为S型文法",
+    "step_2_component_1": "根S，子节点a、A、b；A的子节点A1、S；S（A子节点）的子节点c；A（另一分支）的子节点S；完整可见路径：根节点S，子节点a、A、b；A的子节点A1、S；S（作为A子节点）的子节点c；A（另一分支）的子节点S（标注S.x=0）",
+    "step_2_component_2": "S.x=A.x+1；A.x=A1.x + S.x；S.x=0（c子节点）；A.x=S.x；完整可见路径：根节点S，子节点a、A、b；A的子节点A1、S；S（作为A子节点）的子节点c；A（另一分支）的子节点S（标注S.x=0）"
+  }
+}

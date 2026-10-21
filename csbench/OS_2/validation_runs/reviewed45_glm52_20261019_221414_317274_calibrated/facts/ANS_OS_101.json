@@ -1,0 +1,115 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T07:24:47.784215",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/OS_2/ANS_OS_101.jpg",
+  "image_sha256": "ece2e59ee827d9d129f0591c6e784648ed6b84691a5b8c9a5b250534f24a74eb",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/OS_2/ANS_OS_101.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 51,
+    "accepted_token_count": 49,
+    "mean_confidence": 0.973412,
+    "min_confidence": 0.5,
+    "joined_text": "6. 短作业优先：\n3\n4\n2\n→t\n7.00 8.25 8.45 9.15 9.55\n作业“周转带权\n85+125+45+55\n∴平均周转时间：\n=77.5\n85min\n85/85=1\n4\n1\nmin\n2\n125 min\n125/40=3.125\n平均带权周转时间：\n3\n45 min\n45/20=2.25\n1+3.125+2.25+1.83\n4\n55 min\n55/30=18.31.83.\n=2.05125\n4\n高响应此优先：\n周转\n4\n2\n响应比\n→t\n待时间\n7.00 8.25 8.55 9.35 9.55\n作业：周转 带权\n∴平均周转时间：\n1 85min 85/85=1\n85+35+105+115\n= 85min\n4\n4 35min 35/30 =1.16\n平均带权周转时间：\n2 105min 105/40 =2.625\n1+1.16+2.625+5.75\n3 115min 115/20 =5.75\n=2.63375\n4",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.063647,
+      "very_dark_pixel_ratio": 0.039931,
+      "lower_region_dark_pixel_ratio": 0.066888,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "短作业优先如图所示\n作业 周超时间 带权\n1 85min 85/85=1\n2 125min 125/40 =3.125\n3 45min 45/20 =2.25\n4 55min 55/30 = 1.83.\n平均周超时间：(85+125+45+55)/4 =77.5 min\n平均带权周超时间：(1 +3.125 +2.25 +1.83)/4 =2.05125\n高响应比优先如图所示：\n响应比=周转/等待时间\n作业 周超 带权\n1 85min 85/85=1\n4 35min 35/30 =1.16\n2 105min 105/40 =2.625\n3 115min 115/20 =5.75\n平均周超时间：(85+35+105+115)/4 =85min\n平均带权周超时间：(1+1.16+2.625+5.75)/4 =2.63375",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_OS_101",
+    "question_id": "OS_2",
+    "subject": "OS",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "SJF: 1→3→4→2（时间轴时间点：7.00→8.25→8.45→9.15→9.55）；HRRN: 1→4→2→3（时间轴时间点：7.00→8.25→8.55→9.35→9.55）",
+  "diagram_facts": {
+    "step_1_a": "7:00调度作业1，完成时间8:25（时间轴标注）；完整可见路径：SJF: 1→3→4→2（时间轴时间点：7.00→8.25→8.45→9.15→9.55）；HRRN: 1→4→2→3（时间轴时间点：7.00→8.25→8.55→9.35→9.55）",
+    "step_1_b": "1→3→4→2；完整可见路径：SJF: 1→3→4→2（时间轴时间点：7.00→8.25→8.45→9.15→9.55）；HRRN: 1→4→2→3（时间轴时间点：7.00→8.25→8.55→9.35→9.55）",
+    "step_3_b": "1→4→2→3；完整可见路径：SJF: 1→3→4→2（时间轴时间点：7.00→8.25→8.45→9.15→9.55）；HRRN: 1→4→2→3（时间轴时间点：7.00→8.25→8.55→9.35→9.55）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's written content about which job is scheduled first at time 7:00 and the completion time of that job. Capture any text, table entry, or Gantt chart annotation showing the scheduling start and the completion time, preserving the exact time notation used (e.g., 8:25, 8时25分, or relative minutes)."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's written complete scheduling sequence for SJF. Preserve the exact order, separators (commas, arrows, dots, numbering), and direction as written."
+    },
+    {
+      "id": "step_3_b",
+      "instruction": "Extract the student's written complete scheduling sequence for HRRN. Preserve the exact order, separators (commas, arrows, dots, numbering), and direction as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1_a",
+    "step_1_b",
+    "step_3_b"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_2_a",
+    "step_2_b",
+    "step_3_a",
+    "step_3_b",
+    "step_4_a",
+    "step_4_b"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "作业1，完成时间8:25",
+    "step_1_b": "1,3,4,2",
+    "step_2_a": "作业1：周转时间85min，带权85/85=1；作业2：周转时间125min，带权125/40=3.125；作业3：周转时间45min，带权45/20=2.25；作业4：周转时间55min，带权55/30=1.83",
+    "step_2_b": "(85+125+45+55)/4=77.5min；(1+3.125+2.25+1.83)/4=2.05125",
+    "step_3_a": "响应比：周转/等待时间；作业1：85/85=1；作业4：35/30=1.16；作业2：105/40=2.625；作业3：115/20=5.75",
+    "step_3_b": "1,4,2,3",
+    "step_4_a": "作业1：周转时间85min，带权85/85=1；作业4：周转时间35min，带权35/30=1.16；作业2：周转时间105min，带权105/40=2.625；作业3：周转时间115min，带权115/20=5.75",
+    "step_4_b": "(85+35+105+115)/4=85min；(1+1.16+2.625+5.75)/4=2.63375"
+  },
+  "facts": {
+    "step_1_a": "7:00调度作业1，完成时间8:25（时间轴标注）；完整可见路径：SJF: 1→3→4→2（时间轴时间点：7.00→8.25→8.45→9.15→9.55）；HRRN: 1→4→2→3（时间轴时间点：7.00→8.25→8.55→9.35→9.55）",
+    "step_1_b": "1→3→4→2；完整可见路径：SJF: 1→3→4→2（时间轴时间点：7.00→8.25→8.45→9.15→9.55）；HRRN: 1→4→2→3（时间轴时间点：7.00→8.25→8.55→9.35→9.55）",
+    "step_2_a": "作业 周超时间 带权\n1 85min 85/85=1\n2 125min 125/40 =3.125\n3 45min 45/20 =2.25\n4 55min 55/30 = 1.83.",
+    "step_2_b": "平均周超时间：(85+125+45+55)/4 =77.5 min\n平均带权周超时间：(1 +3.125 +2.25 +1.83)/4 =2.05125",
+    "step_3_a": "响应比=周转/等待时间",
+    "step_3_b": "1→4→2→3；完整可见路径：SJF: 1→3→4→2（时间轴时间点：7.00→8.25→8.45→9.15→9.55）；HRRN: 1→4→2→3（时间轴时间点：7.00→8.25→8.55→9.35→9.55）",
+    "step_4_a": "作业 周超 带权\n1 85min 85/85=1\n4 35min 35/30 =1.16\n2 105min 105/40 =2.625\n3 115min 115/20 =5.75",
+    "step_4_b": "平均周超时间：(85+35+105+115)/4 =85min\n平均带权周超时间：(1+1.16+2.625+5.75)/4 =2.63375"
+  }
+}

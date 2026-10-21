@@ -1,0 +1,401 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T23:46:34.467358",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1344.jpg",
+  "image_sha256": "533e6fe0df4a95e5af70a1e8824ee68759f7ce1c875d2fd67f6d04ae1307c51b",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1344.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 20,
+    "accepted_token_count": 20,
+    "mean_confidence": 0.941876,
+    "min_confidence": 0.5,
+    "joined_text": "解(i1: a: GR b: ZR C AR d: PC\n(2) PC接收到信号后将指令在主存储器中的地址送到AR，AR通过地\n通过总线将\n址在主存储器中找到指令送通用寄存器GR，GR将指令送入\n送入\n指令吏寄存器IR，ZR将指令送入控制器\n(3) 操作控制器发出信号.使主存储器将数据通过数据总线传送到GR，\nCR将数据送到运算器。运算器将数据送入累加寄存器AC，AC将数据送\n入GR，GR将数据送入主存储器\n(4) AX将数据送入ALU，主存储器将存放在0D中的地址数据通过数据\n总线送到GR，GR将数据送入ALU，ALU完成加法运算后，将结果送入\n累加寄存器AC，AC将数据送到AX\n15) 容量为30×24=90B\n(6).30个微命令构成4个互斥类，互斥的5个微命令可用3位字段表示，8个微命令和\n14个微命令可用4位字段表示，3个微命令可用2位字段表示，3个外部条件各用！\n位表示，剩下8位是下址子段\n(31\n(4)\n(4)\n（2）（1）（1月（1）下址军段（8)",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.101243,
+      "very_dark_pixel_ratio": 0.06173,
+      "lower_region_dark_pixel_ratio": 0.105224,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a:GR  b:LR  c:AR  d:PC\n(2) PC接收到信号后将指令在主存储器中的地址送到AR，AR通过地址在主存储器中找到指令送入通用寄存器GR，GR将指令送入指令寄存器IR，IR将指令送入控制器\n(3) 操作控制器发出信号，使主存储器将数据通过数据总线传送到GR，GR将数据送到运算器。运算器将数据送入累加寄存器AC，AC将数据送入GR，GR将数据送入主存储器\n(4) AX将数据送入ALU，主存储器将存放在OD中的数据通过数据总线送到GR，GR将数据送入ALU，ALU完成加法运算后，将结果送入累加寄存器AC，AC将数据送到AX.\n(5) 容量为30×24=90B\n(6) 30个微命令构成4个互斥类，互斥的5个微命令可用3位字段表示，8个微命令和14个微命令可用4位字段表示，3个微命令可用2位字段表示，3个外部条件用1位表示，剩下8位是下址字段\n字段图如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1344",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "剩下8位是下址子段",
+    "step_5_core_compute": "容量为30×24=90B",
+    "step_6_group12": "互斥的5个微命令可用3位字段表示，8个微命令可用4位字段表示",
+    "step_6_group34": "14个微命令可用4位字段表示，3个微命令可用2位字段表示",
+    "step_6_test_field": "3个外部条件各用1位表示",
+    "step_6_addr_field": "剩下8位是下址子段",
+    "step_6_layout": "（3）（4）（4）（2）（1）（1）（1）（1）下址字段（8）"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 36.5,
+        "cells_left_to_right": [
+          {
+            "text": "解(i1: a: GR b: ZR C AR d: PC",
+            "x_center": 253.0,
+            "confidence": 0.8332822918891907
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 109.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) PC接收到信号后将指令在主存储器中的地址送到AR，AR通过地",
+            "x_center": 466.0,
+            "confidence": 0.96248459815979
+          },
+          {
+            "text": "址在主存储器中找到指令送通用寄存器GR，GR将指令送入",
+            "x_center": 495.0,
+            "confidence": 0.9419569373130798
+          },
+          {
+            "text": "通过总线将",
+            "x_center": 508.5,
+            "confidence": 0.9916714429855347
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 174.5,
+        "cells_left_to_right": [
+          {
+            "text": "指令吏寄存器IR，ZR将指令送入控制器",
+            "x_center": 361.5,
+            "confidence": 0.9589047431945801
+          },
+          {
+            "text": "送入",
+            "x_center": 488.5,
+            "confidence": 0.9846732020378113
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 228.0,
+        "cells_left_to_right": [
+          {
+            "text": "(3) 操作控制器发出信号.使主存储器将数据通过数据总线传送到GR，",
+            "x_center": 500.0,
+            "confidence": 0.9715277552604675
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 276.5,
+        "cells_left_to_right": [
+          {
+            "text": "CR将数据送到运算器。运算器将数据送入累加寄存器AC，AC将数据送",
+            "x_center": 523.0,
+            "confidence": 0.9768765568733215
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 331.5,
+        "cells_left_to_right": [
+          {
+            "text": "入GR，GR将数据送入主存储器",
+            "x_center": 297.5,
+            "confidence": 0.9681559205055237
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 375.0,
+        "cells_left_to_right": [
+          {
+            "text": "(4) AX将数据送入ALU，主存储器将存放在0D中的地址数据通过数据",
+            "x_center": 494.5,
+            "confidence": 0.9725752472877502
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 418.0,
+        "cells_left_to_right": [
+          {
+            "text": "总线送到GR，GR将数据送入ALU，ALU完成加法运算后，将结果送入",
+            "x_center": 525.5,
+            "confidence": 0.9637439846992493
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 467.5,
+        "cells_left_to_right": [
+          {
+            "text": "累加寄存器AC，AC将数据送到AX",
+            "x_center": 366.5,
+            "confidence": 0.96295166015625
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 538.75,
+        "cells_left_to_right": [
+          {
+            "text": "15) 容量为30×24=90B",
+            "x_center": 226.0,
+            "confidence": 0.9048441648483276
+          },
+          {
+            "text": "(6).30个微命令构成4个互斥类，互斥的5个微命令可用3位字段表示，8个微命令和",
+            "x_center": 500.0,
+            "confidence": 0.9612756967544556
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 599.5,
+        "cells_left_to_right": [
+          {
+            "text": "14个微命令可用4位字段表示，3个微命令可用2位字段表示，3个外部条件各用！",
+            "x_center": 521.5,
+            "confidence": 0.9688899517059326
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 645.0,
+        "cells_left_to_right": [
+          {
+            "text": "位表示，剩下8位是下址子段",
+            "x_center": 288.0,
+            "confidence": 0.9878169298171997
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 688.0,
+        "cells_left_to_right": [
+          {
+            "text": "(31",
+            "x_center": 211.0,
+            "confidence": 0.7824408411979675
+          },
+          {
+            "text": "(4)",
+            "x_center": 275.5,
+            "confidence": 0.9505434036254883
+          },
+          {
+            "text": "(4)",
+            "x_center": 343.5,
+            "confidence": 0.9983367919921875
+          },
+          {
+            "text": "（2）（1）（1月（1）下址军段（8)",
+            "x_center": 518.0,
+            "confidence": 0.7945764660835266
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=253.0: 解(i1: a: GR b: ZR C AR d: PC\nRow 2: x=466.0: (2) PC接收到信号后将指令在主存储器中的地址送到AR，AR通过地 | x=495.0: 址在主存储器中找到指令送通用寄存器GR，GR将指令送入 | x=508.5: 通过总线将\nRow 3: x=361.5: 指令吏寄存器IR，ZR将指令送入控制器 | x=488.5: 送入\nRow 4: x=500.0: (3) 操作控制器发出信号.使主存储器将数据通过数据总线传送到GR，\nRow 5: x=523.0: CR将数据送到运算器。运算器将数据送入累加寄存器AC，AC将数据送\nRow 6: x=297.5: 入GR，GR将数据送入主存储器\nRow 7: x=494.5: (4) AX将数据送入ALU，主存储器将存放在0D中的地址数据通过数据\nRow 8: x=525.5: 总线送到GR，GR将数据送入ALU，ALU完成加法运算后，将结果送入\nRow 9: x=366.5: 累加寄存器AC，AC将数据送到AX\nRow 10: x=226.0: 15) 容量为30×24=90B | x=500.0: (6).30个微命令构成4个互斥类，互斥的5个微命令可用3位字段表示，8个微命令和\nRow 11: x=521.5: 14个微命令可用4位字段表示，3个微命令可用2位字段表示，3个外部条件各用！\nRow 12: x=288.0: 位表示，剩下8位是下址子段\nRow 13: x=211.0: (31 | x=275.5: (4) | x=343.5: (4) | x=518.0: （2）（1）（1月（1）下址军段（8)"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "GR",
+    "step_1_b": "ZR",
+    "step_1_c": "AR",
+    "step_1_d": "PC",
+    "step_2_p1": "PC接收到信号后将指令在主存储器中的地址送到AR，AR通过地址在主存储器中找到指令送通用寄存器GR，GR将指令送入指令寄存器IR",
+    "step_2_p2": "ZR将指令送入控制器",
+    "step_3_read": "操作控制器发出信号使主存储器将数据通过数据总线传送到GR，GR将数据送到运算器。运算器将数据送入累加寄存器AC，AC将数据送入GR，GR将数据送入主存储器",
+    "step_3_write": "图中未明确显示",
+    "step_4_operands": "AX将数据送入ALU，主存储器将存放在0D中的地址数据通过数据总线送到GR，GR将数据送入ALU",
+    "step_4_result": "ALU完成加法运算后，将结果送入累加寄存器AC，AC将数据送到AX",
+    "step_6_layout": "30个微命令构成4个互斥类，互斥的5个微命令可用3位字段表示，8个微命令和14个微命令可用4位字段表示，3个微命令可用2位字段表示，3个外部条件各用1位表示，剩下8位是下址字段"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_6_layout"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_b",
+    "step_2_p1",
+    "step_2_p2",
+    "step_3_read",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "GR",
+    "step_1_b": "ZR",
+    "step_1_c": "AR",
+    "step_1_d": "PC",
+    "step_2_p1": "PC接收到信号后将指令在主存储器中的地址送到AR，AR通过地址在主存储器中找到指令送入通用寄存器GR，GR将指令送入指令寄存器IR",
+    "step_2_p2": "IR将指令送入控制器",
+    "step_3_read": "操作控制器发出信号，使主存储器将数据通过数据总线传送到GR，GR将数据送到运算器。运算器将数据送入累加寄存器AC",
+    "step_3_write": "AC将数据送入GR，GR将数据送入主存储器",
+    "step_4_operands": "AX将数据送入ALU，主存储器将存放在OD中的地址数据通过数据总线送到GR，GR将数据送入ALU",
+    "step_4_result": "ALU完成加法运算后，将结果送入累加寄存器AC，AC将数据送到GR和AX",
+    "step_5_core_field": "剩下8位是下址字段",
+    "step_5_core_compute": "24 - (3+4+4+2+1) = 10",
+    "step_5_final": "90B",
+    "step_6_group12": "3位（5个微命令），4位（8个微命令）",
+    "step_6_group34": "4位（14个微命令），2位（3个微命令）",
+    "step_6_test_field": "1位（外部条件）",
+    "step_6_addr_field": "8位（下址字段）",
+    "step_6_layout": "3位（5个微命令）、4位（8个微命令）、4位（14个微命令）、2位（3个微命令）、1位（外部条件）、8位（下址字段），共24位"
+  },
+  "facts": {
+    "step_1_a": "GR",
+    "step_1_b": "LR",
+    "step_1_c": "AR",
+    "step_1_d": "PC",
+    "step_2_p1": "PC接收到信号后将指令在主存储器中的地址送到AR，AR通过地址在主存储器中找到指令送入通用寄存器GR，GR将指令送入指令寄存器IR",
+    "step_2_p2": "IR将指令送入控制器",
+    "step_3_read": "操作控制器发出信号，使主存储器将数据通过数据总线传送到GR，GR将数据送到运算器。运算器将数据送入累加寄存器AC",
+    "step_3_write": "AC将数据送入GR，GR将数据送入主存储器",
+    "step_4_operands": "AX将数据送入ALU，主存储器将存放在OD中的数据通过数据总线送到GR，GR将数据送入ALU",
+    "step_4_result": "ALU完成加法运算后，将结果送入累加寄存器AC，AC将数据送到AX.",
+    "step_5_core_field": "剩下8位是下址子段",
+    "step_5_core_compute": "容量为30×24=90B",
+    "step_5_final": "容量为30×24=90B",
+    "step_6_group12": "互斥的5个微命令可用3位字段表示，8个微命令和14个微命令可用4位字段表示",
+    "step_6_group34": "8个微命令和14个微命令可用4位字段表示，3个微命令可用2位字段表示",
+    "step_6_test_field": "3个外部条件用1位表示",
+    "step_6_addr_field": "剩下8位是下址字段",
+    "step_6_layout": "（3）（4）（4）（2）（1）（1）（1）（1）下址字段（8）"
+  }
+}

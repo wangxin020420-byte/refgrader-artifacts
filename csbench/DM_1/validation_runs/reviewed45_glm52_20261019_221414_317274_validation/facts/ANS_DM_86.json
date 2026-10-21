@@ -1,0 +1,96 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T05:41:50.175436",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_86.jpg",
+  "image_sha256": "0245c52761ed0bc49d8a9c7e4a450f0483cd8be427a4dcdb039e298b50cdfd29",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_86.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 19,
+    "accepted_token_count": 19,
+    "mean_confidence": 0.962054,
+    "min_confidence": 0.5,
+    "joined_text": "16. 解：①\n24\n054\n4\n4\n6\ne\n9\n2\n文\n2\n3\n0\n②极大元：24.54\n极小元：1\n③最大元：不存在\n最小元：1.\n④. 最小上界：4\n最大下界：9.",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "multiple_confident_ocr_tokens",
+      "dark_pixel_ratio": 0.032566,
+      "very_dark_pixel_ratio": 0.019456,
+      "lower_region_dark_pixel_ratio": 0.027551,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)如图所示\n(2)极大元：24,54\n极小元：1\n(3)最大元：不存在\n最小元：1.\n(4)最小上界：4\n最大下界：9.",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_86",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "哈斯图节点包含1、2、3、4、6、9、24、54，节点间连接关系：1连接2、3；2连接4、6；3连接6、9；4连接24；6连接24；9连接54；24和54为上层节点，1为底层节点",
+  "diagram_facts": {
+    "step_1": "哈斯图包含节点1、2、3、4、6、9、24、54，节点间以线段连接表示整除关系；完整可见路径：哈斯图节点包含1、2、3、4、6、9、24、54，节点间连接关系：1连接2、3；2连接4、6；3连接6、9；4连接24；6连接24；9连接54；24和54为上层节点，1为底层节点",
+    "step_4": "最小上界：4，最大下界：9；完整可见路径：哈斯图节点包含1、2、3、4、6、9、24、54，节点间连接关系：1连接2、3；2连接4、6；3连接6、9；4连接24；6连接24；9连接54；24和54为上层节点，1为底层节点"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's hand-drawn Hasse diagram for the poset exactly as drawn, including all nodes, labels, edges, and their directions or connections, without revealing the expected diagram."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's written least upper bound and greatest lower bound of subset B exactly as written, preserving order, labels, separators, and any indication that a bound does not exist."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "（两个手绘哈斯图，左图节点1在底部，2、3在1上方，4、6、9在2、3上方，24、54在4、6、9上方，边连接1-2、1-3、2-4、2-6、3-6、3-9、4-24、6-24、6-54、9-54；右图结构与左图类似，节点和边连接相同）",
+    "step_2": "极大元：24,54 极小元：1",
+    "step_3": "最大元：不存在 最小元：1",
+    "step_4": "最小上界：4 最大下界：9"
+  },
+  "facts": {
+    "step_1": "哈斯图包含节点1、2、3、4、6、9、24、54，节点间以线段连接表示整除关系；完整可见路径：哈斯图节点包含1、2、3、4、6、9、24、54，节点间连接关系：1连接2、3；2连接4、6；3连接6、9；4连接24；6连接24；9连接54；24和54为上层节点，1为底层节点",
+    "step_2": "极大元：24,54\n极小元：1",
+    "step_3": "最大元：不存在\n最小元：1.",
+    "step_4": "最小上界：4\n最大下界：9."
+  }
+}

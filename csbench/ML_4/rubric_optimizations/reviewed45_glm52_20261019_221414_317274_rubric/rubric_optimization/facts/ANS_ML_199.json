@@ -1,0 +1,353 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-10-20T03:02:16.450201",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ML_4/ANS_ML_199.jpg",
+  "image_sha256": "2964153067696c40de6221c21d20478383bb4cc43ccb919992482f9ae238cdbd",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/ML_4/ANS_ML_199.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 36,
+    "accepted_token_count": 36,
+    "mean_confidence": 0.867828,
+    "min_confidence": 0.5,
+    "joined_text": "状态表：\n1. 状态图：\n10\n现志\n次态/输出\nx=0\nx=1\nSo\n0%\n00\nSo\n510\n50/0\n35\n010\n10\n51\nS1\n510\nS210\n0%10\n10\nS2\nS3/0 50/0\n110\n54\n%\n53\nS1/0 54/0\n7\n32\n11033k%\nS4\n55/1/50/0\n55\n51/0 54/0",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.078331,
+      "very_dark_pixel_ratio": 0.054251,
+      "lower_region_dark_pixel_ratio": 0.077861,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "状态表： 状态 次态/输出 x=0 x=1 S0 S1/0 S0/0 S1 S1/0 S2/0 S2 S3/0 S0/0 S3 S1/0 S4/0 S4 S5/1 S0/0 S5 S1/0 S4/0",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_ML_199",
+    "question_id": "ML_4",
+    "subject": "ML",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": {
+      "status": "部分可读",
+      "state_diagram": {
+        "note": "左侧为手绘状态图，含多个圆圈状态与带标签箭头，多数箭头方向与完整标签字迹模糊，无法可靠转录具体转移方向",
+        "visible_elements": [
+          "可见状态圈标签（部分OCR混淆，S/5识别不定）：'So'(约S0)、'35'/'51'(疑似S3/S1类标签)、'0%10'、'54'(疑似S4)、'32'、'55'(疑似S5)",
+          "可见边标签片段（按图中位置）：'10'、'0%'(疑为'0/0'类斜杠记法)、'00'、'010'、'10'、'110'、'%'、'11033k%'(多标签重叠，字迹模糊)"
+        ],
+        "transitions_readable": "字迹模糊：箭头方向与斜杠两侧的次态/输出多数不可靠辨认，仅能确认存在多条带 0/1 输入标签的转移边"
+      },
+      "state_table": {
+        "header": "状态表： 列头为 '现志'(疑为'现态')、'次态/输出'，其下分 'x=0' 与 'x=1' 两列",
+        "rows": [
+          {
+            "现态": "So (S0)",
+            "x=0": "510 (疑为 S1/0 或 S0/0 类条目，字迹部分模糊)",
+            "x=1": "50/0 (疑为 S0/0)"
+          },
+          {
+            "现态": "S1",
+            "x=0": "510 (疑为 S1/0)",
+            "x=1": "S210 (疑为 S2/0)"
+          },
+          {
+            "现态": "S2",
+            "x=0": "S3/0",
+            "x=1": "50/0 (疑为 S0/0)"
+          },
+          {
+            "现态": "53 (S3)",
+            "x=0": "S1/0",
+            "x=1": "54/0 (疑为 S4/0)"
+          },
+          {
+            "现态": "S4",
+            "x=0": "55/1/50/0 (疑为两列条目重叠：S5/1 与 S0/0，具体列归属字迹模糊)",
+            "x=1": ""
+          },
+          {
+            "现态": "55 (S5)",
+            "x=0": "51/0 54/0 (疑为 S1/0 与 S4/0，列归属部分模糊)",
+            "x=1": ""
+          }
+        ],
+        "row_order_preserved": "表中行序为：S0, S1, S2, S3, S4, S5（按OCR自上而下）",
+        "notation": "条目采用 次态/输出 斜杠记法；部分条目因OCR将 S 识别为 5，已按上下文标注疑读"
+      }
+    }
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten state diagram and state table: for each state shown, record the next-state transitions and outputs for each input value exactly as drawn/written, preserving arrows, direction, labels, state names, table row order, and any separators or slashes (e.g., next-state/output notation) exactly as the student wrote them. Do not judge correctness; only transcribe the concrete transitions and table entries present."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 72.71,
+        "cells_left_to_right": [
+          {
+            "text": "1. 状态图：",
+            "x_center": 74.5,
+            "confidence": 0.9641013145446777
+          },
+          {
+            "text": "10",
+            "x_center": 208.0,
+            "confidence": 0.8187085390090942
+          },
+          {
+            "text": "状态表：",
+            "x_center": 490.0,
+            "confidence": 0.9921137094497681
+          },
+          {
+            "text": "现志",
+            "x_center": 516.0,
+            "confidence": 0.9301156401634216
+          },
+          {
+            "text": "x=0",
+            "x_center": 600.5,
+            "confidence": 0.9950703978538513
+          },
+          {
+            "text": "次态/输出",
+            "x_center": 633.5,
+            "confidence": 0.975176990032196
+          },
+          {
+            "text": "x=1",
+            "x_center": 655.5,
+            "confidence": 0.9917195439338684
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 126.17,
+        "cells_left_to_right": [
+          {
+            "text": "So",
+            "x_center": 197.0,
+            "confidence": 0.7264978885650635
+          },
+          {
+            "text": "0%",
+            "x_center": 249.0,
+            "confidence": 0.836125373840332
+          },
+          {
+            "text": "00",
+            "x_center": 335.0,
+            "confidence": 0.9980657696723938
+          },
+          {
+            "text": "So",
+            "x_center": 521.0,
+            "confidence": 0.9553208947181702
+          },
+          {
+            "text": "510",
+            "x_center": 597.0,
+            "confidence": 0.8724443912506104
+          },
+          {
+            "text": "50/0",
+            "x_center": 654.0,
+            "confidence": 0.9525742530822754
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 173.0,
+        "cells_left_to_right": [
+          {
+            "text": "35",
+            "x_center": 96.0,
+            "confidence": 0.9100366830825806
+          },
+          {
+            "text": "010",
+            "x_center": 157.5,
+            "confidence": 0.9061052203178406
+          },
+          {
+            "text": "10",
+            "x_center": 227.0,
+            "confidence": 0.770537257194519
+          },
+          {
+            "text": "51",
+            "x_center": 297.5,
+            "confidence": 0.6162739396095276
+          },
+          {
+            "text": "S1",
+            "x_center": 517.0,
+            "confidence": 0.6598340272903442
+          },
+          {
+            "text": "510",
+            "x_center": 599.5,
+            "confidence": 0.9130518436431885
+          },
+          {
+            "text": "S210",
+            "x_center": 653.0,
+            "confidence": 0.822593092918396
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 238.67,
+        "cells_left_to_right": [
+          {
+            "text": "0%10",
+            "x_center": 91.0,
+            "confidence": 0.743596613407135
+          },
+          {
+            "text": "54",
+            "x_center": 96.5,
+            "confidence": 0.7086004614830017
+          },
+          {
+            "text": "110",
+            "x_center": 172.5,
+            "confidence": 0.9662318825721741
+          },
+          {
+            "text": "10",
+            "x_center": 306.5,
+            "confidence": 0.9216993451118469
+          },
+          {
+            "text": "S2",
+            "x_center": 513.0,
+            "confidence": 0.9901294708251953
+          },
+          {
+            "text": "S3/0 50/0",
+            "x_center": 622.0,
+            "confidence": 0.7981313467025757
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 295.9,
+        "cells_left_to_right": [
+          {
+            "text": "7",
+            "x_center": 120.0,
+            "confidence": 0.7636480331420898
+          },
+          {
+            "text": "%",
+            "x_center": 222.5,
+            "confidence": 0.9986590147018433
+          },
+          {
+            "text": "32",
+            "x_center": 271.0,
+            "confidence": 0.822249174118042
+          },
+          {
+            "text": "53",
+            "x_center": 512.5,
+            "confidence": 0.9030426740646362
+          },
+          {
+            "text": "S1/0 54/0",
+            "x_center": 620.5,
+            "confidence": 0.8105034232139587
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 359.3,
+        "cells_left_to_right": [
+          {
+            "text": "11033k%",
+            "x_center": 178.0,
+            "confidence": 0.7740049958229065
+          },
+          {
+            "text": "55",
+            "x_center": 507.0,
+            "confidence": 0.9264004230499268
+          },
+          {
+            "text": "S4",
+            "x_center": 511.5,
+            "confidence": 0.9143649339675903
+          },
+          {
+            "text": "55/1/50/0",
+            "x_center": 619.0,
+            "confidence": 0.7687572240829468
+          },
+          {
+            "text": "51/0 54/0",
+            "x_center": 619.5,
+            "confidence": 0.8253163695335388
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=74.5: 1. 状态图： | x=208.0: 10 | x=490.0: 状态表： | x=516.0: 现志 | x=600.5: x=0 | x=633.5: 次态/输出 | x=655.5: x=1\nRow 2: x=197.0: So | x=249.0: 0% | x=335.0: 00 | x=521.0: So | x=597.0: 510 | x=654.0: 50/0\nRow 3: x=96.0: 35 | x=157.5: 010 | x=227.0: 10 | x=297.5: 51 | x=517.0: S1 | x=599.5: 510 | x=653.0: S210\nRow 4: x=91.0: 0%10 | x=96.5: 54 | x=172.5: 110 | x=306.5: 10 | x=513.0: S2 | x=622.0: S3/0 50/0\nRow 5: x=120.0: 7 | x=222.5: % | x=271.0: 32 | x=512.5: 53 | x=620.5: S1/0 54/0\nRow 6: x=178.0: 11033k% | x=507.0: 55 | x=511.5: S4 | x=619.0: 55/1/50/0 | x=619.5: 51/0 54/0"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "状态图呈现多状态节点（S0、S1、S2、S3、S4、S5）通过带“输入/输出”标签的箭头形成转移关系；状态表为表格结构，列标题含“现态”“次态/输出”（分x=0、x=1列），行对应各状态",
+  "diagram_facts": {
+    "step_1": "状态图转移：S0→S1（x=0/0）、S0→S0（x=1/0）；S1→S1（x=0/0）、S1→S2（x=1/0）；S2→S3（x=0/0）、S2→S0（x=1/0）；S3→S1（x=0/0）、S3→S4（x=1/0）；S4→S5（x=0/1）、S4→S0（x=1/0）；S5→S1（x=0/0）、S5→S4（x=1/0）。状态表：S0行x=0列S1/0、x=1列S0/0；S1行x=0列S1/0、x=1列S2/0；S2行x=0列S3/0、x=1列S0/0；S3行x=0列S1/0、x=1列S4/0；S4行x=0列S5/1、x=1列S0/0；S5行x=0列S1/0、x=1列S4/0；完整可见路径：状态图呈现多状态节点（S0、S1、S2、S3、S4、S5）通过带“输入/输出”标签的箭头形成转移关系；状态表为表格结构，列标题含“现态”“次态/输出”（分x=0、x=1列），行对应各状态"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten state diagram and state table: for each state shown, record the next-state transitions and outputs for each input value exactly as drawn/written, preserving arrows, direction, labels, state names, table row order, and any separators or slashes (e.g., next-state/output notation) exactly as the student wrote them. Do not judge correctness; only transcribe the concrete transitions and table entries present."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "状态图：\nS0 →(0/0) S1, S0 →(1/0) S0\nS1 →(0/0) S1, S1 →(1/0) S2\nS2 →(0/0) S3, S2 →(1/0) S0\nS3 →(0/0) S1, S3 →(1/0) S4\nS4 →(0/1) S5, S4 →(1/0) S0\nS5 →(0/0) S1, S5 →(1/0) S4\n\n状态表：\n| 现态 | 次态/输出 |\n| ---- | -------- |\n|      | x=0      | x=1      |\n| S0   | S1/0     | S0/0     |\n| S1   | S1/0     | S2/0     |\n| S2   | S3/0     | S0/0     |\n| S3   | S1/0     | S4/0     |\n| S4   | S5/1     | S0/0     |\n| S5   | S1/0     | S4/0     |"
+  },
+  "facts": {
+    "step_1": "学生书写了状态表（未在转录中出现状态图内容）。状态表原文：状态 | 次态/输出，列 x=0、x=1：S0: S1/0, S0/0；S1: S1/0, S2/0；S2: S3/0, S0/0；S3: S1/0, S4/0；S4: S5/1, S0/0；S5: S1/0, S4/0。表格行顺序为 S0、S1、S2、S3、S4、S5，采用“次态/输出”斜杠记法。状态图部分：转录中未书写。"
+  }
+}

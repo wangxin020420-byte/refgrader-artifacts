@@ -1,0 +1,85 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-10-20T03:58:09.047100",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_192.jpg",
+  "image_sha256": "fc7164458db1d7cd6a2ff99700c986476ebdbf356ea8f1d503b23fbffe3515eb",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_192.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 15,
+    "accepted_token_count": 13,
+    "mean_confidence": 0.903256,
+    "min_confidence": 0.5,
+    "joined_text": "5-x=A.x+1\n1. \n2.\n4\n是了一属性文法\nx=A,}x+S.x\nx=S.x\nx=0.\nb.\n1\n$-x20\nC\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.037114,
+      "very_dark_pixel_ratio": 0.026313,
+      "lower_region_dark_pixel_ratio": 0.026861,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "是，S-属性文法 | 如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_192",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_2": "树结构中，根节点S（S.x=A.x+1）有子节点a、A、b；A节点（A.x=A1.x+S.x）的子节点包含A1和S；S节点（x=S.x）的子节点为a、b；标注x=0的S节点子节点为c；叶节点c标注x=0。节点间连线表示父子关系，属性值标注在节点旁（如S.x=A.x+1、A.x=A1.x+S.x、x=S.x、x=0等）。"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's handwritten annotated parse tree for the string acacbb: record the tree structure (parent-child node relations, node order for children) and the exact attribute values the student wrote at each node (e.g., attribute-name=value labels such as S.x=…, A.x=…). Preserve arrows, brackets, node order, and any equivalent bracketed/linear notation the student used to express the tree and its annotations, exactly as written. Do not assess whether values are correct."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "是S-属性文法",
+    "step_2": "S\n├─a\n├─A\n│  ├─A1\n│  │  └─S\n│  │     └─c (x=0)\n│  └─S\n│     ├─a\n│     ├─A\n│     │  └─S\n│     │     └─c (x=0)\n│     └─b\n└─b\nS.x = A.x +1\nA.x = A1.x + S.x\nS.x = S.x"
+  },
+  "facts": {
+    "step_1": "是，S-属性文法",
+    "step_2": "树结构中，根节点S（S.x=A.x+1）有子节点a、A、b；A节点（A.x=A1.x+S.x）的子节点包含A1和S；S节点（x=S.x）的子节点为a、b；标注x=0的S节点子节点为c；叶节点c标注x=0。节点间连线表示父子关系，属性值标注在节点旁（如S.x=A.x+1、A.x=A1.x+S.x、x=S.x、x=0等）。"
+  }
+}

@@ -1,0 +1,104 @@
+[
+    {
+        "id": "step_1_concept",
+        "item": "正确表述计算机网络协议的概念：为进行数据交换而建立的规则、标准或约定",
+        "points": 2.5,
+        "answer_type": "concept_keyword",
+        "role": "final",
+        "score_layer": "core",
+        "canonicalization": "关键词匹配：'规则/标准/约定/规范' 至少出现一个核心词，且语境为'数据交换/通信/信息传递'；允许同义改写，不要求逐字复现；'规范'视为'标准'等价表达",
+        "evidence_source": "text",
+        "standard_answer_text": "协议是为在计算机网络中进行数据交换而建立的规则、标准或约定 [cite: 487]",
+        "source_text": "简述协议概念及HTTP协议的基本构成",
+        "parent_official_item": "简述协议概念及HTTP协议的基本构成",
+        "parent_id": "step_1",
+        "parent_points": 5.0,
+        "task_semantics": "orthogonal_additive",
+        "scoring_policy": "additive_split",
+        "split_policy": "allow_semantic_split",
+        "weighting_policy": "equal_atomic",
+        "scoring_role": "component",
+        "full_credit_trigger": false,
+        "decomposition_required": true,
+        "minimum_scoring_children": 2,
+        "metadata_source": "explicit",
+        "metadata_hard_enabled": true,
+        "metadata_confidence": 1.0,
+        "semantic_contract_version": 6
+    },
+    {
+        "id": "step_1_http_structure",
+        "item": "说明HTTP请求消息的基本构成：请求行（方法、URL、版本）、请求头、空行、请求体四个组成部分",
+        "points": 2.5,
+        "answer_type": "structured_fields",
+        "role": "final",
+        "score_layer": "core",
+        "canonicalization": {
+            "type": "structured_fields",
+            "ordered": false,
+            "fields": [
+                {
+                    "name": "请求行",
+                    "aliases": [
+                        "起始行",
+                        "request line"
+                    ],
+                    "required": true,
+                    "subfields": [
+                        "方法",
+                        "URL",
+                        "版本"
+                    ]
+                },
+                {
+                    "name": "请求头",
+                    "aliases": [
+                        "头部字段",
+                        "首部",
+                        "request header"
+                    ],
+                    "required": true
+                },
+                {
+                    "name": "空行",
+                    "aliases": [
+                        "空白行",
+                        "CRLF分隔行"
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "请求体",
+                    "aliases": [
+                        "消息体",
+                        "正文",
+                        "message body"
+                    ],
+                    "required": true
+                }
+            ]
+        },
+        "evidence_source": "text",
+        "standard_answer_text": "HTTP基本构成：请求行（方法、URL、版本）、请求头（客户端信息）、空行、请求体（发送的数据内容） [cite: 489, 490, 491, 492]",
+        "source_text": "简述协议概念及HTTP协议的基本构成",
+        "parent_official_item": "简述协议概念及HTTP协议的基本构成",
+        "parent_id": "step_1",
+        "parent_points": 5.0,
+        "task_semantics": "orthogonal_additive",
+        "scoring_policy": "additive_split",
+        "split_policy": "allow_semantic_split",
+        "weighting_policy": "equal_atomic",
+        "scoring_role": "component",
+        "full_credit_trigger": false,
+        "decomposition_required": true,
+        "minimum_scoring_children": 2,
+        "diagnostic_evidence": [
+            "若学生以'语法/语义/时序'三要素作答HTTP构成，属于答偏知识点（未回答请求消息组成），本子项不得给分",
+            "仅泛泛说明协议规定传输方式/发包频率而未列出请求消息组成部分，本子项不得给分"
+        ],
+        "metadata_source": "explicit",
+        "metadata_hard_enabled": true,
+        "metadata_confidence": 1.0,
+        "semantic_contract_version": 6
+    }
+]

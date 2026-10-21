@@ -1,0 +1,228 @@
+[
+    {
+        "id": "step_1",
+        "item": "计算ROM芯片数量",
+        "points": 3.0,
+        "answer_type": "formula",
+        "role": "method",
+        "score_layer": "support",
+        "canonicalization": "formula",
+        "evidence_source": "formula",
+        "standard_answer_text": "低8KW采用ROM，每片ROM为4K×16，需要8K/4K=2片ROM芯片。",
+        "standard_answer_image": null,
+        "source_text": "计算ROM芯片数量",
+        "parent_official_item": "计算ROM芯片数量",
+        "metadata_source": "csbench",
+        "metadata_hard_enabled": true,
+        "metadata_confidence": 1.0,
+        "parent_id": "step_1",
+        "semantic_contract_version": 6,
+        "parent_points": 3.0,
+        "task_semantics": "process_dominant",
+        "scoring_policy": "strict_atomic",
+        "split_policy": "preserve_atomic",
+        "weighting_policy": "preserve_parent",
+        "decomposition_required": false,
+        "full_credit_anchor": "低8KW采用ROM，每片ROM为4K×16，需要8K/4K=2片ROM芯片。"
+    },
+    {
+        "id": "step_2",
+        "item": "计算RAM芯片数量",
+        "points": 3.0,
+        "answer_type": "formula",
+        "role": "method",
+        "score_layer": "support",
+        "canonicalization": "formula",
+        "evidence_source": "formula",
+        "standard_answer_text": "主存共64KW，除低8KW外其余56KW采用RAM；每片RAM为8K×16，需要56K/8K=7片RAM芯片。",
+        "standard_answer_image": null,
+        "source_text": "计算RAM芯片数量",
+        "parent_official_item": "计算RAM芯片数量",
+        "metadata_source": "csbench",
+        "metadata_hard_enabled": true,
+        "metadata_confidence": 1.0,
+        "parent_id": "step_2",
+        "semantic_contract_version": 6,
+        "parent_points": 3.0,
+        "task_semantics": "process_dominant",
+        "scoring_policy": "strict_atomic",
+        "split_policy": "preserve_atomic",
+        "weighting_policy": "preserve_parent",
+        "decomposition_required": false,
+        "full_credit_anchor": "主存共64KW，除低8KW外其余56KW采用RAM；每片RAM为8K×16，需要56K/8K=7片RAM芯片。"
+    },
+    {
+        "id": "step_3",
+        "item": "给出ROM1、ROM2片选信号的逻辑表达式或对应3-8译码器低有效输出",
+        "points": 3.0,
+        "answer_type": "structured_fields",
+        "role": "final",
+        "score_layer": "core",
+        "canonicalization": {
+            "type": "structured_fields",
+            "ordered": false,
+            "fields": [
+                {
+                    "name": "ROM1片选",
+                    "aliases": [
+                        "CS1",
+                        "ROM1 CS",
+                        "Y0"
+                    ],
+                    "required": true
+                },
+                {
+                    "name": "ROM2片选",
+                    "aliases": [
+                        "CS2",
+                        "ROM2 CS",
+                        "Y1"
+                    ],
+                    "required": true
+                }
+            ]
+        },
+        "equivalent_note": "接受以下等价表示且不扣分：ROM1对应地址A15A14A13A12=0000、ROM2=0001；或写为CS1=A15+A14+A13+A12（低有效或门形式）；或写为译码器输出Y0、Y1分别接ROM1、ROM2；正逻辑与非门表达式等价亦接受。",
+        "standard_answer_text": "ROM1对应高位地址A15A14A13A12=0000（低4KW），ROM2对应0001（次低4KW）；片选低电平有效，可写为CS1=A15+A14+A13+A12，CS2=A15+A14+A13+非A12，或等价地Y0、Y1分别选通ROM1、ROM2。",
+        "standard_answer_image": null,
+        "source_text": "给出ROM区片选信号或对应译码输出",
+        "parent_official_item": "给出ROM区片选信号或对应译码输出",
+        "metadata_source": "csbench",
+        "metadata_hard_enabled": true,
+        "metadata_confidence": 1.0,
+        "parent_id": "step_3",
+        "semantic_contract_version": 6,
+        "parent_points": 3.0,
+        "task_semantics": "orthogonal_additive",
+        "scoring_policy": "additive_split",
+        "split_policy": "allow_semantic_split",
+        "weighting_policy": "equal_atomic",
+        "decomposition_required": false,
+        "full_credit_trigger": false,
+        "evidence_source": "table"
+    },
+    {
+        "id": "step_4_1",
+        "item": "给出RAM1-RAM4中每一片的地址范围或对应译码器输出（3-8译码器输出Y1-Y4，8KW一段）",
+        "points": 3.0,
+        "answer_type": "structured_fields",
+        "role": "final",
+        "score_layer": "core",
+        "canonicalization": {
+            "type": "structured_fields",
+            "ordered": true,
+            "fields": [
+                {
+                    "name": "RAM1",
+                    "aliases": [
+                        "CS3",
+                        "Y1"
+                    ],
+                    "required": true
+                },
+                {
+                    "name": "RAM2",
+                    "aliases": [
+                        "CS4",
+                        "Y2"
+                    ],
+                    "required": true
+                },
+                {
+                    "name": "RAM3",
+                    "aliases": [
+                        "CS5",
+                        "Y3"
+                    ],
+                    "required": true
+                },
+                {
+                    "name": "RAM4",
+                    "aliases": [
+                        "CS6",
+                        "Y4"
+                    ],
+                    "required": true
+                }
+            ]
+        },
+        "equivalent_note": "每片RAM可等价地表示为：译码器输出Yi（低有效）接该片片选；或高三位地址A15A14A13取值001/010/011/100分别选通RAM1-RAM4；或写成低有效或门表达式（如RAM1对应A15+A14+非A13）。三种表示任一即可得分。",
+        "standard_answer_text": "RAM1-RAM4分别对应高位地址A15A14A13=001、010、011、100（每片8KW），即译码器输出Y1、Y2、Y3、Y4分别接RAM1-RAM4的片选；等价表达式如RAM1片选=A15+A14+非A13。",
+        "standard_answer_image": null,
+        "source_text": "给出RAM区片选信号或对应译码输出",
+        "parent_official_item": "给出RAM区片选信号或对应译码输出",
+        "metadata_source": "csbench",
+        "metadata_hard_enabled": true,
+        "metadata_confidence": 1.0,
+        "parent_id": "step_4",
+        "semantic_contract_version": 6,
+        "parent_points": 6.0,
+        "task_semantics": "orthogonal_additive",
+        "scoring_policy": "additive_split",
+        "split_policy": "allow_semantic_split",
+        "weighting_policy": "equal_atomic",
+        "scoring_role": "component",
+        "decomposition_required": true,
+        "minimum_scoring_children": 2,
+        "full_credit_trigger": false,
+        "evidence_source": "table"
+    },
+    {
+        "id": "step_4_2",
+        "item": "给出RAM5-RAM7中每一片的地址范围或对应译码器输出（3-8译码器输出Y5-Y7，8KW一段）",
+        "points": 3.0,
+        "answer_type": "structured_fields",
+        "role": "final",
+        "score_layer": "core",
+        "canonicalization": {
+            "type": "structured_fields",
+            "ordered": true,
+            "fields": [
+                {
+                    "name": "RAM5",
+                    "aliases": [
+                        "CS7",
+                        "Y5"
+                    ],
+                    "required": true
+                },
+                {
+                    "name": "RAM6",
+                    "aliases": [
+                        "CS8",
+                        "Y6"
+                    ],
+                    "required": true
+                },
+                {
+                    "name": "RAM7",
+                    "aliases": [
+                        "CS9",
+                        "Y7"
+                    ],
+                    "required": true
+                }
+            ]
+        },
+        "equivalent_note": "每片RAM可等价地表示为：译码器输出Yi（低有效）接该片片选；或高三位地址A15A14A13取值101/110/111分别选通RAM5-RAM7；或写成低有效或门表达式（如RAM7对应非A15+非A14+非A13）。三种表示任一即可得分。",
+        "standard_answer_text": "RAM5-RAM7分别对应高位地址A15A14A13=101、110、111（每片8KW），即译码器输出Y5、Y6、Y7分别接RAM5-RAM7的片选；等价表达式如RAM7片选=非A15+非A14+非A13。",
+        "standard_answer_image": null,
+        "source_text": "给出RAM区片选信号或对应译码输出",
+        "parent_official_item": "给出RAM区片选信号或对应译码输出",
+        "metadata_source": "csbench",
+        "metadata_hard_enabled": true,
+        "metadata_confidence": 1.0,
+        "parent_id": "step_4",
+        "semantic_contract_version": 6,
+        "parent_points": 6.0,
+        "task_semantics": "orthogonal_additive",
+        "scoring_policy": "additive_split",
+        "split_policy": "allow_semantic_split",
+        "weighting_policy": "equal_atomic",
+        "scoring_role": "component",
+        "decomposition_required": true,
+        "minimum_scoring_children": 2,
+        "full_credit_trigger": false,
+        "evidence_source": "table"
+    }
+]

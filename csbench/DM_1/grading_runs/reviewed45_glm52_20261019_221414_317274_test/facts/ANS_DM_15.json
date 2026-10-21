@@ -1,0 +1,94 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T21:04:03.402391",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_15.jpg",
+  "image_sha256": "90601f6f8a389b041418f0ac065a87d252c72f0bf489cb19bf181ed5c141dfca",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_15.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 29,
+    "accepted_token_count": 28,
+    "mean_confidence": 0.893412,
+    "min_confidence": 0.5,
+    "joined_text": "54\n(4)上界为a.st\n16.\n49\n024\n设a,CEA\n∀b∈B→bla\n6\n4\n下界为(，s1.\n3\n2\n∀b∈B→c/b\nlassa图如图\nB=14,6.99，A中无无能满足\n∀bEB→bla\n(2) A 由 Hassu图知.以及整除系\n则上界不存任\n没有小上界与\n极大元为54.24\n而下界为1\n极小元为1\n(3) 由(2)知，最大元不存在，因为有两个极大元，而最大远唯一\n因为b∈B→116\n最小元为1\n则最大下界也是1\n其它A中\n元素能满足",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.082424,
+      "very_dark_pixel_ratio": 0.054544,
+      "lower_region_dark_pixel_ratio": 0.084154,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)Hassa图如图\n(2) A由Hassa图知，以及整除关系为极大元为54,24 极小元为1\n(3) 由(2)知，最大元不存在，因为有两个极大元，而最大元唯一  最小元为1\n(4) 基本上界为a,s,t 设a∈A ∀b∈B→b|a T界为C,s,t. ∀b∈B→c|b B={4,6,19},A中无元素能满足 ∀b∈B→b|a 则上界不存在 也没有最小上而 下界为1 因为∀b∈B→1|b其它A中元素满足\n则最大下界也是1 ",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_15",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "哈斯图呈现层级结构：最底层为1，第二层为2、3，第三层为4、6、9，第四层为24、54；边连接关系为1→2、1→3；2→4、2→6；3→6、3→9；4→24；6→24、6→54；9→54",
+  "diagram_facts": {
+    "step_1": "哈斯图包含节点1、2、3、4、6、9、24、54，边连接关系为1→2、1→3；2→4、2→6；3→6、3→9；4→24；6→24、6→54；9→54；完整可见路径：哈斯图呈现层级结构：最底层为1，第二层为2、3，第三层为4、6、9，第四层为24、54；边连接关系为1→2、1→3；2→4、2→6；3→6、3→9；4→24；6→24、6→54；9→54",
+    "step_4": "子集B={4,6,9}的最小上界不存在，最大下界为1；完整可见路径：哈斯图呈现层级结构：最底层为1，第二层为2、3，第三层为4、6、9，第四层为24、54；边连接关系为1→2、1→3；2→4、2→6；3→6、3→9；4→24；6→24、6→54；9→54"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's drawn Hasse diagram for the poset exactly as written, including all nodes, labels, edges, line segments, and their directions or connections."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's written least upper bound and greatest lower bound of subset B exactly as written, preserving all numbers, labels, order, and any statements about existence or nonexistence."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1"
+  ],
+  "visual_fallback_conflicts": [
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "Hasse图如图（节点：54,24,4,6,9,3,2,1，连线：54-6,54-9,24-4,24-6,6-3,6-2,6-1,4-2,4-1,9-3,9-1,3-1,2-1）",
+    "step_2": "极大元为54,24 极小元为1",
+    "step_3": "最大元不存在,因为有两个极大元,而最大元唯一 最小元为1",
+    "step_4": "（4）基本上界为a,St. 设a∈A ∀b∈B → b|a 上界为C，S1. ∀b∈B → c|b B={4,6,9},A中无元素能满足 ∀b∈B→b|a 则上界不存在 也没有最小上界 下界为1 而下界为1 则最大下界也是1 其它A中无不能满足"
+  },
+  "facts": {
+    "step_1": "哈斯图包含节点1、2、3、4、6、9、24、54，边连接关系为1→2、1→3；2→4、2→6；3→6、3→9；4→24；6→24、6→54；9→54；完整可见路径：哈斯图呈现层级结构：最底层为1，第二层为2、3，第三层为4、6、9，第四层为24、54；边连接关系为1→2、1→3；2→4、2→6；3→6、3→9；4→24；6→24、6→54；9→54",
+    "step_2": "极大元为54,24 极小元为1",
+    "step_3": "最大元不存在，因为有两个极大元，而最大元唯一  最小元为1",
+    "step_4": "基本上界为a,s,t 设a∈A ∀b∈B→b|a T界为C,s,t. ∀b∈B→c|b B={4,6,19},A中无元素能满足 ∀b∈B→b|a 则上界不存在 也没有最小上而 下界为1 因为∀b∈B→1|b其它A中元素满足 则最大下界也是1"
+  }
+}

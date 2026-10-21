@@ -1,0 +1,43 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-10-20T01:47:50.802983",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_3/ANS_DM_191.jpg",
+  "image_sha256": "cb720bdaeab9ac73840c8104a0d4f01e42d6841d44c6c5c1557fbe58edddcb1f",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "解：由题意可得：∀x(A(x)→B(x))∨C(x))∧∀x(A(x)∧B(x)→D(x))∧∃x(A(x)∧¬D(x)) \n→∃x(A(x)∧C(x)) \n步骤 断言               根据 \n1 ∃x(A(x)∧¬D(x))         P \n2 A(a)∧¬D(a)           T,1,ES \n3 ∀x(A(x)∧B(x)→D(x))      P \n4 ¬∀x(A(x)∨B(x)∧¬D(x))  T,3 \n5 ∃x(A(x)∨B(x)∧¬D(x))    T,4 \n6 A(a)∨B(a)∧¬D(a)      T,5,ES \n7 ¬D(a)                  T,6 \n8 A(a)                  T,2,7 \n9 ∀x(A(x)→B(x)∨C(x))      P \n10 A(a)→B(a)∨C(a)       T,9,ES \n11 C(a)                 T,8,10\n12 A(a)∧C(a)            T,8,11 \n13 ∃x(A(x)∧C(x))        T,12,EG ",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": false,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_191",
+    "question_id": "DM_3",
+    "subject": "DM",
+    "isimagine": false
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": false,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {},
+  "facts": {
+    "step_1": "学生书写的谓词公式翻译：\n∀x(A(x)→B(x))∨C(x))∧∀x(A(x)∧B(x)→D(x))∧∃x(A(x)∧¬D(x)) →∃x(A(x)∧C(x))\n\n其中：\n- 前提1写作 ∀x(A(x)→B(x))∨C(x))（原文如此，括号不完整，对应“每个参赛者或者跑完全程或者提前退赛”）\n- 前提2写作 ∀x(A(x)∧B(x)→D(x))（对应“每个跑完全程的参赛者都将得到奖励”）\n- 前提3写作 ∃x(A(x)∧¬D(x))（对应“有些参赛者没有得到奖励”）\n- 结论写作 ∃x(A(x)∧C(x))（对应“有些参赛者提前退赛了”）",
+    "step_2": "学生书写的自然推理系统证明（步骤-断言-根据）：\n1. ∃x(A(x)∧¬D(x)) — P\n2. A(a)∧¬D(a) — T,1,ES\n3. ∀x(A(x)∧B(x)→D(x)) — P\n4. ¬∀x(A(x)∨B(x)∧¬D(x)) — T,3\n5. ∃x(A(x)∨B(x)∧¬D(x)) — T,4\n6. A(a)∨B(a)∧¬D(a) — T,5,ES\n7. ¬D(a) — T,6\n8. A(a) — T,2,7\n9. ∀x(A(x)→B(x)∨C(x)) — P\n10. A(a)→B(a)∨C(a) — T,9,ES\n11. C(a) — T,8,10\n12. A(a)∧C(a) — T,8,11\n13. ∃x(A(x)∧C(x)) — T,12,EG\n\n推导方向：从步骤1至步骤13顺序推导，最终由步骤12经EG规则得到结论 ∃x(A(x)∧C(x))。"
+  }
+}

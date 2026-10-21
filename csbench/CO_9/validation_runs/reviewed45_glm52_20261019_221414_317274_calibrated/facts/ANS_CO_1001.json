@@ -1,0 +1,58 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T04:05:50.212413",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_9/ANS_CO_1001.jpg",
+  "image_sha256": "81756ba20f97f9a9a592e67bcb17e5b7ffd198aa9069b543913b5b1e9fb7210a",
+  "ocr_json_path": null,
+  "ocr_engine": {},
+  "ocr_summary": {},
+  "student_transcription": "(1). 低8K×16 使用ROM：8K×16/(4K×16)=2(片). 高56K使用RAM：56K×16/(8K×16)=7(片). \n(2). 64K=2^16 主存一共使用了16根地址线.以及16根数据线.\nROM: A0~A11 RAM:A0~A12. A15A14A13地址线分别拉入及38译码\n器的输入端. \n       A15 A14 A13 A12 A11 … A0\nROM 1# 0   0   0   0   000 … 0 \n       0   0   0   0   111 … 1 \nROM 2# 0   0   0   1   000 … 0 \n       0   0   0   1   000 … 0 \nRAM 1# 0   0   1   \nRAM 2# 0   1   0      \nRAM 3# 0   1   1    \nRAM 4# 1   0   0     \nROM 5# 1   0   1\nRAM 6# 1   1   0\n……\nROM CS1=Ā12·Y0 非CS1=A12+Ȳ0\n    CS2=A12·Y0 非CS2=Ā12+Ȳ0\nRAM 非CS3=Ȳ1 非CS4=Ȳ2\n    非CS5=Ȳ3 非CS6=Ȳ4 非CS7=Ȳ5\n    非CS8=Ȳ6 非CS9=Ȳ7",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1001",
+    "question_id": "CO_9",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4a",
+    "step_4b"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "低8K×8K×16使用ROM：8K×16/4K×16=2(片)",
+    "step_2": "高56K使用RAM：56K×16/8K×16=7(片)",
+    "step_3": "ROM1#：A15 0, A14 0, A13 0, A12 0, A11…A0 0 0 0…0；ROM2#：A15 0, A14 0, A13 0, A12 0, A11…A0 1 1 1…1",
+    "step_4a": "RAM1#：A15 0, A14 0, A13 1, A12 0, …；RAM2#：A15 0, A14 1, A13 0, A12 0, …；RAM3#：A15 0, A14 1, A13 1, A12 0, …；RAM4#：A15 1, A14 0, A13 0, A12 1, …",
+    "step_4b": "RAM5#：A15 1, A14 0, A13 1, A12 0, …；RAM6#：A15 1, A14 1, A13 0, A12 0, …；RAM7#：A15 1, A14 1, A13 1, A12 0, …"
+  },
+  "facts": {
+    "step_1": "低8K×16 使用ROM：8K×16/(4K×16)=2(片).",
+    "step_2": "高56K使用RAM：56K×16/(8K×16)=7(片).",
+    "step_3": "ROM 1# 0   0   0   0   000 … 0 \n       0   0   0   0   111 … 1 \nROM 2# 0   0   0   1   000 … 0 \n       0   0   0   1   000 … 0 \nROM CS1=Ā12·Y0 非CS1=A12+Ȳ0\n    CS2=A12·Y0 非CS2=Ā12+Ȳ0",
+    "step_4a": "RAM 1# 0   0   1   \nRAM 2# 0   1   0      \nRAM 3# 0   1   1    \nRAM 4# 1   0   0     \nRAM 非CS3=Ȳ1 非CS4=Ȳ2\n    非CS5=Ȳ3 非CS6=Ȳ4 非CS7=Ȳ5",
+    "step_4b": "ROM 5# 1   0   1\nRAM 6# 1   1   0\n……\n    非CS8=Ȳ6 非CS9=Ȳ7"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T21:36:41.026773",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_5/ANS_POC_133.jpg",
+  "image_sha256": "6711c6add09b95ddc3f7ff92d400d787f151f9ee14a3c9758e94bc000bd3b9b5",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_5/ANS_POC_133.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 33,
+    "accepted_token_count": 33,
+    "mean_confidence": 0.899206,
+    "min_confidence": 0.5,
+    "joined_text": "5.\nI1\nI4\nI7\ns→b·Ba,井\nB\ns→bB·a,#\na\nB→°a,a\ns→bBa·,#\nI_0\nb\nI5\ns'→.s,井\nI_2\nà\nS→AaA,#\nS\ns'→s.,#\nB→a.,a.\nS→·bBa井\nA→,a\nA\nI3\nI_6}\nI8\nB→°a,\na\nA\nS→A·aA,#\nS→Aa·A,#\nS→AaA\nA→,a",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.054849,
+      "very_dark_pixel_ratio": 0.035828,
+      "lower_region_dark_pixel_ratio": 0.062595,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_133",
+    "question_id": "POC_5",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "visible",
+    "step_2": "visible",
+    "step_3": "visible",
+    "step_4": "visible"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten augmented grammar and initial LR(1) item set I0 exactly as written, preserving all grammar productions, dot positions, lookahead symbols, braces, arrows, and line breaks."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's handwritten successor item sets constructed from I0 and I1 exactly as written, preserving all item set labels, GOTO relations, grammar productions, dot positions, lookahead symbols, braces, arrows, and line breaks."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's handwritten remaining item sets exactly as written, preserving all item set labels, GOTO relations, grammar productions, dot positions, lookahead symbols, braces, arrows, and line breaks, especially any lookahead symbols associated with epsilon productions."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's handwritten state transition relations for the complete LR(1) canonical collection exactly as written, preserving all state labels, transition symbols, arrows, order, and direction."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "s'→·S ,#\nS→·AaA ,#\nS→·bBa #\nA→· , a\nB→·a ,",
+    "step_2": "I₁:\ns→b·Ba ,#\nB→·a ,a\n\nI₂:\ns'→s·,#\n\nI₃:\ns→A·aA ,#",
+    "step_3": "I₄:\ns→bB·a ,#\n\nI₅:\nB→a· ,a\n\nI₆:\ns→Aa·A ,#\nA→· ,a\n\nI₇:\ns→bBa· ,#\n\nI₈:\ns→AaA· ,#",
+    "step_4": "I₀ --b--> I₁\nI₀ --S--> I₂\nI₀ --A--> I₃\nI₁ --B--> I₄\nI₁ --a--> I₅\nI₃ --a--> I₆\nI₆ --A--> I₈\nI₄ --a--> I₇"
+  },
+  "facts": {
+    "step_1": "visible",
+    "step_2": "visible",
+    "step_3": "visible",
+    "step_4": "visible"
+  }
+}

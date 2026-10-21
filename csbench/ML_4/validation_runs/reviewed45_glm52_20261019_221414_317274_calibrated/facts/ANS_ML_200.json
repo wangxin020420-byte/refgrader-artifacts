@@ -1,0 +1,417 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T07:09:30.286859",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ML_4/ANS_ML_200.jpg",
+  "image_sha256": "5238eb4b5f82c96bc4d71599eefec519cb0f67a66d6ac7567e50f8cba05ec14d",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/ML_4/ANS_ML_200.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 34,
+    "accepted_token_count": 34,
+    "mean_confidence": 0.852517,
+    "min_confidence": 0.5,
+    "joined_text": "1. 解：So: 初始状态\nS1}: 有一个有效信号“0”\n0/0\nS_2}:效信号“ol”\n1/\n0\n_3:效信号“010”\nS4:有效信号：“0|01”\n0%\nS-:效信号：“01010”\n1\n次态/输出\n1/0\n现态\nx:0\nx=1\nSo\nS110\nSo10\nS1\nSo10\nS210\nS2\nS3/0\n5010\nS3\nS110\nS4/0\nS4\n15/1\n0o/0\nSr\n5110\nS410",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.066371,
+      "very_dark_pixel_ratio": 0.043321,
+      "lower_region_dark_pixel_ratio": 0.062732,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1.解：S₀：初始状态 S₁：有一个有效信号“0” S₂：有效信号“01” S₃：有效信号“010” S₄：有效信号“0101” S₅：有效信号“01010” 现态 x=0 x=1 S₀ S₁/0 S₀/0 S₁ S₀/0 S₂/0 S₂ S₃/0 S₀/0 S₃ S₁/0 S₄/0 S₄ S₅/1 S₀/0 S₅ S₁/0 S₄/0",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_ML_200",
+    "question_id": "ML_4",
+    "subject": "ML",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": {
+      "state_diagram": {
+        "states": [
+          "So: 初始状态",
+          "S1}: 有一个有效信号“0”",
+          "S_2}:效信号“ol”",
+          "_3:效信号“010”",
+          "S4:有效信号：“0|01”",
+          "S-:效信号：“01010”"
+        ],
+        "transitions": [
+          {
+            "from": "S1}",
+            "to": null,
+            "input_output": "0/0"
+          },
+          {
+            "from": "S_2}",
+            "to": null,
+            "input_output": "0"
+          },
+          {
+            "from": "S_2}",
+            "to": null,
+            "input_output": "1/"
+          },
+          {
+            "from": "S4",
+            "to": null,
+            "input_output": "0%"
+          },
+          {
+            "from": "S-",
+            "to": null,
+            "input_output": "1"
+          },
+          {
+            "from": "S-",
+            "to": null,
+            "input_output": "1/0"
+          }
+        ],
+        "notes": "状态图部分仅能识别到状态标注和部分输入/输出标注，箭头与连接关系不清晰。"
+      },
+      "state_table": {
+        "header": {
+          "top": "次态/输出",
+          "columns": [
+            "现态",
+            "x:0",
+            "x=1"
+          ]
+        },
+        "rows": [
+          {
+            "present_state": "So",
+            "x0": "S110",
+            "x1": "So10"
+          },
+          {
+            "present_state": "S1",
+            "x0": "So10",
+            "x1": "S210"
+          },
+          {
+            "present_state": "S3",
+            "x0": "S3/0",
+            "x1": "S4/0"
+          },
+          {
+            "present_state": "Sr",
+            "x0": "15/1",
+            "x1": "S410"
+          }
+        ],
+        "additional_ocr_fragments": [
+          "S2",
+          "S110",
+          "5010",
+          "S4",
+          "5110",
+          "0o/0"
+        ],
+        "notes": "表格结构不清晰；部分单元格内容存在重叠或无法确定行列归属。"
+      }
+    }
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten content for this item: the original state diagram and original state table they drew or wrote. For the state table, capture every row and column exactly as written, including state names, next-state entries, output values, and any separators or grouping. For the state diagram, transcribe all states, transitions, arrows, direction, labels, and input/output annotations exactly as drawn, preserving order and layout relations. Do not infer or correct anything; report only what the student actually wrote or drew."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 38.5,
+        "cells_left_to_right": [
+          {
+            "text": "1. 解：So: 初始状态",
+            "x_center": 119.5,
+            "confidence": 0.8511757254600525
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 68.75,
+        "cells_left_to_right": [
+          {
+            "text": "S1}: 有一个有效信号“0”",
+            "x_center": 186.0,
+            "confidence": 0.8558862209320068
+          },
+          {
+            "text": "0/0",
+            "x_center": 535.5,
+            "confidence": 0.9128921627998352
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 112.17,
+        "cells_left_to_right": [
+          {
+            "text": "S_2}:效信号“ol”",
+            "x_center": 161.5,
+            "confidence": 0.7558686137199402
+          },
+          {
+            "text": "0",
+            "x_center": 521.0,
+            "confidence": 0.5604704022407532
+          },
+          {
+            "text": "1/",
+            "x_center": 613.0,
+            "confidence": 0.7223064303398132
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 150.0,
+        "cells_left_to_right": [
+          {
+            "text": "_3:效信号“010”",
+            "x_center": 166.0,
+            "confidence": 0.8787053823471069
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 193.5,
+        "cells_left_to_right": [
+          {
+            "text": "S4:有效信号：“0|01”",
+            "x_center": 170.0,
+            "confidence": 0.8390094041824341
+          },
+          {
+            "text": "0%",
+            "x_center": 609.0,
+            "confidence": 0.9598286151885986
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 235.17,
+        "cells_left_to_right": [
+          {
+            "text": "S-:效信号：“01010”",
+            "x_center": 167.5,
+            "confidence": 0.8811811208724976
+          },
+          {
+            "text": "1",
+            "x_center": 441.5,
+            "confidence": 0.5862289071083069
+          },
+          {
+            "text": "1/0",
+            "x_center": 528.0,
+            "confidence": 0.9273543357849121
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 259.5,
+        "cells_left_to_right": [
+          {
+            "text": "次态/输出",
+            "x_center": 256.0,
+            "confidence": 0.9883535504341125
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 285.83,
+        "cells_left_to_right": [
+          {
+            "text": "现态",
+            "x_center": 98.5,
+            "confidence": 0.9869965314865112
+          },
+          {
+            "text": "x:0",
+            "x_center": 197.5,
+            "confidence": 0.8380293846130371
+          },
+          {
+            "text": "x=1",
+            "x_center": 275.5,
+            "confidence": 0.986550509929657
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 314.5,
+        "cells_left_to_right": [
+          {
+            "text": "So",
+            "x_center": 101.5,
+            "confidence": 0.9952856302261353
+          },
+          {
+            "text": "S110",
+            "x_center": 208.5,
+            "confidence": 0.8358700275421143
+          },
+          {
+            "text": "So10",
+            "x_center": 286.0,
+            "confidence": 0.9467781186103821
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 341.83,
+        "cells_left_to_right": [
+          {
+            "text": "S1",
+            "x_center": 100.5,
+            "confidence": 0.6989109516143799
+          },
+          {
+            "text": "So10",
+            "x_center": 209.0,
+            "confidence": 0.9062014222145081
+          },
+          {
+            "text": "S210",
+            "x_center": 289.0,
+            "confidence": 0.9617829918861389
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 380.83,
+        "cells_left_to_right": [
+          {
+            "text": "S3",
+            "x_center": 99.5,
+            "confidence": 0.9667795896530151
+          },
+          {
+            "text": "S2",
+            "x_center": 100.0,
+            "confidence": 0.9862474203109741
+          },
+          {
+            "text": "S3/0",
+            "x_center": 208.0,
+            "confidence": 0.8896544575691223
+          },
+          {
+            "text": "S110",
+            "x_center": 208.0,
+            "confidence": 0.8311367034912109
+          },
+          {
+            "text": "S4/0",
+            "x_center": 288.0,
+            "confidence": 0.7912532091140747
+          },
+          {
+            "text": "5010",
+            "x_center": 288.5,
+            "confidence": 0.7443036437034607
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 427.83,
+        "cells_left_to_right": [
+          {
+            "text": "Sr",
+            "x_center": 97.5,
+            "confidence": 0.7409505844116211
+          },
+          {
+            "text": "S4",
+            "x_center": 99.5,
+            "confidence": 0.721172034740448
+          },
+          {
+            "text": "15/1",
+            "x_center": 207.0,
+            "confidence": 0.8772425651550293
+          },
+          {
+            "text": "5110",
+            "x_center": 208.5,
+            "confidence": 0.8231137990951538
+          },
+          {
+            "text": "S410",
+            "x_center": 285.5,
+            "confidence": 0.9374679327011108
+          },
+          {
+            "text": "0o/0",
+            "x_center": 287.5,
+            "confidence": 0.8006060123443604
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=119.5: 1. 解：So: 初始状态\nRow 2: x=186.0: S1}: 有一个有效信号“0” | x=535.5: 0/0\nRow 3: x=161.5: S_2}:效信号“ol” | x=521.0: 0 | x=613.0: 1/\nRow 4: x=166.0: _3:效信号“010”\nRow 5: x=170.0: S4:有效信号：“0|01” | x=609.0: 0%\nRow 6: x=167.5: S-:效信号：“01010” | x=441.5: 1 | x=528.0: 1/0\nRow 7: x=256.0: 次态/输出\nRow 8: x=98.5: 现态 | x=197.5: x:0 | x=275.5: x=1\nRow 9: x=101.5: So | x=208.5: S110 | x=286.0: So10\nRow 10: x=100.5: S1 | x=209.0: So10 | x=289.0: S210\nRow 11: x=99.5: S3 | x=100.0: S2 | x=208.0: S3/0 | x=208.0: S110 | x=288.0: S4/0 | x=288.5: 5010\nRow 12: x=97.5: Sr | x=99.5: S4 | x=207.0: 15/1 | x=208.5: 5110 | x=285.5: S410 | x=287.5: 0o/0"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "状态图呈现S0、S1、S2、S3、S4、S5（或S₋）间的转移：S0输入0→S1（输出0）、输入1→S0（输出0）；S1输入0→S0（0）、输入1→S2（0）；S2输入0→S3（0）、输入1→S0（0）；S3输入0→S1（0）、输入1→S4（0）；S4输入0→S5（1）、输入1→S0（0）；S5输入0→S1（0）、输入1→S4（0）",
+  "diagram_facts": {
+    "step_1": "状态图：节点S0、S1、S2、S3、S4、S5（或S₋），箭头连接并标注输入/输出；状态表：现态列含S0、S1、S2、S3、S4、S5，x:0列对应次态/输出（如S0行S1/0、S0/0），x:1列对应次态/输出（如S0行S0/0、S2/0等）；完整可见路径：状态图呈现S0、S1、S2、S3、S4、S5（或S₋）间的转移：S0输入0→S1（输出0）、输入1→S0（输出0）；S1输入0→S0（0）、输入1→S2（0）；S2输入0→S3（0）、输入1→S0（0）；S3输入0→S1（0）、输入1→S4（0）；S4输入0→S5（1）、输入1→S0（0）；S5输入0→S1（0）、输入1→S4（0）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten content for this item: the original state diagram and original state table they drew or wrote. For the state table, capture every row and column exactly as written, including state names, next-state entries, output values, and any separators or grouping. For the state diagram, transcribe all states, transitions, arrows, direction, labels, and input/output annotations exactly as drawn, preserving order and layout relations. Do not infer or correct anything; report only what the student actually wrote or drew."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "1. 前提：S₀:初始状态\nS₁:有一个有效前信号“0”\nS₂:有效信号“01”\nS₃:有效信号“010”\nS₄:有效信号“0101”\nS₅:有效信号“01010”\n\n现态    x=0    x=1\nS₀     S₁/0   S₀/0\nS₁     S₀/0   S₂/0\nS₂     S₃/0   S₀/0\nS₃     S₁/0   S₄/0\nS₄     S₅/1   S₀/0\nS₅     S₁/0   S₄/0\n\n（状态图：S₀→S₁(x=0/0), S₀→S₀(x=1/0); S₁→S₀(x=0/0), S₁→S₂(x=1/0); S₂→S₃(x=0/0), S₂→S₀(x=1/0); S₃→S₁(x=0/0), S₃→S₄(x=1/0); S₄→S₅(x=0/1), S₄→S₀(x=1/0); S₅→S₁(x=0/0), S₅→S₄(x=1/0)）"
+  },
+  "facts": {
+    "step_1": "S₀：初始状态 S₁：有一个有效信号“0” S₂：有效信号“01” S₃：有效信号“010” S₄：有效信号“0101” S₅：有效信号“01010” 现态 x=0 x=1 S₀ S₁/0 S₀/0 S₁ S₀/0 S₂/0 S₂ S₃/0 S₀/0 S₃ S₁/0 S₄/0 S₄ S₅/1 S₀/0 S₅ S₁/0 S₄/0"
+  }
+}

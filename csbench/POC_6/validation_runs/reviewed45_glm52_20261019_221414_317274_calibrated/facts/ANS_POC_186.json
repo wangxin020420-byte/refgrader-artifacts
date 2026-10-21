@@ -1,0 +1,97 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T21:43:14.493938",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_186.jpg",
+  "image_sha256": "a98f02528d5dca057605891aee3a6833bf2736eebb9bf2c56dace42a4f7f9939",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_186.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 14,
+    "accepted_token_count": 14,
+    "mean_confidence": 0.98355,
+    "min_confidence": 0.5,
+    "joined_text": "1. G5为上下无关文法.\n2.\na\nA\nb\nA\nS\nS\na\nA\nb\nC\nS\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "multiple_confident_ocr_tokens",
+      "dark_pixel_ratio": 0.017174,
+      "very_dark_pixel_ratio": 0.010196,
+      "lower_region_dark_pixel_ratio": 0.011003,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1.G5为上下无关文法.|2.如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_186",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_2_component_1": "S为根节点，子节点依次为a、A、b；A的子节点为A和S；A的子节点A的子节点为S（S的子节点为c）；A的子节点S的子节点为a、A、b；A的子节点A的子节点为S（S的子节点为c）",
+    "step_2_component_2": "图中未明确显示属性值（如S.x、A.x等的具体数值或赋值表达式）"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's written representation of the syntax tree structure for acacbb, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact nesting, node labels, ordering of children, and any symbols or separators used. Do not extract attribute values here; only the tree structure."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node of the syntax tree, including any labels such as S.x, A.x, or equivalent, and the numeric or symbolic values assigned. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and the values as written for each node."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_final_1",
+    "step_2_component_1"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "未书写",
+    "step_1_final_1": "G5为上下无关文法",
+    "step_2_component_1": "S(a, A(A(S(c)), S(a, A(S(c)), b)))",
+    "step_2_component_2": "未书写"
+  },
+  "facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "未书写",
+    "step_1_final_1": "G5为上下无关文法.",
+    "step_2_component_1": "S为根节点，子节点依次为a、A、b；A的子节点为A和S；A的子节点A的子节点为S（S的子节点为c）；A的子节点S的子节点为a、A、b；A的子节点A的子节点为S（S的子节点为c）",
+    "step_2_component_2": "图中未明确显示属性值（如S.x、A.x等的具体数值或赋值表达式）"
+  }
+}

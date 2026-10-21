@@ -1,0 +1,369 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T03:31:01.667810",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_4/ANS_CO_730.png",
+  "image_sha256": "7796ac650ce68871be606d263951ebe5425a5940b35ad6bb4a47c4550a3ad313",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_4/ANS_CO_730.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 32,
+    "accepted_token_count": 31,
+    "mean_confidence": 0.895115,
+    "min_confidence": 0.5,
+    "joined_text": "2. （20分）\n块Tag标记话块内偏移\n①主右\n将770057转换成=进制\n12位\n11位\n可得\nTap标记位 索引 块内偏移\nCaehe\n8位4位\n11位\n011) 1111 0000 0000 0101\n0111.\n⑦ 将2D07FF 转换成二制可得\n由Cache字段可知\n000 01010111为块内偏\n0010 1101 0000 0111 11111111\n→ 0000为组索引\n由cache 中段可知\n111 11110为 T4t块标记准\n1111111111为块内偏移\n根据其<可知 1111110为块1\n0000为组索31\n成块s\n组素31应0000或0001\n01011010为T09块标记位\n顾从 cache 可以 访问到.\n根据表可知01011010在块2内\n该单元的数据.\n2-组相联可知. 组索引应为 0001.\n文 Cauche 无法识问到该单无的数据",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.10755,
+      "very_dark_pixel_ratio": 0.077565,
+      "lower_region_dark_pixel_ratio": 0.10758,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "主存 Tag标志 块内偏移：12位 11位\nCache Tag标志位 组索引 块内偏移：8位 4位 11位\n将2D07FF转换成二进制可得\n0010 1101 0000 0111 1111 1111\n由cache字段可知\n111 1111 1111为块内偏移\n0000为组索引1\n010 11010为Tag块标记位\n根据表可知01011010在块2内\n2-组相联可知组索引应为0001\n故cache无法访问到该单元的数据\n将7F 0057转换成二进制可得\n0111 1111 0000 0000 0101 0111\n由cache字段可知\n000 01010111为块内偏移\n→0000为组索引1\n111 11110为Tag块标记位\n根据表可知111 11110为块1块3\n组索引为000或0001\n所以cache可以访问到\n该单元的数据",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_730",
+    "question_id": "CO_4",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_3": "Cache：8位4位11位；由Cache字段可知；2-组相联可知. 组索引应为 0001.",
+    "step_4": "主存：块Tag标记话块内偏移；Tap标记位 索引 块内偏移；12位；11位",
+    "step_5": "Cache：8位4位11位；Tap标记位 索引 块内偏移；11位",
+    "step_6a": "将2D07FF转换成二制可得；0010 1101 0000 0111 11111111；→ 0000为组索引；0000为组索31；组素31应0000或0001",
+    "step_6b": "111 11110为 T4t块标记准；根据其<可知 1111110为块1；01011010为T09块标记位；根据表可知01011010在块2内；顾从 cache 可以 访问到.",
+    "step_7a": "将770057转换成=进制；可得；011) 1111 0000 0000 0101；0111.；000 01010111为块内偏；移；2-组相联可知. 组索引应为 0001.",
+    "step_7b": "1111111111为块内偏移；文 Cauche 无法识问到该单无的数据"
+  },
+  "table_checklist": [
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's concrete handwritten content for the Cache group number bit count. Ask for the number of bits, any table entry, formula, or substitution relation written (such as total blocks, associativity, number of groups, or power-of-two relation), and any computation trace. Preserve all numbers, units, exponents, and separators exactly as written."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's concrete handwritten content for the main memory address format. Ask for the field names, their bit widths, and the order in which they are written. Preserve all separators, arrows, vertical bars, and grouping exactly as written."
+    },
+    {
+      "id": "step_5",
+      "instruction": "Extract the student's concrete handwritten content for the Cache address format. Ask for the field names, their bit widths, and the order in which they are written. Preserve all separators, arrows, vertical bars, and grouping exactly as written."
+    },
+    {
+      "id": "step_6a",
+      "instruction": "Extract the student's concrete handwritten content for the group number field extracted from the given address. Ask for the group number value, any binary or hexadecimal representation, and any written description of the extraction step (such as removing low bits and taking the next bits). Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_6b",
+      "instruction": "Extract the student's concrete handwritten content for the tag field extracted from the given address and the in-group comparison. Ask for the tag value in binary or hexadecimal, any written comparison of which blocks in the group are checked, and any statement about matching or not matching with stored blocks. Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_7a",
+      "instruction": "Extract the student's concrete handwritten content for the group number field extracted from the given address. Ask for the group number value, any binary or hexadecimal representation, and any written description of the extraction step (such as removing low bits and taking the next bits). Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    },
+    {
+      "id": "step_7b",
+      "instruction": "Extract the student's concrete handwritten content for the tag field extracted from the given address and the in-group comparison. Ask for the tag value in binary or hexadecimal, any written comparison of which blocks in the group are checked, and any statement about matching or not matching with stored blocks. Preserve leading zeros, suffixes, grouping, and separators exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 78.75,
+        "cells_left_to_right": [
+          {
+            "text": "2. （20分）",
+            "x_center": 56.0,
+            "confidence": 0.950659453868866
+          },
+          {
+            "text": "①主右",
+            "x_center": 80.5,
+            "confidence": 0.6826152801513672
+          },
+          {
+            "text": "12位",
+            "x_center": 211.5,
+            "confidence": 0.9998125433921814
+          },
+          {
+            "text": "块Tag标记话块内偏移",
+            "x_center": 281.5,
+            "confidence": 0.8474864959716797
+          },
+          {
+            "text": "11位",
+            "x_center": 338.5,
+            "confidence": 0.9774027466773987
+          },
+          {
+            "text": "将770057转换成=进制",
+            "x_center": 784.5,
+            "confidence": 0.868962824344635
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 124.25,
+        "cells_left_to_right": [
+          {
+            "text": "Tap标记位 索引 块内偏移",
+            "x_center": 324.5,
+            "confidence": 0.8249384164810181
+          },
+          {
+            "text": "可得",
+            "x_center": 655.5,
+            "confidence": 0.9904451966285706
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 175.0,
+        "cells_left_to_right": [
+          {
+            "text": "Caehe",
+            "x_center": 97.0,
+            "confidence": 0.9323034286499023
+          },
+          {
+            "text": "8位4位",
+            "x_center": 256.5,
+            "confidence": 0.9743545651435852
+          },
+          {
+            "text": "11位",
+            "x_center": 404.0,
+            "confidence": 0.8823639750480652
+          },
+          {
+            "text": "011) 1111 0000 0000 0101",
+            "x_center": 787.5,
+            "confidence": 0.9718408584594727
+          },
+          {
+            "text": "0111.",
+            "x_center": 912.5,
+            "confidence": 0.989165186882019
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 234.5,
+        "cells_left_to_right": [
+          {
+            "text": "⑦ 将2D07FF 转换成二制可得",
+            "x_center": 267.0,
+            "confidence": 0.9017561674118042
+          },
+          {
+            "text": "由Cache字段可知",
+            "x_center": 730.0,
+            "confidence": 0.8892582654953003
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 299.5,
+        "cells_left_to_right": [
+          {
+            "text": "0010 1101 0000 0111 11111111",
+            "x_center": 270.5,
+            "confidence": 0.8753218650817871
+          },
+          {
+            "text": "→ 0000为组索引",
+            "x_center": 771.5,
+            "confidence": 0.9076774716377258
+          },
+          {
+            "text": "000 01010111为块内偏",
+            "x_center": 810.0,
+            "confidence": 0.9733469486236572
+          },
+          {
+            "text": "移",
+            "x_center": 931.5,
+            "confidence": 0.34981605410575867
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 362.5,
+        "cells_left_to_right": [
+          {
+            "text": "由cache 中段可知",
+            "x_center": 192.5,
+            "confidence": 0.8620153665542603
+          },
+          {
+            "text": "111 11110为 T4t块标记准",
+            "x_center": 803.5,
+            "confidence": 0.847891092300415
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 406.0,
+        "cells_left_to_right": [
+          {
+            "text": "1111111111为块内偏移",
+            "x_center": 246.0,
+            "confidence": 0.8716762065887451
+          },
+          {
+            "text": "根据其<可知 1111110为块1",
+            "x_center": 800.0,
+            "confidence": 0.8221375346183777
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 453.17,
+        "cells_left_to_right": [
+          {
+            "text": "0000为组索31",
+            "x_center": 210.5,
+            "confidence": 0.9444392323493958
+          },
+          {
+            "text": "组素31应0000或0001",
+            "x_center": 755.0,
+            "confidence": 0.9314127564430237
+          },
+          {
+            "text": "成块s",
+            "x_center": 914.5,
+            "confidence": 0.6463709473609924
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 515.17,
+        "cells_left_to_right": [
+          {
+            "text": "01011010为T09块标记位",
+            "x_center": 258.0,
+            "confidence": 0.9380631446838379
+          },
+          {
+            "text": "根据表可知01011010在块2内",
+            "x_center": 273.0,
+            "confidence": 0.9361959099769592
+          },
+          {
+            "text": "顾从 cache 可以 访问到.",
+            "x_center": 782.0,
+            "confidence": 0.8456254005432129
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 569.25,
+        "cells_left_to_right": [
+          {
+            "text": "2-组相联可知. 组索引应为 0001.",
+            "x_center": 282.5,
+            "confidence": 0.8976497650146484
+          },
+          {
+            "text": "该单元的数据.",
+            "x_center": 809.0,
+            "confidence": 0.8595507740974426
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 614.0,
+        "cells_left_to_right": [
+          {
+            "text": "文 Cauche 无法识问到该单无的数据",
+            "x_center": 357.0,
+            "confidence": 0.9058383107185364
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=56.0: 2. （20分） | x=80.5: ①主右 | x=211.5: 12位 | x=281.5: 块Tag标记话块内偏移 | x=338.5: 11位 | x=784.5: 将770057转换成=进制\nRow 2: x=324.5: Tap标记位 索引 块内偏移 | x=655.5: 可得\nRow 3: x=97.0: Caehe | x=256.5: 8位4位 | x=404.0: 11位 | x=787.5: 011) 1111 0000 0000 0101 | x=912.5: 0111.\nRow 4: x=267.0: ⑦ 将2D07FF 转换成二制可得 | x=730.0: 由Cache字段可知\nRow 5: x=270.5: 0010 1101 0000 0111 11111111 | x=771.5: → 0000为组索引 | x=810.0: 000 01010111为块内偏 | x=931.5: 移\nRow 6: x=192.5: 由cache 中段可知 | x=803.5: 111 11110为 T4t块标记准\nRow 7: x=246.0: 1111111111为块内偏移 | x=800.0: 根据其<可知 1111110为块1\nRow 8: x=210.5: 0000为组索31 | x=755.0: 组素31应0000或0001 | x=914.5: 成块s\nRow 9: x=258.0: 01011010为T09块标记位 | x=273.0: 根据表可知01011010在块2内 | x=782.0: 顾从 cache 可以 访问到.\nRow 10: x=282.5: 2-组相联可知. 组索引应为 0001. | x=809.0: 该单元的数据.\nRow 11: x=357.0: 文 Cauche 无法识问到该单无的数据"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4",
+    "step_5",
+    "step_6a",
+    "step_6b",
+    "step_6c",
+    "step_7a",
+    "step_7b",
+    "step_7c"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "12位+11位+4位+11位",
+    "step_2": "11位",
+    "step_3": "4位",
+    "step_4": "主存 块Tag 标记 组号 块内偏移 12位 11位 4位 11位",
+    "step_5": "Cache Tag标记 组索引 块内偏移 8位 4位 11位",
+    "step_6a": "0000",
+    "step_6b": "010 1101 0 为Tag块标记位 根据表可知01011010在块2内 2-组相联可知组索引应为0001",
+    "step_6c": "无法访问到该单元的数据",
+    "step_7a": "0000",
+    "step_7b": "111 1111 0 为Tag块标记位 根据表可知11111110为块1 组索引1对应000或0001 均可",
+    "step_7c": "可以访问到该单元的数据"
+  },
+  "facts": {
+    "step_1": "主存 Tag标志 块内偏移：12位 11位",
+    "step_2": "块内偏移：11位",
+    "step_3": "Cache Tag标志位 组索引 块内偏移：8位 4位 11位",
+    "step_4": "主存 Tag标志 块内偏移：12位 11位",
+    "step_5": "Cache Tag标志位 组索引 块内偏移：8位 4位 11位",
+    "step_6a": "0000为组索引1",
+    "step_6b": "010 11010为Tag块标记位；根据表可知01011010在块2内；2-组相联可知组索引应为0001",
+    "step_6c": "故cache无法访问到该单元的数据",
+    "step_7a": "→0000为组索引1",
+    "step_7b": "111 11110为Tag块标记位；根据表可知111 11110为块1块3；组索引为000或0001",
+    "step_7c": "所以cache可以访问到该单元的数据"
+  }
+}

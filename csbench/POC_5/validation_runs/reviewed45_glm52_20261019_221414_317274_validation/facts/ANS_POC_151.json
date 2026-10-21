@@ -1,0 +1,109 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T07:57:43.184017",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_5/ANS_POC_151.jpg",
+  "image_sha256": "58657832604c19af783de6b969a0dba62a3a7574546296c2127b03d6e71bcb4f",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_5/ANS_POC_151.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 31,
+    "accepted_token_count": 31,
+    "mean_confidence": 0.883171,
+    "min_confidence": 0.5,
+    "joined_text": "5.\nI1\nI4\nI7\ns->b.Ba\nB\n5->bb.a\na\ns→bBa\nB→.a\nI_0\nb\n(0)5'->.s\nI_5}\nI_{2\n(1)S→.AaA\na\nS\nB→a.\n(2)s-→.bBa\ns' ->s.\n(3)B→-a\nA I3\nI_6\nI8\n(4) A →.\na\nA\nS-→A-aA\nS→Aa·A\nS→A",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.053954,
+      "very_dark_pixel_ratio": 0.033588,
+      "lower_region_dark_pixel_ratio": 0.060674,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_151",
+    "question_id": "POC_5",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1": "I0 contains (0) S' → .S, (1) S → .AaA, (2) S → .bBa, (3) B → .a, (4) A → .",
+    "step_2": "I1 contains S → b.Ba, B → .a; I2 contains S' → S.; I3 contains S → A.aA",
+    "step_3": "I4 contains S → bB.a; I5 contains B → a.; I6 contains S → Aa.A; I7 contains S → bBa; I8 contains S → [partially unclear]A",
+    "step_4": "Transitions: I0→b→I1, I0→S→I2, I0→A→I3, I1→B→I4, I1→a→I5, I4→a→I7, I3→a→I6, I6→A→I8"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten augmented grammar and initial LR(1) item set I0 exactly as written, preserving all grammar productions, dot positions, lookahead symbols in braces, arrows, and line breaks."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's handwritten successor item sets constructed from I0 and I1 exactly as written, preserving all item set labels, grammar productions, dot positions, lookahead symbols in braces, arrows, and line breaks."
+    },
+    {
+      "id": "step_3",
+      "instruction": "Extract the student's handwritten remaining item sets exactly as written, preserving all item set labels, grammar productions, dot positions, lookahead symbols in braces, arrows, and line breaks, especially for any epsilon production lookaheads."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's handwritten state transition relations for the complete LR(1) canonical collection exactly as written, preserving all state labels, transition symbols, arrows, and direction."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "(0) S' -> S\n(1) S -> .AaA\n(2) S -> .bBa\n(3) B -> .a\n(4) A -> .",
+    "step_2": "I1:\nS -> b.Ba\nB -> .a\n\nI2:\nS' -> S.\n\nI3:\nS -> A.aA",
+    "step_3": "I4:\nS -> bB.a\n\nI5:\nB -> a.\n\nI6:\nS -> Aa.A\n\nI7:\nS -> bBa\n\nI8:\nS -> A.A",
+    "step_4": "I0:\nb → I1\nS → I2\nA → I3\n\nI1:\nB → I4\na → I5\n\nI3:\na → I6\n\nI4:\na → I7\n\nI6:\nA → I8"
+  },
+  "facts": {
+    "step_1": "I0 contains (0) S' → .S, (1) S → .AaA, (2) S → .bBa, (3) B → .a, (4) A → .",
+    "step_2": "I1 contains S → b.Ba, B → .a; I2 contains S' → S.; I3 contains S → A.aA",
+    "step_3": "I4 contains S → bB.a; I5 contains B → a.; I6 contains S → Aa.A; I7 contains S → bBa; I8 contains S → [partially unclear]A",
+    "step_4": "Transitions: I0→b→I1, I0→S→I2, I0→A→I3, I1→B→I4, I1→a→I5, I4→a→I7, I3→a→I6, I6→A→I8"
+  }
+}

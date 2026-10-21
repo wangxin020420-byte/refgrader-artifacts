@@ -1,0 +1,444 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T07:13:49.458657",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/ML_4/ANS_ML_211.jpg",
+  "image_sha256": "64ff8b375d1c6c547a5e8d76e3b4c42e41e953e839fe3fe5c4bdb205b0489953",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/ML_4/ANS_ML_211.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 36,
+    "accepted_token_count": 36,
+    "mean_confidence": 0.93947,
+    "min_confidence": 0.5,
+    "joined_text": "1. 设初状为A，B:有0，C01D:010\n改初始状态A为1\nB: 0. C: 010. P:010.E:D101 F: 01010\n0\n0/0\n1/0\n现态\nA\nB\n119\nA\n1B/0\nA/0\nB\nB/0\nC/0\n0/%\n0/0\n0/0\n1/0\n110\nC\nD10\nA/o\nD\nD\nB/O\nE/0\n0/1\n110\nE\nF1•1\nA/0\nF\nB/O\nE/U",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.066635,
+      "very_dark_pixel_ratio": 0.043069,
+      "lower_region_dark_pixel_ratio": 0.064902,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "设初始状态为A，B有0，C:01 D:010 次初始状态，A重为1 B:01 C:010 D:0101 E:D10/0 F:01/010",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_ML_211",
+    "question_id": "ML_4",
+    "subject": "ML",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": {
+      "state_table": {
+        "header": [
+          "现态",
+          "X=0",
+          "X=1"
+        ],
+        "rows": [
+          [
+            "A",
+            "0/0",
+            "1/0"
+          ],
+          [
+            "B",
+            "0/0",
+            "1/0"
+          ],
+          [
+            "C",
+            "0/0",
+            "1/0"
+          ],
+          [
+            "D",
+            "0/0",
+            "1/0"
+          ],
+          [
+            "E",
+            "0/1",
+            "1/0"
+          ],
+          [
+            "F",
+            "0/0",
+            "1/0"
+          ]
+        ],
+        "notes": "表格结构不清晰；右侧表格列标题未完整识别，仅可见“现态”及部分转移/输出项。"
+      },
+      "state_diagram": {
+        "states": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "transitions": [
+          {
+            "from": "A",
+            "to": "B",
+            "input": "0",
+            "output": "0"
+          },
+          {
+            "from": "A",
+            "to": "A",
+            "input": "1",
+            "output": "0"
+          },
+          {
+            "from": "B",
+            "to": "C",
+            "input": "0",
+            "output": "0"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "input": "1",
+            "output": "0"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "input": "0",
+            "output": "0"
+          },
+          {
+            "from": "C",
+            "to": "B",
+            "input": "1",
+            "output": "0"
+          },
+          {
+            "from": "D",
+            "to": "E",
+            "input": "0",
+            "output": "0"
+          },
+          {
+            "from": "D",
+            "to": "B",
+            "input": "1",
+            "output": "0"
+          },
+          {
+            "from": "E",
+            "to": "F",
+            "input": "0",
+            "output": "1"
+          },
+          {
+            "from": "E",
+            "to": "A",
+            "input": "1",
+            "output": "0"
+          },
+          {
+            "from": "F",
+            "to": "B",
+            "input": "0",
+            "output": "0"
+          },
+          {
+            "from": "F",
+            "to": "E",
+            "input": "1",
+            "output": "0"
+          }
+        ],
+        "notes": "状态图内容部分字迹模糊；部分转移标注如“1B/0”“D10”“F1•1”“E/U”等无法准确读取。"
+      }
+    }
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten content for this item: the original state diagram and original state table they drew or wrote. For the state table, capture every row and column exactly as written, including state names, next-state entries, output values, and any separators or grouping. For the state diagram, transcribe all states, transitions, arrows, direction, labels, and input/output annotations exactly as drawn, preserving order and layout relations. Do not infer or correct anything; report only what the student actually wrote or drew."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 47.0,
+        "cells_left_to_right": [
+          {
+            "text": "1. 设初状为A，B:有0，C01D:010",
+            "x_center": 252.0,
+            "confidence": 0.7713622450828552
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 88.5,
+        "cells_left_to_right": [
+          {
+            "text": "改初始状态A为1",
+            "x_center": 123.5,
+            "confidence": 0.8983774185180664
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 133.75,
+        "cells_left_to_right": [
+          {
+            "text": "0",
+            "x_center": 195.5,
+            "confidence": 0.9728743433952332
+          },
+          {
+            "text": "B: 0. C: 010. P:010.E:D101 F: 01010",
+            "x_center": 230.0,
+            "confidence": 0.8612398505210876
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 189.28,
+        "cells_left_to_right": [
+          {
+            "text": "A",
+            "x_center": 62.5,
+            "confidence": 0.9998862743377686
+          },
+          {
+            "text": "0/0",
+            "x_center": 121.0,
+            "confidence": 0.9985926151275635
+          },
+          {
+            "text": "B",
+            "x_center": 182.5,
+            "confidence": 0.9949550032615662
+          },
+          {
+            "text": "1/0",
+            "x_center": 237.0,
+            "confidence": 0.9828856587409973
+          },
+          {
+            "text": "119",
+            "x_center": 257.5,
+            "confidence": 0.7907989621162415
+          },
+          {
+            "text": "A",
+            "x_center": 463.0,
+            "confidence": 0.9996452331542969
+          },
+          {
+            "text": "现态",
+            "x_center": 467.0,
+            "confidence": 0.980400562286377
+          },
+          {
+            "text": "1B/0",
+            "x_center": 549.0,
+            "confidence": 0.8015114068984985
+          },
+          {
+            "text": "A/0",
+            "x_center": 623.0,
+            "confidence": 0.945850133895874
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 254.25,
+        "cells_left_to_right": [
+          {
+            "text": "0/%",
+            "x_center": 62.5,
+            "confidence": 0.9122877717018127
+          },
+          {
+            "text": "1/0",
+            "x_center": 109.5,
+            "confidence": 0.995070219039917
+          },
+          {
+            "text": "110",
+            "x_center": 165.0,
+            "confidence": 0.9975064396858215
+          },
+          {
+            "text": "0/0",
+            "x_center": 258.0,
+            "confidence": 0.9340025782585144
+          },
+          {
+            "text": "D",
+            "x_center": 282.0,
+            "confidence": 0.9989136457443237
+          },
+          {
+            "text": "0/0",
+            "x_center": 321.0,
+            "confidence": 0.9617152810096741
+          },
+          {
+            "text": "B",
+            "x_center": 460.0,
+            "confidence": 0.9999861717224121
+          },
+          {
+            "text": "C",
+            "x_center": 460.0,
+            "confidence": 0.9971653819084167
+          },
+          {
+            "text": "B/0",
+            "x_center": 547.5,
+            "confidence": 0.9814805388450623
+          },
+          {
+            "text": "D10",
+            "x_center": 549.0,
+            "confidence": 0.951306164264679
+          },
+          {
+            "text": "A/o",
+            "x_center": 622.5,
+            "confidence": 0.8273783326148987
+          },
+          {
+            "text": "C/0",
+            "x_center": 623.5,
+            "confidence": 0.9817121624946594
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 298.4,
+        "cells_left_to_right": [
+          {
+            "text": "0/1",
+            "x_center": 121.0,
+            "confidence": 0.9699428081512451
+          },
+          {
+            "text": "110",
+            "x_center": 237.0,
+            "confidence": 0.9959115982055664
+          },
+          {
+            "text": "D",
+            "x_center": 459.5,
+            "confidence": 0.9996023774147034
+          },
+          {
+            "text": "B/O",
+            "x_center": 546.0,
+            "confidence": 0.9397732615470886
+          },
+          {
+            "text": "E/0",
+            "x_center": 622.0,
+            "confidence": 0.9707754254341125
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 330.0,
+        "cells_left_to_right": [
+          {
+            "text": "E",
+            "x_center": 460.5,
+            "confidence": 0.9967952370643616
+          },
+          {
+            "text": "F1•1",
+            "x_center": 552.0,
+            "confidence": 0.8170958757400513
+          },
+          {
+            "text": "A/0",
+            "x_center": 618.5,
+            "confidence": 0.8398618102073669
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 370.83,
+        "cells_left_to_right": [
+          {
+            "text": "F",
+            "x_center": 463.0,
+            "confidence": 0.9892610311508179
+          },
+          {
+            "text": "B/O",
+            "x_center": 552.0,
+            "confidence": 0.8999714851379395
+          },
+          {
+            "text": "E/U",
+            "x_center": 619.5,
+            "confidence": 0.8650331497192383
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=252.0: 1. 设初状为A，B:有0，C01D:010\nRow 2: x=123.5: 改初始状态A为1\nRow 3: x=195.5: 0 | x=230.0: B: 0. C: 010. P:010.E:D101 F: 01010\nRow 4: x=62.5: A | x=121.0: 0/0 | x=182.5: B | x=237.0: 1/0 | x=257.5: 119 | x=463.0: A | x=467.0: 现态 | x=549.0: 1B/0 | x=623.0: A/0\nRow 5: x=62.5: 0/% | x=109.5: 1/0 | x=165.0: 110 | x=258.0: 0/0 | x=282.0: D | x=321.0: 0/0 | x=460.0: B | x=460.0: C | x=547.5: B/0 | x=549.0: D10 | x=622.5: A/o | x=623.5: C/0\nRow 6: x=121.0: 0/1 | x=237.0: 110 | x=459.5: D | x=546.0: B/O | x=622.0: E/0\nRow 7: x=460.5: E | x=552.0: F1•1 | x=618.5: A/0\nRow 8: x=463.0: F | x=552.0: B/O | x=619.5: E/U"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "状态图显示节点A、B、C、D、E、F间通过带输入/输出标签的箭头连接，如A→B(0/0)、B→C(1/0)、C→D(1/0)、D→E(0/0)、E→F(0/1)、F→A(1/0)等转移路径",
+  "diagram_facts": {
+    "step_1": "状态图：节点A、B、C、D、E、F，转移箭头标注如A→B(0/0)、B→C(1/0)、C→D(1/0)、D→E(0/0)、E→F(0/1)、F→A(1/0)等；状态表：现态列A-F，X=0列对应B/0、B/0、D/0、B/0、F/1、B/0，X=1列对应A/0、C/0、A/0、E/0、A/0、E/0；完整可见路径：状态图显示节点A、B、C、D、E、F间通过带输入/输出标签的箭头连接，如A→B(0/0)、B→C(1/0)、C→D(1/0)、D→E(0/0)、E→F(0/1)、F→A(1/0)等转移路径"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's handwritten content for this item: the original state diagram and original state table they drew or wrote. For the state table, capture every row and column exactly as written, including state names, next-state entries, output values, and any separators or grouping. For the state diagram, transcribe all states, transitions, arrows, direction, labels, and input/output annotations exactly as drawn, preserving order and layout relations. Do not infer or correct anything; report only what the student actually wrote or drew."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "1. 设初始状态为A，B:0，C:01，D:010，E:D/0? F:01010\n状态图：\nA→B(1/0) A→F(0/0)\nB→B(0/0) B→C(1/0)\nC→D(1/0) C→A(0/0)\nD→B(0/0) D→E(1/0)\nE→F(0/1) E→A(1/0)\nF→B(0/0) F→E(1/0)\n原始状态表：\n现态 | X=0/输出 | X=1/输出\nA | B/0 | A/0\nB | B/0 | C/0\nC | D/0 | A/0\nD | B/0 | E/0\nE | F/1 | A/0\nF | B/0 | E/0"
+  },
+  "facts": {
+    "step_1": "设初始状态为A，B有0，C:01 D:010 次初始状态，A重为1 B:01 C:010 D:0101 E:D10/0 F:01/010"
+  }
+}

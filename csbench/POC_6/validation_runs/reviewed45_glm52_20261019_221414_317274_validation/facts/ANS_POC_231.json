@@ -1,0 +1,100 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T08:49:03.590653",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_231.jpg",
+  "image_sha256": "fb570b7f94e26e0ddf13469bcc75fd767b99dc715a490a41152afd7b3cff1c74",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_231.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 21,
+    "accepted_token_count": 21,
+    "mean_confidence": 0.899693,
+    "min_confidence": 0.5,
+    "joined_text": "(2x+.2\n1. 属性文法 G5(S)\n2.\nA·X:A1,x+Sa\nA\n为S属性生法.\n=1+021\nA\nS.x:=A-x+1=1.\nS\n因为2型文法.\n0=Ax=sx1\nπ\nS. x=0\nS\naAb\n1\nA.x==S.x=0.\nC\n~\nCS.x:0.",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.049712,
+      "very_dark_pixel_ratio": 0.032897,
+      "lower_region_dark_pixel_ratio": 0.044281,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1.属性文法G5[S]为S属性文法，且为2型文法.|2.如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_231",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "树结构：根节点（推测为S）向下分支出A和b；A节点向下分支出S和a；S节点向下分支出c；另一分支A节点向下分支出S和b；S节点向下分支出a和b；最底层S节点向下分支出c。属性标注包含S.x=0、A.x:=S.x=0、S.x:=A.x+1=1等关系。",
+  "diagram_facts": {
+    "step_2_component_1": "树结构：根节点（推测为S）分支出A和b；A分支出S和a；S分支出c；另一A分支出S和b；S分支出a和b；最底层S分支出c。节点标签为S、A、a、b、c，连线表示父子关系。；完整可见路径：树结构：根节点（推测为S）向下分支出A和b；A节点向下分支出S和a；S节点向下分支出c；另一分支A节点向下分支出S和b；S节点向下分支出a和b；最底层S节点向下分支出c。属性标注包含S.x=0、A.x:=S.x=0、S.x:=A.x+1=1等关系。",
+    "step_2_component_2": "属性标注：S.x=0（某S节点旁）、A.x:=S.x=0（A节点旁）、S.x:=A.x+1=1（某S节点旁）、A.x:=S.x=0（另一A节点旁）等，保留原标注的属性计算表达式。；完整可见路径：树结构：根节点（推测为S）向下分支出A和b；A节点向下分支出S和a；S节点向下分支出c；另一分支A节点向下分支出S和b；S节点向下分支出a和b；最底层S节点向下分支出c。属性标注包含S.x=0、A.x:=S.x=0、S.x:=A.x+1=1等关系。"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's representation of the syntax tree structure for the given string, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact node labels, ordering, and nesting as written, including any attribute annotations if present."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node in the syntax tree, including any values for root S.x, outer A.x, inner S.x, inner A.x, and leaf S.x nodes. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and numerical values as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_1_core_1"
+  ],
+  "visual_fallback_recovered": [
+    "step_1_core_1",
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_final_1",
+    "step_2_component_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "因为2型文法",
+    "step_1_final_1": "S属性文法",
+    "step_2_component_1": "未书写",
+    "step_2_component_2": "S.x=0，A.x=S.x=0，S.x=0，A.x:=S.x=0，c S.x:0"
+  },
+  "facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "因为2型文法",
+    "step_1_final_1": "属性文法G5[S]为S属性文法，且为2型文法.",
+    "step_2_component_1": "树结构：根节点（推测为S）分支出A和b；A分支出S和a；S分支出c；另一A分支出S和b；S分支出a和b；最底层S分支出c。节点标签为S、A、a、b、c，连线表示父子关系。；完整可见路径：树结构：根节点（推测为S）向下分支出A和b；A节点向下分支出S和a；S节点向下分支出c；另一分支A节点向下分支出S和b；S节点向下分支出a和b；最底层S节点向下分支出c。属性标注包含S.x=0、A.x:=S.x=0、S.x:=A.x+1=1等关系。",
+    "step_2_component_2": "属性标注：S.x=0（某S节点旁）、A.x:=S.x=0（A节点旁）、S.x:=A.x+1=1（某S节点旁）、A.x:=S.x=0（另一A节点旁）等，保留原标注的属性计算表达式。；完整可见路径：树结构：根节点（推测为S）向下分支出A和b；A节点向下分支出S和a；S节点向下分支出c；另一分支A节点向下分支出S和b；S节点向下分支出a和b；最底层S节点向下分支出c。属性标注包含S.x=0、A.x:=S.x=0、S.x:=A.x+1=1等关系。"
+  }
+}

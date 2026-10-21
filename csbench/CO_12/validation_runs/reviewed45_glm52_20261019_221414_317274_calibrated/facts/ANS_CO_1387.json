@@ -1,0 +1,407 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T00:05:34.141451",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1387.jpg",
+  "image_sha256": "13fb8be84a5b15fc03fde8a7133d3011240591f2dad50b4be1052a19cd746d3d",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1387.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 20,
+    "accepted_token_count": 20,
+    "mean_confidence": 0.893036,
+    "min_confidence": 0.5,
+    "joined_text": "5 解：(i):a: DR 数据缓冲寄存器 b: IR 指令寄存器。\nC: AR 地址寄存器\nd: PC 程序计数器\n(2) 至存M→DR→IR→ 操作控制器\n(3) 存访间：运算器ALU→AC→ DR→主存M\n取访向：主存m→bR→运算器ALU\n(4) 主有M→DR→IR→操作控制器\n主存M→ DR→ 运算器ALU\n(5) 由已0，有30条微指令，由30+1 <2，故控制存储器的容量应\n为2{}b\n(6) 设4个互反类分别为AB,C,D. 包括不选中微命令为0的情况，各组所要的\n=进制位数分别为3,4,4.2(2^{3>5+1,2{48+1,2{4>14+1.2^{2≥3+1)\n即操作码字段有13位，又判别字段是直接控制方式为3位，\n7\n故下址字段为24-13-3=8(位)，格式下：\n13\n3\n8\n操作码字段判别字段\n下址手段",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.08877,
+      "very_dark_pixel_ratio": 0.059903,
+      "lower_region_dark_pixel_ratio": 0.092686,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)a: DR 数据缓冲寄存器。b: IR 指令寄存存器。\nC: AR 地址寄存器 d: PC 程序计数器。\n(2)主存M→DR→IR→操作控制器\n(3)有访问:运算器ALU→AC→DR→主存M\n取访问:主存M→DR→运算器ALU\n(4)主存M→DR→IR→操作控制器。\n主存M→ DR→运算器ALU\n(5)由已知,有30条微指令,由30+1 <2^5,故控制存储器的容量应为2^5 b\n(6)设计互斥类分别为A,B,C,D,包括不选中微命令为0的情况,各组所要的二进制位数分别为3,4,4,2(2^3>5+1,2^4>8+1,2^4>14+1,2^2≥3+1)\n即操作码字段有13位，又判别字段是直接控制方式为3位，故下址字段为24-13-3=8(位)，格式如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1387",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "由已0，有30条微指令，由30+1 <2，故控制存储器的容量应为2{}b",
+    "step_5_core_compute": "故下址字段为24-13-3=8(位)，格式下：",
+    "step_6_group12": "各组所要的=进制位数分别为3,4,4.2(2^{3>5+1,2{48+1,2{4>14+1.2^{2≥3+1)",
+    "step_6_group34": "各组所要的=进制位数分别为3,4,4.2(2^{3>5+1,2{48+1,2{4>14+1.2^{2≥3+1)",
+    "step_6_test_field": "又判别字段是直接控制方式为3位",
+    "step_6_addr_field": "故下址字段为24-13-3=8(位)",
+    "step_6_layout": "操作码字段 13 判别字段 3 下址字段 8"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 33.5,
+        "cells_left_to_right": [
+          {
+            "text": "5 解：(i):a: DR 数据缓冲寄存器 b: IR 指令寄存器。",
+            "x_center": 383.5,
+            "confidence": 0.8426913022994995
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 88.5,
+        "cells_left_to_right": [
+          {
+            "text": "C: AR 地址寄存器",
+            "x_center": 294.5,
+            "confidence": 0.9368717074394226
+          },
+          {
+            "text": "d: PC 程序计数器",
+            "x_center": 617.0,
+            "confidence": 0.8677402138710022
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 154.0,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 至存M→DR→IR→ 操作控制器",
+            "x_center": 379.5,
+            "confidence": 0.9394975900650024
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 206.5,
+        "cells_left_to_right": [
+          {
+            "text": "(3) 存访间：运算器ALU→AC→ DR→主存M",
+            "x_center": 425.0,
+            "confidence": 0.8847546577453613
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 259.0,
+        "cells_left_to_right": [
+          {
+            "text": "取访向：主存m→bR→运算器ALU",
+            "x_center": 437.5,
+            "confidence": 0.8800080418586731
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 307.0,
+        "cells_left_to_right": [
+          {
+            "text": "(4) 主有M→DR→IR→操作控制器",
+            "x_center": 380.0,
+            "confidence": 0.950511634349823
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 352.5,
+        "cells_left_to_right": [
+          {
+            "text": "主存M→ DR→ 运算器ALU",
+            "x_center": 357.0,
+            "confidence": 0.9053245186805725
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 403.5,
+        "cells_left_to_right": [
+          {
+            "text": "(5) 由已0，有30条微指令，由30+1 <2，故控制存储器的容量应",
+            "x_center": 518.5,
+            "confidence": 0.8495031595230103
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 452.0,
+        "cells_left_to_right": [
+          {
+            "text": "为2{}b",
+            "x_center": 160.0,
+            "confidence": 0.7322152256965637
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 487.0,
+        "cells_left_to_right": [
+          {
+            "text": "(6) 设4个互反类分别为AB,C,D. 包括不选中微命令为0的情况，各组所要的",
+            "x_center": 518.5,
+            "confidence": 0.8869466781616211
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 545.0,
+        "cells_left_to_right": [
+          {
+            "text": "=进制位数分别为3,4,4.2(2^{3>5+1,2{48+1,2{4>14+1.2^{2≥3+1)",
+            "x_center": 509.0,
+            "confidence": 0.8139419555664062
+          },
+          {
+            "text": "7",
+            "x_center": 622.0,
+            "confidence": 0.7637600898742676
+          }
+        ]
+      },
+      {
+        "row": 12,
+        "y_center": 580.0,
+        "cells_left_to_right": [
+          {
+            "text": "即操作码字段有13位，又判别字段是直接控制方式为3位，",
+            "x_center": 497.0,
+            "confidence": 0.9502193331718445
+          }
+        ]
+      },
+      {
+        "row": 13,
+        "y_center": 646.25,
+        "cells_left_to_right": [
+          {
+            "text": "13",
+            "x_center": 215.0,
+            "confidence": 0.9998844861984253
+          },
+          {
+            "text": "故下址字段为24-13-3=8(位)，格式下：",
+            "x_center": 413.5,
+            "confidence": 0.9618921875953674
+          },
+          {
+            "text": "3",
+            "x_center": 418.5,
+            "confidence": 0.9999005794525146
+          },
+          {
+            "text": "8",
+            "x_center": 541.0,
+            "confidence": 0.9999856948852539
+          }
+        ]
+      },
+      {
+        "row": 14,
+        "y_center": 683.5,
+        "cells_left_to_right": [
+          {
+            "text": "操作码字段判别字段",
+            "x_center": 272.0,
+            "confidence": 0.8382955193519592
+          },
+          {
+            "text": "下址手段",
+            "x_center": 545.0,
+            "confidence": 0.8567845225334167
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=383.5: 5 解：(i):a: DR 数据缓冲寄存器 b: IR 指令寄存器。\nRow 2: x=294.5: C: AR 地址寄存器 | x=617.0: d: PC 程序计数器\nRow 3: x=379.5: (2) 至存M→DR→IR→ 操作控制器\nRow 4: x=425.0: (3) 存访间：运算器ALU→AC→ DR→主存M\nRow 5: x=437.5: 取访向：主存m→bR→运算器ALU\nRow 6: x=380.0: (4) 主有M→DR→IR→操作控制器\nRow 7: x=357.0: 主存M→ DR→ 运算器ALU\nRow 8: x=518.5: (5) 由已0，有30条微指令，由30+1 <2，故控制存储器的容量应\nRow 9: x=160.0: 为2{}b\nRow 10: x=518.5: (6) 设4个互反类分别为AB,C,D. 包括不选中微命令为0的情况，各组所要的\nRow 11: x=509.0: =进制位数分别为3,4,4.2(2^{3>5+1,2{48+1,2{4>14+1.2^{2≥3+1) | x=622.0: 7\nRow 12: x=497.0: 即操作码字段有13位，又判别字段是直接控制方式为3位，\nRow 13: x=215.0: 13 | x=413.5: 故下址字段为24-13-3=8(位)，格式下： | x=418.5: 3 | x=541.0: 8\nRow 14: x=272.0: 操作码字段判别字段 | x=545.0: 下址手段"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "a: DR 数据缓冲寄存器",
+    "step_1_b": "b: IR 指令寄存器",
+    "step_1_c": "C: AR 地址寄存器",
+    "step_1_d": "d: PC 程序计数器",
+    "step_2_p1": "主存M→DR→IR→操作控制器",
+    "step_2_p2": "IR→操作控制器",
+    "step_3_read": "运算器ALU→AC→DR→主存M",
+    "step_3_write": "主存M→DR→运算器ALU",
+    "step_4_operands": "主存M→DR→运算器ALU",
+    "step_4_result": "图中未明确显示",
+    "step_6_layout": "操作码字段|判别字段|下址字段，各字段位数分别为13、3、8"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_6_layout"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_1_c",
+    "step_1_d",
+    "step_2_p1",
+    "step_3_read",
+    "step_3_write",
+    "step_4_operands",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "DR 数据缓冲寄存器",
+    "step_1_b": "IR 指令寄存器",
+    "step_1_c": "AR 地址寄存器",
+    "step_1_d": "PC 程序计数器",
+    "step_2_p1": "主存M→DR→IR→操作控制器",
+    "step_2_p2": "IR→操作控制器",
+    "step_3_read": "存访问：运算器ALU→AC→DR→主存M",
+    "step_3_write": "取访问：主存M→DR→运算器ALU",
+    "step_4_operands": "主存M→DR→IR→操作控制器。主存M→DR→运算器ALU",
+    "step_4_result": "未书写",
+    "step_5_core_field": "由已知，有30条微指令，由30+1<2^5，故控制存储器的容量应为2^5 B",
+    "step_5_core_compute": "即操作码字段有13位，又判别字段是直接控制方式为3位，故下址字段为24-13-3=8（位）",
+    "step_5_final": "2^5 B",
+    "step_6_group12": "3,4",
+    "step_6_group34": "4,2",
+    "step_6_test_field": "3位",
+    "step_6_addr_field": "8位",
+    "step_6_layout": "操作码字段 | 判别字段 | 下址字段"
+  },
+  "facts": {
+    "step_1_a": "a: DR 数据缓冲寄存器。",
+    "step_1_b": "b: IR 指令寄存存器。",
+    "step_1_c": "C: AR 地址寄存器",
+    "step_1_d": "d: PC 程序计数器。",
+    "step_2_p1": "主存M→DR→IR",
+    "step_2_p2": "IR→操作控制器",
+    "step_3_read": "取访问:主存M→DR→运算器ALU",
+    "step_3_write": "有访问:运算器ALU→AC→DR→主存M",
+    "step_4_operands": "主存M→ DR→运算器ALU",
+    "step_4_result": "未书写",
+    "step_5_core_field": "由已知,有30条微指令,由30+1 <2^5,故控制存储器的容量应为2^5 b",
+    "step_5_core_compute": "下址字段为24-13-3=8(位)",
+    "step_5_final": "控制存储器的容量应为2^5 b",
+    "step_6_group12": "各组所要的二进制位数分别为3,4,4,2(2^3>5+1,2^4>8+1,2^4>14+1,2^2≥3+1)",
+    "step_6_group34": "各组所要的二进制位数分别为3,4,4,2(2^3>5+1,2^4>8+1,2^4>14+1,2^2≥3+1)",
+    "step_6_test_field": "判别字段是直接控制方式为3位",
+    "step_6_addr_field": "下址字段为24-13-3=8(位)",
+    "step_6_layout": "操作码字段 13 判别字段 3 下址字段 8"
+  }
+}

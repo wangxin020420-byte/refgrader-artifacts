@@ -1,0 +1,99 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T08:21:05.214876",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_191.jpg",
+  "image_sha256": "343217e8d2729e1a2d85be7ccdc236cdf469ca9764eb936f1270a1c46e8a7808",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_191.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 17,
+    "accepted_token_count": 17,
+    "mean_confidence": 0.9212,
+    "min_confidence": 0.5,
+    "joined_text": "1.\n2.\n5.x:=2\nS的X属性是综合属性\nA的X属性是继率属小性\na\nA{X:=1\nb\n该属性文法是L一属性文法.\nA,}x=0 s,x:=1\nb\nSx:=0 a A{x:=0\n1\n1\nS_,x:=0\nC\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.041029,
+      "very_dark_pixel_ratio": 0.026526,
+      "lower_region_dark_pixel_ratio": 0.043677,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1.S的X属性是综合属性 A的X属性是继承属性 该属性文法是L-属性文法. | 2.如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_191",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_2_component_1": "根节点S.x:=2，子节点a、A.x:=1、b；A.x:=1的子节点A1.x=0、S.x:=1；S.x:=1的子节点a、A.x:=0、b；A.x:=0的子节点S.x:=0，S.x:=0的子节点C",
+    "step_2_component_2": "S.x:=2, A.x:=1, S.x:=1, A1.x=0, A.x:=0, S.x:=0"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's representation of the syntax tree structure for the given string, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact node labels, ordering, and nesting as written, including any attribute annotations if present."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node in the syntax tree, including any values for root S.x, outer A.x, inner S.x, inner A.x, and leaf S.x nodes. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and numerical values as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_final_1",
+    "step_1_support_1",
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "S的X属性是综合属性 A的X属性是综合属性",
+    "step_1_core_1": "未书写",
+    "step_1_final_1": "该属性文法是L-属性文法",
+    "step_2_component_1": "S, X:=2\n├─ a\n├─ A, X:=1\n│  ├─ A1, X:=0\n│  │  └─ S, X:=0\n│  │     └─ c\n│  └─ S, X:=1\n│     ├─ a\n│     ├─ A, X:=0\n│     │  └─ S, X:=0\n│     │     └─ c\n│     └─ b\n└─ b",
+    "step_2_component_2": "S, X:=2; A, X:=1; A1, X:=0; S, X:=0; S, X:=1; A, X:=0; S, X:=0"
+  },
+  "facts": {
+    "step_1_support_1": "S的X属性是综合属性 A的X属性是继承属性",
+    "step_1_core_1": "S的X属性是综合属性 A的X属性是继承属性 该属性文法是L-属性文法.",
+    "step_1_final_1": "L-属性文法",
+    "step_2_component_1": "根节点S.x:=2，子节点a、A.x:=1、b；A.x:=1的子节点A1.x=0、S.x:=1；S.x:=1的子节点a、A.x:=0、b；A.x:=0的子节点S.x:=0，S.x:=0的子节点C",
+    "step_2_component_2": "S.x:=2, A.x:=1, S.x:=1, A1.x=0, A.x:=0, S.x:=0"
+  }
+}

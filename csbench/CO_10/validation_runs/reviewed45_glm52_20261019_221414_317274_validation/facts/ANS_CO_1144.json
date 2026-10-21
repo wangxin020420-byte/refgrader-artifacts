@@ -1,0 +1,300 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-27T23:14:42.982614",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_10/ANS_CO_1144.jpg",
+  "image_sha256": "bdf41edd22937a1f980d504f8559f95adc9b8447cd73e08367127084d1faccfd",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_10/ANS_CO_1144.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 24,
+    "accepted_token_count": 24,
+    "mean_confidence": 0.95944,
+    "min_confidence": 0.5,
+    "joined_text": "3 解：\n(2) CaChe总有2°块\n即256块\n(1)\n由题可得\n故需要256块比效\nCaChe总量为4K=212}K\n电路\n4kw\nCache组数为\n=2\n4w×4\n字块内地址：1=2\nCaChe宇块内地址为22.\n故主存地址分配\n故CaChe地址分配为\n8\n8\n存字块地 CaChe组号\n218127\n址\nCaChe标 CaChe 宇块内\n记区组号地址\n∴CaChe标记区共乙字节",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.060979,
+      "very_dark_pixel_ratio": 0.03679,
+      "lower_region_dark_pixel_ratio": 0.0622,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "解：\n（1）由题可得Cache总容量为4K=2¹²K Cache组数为4Kw/4w×4=2⁸ Cache字块内地址为2²，\n故Cache地址分为 Cache标记区 Cache组号 字块内地址[2 18 12] \n ∴Cache标记区共2字节\n（2）Cache共有2⁸块即256块 故需要256块比较电路 主存地址2¹⁶ 字 字块内地址：1=2^0故主存地址分配 \n主存块地址 Cache组号：8 8 ",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1144",
+    "question_id": "CO_10",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": "Cache总量为4K=2^12K；4KW；4W×4；Cache组数为=2；Cache字块内地址为2^2；故Cache地址分配为：Cache标记区、Cache组号、Cache字块内地址；图中可见字段：Cache标记区、Cache组号、Cache字块内地址；另有“8”“8”标注在地址分配示意附近。",
+    "step_2": "字块内地址：1=2；故主存地址分配：存字块地址、Cache组号、字块内地址；图中可见字段：存字块地址、Cache组号、字块内地址；另有“218127”写在左侧，可能为地址位数标注，但字迹/结构不清晰。",
+    "step_3_p1": "未清晰写出每块标记区开销的公式或计算过程；仅见“∴Cache标记区共乙字节”，其中“乙”字迹模糊，无法确认具体数值或表达式。",
+    "step_3_p2": "未清晰写出Cache标记区总容量公式；仅见“∴Cache标记区共乙字节”，其中“乙”字迹模糊，无法确认具体数值、单位换算或乘除表达式。",
+    "step_4_p1": "Cache总有2^8块，即256块；故需要256块比较电路。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's concrete written content for the Cache address field division. Capture any numbers, bit widths, field names, and table entries the student wrote for the Cache total block count, number of sets, set index bit width, block number within set bit width, and word offset within block bit width. Preserve leading zeros, suffixes, grouping, separators, and table structure exactly as written."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's concrete written content for the main memory address field division and tag bit width. Capture any numbers, bit widths, field names, subtraction expressions, formulas, and table entries the student wrote for the main memory word address, word offset within block, and tag bit width. Preserve leading zeros, suffixes, grouping, separators, order, and table structure exactly as written."
+    },
+    {
+      "id": "step_3_p1",
+      "instruction": "Extract the student's concrete written content for the per-block tag area overhead. Capture the formula, expression, or computation trace the student wrote, including any numbers, bit widths, field names, addition or sum expressions, and units. Preserve symbols, operators, grouping, and order exactly as written."
+    },
+    {
+      "id": "step_3_p2",
+      "instruction": "Extract the student's concrete written content for the total tag area capacity formula. Capture the formula, expression, or computation trace the student wrote, including any numbers, multiplication, division, unit conversion, and units. Preserve symbols, operators, grouping, and order exactly as written."
+    },
+    {
+      "id": "step_4_p1",
+      "instruction": "Extract the student's concrete written content explaining how a memory access locates a Cache set and where comparisons occur. Capture any keywords, phrases, or sentences the student wrote about set index mapping, set selection, or comparison scope. Preserve the student's wording and order exactly as written."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 56.75,
+        "cells_left_to_right": [
+          {
+            "text": "3 解：",
+            "x_center": 58.0,
+            "confidence": 0.9087955951690674
+          },
+          {
+            "text": "(2) CaChe总有2°块",
+            "x_center": 701.0,
+            "confidence": 0.9434250593185425
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 136.38,
+        "cells_left_to_right": [
+          {
+            "text": "(1)",
+            "x_center": 54.5,
+            "confidence": 0.9977200031280518
+          },
+          {
+            "text": "由题可得",
+            "x_center": 97.0,
+            "confidence": 0.991957426071167
+          },
+          {
+            "text": "即256块",
+            "x_center": 694.0,
+            "confidence": 0.9951634407043457
+          },
+          {
+            "text": "故需要256块比效",
+            "x_center": 769.5,
+            "confidence": 0.9993245005607605
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 239.83,
+        "cells_left_to_right": [
+          {
+            "text": "Cache组数为",
+            "x_center": 123.5,
+            "confidence": 0.9951272010803223
+          },
+          {
+            "text": "CaChe总量为4K=212}K",
+            "x_center": 205.5,
+            "confidence": 0.831196129322052
+          },
+          {
+            "text": "4kw",
+            "x_center": 261.0,
+            "confidence": 0.9830361008644104
+          },
+          {
+            "text": "4w×4",
+            "x_center": 261.0,
+            "confidence": 0.9159875512123108
+          },
+          {
+            "text": "=2",
+            "x_center": 330.0,
+            "confidence": 0.9944326281547546
+          },
+          {
+            "text": "电路",
+            "x_center": 665.0,
+            "confidence": 0.9966334104537964
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 331.0,
+        "cells_left_to_right": [
+          {
+            "text": "CaChe宇块内地址为22.",
+            "x_center": 202.0,
+            "confidence": 0.9407132863998413
+          },
+          {
+            "text": "字块内地址：1=2",
+            "x_center": 707.5,
+            "confidence": 0.9384679794311523
+          },
+          {
+            "text": "故主存地址分配",
+            "x_center": 714.5,
+            "confidence": 0.9460965991020203
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 408.12,
+        "cells_left_to_right": [
+          {
+            "text": "故CaChe地址分配为",
+            "x_center": 195.5,
+            "confidence": 0.9973411560058594
+          },
+          {
+            "text": "8",
+            "x_center": 697.0,
+            "confidence": 0.9999850988388062
+          },
+          {
+            "text": "存字块地 CaChe组号",
+            "x_center": 756.0,
+            "confidence": 0.9021220803260803
+          },
+          {
+            "text": "8",
+            "x_center": 790.5,
+            "confidence": 0.9999755620956421
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 483.67,
+        "cells_left_to_right": [
+          {
+            "text": "218127",
+            "x_center": 168.5,
+            "confidence": 0.9262855052947998
+          },
+          {
+            "text": "CaChe标 CaChe 宇块内",
+            "x_center": 178.0,
+            "confidence": 0.9124932289123535
+          },
+          {
+            "text": "址",
+            "x_center": 685.5,
+            "confidence": 0.9977880716323853
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 538.0,
+        "cells_left_to_right": [
+          {
+            "text": "记区组号地址",
+            "x_center": 178.0,
+            "confidence": 0.9479429721832275
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 602.0,
+        "cells_left_to_right": [
+          {
+            "text": "∴CaChe标记区共乙字节",
+            "x_center": 210.5,
+            "confidence": 0.9645551443099976
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=58.0: 3 解： | x=701.0: (2) CaChe总有2°块\nRow 2: x=54.5: (1) | x=97.0: 由题可得 | x=694.0: 即256块 | x=769.5: 故需要256块比效\nRow 3: x=123.5: Cache组数为 | x=205.5: CaChe总量为4K=212}K | x=261.0: 4kw | x=261.0: 4w×4 | x=330.0: =2 | x=665.0: 电路\nRow 4: x=202.0: CaChe宇块内地址为22. | x=707.5: 字块内地址：1=2 | x=714.5: 故主存地址分配\nRow 5: x=195.5: 故CaChe地址分配为 | x=697.0: 8 | x=756.0: 存字块地 CaChe组号 | x=790.5: 8\nRow 6: x=168.5: 218127 | x=178.0: CaChe标 CaChe 宇块内 | x=685.5: 址\nRow 7: x=178.0: 记区组号地址\nRow 8: x=210.5: ∴CaChe标记区共乙字节"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_4_p2"
+  ],
+  "visual_fallback_recovered": [
+    "step_3_p1",
+    "step_3_p2",
+    "step_4_p1",
+    "step_4_p2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3_f1",
+    "step_4_f1",
+    "step_4_p1"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "Cache地址分画为 [2  18  12] Cache标记区 Cache组号 字块内地址",
+    "step_2": "主存地址2^16 字 字块内地址:l=2^2 故主存地址分画己 [8  8] 主存块地址 Cache组号",
+    "step_3_p1": "未书写",
+    "step_3_p2": "未书写",
+    "step_3_f1": "2字节",
+    "step_4_p1": "主存地址2^16 字 字块内地址:l=2^2 故主存地址分画己 [8  8] 主存块地址 Cache组号",
+    "step_4_p2": "Cache总有2^8块 即256±块 故需要256块比较电路",
+    "step_4_p3": "未书写",
+    "step_4_f1": "256块"
+  },
+  "facts": {
+    "step_1": "Cache总容量为4K=2¹²K Cache组数为4Kw/4w×4=2⁸ Cache字块内地址为2²，故Cache地址分为 Cache标记区 Cache组号 字块内地址[2 18 12]",
+    "step_2": "主存地址2¹⁶ 字 字块内地址：1=2^0故主存地址分配 主存块地址 Cache组号：8 8",
+    "step_3_p1": "未清晰写出每块标记区开销的公式或计算过程；仅见“∴Cache标记区共乙字节”，其中“乙”字迹模糊，无法确认具体数值或表达式。",
+    "step_3_p2": "未清晰写出Cache标记区总容量公式；仅见“∴Cache标记区共乙字节”，其中“乙”字迹模糊，无法确认具体数值、单位换算或乘除表达式。",
+    "step_3_f1": "∴Cache标记区共2字节",
+    "step_4_p1": "Cache总有2^8块，即256块；故需要256块比较电路。",
+    "step_4_p2": "Cache总有2^8块 即256±块 故需要256块比较电路",
+    "step_4_p3": "未书写",
+    "step_4_f1": "Cache共有2⁸块即256块 故需要256块比较电路"
+  }
+}

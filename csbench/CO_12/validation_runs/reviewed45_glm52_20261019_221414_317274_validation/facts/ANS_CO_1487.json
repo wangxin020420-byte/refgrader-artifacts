@@ -1,0 +1,370 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T00:34:30.706144",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_12/ANS_CO_1487.jpg",
+  "image_sha256": "4dc7ba29a72aec7289d51dea35e3fd416d88875f9c4e28cf67eaea9c18cc33ec",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_12/ANS_CO_1487.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 17,
+    "accepted_token_count": 17,
+    "mean_confidence": 0.913876,
+    "min_confidence": 0.5,
+    "joined_text": "5.\n(11a为DR. b为1D\na为DR(数据缓存器).b为1D(指令评码器)C为RAR(地址缓存器).d为PC(程序计\n数器\n2) M→DR→1D→操作控制器\n(3) 读存: ALU→AC→ DR-→M\n取：M→DR→ALU\n(41 OD: ID→ AR→ M\n在M中得到操作数X:M-→DR-→ALU\nAX中的把值：Ax→ALU\n5个微命令需了位编码，8个需4位，14个需4位，3个\n经运算后：由ALU→AX\n下址字段位数为：24-3-4-4-2-3=8 因为可在整个控制存储器跳转，容量为：28=256位\n161\n美1美2类3类4夕合降件下比学段\n3位 4位 4位 位 3位\n8位",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.087759,
+      "very_dark_pixel_ratio": 0.061065,
+      "lower_region_dark_pixel_ratio": 0.090383,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1) a为DR(数据缓存器)，b为ID(指令译码器) C为AR(地址缓存器)，d为PC(程序计数器)\n(2) M→DR→ID→操作控制器\n(3) 存: ALU→AC→DR→M\n取: M→DR→ALU\n(4) OD: ID→AR→M\n在M中得到操作数 X: M→DR→ALU\nAX中的和值: AX→ALU\n经运算后: 由ALU→AX\n5个微命令需3位编码，8个需Y位，14个需4位，3个需2位\n(5) 外部条件需3位\n(6)下址字段位数数为: 24-3-4-4-2-3=8 因为可在整个控制存储器跳转，容量为: 28=256位\n其结构如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1487",
+    "question_id": "CO_12",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_5_core_field": "下址字段位数为：24-3-4-4-2-3=8 因为可在整个控制存储器跳转，容量为：28=256位",
+    "step_5_core_compute": "24-3-4-4-2-3=8",
+    "step_6_group12": "3位 4位",
+    "step_6_group34": "4位 位",
+    "step_6_test_field": "3位",
+    "step_6_addr_field": "8位",
+    "step_6_layout": "3位 4位 4位 位 3位 8位；美1美2类3类4夕合降件下比学段"
+  },
+  "table_checklist": [
+    {
+      "id": "step_5_core_field",
+      "instruction": "Extract the student's handwritten explanation or statement about how the control memory capacity is determined by the number of bits in the next-address field. Include any numbers, powers of two, or textual equivalents written by the student."
+    },
+    {
+      "id": "step_5_core_compute",
+      "instruction": "Extract the student's handwritten formula or derivation relation showing how the next-address field bit width is obtained from the 24-bit microinstruction word length minus the operation control field and the discrimination test field. Preserve the exact formula, substitution, and computation trace as written."
+    },
+    {
+      "id": "step_6_group12",
+      "instruction": "Extract the student's handwritten bit widths for the first and second mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_group34",
+      "instruction": "Extract the student's handwritten bit widths for the third and fourth mutually exclusive groups in the microinstruction format. Preserve the exact numbers and any accompanying group labels or microcommand counts as written."
+    },
+    {
+      "id": "step_6_test_field",
+      "instruction": "Extract the student's handwritten bit width for the discrimination test (external condition) field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_addr_field",
+      "instruction": "Extract the student's handwritten bit width for the next-address field. Preserve the exact number and any accompanying field name or alias as written."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 52.0,
+        "cells_left_to_right": [
+          {
+            "text": "5.",
+            "x_center": 20.0,
+            "confidence": 0.9947347044944763
+          },
+          {
+            "text": "(11a为DR. b为1D",
+            "x_center": 140.5,
+            "confidence": 0.8402231931686401
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 118.5,
+        "cells_left_to_right": [
+          {
+            "text": "a为DR(数据缓存器).b为1D(指令评码器)C为RAR(地址缓存器).d为PC(程序计",
+            "x_center": 498.5,
+            "confidence": 0.9354931116104126
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 180.25,
+        "cells_left_to_right": [
+          {
+            "text": "2) M→DR→1D→操作控制器",
+            "x_center": 245.0,
+            "confidence": 0.9196125268936157
+          },
+          {
+            "text": "数器",
+            "x_center": 909.5,
+            "confidence": 0.9933723211288452
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 265.0,
+        "cells_left_to_right": [
+          {
+            "text": "(3) 读存: ALU→AC→ DR-→M",
+            "x_center": 247.5,
+            "confidence": 0.8865113258361816
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 311.0,
+        "cells_left_to_right": [
+          {
+            "text": "取：M→DR→ALU",
+            "x_center": 253.0,
+            "confidence": 0.928726851940155
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 369.5,
+        "cells_left_to_right": [
+          {
+            "text": "(41 OD: ID→ AR→ M",
+            "x_center": 192.5,
+            "confidence": 0.8786036372184753
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 410.0,
+        "cells_left_to_right": [
+          {
+            "text": "在M中得到操作数X:M-→DR-→ALU",
+            "x_center": 331.0,
+            "confidence": 0.9100192785263062
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 472.33,
+        "cells_left_to_right": [
+          {
+            "text": "AX中的把值：Ax→ALU",
+            "x_center": 246.0,
+            "confidence": 0.8689445853233337
+          },
+          {
+            "text": "经运算后：由ALU→AX",
+            "x_center": 270.5,
+            "confidence": 0.9721459746360779
+          },
+          {
+            "text": "5个微命令需了位编码，8个需4位，14个需4位，3个",
+            "x_center": 707.0,
+            "confidence": 0.9308407306671143
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 576.5,
+        "cells_left_to_right": [
+          {
+            "text": "161",
+            "x_center": 44.5,
+            "confidence": 0.9969902038574219
+          },
+          {
+            "text": "下址字段位数为：24-3-4-4-2-3=8 因为可在整个控制存储器跳转，容量为：28=256位",
+            "x_center": 510.0,
+            "confidence": 0.9606308937072754
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 638.5,
+        "cells_left_to_right": [
+          {
+            "text": "3位 4位 4位 位 3位",
+            "x_center": 250.0,
+            "confidence": 0.8945913910865784
+          },
+          {
+            "text": "美1美2类3类4夕合降件下比学段",
+            "x_center": 312.0,
+            "confidence": 0.7480591535568237
+          },
+          {
+            "text": "8位",
+            "x_center": 477.5,
+            "confidence": 0.8763996362686157
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=20.0: 5. | x=140.5: (11a为DR. b为1D\nRow 2: x=498.5: a为DR(数据缓存器).b为1D(指令评码器)C为RAR(地址缓存器).d为PC(程序计\nRow 3: x=245.0: 2) M→DR→1D→操作控制器 | x=909.5: 数器\nRow 4: x=247.5: (3) 读存: ALU→AC→ DR-→M\nRow 5: x=253.0: 取：M→DR→ALU\nRow 6: x=192.5: (41 OD: ID→ AR→ M\nRow 7: x=331.0: 在M中得到操作数X:M-→DR-→ALU\nRow 8: x=246.0: AX中的把值：Ax→ALU | x=270.5: 经运算后：由ALU→AX | x=707.0: 5个微命令需了位编码，8个需4位，14个需4位，3个\nRow 9: x=44.5: 161 | x=510.0: 下址字段位数为：24-3-4-4-2-3=8 因为可在整个控制存储器跳转，容量为：28=256位\nRow 10: x=250.0: 3位 4位 4位 位 3位 | x=312.0: 美1美2类3类4夕合降件下比学段 | x=477.5: 8位"
+  },
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "a为DR(数据缓存器)",
+    "step_1_b": "b为ID(指令译码器)",
+    "step_1_c": "C为RAR(地址缓存器)",
+    "step_1_d": "d为PC(程序计数器)",
+    "step_2_p1": "M→DR→ID→操作控制器",
+    "step_2_p2": null,
+    "step_3_read": "ALU→AC→DR→M",
+    "step_3_write": "M→DR→ALU",
+    "step_4_operands": "ID→AR→M, M→DR→ALU, AX→ALU",
+    "step_4_result": "由ALU→AX",
+    "step_6_layout": "类1|类2|类3|类4|外部条件|下址字段，3位 4位 4位 3位 3位 8位"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's handwritten label or name assigned to register a (寄存器a), including any register name, abbreviation, or Chinese/English term written next to or for register a. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's handwritten label or name assigned to register b (寄存器b), including any register name, abbreviation, or Chinese/English term written next to or for register b. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_c",
+      "instruction": "Extract the student's handwritten label or name assigned to register c (寄存器c), including any register name, abbreviation, or Chinese/English term written next to or for register c. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_1_d",
+      "instruction": "Extract the student's handwritten label or name assigned to register d (寄存器d), including any register name, abbreviation, or Chinese/English term written next to or for register d. Preserve the exact wording and any aliases used."
+    },
+    {
+      "id": "step_2_p1",
+      "instruction": "Extract the student's handwritten data path sequence describing how an instruction is read from main memory M and sent to the instruction register IR. Preserve all component names, arrows, dots, order, and direction exactly as written, including any preceding fetch-addressing steps."
+    },
+    {
+      "id": "step_2_p2",
+      "instruction": "Extract the student's handwritten data path sequence describing how the instruction (opcode) is sent from the instruction register IR to the operation controller. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for the operation controller."
+    },
+    {
+      "id": "step_3_read",
+      "instruction": "Extract the student's handwritten data path sequence for the memory read operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent aliases for AC."
+    },
+    {
+      "id": "step_3_write",
+      "instruction": "Extract the student's handwritten data path sequence for the memory write operation between the arithmetic unit and main memory. Preserve all component names, arrows, dots, order, and direction exactly as written."
+    },
+    {
+      "id": "step_4_operands",
+      "instruction": "Extract the student's handwritten data path sequence describing how the two operands are sent to the ALU. Preserve all component names, arrows, dots, order, and direction exactly as written, including any equivalent register names such as AX or AC."
+    },
+    {
+      "id": "step_4_result",
+      "instruction": "Extract the student's handwritten data path sequence describing the addition operation and the result being sent back. Preserve all component names, symbols, arrows, dots, order, and direction exactly as written, including any equivalent wording for the addition operation."
+    },
+    {
+      "id": "step_6_layout",
+      "instruction": "Extract the student's handwritten overall layout of the microinstruction format, including the field names, their order, and the bit widths for each field, as well as any sum or total bit length written. Preserve the exact table, diagram, or textual representation."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_6_layout"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_1_c",
+    "step_1_d",
+    "step_2_p1",
+    "step_2_p2",
+    "step_3_read",
+    "step_3_write",
+    "step_4_operands",
+    "step_4_result",
+    "step_5_core_compute",
+    "step_5_core_field",
+    "step_5_final",
+    "step_6_addr_field",
+    "step_6_group12",
+    "step_6_group34",
+    "step_6_layout",
+    "step_6_test_field"
+  ],
+  "vlm_fallback_reason": [
+    "table_ocr_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "DR(数据缓存器)",
+    "step_1_b": "ID(指令译码器)",
+    "step_1_c": "RAR(地址缓存器)",
+    "step_1_d": "PC(程序计数器)",
+    "step_2_p1": "M→DR→ID",
+    "step_2_p2": "ID→操作控制器",
+    "step_3_read": "ALU→AC→DR→M",
+    "step_3_write": "M→DR→ALU",
+    "step_4_operands": "OD: ID→AR→M 在M中得到操作数X: M→DR→ALU AX中的值: AX→ALU",
+    "step_4_result": "经运算后: 由ALU加→AX",
+    "step_5_core_field": "共30个微命令，控制存储器容量为: 30×24=720位 外部条件需3位",
+    "step_5_core_compute": "下址字段位数为: 24-3-4-4-2-3=8",
+    "step_5_final": "因为可在整个控制存储器跳转,容量为: 2^8=256位",
+    "step_6_group12": "类1 5个 3位 类2 8个 4位",
+    "step_6_group34": "类3 14个 4位 类4 3个 2位",
+    "step_6_test_field": "外部条件 3位",
+    "step_6_addr_field": "下址字段 8位",
+    "step_6_layout": "类1 类2 类3 类4 外部条件 下址字段 3位 4位 4位 2位 3位 8位"
+  },
+  "facts": {
+    "step_1_a": "a为DR(数据缓存器)",
+    "step_1_b": "b为ID(指令译码器)",
+    "step_1_c": "C为AR(地址缓存器)",
+    "step_1_d": "d为PC(程序计数器)",
+    "step_2_p1": "M→DR→ID→操作控制器",
+    "step_2_p2": "M→DR→ID→操作控制器",
+    "step_3_read": "取: M→DR→ALU",
+    "step_3_write": "存: ALU→AC→DR→M",
+    "step_4_operands": "OD: ID→AR→M；在M中得到操作数 X: M→DR→ALU；AX中的和值: AX→ALU",
+    "step_4_result": "经运算后: 由ALU→AX",
+    "step_5_core_field": "下址字段位数数为: 24-3-4-4-2-3=8 因为可在整个控制存储器跳转，容量为: 28=256位",
+    "step_5_core_compute": "24-3-4-4-2-3=8",
+    "step_5_final": "容量为: 28=256位",
+    "step_6_group12": "5个微命令需3位编码，8个需Y位",
+    "step_6_group34": "14个需4位，3个需2位",
+    "step_6_test_field": "外部条件需3位",
+    "step_6_addr_field": "下址字段位数数为: 24-3-4-4-2-3=8",
+    "step_6_layout": "3位 4位 4位 位 3位 8位；美1美2类3类4夕合降件下比学段"
+  }
+}

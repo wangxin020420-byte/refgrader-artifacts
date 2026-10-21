@@ -1,0 +1,96 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T04:57:42.069300",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/DM_1/ANS_DM_09.jpg",
+  "image_sha256": "5d2b1d77dbf0b1f712ac77098304f81b17dfc2b8b79440f54f1ee02eeb1dc343",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/DM_1/ANS_DM_09.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 9,
+    "accepted_token_count": 8,
+    "mean_confidence": 0.974518,
+    "min_confidence": 0.5,
+    "joined_text": "16.\n(2) 极大元为54，极小毛为(\n24\n(3) 最大元与最小元均不存在。\n4\n6\n3\n2",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "multiple_confident_ocr_tokens",
+      "dark_pixel_ratio": 0.021615,
+      "very_dark_pixel_ratio": 0.012903,
+      "lower_region_dark_pixel_ratio": 0.016933,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "1. 如图所示\n(2)极大元为54，极小元为1\n(3)最大元与最小元均不存在。",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_DM_09",
+    "question_id": "DM_1",
+    "subject": "DM",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "哈斯图呈现层次结构，节点1位于最底层，2、3位于中间层并分别连接到1，4、6、9位于上层（4连接2，6连接2和3，9连接3），24连接4和6，54连接6和9",
+  "diagram_facts": {
+    "step_1": "哈斯图包含节点1、2、3、4、6、9、24、54，节点1位于最底层，2、3位于中间层并分别连接到1，4、6、9位于上层（4连接2，6连接2和3，9连接3），24连接4和6，54连接6和9；完整可见路径：哈斯图呈现层次结构，节点1位于最底层，2、3位于中间层并分别连接到1，4、6、9位于上层（4连接2，6连接2和3，9连接3），24连接4和6，54连接6和9",
+    "step_4": "（2）极大元为54，极小元为1；（3）最大元与最小元均不存在；完整可见路径：哈斯图呈现层次结构，节点1位于最底层，2、3位于中间层并分别连接到1，4、6、9位于上层（4连接2，6连接2和3，9连接3），24连接4和6，54连接6和9"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's hand-drawn Hasse diagram for the poset exactly as drawn, including all nodes, labels, edges, and their directions or connections, without revealing the expected diagram."
+    },
+    {
+      "id": "step_4",
+      "instruction": "Extract the student's written least upper bound and greatest lower bound of subset B exactly as written, preserving order, labels, separators, and any indication that a bound does not exist."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_1",
+    "step_4"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1": "手绘的哈斯图，节点包括1（底部）、2、3（中间层）、4、6、9（中间层）、24、54（顶部），连线连接各节点（具体连线关系按图中绘制，如1连接2、3；2连接4、6；3连接6、9；4连接24；6连接24、54；9连接54等）",
+    "step_2": "极大元为24，极小元为1",
+    "step_3": "最大元与最小元均不存在",
+    "step_4": "未书写"
+  },
+  "facts": {
+    "step_1": "哈斯图包含节点1、2、3、4、6、9、24、54，节点1位于最底层，2、3位于中间层并分别连接到1，4、6、9位于上层（4连接2，6连接2和3，9连接3），24连接4和6，54连接6和9；完整可见路径：哈斯图呈现层次结构，节点1位于最底层，2、3位于中间层并分别连接到1，4、6、9位于上层（4连接2，6连接2和3，9连接3），24连接4和6，54连接6和9",
+    "step_2": "极大元为54，极小元为1",
+    "step_3": "最大元与最小元均不存在。",
+    "step_4": "（2）极大元为54，极小元为1；（3）最大元与最小元均不存在；完整可见路径：哈斯图呈现层次结构，节点1位于最底层，2、3位于中间层并分别连接到1，4、6、9位于上层（4连接2，6连接2和3，9连接3），24连接4和6，54连接6和9"
+  }
+}

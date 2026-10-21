@@ -1,0 +1,113 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T07:31:35.948549",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/OS_2/ANS_OS_89.jpg",
+  "image_sha256": "2feb6799d82361628d37382fcabda48a417390d8c9340177a6ff48950977efe2",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/OS_2/ANS_OS_89.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 46,
+    "accepted_token_count": 46,
+    "mean_confidence": 0.952802,
+    "min_confidence": 0.5,
+    "joined_text": "6. 短作业优先：\n调度负序为3→4→2→1\n作业周转时间=完成时间一到达时间\n作号\n到达时间\n运行时间\n完成时问\n周转时间\n营权因转时间\n1\n7:00\n85\n10:55\n215\n2.53\n2\n7:50\n40\n9:30\n100\n2.5\n3\n8:00\n20\n8:20\n20\n1\n4\n8:20\n30\n8:50\n30\n1\n平均周转时间为 (215+100+20+307/4=91.25 min.\n平均带权同转时间为(2.5342.5+1+1)/4=1.2575\n等待时间\n高响应比优先调度算法：响应比=1+\n反务时间\n7200-7:50. 721 35<40mn.\n执训序1→2→4→3.\n7:50-8:00 722\n7:50-8:00 3721 25×20min.\n7\n0\n20.\n8:20",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.074574,
+      "very_dark_pixel_ratio": 0.047826,
+      "lower_region_dark_pixel_ratio": 0.080187,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "调度顺序为3→4→2→1 \n周转时间=完成时间-到达时间\n周转时间如图所示\n 平均周转时间为（215+100+20+30）/4=91.25 min. 平均带权周转时间为（2.53+2.5+1+1）/4=1.2575 吗 高响应比优先调度算法：响应比=1+等待时间/服务时间\n 7:00-7:50 作业1 35<40min. \n 按训练1→2→4→3. \n7:50-8:00 作业1 25<20min.\n 8:00-8:20 作业2 10/40>0/20.",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_OS_89",
+    "question_id": "OS_2",
+    "subject": "OS",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_1_a": "作业3，完成时间8:20",
+    "step_1_b": "3→4→2→1",
+    "step_3_b": "1→2→4→3"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_1_a",
+      "instruction": "Extract the student's written content about which job is scheduled first at time 7:00 and the completion time of that job. Capture any text, table entry, or Gantt chart annotation showing the scheduling start and the completion time, preserving the exact time notation used (e.g., 8:25, 8时25分, or relative minutes)."
+    },
+    {
+      "id": "step_1_b",
+      "instruction": "Extract the student's written complete scheduling sequence for SJF. Preserve the exact order, separators (commas, arrows, dots, numbering), and direction as written."
+    },
+    {
+      "id": "step_3_b",
+      "instruction": "Extract the student's written complete scheduling sequence for HRRN. Preserve the exact order, separators (commas, arrows, dots, numbering), and direction as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [
+    "step_2_a"
+  ],
+  "visual_fallback_recovered": [
+    "step_1_a",
+    "step_2_a"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_a",
+    "step_1_b",
+    "step_2_b",
+    "step_3_a",
+    "step_3_b"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_a": "作业1，完成时间10:55",
+    "step_1_b": "3 →4 →2 →1",
+    "step_2_a": "作业1：周转时间215，带权周转时间2.53；作业2：周转时间100，带权周转时间2.5；作业3：周转时间20，带权周转时间1；作业4：周转时间30，带权周转时间1",
+    "step_2_b": "平均周转时间为（215+100+20+30）/4 = 91.25 min. 平均带权周转时间为（2.53+2.5+1+1）/4 =1.2575",
+    "step_3_a": "响应比=1+等待时间/服务时间；7:00-7:50 作业1 35<40min.；7:50-8:00 作业1 25<20min.；8:00-8:20 作业2 40/20 >0.",
+    "step_3_b": "1→2→4→3",
+    "step_4_a": "未书写",
+    "step_4_b": "未书写"
+  },
+  "facts": {
+    "step_1_a": "作业3，完成时间8:20",
+    "step_1_b": "调度顺序为3→4→2→1",
+    "step_2_a": "作业1：周转时间215，带权周转时间2.53；作业2：周转时间100，带权周转时间2.5；作业3：周转时间20，带权周转时间1；作业4：周转时间30，带权周转时间1",
+    "step_2_b": "平均周转时间为（215+100+20+30）/4=91.25 min. 平均带权周转时间为（2.53+2.5+1+1）/4=1.2575 吗",
+    "step_3_a": "高响应比优先调度算法：响应比=1+等待时间/服务时间\n7:00-7:50 作业1 35<40min. \n按训练1→2→4→3. \n7:50-8:00 作业1 25<20min.\n8:00-8:20 作业2 10/40>0/20.",
+    "step_3_b": "按训练1→2→4→3.",
+    "step_4_a": "未书写",
+    "step_4_b": "未书写"
+  }
+}

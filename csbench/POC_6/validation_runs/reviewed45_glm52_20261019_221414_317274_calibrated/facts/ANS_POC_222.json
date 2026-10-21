@@ -1,0 +1,99 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T08:42:57.624308",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_222.jpg",
+  "image_sha256": "7b817fc84921befa4dd792da61124a09f4c37191e4bfeb47dda01fd72a821b30",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_222.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 17,
+    "accepted_token_count": 17,
+    "mean_confidence": 0.957423,
+    "min_confidence": 0.5,
+    "joined_text": "C\n属性都是综合属性，\n2.\na\nA\nx=1\nb\n故为S-属性文法.\nx=0A\nsx=1\nx=0S\na\nAx=0\nC\nS\nx=0\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "multiple_confident_ocr_tokens",
+      "dark_pixel_ratio": 0.033598,
+      "very_dark_pixel_ratio": 0.019995,
+      "lower_region_dark_pixel_ratio": 0.025458,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "计算的属性都是综合属性，故为S-属性文法. | 如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_222",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": "树结构：根节点S，子节点a、A(x=1)、b；A节点子节点x=0 A₁、S(x=1)；x=0 A₁子节点x=0 S；x=0 S子节点c；S(x=1)子节点a、A(x=0)、b；A(x=0)子节点S(x=0)；S(x=0)子节点c",
+  "diagram_facts": {
+    "step_2_component_1": "根节点S，子节点a、A(x=1)、b；A的子节点x=0 A₁、S(x=1)；x=0 A₁的子节点x=0 S；x=0 S的子节点c；S(x=1)的子节点a、A(x=0)、b；A(x=0)的子节点S(x=0)；S(x=0)的子节点c；完整可见路径：树结构：根节点S，子节点a、A(x=1)、b；A节点子节点x=0 A₁、S(x=1)；x=0 A₁子节点x=0 S；x=0 S子节点c；S(x=1)子节点a、A(x=0)、b；A(x=0)子节点S(x=0)；S(x=0)子节点c",
+    "step_2_component_2": "S.x=1（根S）、A.x=0（A节点）、S.x=0（x=0 S节点）、A.x=0（A(x=0)节点）、S.x=0（S(x=0)节点）、S.x=1（S(x=1)节点）等属性标注，具体节点属性值如标注所示；完整可见路径：树结构：根节点S，子节点a、A(x=1)、b；A节点子节点x=0 A₁、S(x=1)；x=0 A₁子节点x=0 S；x=0 S子节点c；S(x=1)子节点a、A(x=0)、b；A(x=0)子节点S(x=0)；S(x=0)子节点c"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's representation of the syntax tree structure for the given string, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact node labels, ordering, and nesting as written, including any attribute annotations if present."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node in the syntax tree, including any values for root S.x, outer A.x, inner S.x, inner A.x, and leaf S.x nodes. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and numerical values as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [
+    "step_1_final_1",
+    "step_1_support_1",
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "属性都是综合属性",
+    "step_1_core_1": "未书写",
+    "step_1_final_1": "故为S-属性文法",
+    "step_2_component_1": "S\n/ | \\\na  A x=1 b\n/   \\\nx=0 A1  S x=1\n|     / | \\\nx=0 S  a A x=0 b\n|     |\nc     S x=0\n      |\nc",
+    "step_2_component_2": "S.x=1, A.x=1, A1.x=0, S.x=0, S.x=1, A.x=0, S.x=0"
+  },
+  "facts": {
+    "step_1_support_1": "计算的属性都是综合属性",
+    "step_1_core_1": "计算的属性都是综合属性",
+    "step_1_final_1": "S-属性文法",
+    "step_2_component_1": "根节点S，子节点a、A(x=1)、b；A的子节点x=0 A₁、S(x=1)；x=0 A₁的子节点x=0 S；x=0 S的子节点c；S(x=1)的子节点a、A(x=0)、b；A(x=0)的子节点S(x=0)；S(x=0)的子节点c；完整可见路径：树结构：根节点S，子节点a、A(x=1)、b；A节点子节点x=0 A₁、S(x=1)；x=0 A₁子节点x=0 S；x=0 S子节点c；S(x=1)子节点a、A(x=0)、b；A(x=0)子节点S(x=0)；S(x=0)子节点c",
+    "step_2_component_2": "S.x=1（根S）、A.x=0（A节点）、S.x=0（x=0 S节点）、A.x=0（A(x=0)节点）、S.x=0（S(x=0)节点）、S.x=1（S(x=1)节点）等属性标注，具体节点属性值如标注所示；完整可见路径：树结构：根节点S，子节点a、A(x=1)、b；A节点子节点x=0 A₁、S(x=1)；x=0 A₁子节点x=0 S；x=0 S子节点c；S(x=1)子节点a、A(x=0)、b；A(x=0)子节点S(x=0)；S(x=0)子节点c"
+  }
+}

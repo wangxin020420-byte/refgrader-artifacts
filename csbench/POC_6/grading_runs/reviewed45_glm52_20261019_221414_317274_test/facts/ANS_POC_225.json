@@ -1,0 +1,94 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-09-28T08:45:19.578557",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/POC_6/ANS_POC_225.jpg",
+  "image_sha256": "b80dfba20b9b8d401fff0ad09852e97b3c11390ef0ea9d04f39fea96d2078aa7",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/POC_6/ANS_POC_225.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 13,
+    "accepted_token_count": 13,
+    "mean_confidence": 0.918692,
+    "min_confidence": 0.5,
+    "joined_text": "1. 2 型文法\n2.\nSs.x=Ax+1\na\nAa.x\nAAK\nS. X\ns.x=0\na\nAx=s.X\nC\n5.x=0\nC",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "multiple_confident_ocr_tokens",
+      "dark_pixel_ratio": 0.021774,
+      "very_dark_pixel_ratio": 0.014548,
+      "lower_region_dark_pixel_ratio": 0.01753,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "2型文法 | 如图所示",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": true,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_POC_225",
+    "question_id": "POC_6",
+    "subject": "POC_25",
+    "isimagine": true
+  },
+  "table_parser_used": false,
+  "table_facts": {},
+  "table_checklist": [],
+  "table_view": {},
+  "diagram_parser_used": true,
+  "diagram_model": "glm-4.6v",
+  "observed_execution_path": null,
+  "diagram_facts": {
+    "step_2_component_1": "根节点S，子节点a、A、b；A的子节点AAk、S；S的子节点a、A、b；左侧S的子节点C；右侧A的子节点S，S的子节点C",
+    "step_2_component_2": "S节点标注“s.x=Ax+1”；A节点标注“a.x”；S节点标注“s.x”；左侧S标注“s.x=0”；右侧A标注“Ax=s.X”；右侧S标注“s.x=0”"
+  },
+  "diagram_checklist": [
+    {
+      "id": "step_2_component_1",
+      "instruction": "Extract the student's representation of the syntax tree structure for the given string, whether drawn as a diagram, written as nested parentheses, or described node by node. Preserve the exact node labels, ordering, and nesting as written, including any attribute annotations if present."
+    },
+    {
+      "id": "step_2_component_2",
+      "instruction": "Extract the student's written attribute values for each node in the syntax tree, including any values for root S.x, outer A.x, inner S.x, inner A.x, and leaf S.x nodes. Preserve the exact notation (e.g., x=0, .x=0, S.x:=0) and numerical values as written."
+    }
+  ],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [
+    "step_2_component_1",
+    "step_2_component_2"
+  ],
+  "visual_fallback_conflicts": [],
+  "vlm_fallback_reason": [
+    "diagram_vlm_recovered"
+  ],
+  "vlm_fallback_facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "未书写",
+    "step_1_final_1": "2型文法",
+    "step_2_component_1": "未书写",
+    "step_2_component_2": "未书写"
+  },
+  "facts": {
+    "step_1_support_1": "未书写",
+    "step_1_core_1": "未书写",
+    "step_1_final_1": "2型文法",
+    "step_2_component_1": "根节点S，子节点a、A、b；A的子节点AAk、S；S的子节点a、A、b；左侧S的子节点C；右侧A的子节点S，S的子节点C",
+    "step_2_component_2": "S节点标注“s.x=Ax+1”；A节点标注“a.x”；S节点标注“s.x”；左侧S标注“s.x=0”；右侧A标注“Ax=s.X”；右侧S标注“s.x=0”"
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "schema_version": 4,
+  "created_at": "2026-10-19T22:40:25.764091",
+  "backend": "csbench_hybrid",
+  "image_path": "${REFGRADER_ROOT}/data/csbench/student_images/CO_10/ANS_CO_1104.jpg",
+  "image_sha256": "d11ee6b94598fdab56373b1bea646a75bca010477067e897bec5f544d3162454",
+  "ocr_json_path": "${REFGRADER_ROOT}/ocr_cache/csbench/CO_10/ANS_CO_1104.json",
+  "ocr_engine": {
+    "name": "PaddleOCR",
+    "paddle_version": "3.3.1",
+    "paddleocr_version": "3.7.0",
+    "device": "cpu",
+    "mkldnn_enabled": false
+  },
+  "ocr_summary": {
+    "token_count": 18,
+    "accepted_token_count": 18,
+    "mean_confidence": 0.884027,
+    "min_confidence": 0.5,
+    "joined_text": "3. (1)\n415212\nC=12:Cache\n4kW=41k×16=4k×2B=8k13\n∴共有8k个字节\n64k=216t=16\n16=23b=1\n43谷 r=2\n41cw/16=4k=22\n(=12\n主存\nCache\n10\n2\n组 组织地内地址\n=2{}=8k分节\n(2) 4套，因为该 Cache为4路细映候\n需要4次比较，才能的火是哪一地",
+    "ocr_empty_candidate": false,
+    "blank_authenticity": {
+      "status": "confirmed_nonblank",
+      "reason": "substantial_visible_ink",
+      "dark_pixel_ratio": 0.048603,
+      "very_dark_pixel_ratio": 0.033197,
+      "lower_region_dark_pixel_ratio": 0.046414,
+      "thresholds": {
+        "dark_pixel": 210,
+        "very_dark_pixel": 120,
+        "lower_region_start_ratio": 0.18
+      }
+    }
+  },
+  "student_transcription": "(1)64k=2¹⁶ t=16\n16=2B b=1\n4路 r=2\n4kW/16=4k=2¹²  c=12\n主存 b 10 1\nCache 10 2 1\n组号 组块 块内地址\n=2¹³=8k个字节\n(2) 4套，因为该Cache为4路组相联映射 需要4次比较，才能确定是哪一处。",
+  "transcription_sha256": null,
+  "transcription_source": "csbench_human_transcription",
+  "visual_placeholder_detected": false,
+  "visual_fallback_needed": true,
+  "ocr_error": null,
+  "fact_mapping_degraded": false,
+  "fact_mapping_degraded_reason": null,
+  "answer_metadata": {
+    "answer_id": "ANS_CO_1104",
+    "question_id": "CO_10",
+    "subject": "CO",
+    "isimagine": true
+  },
+  "table_parser_used": true,
+  "table_facts": {
+    "step_1": "学生写了Cache相关字段划分的痕迹（OCR噪声较多）：『Cache 4kW=4k×16=4k×2B=8kB』『64k=2^16, 主存地址共16位』『41cw/16=4k=2^2』『(=12』『(=2, 8k』以及一行字段位宽标注『10 | 2 | 组 组织地内地址』（可见类似『10』位、『2』位的字段宽度标记，右侧标有『组』『组内地址』等字段名，但字迹/OCR模糊，具体字段-位宽对应不完全清晰）。可辨认出的含义：块大小4字→块内地址2位；4路组相联→组内块号2位；Cache 4k字/块大小→块数=4k/4=1k块，组数=1k/4=2^8组（『=2{}=8k分节』一行字迹模糊）。完整且明确的『组索引-组内块-块内字』字段位宽划分表无法完整辨认，部分字段名与位宽对应字迹模糊。",
+    "step_2": "学生写了主存地址划分：『64k=2^16，主存地址16位』，并画有主存地址字段划分图（标有『主存』『Cache』及位宽『10』『2』、字段名『组』『组内地址』），以及tag位宽计算的痕迹如『C=12』『(=12』『43谷 r=2』。可推断学生将主存16位地址分为 tag/组索引(10位)/组内块(2位)/块内地址(2位)，tag=16-10-2-2=2位（『r=2』可能与tag位计算相关），但减法算式和tag位宽的明确标注字迹模糊，不能完全确认。"
+  },
+  "table_checklist": [
+    {
+      "id": "step_1",
+      "instruction": "Extract the student's written division of the Cache address fields: the number of bits for each field (set index, block-within-set, word offset within block), and any stated counts of blocks or sets, exactly as written by the student, including any bit-width labels, field names, and layout marks."
+    },
+    {
+      "id": "step_2",
+      "instruction": "Extract the student's written division of the main memory address fields and any computation of the tag field width, including any bit counts, subtraction traces, or field-width labels they wrote."
+    }
+  ],
+  "table_view": {
+    "rows": [
+      {
+        "row": 1,
+        "y_center": 46.75,
+        "cells_left_to_right": [
+          {
+            "text": "3. (1)",
+            "x_center": 49.5,
+            "confidence": 0.9942819476127625
+          },
+          {
+            "text": "415212",
+            "x_center": 158.5,
+            "confidence": 0.6081448197364807
+          }
+        ]
+      },
+      {
+        "row": 2,
+        "y_center": 106.5,
+        "cells_left_to_right": [
+          {
+            "text": "C=12:Cache",
+            "x_center": 226.5,
+            "confidence": 0.9206474423408508
+          },
+          {
+            "text": "4kW=41k×16=4k×2B=8k13",
+            "x_center": 263.0,
+            "confidence": 0.8786243200302124
+          }
+        ]
+      },
+      {
+        "row": 3,
+        "y_center": 164.0,
+        "cells_left_to_right": [
+          {
+            "text": "∴共有8k个字节",
+            "x_center": 200.0,
+            "confidence": 0.8480831980705261
+          }
+        ]
+      },
+      {
+        "row": 4,
+        "y_center": 204.5,
+        "cells_left_to_right": [
+          {
+            "text": "64k=216t=16",
+            "x_center": 187.5,
+            "confidence": 0.8733060359954834
+          }
+        ]
+      },
+      {
+        "row": 5,
+        "y_center": 242.0,
+        "cells_left_to_right": [
+          {
+            "text": "16=23b=1",
+            "x_center": 187.5,
+            "confidence": 0.991704523563385
+          }
+        ]
+      },
+      {
+        "row": 6,
+        "y_center": 300.5,
+        "cells_left_to_right": [
+          {
+            "text": "43谷 r=2",
+            "x_center": 159.5,
+            "confidence": 0.8615365028381348
+          },
+          {
+            "text": "41cw/16=4k=22",
+            "x_center": 202.5,
+            "confidence": 0.9440136551856995
+          },
+          {
+            "text": "(=12",
+            "x_center": 350.0,
+            "confidence": 0.9449752569198608
+          }
+        ]
+      },
+      {
+        "row": 7,
+        "y_center": 389.0,
+        "cells_left_to_right": [
+          {
+            "text": "主存",
+            "x_center": 129.0,
+            "confidence": 0.8933746814727783
+          }
+        ]
+      },
+      {
+        "row": 8,
+        "y_center": 460.38,
+        "cells_left_to_right": [
+          {
+            "text": "Cache",
+            "x_center": 140.5,
+            "confidence": 0.9703391194343567
+          },
+          {
+            "text": "10",
+            "x_center": 224.5,
+            "confidence": 0.9999658465385437
+          },
+          {
+            "text": "2",
+            "x_center": 285.5,
+            "confidence": 0.9999701976776123
+          },
+          {
+            "text": "组 组织地内地址",
+            "x_center": 296.0,
+            "confidence": 0.7324835062026978
+          }
+        ]
+      },
+      {
+        "row": 9,
+        "y_center": 521.5,
+        "cells_left_to_right": [
+          {
+            "text": "=2{}=8k分节",
+            "x_center": 194.0,
+            "confidence": 0.7578939199447632
+          }
+        ]
+      },
+      {
+        "row": 10,
+        "y_center": 573.5,
+        "cells_left_to_right": [
+          {
+            "text": "(2) 4套，因为该 Cache为4路细映候",
+            "x_center": 260.0,
+            "confidence": 0.8521871566772461
+          }
+        ]
+      },
+      {
+        "row": 11,
+        "y_center": 630.5,
+        "cells_left_to_right": [
+          {
+            "text": "需要4次比较，才能的火是哪一地",
+            "x_center": 299.0,
+            "confidence": 0.8409496545791626
+          }
+        ]
+      }
+    ],
+    "unpositioned_tokens": [],
+    "plain_text": "Row 1: x=49.5: 3. (1) | x=158.5: 415212\nRow 2: x=226.5: C=12:Cache | x=263.0: 4kW=41k×16=4k×2B=8k13\nRow 3: x=200.0: ∴共有8k个字节\nRow 4: x=187.5: 64k=216t=16\nRow 5: x=187.5: 16=23b=1\nRow 6: x=159.5: 43谷 r=2 | x=202.5: 41cw/16=4k=22 | x=350.0: (=12\nRow 7: x=129.0: 主存\nRow 8: x=140.5: Cache | x=224.5: 10 | x=285.5: 2 | x=296.0: 组 组织地内地址\nRow 9: x=194.0: =2{}=8k分节\nRow 10: x=260.0: (2) 4套，因为该 Cache为4路细映候\nRow 11: x=299.0: 需要4次比较，才能的火是哪一地"
+  },
+  "diagram_parser_used": false,
+  "diagram_model": null,
+  "observed_execution_path": null,
+  "diagram_facts": {},
+  "diagram_checklist": [],
+  "vlm_fallback_used": true,
+  "vlm_fallback_recovered": [],
+  "visual_fallback_recovered": [],
+  "visual_fallback_conflicts": [
+    "step_1",
+    "step_2",
+    "step_3",
+    "step_4"
+  ],
+  "vlm_fallback_reason": [],
+  "vlm_fallback_facts": {
+    "step_1": "Cache地址：组号10位，块号2位，块内地址1位",
+    "step_2": "主存地址：tag位b，组号10位，块内地址1位；tag宽度t=16位",
+    "step_3": "(2) 4套，因为该Cache为4路组相联映像 需要比较4次，才能确定是哪一处",
+    "step_4": "4套"
+  },
+  "facts": {
+    "step_1": "4kW/16=4k=2¹² c=12；块内地址：16=2B b=1（组号 10 位，组块 2 位，块内地址 1 位的布局标记：主存 b 10 1；Cache 10 2 1）",
+    "step_2": "64k=2¹⁶ t=16；4路 r=2；tag字段推导未明确写出减法过程，仅有主存地址布局标记“主存 b 10 1”",
+    "step_3": "4套，因为该Cache为4路组相联映射，需要4次比较，才能确定是哪一处。",
+    "step_4": "结论：4套；依据：该Cache为4路组相联映射，需要4次比较，才能确定是哪一处。"
+  }
+}
